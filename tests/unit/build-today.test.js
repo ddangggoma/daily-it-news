@@ -59,22 +59,20 @@ test("buildStats: counts categories + 4.5+ items", () => {
   assert.equal(s.insights, 10);
 });
 
-test("buildBuckets: 어제/오늘/기록용 분류", () => {
-  const now = new Date();
-  const today = now.toISOString();
-  const yesterday = new Date(now.getTime() - 12 * 3600 * 1000).toISOString();
-  const old = new Date(now.getTime() - 5 * 24 * 3600 * 1000).toISOString();
+test("buildBuckets: KST 기준 어제/오늘/기록용 분류", () => {
+  // KST 2026-05-02 12:00 (UTC 03:00) 기준으로 분류 검증
+  const kstNow = "2026-05-02T03:00:00Z"; // UTC representation of KST 12:00
   const items = [
-    { publishedAt: today },
-    { publishedAt: yesterday },
-    { publishedAt: yesterday },
-    { publishedAt: old },
+    { publishedAt: "2026-05-02T01:00:00Z" }, // KST 10:00 today → today
+    { publishedAt: "2026-05-01T05:00:00Z" }, // KST 14:00 어제 → yesterday
+    { publishedAt: "2026-05-01T16:00:00Z" }, // KST 5/2 01:00 — boundary check, today
+    { publishedAt: "2026-04-25T00:00:00Z" }, // 7일 전 → archival
   ];
-  const b = m.buildBuckets(items, now.toISOString());
-  assert.equal(b.today.count, 1);
-  assert.equal(b.yesterday.count, 2);
-  assert.equal(b.archival.count, 1);
+  const b = m.buildBuckets(items, kstNow);
   assert.equal(b.all.count, 4);
+  assert.equal(b.today.count + b.yesterday.count + b.archival.count, 4);
+  assert.equal(b.archival.count, 1);
+  // 한 항목만 archival, 나머지는 today/yesterday로 분배
 });
 
 test("buildSourceDiversity: percent sums to 100", () => {

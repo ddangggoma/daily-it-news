@@ -100,16 +100,19 @@ function buildStats(news) {
 }
 
 function buildBuckets(items, kstNowIso) {
-  // 어제(D-1) / 오늘(D-day) / 기록용(>D-1) / 전체
+  // KST 기준 어제(D-1) / 오늘(D-day) / 기록용(>D-1) / 전체.
+  // KST = UTC+9. KST midnight in UTC ms = Date.UTC(yyyy,mm,dd) - 9h.
   const now = new Date(kstNowIso);
-  const todayStart = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
-  const yesterdayStart = new Date(todayStart.getTime() - 24 * 3600 * 1000);
+  const kstShift = 9 * 3600 * 1000;
+  const kstNow = new Date(now.getTime() + kstShift);
+  const todayKstMidnightUtc = Date.UTC(kstNow.getUTCFullYear(), kstNow.getUTCMonth(), kstNow.getUTCDate()) - kstShift;
+  const yesterdayKstMidnightUtc = todayKstMidnightUtc - 24 * 3600 * 1000;
   let yesterday = 0, today = 0, archival = 0;
   items.forEach((it) => {
     const ms = Date.parse(it.publishedAt);
     if (isNaN(ms)) return;
-    if (ms >= todayStart.getTime()) today++;
-    else if (ms >= yesterdayStart.getTime()) yesterday++;
+    if (ms >= todayKstMidnightUtc) today++;
+    else if (ms >= yesterdayKstMidnightUtc) yesterday++;
     else archival++;
   });
   return {
