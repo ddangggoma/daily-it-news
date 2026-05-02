@@ -9,8 +9,21 @@
   <script>(function(){try{var t=JSON.parse(localStorage.getItem("dn.theme")||"\"light\"");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
   <link rel="stylesheet" href="assets/styles.css" />
   <link rel="alternate" type="application/rss+xml" title="Daily News RSS" href="feed.xml" />
+  <style>
+    /* a11y — skip-to-content + focus-visible 보강. styles.css 미오염을 위해 페이지 단위 inline. */
+    .skip-link {
+      position: absolute; top: -40px; left: 8px;
+      padding: 8px 12px; background: #1a1a1a; color: #fff;
+      text-decoration: none; border-radius: 6px;
+      z-index: 1000;
+    }
+    .skip-link:focus { top: 8px; outline: 2px solid #3b82f6; outline-offset: 2px; }
+    :focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
+    .card:focus-within { outline: 2px solid var(--c-impact, #3b82f6); outline-offset: 2px; }
+  </style>
 </head>
 <body>
+  <a href="#main" class="skip-link">메인 콘텐츠로 건너뛰기</a>
   <!-- ======================== HEADER ======================== -->
   <header class="app-header">
     <div class="app-header__inner">
@@ -30,7 +43,7 @@
     </div>
   </header>
 
-  <main class="container">
+  <main class="container" id="main">
 
     <!-- ======================== HERO ======================== -->
     <section class="hero" aria-label="오늘의 5초 결론">

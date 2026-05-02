@@ -10,6 +10,11 @@
   <link rel="stylesheet" href="assets/styles.css" />
   <link rel="alternate" type="application/rss+xml" title="Daily News RSS" href="feed.xml" />
   <style>
+    .skip-link { position: absolute; top: -40px; left: 8px; padding: 8px 12px; background: #1a1a1a; color: #fff; text-decoration: none; border-radius: 6px; z-index: 1000; }
+    .skip-link:focus { top: 8px; outline: 2px solid #3b82f6; outline-offset: 2px; }
+    :focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
+  </style>
+  <style>
     /* 아카이브 전용 추가 (styles.css에 일반화하지 않은 미세 조정만) */
     .archive-hero {
       padding: var(--space-6) var(--space-5);
@@ -96,6 +101,7 @@
   </style>
 </head>
 <body>
+  <a href="#main" class="skip-link">메인 콘텐츠로 건너뛰기</a>
   <header class="app-header">
     <div class="app-header__inner">
       <div class="brand">
@@ -113,7 +119,7 @@
     </div>
   </header>
 
-  <main class="container">
+  <main class="container" id="main">
     <section class="archive-hero">
       <h1 class="archive-hero__title">발행 기록</h1>
       <p class="archive-hero__sub" id="archive-sub">— 일치의 발행 — 일자별 헤드라인 · 통계 · 종합 점수</p>

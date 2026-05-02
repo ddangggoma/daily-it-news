@@ -471,37 +471,47 @@
     const actStar = el("button", {
       className: "card__act",
       "data-on": isStarred ? "true" : "false",
+      "aria-label": "별표",
+      "aria-pressed": isStarred ? "true" : "false",
       title: "별표",
       onclick: (e) => {
         e.stopPropagation();
         const on = window.Storage.toggleFlag("starred", n.id);
         actStar.setAttribute("data-on", on ? "true" : "false");
+        actStar.setAttribute("aria-pressed", on ? "true" : "false");
       },
     }, "⭐");
     const actBkmk = el("button", {
       className: "card__act",
       "data-on": isBkmk ? "true" : "false",
+      "aria-label": "나중에 읽기 북마크",
+      "aria-pressed": isBkmk ? "true" : "false",
       title: "나중에 읽기",
       onclick: (e) => {
         e.stopPropagation();
         const on = window.Storage.toggleFlag("bookmarks", n.id);
         actBkmk.setAttribute("data-on", on ? "true" : "false");
+        actBkmk.setAttribute("aria-pressed", on ? "true" : "false");
       },
     }, "🔖");
     const actRead = el("button", {
       className: "card__act",
       "data-on": isRead ? "true" : "false",
+      "aria-label": "읽음 처리",
+      "aria-pressed": isRead ? "true" : "false",
       title: "읽음 처리",
       onclick: (e) => {
         e.stopPropagation();
         const on = window.Storage.toggleFlag("read", n.id);
         actRead.setAttribute("data-on", on ? "true" : "false");
+        actRead.setAttribute("aria-pressed", on ? "true" : "false");
         card.classList.toggle("card--read", on);
       },
     }, "✅");
     const actLink = el("a", {
       className: "card__act card__act--link",
       href: n.url, target: "_blank", rel: "noopener",
+      "aria-label": `${n.title} 원문 새 창에서 열기`,
       title: "원문",
     }, "↗ 원문");
 

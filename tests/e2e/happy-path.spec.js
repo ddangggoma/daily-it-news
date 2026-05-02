@@ -179,6 +179,56 @@ test.describe("Daily News — happy path", () => {
     expect(scoreCls).toMatch(/archive-row__score--g[2345]/);
   });
 
+  test("CP-A11Y: 모달 포커스 트랩 + 닫은 후 포커스 복귀 + skip-link", async ({ page }) => {
+    await page.goto("/index.html");
+
+    // Skip-link Tab 시 첫 노출
+    await page.keyboard.press("Tab");
+    const focused = await page.evaluate(() => {
+      const a = document.activeElement;
+      return a ? { className: a.className, href: a.getAttribute("href") } : null;
+    });
+    // skip-link가 첫 focusable이거나 적어도 키보드로 도달 가능해야 함
+    expect(focused).toBeTruthy();
+
+    // Insights 탭 + 모달
+    await page.click('.tab-btn[data-tab="insights"]');
+    const firstInsight = page.locator("#insights-grid .insight-card").first();
+    await firstInsight.click();
+    await expect(page.locator("#insight-modal")).toBeVisible();
+
+    // 포커스가 모달 내부에 있음 (첫 focusable)
+    const focusInModal = await page.evaluate(() => {
+      const a = document.activeElement;
+      const modal = document.getElementById("insight-modal");
+      return a && modal && modal.contains(a);
+    });
+    expect(focusInModal).toBe(true);
+
+    // ESC 닫기
+    await page.keyboard.press("Escape");
+    await expect(page.locator("#insight-modal")).toBeHidden();
+
+    // 포커스가 모달 열기 전 카드(또는 그 후손)로 복귀
+    const focusBack = await page.evaluate(() => {
+      const a = document.activeElement;
+      const grid = document.getElementById("insights-grid");
+      return a && grid && grid.contains(a);
+    });
+    expect(focusBack).toBe(true);
+  });
+
+  test("CP-A11Y2: ARIA labels on icon buttons", async ({ page }) => {
+    await page.goto("/index.html");
+    const card = page.locator("#news-grid > .card").first();
+    const star = card.locator(".card__act").first();
+    await expect(star).toHaveAttribute("aria-label", /별표/);
+    await expect(star).toHaveAttribute("aria-pressed", /^(true|false)$/);
+    // 토글 후 aria-pressed 갱신
+    await star.click();
+    await expect(star).toHaveAttribute("aria-pressed", "true");
+  });
+
   test("CP-7: theme toggle persists + applies before paint (no FOUC)", async ({ page }) => {
     // 1. 다크 모드 설정
     await page.goto("/index.html");

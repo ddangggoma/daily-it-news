@@ -176,6 +176,7 @@
 
   // ── 모달 ────────────────────────────────────────────
   let currentInsightIndex = -1;
+  let lastFocused = null; // 모달 열기 전 포커스 (닫을 때 복원)
 
   function findIndex(idOrInsight) {
     const id = typeof idOrInsight === "string" ? idOrInsight : (idOrInsight && idOrInsight.id);
@@ -187,6 +188,10 @@
     const idx = findIndex(idOrInsight);
     if (idx < 0) return;
     currentInsightIndex = idx;
+
+    // 포커스 복귀를 위해 현재 포커스된 요소 저장
+    lastFocused = document.activeElement;
+
     renderModal();
 
     const backdrop = $("#insight-modal");
@@ -194,10 +199,15 @@
     backdrop.hidden = false;
     document.body.style.overflow = "hidden";
 
-    // ESC 닫기
+    // ESC + 화살표 + Tab 트랩
     document.addEventListener("keydown", onKeydown);
-    // 배경 클릭 닫기
     backdrop.addEventListener("click", onBackdropClick);
+
+    // 모달의 첫 focusable 요소로 포커스 이동 (보통 ✕ 닫기 버튼)
+    requestAnimationFrame(() => {
+      const first = focusableIn($("#modal-inner"))[0];
+      if (first) first.focus();
+    });
   }
 
   function closeModal() {
@@ -206,16 +216,50 @@
     document.body.style.overflow = "";
     document.removeEventListener("keydown", onKeydown);
     if (backdrop) backdrop.removeEventListener("click", onBackdropClick);
+
+    // 포커스를 모달 열기 전 요소로 복귀
+    if (lastFocused && typeof lastFocused.focus === "function") {
+      try { lastFocused.focus(); } catch (e) { /* removed from DOM */ }
+    }
+    lastFocused = null;
   }
 
   function onKeydown(e) {
-    if (e.key === "Escape") closeModal();
-    else if (e.key === "ArrowLeft") nav(-1);
-    else if (e.key === "ArrowRight") nav(+1);
+    if (e.key === "Escape") return closeModal();
+    if (e.key === "ArrowLeft")  return nav(-1);
+    if (e.key === "ArrowRight") return nav(+1);
+    if (e.key === "Tab")         return trapTab(e);
   }
 
   function onBackdropClick(e) {
     if (e.target.id === "insight-modal") closeModal();
+  }
+
+  // ── 포커스 트랩 ─────────────────────────────────────
+  function focusableIn(root) {
+    if (!root) return [];
+    const sel = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"]), input:not([disabled]), select:not([disabled]), textarea:not([disabled])';
+    return Array.from(root.querySelectorAll(sel)).filter((el) => {
+      const r = el.getBoundingClientRect();
+      return r.width > 0 && r.height > 0 && el.offsetParent !== null;
+    });
+  }
+
+  function trapTab(e) {
+    const inner = $("#modal-inner");
+    if (!inner) return;
+    const items = focusableIn(inner);
+    if (!items.length) return;
+    const first = items[0];
+    const last  = items[items.length - 1];
+    const active = document.activeElement;
+    if (e.shiftKey && active === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && active === last) {
+      e.preventDefault();
+      first.focus();
+    }
   }
 
   function nav(delta) {
