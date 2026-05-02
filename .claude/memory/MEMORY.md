@@ -8,3 +8,4 @@
 - [Workflow Feedback](feedback_workflow.md) — CE 메타-루프 우선, 모든 작업은 Reflect까지
 - [Reference Repos](reference_repos.md) — vendor 디렉터리에 있는 세 원본 repo 위치와 역할
 - [Dashboard Runtime](dashboard_runtime.md) — 정적 대시보드 JS 런타임 작성 사이클 학습 (Audit-first · DOM 계약 · file:// 호환 · Preview MCP 한계)
+- [Publish Channels](publish_channels.md) — archive.html + feed.xml 사이클 학습 (정적 사이트 보조 페이지 패턴 · Node 미니 generator · RFC822 · XML 안전)

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>아카이브 — Daily News</title>
+  <meta name="description" content="Daily News 발행 기록. 일자별 헤드라인·통계·종합 점수." />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="Daily News RSS" href="feed.xml" />
+  <style>
+    /* 아카이브 전용 추가 (styles.css에 일반화하지 않은 미세 조정만) */
+    .archive-hero {
+      padding: var(--space-6) var(--space-5);
+      border-radius: var(--radius-lg);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      margin-bottom: var(--space-5);
+    }
+    .archive-hero__title { font-size: 28px; font-weight: 800; margin: 0 0 6px; }
+    .archive-hero__sub { color: var(--text-soft); }
+    .archive-list { display: flex; flex-direction: column; gap: var(--space-3); }
+    .archive-row {
+      display: grid;
+      grid-template-columns: 110px 1fr auto auto;
+      align-items: center;
+      gap: var(--space-4);
+      padding: var(--space-4) var(--space-5);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.1s, border-color 0.1s, box-shadow 0.1s;
+    }
+    .archive-row:hover {
+      transform: translateY(-1px);
+      border-color: var(--border-strong, #d4d0c8);
+      box-shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+    .archive-row[data-disabled="true"] {
+      opacity: .65;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    .archive-row__date {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+    .archive-row__date small { display: block; font-weight: 500; opacity: .7; }
+    .archive-row__title { font-weight: 600; line-height: 1.45; }
+    .archive-row__counts {
+      display: flex; gap: 6px; flex-wrap: wrap;
+      font-size: 12px;
+    }
+    .archive-row__count {
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--bg-sunk, #f3f1ec);
+      color: var(--text-soft);
+      white-space: nowrap;
+    }
+    .archive-row__score {
+      font-family: var(--font-mono);
+      font-weight: 800;
+      font-size: 18px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      min-width: 56px;
+      text-align: center;
+    }
+    .archive-row__score--g5 { background: rgba(239, 68, 68, .14); color: #b91c1c; }
+    .archive-row__score--g4 { background: rgba(245, 158, 11, .16); color: #b45309; }
+    .archive-row__score--g3 { background: rgba(20, 184, 166, .14); color: #0f766e; }
+    .archive-row__score--g2 { background: rgba(100, 116, 139, .14); color: #475569; }
+    .archive-row__chip {
+      font-size: 11px; opacity: .7;
+      padding: 2px 6px; border-radius: 6px;
+      background: var(--bg-sunk, #f3f1ec);
+      margin-left: 8px;
+    }
+    @media (max-width: 700px) {
+      .archive-row {
+        grid-template-columns: 1fr auto;
+        grid-template-areas: "date score" "title title" "counts counts";
+        row-gap: 8px;
+      }
+      .archive-row__date   { grid-area: date; }
+      .archive-row__title  { grid-area: title; }
+      .archive-row__counts { grid-area: counts; }
+      .archive-row__score  { grid-area: score; }
+    }
+  </style>
+</head>
+<body>
+  <header class="app-header">
+    <div class="app-header__inner">
+      <div class="brand">
+        <div class="brand__title">Daily News</div>
+        <div class="brand__sub">📚 아카이브</div>
+      </div>
+      <div class="header-meta">
+        <span class="header-meta__date">발행 시각 06:00 KST</span>
+        <div class="header-actions">
+          <button class="icon-btn" id="theme-toggle" title="테마 전환" aria-label="테마 전환">◐</button>
+          <a class="icon-btn" href="index.html" title="오늘로" aria-label="오늘로">🏠</a>
+          <a class="icon-btn" href="feed.xml" title="RSS" aria-label="RSS">📡</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="archive-hero">
+      <h1 class="archive-hero__title">발행 기록</h1>
+      <p class="archive-hero__sub" id="archive-sub">— 일치의 발행 — 일자별 헤드라인 · 통계 · 종합 점수</p>
+    </section>
+
+    <section class="archive-list" id="archive-list" aria-label="발행 기록 목록">
+      <!-- 동적 렌더 -->
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="app-footer__inner">
+      <span>Daily News · 매일 아침 KST 06:00 자동 발행</span>
+      <span class="sep">·</span>
+      <a href="index.html">🏠 오늘</a>
+      <span class="sep">·</span>
+      <a href="feed.xml">📡 RSS 2.0</a>
+      <span style="margin-left: auto; opacity: 0.6;">Compound Engineering · L3 Meta-loop</span>
+    </div>
+  </footer>
+
+  <script src="data/archive.js"></script>
+  <script src="scripts/storage.js"></script>
+  <script>
+    (function () {
+      "use strict";
+
+      // 테마 (storage.js와 동일 정책)
+      const theme = (window.Storage && window.Storage.getTheme()) || "light";
+      document.documentElement.setAttribute("data-theme", theme);
+      const tt = document.getElementById("theme-toggle");
+      if (tt) tt.addEventListener("click", () => {
+        const cur = document.documentElement.getAttribute("data-theme") || "light";
+        const nx = cur === "light" ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", nx);
+        if (window.Storage) window.Storage.setTheme(nx);
+      });
+
+      // 아카이브 렌더
+      const arr = window.__ARCHIVE__ || [];
+      const list = document.getElementById("archive-list");
+      const sub  = document.getElementById("archive-sub");
+      if (sub) sub.textContent = `총 ${arr.length}회 발행 · 일자별 헤드라인 · 통계 · 종합 점수`;
+      if (!list) return;
+
+      const grade = (n) => n >= 5 ? 5 : n >= 4 ? 4 : n >= 3 ? 3 : 2;
+      const fmtD = (iso) => {
+        // YYYY-MM-DD → "2026 · 5월 1일 (목)"
+        const d = new Date(iso + "T00:00:00+09:00");
+        if (isNaN(d.getTime())) return iso;
+        const dow = ["일","월","화","수","목","금","토"][d.getUTCDay()];
+        const opt = { timeZone: "Asia/Seoul", month: "long", day: "numeric", weekday: "short" };
+        return new Intl.DateTimeFormat("ko-KR", opt).format(d);
+      };
+
+      arr.forEach((entry, idx) => {
+        const isToday = idx === 0;          // 첫 항목이 가장 최신 = 오늘
+        const href = isToday ? "index.html"
+                             : `#archive-${entry.date}`;  // 추후 발행 stub
+
+        const row = document.createElement(isToday ? "a" : "div");
+        row.className = "archive-row";
+        if (!isToday) row.setAttribute("data-disabled", "true");
+        else row.setAttribute("href", href);
+
+        // 일자
+        const dateCell = document.createElement("div");
+        dateCell.className = "archive-row__date";
+        dateCell.innerHTML = `${entry.date}<small>${fmtD(entry.date)}${isToday ? " · 오늘" : ""}</small>`;
+
+        // 제목
+        const title = document.createElement("div");
+        title.className = "archive-row__title";
+        title.textContent = entry.headline || "(제목 없음)";
+        if (!isToday) {
+          const chip = document.createElement("span");
+          chip.className = "archive-row__chip";
+          chip.textContent = "추후 발행 (data 파일 미생성)";
+          title.appendChild(chip);
+        }
+
+        // 카운트 칩
+        const counts = document.createElement("div");
+        counts.className = "archive-row__counts";
+        const c = entry.counts || {};
+        [
+          { k: "news",      lab: "📰", suffix: "뉴스" },
+          { k: "community", lab: "💬", suffix: "커뮤니티" },
+          { k: "oss",       lab: "📦", suffix: "OSS" },
+          { k: "insights",  lab: "🧠", suffix: "인사이트" },
+        ].forEach((it) => {
+          if (c[it.k] == null) return;
+          const span = document.createElement("span");
+          span.className = "archive-row__count";
+          span.textContent = `${it.lab} ${c[it.k]}`;
+          span.title = `${it.suffix} ${c[it.k]}건`;
+          counts.appendChild(span);
+        });
+
+        // 점수
+        const score = document.createElement("div");
+        const g = grade(entry.scoreAvg || 0);
+        score.className = `archive-row__score archive-row__score--g${g}`;
+        score.textContent = (entry.scoreAvg || 0).toFixed(2);
+        score.title = `종합 ${(entry.scoreAvg || 0).toFixed(2)} · 등급 g${g}`;
+
+        row.appendChild(dateCell);
+        row.appendChild(title);
+        row.appendChild(counts);
+        row.appendChild(score);
+        list.appendChild(row);
+      });
+    })();
+  </script>
+</body>
+</html>
