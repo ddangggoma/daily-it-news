@@ -47,9 +47,17 @@
       box-shadow: 0 6px 18px rgba(0,0,0,.06);
     }
     .archive-row[data-disabled="true"] {
-      opacity: .65;
-      cursor: not-allowed;
-      pointer-events: none;
+      opacity: .78;
+      cursor: default;
+      /* pointer-events 유지 — 사용자가 metadata는 hover/focus로 볼 수 있어야 함 */
+    }
+    .archive-row[data-disabled="true"]:hover { transform: none; box-shadow: none; }
+    .archive-row:not([data-disabled="true"]) {
+      border-left: 4px solid var(--c-impact, #ef4444);
+    }
+    .archive-row:not([data-disabled="true"]):hover .archive-row__title::after {
+      content: " →";
+      color: var(--c-impact, #ef4444);
     }
     .archive-row__date {
       font-family: var(--font-mono);
@@ -193,7 +201,8 @@
         if (!isToday) {
           const chip = document.createElement("span");
           chip.className = "archive-row__chip";
-          chip.textContent = "추후 발행 (data 파일 미생성)";
+          chip.textContent = "메타데이터만 — 본문은 RSS feed.xml 의 과거 분 archive로";
+          chip.title = "이 일자의 전체 dashboard는 미발행. counts·점수·헤드라인은 archive.js 에 보존됨.";
           title.appendChild(chip);
         }
 
