@@ -20,6 +20,9 @@
     .skip-link:focus { top: 8px; outline: 2px solid #3b82f6; outline-offset: 2px; }
     :focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
     .card:focus-within { outline: 2px solid var(--c-impact, #3b82f6); outline-offset: 2px; }
+    /* P2 perf: 카드는 화면 밖이면 paint/layout 스킵. 18~200+ 카드에서 LCP 개선. */
+    .card { content-visibility: auto; contain-intrinsic-size: 0 380px; }
+    .insight-card { content-visibility: auto; contain-intrinsic-size: 0 220px; }
   </style>
 </head>
 <body>

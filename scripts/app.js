@@ -400,10 +400,21 @@
       return;
     }
 
-    list.forEach((n) => grid.appendChild(renderNewsCard(n)));
+    // P1 최적화: localStorage를 카드별 3회 × N 카드 = 3N회 호출 대신 1회 → Set.has()
+    // 100 카드면 300 → 3 호출. JSON.parse도 1회만.
+    const flagSets = {
+      starred:    new Set(window.Storage ? window.Storage.getFlagged("starred")   : []),
+      bookmarks:  new Set(window.Storage ? window.Storage.getFlagged("bookmarks") : []),
+      read:       new Set(window.Storage ? window.Storage.getFlagged("read")      : []),
+    };
+
+    // DocumentFragment로 reflow 1회로 묶음
+    const frag = document.createDocumentFragment();
+    list.forEach((n) => frag.appendChild(renderNewsCard(n, flagSets)));
+    grid.appendChild(frag);
   }
 
-  function renderNewsCard(n) {
+  function renderNewsCard(n, flagSets) {
     const cat = CATEGORY_BY_KEY[n.category] || { icon: "📰", label: n.category };
     const score = avgScore(n.scores);
     const grade = scoreGrade(score);
@@ -446,10 +457,11 @@
       tags.appendChild(el("span", { className: "card__tag" }, `#${t}`));
     });
 
-    // foot: 액션
-    const isStarred = window.Storage && window.Storage.isFlagged("starred", n.id);
-    const isBkmk    = window.Storage && window.Storage.isFlagged("bookmarks", n.id);
-    const isRead    = window.Storage && window.Storage.isFlagged("read", n.id);
+    // foot: 액션 — Set.has()로 O(1), localStorage 호출 0회 (renderNewsGrid에서 1회만 읽음)
+    const sets = flagSets || { starred: new Set(), bookmarks: new Set(), read: new Set() };
+    const isStarred = sets.starred.has(n.id);
+    const isBkmk    = sets.bookmarks.has(n.id);
+    const isRead    = sets.read.has(n.id);
     if (isRead) card.classList.add("card--read");
 
     const foot = el("div", { className: "card__foot" });
