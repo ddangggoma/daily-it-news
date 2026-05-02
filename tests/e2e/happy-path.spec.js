@@ -19,6 +19,10 @@
  */
 const { test, expect } = require("@playwright/test");
 
+// 테스트 간 localStorage / focus / SW state 간섭 방지를 위해 serial.
+// 8 tests × ~300ms = 3초이므로 병렬 가치 미미.
+test.describe.configure({ mode: "serial" });
+
 test.describe("Daily News — happy path", () => {
   test.beforeEach(async ({ page }) => {
     // localStorage 초기화 (테스트 간 격리)
