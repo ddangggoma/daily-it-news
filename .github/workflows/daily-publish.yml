@@ -1,0 +1,127 @@
+name: Daily publish (06:00 KST)
+
+# UTC 21:00 = KST 06:00. GH cron 은 ±15분 지연 허용 (spec § 1.2 합의).
+on:
+  schedule:
+    - cron: '0 21 * * *'
+  workflow_dispatch:
+    inputs:
+      hours:
+        description: '시간 윈도우 (기본 24)'
+        type: string
+        default: '24'
+      use_llm:
+        description: 'LLM 점수화 사용 (ANTHROPIC_API_KEY 필요)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # commit data/today.js, feed.xml
+  pages: write
+  id-token: write   # GH Pages OIDC
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Collect → Score → Build → Validate → Feed
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      published_at: ${{ steps.commit.outputs.published_at }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci --no-audit --no-fund
+
+      - name: Collect sources (HN + GitHub Trending + RSS)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node scripts/collect.js \
+            --hours=${{ inputs.hours || '24' }} \
+            --out=data/raw-collection.json
+
+      - name: Score with 4-criteria
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ "${{ inputs.use_llm }}" = "true" ] && [ -n "$ANTHROPIC_API_KEY" ]; then
+            node scripts/score.js --in=data/raw-collection.json --out=data/scored-items.json --llm
+          else
+            node scripts/score.js --in=data/raw-collection.json --out=data/scored-items.json
+          fi
+
+      - name: Build today.js
+        run: node scripts/build-today.js --in=data/scored-items.json --out=data/today.js
+
+      - name: Validate data shape (gate)
+        run: npm run validate
+
+      - name: Generate RSS feed
+        env:
+          DN_SITE_URL: ${{ vars.DN_SITE_URL || format('https://{0}.github.io/{1}/', github.repository_owner, github.event.repository.name) }}
+        run: npm run feed
+
+      - name: Run unit tests (regression gate)
+        run: npm run test:unit
+
+      - name: Commit + push regenerated artifacts
+        id: commit
+        run: |
+          git config user.name "daily-publish-bot"
+          git config user.email "actions@github.com"
+          git add data/today.js feed.xml
+          NOW=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          if git diff --cached --quiet; then
+            echo "no changes (data unchanged today)"
+            echo "published_at=skipped" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "Daily publish: $NOW"
+            git push
+            echo "published_at=$NOW" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  e2e-after-deploy:
+    name: Post-deploy smoke (E2E against published site)
+    runs-on: ubuntu-latest
+    needs: deploy
+    if: needs.build.outputs.published_at != 'skipped'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Run smoke against deployed URL
+        env:
+          PLAYWRIGHT_BASE_URL: ${{ needs.deploy.outputs.page_url || format('https://{0}.github.io/{1}/', github.repository_owner, github.event.repository.name) }}
+        run: |
+          # 배포된 사이트가 안정화될 시간 확보 (60s)
+          sleep 60
+          npm run test:e2e -- --grep "CP-1"  # happy path만 — 빠른 smoke
