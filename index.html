@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daily News — 어제 24h IT × 4기준 점수 × 10인 분야 전문가 분석</title>
+  <meta name="description" content="매일 아침 KST 06:00에 발행되는 IT 의사결정자용 정적 대시보드. 어제 24시간 동안의 뉴스·커뮤니티·오픈소스 활동을 4기준으로 평가하고 10명 분야 전문가가 분석합니다." />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="Daily News RSS" href="feed.xml" />
+</head>
+<body>
+  <!-- ======================== HEADER ======================== -->
+  <header class="app-header">
+    <div class="app-header__inner">
+      <div class="brand">
+        <div class="brand__title">Daily News</div>
+        <div class="brand__sub">어제 24h IT × 4기준 점수 × 10인 분야 전문가 분석</div>
+      </div>
+      <div class="header-meta">
+        <span class="header-meta__date" id="header-date">— · 발행 시각 06:00 KST</span>
+        <div class="header-actions">
+          <button class="icon-btn" id="theme-toggle" title="테마 전환" aria-label="테마 전환">◐</button>
+          <a class="icon-btn" href="archive.html" title="아카이브" aria-label="아카이브">📚</a>
+          <a class="icon-btn" href="feed.xml" title="RSS" aria-label="RSS">📡</a>
+          <button class="icon-btn" id="gmail-draft" title="Gmail 드래프트" aria-label="Gmail 드래프트">✉️</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ======================== HERO ======================== -->
+    <section class="hero" aria-label="오늘의 5초 결론">
+      <!-- 5초 결론 바 -->
+      <div class="conclusion-bar">
+        <span class="conclusion-bar__label">5초 결론</span>
+        <span class="conclusion-bar__headline" id="conclusion-headline">…</span>
+        <span class="conclusion-bar__score">
+          <span class="conclusion-bar__score-num" id="conclusion-score">—</span>
+          <span class="conclusion-bar__score-label">종합 점수</span>
+        </span>
+        <span class="conclusion-bar__delta">
+          <span class="conclusion-bar__delta-num" id="conclusion-delta">—</span>
+          <span class="conclusion-bar__delta-label">vs 7일 평균</span>
+        </span>
+      </div>
+
+      <!-- 헤드라인 + 사이드 -->
+      <div class="hero-grid">
+        <article class="headline-card" id="headline-card">
+          <span class="headline-card__tag">🎯 헤드라인</span>
+          <h2 class="headline-card__title"><a href="#" id="headline-title-link">로딩 중…</a></h2>
+          <p class="headline-card__summary" id="headline-summary"></p>
+          <div class="headline-card__meta" id="headline-meta"></div>
+        </article>
+
+        <aside class="hero-side">
+          <div class="summary-card">
+            <div class="summary-card__title">📋 데일리 5줄 요약</div>
+            <ol id="five-lines"></ol>
+          </div>
+
+          <div class="quote-card">
+            <div class="quote-card__icon">💬</div>
+            <div class="quote-card__text" id="quote-text"></div>
+            <div class="quote-card__author" id="quote-author"></div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- 에디토리얼 lead + 통계 -->
+      <article class="lead-card">
+        <div class="lead-card__title">📰 왜 오늘 중요한가</div>
+        <p id="lead-text"></p>
+        <div class="stats-grid" id="stats-grid"></div>
+      </article>
+
+      <!-- 일자 버킷 + 소스 다양성 -->
+      <div class="hero-meta-row">
+        <div class="bucket-strip" id="bucket-strip"></div>
+        <div class="diversity-meter">
+          <div class="diversity-meter__label">
+            <span>🌍 소스 다양성</span>
+            <span id="diversity-total">100%</span>
+          </div>
+          <div class="diversity-meter__bar" id="diversity-bar"></div>
+          <div class="diversity-meter__legend" id="diversity-legend"></div>
+        </div>
+      </div>
+
+      <!-- 인플루언서 strip -->
+      <div class="influencer-strip" id="influencer-strip"></div>
+    </section>
+
+    <!-- ======================== TABS ======================== -->
+    <nav class="tabs-nav" role="tablist">
+      <button class="tab-btn" role="tab" data-tab="news" data-active="true">
+        <span>📰 뉴스</span>
+        <span class="tab-btn__count" id="count-news">—</span>
+      </button>
+      <button class="tab-btn" role="tab" data-tab="community">
+        <span>🧑‍🤝‍🧑 커뮤니티</span>
+        <span class="tab-btn__count" id="count-community">—</span>
+      </button>
+      <button class="tab-btn" role="tab" data-tab="oss">
+        <span>📦 오픈소스</span>
+        <span class="tab-btn__count" id="count-oss">—</span>
+      </button>
+      <button class="tab-btn" role="tab" data-tab="insights">
+        <span>🧠 인사이트</span>
+        <span class="tab-btn__count" id="count-insights">—</span>
+      </button>
+    </nav>
+
+    <!-- ======================== NEWS TAB ======================== -->
+    <section class="tab-content" data-tab="news" role="tabpanel">
+      <div class="breadcrumb" id="news-breadcrumb">전체</div>
+
+      <div class="toolbar">
+        <div class="toolbar-row">
+          <div class="chip-row" id="news-categories"></div>
+        </div>
+        <div class="toolbar-row">
+          <div class="bucket-strip" id="news-buckets" style="flex: 0 0 auto;"></div>
+          <div class="score-slider">
+            <span>최소 점수</span>
+            <input type="range" id="news-score-min" min="0" max="5" step="0.1" value="0" />
+            <span class="score-slider__num" id="news-score-num">0.0</span>
+          </div>
+          <label class="toolbar__search" id="news-search">
+            <span class="toolbar__search-icon">🔎</span>
+            <input type="search" placeholder="키워드·태그·소스 검색" data-search-input />
+            <button class="toolbar__search-clear" data-search-clear aria-label="지우기">✕</button>
+          </label>
+          <button class="toolbar__multi-toggle" id="news-multi-toggle" data-active="false">⌘ 다중선택</button>
+          <span class="toolbar__counter" id="news-counter">—</span>
+        </div>
+        <div class="toolbar-row saved-views" id="news-saved-views" hidden>
+          <span class="saved-views__label">📌 저장된 뷰:</span>
+        </div>
+      </div>
+
+      <div class="cards-grid" id="news-grid"></div>
+    </section>
+
+    <!-- ======================== COMMUNITY TAB ======================== -->
+    <section class="tab-content" data-tab="community" role="tabpanel" hidden>
+      <div class="toolbar">
+        <div class="toolbar-row">
+          <div class="chip-row" id="community-sources"></div>
+        </div>
+        <div class="toolbar-row">
+          <div class="chip-row" id="community-categories"></div>
+        </div>
+        <div class="toolbar-row">
+          <div class="toolbar__sort">
+            <button class="chip" data-sort="hot" data-active="true">🔥 인기순</button>
+            <button class="chip" data-sort="recent">⏱ 최신순</button>
+          </div>
+          <label class="toolbar__search">
+            <span class="toolbar__search-icon">🔎</span>
+            <input type="search" placeholder="제목·소스·작성자 검색" data-search-input />
+            <button class="toolbar__search-clear" data-search-clear>✕</button>
+          </label>
+          <span class="toolbar__counter" id="community-counter">—</span>
+        </div>
+      </div>
+
+      <div class="cards-grid cards-grid--community" id="community-grid"></div>
+    </section>
+
+    <!-- ======================== OSS TAB ======================== -->
+    <section class="tab-content" data-tab="oss" role="tabpanel" hidden>
+      <div class="toolbar">
+        <div class="toolbar-row">
+          <div class="chip-row" id="oss-types"></div>
+        </div>
+        <div class="toolbar-row">
+          <label class="toolbar__search">
+            <span class="toolbar__search-icon">🔎</span>
+            <input type="search" placeholder="저장소·언어·라이선스 검색" data-search-input />
+            <button class="toolbar__search-clear" data-search-clear>✕</button>
+          </label>
+          <span class="toolbar__counter" id="oss-counter">—</span>
+        </div>
+      </div>
+
+      <div class="cards-grid cards-grid--oss" id="oss-grid"></div>
+    </section>
+
+    <!-- ======================== INSIGHTS TAB ======================== -->
+    <section class="tab-content" data-tab="insights" role="tabpanel" hidden>
+      <div class="insights-toolbar">
+        <div class="view-toggle" id="insights-view">
+          <button data-view="compact" data-active="true">📋 컴팩트</button>
+          <button data-view="expanded">📖 확장</button>
+        </div>
+        <span class="toolbar__counter" id="insights-counter">10명 전문가</span>
+      </div>
+      <div class="insights-grid" id="insights-grid" data-mode="compact"></div>
+    </section>
+
+    <!-- ======================== MULTI-SELECT TOOLBAR ======================== -->
+    <div class="multi-toolbar" id="multi-toolbar" hidden>
+      <span class="multi-toolbar__count" id="multi-count">0개 선택</span>
+      <button data-action="bookmark">🔖 모두 북마크</button>
+      <button data-action="read">✅ 읽음 처리</button>
+      <button data-action="copy">📋 링크 복사</button>
+      <button data-action="clear">✕ 해제</button>
+    </div>
+  </main>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer class="app-footer">
+    <div class="app-footer__inner">
+      <span>Daily News · 매일 아침 KST 06:00 자동 발행</span>
+      <span class="sep">·</span>
+      <span id="footer-generated">생성 시각: —</span>
+      <span class="sep">·</span>
+      <a href="archive.html">📚 아카이브</a>
+      <span class="sep">·</span>
+      <a href="feed.xml">📡 RSS 2.0</a>
+      <span class="sep">·</span>
+      <button id="footer-gmail">✉️ Gmail 드래프트</button>
+      <span class="sep">·</span>
+      <span style="margin-left: auto; opacity: 0.6;">Compound Engineering · L3 Meta-loop</span>
+    </div>
+  </footer>
+
+  <!-- ======================== INSIGHT MODAL ======================== -->
+  <div class="modal-backdrop" id="insight-modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-role">
+    <div class="modal" id="modal-inner"><!-- populated by JS --></div>
+  </div>
+
+  <!-- ======================== DATA + SCRIPTS ======================== -->
+  <script src="data/today.js"></script>
+  <script src="data/experts.js"></script>
+  <script src="data/archive.js"></script>
+  <script src="scripts/storage.js"></script>
+  <script src="scripts/insights.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>
