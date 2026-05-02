@@ -98,8 +98,10 @@ function scoreImpact(item) {
 
 function scoreFreshness(item, windowHours) {
   if (!item.publishedAt) return 0;
-  const ageMs = Date.now() - Date.parse(item.publishedAt);
-  if (isNaN(ageMs) || ageMs < 0) return 5; // 미래 시각 = 최신으로 간주
+  const parsed = Date.parse(item.publishedAt);
+  if (isNaN(parsed)) return 0; // 파싱 실패는 데이터 오류 → 0
+  const ageMs = Date.now() - parsed;
+  if (ageMs < 0) return 5; // 미래 시각 = 최신으로 간주
   const ageHours = ageMs / 3_600_000;
   // 0h → 5점, windowHours → 1점, 그 이후 선형 0점까지
   const window = windowHours || 24;
