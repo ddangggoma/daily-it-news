@@ -134,10 +134,14 @@
   </footer>
 
   <script src="data/archive.js"></script>
+  <script src="scripts/util.js"></script>
   <script src="scripts/storage.js"></script>
   <script>
     (function () {
       "use strict";
+
+      // 공유 헬퍼 (util.js)
+      const { scoreGrade: grade, fmtKstShortDate: fmtD } = window.DN;
 
       // 테마 (storage.js와 동일 정책)
       const theme = (window.Storage && window.Storage.getTheme()) || "light";
@@ -156,16 +160,6 @@
       const sub  = document.getElementById("archive-sub");
       if (sub) sub.textContent = `총 ${arr.length}회 발행 · 일자별 헤드라인 · 통계 · 종합 점수`;
       if (!list) return;
-
-      const grade = (n) => n >= 5 ? 5 : n >= 4 ? 4 : n >= 3 ? 3 : 2;
-      const fmtD = (iso) => {
-        // YYYY-MM-DD → "2026 · 5월 1일 (목)"
-        const d = new Date(iso + "T00:00:00+09:00");
-        if (isNaN(d.getTime())) return iso;
-        const dow = ["일","월","화","수","목","금","토"][d.getUTCDay()];
-        const opt = { timeZone: "Asia/Seoul", month: "long", day: "numeric", weekday: "short" };
-        return new Intl.DateTimeFormat("ko-KR", opt).format(d);
-      };
 
       arr.forEach((entry, idx) => {
         const isToday = idx === 0;          // 첫 항목이 가장 최신 = 오늘

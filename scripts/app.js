@@ -13,116 +13,26 @@
  * 노출 (insights.js가 사용):
  *   window.App = { renderGauges, renderMiniGauges, switchTab, focusItem }
  *
- * 의존: window.__DAILY__, window.__EXPERTS__, window.__ARCHIVE__, window.Storage, window.Insights
+ * 의존:
+ *   window.DN (util.js — 상수·헬퍼)
+ *   window.__DAILY__, window.__EXPERTS__, window.__ARCHIVE__
+ *   window.Storage, window.Insights
  */
 (function () {
   "use strict";
 
   // ───────────────────────────────────────────────────────
-  // 1. 상수
+  // 1. 공유 헬퍼 + 상수 (util.js)
   // ───────────────────────────────────────────────────────
-  const CATEGORIES = [
-    { key: "ai",        icon: "🤖", label: "AI / Agent" },
-    { key: "devtools",  icon: "🛠", label: "DevTools" },
-    { key: "ax",        icon: "🎯", label: "AX 방법론·문화" },
-    { key: "robotics",  icon: "⚙️", label: "로봇" },
-    { key: "display",   icon: "📺", label: "디스플레이" },
-    { key: "design",    icon: "🎨", label: "디자인" },
-    { key: "papers",    icon: "📄", label: "논문" },
-    { key: "standards", icon: "⚖️", label: "특허/표준" },
-    { key: "telecom",   icon: "📡", label: "통신" },
-  ];
-  const CATEGORY_BY_KEY = Object.fromEntries(CATEGORIES.map((c) => [c.key, c]));
-
-  const GAUGES = [
-    { key: "impact",     icon: "🎯", label: "파급력",
-      tooltip: "산업·시장 구조 변화 + 의사결정자 행동 변화" },
-    { key: "freshness",  icon: "⚡", label: "시의성",
-      tooltip: "게시 시점 + 1차 보도 여부 + 후속 보도 비율" },
-    { key: "depth",      icon: "🔬", label: "기술도",
-      tooltip: "기술 난이도·구현 디테일·재현 가능성·외부 검증" },
-    { key: "buzz",       icon: "🔥", label: "반응도",
-      tooltip: "커뮤니티·SNS 반응 + 시간당 증가율 + 즉시 적용성" },
-  ];
-
-  const COUNTRY_FLAG = {
-    US: "🇺🇸", KR: "🇰🇷", Global: "🌍", CN: "🇨🇳", EU: "🇪🇺", JP: "🇯🇵", IN: "🇮🇳",
-  };
-
-  const OSS_TYPES = [
-    { key: "all",       label: "전체" },
-    { key: "trending",  label: "🔥 trending" },
-    { key: "korean",    label: "🇰🇷 한국" },
-    { key: "agent",     label: "agent" },
-    { key: "framework", label: "framework" },
-    { key: "library",   label: "library" },
-    { key: "tool",      label: "tool" },
-    { key: "runtime",   label: "runtime" },
-    { key: "model",     label: "model" },
-    { key: "dataset",   label: "dataset" },
-  ];
+  const {
+    el, $, $$, escapeHtml,
+    avgScore, scoreGrade, fmtScore, fmtNum, fmtRelTime, fmtKstNow,
+    debounce, stars,
+    CATEGORIES, CATEGORY_BY_KEY, COUNTRY_FLAG, GAUGES, OSS_TYPES,
+  } = window.DN;
 
   // ───────────────────────────────────────────────────────
-  // 2. 유틸
-  // ───────────────────────────────────────────────────────
-  const $  = (sel, root) => (root || document).querySelector(sel);
-  const $$ = (sel, root) => Array.from((root || document).querySelectorAll(sel));
-
-  function el(tag, attrs, ...children) {
-    const node = document.createElement(tag);
-    if (attrs) {
-      for (const k in attrs) {
-        if (k === "className") node.className = attrs[k];
-        else if (k === "style") node.setAttribute("style", attrs[k]);
-        else if (k === "html") node.innerHTML = attrs[k];
-        else if (k.startsWith("on") && typeof attrs[k] === "function") {
-          node.addEventListener(k.slice(2).toLowerCase(), attrs[k]);
-        } else if (attrs[k] != null && attrs[k] !== false) {
-          node.setAttribute(k, attrs[k]);
-        }
-      }
-    }
-    for (const c of children) {
-      if (c == null || c === false) continue;
-      node.appendChild(typeof c === "string" || typeof c === "number"
-        ? document.createTextNode(String(c)) : c);
-    }
-    return node;
-  }
-
-  const fmtScore = (n) => (n == null ? "—" : Number(n).toFixed(1));
-  const scoreGrade = (n) => n >= 5 ? 5 : n >= 4 ? 4 : n >= 3 ? 3 : 2;
-  const fmtNum = (n) => (n == null ? "—" : Number(n).toLocaleString());
-
-  function debounce(fn, ms) {
-    let t;
-    return function () {
-      clearTimeout(t);
-      const args = arguments;
-      t = setTimeout(() => fn.apply(this, args), ms || 200);
-    };
-  }
-
-  function fmtRelTime(iso) {
-    if (!iso) return "";
-    const t = Date.parse(iso);
-    if (isNaN(t)) return "";
-    const diffMin = Math.max(1, Math.round((Date.now() - t) / 60000));
-    if (diffMin < 60) return `${diffMin}분 전`;
-    const h = Math.round(diffMin / 60);
-    if (h < 24) return `${h}시간 전`;
-    const d = Math.round(h / 24);
-    return `${d}일 전`;
-  }
-
-  function fmtKstNow() {
-    const d = new Date();
-    const opts = { timeZone: "Asia/Seoul", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit" };
-    return new Intl.DateTimeFormat("ko-KR", opts).format(d);
-  }
-
-  // ───────────────────────────────────────────────────────
-  // 3. 게이지 렌더 (4기준 × 게이지)
+  // 2. 게이지 렌더 (4기준 × 게이지)
   // ───────────────────────────────────────────────────────
   function renderGauges(scores, opts) {
     opts = opts || {};
@@ -245,12 +155,6 @@
 
     // 인플루언서
     renderInfluencers(D.influencers || []);
-  }
-
-  function avgScore(s) {
-    if (!s) return 0;
-    const arr = ["impact", "freshness", "depth", "buzz"].map((k) => Number(s[k] || 0));
-    return arr.reduce((a, b) => a + b, 0) / arr.length;
   }
 
   function renderBucketStrip(target, buckets, isHero) {
@@ -615,11 +519,6 @@
     return card;
   }
 
-  function stars(score) {
-    const full = Math.round(score);
-    return "★".repeat(Math.max(0, Math.min(5, full))) + "☆".repeat(Math.max(0, 5 - full));
-  }
-
   // 다중 선택 도구
   function setupMultiToolbar() {
     const tb = $("#multi-toolbar");
@@ -718,7 +617,7 @@
       srcRow.appendChild(chip("__all", "전체", () => { comState.sources.clear(); refreshSrc(); renderCommunityGrid(); }, true));
       sources.forEach((s) => {
         const sample = items.find((i) => i.source === s);
-        srcRow.appendChild(chip(s, `${dotColor(sample.sourceColor)} ${sample.sourceLabel || s}`, () => {
+        srcRow.appendChild(chip(s, sample.sourceLabel || s, () => {
           if (comState.sources.has(s)) comState.sources.delete(s);
           else comState.sources.add(s);
           refreshSrc(); renderCommunityGrid();
@@ -1032,10 +931,6 @@
     if (typeof label === "string") b.textContent = label;
     if (onClick) b.addEventListener("click", onClick);
     return b;
-  }
-
-  function dotColor(color) {
-    return ""; // 색은 칩 자체에 inline-style로 줄 수도 있지만, 본 빌드에서는 미사용
   }
 
   function uniqueBy(arr, key) {

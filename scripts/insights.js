@@ -10,6 +10,7 @@
  *   }
  *
  * 의존:
+ *   window.DN          (util.js — el, $, $$, escapeHtml, CATEGORY_BY_KEY, INSIGHT_TAGS)
  *   window.__DAILY__   (insights[], news[], oss[], community[])
  *   window.__EXPERTS__ (10명)
  *   window.App         (renderMiniGauges, focusItem, switchTab) — app.js 가 노출
@@ -19,50 +20,14 @@
 (function () {
   "use strict";
 
-  // ── 상수 ──────────────────────────────────────────────
-  const TAG_META = {
-    opportunity: { label: "💡 기회",  color: "#a855f7" },
-    pattern:     { label: "📜 패턴",  color: "#7c2d12" },
-    caution:     { label: "⚠ 경계",   color: "#ef4444" },
-    bullish:     { label: "📈 강세",  color: "#10b981" },
-  };
-
-  // 카테고리 매핑은 app.js와 동일하게 유지 (관련 뉴스 카드의 아이콘용)
-  const CAT_ICON = {
-    ai: "🤖", devtools: "🛠", ax: "🎯", robotics: "⚙️", display: "📺",
-    design: "🎨", papers: "📄", standards: "⚖️", telecom: "📡",
-  };
-
-  // ── DOM 헬퍼 ──────────────────────────────────────────
-  const $  = (sel, root) => (root || document).querySelector(sel);
-  const $$ = (sel, root) => Array.from((root || document).querySelectorAll(sel));
-
-  function el(tag, attrs, ...children) {
-    const node = document.createElement(tag);
-    if (attrs) {
-      for (const k in attrs) {
-        if (k === "className") node.className = attrs[k];
-        else if (k === "style") node.setAttribute("style", attrs[k]);
-        else if (k.startsWith("on") && typeof attrs[k] === "function") {
-          node.addEventListener(k.slice(2).toLowerCase(), attrs[k]);
-        } else if (k === "html") {
-          node.innerHTML = attrs[k];
-        } else if (attrs[k] != null) {
-          node.setAttribute(k, attrs[k]);
-        }
-      }
-    }
-    for (const c of children) {
-      if (c == null || c === false) continue;
-      node.appendChild(typeof c === "string" ? document.createTextNode(c) : c);
-    }
-    return node;
-  }
-
-  const escapeHtml = (s) =>
-    String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({
-      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
-    }[c]));
+  // 공유 헬퍼 + 상수 (util.js)
+  const { el, $, $$, escapeHtml, CATEGORY_BY_KEY, INSIGHT_TAGS } = window.DN;
+  // 카테고리 아이콘 (관련 뉴스 카드용 — key→icon만 사용)
+  const CAT_ICON = Object.fromEntries(
+    Object.entries(CATEGORY_BY_KEY).map(([k, v]) => [k, v.icon])
+  );
+  // 인사이트 태그 (util.js의 INSIGHT_TAGS 사용)
+  const TAG_META = INSIGHT_TAGS;
 
   // ── 전문가 인덱스 ────────────────────────────────────
   function expertById(id) {
