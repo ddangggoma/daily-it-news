@@ -10,7 +10,7 @@
   "scripts": {
     "validate": "node scripts/validate-data.js",
     "feed": "node scripts/generate-feed.js",
-    "test:unit": "node --test tests/unit/",
+    "test:unit": "node --test tests/unit/*.test.js",
     "test:e2e": "playwright test",
     "test:e2e:headed": "playwright test --headed",
     "test": "npm run test:unit && npm run test:e2e",
