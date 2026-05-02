@@ -1,0 +1,22 @@
+{
+  "name": "daily-news",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Daily News — 어제 24h IT × 4기준 점수 × 10인 분야 전문가 분석. 정적 대시보드 + 자동 발행 파이프라인.",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "validate": "node scripts/validate-data.js",
+    "feed": "node scripts/generate-feed.js",
+    "test:unit": "node --test tests/unit/",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test": "npm run test:unit && npm run test:e2e",
+    "serve": "python3 -m http.server 8765"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0"
+  }
+}

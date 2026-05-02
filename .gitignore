@@ -18,9 +18,15 @@
 # Local Claude settings (per-developer)
 .claude/settings.local.json
 
-# Bun
+# Node / Bun
 node_modules/
 bun.lockb
+
+# Playwright artifacts (regenerated on every test run)
+test-results/
+playwright-report/
+blob-report/
+.playwright/
 
 # OS
 .DS_Store
