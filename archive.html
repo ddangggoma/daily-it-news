@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>아카이브 — Daily News</title>
   <meta name="description" content="Daily News 발행 기록. 일자별 헤드라인·통계·종합 점수." />
+  <!-- FOUC 방지: localStorage의 테마를 paint 전에 적용. blocking이지만 1ms 미만. -->
+  <script>(function(){try{var t=JSON.parse(localStorage.getItem("dn.theme")||"\"light\"");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
   <link rel="stylesheet" href="assets/styles.css" />
   <link rel="alternate" type="application/rss+xml" title="Daily News RSS" href="feed.xml" />
   <style>

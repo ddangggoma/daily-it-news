@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Daily News — 어제 24h IT × 4기준 점수 × 10인 분야 전문가 분석</title>
   <meta name="description" content="매일 아침 KST 06:00에 발행되는 IT 의사결정자용 정적 대시보드. 어제 24시간 동안의 뉴스·커뮤니티·오픈소스 활동을 4기준으로 평가하고 10명 분야 전문가가 분석합니다." />
+  <!-- FOUC 방지: localStorage의 테마를 paint 전에 적용. blocking이지만 1ms 미만. -->
+  <script>(function(){try{var t=JSON.parse(localStorage.getItem("dn.theme")||"\"light\"");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
   <link rel="stylesheet" href="assets/styles.css" />
   <link rel="alternate" type="application/rss+xml" title="Daily News RSS" href="feed.xml" />
 </head>
