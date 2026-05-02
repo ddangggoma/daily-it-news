@@ -9,3 +9,4 @@
 - [Reference Repos](reference_repos.md) — vendor 디렉터리에 있는 세 원본 repo 위치와 역할
 - [Dashboard Runtime](dashboard_runtime.md) — 정적 대시보드 JS 런타임 작성 사이클 학습 (Audit-first · DOM 계약 · file:// 호환 · Preview MCP 한계)
 - [Publish Channels](publish_channels.md) — archive.html + feed.xml 사이클 학습 (정적 사이트 보조 페이지 패턴 · Node 미니 generator · RFC822 · XML 안전)
+- [Eng Review Findings](eng_review_findings.md) — `/plan-eng-review` 전체 프로젝트 결과 (16 issues · 3 critical silent failures · 40+ test gaps · 9 TODOs queued)
