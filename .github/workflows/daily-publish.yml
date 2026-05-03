@@ -83,6 +83,17 @@ jobs:
       - name: Run unit tests (regression gate)
         run: npm run test:unit
 
+      # Pre-deploy E2E gate — the most important reliability change.
+      # Previously E2E ran AFTER deploy, so a failed e2e meant 24h of broken
+      # site until the next cron. Now E2E runs against the freshly-built
+      # today.js BEFORE commit/push/deploy. Failure → no commit → no push →
+      # no deploy → previous published version stays live (auto-rollback by
+      # prevention). Closes adversarial ADV-3.
+      - name: Install Playwright Chromium for pre-deploy gate
+        run: npx playwright install --with-deps chromium
+      - name: Pre-deploy E2E gate (happy path + perf + failure modes)
+        run: npm run test:e2e
+
       - name: Commit + push regenerated artifacts
         id: commit
         run: |
@@ -95,6 +106,9 @@ jobs:
             echo "published_at=skipped" >> "$GITHUB_OUTPUT"
           else
             git commit -m "Daily publish: $NOW"
+            # Rebase before push to handle queued workflow_dispatch + scheduled overlap.
+            # Closes reliability REL-008 (race condition, low-conf P3).
+            git pull --rebase --autostash origin "$(git rev-parse --abbrev-ref HEAD)" || true
             git push
             echo "published_at=$NOW" >> "$GITHUB_OUTPUT"
           fi
@@ -143,4 +157,6 @@ jobs:
         run: |
           # 배포된 사이트가 안정화될 시간 확보 (60s)
           sleep 60
-          npm run test:e2e -- --grep "CP-1"  # happy path만 — 빠른 smoke
+          # CP-1 만 — 페이지가 떴고 hero가 산출되었는지만 확인.
+          # 깊은 회귀는 build job의 pre-deploy gate가 이미 잡았다.
+          npm run test:e2e -- --grep "CP-1"

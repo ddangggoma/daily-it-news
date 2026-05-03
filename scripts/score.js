@@ -362,4 +362,5 @@ if (require.main === module) main().catch((e) => { console.error(`[score] FAILED
 module.exports = {
   scoreImpact, scoreFreshness, scoreDepth, scoreBuzz,
   shapeForDashboard, detectOssType, SOURCE_AUTHORITY,
+  llmRefine,    // exported for unit tests (mocked fetch)
 };

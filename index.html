@@ -262,6 +262,8 @@
   </div>
 
   <!-- ======================== DATA + SCRIPTS ======================== -->
+  <!-- RUM is loaded first + async so it captures LCP without delaying critical path. -->
+  <script src="scripts/perf.js" async></script>
   <script src="data/today.js"></script>
   <script src="data/experts.js"></script>
   <script src="data/archive.js"></script>
