@@ -93,12 +93,17 @@ test("broken fixture detects: scoreAvg not number", () => {
   assert.match(r.stderr, /conclusion\.scoreAvg.*not number/);
 });
 
-// ── warnings (not errors): exit 0 with warning printed ───
-test("today.js warnings on counts mismatch (does NOT fail validation)", () => {
+// ── counts mismatch is now ERROR (was warn) — daily-publish의 silent UI lie 차단 ──
+test("today.js passes validation (counts === array length post-fix)", () => {
   const r = run(TODAY);
-  assert.equal(r.code, 0); // mismatch is warning, not error
-  // console.warn writes to stderr in Node — warnings show up there.
-  assert.match(r.stderr, /counts\.news:.*array length/);
+  assert.equal(r.code, 0, `expected today.js to pass validation post-fix; got ${r.code}\nstderr: ${r.stderr}`);
+});
+
+test("counts mismatch is now ERROR not warning (daily-publish gate)", () => {
+  const r = run(BROKEN);
+  assert.equal(r.code, 1);
+  // broken fixture has counts.news=99 vs news.length=2 — must be reported as error
+  assert.match(r.stderr, /counts\.news.*≠.*array length/);
 });
 
 // ── 모듈 직접 import: helpers ────────────────────────────

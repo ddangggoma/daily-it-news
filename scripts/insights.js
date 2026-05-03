@@ -267,6 +267,14 @@
     if (!arr.length) return;
     currentInsightIndex = (currentInsightIndex + delta + arr.length) % arr.length;
     renderModal();
+    // Re-seat focus after innerHTML='' detached the previously focused button.
+    // Without this, document.activeElement falls back to <body>, both trapTab
+    // first/last comparisons miss, and Tab escapes the modal — silent
+    // aria-modal violation. Closes frontend-races P1 FR-1.
+    requestAnimationFrame(() => {
+      const first = focusableIn($("#modal-inner"))[0];
+      if (first) first.focus();
+    });
   }
 
   function renderModal() {

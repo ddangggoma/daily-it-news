@@ -224,12 +224,17 @@ function validateCounts(D, V, sets) {
     ["oss",       sets.ossIds],
     ["insights",  sets.insightIds],
   ];
+  // STRICT GATE: counts MUST equal array length (else dashboard tab badge lies to users).
+  // History: this was V.warn (silent pass), but the autonomous-session pipeline build-today.js
+  // hardcoded counts.insights = 10 — the exact silent-failure pattern this project's
+  // /plan-eng-review identified as A2. Promoted to V.err so build-today.js fails loud
+  // when counts and array length diverge.
+  // Fixture data with intentional mismatch should set counts to array length, not the
+  // display target.
   pairs.forEach(([k, set]) => {
     if (!isNum(D.counts[k])) return V.err(`counts.${k}`, "not number");
-    // counts can exceed array length (display target); array length is the source of truth for items present.
-    // STRICT mode: counts MUST equal array length (else display lies).
     if (D.counts[k] !== set.size) {
-      V.warn(`counts.${k}`, `${D.counts[k]} ≠ ${set.size} (array length). Display tab badge will mislead users.`);
+      V.err(`counts.${k}`, `${D.counts[k]} ≠ ${set.size} (array length). Display tab badge would mislead users; build-today.js should set counts from arrays.`);
     }
   });
 }

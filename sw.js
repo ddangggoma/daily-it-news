@@ -9,7 +9,7 @@
  *
  * 캐시 키: 'dn-v1' (배포 시 sw.js의 VERSION 변경 → 자동 invalidation).
  */
-const VERSION = "dn-v1";
+const VERSION = "dn-v2";   // bumped for cache invalidation after SW fix
 const PRECACHE = [
   "./",
   "./index.html",
@@ -19,19 +19,28 @@ const PRECACHE = [
   "./scripts/storage.js",
   "./scripts/insights.js",
   "./scripts/app.js",
-  "./scripts/generate-feed.js",  // 의미 없지만 캐시 안전망
   "./data/today.js",
   "./data/experts.js",
   "./data/archive.js",
   "./manifest.webmanifest",
 ];
+// generate-feed.js intentionally NOT precached: it is Node-only and a 404 would
+// cause cache.addAll (atomic) to reject the whole batch.
 
-// ── install: 사전 캐싱 ──────────────────────────────────
+// ── install: 사전 캐싱 — Promise.allSettled로 atomic 문제 회피 ──────
 self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(VERSION).then((cache) => cache.addAll(PRECACHE).catch(() => {}))
-      .then(() => self.skipWaiting())
-  );
+  event.waitUntil((async () => {
+    const cache = await caches.open(VERSION);
+    // Per-URL puts so one 404 doesn't void the entire precache. Failures are
+    // surfaced (not silently swallowed) so chrome://inspect can see them.
+    const results = await Promise.allSettled(
+      PRECACHE.map((url) => cache.add(url))
+    );
+    results.forEach((r, i) => {
+      if (r.status === "rejected") console.warn("[sw] precache miss:", PRECACHE[i], r.reason);
+    });
+    await self.skipWaiting();
+  })());
 });
 
 // ── activate: 옛 버전 캐시 정리 ─────────────────────────
@@ -52,21 +61,26 @@ self.addEventListener("fetch", (event) => {
   // 같은 origin만 캐시 대상
   if (url.origin !== self.location.origin) return;
 
-  event.respondWith(
-    networkWithFallback(req)
-  );
+  event.respondWith(networkWithFallback(req, event));
 });
 
-async function networkWithFallback(req) {
+async function networkWithFallback(req, event) {
   // network-first, 5초 timeout
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), 5000);
   try {
     const res = await fetch(req, { signal: ctrl.signal });
     clearTimeout(timer);
-    if (res && res.ok && res.type === "basic") {
-      // 캐시 비동기 갱신
-      caches.open(VERSION).then((c) => c.put(req, res.clone())).catch(() => {});
+    // Cache only basic 2xx responses. Compare res.url to req.url to avoid pinning
+    // an unintended response on accidental cross-origin redirect (defense in depth).
+    if (res && res.ok && res.type === "basic" && res.url === req.url) {
+      // event.waitUntil keeps the SW alive until cache.put settles. Without this,
+      // the browser can terminate mid-put and leave a stale cache entry.
+      // Closes frontend-races FR-5 + reliability REL-006.
+      const putPromise = caches.open(VERSION)
+        .then((c) => c.put(req, res.clone()))
+        .catch((err) => console.warn("[sw] cache.put failed:", req.url, err));
+      if (event && typeof event.waitUntil === "function") event.waitUntil(putPromise);
     }
     return res;
   } catch (e) {

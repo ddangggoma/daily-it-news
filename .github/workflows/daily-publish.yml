@@ -44,19 +44,29 @@ jobs:
       - name: Collect sources (HN + GitHub Trending + RSS)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Bind workflow input to env so the value is never inlined into the shell —
+          # closes security P1 SEC-1 (shell injection via inputs.hours).
+          HOURS_INPUT: ${{ inputs.hours || '24' }}
         run: |
+          # Defense in depth: assert HOURS_INPUT is a positive integer before use.
+          if ! [[ "$HOURS_INPUT" =~ ^[0-9]+$ ]] || [ "$HOURS_INPUT" -lt 1 ]; then
+            echo "ERROR: HOURS_INPUT must be a positive integer, got: $HOURS_INPUT" >&2
+            exit 1
+          fi
           node scripts/collect.js \
-            --hours=${{ inputs.hours || '24' }} \
+            --hours="$HOURS_INPUT" \
             --out=data/raw-collection.json
 
       - name: Score with 4-criteria
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          USE_LLM: ${{ inputs.use_llm }}
+          HOURS_INPUT: ${{ inputs.hours || '24' }}
         run: |
-          if [ "${{ inputs.use_llm }}" = "true" ] && [ -n "$ANTHROPIC_API_KEY" ]; then
-            node scripts/score.js --in=data/raw-collection.json --out=data/scored-items.json --llm
+          if [ "$USE_LLM" = "true" ] && [ -n "$ANTHROPIC_API_KEY" ]; then
+            node scripts/score.js --in=data/raw-collection.json --out=data/scored-items.json --hours="$HOURS_INPUT" --llm
           else
-            node scripts/score.js --in=data/raw-collection.json --out=data/scored-items.json
+            node scripts/score.js --in=data/raw-collection.json --out=data/scored-items.json --hours="$HOURS_INPUT"
           fi
 
       - name: Build today.js
@@ -98,6 +108,10 @@ jobs:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     needs: build
+    timeout-minutes: 5
+    outputs:
+      # Re-export so e2e-after-deploy gets a stable URL even when not in same job
+      page_url: ${{ steps.deployment.outputs.page_url }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -108,7 +122,12 @@ jobs:
   e2e-after-deploy:
     name: Post-deploy smoke (E2E against published site)
     runs-on: ubuntu-latest
-    needs: deploy
+    # needs both build (for outputs.published_at) AND deploy (for ordering + page_url).
+    # Closes reliability P1 REL-001 — without `build` in needs:, GH Actions returned
+    # empty string for needs.build.outputs.published_at, and `'' != 'skipped'` was
+    # true, silently bypassing the skip-detection.
+    needs: [build, deploy]
+    timeout-minutes: 10
     if: needs.build.outputs.published_at != 'skipped'
     steps:
       - uses: actions/checkout@v4

@@ -86,14 +86,14 @@ function buildFiveLines(news) {
   }));
 }
 
-function buildStats(news) {
+function buildStats(news, insightsCount) {
   const hi = news.filter((n) => avgScore(n) >= 4.5);
   const cats = new Set(news.map((n) => n.category).filter(Boolean));
   return {
     newsTotal: news.length,
     score45plus: hi.length,
     categoriesActive: cats.size,
-    insights: 10,
+    insights: insightsCount,
     todayVs7d: 0,
     todayVs7dPercent: 0,
   };
@@ -235,24 +235,29 @@ function main() {
   const tpl = loadGlobal(TEMPLATE, "__TODAY_TEMPLATE__") || {};
   const experts = loadGlobal(EXPERTS, "__EXPERTS__") || [];
 
-  // 자동 영역
+  // 자동 영역 — buildInsights를 먼저 호출해 그 length가 counts/stats의 source of truth
+  const insights   = buildInsights(news, oss, community, experts, tpl.insightTemplates);
   const conclusion = buildConclusion(news);
   const fiveLines  = buildFiveLines(news);
-  const counts     = { news: news.length, community: community.length, oss: oss.length, insights: 10 };
-  const stats      = buildStats(news);
+  const counts     = { news: news.length, community: community.length, oss: oss.length, insights: insights.length };
+  const stats      = buildStats(news, insights.length);
   const generatedAt = new Date().toISOString();
   const buckets    = buildBuckets(news, generatedAt);
   const sourceDiversity = buildSourceDiversity(news);
-  const insights   = buildInsights(news, oss, community, experts, tpl.insightTemplates);
 
   // 시드 영역 (없으면 자동 생성으로 fallback)
   const quote = tpl.quote || { text: "—", author: "—", role: "—", url: "" };
   const lead  = tpl.lead || buildLead(news, conclusion.scoreAvg);
   const influencers = tpl.influencers || [];
 
-  // KST 날짜 (어제)
-  const date = new Date(Date.now() - 24 * 3600 * 1000)
-    .toISOString().slice(0, 10);
+  // KST 어제 날짜 — Intl.DateTimeFormat with timeZone를 사용해 cron 시각·UTC offset과 무관하게 정확
+  const kstNowMs = Date.now();
+  const kstYesterdayMs = kstNowMs - 24 * 3600 * 1000;
+  const fmt = new Intl.DateTimeFormat("en-CA", { // en-CA는 YYYY-MM-DD 형식 출력
+    timeZone: "Asia/Seoul",
+    year: "numeric", month: "2-digit", day: "2-digit",
+  });
+  const date = fmt.format(new Date(kstYesterdayMs)); // "2026-05-02"
 
   const daily = {
     date, generatedAt,

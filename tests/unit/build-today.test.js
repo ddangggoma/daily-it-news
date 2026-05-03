@@ -46,17 +46,19 @@ test("buildFiveLines: top 5 by avg score", () => {
   lines.forEach((l) => assert.ok(l.anchorId && l.text));
 });
 
-test("buildStats: counts categories + 4.5+ items", () => {
+test("buildStats: counts categories + 4.5+ items + insights count from caller", () => {
   const news = [
     { category: "ai",       scores: { impact: 5, freshness: 5, depth: 5, buzz: 5 } },
     { category: "robotics", scores: { impact: 3, freshness: 3, depth: 3, buzz: 3 } },
     { category: "ai",       scores: { impact: 4.6, freshness: 4.6, depth: 4.6, buzz: 4.6 } },
   ];
-  const s = m.buildStats(news);
+  // signature changed: buildStats(news, insightsCount) — insights is now the actual
+  // length, not a hardcoded 10. Closes correctness P1 #2.
+  const s = m.buildStats(news, 7);
   assert.equal(s.newsTotal, 3);
-  assert.equal(s.score45plus, 2); // 5+ and 4.6+
-  assert.equal(s.categoriesActive, 2); // ai, robotics
-  assert.equal(s.insights, 10);
+  assert.equal(s.score45plus, 2);
+  assert.equal(s.categoriesActive, 2);
+  assert.equal(s.insights, 7);
 });
 
 test("buildBuckets: KST 기준 어제/오늘/기록용 분류", () => {

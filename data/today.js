@@ -18,7 +18,7 @@ window.__DAILY__ = {
     vs7d: 0.42,
   },
 
-  counts: { news: 47, community: 38, oss: 14, insights: 10 },
+  counts: { news: 18, community: 12, oss: 12, insights: 10 },
 
   fiveLines: [
     { text: "OpenAI가 Agents API를 GA로 승격, 자체 오케스트레이터 가치가 급격히 압축됨.", anchorId: "n01" },
