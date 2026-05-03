@@ -36,10 +36,8 @@
     getTheme() { return safe.get("theme", "light"); },
     setTheme(t) { safe.set("theme", t); },
 
-    /* per-item flags */
-    isFlagged(kind, id) {
-      return ensureArr(kind).includes(id);
-    },
+    /* per-item flags — app.js renderNewsGrid caches getFlagged() into a Set
+       per render and checks Set.has() on cards (perf hot path) */
     toggleFlag(kind, id) {
       const arr = ensureArr(kind);
       const i = arr.indexOf(id);
@@ -56,13 +54,8 @@
     },
     getFlagged(kind) { return ensureArr(kind); },
 
-    /* saved views */
+    /* saved views (read+remove only — UI for creating views not yet implemented) */
     getViews() { return ensureArr("savedViews"); },
-    addView(view) {
-      const arr = ensureArr("savedViews");
-      arr.push(view);
-      safe.set("savedViews", arr);
-    },
     removeView(id) {
       const arr = ensureArr("savedViews").filter(v => v.id !== id);
       safe.set("savedViews", arr);

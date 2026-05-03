@@ -33,6 +33,8 @@
 
 const fs = require("fs");
 const path = require("path");
+const { loadBrowserGlobal } = require("./_io");
+const { CATEGORY_KEYS, INSIGHT_TAG_KEYS, SCORE_KEYS } = require("./spec");
 
 const ROOT = path.resolve(__dirname, "..");
 const DEFAULT_FILE = path.join(ROOT, "data", "today.js");
@@ -40,19 +42,13 @@ const EXPERTS_FILE = path.join(ROOT, "data", "experts.js");
 
 const TARGET = process.argv[2] ? path.resolve(process.argv[2]) : DEFAULT_FILE;
 
-// 카테고리 화이트리스트 (spec § 9)
-const CATEGORIES = ["ai", "devtools", "ax", "robotics", "display", "design", "papers", "standards", "telecom"];
-const INSIGHT_TAGS = ["opportunity", "pattern", "caution", "bullish"];
-const SCORE_KEYS = ["impact", "freshness", "depth", "buzz"];
+// Backwards-compat aliases — older callers/tests may import these names.
+const CATEGORIES = CATEGORY_KEYS;
+const INSIGHT_TAGS = INSIGHT_TAG_KEYS;
 
-// ── 유틸 ───────────────────────────────────────────────
-function loadGlobal(file, key) {
-  if (!fs.existsSync(file)) throw Object.assign(new Error(`File not found: ${file}`), { code: "ENOENT" });
-  const code = fs.readFileSync(file, "utf8");
-  const sandbox = { window: {} };
-  new Function("window", code)(sandbox.window);
-  return sandbox.window[key];
-}
+// Backwards-compat alias for the public module.exports.loadGlobal API.
+// Internal callers and tests should switch to loadBrowserGlobal directly.
+const loadGlobal = loadBrowserGlobal;
 
 function isStr(v)    { return typeof v === "string" && v.length > 0; }
 function isNum(v)    { return typeof v === "number" && Number.isFinite(v); }

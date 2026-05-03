@@ -17,6 +17,7 @@
 const fs = require("fs");
 const path = require("path");
 const { performance } = require("perf_hooks");
+const { loadBrowserGlobal } = require("./_io");
 
 const ROOT = path.resolve(__dirname, "..");
 const SRC  = path.join(ROOT, "data", "today.js");
@@ -32,16 +33,11 @@ const SITE = {
   copyright:   "© Daily News",
 };
 
-// ── 1. today.js 평가 (가짜 window) ─────────────────────
+// ── 1. today.js 평가 (Function 격리 — _io.js의 단일 구현 사용) ──
 function loadDaily() {
-  const code = fs.readFileSync(SRC, "utf8");
-  const sandbox = { window: {} };
-  // Function 으로 격리된 스코프에서 평가 (eval 보다 안전)
-  new Function("window", code)(sandbox.window);
-  if (!sandbox.window.__DAILY__) {
-    throw new Error("data/today.js 가 window.__DAILY__ 를 설정하지 않았습니다.");
-  }
-  return sandbox.window.__DAILY__;
+  const D = loadBrowserGlobal(SRC, "__DAILY__");
+  if (!D) throw new Error("data/today.js 가 window.__DAILY__ 를 설정하지 않았습니다.");
+  return D;
 }
 
 // ── 2. XML 안전 ─────────────────────────────────────────
@@ -55,8 +51,13 @@ function xe(s) {
 }
 
 function rfc822(iso) {
-  const d = iso ? new Date(iso) : new Date();
-  if (isNaN(d.getTime())) return new Date().toUTCString();
+  // Invalid input: return epoch (1970-01-01) instead of silently substituting
+  // "now". An RSS reader sees an obviously wrong date and dedups the item, vs.
+  // the previous behavior which republished bad dates as "fresh" every run.
+  // Closes testing P2 #28.
+  if (!iso) return new Date().toUTCString();
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return new Date(0).toUTCString();
   return d.toUTCString();
 }
 
@@ -111,11 +112,10 @@ function insightItem(ins, expertsById) {
 function loadExpertsById() {
   const file = path.join(ROOT, "data", "experts.js");
   if (!fs.existsSync(file)) return {};
-  const code = fs.readFileSync(file, "utf8");
-  const sandbox = { window: {} };
-  new Function("window", code)(sandbox.window);
-  const arr = sandbox.window.__EXPERTS__ || [];
-  return Object.fromEntries(arr.map((e) => [e.id, e]));
+  try {
+    const arr = loadBrowserGlobal(file, "__EXPERTS__") || [];
+    return Object.fromEntries(arr.map((e) => [e.id, e]));
+  } catch { return {}; }
 }
 
 // ── 5. 빌드 ────────────────────────────────────────────

@@ -982,12 +982,10 @@
   });
 
   // ───────────────────────────────────────────────────────
-  // 13. 외부 노출
+  // 13. 외부 노출 — insights.js 가 사용하는 항목만. 나머지는 IIFE 클로저 내부.
+  //     (renderGauges/switchTab/focusItem 은 app.js 내부에서만 호출됨)
   // ───────────────────────────────────────────────────────
   window.App = {
-    renderGauges,
     renderMiniGauges,
-    switchTab,
-    focusItem,
   };
 })();

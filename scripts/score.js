@@ -139,7 +139,16 @@ function scoreBuzz(item) {
 }
 
 // ── 항목 형태 변환 ──────────────────────────────────────
-function shapeForDashboard(item, scores, opts) {
+function shapeForDashboard(item, scores) {
+  // Strip non-numeric fields the LLM path may have leaked into scores (e.g. category).
+  // Keeps validate-data.js's `scores 0..5 number` invariant.
+  const numericScores = {
+    impact:    scores && typeof scores.impact === "number"    ? scores.impact    : 0,
+    freshness: scores && typeof scores.freshness === "number" ? scores.freshness : 0,
+    depth:     scores && typeof scores.depth === "number"     ? scores.depth     : 0,
+    buzz:      scores && typeof scores.buzz === "number"      ? scores.buzz      : 0,
+  };
+
   // domain별로 다른 출력 shape (today.js 의 news[]/community[]/oss[]에 맞춤)
   const base = {
     id: item.id,
@@ -155,9 +164,9 @@ function shapeForDashboard(item, scores, opts) {
       category: item.rawCategory || "ai", // fallback
       sourceCountry: item.sourceCountry,
       summary: item.summary,
-      scores,
+      scores: numericScores,
       tags: item.tags || [],
-      featured: scores.impact + scores.freshness + scores.depth + scores.buzz >= 18,
+      featured: numericScores.impact + numericScores.freshness + numericScores.depth + numericScores.buzz >= 18,
       headline: false,
     };
   }
@@ -172,11 +181,12 @@ function shapeForDashboard(item, scores, opts) {
     };
   }
   if (item.domain === "oss") {
+    const ossType = detectOssType(item);
     return {
       ...base,
-      type: detectOssType(item),
-      typeLabel: capitalize(detectOssType(item)),
-      typeIcon: ossTypeIcon(detectOssType(item)),
+      type: ossType,
+      typeLabel: capitalize(ossType),
+      typeIcon: ossTypeIcon(ossType),
       name: item.title, // GitHub repo name
       description: item.summary,
       stars: item.points,
@@ -221,15 +231,24 @@ function relativeTime(iso) {
 }
 
 // ── LLM 보강 (선택) ────────────────────────────────────
+// LLM does NOT see publishedAt or points → it cannot compute freshness or buzz.
+// We ONLY let it refine impact (industry/decision relevance) and depth (technical
+// substance). Heuristic freshness/buzz stay authoritative. The LLM may also propose
+// a category. Closes correctness P2 #17.
+//
+// Reliability: 30s AbortController timeout (was unbounded), bounded prompt-injection
+// surface via XML-style delimiters (closes security P3 SEC-3).
 async function llmRefine(item, baseScores) {
-  // ANTHROPIC_API_KEY 필요. 호출 실패 시 기본 점수 그대로.
   if (!process.env.ANTHROPIC_API_KEY) return baseScores;
-  const prompt = `Daily News 4기준 채점. 각 0..5 실수, JSON 만 출력.
-title: ${item.title}
-summary: ${item.summary}
-source: ${item.sourceLabel || item.source}
-points: ${item.points}
-{ "impact": x, "freshness": x, "depth": x, "buzz": x, "category": "ai|devtools|ax|robotics|display|design|papers|standards|telecom" }`;
+  const prompt = `Daily News 4기준 채점. impact + depth 만 0..5 실수로, category는 enum 1개. JSON만 출력. 추가 텍스트/markdown fence 금지.
+
+<title>${(item.title || "").slice(0, 200)}</title>
+<summary>${(item.summary || "").slice(0, 500)}</summary>
+<source>${item.sourceLabel || item.source || ""}</source>
+
+{ "impact": x, "depth": x, "category": "ai|devtools|ax|robotics|display|design|papers|standards|telecom" }`;
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 30_000);
   try {
     const res = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
@@ -241,8 +260,10 @@ points: ${item.points}
       body: JSON.stringify({
         model: "claude-haiku-4-5-20251001",
         max_tokens: 200,
+        temperature: 0,   // deterministic re-runs for same input
         messages: [{ role: "user", content: prompt }],
       }),
+      signal: ctrl.signal,
     });
     if (!res.ok) throw new Error(`${res.status}`);
     const json = await res.json();
@@ -250,15 +271,19 @@ points: ${item.points}
     const m = text.match(/\{[\s\S]*\}/);
     if (!m) return baseScores;
     const parsed = JSON.parse(m[0]);
+    // Only let LLM move impact/depth. Freshness/buzz stay authoritative since
+    // LLM has no time/points data. category propagates separately to rawCategory.
     return {
-      impact: clamp(round1(parsed.impact ?? baseScores.impact), 0, 5),
-      freshness: clamp(round1(parsed.freshness ?? baseScores.freshness), 0, 5),
-      depth: clamp(round1(parsed.depth ?? baseScores.depth), 0, 5),
-      buzz: clamp(round1(parsed.buzz ?? baseScores.buzz), 0, 5),
-      category: parsed.category, // 카테고리 제안 추가
+      impact:    clamp(round1(parsed.impact ?? baseScores.impact), 0, 5),
+      freshness: baseScores.freshness,
+      depth:     clamp(round1(parsed.depth ?? baseScores.depth), 0, 5),
+      buzz:      baseScores.buzz,
+      category:  typeof parsed.category === "string" ? parsed.category : undefined,
     };
   } catch {
     return baseScores;
+  } finally {
+    clearTimeout(timer);
   }
 }
 
@@ -277,12 +302,17 @@ async function main() {
   const t0 = Date.now();
   const raw = JSON.parse(fs.readFileSync(args.in, "utf8"));
   const items = raw.items || [];
+  // Honor windowHours from raw (collect.js writes it). CLI --hours overrides if explicit.
+  // Closes correctness P2 #16: collect.js --hours forwarding through to freshness scoring.
+  const windowHours = (raw.windowHours && Number.isFinite(raw.windowHours))
+    ? raw.windowHours
+    : args.windowHours;
 
   const news = [], community = [], oss = [];
   for (const item of items) {
     const baseScores = {
       impact:    scoreImpact(item),
-      freshness: scoreFreshness(item, args.windowHours),
+      freshness: scoreFreshness(item, windowHours),
       depth:     scoreDepth(item),
       buzz:      scoreBuzz(item),
     };

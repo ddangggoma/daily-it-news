@@ -33,6 +33,7 @@
 const fs = require("fs");
 const path = require("path");
 const { spawnSync } = require("child_process");
+const { loadBrowserGlobal } = require("./_io");
 
 const ROOT = path.resolve(__dirname, "..");
 const DEFAULT_IN  = path.join(ROOT, "data", "scored-items.json");
@@ -52,13 +53,10 @@ function parseArgs(argv) {
   return args;
 }
 
-// ── 시드 / 데이터 로드 (Function-격리, generate-feed.js 패턴) ──
+// ── 시드 / 데이터 로드 (_io.js의 Function-격리 헬퍼 사용) ──
 function loadGlobal(file, key) {
   if (!fs.existsSync(file)) return null;
-  const code = fs.readFileSync(file, "utf8");
-  const sandbox = { window: {} };
-  new Function("window", code)(sandbox.window);
-  return sandbox.window[key];
+  try { return loadBrowserGlobal(file, key); } catch { return null; }
 }
 
 // ── 결산 계산 ──────────────────────────────────────────
