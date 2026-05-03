@@ -105,6 +105,8 @@
 
     const insights = (window.__DAILY__ && window.__DAILY__.insights) || [];
 
+    // DocumentFragment: 1 reflow for N cards (perf-001 DRY of news-tab pattern).
+    const frag = document.createDocumentFragment();
     insights.forEach((ins, idx) => {
       const expert = expertById(ins.expertId);
       if (!expert) return;
@@ -167,8 +169,9 @@
         if (e.key === "Enter" || e.key === " ") open(e);
       });
 
-      grid.appendChild(card);
+      frag.appendChild(card);
     });
+    grid.appendChild(frag);
 
     const counter = $("#insights-counter");
     if (counter) counter.textContent = `${insights.length}명 전문가`;

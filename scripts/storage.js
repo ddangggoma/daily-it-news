@@ -60,6 +60,18 @@
       const arr = ensureArr("savedViews").filter(v => v.id !== id);
       safe.set("savedViews", arr);
     },
+
+    /* cross-tab sync — listens for `storage` event from another tab/window
+       and invokes the supplied callback with the dn.* key (sans namespace).
+       app.js wires this to refresh the rendered grid when another tab
+       toggles a flag, preventing the lost-update perception (ADV-4). */
+    onChange(handler) {
+      if (typeof handler !== "function") return;
+      window.addEventListener("storage", (e) => {
+        if (!e.key || !e.key.startsWith(NS)) return;
+        handler(e.key.slice(NS.length), e.newValue);
+      });
+    },
   };
 
   window.Storage = Storage;

@@ -32,6 +32,9 @@
 const fs = require("fs");
 const path = require("path");
 
+const { CATEGORY_KEYS } = require("./spec");
+const CATEGORY_SET = new Set(CATEGORY_KEYS);
+
 const ROOT = path.resolve(__dirname, "..");
 const DEFAULT_IN  = path.join(ROOT, "data", "raw-collection.json");
 const DEFAULT_OUT = path.join(ROOT, "data", "scored-items.json");
@@ -272,13 +275,19 @@ async function llmRefine(item, baseScores) {
     if (!m) return baseScores;
     const parsed = JSON.parse(m[0]);
     // Only let LLM move impact/depth. Freshness/buzz stay authoritative since
-    // LLM has no time/points data. category propagates separately to rawCategory.
+    // LLM has no time/points data. category propagates separately to rawCategory
+    // ONLY if it's in the spec § 9 whitelist. Otherwise drop — closes
+    // adversarial ADV-1 (prompt-injection sneaking arbitrary category through
+    // XML delimiters, breaking the validate gate downstream).
+    const safeCategory = typeof parsed.category === "string" && CATEGORY_SET.has(parsed.category)
+      ? parsed.category
+      : undefined;
     return {
       impact:    clamp(round1(parsed.impact ?? baseScores.impact), 0, 5),
       freshness: baseScores.freshness,
       depth:     clamp(round1(parsed.depth ?? baseScores.depth), 0, 5),
       buzz:      baseScores.buzz,
-      category:  typeof parsed.category === "string" ? parsed.category : undefined,
+      category:  safeCategory,
     };
   } catch {
     return baseScores;

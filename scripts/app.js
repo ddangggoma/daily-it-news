@@ -301,16 +301,19 @@
     // 뉴스용 버킷 strip (필터 동작)
     renderBucketStrip("#news-buckets", (window.__DAILY__ && window.__DAILY__.buckets) || {}, false);
 
-    // 점수 슬라이더
+    // 점수 슬라이더 — 라벨은 즉시 갱신, grid 재렌더는 debounce 50ms
+    // (range input은 drag 중 50Hz로 발화 → undebounced면 frame 당 다중 rebuild.
+    //  search input과 동일 정책. Closes performance perf-002.)
     const slider = $("#news-score-min");
     const num = $("#news-score-num");
     if (slider && num) {
       slider.value = "0";
       num.textContent = "0.0";
+      const debouncedRender = debounce(() => renderNewsGrid(), 50);
       slider.addEventListener("input", () => {
         state.scoreMin = parseFloat(slider.value) || 0;
-        num.textContent = state.scoreMin.toFixed(1);
-        renderNewsGrid();
+        num.textContent = state.scoreMin.toFixed(1); // 즉시 (사용자 시각 피드백)
+        debouncedRender();                            // 지연 (grid rebuild)
       });
     }
 
@@ -733,7 +736,10 @@
       grid.appendChild(el("div", { className: "empty" }, "조건에 맞는 항목이 없습니다."));
       return;
     }
-    list.forEach((c) => grid.appendChild(renderCommunityCard(c)));
+    // DocumentFragment: 1 reflow vs N. perf-001 DRY of news-tab pattern.
+    const frag = document.createDocumentFragment();
+    list.forEach((c) => frag.appendChild(renderCommunityCard(c)));
+    grid.appendChild(frag);
   }
 
   function renderCommunityCard(c) {
@@ -833,7 +839,10 @@
       grid.appendChild(el("div", { className: "empty" }, "조건에 맞는 저장소가 없습니다."));
       return;
     }
-    list.forEach((o) => grid.appendChild(renderOssCard(o)));
+    // DocumentFragment: 1 reflow vs N. perf-001 DRY of news-tab pattern.
+    const frag = document.createDocumentFragment();
+    list.forEach((o) => frag.appendChild(renderOssCard(o)));
+    grid.appendChild(frag);
   }
 
   function renderOssCard(o) {
@@ -975,6 +984,15 @@
       setupHeaderActions();
       if (window.Insights && typeof window.Insights.init === "function") {
         window.Insights.init();
+      }
+      // Cross-tab sync — when another tab toggles starred/bookmarks/read,
+      // re-render the news grid so the user sees the change without manual
+      // reload. Closes adversarial ADV-4 (lost-update perception).
+      if (window.Storage && typeof window.Storage.onChange === "function") {
+        const RERENDER_KEYS = new Set(["starred", "bookmarks", "read"]);
+        window.Storage.onChange((key) => {
+          if (RERENDER_KEYS.has(key)) renderNewsGrid();
+        });
       }
     } catch (err) {
       console.error("[Daily News] init failed:", err);

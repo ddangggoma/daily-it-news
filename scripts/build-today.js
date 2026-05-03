@@ -53,10 +53,18 @@ function parseArgs(argv) {
   return args;
 }
 
-// ── 시드 / 데이터 로드 (_io.js의 Function-격리 헬퍼 사용) ──
+// ── 시드 / 데이터 로드 ─────────────────────────────────
+// 의도적 분리: 파일 부재(=optional seed)는 정상 fallback;
+// 파일 존재하지만 평가 실패(SyntaxError/ReferenceError)는 fatal.
+// 후자를 silent로 흘려보내면 quote/lead/influencers/insights가 silent로
+// 빈값 fallback이 되어 dashboard가 빈 hero로 발행됨 (closes ADV-2).
 function loadGlobal(file, key) {
-  if (!fs.existsSync(file)) return null;
-  try { return loadBrowserGlobal(file, key); } catch { return null; }
+  if (!fs.existsSync(file)) return null;        // missing = OK (optional)
+  try { return loadBrowserGlobal(file, key); }   // throws on parse error
+  catch (err) {
+    console.error(`[build-today] ✖ ${path.basename(file)} 평가 실패: ${err.message}`);
+    throw err;                                   // fatal — exit 1 propagates
+  }
 }
 
 // ── 결산 계산 ──────────────────────────────────────────
