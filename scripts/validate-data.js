@@ -93,7 +93,9 @@ function validateNews(items, V) {
     if (!isStr(n.source))                   V.err(`${p}.source`, "missing");
     if (!isStr(n.sourceCountry))            V.err(`${p}.sourceCountry`, "missing");
     if (!isIso(n.publishedAt))              V.err(`${p}.publishedAt`, `invalid ISO date "${n.publishedAt}"`);
-    if (!isStr(n.summary))                  V.err(`${p}.summary`, "missing");
+    // summary 빈 string 허용 — RSS abstract가 가끔 비어 있음 (특히 arXiv).
+    // null/undefined/non-string은 여전히 error.
+    if (typeof n.summary !== "string")      V.err(`${p}.summary`, `must be string, got ${typeof n.summary}`);
     if (!isObj(n.scores))                   V.err(`${p}.scores`, "missing object");
     else SCORE_KEYS.forEach((k) => {
       if (!inRange(n.scores[k], 0, 5))      V.err(`${p}.scores.${k}`, `not number in [0..5]: ${n.scores[k]}`);

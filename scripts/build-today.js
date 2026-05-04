@@ -76,12 +76,20 @@ function avgScore(item) {
 
 function buildConclusion(news) {
   if (!news.length) return { headline: "오늘은 새 발행이 없습니다.", scoreAvg: 0, vs7d: 0 };
-  const sorted = [...news].sort((a, b) => avgScore(b) - avgScore(a));
-  const top = sorted[0];
-  const avgs = news.map(avgScore);
-  const scoreAvg = round2(avgs.reduce((a, b) => a + b, 0) / avgs.length);
-  // vs7d: 7일 평균이 없으므로 placeholder 0. archive 누적 후 실제 비교 가능.
-  return { headline: top.title, scoreAvg, vs7d: 0 };
+  // headline=true 가 score.js에서 임계 통과 시에만 set 됨.
+  // 우선순위: 명시적 headline → 점수 1위 → fallback 메시지.
+  const explicit = news.find((n) => n.headline);
+  const sortedByScore = [...news].sort((a, b) => avgScore(b) - avgScore(a));
+  const top = explicit || sortedByScore[0];
+  const topScore = avgScore(top);
+  // 5초 결론의 종합 점수는 "헤드라인 점수" — 사용자 기대와 일치.
+  // (전체 news 평균이 아니라 가장 중요한 이슈 1건의 점수.)
+  const scoreAvg = round2(topScore);
+  // 임계 미달 시 약한 시그널 표시 (3.5 미만)
+  const headline = explicit || topScore >= 3.5
+    ? top.title
+    : `오늘 주요 이슈가 약합니다 — 최고 점수 ${topScore.toFixed(1)}/5.0 (${top.title.slice(0, 60)}…)`;
+  return { headline, scoreAvg, vs7d: 0 };
 }
 
 function buildFiveLines(news) {

@@ -53,11 +53,27 @@ function parseArgs(argv) {
 
 // ── 신호 → 점수 변환 ────────────────────────────────────
 const SOURCE_AUTHORITY = {
-  // Tier 1 — primary source / 1차 보도
-  "openai":             5.0, "anthropic":   5.0, "google":      5.0,
-  "techcrunch":         4.5, "theverge":    4.4, "arstechnica": 4.6,
-  // Tier 2 — community
-  "hackernews":         4.0, "github_trending": 4.2,
+  // Tier 1 — primary source / 1차 보도 (사업자 직접 발표)
+  "openai":             5.0, "anthropic":      5.0, "google_ai":   5.0,
+  "meta_ai":            4.9, "hf_blog":        4.7,
+  // Tier 1.5 — major IT 미디어
+  "mit_tech_review":    4.7, "ieee_spectrum":  4.6, "arstechnica": 4.6,
+  "techcrunch":         4.5, "theverge":       4.4, "wired":       4.4,
+  "engadget":           4.0,
+  // Tier 1.5 — DevTools 사업자
+  "vercel":             4.6, "supabase":       4.5, "github_blog": 4.5,
+  "cloudflare":         4.5, "netlify":        4.0,
+  // Tier 1.5 — AX 미디어
+  "pragmatic_eng":      4.6, "leaddev":        4.4, "honeycomb":   4.5,
+  "shopify_eng":        4.5, "github_eng":     4.5,
+  // Tier 1.5 — 한국 IT 미디어
+  "bloter":             4.4, "itworld_kr":     4.3, "zdnet_kr":    4.3,
+  "yna_it":             4.5, "byline_kr":      4.3,
+  // Tier 1 — Papers (arxiv는 1차 학술 자료)
+  "arxiv_cs_ai":        4.7, "arxiv_cs_lg":    4.7, "arxiv_cs_cl": 4.7,
+  // Tier 2 — community aggregator
+  "hackernews":         4.0, "github_trending": 4.2, "reddit":     3.7,
+  "geeknews":           4.0, "lobsters":       3.9, "devto":       3.5,
   // Tier 3 — fallback
   "_default":           3.5,
 };
@@ -85,17 +101,28 @@ const DEPTH_KEYWORDS = [
 
 // ── 4기준 채점 ─────────────────────────────────────────
 function scoreImpact(item) {
-  // 1) 소스 권위
+  // 1) 소스 권위 (Tier 1 사업자 발표/주요 미디어 = 4.5+, HN aggregator = 4.0)
   const auth = SOURCE_AUTHORITY[item.source] || SOURCE_AUTHORITY._default;
-  // 2) 키워드 가중치
+  // 2) 키워드 가중치 (영어 + 한국어)
   const text = `${item.title || ""} ${item.summary || ""}`.toLowerCase();
   let kw = 0;
   for (const [k, w] of Object.entries(IMPACT_KEYWORDS)) {
     if (text.includes(k.toLowerCase())) kw += w;
   }
-  kw = Math.min(2.0, kw); // cap
-  // 3) 결합 (가중 평균)
-  const raw = auth * 0.7 + Math.min(5, auth + kw) * 0.3;
+  kw = Math.min(2.0, kw);
+  // 3) HN high-points 보너스 — 1000+ pts는 cross-community 검증된 시그널
+  let popBoost = 0;
+  if (item.source === "hackernews" && item.points) {
+    if (item.points >= 1000) popBoost = 1.0;       // 4-figure = HN front page sustained
+    else if (item.points >= 500) popBoost = 0.6;
+    else if (item.points >= 200) popBoost = 0.3;
+  }
+  // 4) 결합 — auth가 base, kw + popBoost가 영향력 신호
+  //    auth(0..5) + (kw + popBoost)(0..3) → cap 5.
+  //    Tier 1 source (4.5) + GA keyword (1.0) = 5.5 → 5.0 (정확히 헤드라인 임계 통과)
+  //    HN 1000+ pts (4.0 + 1.0) = 5.0 (HN 검증된 글 1차 후보)
+  //    Tier 3 (3.5) + zero signal = 3.5 (헤드라인 미달, 의도된 결과)
+  const raw = auth + (kw * 0.6) + (popBoost * 0.6);
   return clamp(round1(raw), 0, 5);
 }
 
@@ -337,10 +364,39 @@ async function main() {
     else if (item.domain === "oss")  oss.push(shaped);
   }
 
-  // featured 1개를 headline으로 (impact + freshness 합 최고)
+  // ── headline 선정 강화 ────────────────────────────────
+  // 이전: impact + freshness 단순 합 1위. 점수 낮아도 무조건 headline.
+  // 개선:
+  //   1) 최소 임계 — 종합 점수 ≥ 4.0 (4기준 평균). 미달이면 headline 없이
+  //      build-today.js가 fallback ("오늘 주요 이슈가 약합니다") 처리.
+  //   2) 가중 — impact 50% + freshness 25% + buzz 15% + depth 10%.
+  //      impact가 헤드라인의 본질, buzz가 cross-source 검증, depth는 보조.
+  //   3) tie-break — 점수 동률 시 더 신뢰할 수 있는 source (1차 보도) 우선.
+  //   4) Same-source 다수일 때 — sourceDiversity를 위해 다른 source 우선 가능
+  //      (현재는 우선 점수만, 추후 확장)
+  function headlineScore(n) {
+    const s = n.scores || {};
+    return (Number(s.impact || 0)) * 0.50
+         + (Number(s.freshness || 0)) * 0.25
+         + (Number(s.buzz || 0)) * 0.15
+         + (Number(s.depth || 0)) * 0.10;
+  }
+  function avgOf(s) {
+    return (Number(s.impact || 0) + Number(s.freshness || 0) + Number(s.depth || 0) + Number(s.buzz || 0)) / 4;
+  }
   if (news.length) {
-    news.sort((a, b) => (b.scores.impact + b.scores.freshness) - (a.scores.impact + a.scores.freshness));
-    news[0].headline = true;
+    news.sort((a, b) => {
+      const dh = headlineScore(b) - headlineScore(a);
+      if (Math.abs(dh) > 0.01) return dh;
+      // tie-break: source authority
+      const aa = SOURCE_AUTHORITY[a.source] || SOURCE_AUTHORITY._default;
+      const ba = SOURCE_AUTHORITY[b.source] || SOURCE_AUTHORITY._default;
+      return ba - aa;
+    });
+    // 임계 4.0+ 만 headline. 미달 시 false 유지 → build-today 가 fallback 메시지
+    if (avgOf(news[0].scores) >= 4.0) {
+      news[0].headline = true;
+    }
   }
 
   const out = {

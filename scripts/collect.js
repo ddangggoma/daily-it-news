@@ -73,18 +73,29 @@ const SOURCE_META = {
   reddit:        { label: "Reddit",             color: "#ff4500", country: "Global", domain: "community" },
   geeknews:      { label: "GeekNews",           color: "#22c55e", country: "KR",     domain: "community" },
   lobsters:      { label: "Lobsters",           color: "#ac1f1f", country: "Global", domain: "community" },
+  devto:         { label: "DEV.to",             color: "#0a0a0a", country: "Global", domain: "community" },
   // 오픈소스
   github_trending: { label: "GitHub Trending", color: "#24292e", country: "Global", domain: "oss" },
-  // 뉴스
+  // 일반 IT 뉴스 (영어)
   techcrunch:    { label: "TechCrunch",         color: "#0a9737", country: "US",     domain: "news" },
   theverge:      { label: "The Verge",          color: "#5200ff", country: "US",     domain: "news" },
   arstechnica:   { label: "Ars Technica",       color: "#ff4e00", country: "US",     domain: "news" },
   mit_tech_review: { label: "MIT Tech Review",  color: "#a31621", country: "US",     domain: "news" },
+  ieee_spectrum: { label: "IEEE Spectrum",      color: "#00629b", country: "US",     domain: "news" },
+  wired:         { label: "Wired",              color: "#000000", country: "US",     domain: "news" },
+  engadget:      { label: "Engadget",           color: "#7d6ce5", country: "US",     domain: "news" },
+  // 사업자 블로그 — AI / Agent
   anthropic:     { label: "Anthropic Blog",     color: "#a855f7", country: "US",     domain: "news" },
   openai:        { label: "OpenAI Blog",        color: "#10a37f", country: "US",     domain: "news" },
+  google_ai:     { label: "Google Research",    color: "#4285f4", country: "US",     domain: "news" },
+  meta_ai:       { label: "Meta AI",            color: "#0668e1", country: "US",     domain: "news" },
+  hf_blog:       { label: "Hugging Face Blog",  color: "#ffd21e", country: "Global", domain: "news" },
+  // 사업자 블로그 — DevTools / Cloud
   vercel:        { label: "Vercel Blog",        color: "#000000", country: "US",     domain: "news" },
   supabase:      { label: "Supabase Blog",      color: "#3ecf8e", country: "Global", domain: "news" },
   github_blog:   { label: "GitHub Blog",        color: "#24292e", country: "Global", domain: "news" },
+  cloudflare:    { label: "Cloudflare Blog",    color: "#f38020", country: "Global", domain: "news" },
+  netlify:       { label: "Netlify Blog",       color: "#00ad9f", country: "US",     domain: "news" },
   // AX (engineering culture, productivity)
   pragmatic_eng: { label: "Pragmatic Engineer", color: "#1d4ed8", country: "Global", domain: "news",   defaultCat: "ax" },
   leaddev:       { label: "LeadDev",            color: "#0ea5e9", country: "Global", domain: "news",   defaultCat: "ax" },
@@ -94,6 +105,13 @@ const SOURCE_META = {
   // Papers
   arxiv_cs_ai:   { label: "arXiv cs.AI",        color: "#b31b1b", country: "Global", domain: "news",   defaultCat: "papers" },
   arxiv_cs_lg:   { label: "arXiv cs.LG",        color: "#b31b1b", country: "Global", domain: "news",   defaultCat: "papers" },
+  arxiv_cs_cl:   { label: "arXiv cs.CL",        color: "#b31b1b", country: "Global", domain: "news",   defaultCat: "papers" },
+  // 한국 IT 미디어
+  bloter:        { label: "블로터",             color: "#0066cc", country: "KR",     domain: "news" },
+  itworld_kr:    { label: "ITWorld 한국",        color: "#003c71", country: "KR",     domain: "news" },
+  zdnet_kr:      { label: "ZDNet Korea",        color: "#cc0000", country: "KR",     domain: "news" },
+  yna_it:        { label: "연합뉴스 IT",        color: "#005bac", country: "KR",     domain: "news" },
+  byline_kr:     { label: "바이라인네트워크",    color: "#1abc9c", country: "KR",     domain: "news" },
 };
 
 // 키워드 → 카테고리 힌트 (collector는 빠른 규칙, 정밀 분류는 score.js의 LLM 또는 휴리스틱 단계)
@@ -115,24 +133,36 @@ function hintCategory(text) {
   return undefined;
 }
 
-// ── 소스 1: Hacker News (top + best 합쳐 100건) ─────────
+// ── 소스 1: Hacker News (top + best + new = 250+ candidates) ────
+//
+// HN의 외부 url을 가진 story는 1차 보도 → news domain.
+// HN 내부 토론/Show HN/Ask HN (text only) → community.
+// 이 분리가 헤드라인 후보 풀을 늘려 score.js가 더 좋은 헤드라인을 고를 수 있게 함.
 async function fetchHackerNews({ hours, signal }) {
   const cutoffMs = Date.now() - hours * 3600 * 1000;
-  const [topIds, bestIds] = await Promise.all([
+  const [topIds, bestIds, newIds] = await Promise.all([
     fetchJson("https://hacker-news.firebaseio.com/v0/topstories.json", { signal }).catch(() => []),
     fetchJson("https://hacker-news.firebaseio.com/v0/beststories.json", { signal }).catch(() => []),
+    fetchJson("https://hacker-news.firebaseio.com/v0/newstories.json", { signal }).catch(() => []),
   ]);
-  // top 70 + best 30 union (대략 100건, 중복 자동 제거)
-  const ids = Array.from(new Set([...(topIds || []).slice(0, 70), ...(bestIds || []).slice(0, 30)]));
+  // top 100 + best 50 + new 100 union (중복 자동 제거 → ~200 unique)
+  const ids = Array.from(new Set([
+    ...(topIds || []).slice(0, 100),
+    ...(bestIds || []).slice(0, 50),
+    ...(newIds || []).slice(0, 100),
+  ]));
   const items = await Promise.all(ids.map(async (id) => {
     try {
       const it = await fetchJson(`https://hacker-news.firebaseio.com/v0/item/${id}.json`, { signal });
       if (!it || it.deleted || it.dead) return null;
       const ms = (it.time || 0) * 1000;
       if (ms < cutoffMs) return null;
+      // HN 분류 규칙: 외부 url 있으면 news (1차 보도 후보), 없으면 community.
+      const hasExtUrl = it.url && /^https?:/.test(it.url);
+      const domain = hasExtUrl ? "news" : "community";
       return {
         id: `hn-${id}`,
-        domain: "community",
+        domain,
         source: "hackernews",
         sourceLabel: SOURCE_META.hackernews.label,
         sourceColor: SOURCE_META.hackernews.color,
@@ -145,64 +175,117 @@ async function fetchHackerNews({ hours, signal }) {
         points: it.score || 0,
         tags: [],
         rawCategory: hintCategory(it.title),
+        // news domain일 때 build-today.js가 sourceCountry를 표시하므로 명시
+        // (HN 자체는 Global이지만 origin URL의 도메인을 미래에 inspect 가능)
       };
     } catch { return null; }
   }));
   return items.filter(Boolean);
 }
 
-// ── 소스 1b: Reddit (5 subs × 25 posts = 125건) ─────────
+// ── 소스 1b: Reddit (15 subs × 50 posts = 750건 후보) ─────────
+//
+// 다양한 sub로 1000+ community 풀 확보. cutoff filter 후에도 500+ 남도록.
 const REDDIT_SUBS = [
-  { sub: "programming",     country: "Global" },
-  { sub: "MachineLearning", country: "Global" },
-  { sub: "LocalLLaMA",      country: "Global" },
-  { sub: "devops",          country: "Global" },
-  { sub: "golang",          country: "Global" },
+  { sub: "programming",       country: "Global" },
+  { sub: "MachineLearning",   country: "Global" },
+  { sub: "LocalLLaMA",        country: "Global" },
+  { sub: "devops",            country: "Global" },
+  { sub: "golang",            country: "Global" },
+  { sub: "rust",              country: "Global" },
+  { sub: "javascript",        country: "Global" },
+  { sub: "typescript",        country: "Global" },
+  { sub: "reactjs",           country: "Global" },
+  { sub: "node",              country: "Global" },
+  { sub: "ChatGPT",           country: "Global" },
+  { sub: "OpenAI",            country: "Global" },
+  { sub: "ArtificialInteligence", country: "Global" },
+  { sub: "cscareerquestions", country: "Global" },
+  { sub: "ExperiencedDevs",   country: "Global" },
 ];
 async function fetchReddit({ hours, signal }) {
-  const cutoffMs = Date.now() - hours * 3600 * 1000;
-  const all = [];
-  for (const { sub, country } of REDDIT_SUBS) {
+  // community 전용: Reddit hot.json은 "지난 며칠 인기"라 created_utc 24h 컷오프
+  // 적용 시 대부분 잘림. community는 7일 윈도우로 풀어 1000+ 풀 확보.
+  // (news/oss는 변동 없음, 1차 보도 freshness 기준 그대로.)
+  const COMMUNITY_HOURS = Math.max(hours, 7 * 24);
+  const cutoffMs = Date.now() - COMMUNITY_HOURS * 3600 * 1000;
+  // 15 subs 동시 fetch — 직렬은 30+s 소요. limit=100 (Reddit max)으로 sub당 가능한 max.
+  const fetched = await Promise.all(REDDIT_SUBS.map(async ({ sub, country }) => {
     try {
-      const json = await fetchJson(`https://www.reddit.com/r/${sub}/hot.json?limit=25`, {
-        signal, headers: { "User-Agent": "daily-news/0.1" },
+      const json = await fetchJson(`https://www.reddit.com/r/${sub}/hot.json?limit=100`, {
+        signal, headers: { "User-Agent": "daily-news/0.2" },
       });
       const posts = ((json && json.data && json.data.children) || [])
         .map((c) => c.data || {})
         .filter((p) => !p.stickied && !p.over_18);
-      posts.forEach((p) => {
-        const ms = (p.created_utc || 0) * 1000;
-        if (!ms || ms < cutoffMs) return;
-        all.push({
-          id: `reddit-${p.id}`,
-          domain: "community",
-          source: "reddit",
-          sourceLabel: `r/${sub}`,
-          sourceColor: SOURCE_META.reddit.color,
-          sourceCountry: country,
-          url: p.url_overridden_by_dest || `https://www.reddit.com${p.permalink}`,
-          title: p.title || "",
-          summary: stripHtml(p.selftext || "").slice(0, 280),
-          publishedAt: new Date(ms).toISOString(),
-          author: p.author || "",
-          points: p.score || 0,
-          tags: [],
-          rawCategory: hintCategory(`${p.title} ${p.selftext}`),
-        });
+      return { sub, country, posts };
+    } catch { return { sub, country, posts: [] }; }
+  }));
+  const all = [];
+  fetched.forEach(({ sub, country, posts }) => {
+    posts.forEach((p) => {
+      const ms = (p.created_utc || 0) * 1000;
+      if (!ms || ms < cutoffMs) return;
+      // url_overridden_by_dest가 cross-post path면 (/r/...) http(s)가 아니므로
+      // permalink (full Reddit URL)로 fallback. validate-data.js의 isUrl 통과.
+      const rawUrl = p.url_overridden_by_dest || "";
+      const url = /^https?:\/\//.test(rawUrl) ? rawUrl : `https://www.reddit.com${p.permalink}`;
+      all.push({
+        id: `reddit-${p.id}`,
+        domain: "community",
+        source: "reddit",
+        sourceLabel: `r/${sub}`,
+        sourceColor: SOURCE_META.reddit.color,
+        sourceCountry: country,
+        url,
+        title: p.title || "",
+        summary: stripHtml(p.selftext || "").slice(0, 280),
+        publishedAt: new Date(ms).toISOString(),
+        author: p.author || "",
+        points: p.score || 0,
+        tags: [],
+        rawCategory: hintCategory(`${p.title} ${p.selftext}`),
       });
-    } catch { /* 단일 sub 실패는 무시 */ }
-  }
+    });
+  });
   return all;
 }
 
-// ── 소스 2: GitHub trending (Search API, 50건) ───────────
+// ── 소스 2: GitHub Search (multi-query × 100 = 200+ candidates) ───
+//
+// Top 100 OSS 확보. 한 query로 100 / 다른 sort로 100 → dedup 후 ~150 + 신규 repo
+// 풀에서 충분.
 async function fetchGitHubTrending({ hours, signal }) {
   const since = new Date(Date.now() - hours * 3600 * 1000).toISOString().slice(0, 10);
-  const url = `https://api.github.com/search/repositories?q=created:%3E${since}&sort=stars&order=desc&per_page=50`;
   const headers = {};
   if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
-  const json = await fetchJson(url, { signal, headers });
-  return (json.items || []).map((r) => ({
+
+  // Query 1: created:>YYYY-MM-DD (이번 24h 신규 repo, 별순)
+  // Query 2: pushed:>YYYY-MM-DD (활발히 갱신, 별순)
+  // Query 3: AI/ML 관련 trending (last week)
+  const lastWeek = new Date(Date.now() - 7 * 24 * 3600 * 1000).toISOString().slice(0, 10);
+  const queries = [
+    `created:%3E${since}+stars:%3E5`,
+    `pushed:%3E${since}+stars:%3E50`,
+    `topic:llm+pushed:%3E${lastWeek}`,
+  ];
+  const results = await Promise.all(queries.map(async (q) => {
+    try {
+      const url = `https://api.github.com/search/repositories?q=${q}&sort=stars&order=desc&per_page=100`;
+      const json = await fetchJson(url, { signal, headers });
+      return json.items || [];
+    } catch { return []; }
+  }));
+  // Dedup by id
+  const seen = new Set();
+  const merged = [];
+  results.flat().forEach((r) => {
+    if (r && r.id != null && !seen.has(r.id)) {
+      seen.add(r.id);
+      merged.push(r);
+    }
+  });
+  return merged.map((r) => ({
     id: `gh-${r.id}`,
     domain: "oss",
     source: "github_trending",
@@ -217,7 +300,6 @@ async function fetchGitHubTrending({ hours, signal }) {
     points: r.stargazers_count || 0,
     tags: r.topics || [],
     rawCategory: hintCategory(`${r.full_name} ${r.description}`),
-    // OSS 전용 추가 필드
     starsThisWeek: r.stargazers_count || 0,
     language: r.language || null,
     license: r.license?.spdx_id || null,
@@ -226,20 +308,28 @@ async function fetchGitHubTrending({ hours, signal }) {
   }));
 }
 
-// ── 소스 3: RSS 피드 (18개, 일 100+ items 후보) ──────────
+// ── 소스 3: RSS 피드 (33개, 일 200+ news items 목표) ─────
 const RSS_FEEDS = [
-  // 일반 IT 뉴스
+  // 일반 IT 뉴스 (영어)
   { source: "techcrunch",       url: "https://techcrunch.com/feed/" },
   { source: "theverge",         url: "https://www.theverge.com/rss/index.xml" },
   { source: "arstechnica",      url: "https://feeds.arstechnica.com/arstechnica/index" },
   { source: "mit_tech_review",  url: "https://www.technologyreview.com/feed/" },
-  // 모델 / AI 인프라 사업자 블로그
+  { source: "ieee_spectrum",    url: "https://spectrum.ieee.org/feeds/feed.rss" },
+  { source: "wired",            url: "https://www.wired.com/feed/rss" },
+  { source: "engadget",         url: "https://www.engadget.com/rss.xml" },
+  // 사업자 블로그 — AI / Agent
   { source: "anthropic",        url: "https://www.anthropic.com/news/rss.xml" },
   { source: "openai",           url: "https://openai.com/news/rss.xml" },
-  // DevTools 사업자
+  { source: "google_ai",        url: "https://research.google/blog/rss/" },
+  { source: "meta_ai",          url: "https://ai.meta.com/blog/rss/" },
+  { source: "hf_blog",          url: "https://huggingface.co/blog/feed.xml" },
+  // 사업자 블로그 — DevTools / Cloud
   { source: "vercel",           url: "https://vercel.com/atom" },
   { source: "supabase",         url: "https://supabase.com/feed.xml" },
   { source: "github_blog",      url: "https://github.blog/feed/" },
+  { source: "cloudflare",       url: "https://blog.cloudflare.com/rss/" },
+  { source: "netlify",          url: "https://www.netlify.com/blog/index.xml" },
   // AX (engineering culture)
   { source: "pragmatic_eng",    url: "https://newsletter.pragmaticengineer.com/feed" },
   { source: "leaddev",          url: "https://leaddev.com/rss.xml" },
@@ -249,10 +339,18 @@ const RSS_FEEDS = [
   // Papers (arXiv RSS — top categories)
   { source: "arxiv_cs_ai",      url: "https://export.arxiv.org/rss/cs.AI" },
   { source: "arxiv_cs_lg",      url: "https://export.arxiv.org/rss/cs.LG" },
-  // 한국 커뮤니티
+  { source: "arxiv_cs_cl",      url: "https://export.arxiv.org/rss/cs.CL" },
+  // 한국 IT 미디어
+  { source: "bloter",           url: "https://www.bloter.net/feed" },
+  { source: "itworld_kr",       url: "https://www.itworld.co.kr/rss" },
+  { source: "zdnet_kr",         url: "https://feeds.feedburner.com/zdkorea" },
+  { source: "yna_it",           url: "https://www.yna.co.kr/rss/industry.xml" },
+  { source: "byline_kr",        url: "https://byline.network/feed/" },
+  // 한국 + 글로벌 커뮤니티
   { source: "geeknews",         url: "https://feeds.feedburner.com/geeknews-feed" },
-  // 기술 커뮤니티
   { source: "lobsters",         url: "https://lobste.rs/rss" },
+  // 개발자 커뮤니티 (community 풀 보강)
+  { source: "devto",            url: "https://dev.to/feed" },
 ];
 
 async function fetchRssFeeds({ hours, signal }) {
