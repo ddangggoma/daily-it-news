@@ -16,16 +16,24 @@
 
   // ── 상수 (기존 app.js와 insights.js에 흩어져 있던 것들 통합) ──
 
+  // 🆕 Round 9: 카테고리 재구성 — 8개 기본 + 5개 추가 + 2개 research 별도 탭.
+  // spec.js와 동기 (drift test가 차이 감지).
   const CATEGORIES = [
-    { key: "ai",        icon: "🤖", label: "AI / Agent" },
-    { key: "devtools",  icon: "🛠", label: "DevTools" },
-    { key: "ax",        icon: "🎯", label: "AX 방법론·문화" },
-    { key: "robotics",  icon: "⚙️", label: "로봇" },
-    { key: "display",   icon: "📺", label: "디스플레이" },
-    { key: "design",    icon: "🎨", label: "디자인" },
-    { key: "papers",    icon: "📄", label: "논문" },
-    { key: "standards", icon: "⚖️", label: "특허/표준" },
-    { key: "telecom",   icon: "📡", label: "통신" },
+    { key: "ai",          icon: "🤖", label: "AI" },
+    { key: "devtools",    icon: "🛠",  label: "Dev Tools" },
+    { key: "ax",          icon: "🎯", label: "AX" },
+    { key: "robotics",    icon: "⚙️", label: "로봇" },
+    { key: "display",     icon: "📺", label: "디스플레이" },
+    { key: "design",      icon: "🎨", label: "디자인" },
+    { key: "telecom",     icon: "📡", label: "통신" },
+    { key: "data",        icon: "📊", label: "데이터" },
+    { key: "security",    icon: "🔒", label: "보안" },
+    { key: "cloud",       icon: "☁️", label: "클라우드" },
+    { key: "semiconductor", icon: "🔬", label: "반도체" },
+    { key: "mobile",      icon: "📱", label: "모바일" },
+    { key: "startup",     icon: "🚀", label: "스타트업" },
+    { key: "papers",      icon: "📄", label: "논문" },
+    { key: "standards",   icon: "⚖️", label: "특허/표준" },
   ];
   const CATEGORY_BY_KEY = Object.fromEntries(CATEGORIES.map((c) => [c.key, c]));
 
@@ -52,17 +60,26 @@
     bullish:     { label: "📈 강세",  color: "#10b981" },
   };
 
+  // 🆕 Round 9: OSS 세부분류 확장 — security/database/devops/web/mobile 추가.
+  // 기존 7종 (agent/framework/library/tool/runtime/model/dataset) + 신규 6종.
   const OSS_TYPES = [
     { key: "all",       label: "전체" },
-    { key: "trending",  label: "🔥 trending" },
+    { key: "trending",  label: "🔥 트렌딩" },
     { key: "korean",    label: "🇰🇷 한국" },
-    { key: "agent",     label: "agent" },
-    { key: "framework", label: "framework" },
-    { key: "library",   label: "library" },
-    { key: "tool",      label: "tool" },
-    { key: "runtime",   label: "runtime" },
-    { key: "model",     label: "model" },
-    { key: "dataset",   label: "dataset" },
+    { key: "agent",     label: "🤖 에이전트" },
+    { key: "model",     label: "🧠 모델" },
+    { key: "framework", label: "🏗 프레임워크" },
+    { key: "library",   label: "📚 라이브러리" },
+    { key: "tool",      label: "🔧 도구" },
+    { key: "runtime",   label: "⚡ 런타임" },
+    { key: "dataset",   label: "📊 데이터셋" },
+    // Round 9 신규
+    { key: "security",  label: "🔒 보안" },
+    { key: "database",  label: "🗄 DB·스토리지" },
+    { key: "devops",    label: "☸️ DevOps" },
+    { key: "web",       label: "🌐 웹·UI" },
+    { key: "mobile",    label: "📱 모바일" },
+    { key: "data",      label: "📈 데이터" },
   ];
 
   // ── DOM 헬퍼 ────────────────────────────────────────────

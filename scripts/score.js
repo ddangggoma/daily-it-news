@@ -95,6 +95,27 @@ const SOURCE_AUTHORITY = {
   "stratechery":        4.7, "platformer":     4.4, "lennys":        4.0,
   "tldr_ai":            4.2, "import_ai":      4.5,
   "yt_yannic":          4.2, "yt_lex":         4.0,
+  // 🌏 Round 9: 세계 IT 10대 강국 매체 권위 (각국 대표 IT 미디어)
+  // 🇨🇳 중국 — 36kr/PingWest/ifanr 메이저
+  "cn_36kr":            4.5, "cn_pingwest":    4.3, "cn_ifanr":      4.1,
+  "cn_geekpark":        4.2, "cn_huxiu":       4.0, "cn_itzhi":      4.0,
+  // 🇯🇵 일본 — ITmedia/Publickey 톱
+  "jp_itmedia":         4.5, "jp_gigazine":    4.0, "jp_ascii":      4.2,
+  "jp_pcwatch":         4.3, "jp_publickey":   4.5,
+  // 🇩🇪 독일 — Heise 톱
+  "de_heise":           4.5, "de_golem":       4.3, "de_computerwoche": 4.0,
+  // 🇮🇳 인도 — Inc42/YourStory/Analytics India
+  "in_yourstory":       4.2, "in_inc42":       4.3, "in_analytics":  4.4,
+  "in_toi_tech":        3.8,
+  // 🇮🇱 이스라엘 — Calcalist Tech (CTech)
+  "il_ctech":           4.4, "il_globes":      4.0,
+  // 🇹🇼 대만 — iThome (TW)/DigiTimes
+  "tw_ithome":          4.4, "tw_inside":      4.2, "tw_techorange": 4.0,
+  "tw_digitimes":       4.6,  // DigiTimes 반도체 분석 톱
+  // 🇫🇷 프랑스 — Numerama
+  "fr_numerama":        4.3, "fr_jdn":         4.0, "fr_frenchweb":  4.0,
+  // 🇨🇦 캐나다 — BetaKit
+  "ca_betakit":         4.2, "ca_mobilesyrup": 4.0,
   // Tier 1 — Papers (arxiv는 1차 학술 자료)
   "arxiv_cs_ai":        4.7, "arxiv_cs_lg":    4.7, "arxiv_cs_cl": 4.7,
   // Tier 2 — community aggregator
@@ -167,6 +188,18 @@ const IT_KEYWORDS_STRONG = [
   // Korean tech
   /(삼성|LG|네이버|카카오|토스|쿠팡|당근|배민|라인|넷마블|크래프톤|엔씨|카카오뱅크|네카라쿠배)/,
   /(반도체|디스플레이|폴더블|클라우드|개발자|소프트웨어|하드웨어|인공지능|머신러닝)/,
+  // 🌏 Round 9: 세계 IT 10대 강국 핵심 IT 키워드
+  // 🇨🇳 중국 — 인공지능/클라우드/반도체/플랫폼
+  /(人工智能|機器學習|深度學習|大模型|半導體|芯片|晶片|雲端|雲計算|互聯網|軟件|开源|开发者)/,
+  /(腾讯|阿里|百度|字节|华为|小米|京东|美团|拼多多|滴滴|网易|快手|蚂蚁|蔚来|理想|小鹏)/,
+  // 🇯🇵 일본 — 半導体/AI/クラウド/開発
+  /(人工知能|機械学習|深層学習|大規模言語モデル|半導体|チップ|クラウド|オープンソース|開発者|ソフトウェア|ハードウェア)/,
+  /(ソニー|トヨタ|ホンダ|日立|富士通|NEC|ソフトバンク|楽天|メルカリ|LINE|ヤフー)/,
+  // 🇩🇪 독일 — Halbleiter/KI/Software
+  /\b(Halbleiter|Künstliche Intelligenz|KI|Maschinelles Lernen|Cloud-Computing|Open[- ]Source|Entwickler|Softwareentwicklung)\b/i,
+  /\b(SAP|Siemens|Bosch|Infineon|Trumpf|TeamViewer|N26|Celonis)\b/,
+  // 🇮🇱 이스라엘 / 🇹🇼 대만 / 🇫🇷 프랑스 IT 핵심
+  /\b(unicorn|cyber(?:security|attack)|fintech|biotech|deep[- ]?tech|hardtech|AI startup|cloud-native|datacenter)\b/i,
 ];
 
 const IT_KEYWORDS_MEDIUM = [
@@ -253,6 +286,15 @@ const HEADLINE_TIER1_SOURCES = new Set([
   "bloter", "byline_kr", "itworld_kr", "zdnet_kr",
   "techm", "aitimes", "digitaltoday", "itchosun",
   "thelec", "toss_tech", "naver_d2", "kakao_tech", "woowa_tech",
+  // 🌏 Round 9: 세계 IT 10대 강국 (헤드라인 후보 자격)
+  "cn_36kr", "cn_pingwest", "cn_ifanr", "cn_geekpark", "cn_huxiu", "cn_itzhi",
+  "jp_itmedia", "jp_gigazine", "jp_ascii", "jp_pcwatch", "jp_publickey",
+  "de_heise", "de_golem", "de_computerwoche",
+  "in_yourstory", "in_inc42", "in_analytics",
+  "il_ctech", "il_globes",
+  "tw_ithome", "tw_inside", "tw_techorange", "tw_digitimes",
+  "fr_numerama", "fr_jdn", "fr_frenchweb",
+  "ca_betakit", "ca_mobilesyrup",
 ]);
 
 // 🆕 Round 8 Expert 2 (URL path signal): URL 경로로 IT/비IT 강한 신호.
@@ -462,14 +504,22 @@ function shapeForDashboard(item, scores, precomputedRel) {
   return base;
 }
 
+// 🆕 Round 9: OSS 타입 감지 확장 — security/database/devops/web/mobile/data 추가.
+// 우선순위: 더 구체적인 분류부터.
 function detectOssType(item) {
   const t = `${item.title} ${item.summary}`.toLowerCase();
+  if (/\b(security|cve|vulnerab|cryptograph|firewall|ids|ips|wireshark|metasploit|nmap|burpsuite|owasp)\b/.test(t)) return "security";
+  if (/\b(database|postgres|mysql|sqlite|mongodb|redis|cassandra|dynamodb|orm|prisma|drizzle|sqlx|sqlalchemy)\b/.test(t)) return "database";
+  if (/\b(kubernetes|docker|container|terraform|ansible|jenkins|argo|helm|istio|envoy|prometheus|grafana|devops|ci\/cd|gitops|sre)\b/.test(t)) return "devops";
+  if (/\b(react|vue|svelte|angular|next\.?js|remix|astro|solid|qwik|tailwind|css|html|web component|frontend|browser)\b/.test(t)) return "web";
+  if (/\b(android|ios|flutter|react native|swift|kotlin|mobile app|jetpack compose|swiftui)\b/.test(t)) return "mobile";
+  if (/\b(data (?:pipeline|engineering|stack|lake)|etl|elt|airflow|dbt|spark|kafka|iceberg|duckdb|polars|pandas|jupyter|analytics|bi tool)\b/.test(t)) return "data";
   if (/\bagent\b/.test(t))      return "agent";
-  if (/\bframework\b/.test(t))  return "framework";
+  if (/\b(framework|toolkit)\b/.test(t))  return "framework";
   if (/\blibrary\b/.test(t))    return "library";
-  if (/\b(model|llm|gpt)\b/.test(t)) return "model";
+  if (/\b(model|llm|gpt|diffusion|transformer)\b/.test(t)) return "model";
   if (/\bdataset\b/.test(t))    return "dataset";
-  if (/\bruntime\b/.test(t))    return "runtime";
+  if (/\b(runtime|engine|interpreter|compiler|vm)\b/.test(t))    return "runtime";
   return "tool";
 }
 
@@ -477,6 +527,9 @@ function ossTypeIcon(type) {
   return {
     agent: "🤖", framework: "🏗", library: "📚", tool: "🔧",
     runtime: "⚡", model: "🧠", dataset: "📊",
+    // Round 9 신규 아이콘
+    security: "🔒", database: "🗄", devops: "☸️",
+    web: "🌐", mobile: "📱", data: "📈",
   }[type] || "📦";
 }
 
@@ -621,41 +674,52 @@ async function main() {
     return (Number(s.impact || 0) + Number(s.freshness || 0) + Number(s.depth || 0) + Number(s.buzz || 0)) / 4;
   }
   if (news.length) {
+    // 🆕 Round 9: 사용자 요청 "헤드라인은 IT 관련 + 종합 점수 가장 높은 것".
+    // 절대적 점수 임계는 제거. 핵심 게이트:
+    //   1) IT relevance ≥ 0.6 (확실한 IT)
+    //   2) HEADLINE_TIER1_SOURCES allowlist (yna_it 등 일반 미디어 제외)
+    //   3) isBlockedHeadlineTitle false (증권 보고서/시황 차단)
+    // 이 게이트를 통과한 항목 중 종합 점수(headlineScore) 가장 높은 것 = 헤드라인.
+    // 게이트 통과 항목이 없으면 relevance/source 완화한 fallback.
+    function isItHeadlineCandidate(n) {
+      if (n.itRelevance != null && n.itRelevance < 0.6) return false;
+      if (!HEADLINE_TIER1_SOURCES.has(n.source)) return false;
+      if (isBlockedHeadlineTitle(n.title)) return false;
+      return true;
+    }
+
+    // 1차: 엄격 게이트 통과 항목 중 최고 점수
+    const candidates = news.filter(isItHeadlineCandidate);
+    if (candidates.length) {
+      candidates.sort((a, b) => {
+        const dh = headlineScore(b) - headlineScore(a);
+        if (Math.abs(dh) > 0.01) return dh;
+        const aa = SOURCE_AUTHORITY[a.source] || SOURCE_AUTHORITY._default;
+        const ba = SOURCE_AUTHORITY[b.source] || SOURCE_AUTHORITY._default;
+        return ba - aa;
+      });
+      candidates[0].headline = true;
+    } else {
+      // 2차 fallback: relevance만 ≥0.5, title blocklist는 유지, source allowlist 완화
+      const relaxed = news.filter((n) =>
+        (n.itRelevance == null || n.itRelevance >= 0.5) &&
+        !isBlockedHeadlineTitle(n.title)
+      );
+      if (relaxed.length) {
+        relaxed.sort((a, b) => headlineScore(b) - headlineScore(a));
+        relaxed[0].headline = true;
+      }
+    }
+    // 정렬: 헤드라인 우선, 그 다음 점수 순
     news.sort((a, b) => {
+      if (a.headline && !b.headline) return -1;
+      if (!a.headline && b.headline) return 1;
       const dh = headlineScore(b) - headlineScore(a);
       if (Math.abs(dh) > 0.01) return dh;
       const aa = SOURCE_AUTHORITY[a.source] || SOURCE_AUTHORITY._default;
       const ba = SOURCE_AUTHORITY[b.source] || SOURCE_AUTHORITY._default;
       return ba - aa;
     });
-    // 🆕 Round 8 Expert 5 다단 헤드라인 gate:
-    //   1) 종합 평균 ≥ 4.0
-    //   2) IT relevance ≥ 0.6
-    //   3) HEADLINE_TIER1_SOURCES 만 (yna_it/etnews/Bloomberg 같은 일반 미디어 제외)
-    //   4) isBlockedHeadlineTitle false (증권 보고서/시황 차단)
-    //   5) Tier 1 미만 매체는 relevance ≥ 0.75 추가 요구 (defense in depth)
-    function passesHeadlineGate(n) {
-      if (avgOf(n.scores) < 4.0) return false;
-      if (n.itRelevance != null && n.itRelevance < 0.6) return false;
-      if (!HEADLINE_TIER1_SOURCES.has(n.source)) return false;
-      if (isBlockedHeadlineTitle(n.title)) return false;
-      const auth = SOURCE_AUTHORITY[n.source] || SOURCE_AUTHORITY._default;
-      if (auth < 4.5 && (n.itRelevance ?? 0) < 0.75) return false;
-      return true;
-    }
-    const headline = news.find(passesHeadlineGate);
-    if (headline) {
-      headline.headline = true;
-    } else {
-      // Fallback: 점수만 살짝 낮춰도 OK이지만 title blocklist + Tier 1 source는 유지.
-      const fallback = news.find((n) =>
-        avgOf(n.scores) >= 3.8 &&
-        (n.itRelevance == null || n.itRelevance >= 0.5) &&
-        HEADLINE_TIER1_SOURCES.has(n.source) &&
-        !isBlockedHeadlineTitle(n.title)
-      );
-      if (fallback) fallback.headline = true;
-    }
   }
 
   const out = {

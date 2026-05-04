@@ -1322,10 +1322,15 @@
   //  관련된 내용들의 레벨을 모두 옮겨서 필터나 검색이 정상적으로 되도록".
   // build-today.js가 papers/standards 카테고리를 research[]로 분리. 이 탭은 그것만 표시.
   const researchState = { type: "all", search: "" };
+  // 🆕 Round 9: 논문·특허·표준 세부 필터 (논문은 분야별 sub-filter도 추가).
   const RESEARCH_TYPES = [
     { key: "all",       label: "전체" },
     { key: "papers",    label: "📄 논문" },
     { key: "standards", label: "⚖️ 특허·표준" },
+    // 논문 sub-filter: arxiv 카테고리별 (CS.AI / CS.LG / CS.CL)
+    { key: "arxiv_ai",  label: "🤖 arXiv AI" },
+    { key: "arxiv_ml",  label: "🧠 arXiv ML" },
+    { key: "arxiv_nlp", label: "💬 arXiv NLP" },
   ];
 
   function setupResearchTab() {
@@ -1368,6 +1373,10 @@
     if (!grid) return;
     const all = (window.__DAILY__ && window.__DAILY__.research) || [];
     const list = all.filter((r) => {
+      // 🆕 Round 9: arxiv sub-filter (cs.AI / cs.LG / cs.CL 별)
+      if (researchState.type === "arxiv_ai") return r.source === "arxiv_cs_ai";
+      if (researchState.type === "arxiv_ml") return r.source === "arxiv_cs_lg";
+      if (researchState.type === "arxiv_nlp") return r.source === "arxiv_cs_cl";
       if (researchState.type !== "all" && r.category !== researchState.type) return false;
       if (researchState.search) {
         const hay = `${r.title || ""} ${r.summary || ""} ${r.author || ""} ${(r.tags || []).join(" ")}`.toLowerCase();

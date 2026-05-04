@@ -136,14 +136,53 @@ const SOURCE_META = {
   byline_kr:     { label: "바이라인네트워크",    color: "#1abc9c", country: "KR",     domain: "news" },
   // 🆕 Round 8: Korean IT-only 매체
   techm:         { label: "테크M",                color: "#1d3557", country: "KR",     domain: "news" },
-  aitimes:       { label: "AI타임스",              color: "#7c3aed", country: "KR",     domain: "news" },
+  aitimes:       { label: "AI타임스",              color: "#7c3aed", country: "KR",     domain: "news",   defaultCat: "ai" },
   digitaltoday:  { label: "디지털투데이",           color: "#0066cc", country: "KR",     domain: "news" },
   itchosun:      { label: "IT조선",               color: "#1c3666", country: "KR",     domain: "news" },
-  thelec:        { label: "디일렉(THE ELEC)",       color: "#cf202d", country: "KR",     domain: "news" },
+  thelec:        { label: "디일렉(THE ELEC)",       color: "#cf202d", country: "KR",     domain: "news",   defaultCat: "semiconductor" },
   toss_tech:     { label: "토스 테크",              color: "#3b6ef9", country: "KR",     domain: "news",   defaultCat: "ax" },
   naver_d2:      { label: "네이버 D2",             color: "#03c75a", country: "KR",     domain: "news",   defaultCat: "ax" },
   kakao_tech:    { label: "카카오 기술 블로그",      color: "#fee500", country: "KR",     domain: "news",   defaultCat: "ax" },
   woowa_tech:    { label: "우아한형제들 기술",       color: "#5e3acd", country: "KR",     domain: "news",   defaultCat: "ax" },
+
+  // 🌏 Round 9: 세계 IT 10대 강국 소스 — 27개 매체
+  // 🇨🇳 중국
+  cn_36kr:       { label: "36氪 (36Kr)",          color: "#3865eb", country: "CN",     domain: "news" },
+  cn_pingwest:   { label: "PingWest 品玩",         color: "#000000", country: "CN",     domain: "news" },
+  cn_ifanr:      { label: "爱范儿 (ifanr)",         color: "#22a99c", country: "CN",     domain: "news" },
+  cn_geekpark:   { label: "极客公园 GeekPark",       color: "#5b8def", country: "CN",     domain: "news",   defaultCat: "startup" },
+  cn_huxiu:      { label: "虎嗅网 Huxiu",          color: "#ff8c00", country: "CN",     domain: "news" },
+  cn_itzhi:      { label: "IT之家",                color: "#d40000", country: "CN",     domain: "news" },
+  // 🇯🇵 일본
+  jp_itmedia:    { label: "ITmedia AI",           color: "#005bac", country: "JP",     domain: "news",   defaultCat: "ai" },
+  jp_gigazine:   { label: "Gigazine",              color: "#ee2222", country: "JP",     domain: "news" },
+  jp_ascii:      { label: "ASCII.jp",              color: "#0066b3", country: "JP",     domain: "news" },
+  jp_pcwatch:    { label: "PC Watch",              color: "#00529b", country: "JP",     domain: "news" },
+  jp_publickey:  { label: "Publickey",             color: "#1976d2", country: "JP",     domain: "news",   defaultCat: "cloud" },
+  // 🇩🇪 독일
+  de_heise:      { label: "Heise",                 color: "#cf2030", country: "DE",     domain: "news" },
+  de_golem:      { label: "Golem.de",              color: "#222222", country: "DE",     domain: "news" },
+  de_computerwoche: { label: "Computerwoche",      color: "#003a73", country: "DE",     domain: "news" },
+  // 🇮🇳 인도
+  in_yourstory:  { label: "YourStory",             color: "#fa4516", country: "IN",     domain: "news",   defaultCat: "startup" },
+  in_inc42:      { label: "Inc42",                 color: "#fb6e3f", country: "IN",     domain: "news",   defaultCat: "startup" },
+  in_analytics:  { label: "Analytics India",       color: "#7c3aed", country: "IN",     domain: "news",   defaultCat: "data" },
+  in_toi_tech:   { label: "Times of India Tech",   color: "#ed1c24", country: "IN",     domain: "news" },
+  // 🇮🇱 이스라엘
+  il_ctech:      { label: "Calcalist Tech",        color: "#000000", country: "IL",     domain: "news" },
+  il_globes:     { label: "Globes Tech",           color: "#1f3864", country: "IL",     domain: "news" },
+  // 🇹🇼 대만
+  tw_ithome:     { label: "iThome (TW)",           color: "#ed3237", country: "TW",     domain: "news" },
+  tw_inside:     { label: "INSIDE",                color: "#000000", country: "TW",     domain: "news" },
+  tw_techorange: { label: "TechOrange",            color: "#ff6c00", country: "TW",     domain: "news",   defaultCat: "startup" },
+  tw_digitimes:  { label: "DigiTimes Asia",        color: "#003a8b", country: "TW",     domain: "news",   defaultCat: "semiconductor" },
+  // 🇫🇷 프랑스
+  fr_numerama:   { label: "Numerama",              color: "#e8005f", country: "FR",     domain: "news" },
+  fr_jdn:        { label: "Journal du Net",        color: "#0073e8", country: "FR",     domain: "news" },
+  fr_frenchweb:  { label: "FrenchWeb",             color: "#005a8e", country: "FR",     domain: "news",   defaultCat: "startup" },
+  // 🇨🇦 캐나다
+  ca_betakit:    { label: "BetaKit",                color: "#0085ff", country: "CA",     domain: "news",   defaultCat: "startup" },
+  ca_mobilesyrup:{ label: "MobileSyrup",            color: "#ed1c24", country: "CA",     domain: "news",   defaultCat: "mobile" },
   // PERF Round 4: 추가 IT 미디어
   venturebeat:   { label: "VentureBeat",         color: "#ed4d3a", country: "US",     domain: "news" },
   theinformation:{ label: "The Information",     color: "#000000", country: "US",     domain: "news" },
@@ -205,17 +244,26 @@ const SOURCE_META = {
   yt_lex:        { label: "Lex Fridman (YT)",    color: "#ff0000", country: "Global", domain: "community" },
 };
 
-// 키워드 → 카테고리 힌트 (collector는 빠른 규칙, 정밀 분류는 score.js의 LLM 또는 휴리스틱 단계)
+// 키워드 → 카테고리 힌트 (collector는 빠른 규칙, 정밀 분류는 score.js 단계).
+// 🆕 Round 9: 신규 카테고리 (data/security/cloud/semiconductor/mobile/startup) 추가.
+// 우선순위 위에서 아래로 — 첫 매칭 카테고리 선택. 더 특화된 것 위에.
 const CATEGORY_HINTS = [
-  { cat: "ai",        re: /\b(AI|GPT|LLM|claude|anthropic|openai|gemini|llama|agent|inference|fine[- ]?tun)/i },
-  { cat: "robotics",  re: /\b(robot|humanoid|tesla|figure|boston dynamics|optimus)/i },
-  { cat: "display",   re: /\b(OLED|폴더블|foldable|display|samsung display|LG display|MicroLED)/i },
-  { cat: "design",    re: /\b(figma|design system|UI\/UX|adobe|sketch|product design)/i },
-  { cat: "papers",    re: /\b(arxiv|paper|research|논문)/i },
-  { cat: "standards", re: /\b(standard|patent|RFC|spec|ISO|IETF|특허|표준)/i },
-  { cat: "telecom",   re: /\b(5G|6G|fiber|broadband|telecom|통신|wireless)/i },
-  { cat: "devtools",  re: /\b(IDE|VS Code|JetBrains|cursor|copilot|debug|terminal|CLI|github action)/i },
-  { cat: "ax",        re: /\b(developer experience|DX|onboarding|productivity|engineering culture)/i },
+  // 가장 구체적인 것부터
+  { cat: "papers",        re: /\b(arxiv|paper|research paper|preprint|논문)\b/i },
+  { cat: "standards",     re: /\b(RFC \d|IETF|W3C|ISO[- ]\d|IEEE 802|특허\s|표준\s|patent filing|patent grant)\b/i },
+  { cat: "semiconductor", re: /\b(반도체|wafer|fab|HBM|EUV|GAA|TSMC|foundry|chip die|node \d+nm|2nm|3nm|5nm|7nm|silicon|lithography|패키징)/i },
+  { cat: "robotics",      re: /\b(robot|humanoid|figure|boston dynamics|optimus|로봇|humanoid robot|tesla bot|RT-2|VLA model)/i },
+  { cat: "display",       re: /\b(OLED|폴더블|foldable|micro-?LED|QLED|QD-?OLED|display panel|samsung display|LG display|디스플레이)/i },
+  { cat: "telecom",       re: /\b(5G|6G|Open RAN|vRAN|fiber|broadband|telecom|wireless network|spectrum|통신망|기지국)/i },
+  { cat: "security",      re: /\b(vulnerability|CVE-\d|RCE|zero-day|ransomware|malware|cyberattack|breach|hack(?:ed|er|ing)|0day|infosec|cybersecurity|보안취약|랜섬웨어|해킹|침해|악성코드|prompt injection|jailbreak)/i },
+  { cat: "cloud",         re: /\b(AWS|GCP|Azure|kubernetes|EKS|GKE|AKS|Lambda|S3 bucket|cloud (?:run|computing|storage|infra)|serverless|edge computing|CDN|cloud cost|FinOps|Cloudflare|Vercel|클라우드)/i },
+  { cat: "data",          re: /\b(data (?:lake|warehouse|pipeline|engineering|platform|mesh|product|catalog|governance|quality|stack|engineer|scientist)|database|SQL|ETL|ELT|streaming|Kafka|Spark|Iceberg|Delta Lake|DuckDB|Snowflake|Databricks|BigQuery|RedShift|ClickHouse|dbt|Airflow|vector (?:database|db|store)|RAG|embedding|analytics|dashboard|BI tool|데이터(?:센터|레이크|웨어하우스|플랫폼|엔지니어))/i },
+  { cat: "mobile",        re: /\b(iPhone|iPad|Android|Galaxy|Pixel|smartphone|smart watch|wearable|mobile app|iOS|Wear OS|HarmonyOS|폰|모바일|스마트폰)/i },
+  { cat: "startup",       re: /\b(YC[- ]?(Y\d{2}|S\d{2}|W\d{2})?|Y Combinator|seed (?:round|funding)|Series [ABCD]|raised \$\d|founder|startup|스타트업|벤처|시리즈[A-D])/i },
+  { cat: "design",        re: /\b(figma|sketch app|design system|UI[\/\s]UX|adobe|product design|interaction design|UX research|design tool|디자인 시스템|디자인툴)/i },
+  { cat: "devtools",      re: /\b(IDE|VS Code|JetBrains|cursor|copilot|github copilot|debugger|terminal|CLI tool|github actions?|CI\/CD|webpack|vite|esbuild|turbopack|bundler|compiler|TypeScript|Rust|Go (?:language|lang)|개발도구|디버거)/i },
+  { cat: "ax",            re: /\b(developer experience|DevEx|DX(?:\s|$)|onboarding (?:dev|engineer)|productivity|engineering culture|engineering (?:management|leadership|team)|DORA|SPACE framework|incident review|postmortem|on-?call|platform engineering|개발자경험|엔지니어링\s?문화|플랫폼\s?엔지니어링)/i },
+  { cat: "ai",            re: /\b(AI|GPT|LLM|claude|anthropic|openai|gemini|llama|agent|inference|fine[- ]?tun|neural|deep learning|machine learning|generative|diffusion|transformer|RLHF|reasoning model|test-time|MCP|RAG|embedding|인공지능|머신러닝|딥러닝|생성형)/i },
 ];
 
 function hintCategory(text) {
@@ -516,10 +564,51 @@ const RSS_FEEDS = [
   { source: "naver_d2",         url: "https://d2.naver.com/d2.atom" },               // 네이버 D2 엔지니어링
   { source: "kakao_tech",       url: "https://tech.kakao.com/feed/" },               // 카카오 기술 블로그
   { source: "woowa_tech",       url: "https://techblog.woowahan.com/feed" },         // 우아한형제들 기술
+
+  // ── 🌏 Round 9: 세계 IT 10대 강국 — 미국·한국 외 8개국 IT 전용 매체 ──
+  // 사용자 요청: "전체 수집 소스를 중국 등 세계 IT 10대 강국의 수집 소스를 추가".
+  // 선정: GDP·반도체·SW 산업 영향력 기준 — CN/JP/DE/UK/IN/IL/TW/FR (이미 US/KR).
+
+  // 🇨🇳 중국 (China — 36kr/IT之家/cnBeta/PingWest/虎嗅 등)
+  { source: "cn_36kr",          url: "https://36kr.com/feed" },                       // 36氪 — 중국 테크 미디어 톱
+  { source: "cn_pingwest",      url: "https://www.pingwest.com/feed/all" },           // PingWest 品玩 — 영문 사이트 있음
+  { source: "cn_ifanr",         url: "https://www.ifanr.com/feed" },                  // 爱范儿 — 가전·모바일 리뷰
+  { source: "cn_geekpark",      url: "https://www.geekpark.net/rss" },                // 极客公园 — 스타트업 분석
+  { source: "cn_huxiu",         url: "https://www.huxiu.com/rss/0.xml" },             // 虎嗅 — 산업 분석
+  { source: "cn_itzhi",         url: "https://www.ithome.com/rss/" },                 // IT之家 — 일반 IT
+  // 🇯🇵 일본 (Japan — ITmedia/Gigazine/ASCII.jp/Impress Watch)
+  { source: "jp_itmedia",       url: "https://rss.itmedia.co.jp/rss/2.0/ait.xml" },   // ITmedia AI+
+  { source: "jp_gigazine",      url: "https://gigazine.net/news/rss_2.0/" },          // Gigazine
+  { source: "jp_ascii",         url: "https://ascii.jp/rss.xml" },                    // ASCII.jp
+  { source: "jp_pcwatch",       url: "https://pc.watch.impress.co.jp/data/rss/1.0/pcw/feed.rdf" }, // PC Watch
+  { source: "jp_publickey",     url: "https://www.publickey1.jp/atom.xml" },          // Publickey — 클라우드/SW 전문
+  // 🇩🇪 독일 (Germany — Heise/Golem/Computerwoche)
+  { source: "de_heise",         url: "https://www.heise.de/rss/heise-atom.xml" },     // Heise — 독일 IT 메이저
+  { source: "de_golem",         url: "https://rss.golem.de/rss.php?feed=ATOM1.0" },   // Golem.de — IT 전문
+  { source: "de_computerwoche", url: "https://www.computerwoche.de/rss/" },           // Computerwoche
+  // 🇮🇳 인도 (India — YourStory/Inc42/Analytics India/Times of India Tech)
+  { source: "in_yourstory",     url: "https://yourstory.com/feed" },                  // YourStory — 스타트업
+  { source: "in_inc42",         url: "https://inc42.com/feed/" },                     // Inc42 — 스타트업/VC
+  { source: "in_analytics",     url: "https://analyticsindiamag.com/feed/" },         // Analytics India Magazine — AI/데이터
+  { source: "in_toi_tech",      url: "https://timesofindia.indiatimes.com/rssfeeds/66949542.cms" }, // TOI Tech
+  // 🇮🇱 이스라엘 (Israel — Calcalist/Globes/Geektime/CTech)
+  { source: "il_ctech",         url: "https://www.calcalistech.com/RSS.xml" },        // Calcalist Tech (CTech) 영문
+  { source: "il_globes",        url: "https://www.globes.co.il/webservice/rss/RssFeeder.asmx/FeederNode?iID=585" }, // Globes 테크
+  // 🇹🇼 대만 (Taiwan — iThome/INSIDE/TechOrange/DigiTimes Asia)
+  { source: "tw_ithome",        url: "https://www.ithome.com.tw/rss/news" },          // iThome 대만 — IT 메이저
+  { source: "tw_inside",        url: "https://www.inside.com.tw/feed/news" },         // INSIDE 硬塞的網路趨勢觀察
+  { source: "tw_techorange",    url: "https://buzzorange.com/techorange/feed/" },     // TechOrange
+  { source: "tw_digitimes",     url: "https://www.digitimes.com/rss/daily.xml" },     // DigiTimes Asia 영문 (반도체)
+  // 🇫🇷 프랑스 (France — Numerama/Frenchweb/Journal du Net)
+  { source: "fr_numerama",      url: "https://www.numerama.com/feed/" },              // Numerama — IT 메이저
+  { source: "fr_jdn",           url: "https://www.journaldunet.com/rss/" },           // Journal du Net — 비즈니스 IT
+  { source: "fr_frenchweb",     url: "https://www.frenchweb.fr/feed" },               // FrenchWeb — 스타트업
+  // 🇨🇦 캐나다 (Canada — BetaKit/MobileSyrup) — IT 11대국 보너스
+  { source: "ca_betakit",       url: "https://betakit.com/feed/" },                   // BetaKit — 스타트업
+  { source: "ca_mobilesyrup",   url: "https://mobilesyrup.com/feed/" },               // MobileSyrup — 모바일
+
   // ❌ Round 8 제거:
-  //   - yna_it (연합뉴스 산업 RSS) — 제조·자동차·교육·정치 등 비IT 다수 혼입
-  //   - etnews (전자신문 일반) — 산업 전반, 비IT 비중 높음
-  //   - ddaily (디지털데일리) — 부정 키워드 미준수, 일반 비즈니스 혼입
+  //   - yna_it / etnews / ddaily — 일반 산업 RSS (비IT 다수)
   // ── 글로벌 + 한국 커뮤니티 ────────────────────────────
   { source: "geeknews",         url: "https://feeds.feedburner.com/geeknews-feed" },
   { source: "lobsters",         url: "https://lobste.rs/rss" },

@@ -49,8 +49,11 @@ test("INSIGHT_TAG_KEYS subset: spec.js keys are exactly the four tags validate-d
   assert.deepEqual([...SPEC.INSIGHT_TAG_KEYS].sort(), ["bullish", "caution", "opportunity", "pattern"]);
 });
 
-test("CATEGORY_KEYS subset: spec.js keys are exactly the nine spec § 9 categories", () => {
+test("CATEGORY_KEYS: Round 9 — 8 기본 + 5 추가 + 2 research = 15 카테고리", () => {
+  // 사용자 요청 (Round 9): "AI, Dev Tools, AX, 로봇, 디스플레이, 디자인, 통신, 데이터는 기본 포함"
+  // 기본 8개 + 추가 5개 (security/cloud/semiconductor/mobile/startup) + research 2개 (papers/standards).
   assert.deepEqual([...SPEC.CATEGORY_KEYS].sort(), [
-    "ai", "ax", "design", "devtools", "display", "papers", "robotics", "standards", "telecom",
+    "ai", "ax", "cloud", "data", "design", "devtools", "display", "mobile",
+    "papers", "robotics", "security", "semiconductor", "standards", "startup", "telecom",
   ]);
 });

@@ -109,7 +109,8 @@ test("counts mismatch is now ERROR not warning (daily-publish gate)", () => {
 // ── 모듈 직접 import: helpers ────────────────────────────
 test("module exports: CATEGORIES, INSIGHT_TAGS, SCORE_KEYS", () => {
   const m = require(VALIDATOR);
-  assert.ok(Array.isArray(m.CATEGORIES) && m.CATEGORIES.length === 9);
+  // Round 9: 9 → 15 카테고리 (8 기본 + 5 추가 + 2 research 별도 탭)
+  assert.ok(Array.isArray(m.CATEGORIES) && m.CATEGORIES.length === 15);
   assert.ok(Array.isArray(m.INSIGHT_TAGS) && m.INSIGHT_TAGS.length === 4);
   assert.deepEqual(m.SCORE_KEYS, ["impact", "freshness", "depth", "buzz"]);
 });
