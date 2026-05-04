@@ -8,348 +8,228 @@
     <language>ko-kr</language>
     <copyright>© Daily News</copyright>
     <generator>Daily News RSS Generator (Node 22.16.0)</generator>
-    <lastBuildDate>Fri, 01 May 2026 13:30:00 GMT</lastBuildDate>
-    <pubDate>Fri, 01 May 2026 13:30:00 GMT</pubDate>
+    <lastBuildDate>Sun, 03 May 2026 20:16:51 GMT</lastBuildDate>
+    <pubDate>Sun, 03 May 2026 20:16:51 GMT</pubDate>
     <item>
-      <title>OpenAI, Agents API를 GA로 승격 — 멀티에이전트 워크플로 표준화 가속</title>
-      <link>https://openai.com/index/agents-api-ga</link>
-      <description>OpenAI가 Agents API를 Beta에서 GA로 승격했다. 핸드오프, 가드레일, 트레이싱이 1차 시민으로 포함되었으며, Stripe·Notion·LangChain 등 50+ 파트너가 동시 발표. 자체 오케스트레이터 빌드의 ROI가 빠르게 압축되는 신호.
-[4기준 점수] impact=4.9 freshness=5.0 depth=4.6 buzz=4.8
-출처: OpenAI Blog (US)</description>
-      <pubDate>Fri, 01 May 2026 13:30:00 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#n01</guid>
+      <title>‘This is fine’ creator says AI startup stole his art</title>
+      <link>https://techcrunch.com/2026/05/03/this-is-fine-creator-says-ai-startup-stole-his-art/</link>
+      <description>The ad comes from Artisan, the AI startup behind billboards urging businesses to &quot;stop hiring humans.&quot;
+[4기준 점수] impact=4.5 freshness=4.5 depth=2.5 buzz=1.5
+출처: techcrunch (US)</description>
+      <pubDate>Sun, 03 May 2026 20:16:51 GMT</pubDate>
+      <guid isPermaLink="false">https://daily-news.local/#techcrunch-2ffxuw</guid>
       <category>ai</category>
-      <category>Agents</category>
-      <category>API</category>
-      <category>Orchestration</category>
-    </item>
-    <item>
-      <title>LangChain, LangGraph Studio 1.0 — 멀티에이전트 디버깅 표준화</title>
-      <link>https://langchain.com/blog/langgraph-studio-1</link>
-      <description>LangGraph Studio 1.0은 그래프 시각화·중단점·리플레이를 통합한 멀티에이전트 디버거. 자체 빌드 팀에게는 마지막 합리적 옵션 중 하나.
-[4기준 점수] impact=4.0 freshness=4.5 depth=4.4 buzz=3.9
-출처: LangChain (US)</description>
-      <pubDate>Fri, 01 May 2026 12:00:00 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#n16</guid>
-      <category>devtools</category>
-      <category>LangChain</category>
-      <category>Debug</category>
-      <category>Agents</category>
-    </item>
-    <item>
-      <title>Anthropic, Computer Use v2 공개 — 화면 추론 지연 50% 감소</title>
-      <link>https://anthropic.com/news/computer-use-v2</link>
-      <description>Computer Use v2는 새 화면 인지 모델과 픽셀-DOM 융합 방식으로 액션 정확도 91%를 달성. 기존 RPA 시장(UiPath, Automation Anywhere) 직접 위협 가능성 거론.
-[4기준 점수] impact=4.7 freshness=4.9 depth=4.8 buzz=4.5
-출처: Anthropic (US)</description>
-      <pubDate>Fri, 01 May 2026 11:15:00 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#n02</guid>
-      <category>ai</category>
-      <category>Anthropic</category>
-      <category>Computer Use</category>
-      <category>RPA</category>
-    </item>
-    <item>
-      <title>Cursor, Background Agents 정식 출시 — IDE 비동기 작업 표준화</title>
-      <link>https://cursor.com/blog/background-agents-ga</link>
-      <description>Cursor가 Background Agents를 정식 출시. PR 자동 생성, 백그라운드 리팩토링, 이슈 트리아지를 IDE에서 비동기로 실행. 개발자 생산성 패러다임 전환 가속.
-[4기준 점수] impact=4.4 freshness=4.7 depth=4.2 buzz=4.6
-출처: Cursor (US)</description>
-      <pubDate>Fri, 01 May 2026 10:45:00 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#n06</guid>
-      <category>devtools</category>
-      <category>Cursor</category>
-      <category>IDE</category>
-      <category>Background</category>
-    </item>
-    <item>
-      <title>Figma Make 2.0, AX 워크플로 통합 — 디자인-코드 갭 더 좁아졌다</title>
-      <link>https://figma.com/blog/make-2</link>
-      <description>Figma Make 2.0은 디자인 토큰을 코드로 자동 매핑하고 컴포넌트 props를 양방향 동기화한다. 디자인-개발 핸드오프 표준 새로 정의 가능성.
-[4기준 점수] impact=3.9 freshness=4.1 depth=4.2 buzz=4.1
-출처: Figma (US)</description>
-      <pubDate>Fri, 01 May 2026 09:30:00 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#n12</guid>
-      <category>design</category>
-      <category>Figma</category>
-      <category>Design</category>
-      <category>Tokens</category>
-    </item>
-    <item>
-      <title>Stripe Agents Toolkit, 결제 자동화 SDK로 1.0 출시</title>
-      <link>https://stripe.com/blog/agents-toolkit-1-0</link>
-      <description>Stripe가 Agents Toolkit 1.0을 발표하며 LLM이 결제·환불·청구를 직접 호출할 수 있도록 권한 모델을 정비. 에이전트 커머스 표준화 신호.
-[4기준 점수] impact=4.1 freshness=4.4 depth=4.0 buzz=4.0
-출처: Stripe (US)</description>
-      <pubDate>Fri, 01 May 2026 08:00:00 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#n09</guid>
-      <category>devtools</category>
-      <category>Stripe</category>
-      <category>Payments</category>
-      <category>Agents</category>
-    </item>
-    <item>
-      <title>Meta, Llama 4.1 Reasoning 오픈웨이트 — 추론 토큰 30% 절감</title>
-      <link>https://ai.meta.com/llama-4-1-reasoning</link>
-      <description>Llama 4.1-R은 추론 모드를 옵션 플래그로 켤 수 있으며, 동일 품질에서 토큰 사용량을 30% 줄였다. 사내 추론 비용이 큰 팀은 마이그레이션 가치 명확.
-[4기준 점수] impact=4.5 freshness=4.6 depth=4.7 buzz=4.3
-출처: Meta AI (US)</description>
-      <pubDate>Fri, 01 May 2026 07:00:00 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#n03</guid>
-      <category>ai</category>
-      <category>Meta</category>
-      <category>Llama</category>
-      <category>Open Weights</category>
-    </item>
-    <item>
-      <title>USPTO, AI 학습 데이터셋 저작권 가이던스 초안 공개</title>
-      <link>https://uspto.gov/ai-training-data-2026</link>
-      <description>미국 특허청이 AI 학습 데이터셋의 저작권 인용·라이선싱 가이던스 초안을 공개했다. 60일 의견 수렴 후 발효. 모델 회사들에 컴플라이언스 부담.
-[4기준 점수] impact=4.0 freshness=4.2 depth=4.0 buzz=3.8
-출처: USPTO (US)</description>
-      <pubDate>Fri, 01 May 2026 06:30:00 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#n14</guid>
-      <category>standards</category>
-      <category>IP</category>
-      <category>USPTO</category>
-      <category>Compliance</category>
-    </item>
-    <item>
-      <title>Google Vertex Agents, 가격 30% 인하 — 토큰 가격 경쟁 본격화</title>
-      <link>https://cloud.google.com/vertex-agents-pricing</link>
-      <description>Google이 Vertex Agents 토큰 가격을 30% 인하하면서 OpenAI/Anthropic 가격 압박. 소규모 팀에게 도입 장벽이 사실상 사라짐.
-[4기준 점수] impact=4.3 freshness=4.4 depth=3.9 buzz=4.5
-출처: Google Cloud (US)</description>
-      <pubDate>Fri, 01 May 2026 05:20:00 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#n04</guid>
-      <category>ai</category>
-      <category>Google</category>
-      <category>Pricing</category>
-      <category>Cloud</category>
-    </item>
-    <item>
-      <title>ETRI, 6G Pre-standard White Paper 공개 — Sub-THz 대역 활용</title>
-      <link>https://etri.re.kr/6g-whitepaper</link>
-      <description>한국전자통신연구원이 6G Pre-standard 백서를 공개했다. Sub-THz 대역 통합 무선 액세스, AI-native RAN 등이 핵심.
-[4기준 점수] impact=3.6 freshness=3.9 depth=4.4 buzz=3.2
-출처: ETRI (KR)</description>
-      <pubDate>Fri, 01 May 2026 04:00:00 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#n11</guid>
-      <category>telecom</category>
-      <category>6G</category>
-      <category>ETRI</category>
-      <category>Standards</category>
-    </item>
-    <item>
-      <title>Linear, AI Triage 기능 — 이슈 자동 라벨링·우선순위 결정</title>
-      <link>https://linear.app/changelog/ai-triage</link>
-      <description>Linear가 AI Triage 베타를 출시. 이슈 자동 라벨링·중복 감지·SLA 우선순위. 제품 PM 워크로드 직접 감소.
-[4기준 점수] impact=3.8 freshness=4.1 depth=3.4 buzz=4.0
-출처: Linear (US)</description>
-      <pubDate>Fri, 01 May 2026 03:30:00 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#n17</guid>
-      <category>ax</category>
-      <category>Linear</category>
-      <category>AX</category>
       <category>AI</category>
+      <category>Startups</category>
+      <category>artisan</category>
+      <category>kc green</category>
     </item>
     <item>
-      <title>삼성디스플레이, 폴더블 OLED 양산 수율 92% 돌파</title>
-      <link>https://news.samsung.com/foldable-oled-yield-92</link>
-      <description>삼성디스플레이가 7세대 폴더블 OLED 라인에서 양산 수율 92%를 달성했다. 폴더블 디바이스 단가 인하 압력이 본격화되며, Apple의 폴더블 진입 시점이 앞당겨질 가능성.
-[4기준 점수] impact=4.6 freshness=4.4 depth=4.5 buzz=4.8
-출처: Samsung Newsroom (KR)</description>
-      <pubDate>Fri, 01 May 2026 02:00:00 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#n05</guid>
-      <category>display</category>
-      <category>Samsung</category>
-      <category>Foldable</category>
-      <category>OLED</category>
-    </item>
-    <item>
-      <title>토스, AI 인보이스 자동화 출시 — 30분 작업이 5초로</title>
-      <link>https://toss.im/newsroom/ai-invoice</link>
-      <description>Toss for Business가 AI 인보이스 자동화 기능을 출시. PDF 인보이스 인식·분개·승인 라우팅을 5초 내 처리. 한국 SMB AX 사례 첫 사례화.
-[4기준 점수] impact=3.7 freshness=3.9 depth=3.5 buzz=4.0
-출처: Toss (KR)</description>
-      <pubDate>Fri, 01 May 2026 01:30:00 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#n15</guid>
-      <category>ax</category>
-      <category>Toss</category>
-      <category>AX</category>
-      <category>Automation</category>
-    </item>
-    <item>
-      <title>Lilys AI, 시리즈 B 8천만 달러 마감 — 한국 AI SaaS 글로벌 밸리데이션</title>
-      <link>https://techcrunch.com/2026/05/01/lilys-ai-series-b</link>
-      <description>Sequoia Capital, IVP가 리드한 시리즈 B로 8천만 달러를 조달. 멀티모달 노트북 SaaS로 글로벌 사용자 1,200만 돌파. 한국 AI 스타트업의 글로벌 밸리데이션 첫 사례.
-[4기준 점수] impact=4.2 freshness=4.0 depth=3.6 buzz=4.7
-출처: TechCrunch (Global)</description>
-      <pubDate>Fri, 01 May 2026 00:30:00 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#n07</guid>
+      <title>In Harvard study, AI offered more accurate emergency room diagnoses than two human doctors</title>
+      <link>https://techcrunch.com/2026/05/03/in-harvard-study-ai-offered-more-accurate-diagnoses-than-emergency-room-doctors/</link>
+      <description>A new study examines how large language models perform in a variety of medical contexts, including real emergency room cases — where at least one model seemed to be more accurate than human doctors.
+[4기준 점수] impact=4.5 freshness=4.1 depth=2.5 buzz=1.5
+출처: techcrunch (US)</description>
+      <pubDate>Sun, 03 May 2026 18:00:09 GMT</pubDate>
+      <guid isPermaLink="false">https://daily-news.local/#techcrunch-myg0cp</guid>
       <category>ai</category>
-      <category>Lilys</category>
-      <category>Series B</category>
-      <category>Korea</category>
+      <category>AI</category>
+      <category>Biotech &amp; Health</category>
+      <category>beth israel</category>
+      <category>harvard medical school</category>
+      <category>OpenAI</category>
     </item>
     <item>
-      <title>DeepSeek R3 논문 — 강화학습만으로 Reasoning 도달, 비용 1/10</title>
-      <link>https://arxiv.org/abs/2604.12345</link>
-      <description>DeepSeek R3 논문이 RLHF/SFT 없이 RL만으로 추론 능력을 도달시킨 결과를 보고했다. 학습 비용이 R1 대비 1/10. 재현 가능한 레시피 공개.
-[4기준 점수] impact=4.5 freshness=4.3 depth=4.9 buzz=4.4
-출처: arXiv (CN)</description>
-      <pubDate>Thu, 30 Apr 2026 22:00:00 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#n13</guid>
-      <category>papers</category>
-      <category>DeepSeek</category>
-      <category>RL</category>
-      <category>Paper</category>
-    </item>
-    <item>
-      <title>Apple Vision Pro 2, 가격 50% 인하로 본격 양산 — 산업용 시장 정조준</title>
-      <link>https://apple.com/newsroom/vision-pro-2</link>
-      <description>Apple이 Vision Pro 2를 1,749 USD에 발표. 마이크로 OLED 자체 생산으로 BOM 절감. 산업용·교육용 채널에 우선 공급.
-[4기준 점수] impact=4.0 freshness=4.5 depth=3.8 buzz=4.2
-출처: Apple Newsroom (US)</description>
-      <pubDate>Thu, 30 Apr 2026 20:00:00 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#n08</guid>
-      <category>display</category>
-      <category>Apple</category>
-      <category>Vision Pro</category>
-      <category>XR</category>
-    </item>
-    <item>
-      <title>NVIDIA Blackwell Ultra 양산 — H100 대비 추론 4.5× 성능</title>
-      <link>https://nvidia.com/blackwell-ultra-launch</link>
-      <description>Blackwell Ultra GB300이 양산 출하. H100 대비 추론 4.5× 성능, 동일 와트당 2.8×. 대형 추론 워크로드 가격 구조 재편.
-[4기준 점수] impact=4.6 freshness=4.0 depth=4.5 buzz=4.3
-출처: NVIDIA (US)</description>
-      <pubDate>Thu, 30 Apr 2026 18:00:00 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#n18</guid>
-      <category>ai</category>
-      <category>NVIDIA</category>
-      <category>Blackwell</category>
-      <category>Inference</category>
-    </item>
-    <item>
-      <title>ICRA 2026: Figure 03 휴머노이드, 식기 정리 작업 90초 시연</title>
-      <link>https://figure.ai/news/icra-2026</link>
-      <description>Figure 03가 ICRA 2026 라이브 데모에서 식기 정리 작업을 90초에 완료. VLA 모델 기반 일반화 시연으로 휴머노이드 가정용 진입 시점 논의.
-[4기준 점수] impact=4.4 freshness=4.2 depth=4.5 buzz=4.4
-출처: Figure AI (US)</description>
-      <pubDate>Thu, 30 Apr 2026 16:00:00 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#n10</guid>
+      <title>TechCrunch Mobility: How do you issue a ticket to a robotaxi?</title>
+      <link>https://techcrunch.com/2026/05/03/techcrunch-mobility-how-do-you-issue-a-ticket-to-a-robotaxi/</link>
+      <description>Welcome back to TechCrunch Mobility — your central hub for news and insights on the future of transportation.
+[4기준 점수] impact=4.5 freshness=3.8 depth=2.5 buzz=1.5
+출처: techcrunch (US)</description>
+      <pubDate>Sun, 03 May 2026 16:05:00 GMT</pubDate>
+      <guid isPermaLink="false">https://daily-news.local/#techcrunch-3jl07o</guid>
       <category>robotics</category>
-      <category>Humanoid</category>
-      <category>VLA</category>
-      <category>ICRA</category>
+      <category>Transportation</category>
+      <category>Tesla</category>
+      <category>Uber</category>
+      <category>Waymo</category>
+      <category>Rivian</category>
+      <category>robotaxi</category>
+      <category>techcrunch mobility</category>
     </item>
     <item>
-      <title>[인사이트] Agents GA가 만든 6개월 의사결정 창</title>
+      <title>Reggie Fils-Aimé says Amazon once asked Nintendo to break the law</title>
+      <link>https://www.theverge.com/games/922840/reggie-fils-aime-amazon-nintendo-illegal</link>
+      <description>Way back in the DS days, Nintendo decided to stop selling to Amazon. During a recent lecture at NYU, former Nintendo of America President Reggie Fils-Aim&amp;#233; said it was because Amazon was seeking preferential treatment that would have hurt its relationship with other retailers
+[4기준 점수] impact=4.4 freshness=3.7 depth=3.0 buzz=1.5
+출처: theverge (US)</description>
+      <pubDate>Sun, 03 May 2026 15:24:27 GMT</pubDate>
+      <guid isPermaLink="false">https://daily-news.local/#theverge-uuwlgh</guid>
+      <category>ai</category>
+    </item>
+    <item>
+      <title>Shokz’s bassy OpenRun Pro 2 are $40 off thanks to a new Mother’s Day promo</title>
+      <link>https://www.theverge.com/gadgets/922616/shokz-openrun-pro-2-bone-conduction-headphones-mothers-day-deal-sale</link>
+      <description>If you’re looking to pick up a pair of open-ear headphones for yourself — or your mom — Shokz is running a Mother’s Day sale. Now through May 10th, the company’s best pair of bone conduction headphones, the OpenRun Pro 2, are available from Amazon, Best Buy, and Shokz for around 
+[4기준 점수] impact=4.4 freshness=3.6 depth=3.0 buzz=1.5
+출처: theverge (US)</description>
+      <pubDate>Sun, 03 May 2026 15:00:00 GMT</pubDate>
+      <guid isPermaLink="false">https://daily-news.local/#theverge-exkzq4</guid>
+      <category>ai</category>
+    </item>
+    <item>
+      <title>How the internet’s favorite squirrel dad made the hottest camera app of 2026</title>
+      <link>https://www.theverge.com/tech/921690/dualshot-recorder-iphone-camera-app-derrick-downey-jr</link>
+      <description>It&apos;s not hyperbole to call DualShot Recorder an overnight sensation. It took only 12 hours from the time it was released to hit number one on the App Store&apos;s list of top paid apps. It was a surprise success - but what&apos;s even more surprising is the app&apos;s origin story: it all start
+[4기준 점수] impact=4.6 freshness=3.3 depth=3.0 buzz=1.5
+출처: theverge (US)</description>
+      <pubDate>Sun, 03 May 2026 13:00:00 GMT</pubDate>
+      <guid isPermaLink="false">https://daily-news.local/#theverge-l5oqxj</guid>
+      <category>ai</category>
+    </item>
+    <item>
+      <title>This tiny, magnetic e-reader could stop you from doomscrolling</title>
+      <link>https://techcrunch.com/2026/05/03/xteink-x3-review-tiny-magnetic-ereader/</link>
+      <description>The Xteink X3 is a delightfully tiny, MagSafe-compatible e-ink reader that attaches to the back of your phone like a Pop Socket.
+[4기준 점수] impact=4.5 freshness=3.3 depth=2.5 buzz=1.5
+출처: techcrunch (US)</description>
+      <pubDate>Sun, 03 May 2026 13:00:00 GMT</pubDate>
+      <guid isPermaLink="false">https://daily-news.local/#techcrunch-cj4skx</guid>
+      <category>ai</category>
+      <category>Hardware</category>
+      <category>Gadgets</category>
+      <category>ereader</category>
+      <category>review</category>
+      <category>Reviews</category>
+      <category>evergreens</category>
+      <category>xteink x3</category>
+      <category>xteink</category>
+    </item>
+    <item>
+      <title>These reusable digital Polaroids are a clever way to cover a fridge in memories</title>
+      <link>https://www.theverge.com/tech/917067/vidabay-snap-nfc-e-ink-paper-fridge-magnet-photo-hands-on</link>
+      <description>I love when my friends have their fridges covered in Polaroids. It’s often a visual crash course of what’s been going on in their lives chronicling recent adventures, get-togethers, and other fun moments. But I don’t love the idea of schlepping around a clunky instant camera or p
+[4기준 점수] impact=4.4 freshness=3.3 depth=3.0 buzz=1.5
+출처: theverge (US)</description>
+      <pubDate>Sun, 03 May 2026 13:00:00 GMT</pubDate>
+      <guid isPermaLink="false">https://daily-news.local/#theverge-kidkcm</guid>
+      <category>devtools</category>
+    </item>
+    <item>
+      <title>AI music is flooding streaming services — but who wants it?</title>
+      <link>https://www.theverge.com/column/921599/ai-music-is-flooding-streaming-services-but-who-wants-it</link>
+      <description>This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more on how AI is changing music and the music industry, follow Terrence O&apos;Brien. The Stepback arrives in our subscribers&apos; inboxes at 8AM ET. Opt in for The Stepback here. How it 
+[4기준 점수] impact=4.4 freshness=3.1 depth=3.0 buzz=1.5
+출처: theverge (US)</description>
+      <pubDate>Sun, 03 May 2026 12:00:00 GMT</pubDate>
+      <guid isPermaLink="false">https://daily-news.local/#theverge-8zcjuo</guid>
+      <category>ai</category>
+    </item>
+    <item>
+      <title>[인사이트] ‘This is fine’ creator says AI startup stole his art가 만든 의사결정 창</title>
       <link>https://daily-news.local/#i01</link>
-      <description>OpenAI/Anthropic/Google이 24시간 안에 동일 방향 발표. 자체 빌드 팀에는 6개월 안의 의사결정 강제. 도입을 6개월 이상 끌면 부채가 복리로 쌓인다.
-핵심 질문: 우리 팀이 자체 빌드한 오케스트레이터의 차별화는 무엇이며, 그것이 향후 6개월 내에도 유효한가?
+      <description>기회 탐지자 파리의 시각: ‘This is fine’ creator says AI startup stole his art 외 관련 기사를 종합한 분석.
+핵심 질문: 이 발표가 6개월 안의 의사결정을 어떻게 강제하는가?
 (분야 전문가: 기회 탐지자 · 파리)</description>
-      <pubDate>Sat, 02 May 2026 11:23:13 GMT</pubDate>
+      <pubDate>Sun, 03 May 2026 23:18:07 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#i01</guid>
       <category>insight</category>
       <category>opportunity</category>
     </item>
     <item>
-      <title>[인사이트] 표준화 프로토콜 — 인프라가 표준화될 때마다 차별화는 위로 이동한다</title>
+      <title>[인사이트] Reggie Fils-Aimé says Amazon once asked Nintendo to break t… — 표준화 사이클의 신호</title>
       <link>https://daily-news.local/#i02</link>
-      <description>1995년 웹 서버, 2008년 클라우드, 2018년 컨테이너, 2026년 에이전트. 매번 같은 패턴이 반복된다.
-핵심 질문: 이전 인프라 표준화 사이클에서 살아남은 회사들은 어떤 공통점을 가졌는가?
+      <description>패턴 인식가 메의 시각: Reggie Fils-Aimé says Amazon once asked Nintendo to break the law 외 관련 기사를 종합한 분석.
+핵심 질문: 이전 인프라 표준화 사이클과 어떤 패턴이 일치하는가?
 (분야 전문가: 패턴 인식가 · 메)</description>
-      <pubDate>Sat, 02 May 2026 11:23:13 GMT</pubDate>
+      <pubDate>Sun, 03 May 2026 23:18:07 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#i02</guid>
       <category>insight</category>
       <category>pattern</category>
     </item>
     <item>
-      <title>[인사이트] Computer Use v2의 진짜 문제는 정확도가 아니다</title>
+      <title>[인사이트] In Harvard study, AI offered more accurate emergency room d…의 진짜 비용</title>
       <link>https://daily-news.local/#i03</link>
-      <description>91% 액션 정확도는 매력적이지만, 91%는 production-ready가 아니다. 99.5%까지 가는 비용은 모델 비용보다 검증 인프라 비용이 더 크다.
-핵심 질문: 91% 정확도에서 99.5%로 가는 비용은 누가 부담하며, 그 비용이 RPA 대비 합리적인가?
+      <description>회의주의자 콜의 시각: In Harvard study, AI offered more accurate emergency room diagnoses than two hum 외 관련 기사를 종합한 분석.
+핵심 질문: 마케팅 수치에서 production-ready로 가는 비용은 누가 부담하는가?
 (분야 전문가: 회의주의자 · 콜)</description>
-      <pubDate>Sat, 02 May 2026 11:23:13 GMT</pubDate>
+      <pubDate>Sun, 03 May 2026 23:18:07 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#i03</guid>
       <category>insight</category>
       <category>caution</category>
     </item>
     <item>
-      <title>[인사이트] 에이전트 커머스 시장 — Stripe Toolkit이 첫 신호</title>
+      <title>[인사이트] Shokz’s bassy OpenRun Pro 2 are $40 off thanks to a new Mot… — 시장 카토그래피</title>
       <link>https://daily-news.local/#i04</link>
-      <description>Stripe Agents Toolkit 1.0은 단순한 SDK가 아니다. LLM이 결제·환불·청구를 직접 호출하는 새로운 시장 카테고리의 시작.
-핵심 질문: 에이전트가 결제를 직접 호출하는 시장은 향후 5년 안에 얼마나 커지는가?
+      <description>시장 지도제작자 아틀라스의 시각: Shokz’s bassy OpenRun Pro 2 are $40 off thanks to a new Mother’s Day promo 외 관련 기사를 종합한 분석.
+핵심 질문: 이 시장이 5년 후 어떤 레이어로 분화될 것인가?
 (분야 전문가: 시장 지도제작자 · 아틀라스)</description>
-      <pubDate>Sat, 02 May 2026 11:23:13 GMT</pubDate>
+      <pubDate>Sun, 03 May 2026 23:18:07 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#i04</guid>
       <category>insight</category>
       <category>bullish</category>
     </item>
     <item>
-      <title>[인사이트] Agents API의 권한 모델은 충분히 검증되지 않았다</title>
+      <title>[인사이트] How the internet’s favorite squirrel dad made the hottest c…의 엣지 케이스</title>
       <link>https://daily-news.local/#i05</link>
-      <description>Stripe Toolkit, Computer Use v2, Agents API 모두 권한 모델을 가졌다. 그러나 멀티 에이전트가 권한을 위임하는 시나리오의 보안 검증은 없다.
-핵심 질문: 에이전트 A가 에이전트 B에게 결제 권한을 위임할 때, 위임 체인의 무결성은 어떻게 보장되는가?
+      <description>엣지 케이스 헌터 닉스의 시각: How the internet’s favorite squirrel dad made the hottest camera app of 2026 외 관련 기사를 종합한 분석.
+핵심 질문: 이 시스템이 깨지는 가장 작은 시나리오는?
 (분야 전문가: 엣지 케이스 헌터 · 닉스)</description>
-      <pubDate>Sat, 02 May 2026 11:23:13 GMT</pubDate>
+      <pubDate>Sun, 03 May 2026 23:18:07 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#i05</guid>
       <category>insight</category>
       <category>caution</category>
     </item>
     <item>
-      <title>[인사이트] 한국 AI SaaS의 글로벌 화이트스페이스</title>
+      <title>[인사이트] TechCrunch Mobility: How do you issue a ticket to a robotax… 강세 thesis</title>
       <link>https://daily-news.local/#i06</link>
-      <description>Lilys AI Series B는 단일 사례지만, 한국 AI 스타트업의 글로벌 진입 시점이 도래했다는 신호. 1~2년 안에 5~10개 follow-on 사례 등장 예상.
-핵심 질문: Lilys AI 다음 라인업은 누구이며, 한국 시장 강점이 글로벌로 옮겨갈 카테고리는 무엇인가?
+      <description>강세 시나리오 빌더 베가의 시각: TechCrunch Mobility: How do you issue a ticket to a robotaxi? 외 관련 기사를 종합한 분석.
+핵심 질문: 이 강세 thesis가 깨지는 첫 번째 신호는?
 (분야 전문가: 강세 시나리오 빌더 · 베가)</description>
-      <pubDate>Sat, 02 May 2026 11:23:13 GMT</pubDate>
+      <pubDate>Sun, 03 May 2026 23:18:07 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#i06</guid>
       <category>insight</category>
       <category>bullish</category>
     </item>
     <item>
-      <title>[인사이트] 폴더블 OLED 92% 수율 — Apple 진입 시점이 보이기 시작했다</title>
+      <title>[인사이트] These reusable digital Polaroids are a clever way to cover … — 역사적 변곡점</title>
       <link>https://daily-news.local/#i07</link>
-      <description>삼성디스플레이 7세대 라인 92%는 Apple이 폴더블 진입할 수 있는 BOM 임계점을 통과한 신호. 2027 가을 진입 가능성.
-핵심 질문: Apple은 어떤 BOM·수율 조건이 충족될 때 새 폼팩터에 진입했는가?
+      <description>역사 비교가 세이지의 시각: These reusable digital Polaroids are a clever way to cover a fridge in memories 외 관련 기사를 종합한 분석.
+핵심 질문: 역사적으로 어느 변곡점과 가장 닮았는가?
 (분야 전문가: 역사 비교가 · 세이지)</description>
-      <pubDate>Sat, 02 May 2026 11:23:13 GMT</pubDate>
+      <pubDate>Sun, 03 May 2026 23:18:07 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#i07</guid>
       <category>insight</category>
       <category>pattern</category>
     </item>
     <item>
-      <title>[인사이트] 커뮤니티 시그널 — 자체 빌드 팀의 동요가 시작됐다</title>
+      <title>[인사이트] AI music is flooding streaming services — but who wants it? 커뮤니티 펄스</title>
       <link>https://daily-news.local/#i08</link>
-      <description>Hacker News, Lobsters, OKKY 모두 같은 24시간에 &apos;Agents API 마이그레이션&apos; 토픽이 1위. 커뮤니티 신호는 의사결정의 1~2주 선행 지표다.
-핵심 질문: 커뮤니티에서 마이그레이션 결정이 가시화될 때, 우리 조직은 어떤 신호로 검증할 수 있는가?
+      <description>커뮤니티 펄스 리더 에코의 시각: AI music is flooding streaming services — but who wants it? 외 관련 기사를 종합한 분석.
+핵심 질문: 지금 커뮤니티 1위가 1~2주 뒤 어떤 결정으로 이어지는가?
 (분야 전문가: 커뮤니티 펄스 리더 · 에코)</description>
-      <pubDate>Sat, 02 May 2026 11:23:13 GMT</pubDate>
+      <pubDate>Sun, 03 May 2026 23:18:07 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#i08</guid>
       <category>insight</category>
       <category>pattern</category>
     </item>
     <item>
-      <title>[인사이트] Figma Make 2.0 — 디자인-코드 갭이 사라지면 디자이너 역할이 재정의된다</title>
+      <title>[인사이트] This tiny, magnetic e-reader could stop you from doomscroll… — 디자인 직무 재정의</title>
       <link>https://daily-news.local/#i09</link>
-      <description>디자인 토큰 자동 매핑 + 컴포넌트 props 양방향 동기화는 단순 핸드오프 도구가 아니라 디자이너의 일이 무엇인가를 재정의한다.
-핵심 질문: 디자인-코드 갭이 사라지면 디자이너의 직무는 무엇으로 재정의되는가?
+      <description>디자인 비평가 아이리스의 시각: This tiny, magnetic e-reader could stop you from doomscrolling 외 관련 기사를 종합한 분석.
+핵심 질문: 이 변화가 디자이너 직무를 어떻게 재정의하는가?
 (분야 전문가: 디자인 비평가 · 아이리스)</description>
-      <pubDate>Sat, 02 May 2026 11:23:13 GMT</pubDate>
+      <pubDate>Sun, 03 May 2026 23:18:07 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#i09</guid>
       <category>insight</category>
       <category>opportunity</category>
     </item>
     <item>
-      <title>[인사이트] Blackwell Ultra가 만드는 추론 가격 재구성</title>
+      <title>[인사이트] ‘This is fine’ creator says AI startup stole his art — 추론 인프라 시간선</title>
       <link>https://daily-news.local/#i10</link>
-      <description>GB300의 H100 대비 추론 4.5×는 단순 성능 향상이 아니라 추론 토큰 시장 가격 구조 자체를 재편한다. 가격 인하 사이클이 다시 시작된다.
-핵심 질문: Blackwell Ultra 양산이 우리 추론 비용에 미치는 시간선은 어떻게 되는가?
+      <description>테크스택 전략가 오리온의 시각: ‘This is fine’ creator says AI startup stole his art 외 관련 기사를 종합한 분석.
+핵심 질문: 이 발표가 우리 추론·인프라 결정의 시간선을 어떻게 바꾸는가?
 (분야 전문가: 테크스택 전략가 · 오리온)</description>
-      <pubDate>Sat, 02 May 2026 11:23:13 GMT</pubDate>
+      <pubDate>Sun, 03 May 2026 23:18:07 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#i10</guid>
       <category>insight</category>
       <category>bullish</category>

@@ -138,7 +138,9 @@ function validateOss(items, V) {
     if (!isStr(o.type))                V.err(`${p}.type`, "missing");
     if (!isStr(o.name))                V.err(`${p}.name`, "missing");
     if (!isUrl(o.url))                 V.err(`${p}.url`, "missing or not http(s)");
-    if (!isStr(o.description))         V.err(`${p}.description`, "missing");
+    // description은 string이면 empty 허용 — GitHub repo 일부에 description 없음.
+    // null/undefined/non-string은 여전히 error.
+    if (typeof o.description !== "string") V.err(`${p}.description`, `must be string, got ${typeof o.description}`);
     if (!isNum(o.stars))               V.err(`${p}.stars`, "not number");
     if (!isNum(o.starsThisWeek))       V.err(`${p}.starsThisWeek`, "not number");
     if (o.starsThisWeek > o.stars)     V.warn(`${p}.starsThisWeek`, `(${o.starsThisWeek}) > stars (${o.stars}) — sanity flag`);

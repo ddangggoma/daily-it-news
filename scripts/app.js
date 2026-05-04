@@ -153,8 +153,12 @@
     // 소스 다양성 미터
     renderDiversity(D.sourceDiversity || []);
 
-    // 인플루언서
+    // 인플루언서 (daily-rotation으로 매일 다른 8명)
     renderInfluencers(D.influencers || []);
+
+    // 오늘 떠오른 테마 + 기술 (today's news/community/oss text 기반 자동 추출)
+    renderThemes();
+    renderTechs();
   }
 
   function renderBucketStrip(target, buckets, isHero) {
@@ -211,19 +215,153 @@
     root.innerHTML = "";
     const head = el("div", { className: "influencer-strip__head" }, "👀 추적 중인 인플루언서");
     root.appendChild(head);
+    // Daily-rotation: 데이터셋의 50+ 인플루언서 풀에서 카테고리별 1명씩 8명 선정.
+    // (window.__INFLUENCERS_DAILY__ 가 없으면 기존 hard-coded arr 사용 — 하위 호환.)
+    const D = window.__DAILY__ || {};
+    const daily = (typeof window.__INFLUENCERS_DAILY__ === "function")
+      ? window.__INFLUENCERS_DAILY__(D.date || new Date().toISOString().slice(0, 10))
+      : null;
+    const list = (daily && daily.length) ? daily : arr;
+
     const wrap = el("div", { className: "influencer-strip__items" });
-    arr.forEach((p) => {
-      wrap.appendChild(el("div", { className: "influencer-card" },
+    list.forEach((p) => {
+      // 카드 자체를 X(트위터) 링크로 만들어 클릭 → 프로필. URL 없으면 div fallback.
+      const tag = p.url ? "a" : "div";
+      const attrs = { className: "influencer-card" };
+      if (p.url) {
+        attrs.href = p.url;
+        attrs.target = "_blank";
+        attrs.rel = "noopener";
+        attrs["aria-label"] = `${p.name} (${p.handle || p.role || ""}) X 프로필 새 창`;
+      }
+      wrap.appendChild(el(tag, attrs,
         el("span", { className: "influencer-card__avatar" }, p.avatar || "👤"),
         el("div", { className: "influencer-card__body" },
           el("div", { className: "influencer-card__name" }, p.name || "",
             p.handle ? el("span", { className: "influencer-card__handle" }, ` ${p.handle}`) : null
           ),
-          el("div", { className: "influencer-card__excerpt" }, p.postExcerpt || "")
+          el("div", { className: "influencer-card__excerpt" }, p.postExcerpt || p.role || "")
         )
       ));
     });
     root.appendChild(wrap);
+  }
+
+  // ── 오늘의 테마 / 기술 strip ───────────────────────────
+  function collectAllText() {
+    const D = window.__DAILY__ || {};
+    const buckets = [D.news || [], D.community || [], D.oss || []];
+    const out = [];
+    buckets.forEach((arr) => arr.forEach((it) => {
+      out.push(`${it.title || ""} ${it.summary || it.description || ""} ${(it.tags || []).join(" ")}`);
+    }));
+    return out;
+  }
+
+  function renderThemes() {
+    const root = $("#theme-strip");
+    if (!root || typeof window.__THEME_MATCH__ !== "function") return;
+    const all = collectAllText();
+    if (!all.length) return;
+    // 빈도 카운트
+    const counts = {};
+    all.forEach((text) => {
+      window.__THEME_MATCH__(text).forEach((id) => { counts[id] = (counts[id] || 0) + 1; });
+    });
+    const themes = (window.__THEMES__ || [])
+      .filter((t) => counts[t.id])
+      .sort((a, b) => counts[b.id] - counts[a.id])
+      .slice(0, 8);
+    if (!themes.length) return;
+    root.innerHTML = "";
+    root.appendChild(el("div", { className: "theme-strip__head" }, "🔥 오늘 떠오른 테마"));
+    themes.forEach((t) => {
+      const chip = el("button", {
+        className: "theme-chip",
+        type: "button",
+        title: `검색 적용: ${t.label}`,
+        "aria-label": `테마 ${t.label} 검색`,
+        onclick: () => triggerNewsSearch(t.label),
+      },
+        el("span", null, `${t.icon || "•"} ${t.label}`),
+        el("span", { className: "tech-chip__count" }, `${counts[t.id]}건`)
+      );
+      root.appendChild(chip);
+    });
+  }
+
+  function renderTechs() {
+    const root = $("#tech-strip");
+    if (!root || typeof window.__TECH_MATCH__ !== "function") return;
+    const all = collectAllText();
+    if (!all.length) return;
+    const counts = {};
+    all.forEach((text) => {
+      window.__TECH_MATCH__(text).forEach((id) => { counts[id] = (counts[id] || 0) + 1; });
+    });
+    const techs = (window.__TECHS__ || [])
+      .filter((t) => counts[t.id])
+      .sort((a, b) => counts[b.id] - counts[a.id])
+      .slice(0, 12);
+    if (!techs.length) return;
+    root.innerHTML = "";
+    root.appendChild(el("div", { className: "tech-strip__head" }, "🛠 오늘 언급된 기술"));
+    techs.forEach((t) => {
+      // 클릭: 외부 사이트 새 창 + 동시에 검색 적용 (Ctrl/Cmd 보조키 시 검색만)
+      const chip = el("a", {
+        className: "tech-chip",
+        href: t.url || "#",
+        target: t.url ? "_blank" : "_self",
+        rel: "noopener",
+        title: `${t.label} 공식 사이트 + 검색`,
+        "aria-label": `기술 ${t.label} 공식 사이트 새 창`,
+        onclick: (e) => {
+          // Modifier key → 외부로 가지 말고 검색만 적용
+          if (e.metaKey || e.ctrlKey || !t.url) {
+            e.preventDefault();
+            triggerNewsSearch(t.label);
+          }
+          // 일반 클릭은 외부로 (default), 그리고 background로 검색도 적용
+          if (t.url && !e.defaultPrevented) {
+            triggerNewsSearch(t.label);
+          }
+        },
+      },
+        el("span", null, `${t.icon || "•"} ${t.label}`),
+        el("span", { className: "tech-chip__count" }, `${counts[t.id]}건`)
+      );
+      root.appendChild(chip);
+    });
+  }
+
+  function triggerNewsSearch(query) {
+    switchTab("news");
+    state.search = String(query || "").trim().toLowerCase();
+    state.categories.clear();
+    state.scoreMin = 0;
+    const slider = $("#news-score-min"); if (slider) slider.value = "0";
+    const num = $("#news-score-num"); if (num) num.textContent = "0.0";
+    const input = $('#news-search input[data-search-input]');
+    if (input) input.value = query;
+    $$("#news-categories .chip").forEach((b) => b.setAttribute("data-active",
+      b.dataset.catKey === "__all" ? "true" : "false"));
+    renderNewsGrid();
+    // 부드럽게 그리드로 스크롤
+    const grid = $("#news-grid");
+    if (grid) grid.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function filterByCategory(catKey) {
+    if (!catKey) return;
+    switchTab("news");
+    state.categories = new Set([catKey]);
+    state.search = "";
+    const input = $('#news-search input[data-search-input]'); if (input) input.value = "";
+    $$("#news-categories .chip").forEach((b) => b.setAttribute("data-active",
+      b.dataset.catKey === catKey ? "true" : "false"));
+    renderNewsGrid();
+    const grid = $("#news-grid");
+    if (grid) grid.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   function setText(sel, v) {
@@ -427,12 +565,23 @@
       id: n.id, "data-id": n.id,
     });
 
-    // head: 카테고리·소스·시각 + 점수 배지
+    // head: 카테고리·소스·시각 + 점수 배지 — 메타 클릭 시 자동 필터.
     const head = el("div", { className: "card__head" },
       el("div", { className: "card__meta" },
-        el("span", { className: "card__cat" }, `${cat.icon} ${cat.label}`),
-        el("span", { className: "card__src" },
-          `${COUNTRY_FLAG[n.sourceCountry] || ""} ${n.source || ""}`),
+        el("span", {
+          className: "card__cat",
+          role: "button", tabindex: "0", style: "cursor:pointer",
+          title: `이 카테고리로 필터: ${cat.label}`,
+          onclick: (e) => { e.stopPropagation(); filterByCategory(n.category); },
+          onkeydown: (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); filterByCategory(n.category); } },
+        }, `${cat.icon} ${cat.label}`),
+        el("span", {
+          className: "card__src",
+          role: "button", tabindex: "0", style: "cursor:pointer",
+          title: `이 소스로 검색: ${n.source || ""}`,
+          onclick: (e) => { e.stopPropagation(); triggerNewsSearch(n.source || ""); },
+          onkeydown: (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); triggerNewsSearch(n.source || ""); } },
+        }, `${COUNTRY_FLAG[n.sourceCountry] || ""} ${n.source || ""}`),
         el("span", { className: "card__time" }, fmtRelTime(n.publishedAt))
       ),
       el("div", { className: `card__score-badge card__score-badge--g${grade}` },
@@ -974,17 +1123,35 @@
   // ───────────────────────────────────────────────────────
   // 12. 부트
   // ───────────────────────────────────────────────────────
+  // 숨김 탭은 LCP 이후 지연 init — 200+ 카드 동기 렌더가 LCP 6.5s까지 끌어올림.
+  // perf-004 권고: 첫 paint에 보이는 news 탭만 동기, 나머지는 idle.
+  function deferIdle(fn) {
+    if (typeof requestIdleCallback === "function") {
+      return requestIdleCallback(fn, { timeout: 2000 });
+    }
+    return setTimeout(fn, 50);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     try {
       renderHero();
       setupTabRouter();
-      setupNewsTab();
-      setupCommunityTab();
-      setupOssTab();
+      setupNewsTab();         // 동기 — 첫 paint 대상 탭
       setupHeaderActions();
-      if (window.Insights && typeof window.Insights.init === "function") {
-        window.Insights.init();
-      }
+      // 숨김 탭은 LCP 이후 idle에 init.
+      deferIdle(() => {
+        try { setupCommunityTab(); } catch (e) { console.error(e); }
+      });
+      deferIdle(() => {
+        try { setupOssTab(); } catch (e) { console.error(e); }
+      });
+      deferIdle(() => {
+        try {
+          if (window.Insights && typeof window.Insights.init === "function") {
+            window.Insights.init();
+          }
+        } catch (e) { console.error(e); }
+      });
       // Cross-tab sync — when another tab toggles starred/bookmarks/read,
       // re-render the news grid so the user sees the change without manual
       // reload. Closes adversarial ADV-4 (lost-update perception).

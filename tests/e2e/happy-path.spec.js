@@ -40,10 +40,14 @@ test.describe("Daily News — happy path", () => {
 
     await page.goto("/index.html");
 
-    // window.DN, window.App, window.Insights 모두 준비
+    // window.DN, window.App 모두 동기 init이라 즉시 ready.
+    // window.Insights는 deferIdle init이라 더 길게 폴링 (최대 5s).
     await expect.poll(() => page.evaluate(() => typeof window.DN)).toBe("object");
     await expect.poll(() => page.evaluate(() => typeof window.App)).toBe("object");
-    await expect.poll(() => page.evaluate(() => typeof window.Insights)).toBe("object");
+    await expect.poll(
+      () => page.evaluate(() => typeof window.Insights),
+      { timeout: 5000 }
+    ).toBe("object");
 
     // Hero 섹션
     await expect(page.locator("#conclusion-headline")).not.toHaveText("…");
@@ -53,7 +57,11 @@ test.describe("Daily News — happy path", () => {
     await expect(page.locator("#quote-text")).not.toHaveText("");
     await expect(page.locator("#stats-grid .stat")).toHaveCount(5);
     await expect(page.locator("#bucket-strip .bucket-pill")).toHaveCount(4);
-    await expect(page.locator("#diversity-bar .diversity-meter__seg")).toHaveCount(5);
+    // diversity 세그먼트 수: 실제 데이터에 따라 1..5. "5"로 hardcode하면
+    // 실제 발행 시 source가 한쪽 region에 몰리면 실패. 1+만 검증.
+    const diversitySegs = await page.locator("#diversity-bar .diversity-meter__seg").count();
+    expect(diversitySegs).toBeGreaterThanOrEqual(1);
+    expect(diversitySegs).toBeLessThanOrEqual(5);
     await expect(page.locator("#influencer-strip .influencer-card")).toHaveCount(8);
 
     // 탭 카운터 — "—" 아닌 숫자

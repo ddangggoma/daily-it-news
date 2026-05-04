@@ -68,11 +68,32 @@ async function fetchText(url, opts = {}) {
 }
 
 const SOURCE_META = {
+  // 커뮤니티
   hackernews:    { label: "Hacker News",       color: "#ff6600", country: "Global", domain: "community" },
+  reddit:        { label: "Reddit",             color: "#ff4500", country: "Global", domain: "community" },
+  geeknews:      { label: "GeekNews",           color: "#22c55e", country: "KR",     domain: "community" },
+  lobsters:      { label: "Lobsters",           color: "#ac1f1f", country: "Global", domain: "community" },
+  // 오픈소스
   github_trending: { label: "GitHub Trending", color: "#24292e", country: "Global", domain: "oss" },
+  // 뉴스
   techcrunch:    { label: "TechCrunch",         color: "#0a9737", country: "US",     domain: "news" },
   theverge:      { label: "The Verge",          color: "#5200ff", country: "US",     domain: "news" },
   arstechnica:   { label: "Ars Technica",       color: "#ff4e00", country: "US",     domain: "news" },
+  mit_tech_review: { label: "MIT Tech Review",  color: "#a31621", country: "US",     domain: "news" },
+  anthropic:     { label: "Anthropic Blog",     color: "#a855f7", country: "US",     domain: "news" },
+  openai:        { label: "OpenAI Blog",        color: "#10a37f", country: "US",     domain: "news" },
+  vercel:        { label: "Vercel Blog",        color: "#000000", country: "US",     domain: "news" },
+  supabase:      { label: "Supabase Blog",      color: "#3ecf8e", country: "Global", domain: "news" },
+  github_blog:   { label: "GitHub Blog",        color: "#24292e", country: "Global", domain: "news" },
+  // AX (engineering culture, productivity)
+  pragmatic_eng: { label: "Pragmatic Engineer", color: "#1d4ed8", country: "Global", domain: "news",   defaultCat: "ax" },
+  leaddev:       { label: "LeadDev",            color: "#0ea5e9", country: "Global", domain: "news",   defaultCat: "ax" },
+  honeycomb:     { label: "Honeycomb / charity.wtf", color: "#f59e0b", country: "US", domain: "news",  defaultCat: "ax" },
+  shopify_eng:   { label: "Shopify Engineering",color: "#95bf47", country: "Global", domain: "news",   defaultCat: "ax" },
+  github_eng:    { label: "GitHub Engineering", color: "#24292e", country: "Global", domain: "news",   defaultCat: "ax" },
+  // Papers
+  arxiv_cs_ai:   { label: "arXiv cs.AI",        color: "#b31b1b", country: "Global", domain: "news",   defaultCat: "papers" },
+  arxiv_cs_lg:   { label: "arXiv cs.LG",        color: "#b31b1b", country: "Global", domain: "news",   defaultCat: "papers" },
 };
 
 // 키워드 → 카테고리 힌트 (collector는 빠른 규칙, 정밀 분류는 score.js의 LLM 또는 휴리스틱 단계)
@@ -94,13 +115,16 @@ function hintCategory(text) {
   return undefined;
 }
 
-// ── 소스 1: Hacker News ─────────────────────────────────
+// ── 소스 1: Hacker News (top + best 합쳐 100건) ─────────
 async function fetchHackerNews({ hours, signal }) {
   const cutoffMs = Date.now() - hours * 3600 * 1000;
-  const ids = await fetchJson("https://hacker-news.firebaseio.com/v0/topstories.json", { signal });
-  // 상위 60개만 (24h 윈도우면 충분)
-  const top = ids.slice(0, 60);
-  const items = await Promise.all(top.map(async (id) => {
+  const [topIds, bestIds] = await Promise.all([
+    fetchJson("https://hacker-news.firebaseio.com/v0/topstories.json", { signal }).catch(() => []),
+    fetchJson("https://hacker-news.firebaseio.com/v0/beststories.json", { signal }).catch(() => []),
+  ]);
+  // top 70 + best 30 union (대략 100건, 중복 자동 제거)
+  const ids = Array.from(new Set([...(topIds || []).slice(0, 70), ...(bestIds || []).slice(0, 30)]));
+  const items = await Promise.all(ids.map(async (id) => {
     try {
       const it = await fetchJson(`https://hacker-news.firebaseio.com/v0/item/${id}.json`, { signal });
       if (!it || it.deleted || it.dead) return null;
@@ -127,10 +151,54 @@ async function fetchHackerNews({ hours, signal }) {
   return items.filter(Boolean);
 }
 
-// ── 소스 2: GitHub trending (Search API 사용) ───────────
+// ── 소스 1b: Reddit (5 subs × 25 posts = 125건) ─────────
+const REDDIT_SUBS = [
+  { sub: "programming",     country: "Global" },
+  { sub: "MachineLearning", country: "Global" },
+  { sub: "LocalLLaMA",      country: "Global" },
+  { sub: "devops",          country: "Global" },
+  { sub: "golang",          country: "Global" },
+];
+async function fetchReddit({ hours, signal }) {
+  const cutoffMs = Date.now() - hours * 3600 * 1000;
+  const all = [];
+  for (const { sub, country } of REDDIT_SUBS) {
+    try {
+      const json = await fetchJson(`https://www.reddit.com/r/${sub}/hot.json?limit=25`, {
+        signal, headers: { "User-Agent": "daily-news/0.1" },
+      });
+      const posts = ((json && json.data && json.data.children) || [])
+        .map((c) => c.data || {})
+        .filter((p) => !p.stickied && !p.over_18);
+      posts.forEach((p) => {
+        const ms = (p.created_utc || 0) * 1000;
+        if (!ms || ms < cutoffMs) return;
+        all.push({
+          id: `reddit-${p.id}`,
+          domain: "community",
+          source: "reddit",
+          sourceLabel: `r/${sub}`,
+          sourceColor: SOURCE_META.reddit.color,
+          sourceCountry: country,
+          url: p.url_overridden_by_dest || `https://www.reddit.com${p.permalink}`,
+          title: p.title || "",
+          summary: stripHtml(p.selftext || "").slice(0, 280),
+          publishedAt: new Date(ms).toISOString(),
+          author: p.author || "",
+          points: p.score || 0,
+          tags: [],
+          rawCategory: hintCategory(`${p.title} ${p.selftext}`),
+        });
+      });
+    } catch { /* 단일 sub 실패는 무시 */ }
+  }
+  return all;
+}
+
+// ── 소스 2: GitHub trending (Search API, 50건) ───────────
 async function fetchGitHubTrending({ hours, signal }) {
   const since = new Date(Date.now() - hours * 3600 * 1000).toISOString().slice(0, 10);
-  const url = `https://api.github.com/search/repositories?q=created:%3E${since}&sort=stars&order=desc&per_page=30`;
+  const url = `https://api.github.com/search/repositories?q=created:%3E${since}&sort=stars&order=desc&per_page=50`;
   const headers = {};
   if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
   const json = await fetchJson(url, { signal, headers });
@@ -158,43 +226,70 @@ async function fetchGitHubTrending({ hours, signal }) {
   }));
 }
 
-// ── 소스 3: RSS 피드 ────────────────────────────────────
+// ── 소스 3: RSS 피드 (18개, 일 100+ items 후보) ──────────
 const RSS_FEEDS = [
-  { source: "techcrunch",  url: "https://techcrunch.com/feed/" },
-  { source: "theverge",    url: "https://www.theverge.com/rss/index.xml" },
-  { source: "arstechnica", url: "https://feeds.arstechnica.com/arstechnica/index" },
+  // 일반 IT 뉴스
+  { source: "techcrunch",       url: "https://techcrunch.com/feed/" },
+  { source: "theverge",         url: "https://www.theverge.com/rss/index.xml" },
+  { source: "arstechnica",      url: "https://feeds.arstechnica.com/arstechnica/index" },
+  { source: "mit_tech_review",  url: "https://www.technologyreview.com/feed/" },
+  // 모델 / AI 인프라 사업자 블로그
+  { source: "anthropic",        url: "https://www.anthropic.com/news/rss.xml" },
+  { source: "openai",           url: "https://openai.com/news/rss.xml" },
+  // DevTools 사업자
+  { source: "vercel",           url: "https://vercel.com/atom" },
+  { source: "supabase",         url: "https://supabase.com/feed.xml" },
+  { source: "github_blog",      url: "https://github.blog/feed/" },
+  // AX (engineering culture)
+  { source: "pragmatic_eng",    url: "https://newsletter.pragmaticengineer.com/feed" },
+  { source: "leaddev",          url: "https://leaddev.com/rss.xml" },
+  { source: "honeycomb",        url: "https://www.honeycomb.io/feed" },
+  { source: "shopify_eng",      url: "https://shopify.engineering/blog.atom" },
+  { source: "github_eng",       url: "https://github.blog/category/engineering/feed/" },
+  // Papers (arXiv RSS — top categories)
+  { source: "arxiv_cs_ai",      url: "https://export.arxiv.org/rss/cs.AI" },
+  { source: "arxiv_cs_lg",      url: "https://export.arxiv.org/rss/cs.LG" },
+  // 한국 커뮤니티
+  { source: "geeknews",         url: "https://feeds.feedburner.com/geeknews-feed" },
+  // 기술 커뮤니티
+  { source: "lobsters",         url: "https://lobste.rs/rss" },
 ];
 
 async function fetchRssFeeds({ hours, signal }) {
   const cutoffMs = Date.now() - hours * 3600 * 1000;
-  const all = [];
-  for (const { source, url } of RSS_FEEDS) {
+  // 병렬 fetch — 18개 피드 직렬은 너무 느림. 각 피드 자체 실패는 무시.
+  const fetched = await Promise.all(RSS_FEEDS.map(async ({ source, url }) => {
     try {
       const xml = await fetchText(url, { signal });
-      const items = parseRss(xml);
-      const meta = SOURCE_META[source];
-      items.forEach((it) => {
-        const ms = Date.parse(it.pubDate || it.published || "");
-        if (!ms || ms < cutoffMs) return;
-        all.push({
-          id: `${source}-${hash(it.link || it.title)}`,
-          domain: meta.domain,
-          source,
-          sourceLabel: meta.label,
-          sourceColor: meta.color,
-          sourceCountry: meta.country,
-          url: it.link || "",
-          title: it.title || "",
-          summary: stripHtml(it.description || it.content || "").slice(0, 280),
-          publishedAt: new Date(ms).toISOString(),
-          author: it.author || "",
-          points: 0,
-          tags: it.categories || [],
-          rawCategory: hintCategory(`${it.title} ${it.description}`),
-        });
+      return { source, items: parseRss(xml) };
+    } catch { return { source, items: [] }; }
+  }));
+  const all = [];
+  fetched.forEach(({ source, items }) => {
+    const meta = SOURCE_META[source];
+    if (!meta) return;
+    items.forEach((it) => {
+      const ms = Date.parse(it.pubDate || it.published || "");
+      if (!ms || ms < cutoffMs) return;
+      all.push({
+        id: `${source}-${hash(it.link || it.title)}`,
+        domain: meta.domain,
+        source,
+        sourceLabel: meta.label,
+        sourceColor: meta.color,
+        sourceCountry: meta.country,
+        url: it.link || "",
+        title: it.title || "",
+        summary: stripHtml(it.description || it.content || "").slice(0, 280),
+        publishedAt: new Date(ms).toISOString(),
+        author: it.author || "",
+        points: 0,
+        tags: it.categories || [],
+        // defaultCat (AX, papers 등)이 있으면 우선; 없으면 키워드 기반 hint
+        rawCategory: meta.defaultCat || hintCategory(`${it.title} ${it.description}`),
       });
-    } catch { /* 한 피드 실패는 무시 */ }
-  }
+    });
+  });
   return all;
 }
 
@@ -257,10 +352,11 @@ async function collect({ hours, mock }) {
     return JSON.parse(fs.readFileSync(MOCK_FIXTURE, "utf8"));
   }
 
-  const TIMEOUT = 20_000;
+  const TIMEOUT = 30_000;  // RSS 18개 병렬 fetch는 시간 더 필요
   const errors = [];
   const sources = [
     ["hackernews",      () => withTimeout((sig) => fetchHackerNews({ hours, signal: sig }), TIMEOUT, "hn")],
+    ["reddit",          () => withTimeout((sig) => fetchReddit({ hours, signal: sig }), TIMEOUT, "reddit")],
     ["github_trending", () => withTimeout((sig) => fetchGitHubTrending({ hours, signal: sig }), TIMEOUT, "gh")],
     ["rss",             () => withTimeout((sig) => fetchRssFeeds({ hours, signal: sig }), TIMEOUT, "rss")],
   ];
@@ -280,6 +376,12 @@ async function collect({ hours, mock }) {
     seen.add(k);
     return true;
   });
+
+  // 200+ 일일 수집 목표 — 미달 시 stderr 경고 (CI에서 가시성 확보).
+  const TARGET = 200;
+  if (dedup.length < TARGET) {
+    console.warn(`[collect] ⚠ collected ${dedup.length} items (target ${TARGET}). Some sources may be down.`);
+  }
 
   return { collectedAt: new Date().toISOString(), windowHours: hours, items: dedup, errors };
 }
@@ -305,4 +407,4 @@ async function main() {
 
 if (require.main === module) main();
 
-module.exports = { collect, parseRss, hintCategory, fetchHackerNews, fetchGitHubTrending, fetchRssFeeds, SOURCE_META };
+module.exports = { collect, parseRss, hintCategory, fetchHackerNews, fetchReddit, fetchGitHubTrending, fetchRssFeeds, SOURCE_META };
