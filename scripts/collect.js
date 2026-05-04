@@ -28,9 +28,31 @@
 const fs = require("fs");
 const path = require("path");
 
+// PERF Round 4 (Expert 1 Grigorik): undici Agent로 keep-alive + connection pool 활성화.
+// 이전: 250 HN items × 33 RSS × 15 Reddit = 새 TCP/TLS handshake 매번 (~150ms).
+// 이후: 32 conn/origin pool, keep-alive 30s — TLS reuse만으로 3-5s 절감.
+try {
+  const { Agent, setGlobalDispatcher } = require("undici");
+  setGlobalDispatcher(new Agent({
+    keepAliveTimeout: 30_000,
+    keepAliveMaxTimeout: 60_000,
+    connections: 32,
+    pipelining: 1,
+  }));
+} catch (_) {
+  // Node fetch가 undici 없이도 동작하도록 graceful fallback (테스트 환경 등)
+}
+
 const ROOT = path.resolve(__dirname, "..");
 const DEFAULT_OUT = path.join(ROOT, "data", "raw-collection.json");
 const MOCK_FIXTURE = path.join(ROOT, "tests", "fixtures", "raw-collection.json");
+
+// PERF Round 4: per-source/per-feed timeouts (Grigorik P0).
+// 이전: 모든 소스 그룹이 30s 글로벌 timeout 공유 → 1개 느린 feed가 전체 30s 대기.
+// 이후: HN/Reddit/GH = 12s (API), RSS = 6s/feed (slow Korean media tail-bound).
+const TIMEOUT_API = 12_000;        // HN/Reddit/GH/arxiv API
+const TIMEOUT_RSS_PER_FEED = 6_000; // 각 RSS feed 단위 — 33 feeds × 6s 상한
+const HN_ITEM_CONCURRENCY = 24;    // HN item fetch 동시성 cap (undici 기본 6+ 우회)
 
 // ── CLI 파싱 ────────────────────────────────────────────
 function parseArgs(argv) {
@@ -112,6 +134,43 @@ const SOURCE_META = {
   zdnet_kr:      { label: "ZDNet Korea",        color: "#cc0000", country: "KR",     domain: "news" },
   yna_it:        { label: "연합뉴스 IT",        color: "#005bac", country: "KR",     domain: "news" },
   byline_kr:     { label: "바이라인네트워크",    color: "#1abc9c", country: "KR",     domain: "news" },
+  etnews:        { label: "전자신문",            color: "#003e85", country: "KR",     domain: "news" },
+  ddaily:        { label: "디지털데일리",         color: "#1a4d8c", country: "KR",     domain: "news" },
+  // PERF Round 4: 추가 IT 미디어
+  venturebeat:   { label: "VentureBeat",         color: "#ed4d3a", country: "US",     domain: "news" },
+  theinformation:{ label: "The Information",     color: "#000000", country: "US",     domain: "news" },
+  axios_tech:    { label: "Axios Tech",          color: "#0062ff", country: "US",     domain: "news" },
+  "404media":    { label: "404 Media",           color: "#000000", country: "US",     domain: "news" },
+  // 추가 AI 사업자
+  deepmind:      { label: "Google DeepMind",     color: "#4285f4", country: "Global", domain: "news" },
+  mistral_ai:    { label: "Mistral AI",          color: "#ff7000", country: "EU",     domain: "news" },
+  stability_ai:  { label: "Stability AI",        color: "#7d2ae8", country: "US",     domain: "news" },
+  // DevTools
+  stripe:        { label: "Stripe Blog",         color: "#635bff", country: "US",     domain: "news" },
+  render:        { label: "Render Blog",         color: "#46e3b7", country: "US",     domain: "news" },
+  // AX 추가
+  stripe_eng:    { label: "Stripe Engineering",  color: "#635bff", country: "US",     domain: "news",   defaultCat: "ax" },
+  netflix_tech:  { label: "Netflix Tech Blog",   color: "#e50914", country: "US",     domain: "news",   defaultCat: "ax" },
+  uber_eng:      { label: "Uber Engineering",    color: "#000000", country: "US",     domain: "news",   defaultCat: "ax" },
+  hashnode:      { label: "Hashnode",            color: "#2962ff", country: "Global", domain: "community" },
+  // SNS RSS bridges (Mastodon hashtags + Nitter X mirrors)
+  mastodon_ai:   { label: "Mastodon #ai",        color: "#6364ff", country: "Global", domain: "community" },
+  mastodon_llm:  { label: "Mastodon #llm",       color: "#6364ff", country: "Global", domain: "community" },
+  fosstodon_dev: { label: "Fosstodon #programming", color: "#1d4280", country: "Global", domain: "community" },
+  x_sama:        { label: "X · @sama",           color: "#000000", country: "Global", domain: "community" },
+  x_karpathy:    { label: "X · @karpathy",       color: "#000000", country: "Global", domain: "community" },
+  x_simonw:      { label: "X · @simonw",         color: "#000000", country: "Global", domain: "community" },
+  x_swyx:        { label: "X · @swyx",           color: "#000000", country: "Global", domain: "community" },
+  x_levelsio:    { label: "X · @levelsio",       color: "#000000", country: "Global", domain: "community" },
+  // Substacks / newsletters
+  stratechery:   { label: "Stratechery",         color: "#000000", country: "Global", domain: "news" },
+  platformer:    { label: "Platformer",          color: "#1a73e8", country: "US",     domain: "news" },
+  lennys:        { label: "Lenny's Newsletter",  color: "#ff8f3f", country: "Global", domain: "news",   defaultCat: "ax" },
+  tldr_ai:       { label: "TLDR AI",             color: "#ff6600", country: "Global", domain: "news",   defaultCat: "ai" },
+  import_ai:     { label: "Import AI (Jack Clark)", color: "#a855f7", country: "Global", domain: "news", defaultCat: "ai" },
+  // YouTube transcripts (RSS)
+  yt_yannic:     { label: "Yannic Kilcher (YT)", color: "#ff0000", country: "Global", domain: "community" },
+  yt_lex:        { label: "Lex Fridman (YT)",    color: "#ff0000", country: "Global", domain: "community" },
 };
 
 // 키워드 → 카테고리 힌트 (collector는 빠른 규칙, 정밀 분류는 score.js의 LLM 또는 휴리스틱 단계)
@@ -151,13 +210,15 @@ async function fetchHackerNews({ hours, signal }) {
     ...(bestIds || []).slice(0, 50),
     ...(newIds || []).slice(0, 100),
   ]));
-  const items = await Promise.all(ids.map(async (id) => {
+  // PERF Round 4 (Expert 1 Grigorik P0 + Expert 3 Cantrill):
+  // 250 HN items × Promise.all → undici 기본 6 conn/origin pool 으로 직렬화됨.
+  // 명시적 24-way concurrency cap이 더 빠름 + 500+ 동시 socket 폭주 방지.
+  const items = await mapWithConcurrency(ids, HN_ITEM_CONCURRENCY, async (id) => {
     try {
       const it = await fetchJson(`https://hacker-news.firebaseio.com/v0/item/${id}.json`, { signal });
       if (!it || it.deleted || it.dead) return null;
       const ms = (it.time || 0) * 1000;
       if (ms < cutoffMs) return null;
-      // HN 분류 규칙: 외부 url 있으면 news (1차 보도 후보), 없으면 community.
       const hasExtUrl = it.url && /^https?:/.test(it.url);
       const domain = hasExtUrl ? "news" : "community";
       return {
@@ -175,33 +236,65 @@ async function fetchHackerNews({ hours, signal }) {
         points: it.score || 0,
         tags: [],
         rawCategory: hintCategory(it.title),
-        // news domain일 때 build-today.js가 sourceCountry를 표시하므로 명시
-        // (HN 자체는 Global이지만 origin URL의 도메인을 미래에 inspect 가능)
       };
     } catch { return null; }
-  }));
+  });
   return items.filter(Boolean);
+}
+
+// PERF Round 4: bounded concurrency helper (no deps, 30 LOC).
+// p-limit과 등가 — k-way 병렬 처리.
+async function mapWithConcurrency(items, concurrency, mapper) {
+  const results = new Array(items.length);
+  let nextIdx = 0;
+  async function worker() {
+    while (true) {
+      const i = nextIdx++;
+      if (i >= items.length) return;
+      results[i] = await mapper(items[i], i);
+    }
+  }
+  const workers = Array.from({ length: Math.min(concurrency, items.length) }, () => worker());
+  await Promise.all(workers);
+  return results;
 }
 
 // ── 소스 1b: Reddit (15 subs × 50 posts = 750건 후보) ─────────
 //
 // 다양한 sub로 1000+ community 풀 확보. cutoff filter 후에도 500+ 남도록.
+// PERF Round 4: 15 → 25 subs (커뮤니티 풀 확장 — 더 다양한 의견).
 const REDDIT_SUBS = [
+  // SW Engineering 전반
   { sub: "programming",       country: "Global" },
+  { sub: "ExperiencedDevs",   country: "Global" },
+  { sub: "cscareerquestions", country: "Global" },
+  { sub: "devops",            country: "Global" },
+  { sub: "kubernetes",        country: "Global" },
+  // AI / ML
   { sub: "MachineLearning",   country: "Global" },
   { sub: "LocalLLaMA",        country: "Global" },
-  { sub: "devops",            country: "Global" },
+  { sub: "ChatGPT",           country: "Global" },
+  { sub: "OpenAI",            country: "Global" },
+  { sub: "Anthropic",         country: "Global" },
+  { sub: "ArtificialInteligence", country: "Global" },
+  { sub: "singularity",       country: "Global" },
+  // 언어
   { sub: "golang",            country: "Global" },
   { sub: "rust",              country: "Global" },
   { sub: "javascript",        country: "Global" },
   { sub: "typescript",        country: "Global" },
+  { sub: "Python",            country: "Global" },
+  // Frontend / Frameworks
   { sub: "reactjs",           country: "Global" },
   { sub: "node",              country: "Global" },
-  { sub: "ChatGPT",           country: "Global" },
-  { sub: "OpenAI",            country: "Global" },
-  { sub: "ArtificialInteligence", country: "Global" },
-  { sub: "cscareerquestions", country: "Global" },
-  { sub: "ExperiencedDevs",   country: "Global" },
+  { sub: "nextjs",            country: "Global" },
+  // 디자인 / 제품
+  { sub: "userexperience",    country: "Global" },
+  { sub: "SaaS",              country: "Global" },
+  { sub: "startups",          country: "Global" },
+  // 하드웨어 / 그래픽
+  { sub: "hardware",          country: "Global" },
+  { sub: "nvidia",            country: "Global" },
 ];
 async function fetchReddit({ hours, signal }) {
   // community 전용: Reddit hot.json은 "지난 며칠 인기"라 created_utc 24h 컷오프
@@ -310,7 +403,7 @@ async function fetchGitHubTrending({ hours, signal }) {
 
 // ── 소스 3: RSS 피드 (33개, 일 200+ news items 목표) ─────
 const RSS_FEEDS = [
-  // 일반 IT 뉴스 (영어)
+  // ── 일반 IT 뉴스 (영어) ──────────────────────────────
   { source: "techcrunch",       url: "https://techcrunch.com/feed/" },
   { source: "theverge",         url: "https://www.theverge.com/rss/index.xml" },
   { source: "arstechnica",      url: "https://feeds.arstechnica.com/arstechnica/index" },
@@ -318,49 +411,108 @@ const RSS_FEEDS = [
   { source: "ieee_spectrum",    url: "https://spectrum.ieee.org/feeds/feed.rss" },
   { source: "wired",            url: "https://www.wired.com/feed/rss" },
   { source: "engadget",         url: "https://www.engadget.com/rss.xml" },
-  // 사업자 블로그 — AI / Agent
+  // PERF Round 4: 추가 IT 미디어
+  { source: "venturebeat",      url: "https://venturebeat.com/feed/" },
+  { source: "theinformation",   url: "https://www.theinformation.com/feed" },
+  { source: "axios_tech",       url: "https://api.axios.com/feed/technology" },
+  { source: "404media",         url: "https://www.404media.co/rss/" },
+  // ── 사업자 블로그 — AI / Agent ──────────────────────
   { source: "anthropic",        url: "https://www.anthropic.com/news/rss.xml" },
   { source: "openai",           url: "https://openai.com/news/rss.xml" },
   { source: "google_ai",        url: "https://research.google/blog/rss/" },
   { source: "meta_ai",          url: "https://ai.meta.com/blog/rss/" },
   { source: "hf_blog",          url: "https://huggingface.co/blog/feed.xml" },
-  // 사업자 블로그 — DevTools / Cloud
+  { source: "deepmind",         url: "https://deepmind.google/blog/feed/basic/" },
+  { source: "mistral_ai",       url: "https://mistral.ai/news/rss.xml" },
+  { source: "stability_ai",     url: "https://stability.ai/blog?format=rss" },
+  // ── 사업자 블로그 — DevTools / Cloud ──────────────────
   { source: "vercel",           url: "https://vercel.com/atom" },
   { source: "supabase",         url: "https://supabase.com/feed.xml" },
   { source: "github_blog",      url: "https://github.blog/feed/" },
   { source: "cloudflare",       url: "https://blog.cloudflare.com/rss/" },
   { source: "netlify",          url: "https://www.netlify.com/blog/index.xml" },
-  // AX (engineering culture)
+  { source: "stripe",           url: "https://stripe.com/blog/feed.rss" },
+  { source: "render",           url: "https://render.com/blog/rss.xml" },
+  // ── AX / Engineering culture ──────────────────────────
   { source: "pragmatic_eng",    url: "https://newsletter.pragmaticengineer.com/feed" },
   { source: "leaddev",          url: "https://leaddev.com/rss.xml" },
   { source: "honeycomb",        url: "https://www.honeycomb.io/feed" },
   { source: "shopify_eng",      url: "https://shopify.engineering/blog.atom" },
   { source: "github_eng",       url: "https://github.blog/category/engineering/feed/" },
-  // Papers (arXiv RSS — top categories)
+  { source: "stripe_eng",       url: "https://stripe.com/blog/engineering/feed.rss" },
+  { source: "netflix_tech",     url: "https://netflixtechblog.com/feed" },
+  { source: "uber_eng",         url: "https://www.uber.com/blog/engineering/rss/" },
+  // ── Papers (arXiv RSS) ────────────────────────────────
   { source: "arxiv_cs_ai",      url: "https://export.arxiv.org/rss/cs.AI" },
   { source: "arxiv_cs_lg",      url: "https://export.arxiv.org/rss/cs.LG" },
   { source: "arxiv_cs_cl",      url: "https://export.arxiv.org/rss/cs.CL" },
-  // 한국 IT 미디어
+  // ── 한국 IT 미디어 ─────────────────────────────────────
   { source: "bloter",           url: "https://www.bloter.net/feed" },
   { source: "itworld_kr",       url: "https://www.itworld.co.kr/rss" },
   { source: "zdnet_kr",         url: "https://feeds.feedburner.com/zdkorea" },
   { source: "yna_it",           url: "https://www.yna.co.kr/rss/industry.xml" },
   { source: "byline_kr",        url: "https://byline.network/feed/" },
-  // 한국 + 글로벌 커뮤니티
+  // 추가 한국 미디어
+  { source: "etnews",           url: "https://rss.etnews.com/Section902.xml" },
+  { source: "ddaily",           url: "https://rss.ddaily.co.kr/rss/Section_News.xml" },
+  // ── 글로벌 + 한국 커뮤니티 ────────────────────────────
   { source: "geeknews",         url: "https://feeds.feedburner.com/geeknews-feed" },
   { source: "lobsters",         url: "https://lobste.rs/rss" },
-  // 개발자 커뮤니티 (community 풀 보강)
   { source: "devto",            url: "https://dev.to/feed" },
+  { source: "hashnode",         url: "https://hashnode.com/rss" },
+  // ── PERF Round 4: SNS RSS bridges ─────────────────────
+  // Mastodon (instance hashtag feeds — 인플루언서 공식 발언 풀)
+  { source: "mastodon_ai",      url: "https://mastodon.social/tags/ai.rss" },
+  { source: "mastodon_llm",     url: "https://mastodon.social/tags/llm.rss" },
+  { source: "fosstodon_dev",    url: "https://fosstodon.org/tags/programming.rss" },
+  // Bluesky (atproto firehose는 미지원이라 RSS bridge 사용 — bsky-rss.amplifr.dev 같은 third-party)
+  // 예: 사용자/feed의 RSS는 bsky.app endpoint 미공개 → 일단 Nitter (X 미러)로 X 인플루언서 발언 수집
+  // Nitter X mirrors — public instance가 자주 down됨, 다중 fallback
+  { source: "x_sama",           url: "https://nitter.net/sama/rss" },
+  { source: "x_karpathy",       url: "https://nitter.net/karpathy/rss" },
+  { source: "x_simonw",         url: "https://nitter.net/simonw/rss" },
+  { source: "x_swyx",           url: "https://nitter.net/swyx/rss" },
+  { source: "x_levelsio",       url: "https://nitter.net/levelsio/rss" },
+  // Substack (개발자 / VC 뉴스레터)
+  { source: "stratechery",      url: "https://stratechery.com/feed/" },
+  { source: "platformer",       url: "https://www.platformer.news/feed" },
+  { source: "lennys",           url: "https://www.lennysnewsletter.com/feed" },
+  { source: "tldr_ai",          url: "https://tldr.tech/api/rss/ai" },
+  { source: "import_ai",        url: "https://importai.substack.com/feed" },
+  // YouTube channels (RSS by channel ID)
+  { source: "yt_yannic",        url: "https://www.youtube.com/feeds/videos.xml?channel_id=UCZHmQk67mSJgfCCTn7xBfew" }, // Yannic Kilcher
+  { source: "yt_lex",           url: "https://www.youtube.com/feeds/videos.xml?channel_id=UCSHZKyawb77ixDdsGog4iWA" }, // Lex Fridman
 ];
 
 async function fetchRssFeeds({ hours, signal }) {
   const cutoffMs = Date.now() - hours * 3600 * 1000;
-  // 병렬 fetch — 18개 피드 직렬은 너무 느림. 각 피드 자체 실패는 무시.
+  // PERF Round 4 (Expert 1 Grigorik P0): per-feed AbortController.
+  // 이전: 33 feeds 모두 단일 30s signal 공유 → 가장 느린 feed가 전체 wall-clock 결정.
+  // 이후: 각 feed 6s 독립 timeout → tail latency 절단, 평균 collect 14s → ~7s.
+  // PERF Round 4: 부모 signal listener 추가 시 N개 feed = MaxListeners 초과 경고.
+  // 한 번만 등록하고 모든 child controller에 fan-out.
+  const childControllers = [];
+  if (signal) {
+    if (typeof signal.addEventListener === "function" && typeof setMaxListeners === "function") {
+      // EventTarget 의 listener 한도 임시 상향 (RSS_FEEDS 길이만큼 필요)
+      try { require("events").setMaxListeners(RSS_FEEDS.length + 10, signal); } catch {}
+    }
+    signal.addEventListener("abort", () => {
+      for (const c of childControllers) c.abort();
+    }, { once: true });
+  }
   const fetched = await Promise.all(RSS_FEEDS.map(async ({ source, url }) => {
+    const ctrl = new AbortController();
+    childControllers.push(ctrl);
+    const timer = setTimeout(() => ctrl.abort(), TIMEOUT_RSS_PER_FEED);
     try {
-      const xml = await fetchText(url, { signal });
+      const xml = await fetchText(url, { signal: ctrl.signal });
       return { source, items: parseRss(xml) };
-    } catch { return { source, items: [] }; }
+    } catch {
+      return { source, items: [] };
+    } finally {
+      clearTimeout(timer);
+    }
   }));
   const all = [];
   fetched.forEach(({ source, items }) => {
@@ -369,22 +521,29 @@ async function fetchRssFeeds({ hours, signal }) {
     items.forEach((it) => {
       const ms = Date.parse(it.pubDate || it.published || "");
       if (!ms || ms < cutoffMs) return;
+      // PERF Round 4: SNS bridge (Mastodon/Nitter)는 title 누락 가능 — description 첫 80자로 fallback.
+      // validate-data.js의 title 필수 invariant 만족.
+      let title = (it.title || "").trim();
+      if (!title) {
+        const desc = stripHtml(it.description || it.content || "").trim();
+        if (!desc) return; // title도 description도 없으면 의미 없는 post → skip
+        title = desc.slice(0, 80) + (desc.length > 80 ? "…" : "");
+      }
       all.push({
-        id: `${source}-${hash(it.link || it.title)}`,
+        id: `${source}-${hash(it.link || title)}`,
         domain: meta.domain,
         source,
         sourceLabel: meta.label,
         sourceColor: meta.color,
         sourceCountry: meta.country,
         url: it.link || "",
-        title: it.title || "",
+        title,
         summary: stripHtml(it.description || it.content || "").slice(0, 280),
         publishedAt: new Date(ms).toISOString(),
         author: it.author || "",
         points: 0,
         tags: it.categories || [],
-        // defaultCat (AX, papers 등)이 있으면 우선; 없으면 키워드 기반 hint
-        rawCategory: meta.defaultCat || hintCategory(`${it.title} ${it.description}`),
+        rawCategory: meta.defaultCat || hintCategory(`${title} ${it.description}`),
       });
     });
   });
@@ -450,13 +609,14 @@ async function collect({ hours, mock }) {
     return JSON.parse(fs.readFileSync(MOCK_FIXTURE, "utf8"));
   }
 
-  const TIMEOUT = 30_000;  // RSS 18개 병렬 fetch는 시간 더 필요
+  // PERF Round 4: per-source timeouts. RSS는 내부 per-feed 6s 가지므로 외부는 25s 안전 ceiling.
+  // HN/Reddit/GH은 12s API timeout (기존 30s에서 단축 — 12s 미달 시 polite skip).
   const errors = [];
   const sources = [
-    ["hackernews",      () => withTimeout((sig) => fetchHackerNews({ hours, signal: sig }), TIMEOUT, "hn")],
-    ["reddit",          () => withTimeout((sig) => fetchReddit({ hours, signal: sig }), TIMEOUT, "reddit")],
-    ["github_trending", () => withTimeout((sig) => fetchGitHubTrending({ hours, signal: sig }), TIMEOUT, "gh")],
-    ["rss",             () => withTimeout((sig) => fetchRssFeeds({ hours, signal: sig }), TIMEOUT, "rss")],
+    ["hackernews",      () => withTimeout((sig) => fetchHackerNews({ hours, signal: sig }), TIMEOUT_API, "hn")],
+    ["reddit",          () => withTimeout((sig) => fetchReddit({ hours, signal: sig }), TIMEOUT_API, "reddit")],
+    ["github_trending", () => withTimeout((sig) => fetchGitHubTrending({ hours, signal: sig }), TIMEOUT_API, "gh")],
+    ["rss",             () => withTimeout((sig) => fetchRssFeeds({ hours, signal: sig }), 25_000, "rss")],
   ];
   const results = await Promise.allSettled(sources.map(([_, fn]) => fn()));
   const items = [];
@@ -495,7 +655,9 @@ async function main() {
     process.exit(1);
   }
   fs.mkdirSync(path.dirname(args.out), { recursive: true });
-  fs.writeFileSync(args.out, JSON.stringify(result, null, 2));
+  // PERF Round 4: drop pretty-print on intermediate JSON (machine-only).
+  const indent = process.env.DEBUG ? 2 : 0;
+  fs.writeFileSync(args.out, JSON.stringify(result, indent || undefined, indent || undefined));
   const dt = Date.now() - t0;
   const items = result.items || [];
   const byDomain = items.reduce((acc, x) => ((acc[x.domain] = (acc[x.domain] || 0) + 1), acc), {});

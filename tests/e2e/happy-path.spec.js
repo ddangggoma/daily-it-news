@@ -62,7 +62,11 @@ test.describe("Daily News — happy path", () => {
     const diversitySegs = await page.locator("#diversity-bar .diversity-meter__seg").count();
     expect(diversitySegs).toBeGreaterThanOrEqual(1);
     expect(diversitySegs).toBeLessThanOrEqual(5);
-    await expect(page.locator("#influencer-strip .influencer-card")).toHaveCount(8);
+    // Round 3: 8 → up to 24 (4×6 grid). 정확한 수는 카테고리 quota 합계 + dedup 결과.
+    // Round 3 quota: 4+2+3+2+1+2+4+3+2+1=24. dedup 후 22~24 사이이면 OK.
+    const influencerCount = await page.locator("#influencer-strip .influencer-card").count();
+    expect(influencerCount).toBeGreaterThanOrEqual(20);
+    expect(influencerCount).toBeLessThanOrEqual(24);
 
     // 탭 카운터 — "—" 아닌 숫자
     for (const id of ["#count-news", "#count-community", "#count-oss", "#count-insights"]) {
@@ -128,7 +132,8 @@ test.describe("Daily News — happy path", () => {
     // Insights 탭으로
     await page.click('.tab-btn[data-tab="insights"]');
     await expect(page.locator('.tab-content[data-tab="insights"]')).toBeVisible();
-    await expect(page.locator("#insights-grid .insight-card")).toHaveCount(10);
+    // Round 3: 10 → 20 인사이트 (삼성전자 임원진 페르소나)
+    await expect(page.locator("#insights-grid .insight-card")).toHaveCount(20);
 
     // 첫 카드 → 모달
     await page.click("#insights-grid .insight-card >> nth=0");
@@ -136,12 +141,12 @@ test.describe("Daily News — happy path", () => {
     await expect(modal).toBeVisible();
     await expect(page.locator("#modal-inner .modal__section")).toHaveCount(6); // 배경/질문/분석 + 관련 3종
 
-    // pos = "1 / 10"
-    await expect(page.locator("#modal-inner .modal__pos")).toHaveText("1 / 10");
+    // pos = "1 / 20" (Round 3: 10→20 페르소나)
+    await expect(page.locator("#modal-inner .modal__pos")).toHaveText("1 / 20");
 
-    // 다음 → "2 / 10"
+    // 다음 → "2 / 20"
     await page.locator("#modal-inner .modal__nav-btn").nth(1).click();
-    await expect(page.locator("#modal-inner .modal__pos")).toHaveText("2 / 10");
+    await expect(page.locator("#modal-inner .modal__pos")).toHaveText("2 / 20");
 
     // ESC 닫기
     await page.keyboard.press("Escape");

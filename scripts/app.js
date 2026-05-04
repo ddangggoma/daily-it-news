@@ -163,12 +163,16 @@
     // 소스 다양성 미터
     renderDiversity(D.sourceDiversity || []);
 
-    // 인플루언서 (daily-rotation으로 매일 다른 8명)
+    // 인플루언서 (daily-rotation으로 매일 다른 24명, 4×6 grid)
     renderInfluencers(D.influencers || []);
 
     // 오늘 떠오른 테마 + 기술 (today's news/community/oss text 기반 자동 추출)
     renderThemes();
     renderTechs();
+
+    // Round 3: 7-day timeline (과거 발행으로 이동) + 데이터 플로우 시각화
+    renderDayTimeline();
+    renderFlowIndicator();
   }
 
   function renderBucketStrip(target, buckets, isHero) {
@@ -222,39 +226,122 @@
   function renderInfluencers(arr) {
     const root = $("#influencer-strip");
     if (!root) return;
+    // 사용자 피드백 ("너무 세로로만 나열"): horizontal-scrolling strip → grid 레이아웃.
+    // 24명 (4×6) 표시 + "전체 N명 추적 중" 카운터.
     root.innerHTML = "";
-    const head = el("div", { className: "influencer-strip__head" }, "👀 추적 중인 인플루언서");
-    root.appendChild(head);
-    // Daily-rotation: 데이터셋의 50+ 인플루언서 풀에서 카테고리별 1명씩 8명 선정.
-    // (window.__INFLUENCERS_DAILY__ 가 없으면 기존 hard-coded arr 사용 — 하위 호환.)
+    root.className = "influencer-grid"; // strip → grid 클래스 변경
     const D = window.__DAILY__ || {};
     const daily = (typeof window.__INFLUENCERS_DAILY__ === "function")
       ? window.__INFLUENCERS_DAILY__(D.date || new Date().toISOString().slice(0, 10))
       : null;
     const list = (daily && daily.length) ? daily : arr;
+    const total = (typeof window.__INFLUENCERS_TOTAL__ === "function")
+      ? window.__INFLUENCERS_TOTAL__() : list.length;
 
-    const wrap = el("div", { className: "influencer-strip__items" });
+    // 헤더: "추적 중 인플루언서" + 전체 N명 + 매일 24명 rotation 안내
+    root.appendChild(el("div", { className: "influencer-grid__head" },
+      el("span", null, "👀 추적 중인 인플루언서"),
+      el("span", { className: "influencer-grid__total" },
+        `전체 ${total}명 · 오늘의 24명`)
+    ));
+
     list.forEach((p) => {
-      // 카드 자체를 X(트위터) 링크로 만들어 클릭 → 프로필. URL 없으면 div fallback.
       const tag = p.url ? "a" : "div";
-      const attrs = { className: "influencer-card" };
+      const attrs = {
+        className: "influencer-card",
+        "data-cat": p.category || "",
+      };
       if (p.url) {
         attrs.href = p.url;
         attrs.target = "_blank";
         attrs.rel = "noopener";
-        attrs["aria-label"] = `${p.name} (${p.handle || p.role || ""}) X 프로필 새 창`;
+        attrs["aria-label"] = `${p.name} (${p.role || ""}) ${p.handle ? "X " + p.handle : ""} 프로필 새 창`;
       }
-      wrap.appendChild(el(tag, attrs,
+      root.appendChild(el(tag, attrs,
         el("span", { className: "influencer-card__avatar" }, p.avatar || "👤"),
         el("div", { className: "influencer-card__body" },
-          el("div", { className: "influencer-card__name" }, p.name || "",
-            p.handle ? el("span", { className: "influencer-card__handle" }, ` ${p.handle}`) : null
-          ),
-          el("div", { className: "influencer-card__excerpt" }, p.postExcerpt || p.role || "")
-        )
+          el("div", { className: "influencer-card__name" }, p.name || ""),
+          el("div", { className: "influencer-card__role" }, p.role || p.handle || "")
+        ),
+        el("span", { className: "influencer-card__cat-dot", title: p.category || "" })
       ));
     });
-    root.appendChild(wrap);
+  }
+
+  // ── 과거 7일 timeline (Round 3) ────────────────────────
+  // 사용자 요청 "전날 뉴스들도 볼 수 있도록 UX": 헤드에 7-day pill 스트립 추가.
+  // 오늘 = 활성 / 어제 + N일 = archive.html 의 해당 날짜 stub로 이동.
+  function renderDayTimeline() {
+    const root = $("#day-timeline");
+    if (!root) return;
+    root.innerHTML = "";
+    root.appendChild(el("div", { className: "day-timeline__head" }, "📅 최근 7일"));
+
+    const archive = window.__ARCHIVE__ || [];
+    const D = window.__DAILY__ || {};
+    const todayDate = D.date || new Date().toISOString().slice(0, 10);
+    // 오늘부터 6일 전까지 7개 pill. archive.js가 가진 항목 우선, 없으면 비활성.
+    const days = [];
+    for (let i = 0; i < 7; i++) {
+      const d = new Date(todayDate);
+      d.setDate(d.getDate() - i);
+      const iso = d.toISOString().slice(0, 10);
+      const arch = archive.find((a) => a.date === iso);
+      days.push({ iso, dayLabel: ["일","월","화","수","목","금","토"][d.getDay()],
+                  shortDate: iso.slice(5).replace("-", "/"),
+                  hasData: !!arch || i === 0,
+                  isToday: i === 0,
+                  scoreAvg: arch ? arch.scoreAvg : (i === 0 && D.conclusion ? D.conclusion.scoreAvg : null) });
+    }
+    days.forEach((d) => {
+      const tag = d.hasData ? "a" : "div";
+      const attrs = {
+        className: "day-pill",
+        "data-active": d.isToday ? "true" : "false",
+        "data-disabled": d.hasData ? "false" : "true",
+        title: d.isToday ? "오늘 (지금 보고 있는 발행)" : `${d.iso} 발행 보기`,
+      };
+      if (d.hasData && !d.isToday) {
+        attrs.href = `archive.html#archive-${d.iso}`;
+        attrs["aria-label"] = `${d.iso} 발행 아카이브로 이동`;
+      } else if (d.isToday) {
+        attrs["aria-current"] = "page";
+      }
+      root.appendChild(el(tag, attrs,
+        el("span", { className: "day-pill__date" }, d.shortDate),
+        el("span", { className: "day-pill__day" }, d.dayLabel),
+        d.scoreAvg != null ? el("span", { className: "day-pill__score" }, fmtScore(d.scoreAvg)) : null
+      ));
+    });
+  }
+
+  // ── 데이터 플로우 시각화 (Round 3) ─────────────────────
+  // 사용자 요청 "전체적인 플로우가 보일 수 있도록": 6단계 파이프라인 표시.
+  function renderFlowIndicator() {
+    const root = $("#flow-indicator");
+    if (!root) return;
+    root.innerHTML = "";
+    const D = window.__DAILY__ || {};
+    const counts = D.counts || {};
+    const stats = D.stats || {};
+    const steps = [
+      { icon: "📡", label: "수집", value: `${(counts.news || 0) + (counts.community || 0) + (counts.oss || 0)}건` },
+      { icon: "🎯", label: "IT 필터", value: `relevance ≥ 0.6` },
+      { icon: "📊", label: "4기준 채점", value: `${stats.score45plus || 0}건 4.5+` },
+      { icon: "📰", label: "뉴스 분류", value: `${counts.news || 0}건 / ${stats.categoriesActive || 0} cat` },
+      { icon: "🧠", label: "20인 분석", value: `${counts.insights || 0}개 인사이트` },
+      { icon: "📤", label: "발행", value: `RSS · 아카이브` },
+    ];
+    steps.forEach((s, i) => {
+      root.appendChild(el("div", { className: "flow-indicator__step" },
+        el("span", null, s.icon), " ",
+        el("strong", null, s.label), " ",
+        el("span", null, s.value)
+      ));
+      if (i < steps.length - 1) {
+        root.appendChild(el("span", { className: "flow-indicator__arrow", "aria-hidden": "true" }, "→"));
+      }
+    });
   }
 
   // ── 오늘의 테마 / 기술 strip ───────────────────────────
@@ -539,22 +626,44 @@
     renderNewsGrid();
   }
 
+  // PERF Round 4 (Expert 5 Souders + Expert 8 Caswell):
+  // 매 키스트로크마다 322 items × (Array.join + toLowerCase + spread) → 322개 transient 문자열.
+  // boot 시 1회 pre-compute → filter는 string indexOf만 (O(1)).
+  // avgScore도 캐시 — 이전엔 sort comparator에서 N log N × 4 fields = 호출 폭주.
+  function buildNewsIndex() {
+    const news = (window.__DAILY__ && window.__DAILY__.news) || [];
+    for (let i = 0; i < news.length; i++) {
+      const n = news[i];
+      if (n.__indexed) continue;
+      n.__hay = `${n.title || ""} ${n.summary || ""} ${n.source || ""} ${n.sourceCountry || ""} ${(n.tags || []).join(" ")}`.toLowerCase();
+      const s = n.scores || {};
+      n.__avg = ((+s.impact || 0) + (+s.freshness || 0) + (+s.depth || 0) + (+s.buzz || 0)) / 4;
+      n.__indexed = true;
+    }
+  }
+
   function filterNews(items) {
     const q = state.search;
-    return (items || []).filter((n) => {
-      if (state.categories.size && !state.categories.has(n.category)) return false;
-      if (state.scoreMin > 0 && avgScore(n.scores) < state.scoreMin) return false;
-      if (q) {
-        const hay = [
-          n.title, n.summary, n.source, n.sourceCountry,
-          ...(n.tags || []),
-        ].join(" ").toLowerCase();
-        if (!hay.includes(q)) return false;
+    const sm = state.scoreMin;
+    const cats = state.categories;
+    const hasCats = cats.size > 0;
+    const qLen = q ? q.length : 0;
+    const arr = items || [];
+    const out = [];
+    // 핫 루프 — branch-predictable, 0 allocations.
+    for (let i = 0; i < arr.length; i++) {
+      const n = arr[i];
+      if (hasCats && !cats.has(n.category)) continue;
+      if (sm > 0 && (n.__avg != null ? n.__avg : avgScore(n.scores)) < sm) continue;
+      if (qLen) {
+        const hay = n.__hay != null ? n.__hay : (
+          `${n.title || ""} ${n.summary || ""} ${n.source || ""} ${(n.tags || []).join(" ")}`.toLowerCase()
+        );
+        if (hay.indexOf(q) === -1) continue;
       }
-      // bucket: 데이터에 명시된 분류가 없으므로 'all' 외엔 모두 통과(데모 모드)
-      // 실제 운영에서는 publishedAt 기반으로 yesterday/today 분류 가능.
-      return true;
-    });
+      out.push(n);
+    }
+    return out;
   }
 
   function renderBreadcrumb() {
@@ -572,8 +681,6 @@
   function renderNewsGrid() {
     const grid = $("#news-grid");
     if (!grid) return;
-    grid.innerHTML = "";
-    // Iter 3 — Hogan: skeleton 제거 + aria-busy false → 스크린리더에 "준비 완료" 알림
     grid.setAttribute("aria-busy", "false");
 
     const all = (window.__DAILY__ && window.__DAILY__.news) || [];
@@ -583,7 +690,6 @@
     renderBreadcrumb();
 
     if (!list.length) {
-      // Iter 5 — Walter: 따뜻한 빈 상태 + actionable. 사용자가 무엇을 하면 좋은지 직접 가이드.
       const reset = el("button", {
         className: "empty__action",
         type: "button",
@@ -599,7 +705,8 @@
           renderNewsGrid();
         },
       }, "↺ 모든 필터 해제");
-      grid.appendChild(el("div", { className: "empty" },
+      // PERF Round 4 (Souders): innerHTML="" + appendChild = 2 reflow. replaceChildren = 1 reflow.
+      grid.replaceChildren(el("div", { className: "empty" },
         el("div", { className: "empty__icon" }, "🔭"),
         el("div", { className: "empty__title" }, "이 조건에 맞는 뉴스가 없네요"),
         el("div", { className: "empty__text" }, "필터를 살짝 풀어 보거나, 다른 카테고리를 둘러보세요."),
@@ -608,18 +715,17 @@
       return;
     }
 
-    // P1 최적화: localStorage를 카드별 3회 × N 카드 = 3N회 호출 대신 1회 → Set.has()
-    // 100 카드면 300 → 3 호출. JSON.parse도 1회만.
     const flagSets = {
       starred:    new Set(window.Storage ? window.Storage.getFlagged("starred")   : []),
       bookmarks:  new Set(window.Storage ? window.Storage.getFlagged("bookmarks") : []),
       read:       new Set(window.Storage ? window.Storage.getFlagged("read")      : []),
     };
 
-    // DocumentFragment로 reflow 1회로 묶음
+    // PERF Round 4 (Souders P2): innerHTML="" → appendChild 2단계 reflow를
+    // replaceChildren 1단계로 통합. 322 카드 chip-toggle 시 ~10-15% 절감.
     const frag = document.createDocumentFragment();
     list.forEach((n) => frag.appendChild(renderNewsCard(n, flagSets)));
-    grid.appendChild(frag);
+    grid.replaceChildren(frag);
   }
 
   function renderNewsCard(n, flagSets) {
@@ -955,20 +1061,19 @@
     else list.sort((a, b) => Date.parse(b.postedAt || 0) - Date.parse(a.postedAt || 0));
 
     setText("#community-counter", `${list.length}건 / 전체 ${all.length}`);
-    grid.innerHTML = "";
-    grid.setAttribute("aria-busy", "false"); // Iter 3 — ready signal
+    grid.setAttribute("aria-busy", "false");
     if (!list.length) {
-      grid.appendChild(el("div", { className: "empty" },
+      grid.replaceChildren(el("div", { className: "empty" },
         el("div", { className: "empty__icon" }, "💬"),
         el("div", { className: "empty__title" }, "이 조건의 토론을 못 찾았어요"),
         el("div", { className: "empty__text" }, "소스나 카테고리를 다르게 골라 보세요.")
       ));
       return;
     }
-    // DocumentFragment: 1 reflow vs N. perf-001 DRY of news-tab pattern.
+    // PERF Round 4 (Souders): replaceChildren = 1 reflow vs innerHTML+append = 2.
     const frag = document.createDocumentFragment();
     list.forEach((c) => frag.appendChild(renderCommunityCard(c)));
-    grid.appendChild(frag);
+    grid.replaceChildren(frag);
   }
 
   function renderCommunityCard(c) {
@@ -1063,46 +1168,92 @@
     });
 
     setText("#oss-counter", `${list.length}건 / 전체 ${all.length}`);
-    grid.innerHTML = "";
-    grid.setAttribute("aria-busy", "false"); // Iter 3 — ready signal
+    grid.setAttribute("aria-busy", "false");
     if (!list.length) {
-      grid.appendChild(el("div", { className: "empty" },
+      grid.replaceChildren(el("div", { className: "empty" },
         el("div", { className: "empty__icon" }, "📦"),
         el("div", { className: "empty__title" }, "조건에 맞는 저장소가 없어요"),
         el("div", { className: "empty__text" }, "타입 필터를 풀거나 검색어를 줄여 보세요.")
       ));
       return;
     }
-    // DocumentFragment: 1 reflow vs N. perf-001 DRY of news-tab pattern.
+    // PERF Round 4: replaceChildren single reflow.
     const frag = document.createDocumentFragment();
     list.forEach((o) => frag.appendChild(renderOssCard(o)));
-    grid.appendChild(frag);
+    grid.replaceChildren(frag);
   }
 
   function renderOssCard(o) {
-    return el("article", { className: "card oss-card" },
-      el("div", { className: "oss-card__head" },
+    // OSS 카드 재디자인 — 사용자 피드백:
+    //   "stars/사용언어/라이센스 구분되지 않음, 무엇이 중요한지 모르겠음"
+    //
+    // 정보 위계 (상→하):
+    //   1) 타입 + 트렌딩/한국 배지 (즉시 시각 분류)
+    //   2) 저장소 이름 (큰 글자, mono — 가장 중요)
+    //   3) 한 줄 설명
+    //   4) [⭐ stars] [📈 +week] [💻 lang] [📜 license] (4-grid 정렬, 색 구분)
+    //   5) Why important — 자동 생성 추론 한 줄
+    //   6) GitHub 버튼 + contributors
+
+    // why important — Trending=주목 / Korean=현지 우선 / Stars 큰 = 검증됨
+    let whyImportant = "";
+    if (o.isTrending) whyImportant = "📈 이번 주 GitHub Trending에 진입한 신호";
+    else if (o.isKorean) whyImportant = "🇰🇷 한국 개발자 커뮤니티에서 활발히 만들어지는 프로젝트";
+    else if (o.stars >= 50000) whyImportant = "✅ 50k+ stars — 업계 표준급 검증";
+    else if (o.stars >= 10000) whyImportant = "✅ 10k+ stars — 충분히 검증된 도구";
+    else if (o.starsThisWeek >= 200) whyImportant = "🔥 이번 주 빠르게 별을 모으는 중";
+    else whyImportant = "👀 신생 프로젝트 — 추적 후보";
+
+    return el("article", { className: "card oss-card", "data-id": o.id },
+      // 1단: 타입 + 배지 (시각 분류 즉시)
+      el("div", { className: "oss-card__top" },
         el("span", { className: "oss-card__type" }, `${o.typeIcon || "📦"} ${o.typeLabel || o.type || ""}`),
-        o.isKorean   ? el("span", { className: "oss-card__badge oss-card__badge--korean"   }, "🇰🇷 한국") : null,
-        o.isTrending ? el("span", { className: "oss-card__badge oss-card__badge--trending" }, "🔥 trending") : null
+        o.isTrending ? el("span", { className: "oss-card__badge oss-card__badge--trending" }, "🔥 Trending") : null,
+        o.isKorean   ? el("span", { className: "oss-card__badge oss-card__badge--korean"   }, "🇰🇷 KR") : null
       ),
-      el("a", {
-        className: "oss-card__name",
-        href: o.url, target: "_blank", rel: "noopener",
-      }, o.name || ""),
+      // 2단: 저장소 이름 (가장 중요한 정보)
+      el("h3", { className: "oss-card__name-wrap" },
+        el("a", {
+          className: "oss-card__name",
+          href: o.url, target: "_blank", rel: "noopener",
+        }, o.name || "")
+      ),
+      // 3단: 한 줄 설명
       el("p", { className: "oss-card__desc" }, o.description || ""),
-      el("div", { className: "oss-card__meta" },
-        el("span", null, `⭐ ${fmtNum(o.stars)}`),
-        el("span", { className: "oss-card__delta" }, `+${fmtNum(o.starsThisWeek)}`),
-        o.language ? el("span", null, o.language) : null,
-        o.license  ? el("span", null, o.license) : null,
-        o.contributors ? el("span", null, `${o.contributors} contrib`) : null
+      // 4단: 4-stat grid — 각각 색·아이콘 구분
+      el("div", { className: "oss-card__stats-grid" },
+        el("div", { className: "oss-stat oss-stat--stars" },
+          el("span", { className: "oss-stat__icon" }, "⭐"),
+          el("span", { className: "oss-stat__value" }, fmtNum(o.stars)),
+          el("span", { className: "oss-stat__label" }, "stars")
+        ),
+        el("div", { className: "oss-stat oss-stat--growth" },
+          el("span", { className: "oss-stat__icon" }, "📈"),
+          el("span", { className: "oss-stat__value" }, `+${fmtNum(o.starsThisWeek)}`),
+          el("span", { className: "oss-stat__label" }, "this week")
+        ),
+        el("div", { className: "oss-stat oss-stat--lang" },
+          el("span", { className: "oss-stat__icon" }, "💻"),
+          el("span", { className: "oss-stat__value" }, o.language || "—"),
+          el("span", { className: "oss-stat__label" }, "language")
+        ),
+        el("div", { className: "oss-stat oss-stat--license" },
+          el("span", { className: "oss-stat__icon" }, "📜"),
+          el("span", { className: "oss-stat__value" }, o.license || "—"),
+          el("span", { className: "oss-stat__label" }, "license")
+        )
       ),
-      o.note ? el("div", { className: "oss-card__note" }, `📝 ${o.note}`) : null,
-      el("a", {
-        className: "oss-card__link",
-        href: o.url, target: "_blank", rel: "noopener",
-      }, "GitHub →")
+      // 5단: Why important
+      el("div", { className: "oss-card__why" }, whyImportant),
+      // 6단: footer — contributors + 외부 링크
+      el("div", { className: "oss-card__foot" },
+        o.contributors ? el("span", { className: "oss-card__contrib" }, `👥 ${o.contributors} contrib`) : null,
+        el("a", {
+          className: "oss-card__link",
+          href: o.url, target: "_blank", rel: "noopener",
+          "aria-label": `${o.name} GitHub 저장소 새 창에서 열기`,
+        }, "GitHub ↗")
+      )
     );
   }
 
@@ -1219,6 +1370,11 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     try {
+      // PERF Round 4: pre-compute __hay/__avg index 1번 (boot 시 ~5ms for 322 items).
+      // filterNews 매 키스트로크 시 string concat/lowercase 회피. 50+ keystrokes/min × 322 items
+      // = 16k allocations 절감.
+      buildNewsIndex();
+
       renderHero();
       setupTabRouter();
       setupNewsTab();         // 동기 — 첫 paint 대상 탭

@@ -90,39 +90,154 @@ const IMPACT_KEYWORDS = {
   "must":            0.3, "required":   0.3,
 };
 
-const DEPTH_KEYWORDS = [
-  // 기술 깊이 신호
-  /\bbenchmark\b/i, /\bpaper\b/i, /\barxiv\b/i, /\bopen[- ]?source\b/i,
-  /\b(transformer|attention|LSTM|RNN|CNN|GAN|VAE|RAG|reasoning)\b/i,
-  /\b(latency|throughput|p99|p95|TFLOPS|TPS|QPS|memory|bandwidth)\b/i,
-  /\b(SDK|API|protocol|implementation|architecture|infrastructure)\b/i,
-  /\b(code|repo|commit|PR|merge|review)\b/i,
+// PERF Round 4 (Expert 2 Egorov + Expert 8 Caswell):
+// Object.entries(IMPACT_KEYWORDS)는 매 item마다 array 생성 + key는 매번 toLowerCase.
+// 모듈-레벨에 한 번만 lowercase pre-computed [key, weight] 튜플로 hoist.
+// 2016 items × 22 entries = 44k 불필요 toLowerCase 호출 제거.
+const IMPACT_KW_LC = Object.entries(IMPACT_KEYWORDS).map(([k, w]) => [k.toLowerCase(), w]);
+
+// PERF Round 4 (Expert 2): 5개 별도 regex 배열 → 단일 결합 alternation regex.
+// V8가 각 패턴을 독립 NFA로 traversal 하던 것을 하나의 결합 NFA로 amortize.
+// /g 플래그 + matchAll로 1-pass count.
+const DEPTH_REGEX = /\b(?:benchmark|paper|arxiv|open[- ]?source|transformer|attention|LSTM|RNN|CNN|GAN|VAE|RAG|reasoning|latency|throughput|p99|p95|TFLOPS|TPS|QPS|memory|bandwidth|SDK|API|protocol|implementation|architecture|infrastructure|code|repo|commit|PR|merge|review)\b/gi;
+
+/**
+ * IT_RELEVANCE — 사용자 피드백 ("헤드라인이 IT Daily News와 관련이 없어")
+ *
+ * HN/Reddit 같은 aggregator는 비-IT 화제(인터뷰·역사·여행기)도 종종 1위에 오른다.
+ * 점수가 아무리 높아도 IT 관련성이 0이면 헤드라인이 될 수 없도록 게이트를 추가.
+ *
+ * 0..1 스칼라:
+ *   1.0 = 명백한 IT (AI/devtools/cloud/semiconductor/hardware/sw eng)
+ *   0.5 = 인접 (디자인 도구, 프로덕트 매니지먼트, 데이터 사이언스 비즈니스)
+ *   0.0 = 비-IT (정치, 라이프스타일, 의료, 금융 일반, 스포츠)
+ *
+ * 모든 점수 채널에 곱해져 비-IT 항목을 시스템적으로 demote.
+ * 헤드라인 임계: 종합점수 ≥ 4.0 AND relevance ≥ 0.6.
+ */
+const IT_KEYWORDS_STRONG = [
+  // AI / ML — 핵심
+  /\b(AI|ML|LLM|GPT|Claude|Gemini|Llama|Mistral|DeepSeek|Qwen)\b/i,
+  /\b(OpenAI|Anthropic|Google AI|DeepMind|Hugging ?Face|Cohere|xAI)\b/i,
+  /\b(transformer|neural network|deep learning|machine learning|fine-?tun|pretrain)\b/i,
+  /\b(embedding|vector|RAG|retrieval|prompt|inference|tokeniz|context window)\b/i,
+  /\b(reasoning|agent|MCP|computer use|chain of thought|test-time)\b/i,
+  // SW Engineering / DevTools
+  /\b(API|SDK|framework|library|runtime|compiler|interpreter|database|kubernetes|docker)\b/i,
+  /\b(GitHub|GitLab|npm|pip|cargo|maven|gradle|webpack|vite|esbuild|turbopack)\b/i,
+  /\b(React|Vue|Svelte|Angular|Next|Remix|Astro|Tailwind|TypeScript|JavaScript|Rust|Go|Python)\b/i,
+  /\b(cloud|serverless|edge|CDN|microservic|monolith|container|kubernetes|terraform)\b/i,
+  /\b(Vercel|Netlify|Cloudflare|AWS|GCP|Azure|Supabase|Firebase|Linear|Stripe)\b/i,
+  // Hardware / Semiconductor
+  /\b(GPU|CPU|TPU|NPU|ASIC|FPGA|SoC|chip|silicon|wafer|fab|foundry)\b/i,
+  /\b(NVIDIA|AMD|Intel|TSMC|Samsung|SK Hynix|ARM|Apple Silicon|M[1234])\b/i,
+  /\b(CUDA|TensorRT|HBM|DDR|PCIe|NVLink|NVSwitch|InfiniBand)\b/i,
+  // Mobile / Display / Robot
+  /\b(iPhone|iPad|Android|Galaxy|Pixel|foldable|폴더블|OLED|microLED|AR|VR|XR|MR)\b/i,
+  /\b(humanoid|robot|autonomous|self-driving|Tesla bot|Optimus|Figure)\b/i,
+  // SW Practice
+  /\b(open[- ]?source|repo|repository|deployment|CI\/CD|DevOps|SRE|observability)\b/i,
+  /\b(latency|throughput|benchmark|performance|scaling|distributed)\b/i,
+  // Korean tech
+  /(삼성|LG|네이버|카카오|토스|쿠팡|당근|배민|라인|넷마블|크래프톤|엔씨|카카오뱅크|네카라쿠배)/,
+  /(반도체|디스플레이|폴더블|클라우드|개발자|소프트웨어|하드웨어|인공지능|머신러닝)/,
 ];
 
-// ── 4기준 채점 ─────────────────────────────────────────
-function scoreImpact(item) {
-  // 1) 소스 권위 (Tier 1 사업자 발표/주요 미디어 = 4.5+, HN aggregator = 4.0)
+const IT_KEYWORDS_MEDIUM = [
+  /\b(design system|figma|sketch|prototype|wireframe|UX|UI|user research)\b/i,
+  /\b(product manage|PM|sprint|agile|scrum|jira|notion|slack|linear)\b/i,
+  /\b(data science|analytics|dashboard|visualization|tableau|looker|metabase)\b/i,
+  /\b(crypto|blockchain|web3|NFT|smart contract|defi|ethereum|bitcoin)\b/i,
+  /\b(IoT|smart home|wearable|EV|electric vehicle|battery)\b/i,
+];
+
+const IT_NEGATIVE_KEYWORDS = [
+  // 명백한 비-IT 토픽 — 점수 강하게 깎음
+  /\b(election|politics|congress|senate|president(?!ia)|trump|biden|harris)\b/i,
+  /\b(recipe|cooking|baking|cuisine|restaurant|chef|ingredient)\b/i,
+  /\b(travel|tourist|vacation|hotel|flight|cruise)\b/i,
+  /\b(workout|fitness|diet|yoga|meditation|spiritual)\b/i,
+  /\b(NBA|NFL|MLB|FIFA|olympic|football|basketball|baseball|soccer|tennis)\b/i,
+  /\b(album|concert|musician|guitar|pianist|orchestra|opera|jazz|rock band)\b/i,
+  /\b(novel|fiction|poetry|memoir|biography(?!.*tech))\b/i,
+  /\b(divorce|wedding|marriage|relationship advice|dating)\b/i,
+  /\b(climate change(?!.*model)|carbon footprint(?!.*data)|wildfire(?!.*sensor))\b/i,
+  /(요리|레시피|여행|운동|다이어트|연애|결혼|이혼|정치|선거|국회)/,
+];
+
+// PERF Round 4 (Expert 2 Egorov): 5개 별도 regex 배열 → 결합된 단일 alternation regex.
+// V8가 각 NFA 별도 traversal → 단일 amortize. /g 로 1-pass count.
+// (각 패턴의 lookbehind/lookahead 미사용 패턴만 결합 — 안전.)
+const IT_STRONG_RE = new RegExp(
+  IT_KEYWORDS_STRONG.map((re) => re.source).join("|"),
+  "gi"
+);
+const IT_MEDIUM_RE = new RegExp(
+  IT_KEYWORDS_MEDIUM.map((re) => re.source).join("|"),
+  "gi"
+);
+const IT_NEGATIVE_RE = new RegExp(
+  IT_NEGATIVE_KEYWORDS.map((re) => re.source).join("|"),
+  "gi"
+);
+
+function countMatches(text, re) {
+  re.lastIndex = 0;
+  let count = 0;
+  while (re.exec(text) !== null) count++;
+  return count;
+}
+
+function scoreItRelevance(item) {
+  const text = `${item.title || ""} ${item.summary || ""} ${(item.tags || []).join(" ")}`;
+  if (!text.trim()) return 0;
+
+  // PERF Round 4: 결합 regex 사용 — 17+5+10=32개 .test() → 3 .exec() 루프
+  const strong = countMatches(text, IT_STRONG_RE);
+  const medium = countMatches(text, IT_MEDIUM_RE);
+  const negative = countMatches(text, IT_NEGATIVE_RE);
+
+  // 기본 source 권위
   const auth = SOURCE_AUTHORITY[item.source] || SOURCE_AUTHORITY._default;
-  // 2) 키워드 가중치 (영어 + 한국어)
+  let base = 0;
+  if (auth >= 4.5) base = 0.7;
+  else if (auth >= 4.0) base = 0.5;
+  else base = 0.3;
+
+  let score = base + Math.min(0.4, strong * 0.12) + Math.min(0.2, medium * 0.05);
+  score -= negative * 0.4;
+  if (item.domain === "oss") score = Math.max(score, 0.7);
+
+  return clamp(round1(score), 0, 1.0);
+}
+
+// ── 4기준 채점 ─────────────────────────────────────────
+// PERF Round 4 (Expert 2+8): scoreImpact는 pre-computed relevance를 받아 dedup.
+// 기존: scoreImpact 내부에서 scoreItRelevance 호출 + shapeForDashboard 에서 또 호출 = 2번 = 2N×34 regex.
+// 개선: main loop에서 1번 계산 → scoreImpact / shapeForDashboard 모두에 전달.
+function scoreImpact(item, precomputedRel) {
+  // 1) 소스 권위
+  const auth = SOURCE_AUTHORITY[item.source] || SOURCE_AUTHORITY._default;
+  // 2) 키워드 가중치 — pre-lowercased IMPACT_KW_LC 사용
   const text = `${item.title || ""} ${item.summary || ""}`.toLowerCase();
   let kw = 0;
-  for (const [k, w] of Object.entries(IMPACT_KEYWORDS)) {
-    if (text.includes(k.toLowerCase())) kw += w;
+  for (let i = 0; i < IMPACT_KW_LC.length; i++) {
+    const [k, w] = IMPACT_KW_LC[i];
+    if (text.includes(k)) kw += w;
   }
   kw = Math.min(2.0, kw);
-  // 3) HN high-points 보너스 — 1000+ pts는 cross-community 검증된 시그널
+  // 3) HN high-points 보너스
   let popBoost = 0;
   if (item.source === "hackernews" && item.points) {
-    if (item.points >= 1000) popBoost = 1.0;       // 4-figure = HN front page sustained
+    if (item.points >= 1000) popBoost = 1.0;
     else if (item.points >= 500) popBoost = 0.6;
     else if (item.points >= 200) popBoost = 0.3;
   }
-  // 4) 결합 — auth가 base, kw + popBoost가 영향력 신호
-  //    auth(0..5) + (kw + popBoost)(0..3) → cap 5.
-  //    Tier 1 source (4.5) + GA keyword (1.0) = 5.5 → 5.0 (정확히 헤드라인 임계 통과)
-  //    HN 1000+ pts (4.0 + 1.0) = 5.0 (HN 검증된 글 1차 후보)
-  //    Tier 3 (3.5) + zero signal = 3.5 (헤드라인 미달, 의도된 결과)
-  const raw = auth + (kw * 0.6) + (popBoost * 0.6);
+  // 4) IT relevance — pre-computed (main loop에서 1번만 계산, dedup)
+  const rel = (precomputedRel != null) ? precomputedRel : scoreItRelevance(item);
+  // 5) 결합 — auth(0..5) + (kw + popBoost)(0..3). relevance multiplier 비-IT 강한 페널티.
+  let raw = auth + (kw * 0.6) + (popBoost * 0.6);
+  raw = raw * (0.4 + rel * 0.6);
   return clamp(round1(raw), 0, 5);
 }
 
@@ -147,9 +262,8 @@ function scoreFreshness(item, windowHours) {
 function scoreDepth(item) {
   let score = 2.5; // 기본 중간
   const text = `${item.title || ""} ${item.summary || ""}`;
-  // 키워드 매칭
-  let matches = 0;
-  for (const re of DEPTH_KEYWORDS) if (re.test(text)) matches++;
+  // PERF Round 4: 5 별도 regex → 결합 DEPTH_REGEX 1-pass count
+  const matches = countMatches(text, DEPTH_REGEX);
   score += Math.min(2, matches * 0.4);
   // 요약 길이 (긴 요약 = 더 깊은 콘텐츠로 가정)
   if (item.summary && item.summary.length > 200) score += 0.5;
@@ -169,7 +283,8 @@ function scoreBuzz(item) {
 }
 
 // ── 항목 형태 변환 ──────────────────────────────────────
-function shapeForDashboard(item, scores) {
+// PERF Round 4: precomputedRel을 받아 scoreItRelevance 중복 호출 제거.
+function shapeForDashboard(item, scores, precomputedRel) {
   // Strip non-numeric fields the LLM path may have leaked into scores (e.g. category).
   // Keeps validate-data.js's `scores 0..5 number` invariant.
   const numericScores = {
@@ -195,6 +310,7 @@ function shapeForDashboard(item, scores) {
       sourceCountry: item.sourceCountry,
       summary: item.summary,
       scores: numericScores,
+      itRelevance: (precomputedRel != null) ? precomputedRel : scoreItRelevance(item), // 0..1 헤드라인 게이트, dedup
       tags: item.tags || [],
       featured: numericScores.impact + numericScores.freshness + numericScores.depth + numericScores.buzz >= 18,
       headline: false,
@@ -344,10 +460,15 @@ async function main() {
     ? raw.windowHours
     : args.windowHours;
 
+  // PERF Round 4 (Expert 6 Joyee + Expert 8 Caswell):
+  // scoreItRelevance를 main loop에서 1번 계산 → scoreImpact / shapeForDashboard 모두에 전달.
+  // 이전: scoreImpact 내부 1회 + shapeForDashboard 내부 1회 = 2N×34 regex.
+  // 이후: 1회 = N×34 regex (50% 절감).
   const news = [], community = [], oss = [];
   for (const item of items) {
+    const rel = scoreItRelevance(item);
     const baseScores = {
-      impact:    scoreImpact(item),
+      impact:    scoreImpact(item, rel),
       freshness: scoreFreshness(item, windowHours),
       depth:     scoreDepth(item),
       buzz:      scoreBuzz(item),
@@ -358,7 +479,7 @@ async function main() {
       scores = refined;
       if (refined.category && !item.rawCategory) item.rawCategory = refined.category;
     }
-    const shaped = shapeForDashboard(item, scores, args);
+    const shaped = shapeForDashboard(item, scores, rel);
     if (item.domain === "news")      news.push(shaped);
     else if (item.domain === "community") community.push(shaped);
     else if (item.domain === "oss")  oss.push(shaped);
@@ -393,9 +514,21 @@ async function main() {
       const ba = SOURCE_AUTHORITY[b.source] || SOURCE_AUTHORITY._default;
       return ba - aa;
     });
-    // 임계 4.0+ 만 headline. 미달 시 false 유지 → build-today 가 fallback 메시지
-    if (avgOf(news[0].scores) >= 4.0) {
-      news[0].headline = true;
+    // 헤드라인 게이트 — 사용자 피드백 ("IT Daily News와 관련 없는 헤드라인"):
+    //   1) 종합 평균 ≥ 4.0
+    //   2) IT relevance ≥ 0.6 (확실한 IT 토픽만)
+    // 둘 다 통과한 첫 번째 항목이 헤드라인. 모두 미달이면 fallback.
+    const headline = news.find((n) =>
+      avgOf(n.scores) >= 4.0 && (n.itRelevance == null || n.itRelevance >= 0.6)
+    );
+    if (headline) {
+      headline.headline = true;
+    } else {
+      // 차선책: 점수만 통과 + relevance 0.5 이상도 OK
+      const fallback = news.find((n) =>
+        avgOf(n.scores) >= 3.8 && (n.itRelevance == null || n.itRelevance >= 0.5)
+      );
+      if (fallback) fallback.headline = true;
     }
   }
 
@@ -408,7 +541,11 @@ async function main() {
   };
 
   fs.mkdirSync(path.dirname(args.out), { recursive: true });
-  fs.writeFileSync(args.out, JSON.stringify(out, null, 2));
+  // PERF Round 4 (Expert 6 Joyee + Expert 9 Bert): drop pretty-print.
+  // 중간 산출물은 machine-only — 35-40% 사이즈 + 1.7-2.0× 직렬화 속도 절감.
+  // DEBUG=1 환경변수일 때만 indent (사람이 diff 할 때).
+  const indent = process.env.DEBUG ? 2 : 0;
+  fs.writeFileSync(args.out, JSON.stringify(out, indent || undefined, indent || undefined));
   const dt = Date.now() - t0;
   console.log(`[score] wrote ${path.relative(process.cwd(), args.out)} · news ${news.length} / community ${community.length} / oss ${oss.length} · ${args.llm ? "llm" : "heuristic"} · ${dt}ms`);
 }

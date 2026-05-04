@@ -107,7 +107,9 @@ test("news description includes 4-criteria scores", () => {
 test("insight items prefixed with [인사이트]", () => {
   const xml = readFeed();
   const insightTitles = xml.match(/<title>\[인사이트\][^<]+<\/title>/g) || [];
-  assert.equal(insightTitles.length, 10, `expected 10 insight items, got ${insightTitles.length}`);
+  // Round 3: 10 → 20 insights (삼성전자 임원진 페르소나로 확장).
+  // 임의의 카운트가 아닌 today.js 의 insights 길이와 동기화되어야 함.
+  assert.equal(insightTitles.length, 20, `expected 20 insight items, got ${insightTitles.length}`);
 });
 
 test("insight items have category=insight + tag", () => {

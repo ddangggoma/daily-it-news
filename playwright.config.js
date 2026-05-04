@@ -25,6 +25,6 @@ module.exports = defineConfig({
     command: `python3 -m http.server ${PORT}`,
     url: BASE_URL,
     reuseExistingServer: !process.env.CI,
-    timeout: 10_000,
+    timeout: 30_000, // Round 3: 10s가 macOS에서 첫 cold start 시 부족 (lazy network init)
   },
 });

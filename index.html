@@ -153,8 +153,14 @@
         </div>
       </div>
 
-      <!-- 인플루언서 strip -->
-      <div class="influencer-strip" id="influencer-strip"></div>
+      <!-- 7일 timeline (과거 발행) — Round 3 -->
+      <nav class="day-timeline" id="day-timeline" aria-label="최근 7일 발행"></nav>
+
+      <!-- 데이터 파이프라인 시각화 — Round 3 -->
+      <div class="flow-indicator" id="flow-indicator" aria-label="오늘의 데이터 플로우"></div>
+
+      <!-- 인플루언서 grid (4×6, 24명 daily rotation, 전체 100+) -->
+      <div class="influencer-grid" id="influencer-strip" aria-label="추적 중인 인플루언서"></div>
 
       <!-- 오늘의 테마 strip (theme 칩 → 검색 자동 적용) -->
       <div class="theme-strip" id="theme-strip" aria-label="오늘 떠오른 테마"></div>
@@ -335,18 +341,22 @@
     <div class="modal" id="modal-inner"><!-- populated by JS --></div>
   </div>
 
-  <!-- ======================== DATA + SCRIPTS ======================== -->
-  <!-- RUM is loaded first + async so it captures LCP without delaying critical path. -->
+  <!-- ======================== DATA + SCRIPTS ========================
+       PERF Round 4 (Expert 1 Grigorik P1):
+       모든 비-async 스크립트에 `defer` 추가. defer는 HTML parsing과 병렬로 download 하고
+       DOMContentLoaded 직전에 source order로 실행. 이전 6 sequential round-trip → 병렬 download.
+       ~200-500ms LCP 절감 (cold load).
+       perf.js는 async 유지 (LCP 측정 자체는 critical path 외부). -->
   <script src="scripts/perf.js" async></script>
-  <script src="data/today.js"></script>
-  <script src="data/experts.js"></script>
-  <script src="data/archive.js"></script>
-  <script src="data/influencers.js"></script>
-  <script src="data/themes.js"></script>
-  <script src="data/techs.js"></script>
-  <script src="scripts/util.js"></script>
-  <script src="scripts/storage.js"></script>
-  <script src="scripts/insights.js"></script>
-  <script src="scripts/app.js"></script>
+  <script defer src="data/today.js"></script>
+  <script defer src="data/experts.js"></script>
+  <script defer src="data/archive.js"></script>
+  <script defer src="data/influencers.js"></script>
+  <script defer src="data/themes.js"></script>
+  <script defer src="data/techs.js"></script>
+  <script defer src="scripts/util.js"></script>
+  <script defer src="scripts/storage.js"></script>
+  <script defer src="scripts/insights.js"></script>
+  <script defer src="scripts/app.js"></script>
 </body>
 </html>

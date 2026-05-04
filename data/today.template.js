@@ -1,10 +1,12 @@
 /**
- * today.template.js — build-today.js가 사용하는 시드.
+ * today.template.js — build-today.js 시드.
  *
- * 자동 생성되지 않는 영역의 fallback 값:
- *   - quote, lead, influencers, insights[]의 분석 본문
+ * 자동 생성되지 않는 영역의 fallback:
+ *   - quote, lead (null이면 자동 생성)
+ *   - influencers — 이제 data/influencers.js의 daily-rotation 사용 (시드는 비움)
+ *   - insightTemplates — 20명 삼성 페르소나 분석 템플릿
  *
- * LLM 통합 후 일부는 자동 채워짐. 그 전까지는 이 시드로 합리적 출발값 제공.
+ * LLM 통합 후 분석 본문 자동 채워짐. 그 전까지 시드로 합리적 출발값.
  */
 window.__TODAY_TEMPLATE__ = {
   quote: {
@@ -13,43 +15,61 @@ window.__TODAY_TEMPLATE__ = {
     role: "데일리 큐레이션",
     url: "",
   },
-  // lead가 없으면 build-today.js가 counts 기반으로 자동 생성.
+  // lead: null이면 build-today.js가 counts 기반으로 자동 생성.
   lead: null,
 
-  // 추적 중인 인플루언서 (시드 — 나중에 X/Threads API로 갱신 가능)
-  influencers: [
-    { name: "Andrej Karpathy", handle: "@karpathy",  avatar: "🧠", postExcerpt: "Agent infra가 표준화되는 순간..." },
-    { name: "Dario Amodei",    handle: "@DarioAmodei", avatar: "🔬", postExcerpt: "Computer Use는 진짜 RPA 킬러" },
-    { name: "Sam Altman",      handle: "@sama",      avatar: "🚀", postExcerpt: "Agents GA, infra primitive로 자리잡음" },
-    { name: "이수안",          handle: "@suanlab",   avatar: "🇰🇷", postExcerpt: "한국 AI SaaS의 글로벌 신호" },
-    { name: "Yann LeCun",      handle: "@ylecun",    avatar: "🐱", postExcerpt: "추론 모델은 임시변통이다" },
-    { name: "Jim Fan",         handle: "@DrJimFan",  avatar: "🤖", postExcerpt: "휴머노이드는 2026년이 변곡점" },
-    { name: "Patrick Collison", handle: "@patrickc", avatar: "💳", postExcerpt: "Stripe Agents가 결제를 재정의" },
-    { name: "안성진",          handle: "@sungjin_an", avatar: "📱", postExcerpt: "삼성 폴더블 양산 수율은 게임 체인저" },
-  ],
+  // influencers: data/influencers.js의 __INFLUENCERS_DAILY__로 동적 생성됨.
+  // 이 시드는 더 이상 사용되지 않지만 하위 호환을 위해 빈 배열 유지.
+  influencers: [],
 
-  // 인사이트 분석 본문 placeholder — LLM 통합 후 자동 생성.
+  // 인사이트 분석 템플릿 — 20명 삼성전자 페르소나.
   // expertId는 data/experts.js의 id와 매칭. 없으면 build-today.js가 스킵.
+  // tag: opportunity / bullish / caution / pattern (insight-card 색상 분류)
   insightTemplates: {
-    pari:   { tag: "opportunity", titleTemplate: "{topNewsTitle}가 만든 의사결정 창",
-              keyQuestion: "이 발표가 6개월 안의 의사결정을 어떻게 강제하는가?" },
-    mae:    { tag: "pattern",     titleTemplate: "{topNewsTitle} — 표준화 사이클의 신호",
-              keyQuestion: "이전 인프라 표준화 사이클과 어떤 패턴이 일치하는가?" },
-    cole:   { tag: "caution",     titleTemplate: "{topNewsTitle}의 진짜 비용",
-              keyQuestion: "마케팅 수치에서 production-ready로 가는 비용은 누가 부담하는가?" },
-    atlas:  { tag: "bullish",     titleTemplate: "{topNewsTitle} — 시장 카토그래피",
-              keyQuestion: "이 시장이 5년 후 어떤 레이어로 분화될 것인가?" },
-    nyx:    { tag: "caution",     titleTemplate: "{topNewsTitle}의 엣지 케이스",
-              keyQuestion: "이 시스템이 깨지는 가장 작은 시나리오는?" },
-    vega:   { tag: "bullish",     titleTemplate: "{topNewsTitle} 강세 thesis",
-              keyQuestion: "이 강세 thesis가 깨지는 첫 번째 신호는?" },
-    sage:   { tag: "pattern",     titleTemplate: "{topNewsTitle} — 역사적 변곡점",
-              keyQuestion: "역사적으로 어느 변곡점과 가장 닮았는가?" },
-    echo:   { tag: "pattern",     titleTemplate: "{topNewsTitle} 커뮤니티 펄스",
-              keyQuestion: "지금 커뮤니티 1위가 1~2주 뒤 어떤 결정으로 이어지는가?" },
-    iris:   { tag: "opportunity", titleTemplate: "{topNewsTitle} — 디자인 직무 재정의",
-              keyQuestion: "이 변화가 디자이너 직무를 어떻게 재정의하는가?" },
-    orion:  { tag: "bullish",     titleTemplate: "{topNewsTitle} — 추론 인프라 시간선",
-              keyQuestion: "이 발표가 우리 추론·인프라 결정의 시간선을 어떻게 바꾸는가?" },
+    // 최고경영진
+    "lee-jae-yong":     { tag: "pattern",     titleTemplate: "{topNewsTitle} — 5~10년 포트폴리오 시각",
+                          keyQuestion: "이 변화가 5년 후 삼성전자 사업 포트폴리오에서 차지하는 비중은? 지금 인수·투자 결정 옵션은?" },
+    "han-jong-hee":     { tag: "opportunity", titleTemplate: "{topNewsTitle} — DX 사용자 경험 통합 관점",
+                          keyQuestion: "이 신기술이 1억+ 갤럭시 사용자 경험을 어떻게 바꾸며, 우리는 어느 시점에 통합해야 하는가?" },
+    "jeon-young-hyun":  { tag: "bullish",     titleTemplate: "{topNewsTitle} — DS 메모리·파운드리 영향",
+                          keyQuestion: "이 AI 인프라 수요가 우리 HBM·DDR5 로드맵·파운드리 capa 결정에 어떤 영향을 주는가?" },
+    // 사업부장
+    "noh-tae-moon":     { tag: "opportunity", titleTemplate: "{topNewsTitle} — 갤럭시 차세대 차별화",
+                          keyQuestion: "이 AI 기능이 갤럭시 다음 세대 단말의 차별화 요소가 될 수 있는가? 온디바이스 vs 클라우드 비중은?" },
+    "lee-young-hee":    { tag: "pattern",     titleTemplate: "{topNewsTitle} — 글로벌 메시지 전략",
+                          keyQuestion: "이 변화를 200개국 사용자에게 어떤 메시지로 전달해야 하며, 차별화 핵심은?" },
+    "park-hak-gyu":     { tag: "bullish",     titleTemplate: "{topNewsTitle} — 가전 IoT/AI ROI",
+                          keyQuestion: "이 IoT/AI 변화가 가전 marginal cost를 얼마나 낮추며, 회수 시간선은?" },
+    "han-jin-man":      { tag: "caution",     titleTemplate: "{topNewsTitle} — 파운드리 고객 확보 영향",
+                          keyQuestion: "이 chip 발표가 2nm/3nm 파운드리 고객 확보 경쟁에서 우리에게 유리한가 불리한가?" },
+    "park-yong-in":     { tag: "opportunity", titleTemplate: "{topNewsTitle} — 시스템 LSI 로드맵 시사점",
+                          keyQuestion: "이 ARM/AP 트렌드가 Exynos 다음 세대 로드맵·이미지 센서 차세대 기술에 시사하는 것은?" },
+    "yong-suk-woo":     { tag: "pattern",     titleTemplate: "{topNewsTitle} — TV/디스플레이 영향",
+                          keyQuestion: "이 디스플레이 기술 변화가 TV/모니터 ASP·콘텐츠 생태계에 어떤 영향을 주는가?" },
+    "lee-jung-bae":     { tag: "bullish",     titleTemplate: "{topNewsTitle} — HBM/CXL 메모리 수요",
+                          keyQuestion: "이 AI 학습/추론 트렌드가 HBM4·CXL·LPDDR6 수요 시간선을 어떻게 바꾸는가?" },
+    "kim-woo-jun":      { tag: "opportunity", titleTemplate: "{topNewsTitle} — 통신 장비 영향",
+                          keyQuestion: "이 통신 표준 변화가 5G/6G 장비 수주·Open RAN 채택에 영향을 주는가?" },
+    // 기술/연구
+    "song-jae-hyuk":    { tag: "pattern",     titleTemplate: "{topNewsTitle} — 반도체 R&D 로드맵 시사점",
+                          keyQuestion: "이 반도체 기술 변화가 우리 10년 R&D 로드맵·차세대 노드 결정에 시사하는 것은?" },
+    "kim-dae-hyun":     { tag: "opportunity", titleTemplate: "{topNewsTitle} — Samsung Research 우선순위",
+                          keyQuestion: "이 학계/오픈소스 트렌드가 우리 연구소 우선순위·인재 영입 전략에 어떻게 반영되어야 하는가?" },
+    "jung-hyeon-ho":    { tag: "pattern",     titleTemplate: "{topNewsTitle} — 사업부 시너지 재분배",
+                          keyQuestion: "이 변화가 우리 사업부 간 시너지·자원 재분배 우선순위에 어떤 영향을 주는가?" },
+    // 지원/거버넌스
+    "park-soon-cheol":  { tag: "caution",     titleTemplate: "{topNewsTitle} — CapEx & ROI 시각",
+                          keyQuestion: "이 trend가 향후 3년 CapEx 우선순위와 ROI 회수 시간선에 어떤 영향을 주는가?" },
+    "kim-won-kyong":    { tag: "caution",     titleTemplate: "{topNewsTitle} — 정책·규제 영향",
+                          keyQuestion: "이 정책/규제 변화가 우리 미국·EU·중국 사업 결정에 어떤 제약·기회를 주는가?" },
+    "ahn-joong-hyun":   { tag: "opportunity", titleTemplate: "{topNewsTitle} — M&A pipeline 영향",
+                          keyQuestion: "이 발표가 우리가 검토 중인 M&A pipeline의 가치·우선순위를 어떻게 바꾸는가?" },
+    // 글로벌/신사업
+    "march-hahn":       { tag: "bullish",     titleTemplate: "{topNewsTitle} — 미국 시장 영향",
+                          keyQuestion: "이 변화가 미국 시장 channel·통신사 협력·정부 입찰 우선순위에 어떻게 반영되어야 하는가?" },
+    "samsung-next":     { tag: "opportunity", titleTemplate: "{topNewsTitle} — Samsung NEXT 투자 후보",
+                          keyQuestion: "이 스타트업/기술이 우리 사업부와 PoC 가능한 영역은? 인수 가치는?" },
+    "samsung-strategy": { tag: "pattern",     titleTemplate: "{topNewsTitle} — 2-3년 시장 구조 예측",
+                          keyQuestion: "이 동향이 2-3년 후 시장 구조에 어떤 영향을 주며, 지금 준비해야 할 카드는?" },
   },
 };
