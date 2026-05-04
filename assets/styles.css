@@ -1574,7 +1574,110 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 }
 
 /* =====================================================================
- * 17. Flow indicator (Round 3) — 데이터 파이프라인 시각화
+ * 18. Round 6: 커뮤니티 카드 중요도 + SNS 시각화 + 정렬 select
+ * ===================================================================== */
+
+/* 정렬 select (뉴스 탭 toolbar) */
+.toolbar__sort-select {
+  font: inherit;
+  font-size: 13px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-elev);
+  color: var(--text);
+  cursor: pointer;
+  min-height: 34px;
+}
+.toolbar__sort-select:hover { border-color: var(--border-strong); }
+.toolbar__sort-select:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+/* 커뮤니티 카드 — 중요도 시그널 강조 */
+.community-card {
+  position: relative;
+  padding: var(--space-3) var(--space-4);
+}
+/* 중요도 tier별 좌측 액센트 */
+.community-card--viral  { border-left-width: 5px; box-shadow: 0 0 0 2px var(--c-impact-soft); }
+.community-card--hot    { border-left-width: 4px; }
+.community-card--rising { border-left-width: 3px; }
+
+/* SNS 카드 — 보라 점선 테두리로 즉시 식별 */
+.community-card--sns {
+  border-left: 4px solid #6364ff !important;
+  background: linear-gradient(90deg, color-mix(in srgb, #6364ff 5%, var(--bg-elev)) 0%, var(--bg-elev) 30%);
+}
+.community-card__sns-badge {
+  display: inline-flex; align-items: center; gap: 3px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.04em;
+  padding: 2px 7px; border-radius: 999px;
+  background: #6364ff; color: #fff;
+}
+.community-card__excerpt {
+  font-size: 13px; color: var(--text-soft); line-height: 1.5;
+  margin: 6px 0;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+
+/* 중요도 배지 */
+.community-card__importance {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 11px; font-weight: 700;
+  padding: 3px 9px; border-radius: 999px;
+  background: var(--bg-soft);
+  color: var(--text-soft);
+}
+.community-card__importance--viral {
+  background: linear-gradient(90deg, var(--c-impact), var(--c-buzz));
+  color: #fff;
+}
+.community-card__importance--hot   { background: var(--c-buzz-soft); color: var(--c-buzz); }
+.community-card__importance--rising{ background: var(--c-freshness-soft); color: var(--c-freshness); }
+.community-card__importance--warm  { background: var(--accent-soft); color: var(--accent); }
+.community-card__importance--low   { background: var(--bg-sunk); color: var(--text-mute); }
+
+/* points 강조 — 큰 글자 */
+.community-card__points {
+  display: inline-flex; align-items: baseline; gap: 4px;
+  font-family: var(--font-mono);
+  color: var(--c-buzz);
+}
+.community-card__points strong { font-size: 14px; font-weight: 800; }
+.community-card__points-label {
+  font-size: 9px; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.04em;
+}
+
+.community-card__foot {
+  display: flex; align-items: center; gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--border);
+}
+.community-card__author {
+  font-size: 11px; color: var(--text-mute); font-family: var(--font-mono);
+}
+.community-card__link {
+  font-size: 11px; font-family: var(--font-mono); margin-left: auto;
+  font-weight: 600;
+}
+
+/* OSS 분석 카드 — what + why 분리 */
+.oss-card__what {
+  margin: 0 0 6px 0;
+  font-size: 12.5px;
+  color: var(--text);
+  font-weight: 500;
+}
+.oss-card__why-signals {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+/* =====================================================================
+ * 19. Flow indicator (Round 3) — 데이터 파이프라인 시각화
  * ===================================================================== */
 .flow-indicator {
   display: flex; gap: 8px; align-items: center;

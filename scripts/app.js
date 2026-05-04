@@ -531,6 +531,7 @@
     search: "",
     multiSelect: false,
     selectedIds: new Set(),
+    sort: "score", // Round 6: 정렬 옵션 (score / recent / impact / freshness)
   };
 
   function setupNewsTab() {
@@ -623,6 +624,16 @@
       }
     }
 
+    // 🔄 Round 6: 정렬 셀렉터
+    const sortSel = $("#news-sort");
+    if (sortSel) {
+      sortSel.value = state.sort;
+      sortSel.addEventListener("change", () => {
+        state.sort = sortSel.value;
+        renderNewsGrid();
+      });
+    }
+
     // 다중 선택 토글
     const multiBtn = $("#news-multi-toggle");
     if (multiBtn) {
@@ -694,13 +705,38 @@
     bc.textContent = parts.join(" › ");
   }
 
+  // 🔄 Round 6: 정렬 함수 (뉴스/논문 공통). 사용자 요청 "정렬 가능하도록".
+  // - score: 종합 점수 (default)
+  // - recent: 최신순 (publishedAt)
+  // - impact: 파급력만
+  // - buzz: 반응도(커뮤니티 신호)
+  // - freshness: 시의성
+  function sortByMode(items, mode) {
+    const sorted = [...items];
+    if (mode === "recent") {
+      sorted.sort((a, b) => Date.parse(b.publishedAt || 0) - Date.parse(a.publishedAt || 0));
+    } else if (mode === "impact") {
+      sorted.sort((a, b) => (b.scores?.impact || 0) - (a.scores?.impact || 0));
+    } else if (mode === "buzz") {
+      sorted.sort((a, b) => (b.scores?.buzz || 0) - (a.scores?.buzz || 0));
+    } else if (mode === "freshness") {
+      sorted.sort((a, b) => (b.scores?.freshness || 0) - (a.scores?.freshness || 0));
+    } else { // "score" default
+      sorted.sort((a, b) => (b.__avg != null ? b.__avg : avgScore(b.scores)) -
+                            (a.__avg != null ? a.__avg : avgScore(a.scores)));
+    }
+    return sorted;
+  }
+
   function renderNewsGrid() {
     const grid = $("#news-grid");
     if (!grid) return;
     grid.setAttribute("aria-busy", "false");
 
     const all = (window.__DAILY__ && window.__DAILY__.news) || [];
-    const list = filterNews(all);
+    const filtered = filterNews(all);
+    // 🔄 Round 6: 정렬 적용
+    const list = sortByMode(filtered, state.sort);
 
     setText("#news-counter", `${list.length}건 / 전체 ${all.length}`);
     renderBreadcrumb();
@@ -1073,8 +1109,28 @@
       }
       return true;
     });
-    if (comState.sort === "hot") list.sort((a, b) => (b.points || 0) - (a.points || 0));
-    else list.sort((a, b) => Date.parse(b.postedAt || 0) - Date.parse(a.postedAt || 0));
+    // 🔄 Round 6: 정렬 옵션 확장 (hot/recent + 신규 viral/sns_first)
+    if (comState.sort === "hot") {
+      list.sort((a, b) => (b.points || 0) - (a.points || 0));
+    } else if (comState.sort === "viral") {
+      // 1000+ pts만 우선, 그 안에서 시간순
+      list.sort((a, b) => {
+        const va = (a.points || 0) >= 1000 ? 1 : 0;
+        const vb = (b.points || 0) >= 1000 ? 1 : 0;
+        if (va !== vb) return vb - va;
+        return Date.parse(b.postedAt || 0) - Date.parse(a.postedAt || 0);
+      });
+    } else if (comState.sort === "sns") {
+      // SNS (Mastodon/X) 글 우선
+      list.sort((a, b) => {
+        const sa = isSnsSource(a.source) ? 1 : 0;
+        const sb = isSnsSource(b.source) ? 1 : 0;
+        if (sa !== sb) return sb - sa;
+        return Date.parse(b.postedAt || 0) - Date.parse(a.postedAt || 0);
+      });
+    } else {
+      list.sort((a, b) => Date.parse(b.postedAt || 0) - Date.parse(a.postedAt || 0));
+    }
 
     setText("#community-counter", `${list.length}건 / 전체 ${all.length}`);
     grid.setAttribute("aria-busy", "false");
@@ -1092,31 +1148,71 @@
     grid.replaceChildren(frag);
   }
 
+  // 💬 Round 6: 커뮤니티 카드 재디자인 (사용자 피드백:
+  //   "커뮤니티 카드들은 번역이 되지 않았고, 카드 들의 중요도 파악이 힘듭니다.
+  //    검토해서 중요도 관련 수치들을 잘보이도록 추가해주세요").
+  // 변경사항:
+  //   1) 한글 ko() 적용 (이미 있던 것 유지)
+  //   2) 중요도 시그널 명확히: points + 댓글수 + 시간 + 점수 등급 배지
+  //   3) SNS (Mastodon/X) 글은 "💬 SNS" 시그널 prefix
+  //   4) 등급 배지 (🔥/⭐/👀/💭) — points 기준
+  function communityImportance(points) {
+    if (!points || points < 1) return { tier: "low", icon: "💭", label: "최신" };
+    if (points >= 1000) return { tier: "viral", icon: "🔥", label: "Viral" };
+    if (points >= 500)  return { tier: "hot",   icon: "⭐", label: "인기" };
+    if (points >= 100)  return { tier: "rising",icon: "📈", label: "주목" };
+    if (points >= 30)   return { tier: "warm",  icon: "👀", label: "관심" };
+    return { tier: "low", icon: "💭", label: "최신" };
+  }
+
+  function isSnsSource(source) {
+    return /^(mastodon_|fosstodon_|x_|yt_)/.test(source || "");
+  }
+
   function renderCommunityCard(c) {
     const cat = CATEGORY_BY_KEY[c.category];
+    const importance = communityImportance(c.points);
+    const sns = isSnsSource(c.source);
+    const cardClass = `card community-card community-card--${importance.tier}` + (sns ? " community-card--sns" : "");
+    const time = c.relativeTime || fmtRelTime(c.postedAt);
+
     return el("article", {
-      className: "card community-card",
+      className: cardClass,
       style: c.sourceColor ? `border-left-color:${c.sourceColor};` : "",
+      "data-id": c.id,
     },
+      // 1단: head — 출처 + 카테고리 + 시간 + 중요도 배지
       el("div", { className: "community-card__head" },
         el("span", {
           className: "community-card__src",
           style: c.sourceColor ? `color:${c.sourceColor};` : "",
         }, `● ${c.sourceLabel || c.source || ""}`),
+        sns ? el("span", { className: "community-card__sns-badge" }, "💬 SNS") : null,
         cat ? el("span", { className: "community-card__cat" }, `${cat.icon} ${cat.label}`) : null,
-        el("span", { className: "community-card__time" }, c.relativeTime || fmtRelTime(c.postedAt))
+        el("span", { className: "community-card__time" }, time)
       ),
+      // 2단: 제목 (ko 한글 우선)
       el("a", {
         className: "community-card__title",
         href: c.url, target: "_blank", rel: "noopener",
       }, ko(c, "title")),
+      // 3단: 중요도 표시 — points 큰 글자 + 등급 배지 + 작성자 + 원문 (SNS는 description 일부 표시)
+      sns && c.summary_ko ? el("p", { className: "community-card__excerpt" },
+        ko(c, "summary").slice(0, 120) + (ko(c, "summary").length > 120 ? "…" : "")
+      ) : null,
       el("div", { className: "community-card__foot" },
-        el("span", { className: "community-card__points" }, `${fmtNum(c.points)} pts`),
-        c.author ? el("span", { className: "community-card__author" }, c.author) : null,
+        el("span", { className: `community-card__importance community-card__importance--${importance.tier}` },
+          `${importance.icon} ${importance.label}`
+        ),
+        c.points >= 1 ? el("span", { className: "community-card__points" },
+          el("strong", null, fmtNum(c.points)),
+          el("span", { className: "community-card__points-label" }, sns ? "engage" : "pts")
+        ) : null,
+        c.author ? el("span", { className: "community-card__author" }, `@${c.author}`) : null,
         el("a", {
           className: "community-card__link", href: c.url,
           target: "_blank", rel: "noopener",
-        }, "원문 →")
+        }, "원문 ↗")
       )
     );
   }
@@ -1124,7 +1220,7 @@
   // ───────────────────────────────────────────────────────
   // 8. 오픈소스 탭
   // ───────────────────────────────────────────────────────
-  const ossState = { type: "all", search: "" };
+  const ossState = { type: "all", search: "", sort: "trending" }; // 🔄 Round 6: sort 추가
 
   function setupOssTab() {
     const row = $("#oss-types");
@@ -1139,6 +1235,16 @@
         }, t.key === "all"));
       });
     }
+
+    // 🔄 Round 6: OSS 정렬 chip
+    $$("[data-oss-sort]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        ossState.sort = btn.dataset.ossSort;
+        $$("[data-oss-sort]").forEach((b) => b.setAttribute("data-active",
+          b.dataset.ossSort === ossState.sort ? "true" : "false"));
+        renderOssGrid();
+      });
+    });
 
     const tab = $('.tab-content[data-tab="oss"]');
     if (tab) {
@@ -1178,10 +1284,20 @@
       }
       return true;
     });
-    list.sort((a, b) => {
-      if (a.isTrending !== b.isTrending) return a.isTrending ? -1 : 1;
-      return (b.starsThisWeek || 0) - (a.starsThisWeek || 0);
-    });
+    // 🔄 Round 6: 정렬 모드 (trending / stars / growth / recent)
+    if (ossState.sort === "stars") {
+      list.sort((a, b) => (b.stars || 0) - (a.stars || 0));
+    } else if (ossState.sort === "growth") {
+      list.sort((a, b) => (b.starsThisWeek || 0) - (a.starsThisWeek || 0));
+    } else if (ossState.sort === "recent") {
+      list.sort((a, b) => Date.parse(b.publishedAt || 0) - Date.parse(a.publishedAt || 0));
+    } else {
+      // trending (default): trending 우선, 그 안에서 이번주 별 증가순
+      list.sort((a, b) => {
+        if (a.isTrending !== b.isTrending) return a.isTrending ? -1 : 1;
+        return (b.starsThisWeek || 0) - (a.starsThisWeek || 0);
+      });
+    }
 
     setText("#oss-counter", `${list.length}건 / 전체 ${all.length}`);
     grid.setAttribute("aria-busy", "false");
@@ -1293,14 +1409,32 @@
     //   5) Why important — 자동 생성 추론 한 줄
     //   6) GitHub 버튼 + contributors
 
-    // why important — Trending=주목 / Korean=현지 우선 / Stars 큰 = 검증됨
-    let whyImportant = "";
-    if (o.isTrending) whyImportant = "📈 이번 주 GitHub Trending에 진입한 신호";
-    else if (o.isKorean) whyImportant = "🇰🇷 한국 개발자 커뮤니티에서 활발히 만들어지는 프로젝트";
-    else if (o.stars >= 50000) whyImportant = "✅ 50k+ stars — 업계 표준급 검증";
-    else if (o.stars >= 10000) whyImportant = "✅ 10k+ stars — 충분히 검증된 도구";
-    else if (o.starsThisWeek >= 200) whyImportant = "🔥 이번 주 빠르게 별을 모으는 중";
-    else whyImportant = "👀 신생 프로젝트 — 추적 후보";
+    // 📦 Round 6: Why important 분석 강화 (사용자 피드백:
+    //   "어떤 오픈소스이고 왜 뜨고 있는지 관심받고 있는지 분석해서 설명을 추가").
+    // 다중 시그널을 결합해 1) 이게 무엇인지 + 2) 왜 뜨고 있는지를 같이.
+    const desc = ko(o, "description");
+    const isRising = (o.starsThisWeek || 0) >= 200;
+    const isBigRise = (o.starsThisWeek || 0) >= 1000;
+    const isEstablished = o.stars >= 50000;
+    const isMature = o.stars >= 10000 && o.stars < 50000;
+    const weeklyGrowthPct = o.stars > 0 ? Math.round((o.starsThisWeek || 0) / o.stars * 1000) / 10 : 0;
+
+    // 첫 줄: 이게 뭔지 (타입 + 한 줄 요약 첫 80자)
+    const whatIs = `${o.typeIcon || "📦"} ${o.typeLabel || o.type || "도구"}` +
+      (desc ? ` · ${desc.slice(0, 80)}${desc.length > 80 ? "…" : ""}` : "");
+    // 둘째 줄: 왜 뜨고 있는지 (성장 신호 + 검증 신호 결합)
+    const whySignals = [];
+    if (o.isTrending) whySignals.push("📈 GitHub Trending 진입");
+    if (isBigRise) whySignals.push(`🚀 이번 주 +${fmtNum(o.starsThisWeek)} 별 (${weeklyGrowthPct}% 성장)`);
+    else if (isRising) whySignals.push(`🔥 이번 주 +${fmtNum(o.starsThisWeek)} 별 가속 중`);
+    if (isEstablished) whySignals.push("⭐ 50k+ — 업계 표준급");
+    else if (isMature) whySignals.push("✅ 10k+ — 검증된 도구");
+    if (o.isKorean) whySignals.push("🇰🇷 한국 OSS");
+    if (o.contributors >= 100) whySignals.push(`👥 ${fmtNum(o.contributors)} 컨트리뷰터 — 활발한 커뮤니티`);
+    else if (o.contributors >= 30) whySignals.push(`👥 ${fmtNum(o.contributors)} 컨트리뷰터 — 안정적 유지보수`);
+    // 신생 프로젝트만 fallback
+    if (whySignals.length === 0) whySignals.push("👀 신생 프로젝트 — 추적 후보");
+    const whyImportant = `${whatIs}\n\n💡 주목 이유: ${whySignals.join(" · ")}`;
 
     return el("article", { className: "card oss-card", "data-id": o.id },
       // 1단: 타입 + 배지 (시각 분류 즉시)
@@ -1341,8 +1475,14 @@
           el("span", { className: "oss-stat__label" }, "license")
         )
       ),
-      // 5단: Why important
-      el("div", { className: "oss-card__why" }, whyImportant),
+      // 5단: 분석 — "이게 뭐고 왜 뜨는지" (Round 6 강화)
+      el("div", { className: "oss-card__why" },
+        el("p", { className: "oss-card__what" }, whatIs),
+        el("p", { className: "oss-card__why-signals" },
+          el("strong", null, "💡 주목 이유: "),
+          whySignals.join(" · ")
+        )
+      ),
       // 6단: footer — contributors + 외부 링크
       el("div", { className: "oss-card__foot" },
         o.contributors ? el("span", { className: "oss-card__contrib" }, `👥 ${o.contributors} contrib`) : null,

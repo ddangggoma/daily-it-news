@@ -224,6 +224,14 @@
             <input type="search" placeholder="키워드·태그·소스 검색" data-search-input />
             <button class="toolbar__search-clear" data-search-clear aria-label="지우기">✕</button>
           </label>
+          <!-- 🔄 Round 6: 뉴스 정렬 -->
+          <select class="toolbar__sort-select" id="news-sort" aria-label="정렬 기준">
+            <option value="score">📊 점수순</option>
+            <option value="recent">⏱ 최신순</option>
+            <option value="impact">🎯 파급력</option>
+            <option value="buzz">🔥 반응도</option>
+            <option value="freshness">⚡ 시의성</option>
+          </select>
           <button class="toolbar__multi-toggle" id="news-multi-toggle" data-active="false">⌘ 다중선택</button>
           <span class="toolbar__counter" id="news-counter">—</span>
         </div>
@@ -257,6 +265,8 @@
           <div class="toolbar__sort">
             <button class="chip" data-sort="hot" data-active="true">🔥 인기순</button>
             <button class="chip" data-sort="recent">⏱ 최신순</button>
+            <button class="chip" data-sort="viral">📈 Viral 1000+</button>
+            <button class="chip" data-sort="sns">💬 SNS 우선</button>
           </div>
           <label class="toolbar__search">
             <span class="toolbar__search-icon">🔎</span>
@@ -270,7 +280,7 @@
       <div class="cards-grid cards-grid--community" id="community-grid" aria-busy="true" aria-live="polite"></div>
     </section>
 
-    <!-- ======================== OSS TAB — Iter 9 ARIA -->
+    <!-- ======================== OSS TAB — Iter 9 ARIA + Round 6 정렬 -->
     <section class="tab-content" data-tab="oss" role="tabpanel"
              id="panel-oss" aria-labelledby="tab-oss" tabindex="0" hidden>
       <div class="toolbar">
@@ -278,6 +288,12 @@
           <div class="chip-row" id="oss-types"></div>
         </div>
         <div class="toolbar-row">
+          <div class="toolbar__sort">
+            <button class="chip" data-oss-sort="trending" data-active="true">📈 트렌딩</button>
+            <button class="chip" data-oss-sort="growth">🚀 주간 증가</button>
+            <button class="chip" data-oss-sort="stars">⭐ 별 많은순</button>
+            <button class="chip" data-oss-sort="recent">⏱ 최신순</button>
+          </div>
           <label class="toolbar__search">
             <span class="toolbar__search-icon">🔎</span>
             <input type="search" placeholder="저장소·언어·라이선스 검색" data-search-input />
