@@ -129,6 +129,39 @@ window.__THEMES__ = [
   { id: "data-privacy",     icon: "🔒", label: "Data Privacy",
     keywords: ["gdpr", "ccpa", "privacy", "encryption", "zero trust", "soc 2"],
     parent: "ax" },
+
+  // ─────────── 🔬 Round 5: 삼성 리서치 연구분야 5 테마 ───────────
+  // Samsung Research가 공식적으로 다루는 5대 연구 영역 + 1대 응용 (총 5):
+  // (1) 6G·차세대 통신, (2) 온디바이스 AI, (3) 차세대 디스플레이, (4) 헬스케어 AI/디지털 헬스,
+  // (5) 신소재·배터리·양자.
+  { id: "6g-comm",          icon: "📡", label: "6G·차세대 통신",
+    keywords: ["6g", "terahertz", "thz", "ris", "reconfigurable intelligent surface",
+               "satellite communication", "ntn", "non-terrestrial", "기지국", "5g advanced",
+               "5.5g", "open ran", "vran", "통신 표준", "3gpp"],
+    parent: "telecom" },
+  { id: "on-device-ai",     icon: "🧬", label: "온디바이스 AI",
+    keywords: ["on-device ai", "edge ai", "on device llm", "tinyml", "quantization",
+               "knowledge distillation", "mobile inference", "neural processing unit",
+               "npu", "snpe", "qnn", "core ml", "tflite", "온디바이스", "엣지 ai"],
+    parent: "ai" },
+  { id: "next-display",     icon: "🌈", label: "차세대 디스플레이",
+    keywords: ["micro-led", "microled", "qd-oled", "qd oled", "mini-led",
+               "rollable", "stretchable", "transparent display", "투명 디스플레이",
+               "ar glass display", "vr display", "lcos", "holographic display",
+               "hdr10+", "8k panel"],
+    parent: "display" },
+  { id: "digital-health",   icon: "🩺", label: "헬스케어 AI",
+    keywords: ["digital health", "medical ai", "fda approved ai", "wearable health",
+               "ecg sensor", "blood pressure sensor", "cgm", "continuous glucose",
+               "samsung health", "galaxy ring", "sleep tracking", "fitness ai",
+               "헬스케어", "의료 ai", "원격의료"],
+    parent: "ai" },
+  { id: "advanced-materials", icon: "⚛️", label: "신소재·배터리·양자",
+    keywords: ["solid state battery", "전고체 배터리", "graphene", "그래핀",
+               "perovskite", "페로브스카이트", "quantum computing", "양자 컴퓨팅",
+               "qubit", "초전도", "superconductor", "2d material", "carbon nanotube",
+               "battery density", "lithium iron phosphate", "lfp", "고체 전해질"],
+    parent: "ai" }, // 카테고리상 ai 부모이지만 cross-domain (display/hardware 등에 활용)
 ];
 
 /** 테마 자동 매칭 — text에서 매치되는 themes 배열 반환.

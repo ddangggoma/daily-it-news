@@ -31,6 +31,19 @@
     CATEGORIES, CATEGORY_BY_KEY, COUNTRY_FLAG, GAUGES, OSS_TYPES,
   } = window.DN;
 
+  // 🌏 Round 5: 한글 우선 표시 헬퍼.
+  // translate.js 가 title_ko/summary_ko/description_ko 필드를 채워 두면 그것을 먼저 사용.
+  // 캐시 미스/번역 실패로 _ko가 비어 있으면 원문(영어)을 fallback.
+  // 사용자 요청 "모든 카드뉴스의 내용은 한글로 번역해줘"에 대응.
+  function ko(item, field) {
+    if (!item) return "";
+    const koField = `${field}_ko`;
+    if (item[koField] && typeof item[koField] === "string" && item[koField].trim()) {
+      return item[koField];
+    }
+    return item[field] || "";
+  }
+
   // ───────────────────────────────────────────────────────
   // 2. 게이지 렌더 (4기준 × 게이지)
   // ───────────────────────────────────────────────────────
@@ -84,12 +97,12 @@
       setText("#conclusion-delta", `${arrow} ${Math.abs(delta).toFixed(2)}`);
     }
 
-    // 헤드라인 카드
+    // 헤드라인 카드 — 🌏 한글 번역 우선
     const headline = (D.news || []).find((n) => n.headline) || (D.news || [])[0];
     if (headline) {
       const link = $("#headline-title-link");
-      if (link) { link.textContent = headline.title; link.href = headline.url; link.target = "_blank"; link.rel = "noopener"; }
-      setText("#headline-summary", headline.summary || "");
+      if (link) { link.textContent = ko(headline, "title"); link.href = headline.url; link.target = "_blank"; link.rel = "noopener"; }
+      setText("#headline-summary", ko(headline, "summary"));
       const meta = $("#headline-meta");
       if (meta) {
         meta.innerHTML = "";
@@ -490,6 +503,7 @@
     setText("#count-news", c.news != null ? c.news : "—");
     setText("#count-community", c.community != null ? c.community : "—");
     setText("#count-oss", c.oss != null ? c.oss : "—");
+    setText("#count-research", c.research != null ? c.research : "—");
     setText("#count-insights", c.insights != null ? c.insights : "—");
   }
 
@@ -528,7 +542,9 @@
         className: "chip", "data-cat-key": "__all", "data-active": "true",
         onclick: () => { state.categories.clear(); refreshChips(); renderNewsGrid(); }
       }, "전체"));
-      CATEGORIES.forEach((c) => {
+      // Round 5: papers/standards는 별도 "논문·특허·표준" 탭으로 이동 → 뉴스 칩에서 제거.
+      const NEWS_TAB_HIDDEN = new Set(["papers", "standards"]);
+      CATEGORIES.filter((c) => !NEWS_TAB_HIDDEN.has(c.key)).forEach((c) => {
         catRow.appendChild(el("button", {
           className: "chip",
           "data-cat-key": c.key,
@@ -770,15 +786,15 @@
       )
     );
 
-    // body: 제목 + 요약
+    // body: 제목 + 요약 — 🌏 Round 5: 한글 번역 우선 (title_ko/summary_ko fallback to 원문)
     const titleLink = el("a", {
       className: "card__title",
       href: n.url, target: "_blank", rel: "noopener",
       id: `${n.id}-title`,
-    }, n.title || "");
+    }, ko(n, "title"));
     const body = el("div", { className: "card__body" },
       titleLink,
-      el("p", { className: "card__summary" }, n.summary || "")
+      el("p", { className: "card__summary" }, ko(n, "summary"))
     );
 
     // 4 게이지
@@ -1093,7 +1109,7 @@
       el("a", {
         className: "community-card__title",
         href: c.url, target: "_blank", rel: "noopener",
-      }, c.title || ""),
+      }, ko(c, "title")),
       el("div", { className: "community-card__foot" },
         el("span", { className: "community-card__points" }, `${fmtNum(c.points)} pts`),
         c.author ? el("span", { className: "community-card__author" }, c.author) : null,
@@ -1183,6 +1199,88 @@
     grid.replaceChildren(frag);
   }
 
+  // ───────────────────────────────────────────────────────
+  // 8.5. 논문·특허·표준 탭 (Round 5 신규)
+  // ───────────────────────────────────────────────────────
+  // 사용자 요청: "논문, 특허/표준은 뉴스, 커뮤니티, 오픈소스, '논문/특허/표준' 레벨의 탭으로 옮기고
+  //  관련된 내용들의 레벨을 모두 옮겨서 필터나 검색이 정상적으로 되도록".
+  // build-today.js가 papers/standards 카테고리를 research[]로 분리. 이 탭은 그것만 표시.
+  const researchState = { type: "all", search: "" };
+  const RESEARCH_TYPES = [
+    { key: "all",       label: "전체" },
+    { key: "papers",    label: "📄 논문" },
+    { key: "standards", label: "⚖️ 특허·표준" },
+  ];
+
+  function setupResearchTab() {
+    const row = $("#research-types");
+    if (row) {
+      row.innerHTML = "";
+      RESEARCH_TYPES.forEach((t) => {
+        row.appendChild(chip(t.key, t.label, () => {
+          researchState.type = t.key;
+          $$("#research-types .chip").forEach((b) => b.setAttribute("data-active",
+            b.dataset.key === researchState.type ? "true" : "false"));
+          renderResearchGrid();
+        }, t.key === "all"));
+      });
+    }
+    const tab = $('.tab-content[data-tab="research"]');
+    if (tab) {
+      const input = $("input[data-search-input]", tab);
+      const clear = $("[data-search-clear]", tab);
+      if (input) {
+        const onSearch = debounce(() => {
+          researchState.search = (input.value || "").trim().toLowerCase();
+          renderResearchGrid();
+        }, 150);
+        input.addEventListener("input", onSearch);
+      }
+      if (clear) {
+        clear.addEventListener("click", () => {
+          if (input) input.value = "";
+          researchState.search = "";
+          renderResearchGrid();
+        });
+      }
+    }
+    renderResearchGrid();
+  }
+
+  function renderResearchGrid() {
+    const grid = $("#research-grid");
+    if (!grid) return;
+    const all = (window.__DAILY__ && window.__DAILY__.research) || [];
+    const list = all.filter((r) => {
+      if (researchState.type !== "all" && r.category !== researchState.type) return false;
+      if (researchState.search) {
+        const hay = `${r.title || ""} ${r.summary || ""} ${r.author || ""} ${(r.tags || []).join(" ")}`.toLowerCase();
+        if (!hay.includes(researchState.search)) return false;
+      }
+      return true;
+    }).sort((a, b) => Date.parse(b.publishedAt || 0) - Date.parse(a.publishedAt || 0));
+
+    setText("#research-counter", `${list.length}건 / 전체 ${all.length}`);
+    grid.setAttribute("aria-busy", "false");
+    if (!list.length) {
+      grid.replaceChildren(el("div", { className: "empty" },
+        el("div", { className: "empty__icon" }, "📜"),
+        el("div", { className: "empty__title" }, "이 조건에 맞는 논문·특허가 없어요"),
+        el("div", { className: "empty__text" }, "타입 필터를 풀거나 다른 키워드를 넣어 보세요.")
+      ));
+      return;
+    }
+    // 논문·특허는 news 카드 form 재사용 — 같은 정보 구조 (title/summary/scores)
+    const flagSets = {
+      starred:    new Set(window.Storage ? window.Storage.getFlagged("starred")   : []),
+      bookmarks:  new Set(window.Storage ? window.Storage.getFlagged("bookmarks") : []),
+      read:       new Set(window.Storage ? window.Storage.getFlagged("read")      : []),
+    };
+    const frag = document.createDocumentFragment();
+    list.forEach((r) => frag.appendChild(renderNewsCard(r, flagSets)));
+    grid.replaceChildren(frag);
+  }
+
   function renderOssCard(o) {
     // OSS 카드 재디자인 — 사용자 피드백:
     //   "stars/사용언어/라이센스 구분되지 않음, 무엇이 중요한지 모르겠음"
@@ -1219,7 +1317,7 @@
         }, o.name || "")
       ),
       // 3단: 한 줄 설명
-      el("p", { className: "oss-card__desc" }, o.description || ""),
+      el("p", { className: "oss-card__desc" }, ko(o, "description")),
       // 4단: 4-stat grid — 각각 색·아이콘 구분
       el("div", { className: "oss-card__stats-grid" },
         el("div", { className: "oss-stat oss-stat--stars" },
@@ -1385,6 +1483,10 @@
       });
       deferIdle(() => {
         try { setupOssTab(); } catch (e) { console.error(e); }
+      });
+      // Round 5: 논문·특허·표준 탭 (idle init)
+      deferIdle(() => {
+        try { setupResearchTab(); } catch (e) { console.error(e); }
       });
       deferIdle(() => {
         try {

@@ -123,7 +123,6 @@
         <div class="header-actions">
           <button class="icon-btn" id="theme-toggle" title="테마 전환" aria-label="테마 전환">◐</button>
           <a class="icon-btn" href="index.html" title="오늘로" aria-label="오늘로">🏠</a>
-          <a class="icon-btn" href="feed.xml" title="RSS" aria-label="RSS">📡</a>
         </div>
       </div>
     </div>
@@ -145,8 +144,6 @@
       <span>매일 아침 6시, 어제 하루를 다시 보는 IT 브리핑.</span>
       <span class="sep">·</span>
       <a href="index.html">🏠 오늘</a>
-      <span class="sep">·</span>
-      <a href="feed.xml">📡 RSS 2.0</a>
     </div>
   </footer>
 
@@ -200,8 +197,8 @@
         if (!isToday) {
           const chip = document.createElement("span");
           chip.className = "archive-row__chip";
-          chip.textContent = "요약만 — RSS에서 보기";
-          chip.title = "이 날의 대시보드는 보관 중이며, 전체 본문은 RSS feed에서 확인할 수 있습니다.";
+          chip.textContent = "요약만";
+          chip.title = "이 날의 대시보드는 메타데이터만 보관됩니다. 자세한 내용은 오늘 발행에서 확인하세요.";
           title.appendChild(chip);
         }
 

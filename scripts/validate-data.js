@@ -167,13 +167,24 @@ function validateInsights(items, V, refs) {
     if (!isStr(it.excerpt))                     V.err(`${p}.excerpt`, "missing");
     if (!isStr(it.keyQuestion))                 V.err(`${p}.keyQuestion`, "missing");
     if (!isStr(it.analysis))                    V.err(`${p}.analysis`, "missing");
-    // Referential integrity
-    ["relatedNewsIds:newsIds", "relatedOssIds:ossIds", "relatedCommunityIds:communityIds"].forEach((pair) => {
-      const [field, refKey] = pair.split(":");
-      const arr = it[field];
-      if (arr == null) return; // optional
-      if (!isArr(arr)) return V.err(`${p}.${field}`, "must be array");
+    // Referential integrity — Round 5: relatedNewsIds는 news[] 또는 research[] 어느 쪽에 있어도 OK
+    // (buildInsights가 news + research 통합 분석하므로).
+    const arr = it.relatedNewsIds;
+    if (Array.isArray(arr)) {
       arr.forEach((id, j) => {
+        const inNews = refs.newsIds && refs.newsIds.has(id);
+        const inResearch = refs.researchIds && refs.researchIds.has(id);
+        if (!inNews && !inResearch) V.err(`${p}.relatedNewsIds[${j}]`, `id "${id}" not in news[] or research[]`);
+      });
+    } else if (arr != null) {
+      V.err(`${p}.relatedNewsIds`, "must be array");
+    }
+    ["relatedOssIds:ossIds", "relatedCommunityIds:communityIds"].forEach((pair) => {
+      const [field, refKey] = pair.split(":");
+      const arr2 = it[field];
+      if (arr2 == null) return;
+      if (!isArr(arr2)) return V.err(`${p}.${field}`, "must be array");
+      arr2.forEach((id, j) => {
         if (!refs[refKey].has(id)) V.err(`${p}.${field}[${j}]`, `id "${id}" not in ${refKey.replace("Ids", "[]")}`);
       });
     });
@@ -182,10 +193,13 @@ function validateInsights(items, V, refs) {
 }
 
 function validateTopLevel(D, V) {
+  // Round 5: research[] 추가 (논문/특허/표준 분리 탭)
   ["date", "generatedAt", "conclusion", "counts", "fiveLines", "quote", "lead", "stats",
    "buckets", "sourceDiversity", "influencers", "news", "community", "oss", "insights"].forEach((k) => {
     if (D[k] == null) V.err(`__DAILY__.${k}`, "missing");
   });
+  // research[]는 옵션 — Round 5 이전 today.js와 호환성 유지.
+  if (D.research != null && !isArr(D.research)) V.err("research", "must be array");
 
   // conclusion
   if (isObj(D.conclusion)) {
@@ -224,6 +238,10 @@ function validateCounts(D, V, sets) {
     ["oss",       sets.ossIds],
     ["insights",  sets.insightIds],
   ];
+  // Round 5: research counts 검증 (선택적)
+  if (D.research != null && sets.researchIds != null) {
+    pairs.push(["research", sets.researchIds]);
+  }
   // STRICT GATE: counts MUST equal array length (else dashboard tab badge lies to users).
   // History: this was V.warn (silent pass), but the autonomous-session pipeline build-today.js
   // hardcoded counts.insights = 10 — the exact silent-failure pattern this project's
@@ -265,8 +283,10 @@ function main() {
   const newsIds      = validateNews(D.news, V) || new Set();
   const communityIds = validateCommunity(D.community, V) || new Set();
   const ossIds       = validateOss(D.oss, V) || new Set();
-  const insightIds   = validateInsights(D.insights, V, { expertIds, newsIds, ossIds, communityIds }) || new Set();
-  validateCounts(D, V, { newsIds, communityIds, ossIds, insightIds });
+  // Round 5: research[] 검증 (news와 동일 schema 재사용) + insights는 news+research 모두 참조 가능
+  const researchIds  = D.research ? (validateNews(D.research, V) || new Set()) : new Set();
+  const insightIds   = validateInsights(D.insights, V, { expertIds, newsIds, ossIds, communityIds, researchIds }) || new Set();
+  validateCounts(D, V, { newsIds, communityIds, ossIds, insightIds, researchIds });
 
   V.report();
   if (V.hasErrors) process.exit(1);

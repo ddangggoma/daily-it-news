@@ -53,8 +53,9 @@ window.__TODAY_TEMPLATE__ = {
     // 기술/연구
     "song-jae-hyuk":    { tag: "pattern",     titleTemplate: "{topNewsTitle} — 반도체 R&D 로드맵 시사점",
                           keyQuestion: "이 반도체 기술 변화가 우리 10년 R&D 로드맵·차세대 노드 결정에 시사하는 것은?" },
-    "kim-dae-hyun":     { tag: "opportunity", titleTemplate: "{topNewsTitle} — Samsung Research 우선순위",
-                          keyQuestion: "이 학계/오픈소스 트렌드가 우리 연구소 우선순위·인재 영입 전략에 어떻게 반영되어야 하는가?" },
+    // 🆕 Round 5: SR 사장 → DX CTO 교체
+    "dx-cto":           { tag: "opportunity", titleTemplate: "{topNewsTitle} — DX 부문 단말 통합 시점",
+                          keyQuestion: "이 신기술이 갤럭시·TV·가전 중 어느 단말에 먼저 통합되어야 하며, 사업부 간 시너지는?" },
     "jung-hyeon-ho":    { tag: "pattern",     titleTemplate: "{topNewsTitle} — 사업부 시너지 재분배",
                           keyQuestion: "이 변화가 우리 사업부 간 시너지·자원 재분배 우선순위에 어떤 영향을 주는가?" },
     // 지원/거버넌스

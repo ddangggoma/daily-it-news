@@ -8,6 +8,7 @@
   <!-- FOUC 방지: localStorage의 테마를 paint 전에 적용. blocking이지만 1ms 미만. -->
   <script>(function(){try{var t=JSON.parse(localStorage.getItem("dn.theme")||"\"light\"");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
   <link rel="stylesheet" href="assets/styles.css" />
+  <!-- Round 5: RSS auto-discovery 링크는 유지 (구독 도구 호환성). UI 노출은 제거. -->
   <link rel="alternate" type="application/rss+xml" title="Daily News RSS" href="feed.xml" />
   <link rel="manifest" href="manifest.webmanifest" />
   <meta name="theme-color" content="#1a1a1a" />
@@ -85,7 +86,6 @@
         <div class="header-actions">
           <button class="icon-btn" id="theme-toggle" title="테마 전환" aria-label="테마 전환">◐</button>
           <a class="icon-btn" href="archive.html" title="아카이브" aria-label="아카이브">📚</a>
-          <a class="icon-btn" href="feed.xml" title="RSS" aria-label="RSS">📡</a>
           <button class="icon-btn" id="gmail-draft" title="Gmail 드래프트" aria-label="Gmail 드래프트">✉️</button>
         </div>
       </div>
@@ -169,7 +169,7 @@
       <div class="tech-strip" id="tech-strip" aria-label="오늘 언급된 기술"></div>
     </section>
 
-    <!-- ======================== TABS — Iter 9 ARIA: aria-selected + aria-controls -->
+    <!-- ======================== TABS — Round 5: 5개 탭 (논문·특허·표준 분리) -->
     <nav class="tabs-nav" role="tablist" aria-label="콘텐츠 카테고리">
       <button class="tab-btn" role="tab" data-tab="news"
               data-active="true" aria-selected="true" aria-controls="panel-news"
@@ -188,6 +188,12 @@
               id="tab-oss" tabindex="-1">
         <span>📦 오픈소스</span>
         <span class="tab-btn__count" id="count-oss">—</span>
+      </button>
+      <button class="tab-btn" role="tab" data-tab="research"
+              aria-selected="false" aria-controls="panel-research"
+              id="tab-research" tabindex="-1">
+        <span>📜 논문·특허·표준</span>
+        <span class="tab-btn__count" id="count-research">—</span>
       </button>
       <button class="tab-btn" role="tab" data-tab="insights"
               aria-selected="false" aria-controls="panel-insights"
@@ -284,6 +290,25 @@
       <div class="cards-grid cards-grid--oss" id="oss-grid" aria-busy="true" aria-live="polite"></div>
     </section>
 
+    <!-- ======================== 논문·특허·표준 탭 (Round 5) -->
+    <section class="tab-content" data-tab="research" role="tabpanel"
+             id="panel-research" aria-labelledby="tab-research" tabindex="0" hidden>
+      <div class="toolbar">
+        <div class="toolbar-row">
+          <div class="chip-row" id="research-types"></div>
+        </div>
+        <div class="toolbar-row">
+          <label class="toolbar__search">
+            <span class="toolbar__search-icon">🔎</span>
+            <input type="search" placeholder="제목·저자·키워드 검색" data-search-input />
+            <button class="toolbar__search-clear" data-search-clear>✕</button>
+          </label>
+          <span class="toolbar__counter" id="research-counter">—</span>
+        </div>
+      </div>
+      <div class="cards-grid" id="research-grid" aria-busy="true" aria-live="polite"></div>
+    </section>
+
     <!-- ======================== INSIGHTS TAB — Iter 9 ARIA -->
     <section class="tab-content" data-tab="insights" role="tabpanel"
              id="panel-insights" aria-labelledby="tab-insights" tabindex="0" hidden>
@@ -315,8 +340,6 @@
       <span id="footer-generated">생성 시각: —</span>
       <span class="sep">·</span>
       <a href="archive.html">📚 아카이브</a>
-      <span class="sep">·</span>
-      <a href="feed.xml">📡 RSS 2.0</a>
       <span class="sep">·</span>
       <button id="footer-gmail">✉️ Gmail 드래프트</button>
     </div>
