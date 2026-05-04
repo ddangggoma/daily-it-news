@@ -79,13 +79,17 @@ function avgScore(item) {
 
 function buildConclusion(news) {
   if (!news.length) return { headline: "오늘은 새 발행이 없습니다.", scoreAvg: 0, vs7d: 0 };
-  const explicit = news.find((n) => n.headline);
-  const itOnly = news.filter((n) => n.itRelevance == null || n.itRelevance >= 0.5);
+  // 🆕 Round 8 Expert 5: defense in depth — score.js에서 headline=true 받았더라도
+  // 차단 제목 패턴이면 skip (예: 신한證 보고서가 잘못 통과한 경우).
+  const explicit = news.find((n) => n.headline && !_isBlockedHeadlineTitle(n.title));
+  const itOnly = news.filter((n) =>
+    (n.itRelevance == null || n.itRelevance >= 0.5) &&
+    !_isBlockedHeadlineTitle(n.title)
+  );
   const sortedByScore = (itOnly.length ? itOnly : news).sort((a, b) => avgScore(b) - avgScore(a));
   const top = explicit || sortedByScore[0];
   const topScore = avgScore(top);
   const scoreAvg = round2(topScore);
-  // 🌏 Round 5: 한글 번역 우선 (translate.js가 채워둔 title_ko 사용)
   const topTitle = (top.title_ko && top.title_ko.trim()) || top.title;
   const headline = explicit || topScore >= 3.5
     ? topTitle
@@ -179,29 +183,36 @@ function buildSourceDiversity(news) {
 //   4) 페르소나 background는 모달 별도 섹션에 표시 (분석 본문과 분리)
 
 // 페르소나 ID → 관심 키워드 (제목/요약/태그 매칭). 소문자 비교.
-// Round 6: ID 직책 기반으로 변경 (실명 삭제).
+// 🆕 Round 8 Expert 5 권고: 일반 키워드 ("투자", "galaxy", "전략") → IT 컨텍스트 필수.
+// 예: "투자" 단독 → 한국 증권 뉴스 매칭, "galaxy" 단독 → "Star Wars galaxy" 매칭.
+// 모든 키워드를 IT-구체적으로 정제 (multi-token 우선).
 const PERSONA_INTERESTS = {
-  "chairman":         ["acquisition", "merger", "ipo", "투자", "전략", "ceo", "chairman", "antitrust", "regulation", "supply chain", "공급망"],
-  "dx-head":          ["galaxy", "tv", "smart home", "iot", "smartthings", "consumer", "냉장고", "에어컨", "가전", "bespoke", "tizen"],
-  "ds-head":          ["semiconductor", "memory", "hbm", "dram", "nand", "foundry", "tsmc", "반도체", "메모리", "ai chip", "wafer", "fab"],
-  "mx-head":          ["smartphone", "iphone", "galaxy", "android", "foldable", "폴더블", "z fold", "z flip", "mobile", "갤럭시", "exynos", "snapdragon"],
-  "cmo":              ["marketing", "brand", "campaign", "launch", "unpacked", "advertising", "글로벌", "메시지", "consumer", "global"],
-  "da-head":          ["appliance", "refrigerator", "washer", "dryer", "vacuum", "robot", "lg", "haier", "midea", "smart home", "iot", "samsung dishwasher"],
-  "foundry-head":     ["tsmc", "foundry", "wafer", "yield", "2nm", "3nm", "5nm", "process node", "intel foundry", "nvidia chip", "qualcomm", "tesla chip"],
-  "lsi-head":         ["exynos", "snapdragon", "ap", "soc", "image sensor", "isocell", "sensor", "ddi", "mediatek", "system lsi"],
-  "vd-head":          ["tv", "qled", "oled", "micro-led", "neo qled", "display", "tizen", "디스플레이", "monitor", "lg display", "sony tv"],
-  "memory-head":      ["dram", "ddr5", "lpddr", "hbm", "hbm3", "hbm4", "cxl", "memory bandwidth", "sk hynix", "micron", "storage", "ssd", "nand"],
-  "networks-head":    ["5g", "6g", "open ran", "vran", "telecom", "통신", "wireless", "verizon", "at&t", "ntt", "ericsson", "nokia"],
-  "ds-cto":           ["semiconductor", "euv", "gaa", "transistor", "patterning", "lithography", "research", "process technology", "intel", "tsmc node"],
-  "dx-cto":           ["on-device", "ai", "llm", "bixby", "smartthings", "edge ai", "fitness", "health", "wearable", "watch", "ring", "buds", "ar glass", "iot"],
-  "biz-support-tf":   ["organization", "synergy", "restructure", "leadership", "talent", "executive", "strategy", "portfolio", "capital allocation"],
-  "cfo":              ["earnings", "revenue", "capex", "operating profit", "investment", "ir", "buyback", "dividend", "수익", "재무", "투자"],
-  "public-affairs":   ["chips act", "regulation", "antitrust", "eu", "tariff", "sanction", "policy", "export control", "ai act", "정책", "규제", "trade"],
-  "ma-head":          ["acquisition", "merger", "m&a", "buyout", "investment", "harman", "automotive", "audi", "automotive supplier", "cariad"],
-  "us-ceo":           ["us market", "verizon", "at&t", "best buy", "costco", "fcc", "texas", "taylor", "north america", "carrier", "us government"],
-  "samsung-next":     ["startup", "vc", "venture", "seed", "series a", "series b", "yc", "y combinator", "founder", "saas", "developer tool"],
-  "strategy":         ["competitor", "apple", "google", "meta", "amazon", "microsoft", "nvidia", "tsmc", "sk hynix", "lg", "market share", "trend"],
+  "chairman":         ["tech acquisition", "tech merger", "ai investment", "반도체 투자", "tech ceo", "antitrust tech", "chip regulation", "ai supply chain", "ai 공급망", "tech valuation", "ai ipo"],
+  "dx-head":          ["samsung galaxy", "galaxy s2", "galaxy z", "samsung tv", "smart home iot", "smartthings", "냉장고 ai", "에어컨 iot", "bespoke ai", "tizen", "samsung consumer"],
+  "ds-head":          ["semiconductor", "memory chip", "hbm", "dram", "nand flash", "foundry", "tsmc", "반도체", "ai chip", "wafer", "fab"],
+  "mx-head":          ["smartphone", "iphone", "samsung galaxy", "android", "foldable phone", "폴더블", "z fold", "z flip", "exynos", "snapdragon"],
+  "cmo":              ["tech marketing", "tech brand", "samsung campaign", "galaxy unpacked", "tech advertising", "consumer tech"],
+  "da-head":          ["appliance ai", "refrigerator ai", "smart washer", "robot vacuum", "lg appliance", "haier", "midea", "smart home iot", "samsung dishwasher"],
+  "foundry-head":     ["tsmc", "foundry", "wafer", "yield", "2nm chip", "3nm chip", "5nm chip", "process node", "intel foundry", "nvidia chip", "qualcomm chip", "tesla chip"],
+  "lsi-head":         ["exynos", "snapdragon", "mobile soc", "image sensor", "isocell", "ddi", "mediatek", "system lsi"],
+  "vd-head":          ["qled", "oled tv", "micro-led", "neo qled", "tv display", "tizen tv", "디스플레이", "tv monitor", "lg display", "sony tv"],
+  "memory-head":      ["dram", "ddr5", "lpddr", "hbm", "hbm3", "hbm4", "cxl memory", "memory bandwidth", "sk hynix", "micron", "ssd nand"],
+  "networks-head":    ["5g", "6g", "open ran", "vran", "telecom 5g", "wireless 5g", "verizon 5g", "at&t 5g", "ntt 5g", "ericsson", "nokia network"],
+  "ds-cto":           ["semiconductor", "euv lithography", "gaa transistor", "chip lithography", "process technology", "intel chip", "tsmc node"],
+  "dx-cto":           ["on-device ai", "edge ai", "on-device llm", "bixby", "smartthings", "wearable ai", "samsung watch", "galaxy ring", "galaxy buds", "ar glass", "smart home iot"],
+  "biz-support-tf":   ["tech restructure", "tech leadership", "tech talent", "tech executive", "tech portfolio", "ai capital allocation"],
+  "cfo":              ["tech capex", "ai capex", "semiconductor capex", "ai investment", "tech buyback"],
+  "public-affairs":   ["chips act", "ai regulation", "tech antitrust", "eu ai act", "chip tariff", "tech sanction", "export control chip", "정책 ai", "규제 ai", "tech trade"],
+  "ma-head":          ["tech acquisition", "tech merger", "tech m&a", "ai buyout", "ai investment", "harman", "automotive tech", "ai automotive", "cariad"],
+  "us-ceo":           ["us tech market", "verizon", "at&t", "best buy", "costco", "fcc", "texas fab", "taylor fab", "us tech carrier", "us government tech"],
+  "samsung-next":     ["ai startup", "vc tech", "tech venture", "ai seed", "ai series a", "ai series b", "y combinator", "ai founder", "saas startup", "developer tool"],
+  "strategy":         ["apple tech", "google tech", "meta ai", "amazon tech", "microsoft ai", "nvidia chip", "tsmc", "sk hynix", "lg tech", "tech market share", "ai trend"],
 };
+
+// 🆕 Round 8 Expert 5: 페르소나 매칭 시 ≥2 키워드 매칭 + 항목 점수 ≥ 3.0 요구.
+// 단일 키워드 우연 매칭 (예: "galaxy"가 Star Wars와) 방지.
+const PERSONA_MIN_MATCHES = 2;
+const ITEM_MIN_SCORE = 3.0;
 
 function scoreItemForPersona(item, interestKeywords) {
   const text = `${item.title || ""} ${item.summary || item.description || ""} ${(item.tags || []).join(" ")}`.toLowerCase();
@@ -209,24 +220,33 @@ function scoreItemForPersona(item, interestKeywords) {
   for (const kw of interestKeywords) {
     if (text.includes(kw)) score += 1;
   }
-  // 본인 점수 + 매칭 카운트 — 페르소나 관심도가 높은 항목 우선.
   return score;
 }
+
+// 🆕 Round 8 Expert 5: 헤드라인 차단 패턴은 페르소나 topNews에서도 제외.
+// score.js의 isBlockedHeadlineTitle을 require로 가져와 defense in depth.
+let _isBlockedHeadlineTitle;
+try { _isBlockedHeadlineTitle = require("./score.js").isBlockedHeadlineTitle; } catch { _isBlockedHeadlineTitle = () => false; }
 
 function pickRelatedItems(items, interestKeywords, limit) {
   if (!items || !items.length) return [];
   const kws = interestKeywords || [];
-  // 매칭 점수 + 항목 자체 점수(avgScore) 가중 합.
-  const scored = items.map((it) => {
+  // 🆕 Round 8: 항목 점수 < 3.0 또는 차단 제목 형태 항목 사전 제외.
+  const filtered = items.filter((it) => {
+    if (_isBlockedHeadlineTitle(it.title)) return false;
+    if (it.scores && avgScore(it) < ITEM_MIN_SCORE) return false;
+    return true;
+  });
+  const scored = filtered.map((it) => {
     const personaMatch = kws.length ? scoreItemForPersona(it, kws) : 0;
     const itemAvg = it.scores ? avgScore(it) : (it.points ? Math.min(5, Math.log10((it.points || 1) + 1) + 2) : 2);
     return {
       item: it,
       score: personaMatch * 2 + itemAvg,
-      hasMatch: personaMatch > 0,
+      // 🆕 Round 8: ≥2 키워드 매칭만 "qualified match"로 카운트 (단일 우연 매칭 제외)
+      hasMatch: personaMatch >= PERSONA_MIN_MATCHES,
     };
   });
-  // 키워드 매칭이 있는 항목 우선; 매칭 부족 또는 keywords가 비어 있으면 점수 높은 일반 항목 fallback.
   const matched = scored.filter((s) => s.hasMatch).sort((a, b) => b.score - a.score);
   if (matched.length >= limit) return matched.slice(0, limit).map((s) => s.item);
   const others = scored.filter((s) => !s.hasMatch).sort((a, b) => b.score - a.score);

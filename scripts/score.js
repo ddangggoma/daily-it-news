@@ -69,6 +69,32 @@ const SOURCE_AUTHORITY = {
   // Tier 1.5 — 한국 IT 미디어
   "bloter":             4.4, "itworld_kr":     4.3, "zdnet_kr":    4.3,
   "yna_it":             4.5, "byline_kr":      4.3,
+  // 🆕 Round 8: 한국 IT 전용 추가 (Tier 1.5)
+  "techm":              4.4, "aitimes":        4.4, "digitaltoday":  4.2,
+  "itchosun":           4.3, "thelec":         4.5,
+  "toss_tech":          4.6, "naver_d2":       4.6, "kakao_tech":  4.5,
+  "woowa_tech":         4.5,
+  // 🆕 Round 8: 글로벌 IT 미디어 추가 (Tier 1.5)
+  "register":           4.4, "tnw":            4.2, "tomshardware":  4.3,
+  "techradar":          4.0, "zdnet":          4.4, "cnet":          4.0,
+  "gizmodo":            4.0, "newstack":       4.4, "infoq":         4.4,
+  "infoworld":          4.2, "computerworld":  4.0, "siliconangle":  4.0,
+  "bloomberg_tech":     4.0, "reuters_tech":   4.0, "ft_tech":       4.0,
+  "guardian_tech":      4.0, "fastcompany":    3.8, "businessinsider_tech": 3.8,
+  "venturebeat":        4.4, "theinformation": 4.6, "404media":      4.3,
+  "axios_tech":         4.2, "axios_login":    4.2,
+  "deepmind":           5.0, "mistral_ai":     4.7, "stability_ai":  4.5,
+  "stripe":             4.6, "render":         4.3, "stripe_eng":    4.6,
+  "netflix_tech":       4.6, "uber_eng":       4.6, "hashnode":      3.7,
+  // SNS 계정 (낮은 권위 — 헤드라인 후보 아님)
+  "fosstodon_dev":      3.6, "mast_simonw":    4.0, "mast_pluralistic": 3.8,
+  "mast_briankrebs":    4.2, "mast_swiftonsec": 3.8, "mast_aaronpk": 3.8,
+  "bsky_karpathy":      4.2, "bsky_simonw":    4.0, "bsky_swyx":     3.9,
+  "x_sama":             4.0, "x_levelsio":     3.7,
+  // Substack 뉴스레터
+  "stratechery":        4.7, "platformer":     4.4, "lennys":        4.0,
+  "tldr_ai":            4.2, "import_ai":      4.5,
+  "yt_yannic":          4.2, "yt_lex":         4.0,
   // Tier 1 — Papers (arxiv는 1차 학술 자료)
   "arxiv_cs_ai":        4.7, "arxiv_cs_lg":    4.7, "arxiv_cs_cl": 4.7,
   // Tier 2 — community aggregator
@@ -163,7 +189,85 @@ const IT_NEGATIVE_KEYWORDS = [
   /\b(divorce|wedding|marriage|relationship advice|dating)\b/i,
   /\b(climate change(?!.*model)|carbon footprint(?!.*data)|wildfire(?!.*sensor))\b/i,
   /(요리|레시피|여행|운동|다이어트|연애|결혼|이혼|정치|선거|국회)/,
+  // 🆕 Round 8 Expert 1+5 권고 — 한국 금융/증권/일반 비즈니스 (신한證 leak 방지)
+  /(증권|공시|실적|매출|영업이익|순이익|주가|주식|시가총액|시총|코스피|코스닥|상장|배당|펀드|투자자문|애널리스트|목표주가|매수의견|매도의견|컨센서스|분기실적|반기실적|연간실적|호실적|어닝쇼크|어닝서프라이즈|증권사|증권가)/,
+  /(국회|대통령|장관|총리|여당|야당|민주당|국민의힘|정부발표|법안|개정안|시행령|금감원|공정위|국세청|수사|영장|기소|선고|판결)/,
+  /(연예|아이돌|드라마|예능|배우|가수|영화관|박스오피스|부동산|아파트|전세|월세|분양|청약)/,
+  /(턴어라운드|목표가|매수의견|호실적|밸류에이션|어닝콜)/,
+  // 영문 금융 노이즈
+  /\b(earnings (?:beat|miss|call|report)|quarterly results|EPS guidance|analyst rating|price target|short interest|hedge fund|13F filing)\b/i,
+  /\b(stock(?!.*overflow)|shares (?:up|down|jump|fall)|share price|market cap|valuation|IPO pricing|SPAC|tender offer)\b/i,
+  // 범죄/비-기술-정책 법적 이슈
+  /\b(lawsuit settlement|criminal charge|indictment|guilty plea|prison sentence|murder|homicide)\b/i,
+  // 부동산/라이프스타일
+  /\b(real estate|mortgage|housing market|home sale|interior design(?!.*system))\b/i,
 ];
+
+// 🆕 Round 8 Expert 2 (multi-signal classifier): 한국 증권사 분석 보고서 패턴.
+// "신한證 '지슨, 올해 상반기 턴어라운드…신사업 호조'" 같은 stock-analyst note shape.
+// 멀티-패턴 hard cap — 단일 매칭만 있어도 relevance 강하게 떨어짐.
+const IT_EQUITY_RE = new RegExp([
+  /(신한|미래에셋|키움|삼성|NH|하나|KB|대신|메리츠|한투|유안타|이베스트|신영|한화|교보|SK|현대차|DB|하이|상상인|유진)[證증]/.source,
+  /(목표주가|투자의견|매수의견|매도의견|컨센서스|어닝(?:쇼크|서프라이즈|콜)|턴어라운드|밸류에이션)/.source,
+  /(증권사|애널리스트|증권가|상반기 전망|하반기 전망|호실적|어닝)/.source,
+  /(\d+분기|\dQ\d{2}|FY\d{2})\s*(?:실적|영업이익|매출|순이익)/.source,
+].join("|"), "g");
+
+// 🆕 Round 8 Expert 5: 헤드라인 차단 패턴 — 증권 보고서 / 시황 / 공시 스타일.
+const HEADLINE_TITLE_BLOCKLIST = [
+  /[가-힣]{1,4}[證증권]\s*['"'"'`]/,                    // 신한證 ', 미래에셋'
+  /['"'"'`][^'"'"'`]+,\s*(올해|내년|상반기|하반기|[1-4]Q|\d분기)/, // '지슨, 올해 상반기'
+  /목표주가|투자의견|매수의견|비중확대|underweight|overweight/i,
+  /턴어라운드|어닝서프라이즈|어닝쇼크|컨센서스/,
+  /^\[(공시|특징주|시황|마감시황)\]/,
+  /(상승|하락|급등|급락)\s*마감/,
+  /실적\s*(호조|부진|개선|악화)/,
+];
+
+function isBlockedHeadlineTitle(title) {
+  if (!title) return false;
+  return HEADLINE_TITLE_BLOCKLIST.some((re) => re.test(title));
+}
+
+// 🆕 Round 8 Expert 5: 헤드라인 후보 = Tier 1 IT 전용 매체만.
+// yna_it/etnews/ddaily 같은 일반 미디어는 헤드라인 후보에서 제외.
+const HEADLINE_TIER1_SOURCES = new Set([
+  // 1차 보도 IT 사업자 발표
+  "openai", "anthropic", "google_ai", "meta_ai", "hf_blog",
+  "deepmind", "mistral_ai", "stability_ai",
+  // 메이저 글로벌 IT 미디어
+  "mit_tech_review", "ieee_spectrum", "arstechnica",
+  "techcrunch", "theverge", "wired",
+  "venturebeat", "theinformation", "404media",
+  "register", "tnw", "tomshardware", "techradar", "newstack", "infoq", "siliconangle",
+  "zdnet", "cnet", "gizmodo",
+  // DevTools 블로그
+  "vercel", "supabase", "github_blog", "cloudflare", "netlify",
+  "stripe", "render", "stripe_eng",
+  // AX 매체
+  "pragmatic_eng", "leaddev", "honeycomb", "shopify_eng", "github_eng",
+  "netflix_tech", "uber_eng",
+  // 학술
+  "arxiv_cs_ai", "arxiv_cs_lg", "arxiv_cs_cl",
+  // 한국 IT 전용 (Round 8: 추가)
+  "bloter", "byline_kr", "itworld_kr", "zdnet_kr",
+  "techm", "aitimes", "digitaltoday", "itchosun",
+  "thelec", "toss_tech", "naver_d2", "kakao_tech", "woowa_tech",
+]);
+
+// 🆕 Round 8 Expert 2 (URL path signal): URL 경로로 IT/비IT 강한 신호.
+// /tech/ /developer/ /ai/ — IT 보너스. /finance/ /stock/ /증시/ — 비IT 페널티.
+function urlPathSignal(url) {
+  if (!url) return 0;
+  try {
+    const u = new URL(url);
+    const p = (u.pathname || "").toLowerCase();
+    if (/\/(tech|developer|engineering|ai|ml|software|cloud|devops|opensource|it[\/\?])/i.test(p)) return 0.5;
+    if (/\/(market|stock|finance|economy|business|money|invest|equity|증권|주식|금융|시황|증시)\//i.test(p)) return -0.6;
+    if (/\/(politics|sports|entertainment|life|food|travel|culture|opinion|society)\//i.test(p)) return -0.5;
+    return 0;
+  } catch { return 0; }
+}
 
 // PERF Round 4 (Expert 2 Egorov): 5개 별도 regex 배열 → 결합된 단일 alternation regex.
 // V8가 각 NFA 별도 traversal → 단일 amortize. /g 로 1-pass count.
@@ -192,10 +296,16 @@ function scoreItRelevance(item) {
   const text = `${item.title || ""} ${item.summary || ""} ${(item.tags || []).join(" ")}`;
   if (!text.trim()) return 0;
 
-  // PERF Round 4: 결합 regex 사용 — 17+5+10=32개 .test() → 3 .exec() 루프
   const strong = countMatches(text, IT_STRONG_RE);
   const medium = countMatches(text, IT_MEDIUM_RE);
   const negative = countMatches(text, IT_NEGATIVE_RE);
+  // 🆕 Round 8 Expert 2: 한국 증권/금융 분석 보고서 패턴 — 강한 hard cap.
+  IT_EQUITY_RE.lastIndex = 0;
+  const equity = countMatches(text, IT_EQUITY_RE);
+  // 🆕 Round 8 Expert 5: 헤드라인 차단 패턴 (제목 shape — 증권사 + 따옴표).
+  const titleShapeBlock = isBlockedHeadlineTitle(item.title || "");
+  // 🆕 Round 8 Expert 2: URL path 신호 (/tech/ vs /finance/).
+  const urlSig = urlPathSignal(item.url || "");
 
   // 기본 source 권위
   const auth = SOURCE_AUTHORITY[item.source] || SOURCE_AUTHORITY._default;
@@ -206,6 +316,11 @@ function scoreItRelevance(item) {
 
   let score = base + Math.min(0.4, strong * 0.12) + Math.min(0.2, medium * 0.05);
   score -= negative * 0.4;
+  // 🆕 Round 8: equity 매칭 hard cap — 증권 보고서는 IT 키워드 누적되어도 0.35 이하.
+  score -= equity * 0.6;
+  if (urlSig !== 0) score += urlSig;
+  if (titleShapeBlock) score = Math.min(score, 0.25);  // 제목 shape으로 차단 시 0.25 cap.
+  if (equity >= 1 && strong < 3) score = Math.min(score, 0.35);
   if (item.domain === "oss") score = Math.max(score, 0.7);
 
   return clamp(round1(score), 0, 1.0);
@@ -509,24 +624,35 @@ async function main() {
     news.sort((a, b) => {
       const dh = headlineScore(b) - headlineScore(a);
       if (Math.abs(dh) > 0.01) return dh;
-      // tie-break: source authority
       const aa = SOURCE_AUTHORITY[a.source] || SOURCE_AUTHORITY._default;
       const ba = SOURCE_AUTHORITY[b.source] || SOURCE_AUTHORITY._default;
       return ba - aa;
     });
-    // 헤드라인 게이트 — 사용자 피드백 ("IT Daily News와 관련 없는 헤드라인"):
+    // 🆕 Round 8 Expert 5 다단 헤드라인 gate:
     //   1) 종합 평균 ≥ 4.0
-    //   2) IT relevance ≥ 0.6 (확실한 IT 토픽만)
-    // 둘 다 통과한 첫 번째 항목이 헤드라인. 모두 미달이면 fallback.
-    const headline = news.find((n) =>
-      avgOf(n.scores) >= 4.0 && (n.itRelevance == null || n.itRelevance >= 0.6)
-    );
+    //   2) IT relevance ≥ 0.6
+    //   3) HEADLINE_TIER1_SOURCES 만 (yna_it/etnews/Bloomberg 같은 일반 미디어 제외)
+    //   4) isBlockedHeadlineTitle false (증권 보고서/시황 차단)
+    //   5) Tier 1 미만 매체는 relevance ≥ 0.75 추가 요구 (defense in depth)
+    function passesHeadlineGate(n) {
+      if (avgOf(n.scores) < 4.0) return false;
+      if (n.itRelevance != null && n.itRelevance < 0.6) return false;
+      if (!HEADLINE_TIER1_SOURCES.has(n.source)) return false;
+      if (isBlockedHeadlineTitle(n.title)) return false;
+      const auth = SOURCE_AUTHORITY[n.source] || SOURCE_AUTHORITY._default;
+      if (auth < 4.5 && (n.itRelevance ?? 0) < 0.75) return false;
+      return true;
+    }
+    const headline = news.find(passesHeadlineGate);
     if (headline) {
       headline.headline = true;
     } else {
-      // 차선책: 점수만 통과 + relevance 0.5 이상도 OK
+      // Fallback: 점수만 살짝 낮춰도 OK이지만 title blocklist + Tier 1 source는 유지.
       const fallback = news.find((n) =>
-        avgOf(n.scores) >= 3.8 && (n.itRelevance == null || n.itRelevance >= 0.5)
+        avgOf(n.scores) >= 3.8 &&
+        (n.itRelevance == null || n.itRelevance >= 0.5) &&
+        HEADLINE_TIER1_SOURCES.has(n.source) &&
+        !isBlockedHeadlineTitle(n.title)
       );
       if (fallback) fallback.headline = true;
     }
@@ -556,4 +682,8 @@ module.exports = {
   scoreImpact, scoreFreshness, scoreDepth, scoreBuzz,
   shapeForDashboard, detectOssType, SOURCE_AUTHORITY,
   llmRefine,    // exported for unit tests (mocked fetch)
+  // 🆕 Round 8: 헤드라인 차단 정책 export (build-today.js + 테스트에서 재사용)
+  isBlockedHeadlineTitle,
+  HEADLINE_TIER1_SOURCES,
+  scoreItRelevance,
 };

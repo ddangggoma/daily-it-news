@@ -134,8 +134,16 @@ const SOURCE_META = {
   zdnet_kr:      { label: "ZDNet Korea",        color: "#cc0000", country: "KR",     domain: "news" },
   yna_it:        { label: "연합뉴스 IT",        color: "#005bac", country: "KR",     domain: "news" },
   byline_kr:     { label: "바이라인네트워크",    color: "#1abc9c", country: "KR",     domain: "news" },
-  etnews:        { label: "전자신문",            color: "#003e85", country: "KR",     domain: "news" },
-  ddaily:        { label: "디지털데일리",         color: "#1a4d8c", country: "KR",     domain: "news" },
+  // 🆕 Round 8: Korean IT-only 매체
+  techm:         { label: "테크M",                color: "#1d3557", country: "KR",     domain: "news" },
+  aitimes:       { label: "AI타임스",              color: "#7c3aed", country: "KR",     domain: "news" },
+  digitaltoday:  { label: "디지털투데이",           color: "#0066cc", country: "KR",     domain: "news" },
+  itchosun:      { label: "IT조선",               color: "#1c3666", country: "KR",     domain: "news" },
+  thelec:        { label: "디일렉(THE ELEC)",       color: "#cf202d", country: "KR",     domain: "news" },
+  toss_tech:     { label: "토스 테크",              color: "#3b6ef9", country: "KR",     domain: "news",   defaultCat: "ax" },
+  naver_d2:      { label: "네이버 D2",             color: "#03c75a", country: "KR",     domain: "news",   defaultCat: "ax" },
+  kakao_tech:    { label: "카카오 기술 블로그",      color: "#fee500", country: "KR",     domain: "news",   defaultCat: "ax" },
+  woowa_tech:    { label: "우아한형제들 기술",       color: "#5e3acd", country: "KR",     domain: "news",   defaultCat: "ax" },
   // PERF Round 4: 추가 IT 미디어
   venturebeat:   { label: "VentureBeat",         color: "#ed4d3a", country: "US",     domain: "news" },
   theinformation:{ label: "The Information",     color: "#000000", country: "US",     domain: "news" },
@@ -174,15 +182,18 @@ const SOURCE_META = {
   netflix_tech:  { label: "Netflix Tech Blog",   color: "#e50914", country: "US",     domain: "news",   defaultCat: "ax" },
   uber_eng:      { label: "Uber Engineering",    color: "#000000", country: "US",     domain: "news",   defaultCat: "ax" },
   hashnode:      { label: "Hashnode",            color: "#2962ff", country: "Global", domain: "community" },
-  // SNS RSS bridges (Mastodon hashtags + Nitter X mirrors)
-  mastodon_ai:   { label: "Mastodon #ai",        color: "#6364ff", country: "Global", domain: "community" },
-  mastodon_llm:  { label: "Mastodon #llm",       color: "#6364ff", country: "Global", domain: "community" },
+  // 🆕 Round 8: SNS RSS bridges 재구성 — IT-only 계정 + Bluesky 네이티브
   fosstodon_dev: { label: "Fosstodon #programming", color: "#1d4280", country: "Global", domain: "community" },
-  x_sama:        { label: "X · @sama",           color: "#000000", country: "Global", domain: "community" },
-  x_karpathy:    { label: "X · @karpathy",       color: "#000000", country: "Global", domain: "community" },
-  x_simonw:      { label: "X · @simonw",         color: "#000000", country: "Global", domain: "community" },
-  x_swyx:        { label: "X · @swyx",           color: "#000000", country: "Global", domain: "community" },
-  x_levelsio:    { label: "X · @levelsio",       color: "#000000", country: "Global", domain: "community" },
+  mast_simonw:    { label: "Mastodon · @simon",     color: "#6364ff", country: "Global", domain: "community" },
+  mast_pluralistic:{label: "Mastodon · @pluralistic", color: "#6364ff", country: "Global", domain: "community" },
+  mast_briankrebs:{ label: "Mastodon · @briankrebs", color: "#6364ff", country: "Global", domain: "community" },
+  mast_swiftonsec:{ label: "Mastodon · @SwiftOnSecurity", color: "#6364ff", country: "Global", domain: "community" },
+  mast_aaronpk:   { label: "Mastodon · @aaronpk",   color: "#6364ff", country: "Global", domain: "community" },
+  bsky_karpathy:  { label: "Bluesky · karpathy",    color: "#0085ff", country: "Global", domain: "community" },
+  bsky_simonw:    { label: "Bluesky · simonw",      color: "#0085ff", country: "Global", domain: "community" },
+  bsky_swyx:      { label: "Bluesky · swyx",        color: "#0085ff", country: "Global", domain: "community" },
+  x_sama:         { label: "X · @sama",             color: "#000000", country: "Global", domain: "community" },
+  x_levelsio:     { label: "X · @levelsio",         color: "#000000", country: "Global", domain: "community" },
   // Substacks / newsletters
   stratechery:   { label: "Stratechery",         color: "#000000", country: "Global", domain: "news" },
   platformer:    { label: "Platformer",          color: "#1a73e8", country: "US",     domain: "news" },
@@ -487,33 +498,51 @@ const RSS_FEEDS = [
   { source: "arxiv_cs_ai",      url: "https://export.arxiv.org/rss/cs.AI" },
   { source: "arxiv_cs_lg",      url: "https://export.arxiv.org/rss/cs.LG" },
   { source: "arxiv_cs_cl",      url: "https://export.arxiv.org/rss/cs.CL" },
-  // ── 한국 IT 미디어 ─────────────────────────────────────
-  { source: "bloter",           url: "https://www.bloter.net/feed" },
-  { source: "itworld_kr",       url: "https://www.itworld.co.kr/rss" },
-  { source: "zdnet_kr",         url: "https://feeds.feedburner.com/zdkorea" },
-  { source: "yna_it",           url: "https://www.yna.co.kr/rss/industry.xml" },
-  { source: "byline_kr",        url: "https://byline.network/feed/" },
-  // 추가 한국 미디어
-  { source: "etnews",           url: "https://rss.etnews.com/Section902.xml" },
-  { source: "ddaily",           url: "https://rss.ddaily.co.kr/rss/Section_News.xml" },
+  // ── 한국 IT 미디어 (Round 8: yna_it/etnews/ddaily 일반 산업 RSS 제거 — 비IT 혼입 주범)
+  // 사용자 피드백: "헤드라인 뉴스가 IT와 관련이 없어요" — yna_it 산업 RSS가 증권/제조/
+  // 정치/교육 뉴스를 IT로 잘못 분류. 순수 IT 매체만 유지 + IT 카테고리 endpoint 사용.
+  { source: "bloter",           url: "https://www.bloter.net/feed" },           // 순수 IT
+  { source: "itworld_kr",       url: "https://www.itworld.co.kr/rss" },          // 순수 IT
+  { source: "zdnet_kr",         url: "https://feeds.feedburner.com/zdkorea" },   // IT (사이드 stock 가끔 혼입)
+  { source: "byline_kr",        url: "https://byline.network/feed/" },           // 순수 IT
+  // 🆕 Round 8: 추가 한국 IT 전용 매체 (Expert 3 권고 — 다양한 IT 미디어 풀)
+  { source: "techm",            url: "https://www.techm.kr/rss/clickTop.xml" }, // IT 전문지
+  { source: "aitimes",          url: "https://www.aitimes.com/rss/allArticle.xml" }, // AI 전문지
+  { source: "digitaltoday",     url: "https://www.digitaltoday.co.kr/rss/clickTop.xml" }, // IT 종합
+  { source: "itchosun",         url: "https://it.chosun.com/site/data/rss/rss.xml" }, // IT조선
+  // 🆕 Round 8 Expert 3 추가 권고: 디일렉(반도체/디스플레이), 토스 테크, 네이버 D2
+  { source: "thelec",           url: "https://www.thelec.kr/rss/clickTop.xml" },     // 반도체/디스플레이/배터리 전문
+  { source: "toss_tech",        url: "https://toss.tech/rss.xml" },                  // 토스 기술 블로그
+  { source: "naver_d2",         url: "https://d2.naver.com/d2.atom" },               // 네이버 D2 엔지니어링
+  { source: "kakao_tech",       url: "https://tech.kakao.com/feed/" },               // 카카오 기술 블로그
+  { source: "woowa_tech",       url: "https://techblog.woowahan.com/feed" },         // 우아한형제들 기술
+  // ❌ Round 8 제거:
+  //   - yna_it (연합뉴스 산업 RSS) — 제조·자동차·교육·정치 등 비IT 다수 혼입
+  //   - etnews (전자신문 일반) — 산업 전반, 비IT 비중 높음
+  //   - ddaily (디지털데일리) — 부정 키워드 미준수, 일반 비즈니스 혼입
   // ── 글로벌 + 한국 커뮤니티 ────────────────────────────
   { source: "geeknews",         url: "https://feeds.feedburner.com/geeknews-feed" },
   { source: "lobsters",         url: "https://lobste.rs/rss" },
   { source: "devto",            url: "https://dev.to/feed" },
   { source: "hashnode",         url: "https://hashnode.com/rss" },
-  // ── PERF Round 4: SNS RSS bridges ─────────────────────
-  // Mastodon (instance hashtag feeds — 인플루언서 공식 발언 풀)
-  { source: "mastodon_ai",      url: "https://mastodon.social/tags/ai.rss" },
-  { source: "mastodon_llm",     url: "https://mastodon.social/tags/llm.rss" },
+  // ── 🆕 Round 8 Expert 4: SNS 정비 — Mastodon hashtag(노이즈) 제거,
+  //    IT-only Mastodon 계정 + Bluesky 네이티브 RSS + Nitter fallback.
+  //    fosstodon_dev (FOSS-curated)는 유지.
   { source: "fosstodon_dev",    url: "https://fosstodon.org/tags/programming.rss" },
-  // Bluesky (atproto firehose는 미지원이라 RSS bridge 사용 — bsky-rss.amplifr.dev 같은 third-party)
-  // 예: 사용자/feed의 RSS는 bsky.app endpoint 미공개 → 일단 Nitter (X 미러)로 X 인플루언서 발언 수집
-  // Nitter X mirrors — public instance가 자주 down됨, 다중 fallback
+  // Mastodon IT 핵심 계정 (instance별 .rss endpoint)
+  { source: "mast_simonw",      url: "https://fedi.simonwillison.net/@simon.rss" },
+  { source: "mast_pluralistic", url: "https://mamot.fr/@pluralistic.rss" },
+  { source: "mast_briankrebs",  url: "https://infosec.exchange/@briankrebs.rss" },
+  { source: "mast_swiftonsec",  url: "https://infosec.exchange/@SwiftOnSecurity.rss" },
+  { source: "mast_aaronpk",     url: "https://hachyderm.io/@aaronpk.rss" },
+  // Bluesky 네이티브 RSS (Dec 2023 출시) — Nitter 대체
+  { source: "bsky_karpathy",    url: "https://bsky.app/profile/karpathy.bsky.social/rss" },
+  { source: "bsky_simonw",      url: "https://bsky.app/profile/simonw.bsky.social/rss" },
+  { source: "bsky_swyx",        url: "https://bsky.app/profile/swyx.io/rss" },
+  // Nitter X 미러는 자주 down 되지만 fallback으로 일부 유지
   { source: "x_sama",           url: "https://nitter.net/sama/rss" },
-  { source: "x_karpathy",       url: "https://nitter.net/karpathy/rss" },
-  { source: "x_simonw",         url: "https://nitter.net/simonw/rss" },
-  { source: "x_swyx",           url: "https://nitter.net/swyx/rss" },
   { source: "x_levelsio",       url: "https://nitter.net/levelsio/rss" },
+  // ❌ 제거: mastodon_ai/mastodon_llm hashtag — 노이즈 다수 (책 광고/자유체 글 다수)
   // Substack (개발자 / VC 뉴스레터)
   { source: "stratechery",      url: "https://stratechery.com/feed/" },
   { source: "platformer",       url: "https://www.platformer.news/feed" },
