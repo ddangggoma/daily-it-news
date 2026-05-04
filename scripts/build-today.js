@@ -262,11 +262,13 @@ function buildInsights(news, oss, community, experts, templates, research) {
     // excerpt — 카드 미리보기. 페르소나 설명이 아닌 분석 핵심 한 줄.
     const excerpt = buildInsightExcerpt(expert, { topNews, topOss, topCom });
 
+    // 🌏 Round 7: 인사이트 title도 한글 우선 (title_ko fallback to 원문)
+    const topTitleKo = (topNews.title_ko && topNews.title_ko.trim()) || topNews.title;
     return {
       id: `i${String(idx + 1).padStart(2, "0")}`,
       expertId: expert.id,
       tag: tpl.tag,
-      title: tpl.titleTemplate.replace("{topNewsTitle}", truncate(topNews.title, 60)),
+      title: tpl.titleTemplate.replace("{topNewsTitle}", truncate(topTitleKo, 60)),
       excerpt,
       keyQuestion: tpl.keyQuestion,
       analysis,
@@ -288,14 +290,17 @@ function buildPersonaAnalysis(expert, ctx) {
   const out = [];
   const role = expert.role || "";
 
-  // 1) 핵심 시그널
+  // 1) 핵심 시그널 — 🌏 Round 7: 한글 번역 우선 표시
+  const topTitle = (topNews.title_ko && topNews.title_ko.trim()) || topNews.title;
+  const topSummary = (topNews.summary_ko && topNews.summary_ko.trim()) || topNews.summary;
   out.push("## 📡 오늘의 핵심 시그널");
   out.push("");
-  out.push(`**${topNews.title}** (${topNews.source || "—"})`);
-  if (topNews.summary) out.push(`> ${topNews.summary.slice(0, 200)}${topNews.summary.length > 200 ? "…" : ""}`);
+  out.push(`**${topTitle}** (${topNews.source || "—"})`);
+  if (topSummary) out.push(`> ${topSummary.slice(0, 200)}${topSummary.length > 200 ? "…" : ""}`);
   if (secondNews) {
+    const secTitle = (secondNews.title_ko && secondNews.title_ko.trim()) || secondNews.title;
     out.push("");
-    out.push(`보조 시그널: **${secondNews.title}** (${secondNews.source || "—"})`);
+    out.push(`보조 시그널: **${secTitle}** (${secondNews.source || "—"})`);
   }
   out.push("");
 
@@ -307,9 +312,12 @@ function buildPersonaAnalysis(expert, ctx) {
     out.push(`- 핵심 뉴스 점수: 파급력 ${fmt1(s.impact)} · 시의성 ${fmt1(s.freshness)} · 기술도 ${fmt1(s.depth)} · 반응도 ${fmt1(s.buzz)}`);
   }
   if (topCom) {
-    out.push(`- 커뮤니티 신호: **${truncate(topCom.title, 70)}** (${topCom.sourceLabel || topCom.source || "—"}, ${fmt1(topCom.points || 0)}pts)`);
+    // 🌏 Round 7: 커뮤니티 제목도 ko 우선
+    const comTitle = (topCom.title_ko && topCom.title_ko.trim()) || topCom.title;
+    out.push(`- 커뮤니티 신호: **${truncate(comTitle, 70)}** (${topCom.sourceLabel || topCom.source || "—"}, ${fmt1(topCom.points || 0)}pts)`);
   }
   if (topOss) {
+    // OSS는 name이 영문 repo 이름이 정상 (preserved)
     out.push(`- 오픈소스 활동: **${topOss.name || topOss.title}** (${topOss.language || "—"}, +${(topOss.starsThisWeek || 0)} stars/주)`);
   }
   out.push(`- 관련 항목 종합: 뉴스 ${relNews.length}건 · 커뮤니티 ${relCom.length}건 · OSS ${relOss.length}건`);
@@ -391,7 +399,11 @@ function personaRecommend(expert, { topNews, topOss, topCom }) {
   // 출처 인용 (관련 항목 1-2개를 액션과 연결)
   const citations = [];
   if (topOss) citations.push(`참고 OSS: **${topOss.name || topOss.title}**`);
-  if (topCom) citations.push(`참고 커뮤니티: **${truncate(topCom.title, 50)}** (${topCom.sourceLabel || ""})`);
+  if (topCom) {
+    // 🌏 Round 7: 커뮤니티 제목도 ko 우선
+    const comTitle = (topCom.title_ko && topCom.title_ko.trim()) || topCom.title;
+    citations.push(`참고 커뮤니티: **${truncate(comTitle, 50)}** (${topCom.sourceLabel || ""})`);
+  }
   return rec + (citations.length ? "\n\n" + citations.join(" · ") : "");
 }
 
@@ -402,7 +414,9 @@ function buildInsightExcerpt(expert, { topNews, topOss, topCom }) {
   if (topCom) sources.push("커뮤니티");
   if (topOss) sources.push("OSS");
   const sourceStr = sources.join("·");
-  return `${expert.name}(${expert.role})이 ${sourceStr}를 종합 분석. "${truncate(topNews.title, 50)}"의 시사점을 ${expert.role.split(" ")[0]} 시각으로 해석.`;
+  // 🌏 Round 7: 한글 제목 우선
+  const topTitle = (topNews.title_ko && topNews.title_ko.trim()) || topNews.title;
+  return `${expert.name}(${expert.role})이 ${sourceStr}를 종합 분석. "${truncate(topTitle, 50)}"의 시사점을 ${expert.role.split(" ")[0]} 시각으로 해석.`;
 }
 
 function fmt1(n) {

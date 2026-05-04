@@ -69,6 +69,20 @@ jobs:
             node scripts/score.js --in=data/raw-collection.json --out=data/scored-items.json --hours="$HOURS_INPUT"
           fi
 
+      # 🌏 Round 7: 한글 자동 번역 (필수 단계, cron 매번 실행).
+      # ANTHROPIC_API_KEY 있으면 LLM 일괄 번역(자연스러움), 없으면 사전 fallback.
+      # 사용자 요청 "이후 수집시에도 동일하게" — 발행 파이프라인에 영구 통합.
+      - name: Translate to Korean
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -n "$ANTHROPIC_API_KEY" ]; then
+            node scripts/translate.js --in=data/scored-items.json --out=data/scored-items.json
+          else
+            echo "[translate] ANTHROPIC_API_KEY 미설정 — 사전 fallback 모드"
+            node scripts/translate.js --in=data/scored-items.json --out=data/scored-items.json --no-llm
+          fi
+
       - name: Build today.js
         run: node scripts/build-today.js --in=data/scored-items.json --out=data/today.js
 
@@ -99,7 +113,8 @@ jobs:
         run: |
           git config user.name "daily-publish-bot"
           git config user.email "actions@github.com"
-          git add data/today.js feed.xml
+          # 🌏 Round 7: 번역 캐시도 commit (다음 cron 실행 시 재사용 → API 비용 절감)
+          git add data/today.js feed.xml data/.translation-cache.json
           NOW=$(date -u +%Y-%m-%dT%H:%M:%SZ)
           if git diff --cached --quiet; then
             echo "no changes (data unchanged today)"

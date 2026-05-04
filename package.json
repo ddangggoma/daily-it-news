@@ -8,8 +8,13 @@
     "node": ">=20"
   },
   "scripts": {
+    "collect": "node scripts/collect.js",
+    "score": "node scripts/score.js",
+    "translate": "node scripts/translate.js",
+    "build": "node scripts/build-today.js",
     "validate": "node scripts/validate-data.js",
     "feed": "node scripts/generate-feed.js",
+    "publish": "npm run collect && npm run score && npm run translate && npm run build && npm run feed",
     "test:unit": "node --test tests/unit/*.test.js",
     "test:e2e": "playwright test",
     "test:e2e:headed": "playwright test --headed",
