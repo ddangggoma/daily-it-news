@@ -24,7 +24,9 @@ const sampleNews = [
 test("buildConclusion: highest-avg becomes headline", () => {
   const c = m.buildConclusion(sampleNews);
   assert.equal(c.headline, "Top news");
-  assert.equal(c.scoreAvg, 4); // (5+3)/2 = 4
+  // 헤드라인의 자체 점수 (이전엔 전체 뉴스 평균이었음 — 사용자 피드백 반영)
+  // top news 점수 5점이 그대로 5초 결론 점수가 된다.
+  assert.equal(c.scoreAvg, 5);
 });
 
 test("buildConclusion: empty array → fallback", () => {

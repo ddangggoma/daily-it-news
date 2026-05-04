@@ -40,9 +40,19 @@
     GAUGES.forEach((g) => {
       const v = Number(scores && scores[g.key] != null ? scores[g.key] : 0);
       const pct = Math.max(0, Math.min(100, (v / 5) * 100));
-      const node = el("div", { className: `gauge gauge--${g.key}`, title: g.tooltip },
+      // Iter 8 — Tufte: icon은 색·label 이중 redundant → label만 + 색.
+      // (icon은 tooltip aria-label로 이동: 화면 정보 밀도 ↓, 의미 ≈ 동일)
+      const node = el("div", {
+          className: `gauge gauge--${g.key}`,
+          title: `${g.icon} ${g.label} — ${g.tooltip || ""}`,
+          role: "meter",
+          "aria-label": `${g.label}: ${fmtScore(v)} / 5.0`,
+          "aria-valuenow": String(v),
+          "aria-valuemin": "0",
+          "aria-valuemax": "5",
+        },
         el("div", { className: "gauge__head" },
-          el("span", { className: "gauge__label" }, `${g.icon} ${g.label}`),
+          el("span", { className: "gauge__label" }, g.label),
           el("span", { className: "gauge__num" }, fmtScore(v))
         ),
         el("div", { className: "gauge__bar" },
@@ -307,24 +317,21 @@
     root.innerHTML = "";
     root.appendChild(el("div", { className: "tech-strip__head" }, "🛠 오늘 언급된 기술"));
     techs.forEach((t) => {
-      // 클릭: 외부 사이트 새 창 + 동시에 검색 적용 (Ctrl/Cmd 보조키 시 검색만)
+      // Iter 10 — Victor: 두 동작이 한 칩에 묶여 있어 모호. 외부링크는 ↗(CSS pseudo)로
+      // 명시. 클릭은 항상 외부 새 창으로 가되, background 로 검색도 적용 (UX 둘 다 만족).
+      // 보조키(Cmd/Ctrl)면 외부로만, Shift면 검색만 — power user 단축키.
       const chip = el("a", {
         className: "tech-chip",
         href: t.url || "#",
         target: t.url ? "_blank" : "_self",
         rel: "noopener",
-        title: `${t.label} 공식 사이트 + 검색`,
-        "aria-label": `기술 ${t.label} 공식 사이트 새 창`,
+        title: `${t.label} 공식 사이트로 이동 (Shift+클릭: 이 사이트 안에서 검색만)`,
+        "aria-label": `${t.label} 공식 사이트 새 창에서 열기, ${counts[t.id]}건 매칭`,
         onclick: (e) => {
-          // Modifier key → 외부로 가지 말고 검색만 적용
-          if (e.metaKey || e.ctrlKey || !t.url) {
-            e.preventDefault();
-            triggerNewsSearch(t.label);
-          }
-          // 일반 클릭은 외부로 (default), 그리고 background로 검색도 적용
-          if (t.url && !e.defaultPrevented) {
-            triggerNewsSearch(t.label);
-          }
+          if (!t.url) { e.preventDefault(); triggerNewsSearch(t.label); return; }
+          if (e.shiftKey) { e.preventDefault(); triggerNewsSearch(t.label); return; }
+          // 일반 클릭: 외부 + 검색 동시
+          triggerNewsSearch(t.label);
         },
       },
         el("span", null, `${t.icon || "•"} ${t.label}`),
@@ -373,8 +380,23 @@
   // 5. 탭 라우터
   // ───────────────────────────────────────────────────────
   function setupTabRouter() {
-    $$(".tab-btn").forEach((btn) => {
+    const btns = $$(".tab-btn");
+    btns.forEach((btn) => {
       btn.addEventListener("click", () => switchTab(btn.dataset.tab));
+      // Iter 9 — 키보드 화살표로 탭 이동 (ARIA Authoring Practices: Tab Pattern)
+      btn.addEventListener("keydown", (e) => {
+        const idx = btns.indexOf(btn);
+        let next = -1;
+        if (e.key === "ArrowRight") next = (idx + 1) % btns.length;
+        else if (e.key === "ArrowLeft") next = (idx - 1 + btns.length) % btns.length;
+        else if (e.key === "Home") next = 0;
+        else if (e.key === "End") next = btns.length - 1;
+        if (next !== -1) {
+          e.preventDefault();
+          btns[next].focus();
+          switchTab(btns[next].dataset.tab);
+        }
+      });
     });
     // 카운터 채움
     const c = (window.__DAILY__ && window.__DAILY__.counts) || {};
@@ -385,8 +407,13 @@
   }
 
   function switchTab(tab) {
-    $$(".tab-btn").forEach((b) =>
-      b.setAttribute("data-active", b.dataset.tab === tab ? "true" : "false"));
+    // Iter 9 — 탭 ARIA: aria-selected + tabindex (roving tab index)
+    $$(".tab-btn").forEach((b) => {
+      const active = b.dataset.tab === tab;
+      b.setAttribute("data-active", active ? "true" : "false");
+      b.setAttribute("aria-selected", active ? "true" : "false");
+      b.setAttribute("tabindex", active ? "0" : "-1");
+    });
     $$(".tab-content").forEach((sec) => {
       if (sec.dataset.tab === tab) sec.removeAttribute("hidden");
       else sec.setAttribute("hidden", "");
@@ -439,38 +466,55 @@
     // 뉴스용 버킷 strip (필터 동작)
     renderBucketStrip("#news-buckets", (window.__DAILY__ && window.__DAILY__.buckets) || {}, false);
 
-    // 점수 슬라이더 — 라벨은 즉시 갱신, grid 재렌더는 debounce 50ms
-    // (range input은 drag 중 50Hz로 발화 → undebounced면 frame 당 다중 rebuild.
-    //  search input과 동일 정책. Closes performance perf-002.)
+    // 점수 슬라이더 — 라벨은 즉시 갱신, grid 재렌더는 debounce 50ms.
+    // Iter 6 (Norman): aria-valuetext로 의미 명확화. min/max는 CSS pseudo로 표시.
+    // Iter 10 (Victor): counter는 즉시 갱신 (debounce 없이) — 사용자가 슬라이드 중
+    //   "지금 몇 건 매칭"을 즉시 본다.
     const slider = $("#news-score-min");
     const num = $("#news-score-num");
     if (slider && num) {
       slider.value = "0";
       num.textContent = "0.0";
+      slider.setAttribute("aria-label", "최소 점수 필터");
+      slider.setAttribute("aria-valuetext", "0.0 — 모두 표시");
       const debouncedRender = debounce(() => renderNewsGrid(), 50);
       slider.addEventListener("input", () => {
         state.scoreMin = parseFloat(slider.value) || 0;
-        num.textContent = state.scoreMin.toFixed(1); // 즉시 (사용자 시각 피드백)
-        debouncedRender();                            // 지연 (grid rebuild)
+        num.textContent = state.scoreMin.toFixed(1);
+        slider.setAttribute("aria-valuetext",
+          state.scoreMin === 0 ? "0.0 — 모두 표시" : `${state.scoreMin.toFixed(1)} 이상만`);
+        // Iter 10 — instant counter (debounce 없이 N건 표시. grid rebuild는 debounced)
+        const all = (window.__DAILY__ && window.__DAILY__.news) || [];
+        const matched = filterNews(all).length;
+        setText("#news-counter", `${matched}건 / 전체 ${all.length}`);
+        debouncedRender();
       });
     }
 
-    // 검색
+    // 검색 — Iter 10: 카운터는 즉시, grid rebuild만 debounce
     const searchWrap = $("#news-search");
     if (searchWrap) {
       const input = $("input[data-search-input]", searchWrap);
       const clear = $("[data-search-clear]", searchWrap);
       if (input) {
-        const onSearch = debounce(() => {
+        const debouncedRender = debounce(() => renderNewsGrid(), 150);
+        input.addEventListener("input", () => {
           state.search = (input.value || "").trim().toLowerCase();
-          renderNewsGrid();
-        }, 150);
-        input.addEventListener("input", onSearch);
+          // 즉시: counter 만 갱신 (사용자가 입력 중 N건 보임)
+          const all = (window.__DAILY__ && window.__DAILY__.news) || [];
+          const matched = filterNews(all).length;
+          setText("#news-counter", `${matched}건 / 전체 ${all.length}`);
+          // 지연: 실제 grid rebuild (DOM 비싸므로)
+          debouncedRender();
+          // data-has-value 토글 (clear 버튼 visibility)
+          searchWrap.setAttribute("data-has-value", input.value ? "true" : "false");
+        });
       }
       if (clear) {
         clear.addEventListener("click", () => {
           if (input) { input.value = ""; }
           state.search = "";
+          searchWrap.setAttribute("data-has-value", "false");
           renderNewsGrid();
         });
       }
@@ -529,6 +573,8 @@
     const grid = $("#news-grid");
     if (!grid) return;
     grid.innerHTML = "";
+    // Iter 3 — Hogan: skeleton 제거 + aria-busy false → 스크린리더에 "준비 완료" 알림
+    grid.setAttribute("aria-busy", "false");
 
     const all = (window.__DAILY__ && window.__DAILY__.news) || [];
     const list = filterNews(all);
@@ -537,7 +583,28 @@
     renderBreadcrumb();
 
     if (!list.length) {
-      grid.appendChild(el("div", { className: "empty" }, "조건에 맞는 뉴스가 없습니다. 필터를 완화해 보세요."));
+      // Iter 5 — Walter: 따뜻한 빈 상태 + actionable. 사용자가 무엇을 하면 좋은지 직접 가이드.
+      const reset = el("button", {
+        className: "empty__action",
+        type: "button",
+        onclick: () => {
+          state.categories.clear();
+          state.scoreMin = 0;
+          state.search = "";
+          const slider = $("#news-score-min"); if (slider) slider.value = "0";
+          const num = $("#news-score-num"); if (num) num.textContent = "0.0";
+          const input = $('#news-search input[data-search-input]'); if (input) input.value = "";
+          $$("#news-categories .chip").forEach((b) => b.setAttribute("data-active",
+            b.dataset.catKey === "__all" ? "true" : "false"));
+          renderNewsGrid();
+        },
+      }, "↺ 모든 필터 해제");
+      grid.appendChild(el("div", { className: "empty" },
+        el("div", { className: "empty__icon" }, "🔭"),
+        el("div", { className: "empty__title" }, "이 조건에 맞는 뉴스가 없네요"),
+        el("div", { className: "empty__text" }, "필터를 살짝 풀어 보거나, 다른 카테고리를 둘러보세요."),
+        reset
+      ));
       return;
     }
 
@@ -563,6 +630,9 @@
     const card = el("article", {
       className: "card" + (n.featured ? " card--featured" : ""),
       id: n.id, "data-id": n.id,
+      // Iter 9 — semantic ARIA: 카드는 article + aria-labelledby로 제목 인식
+      "aria-labelledby": `${n.id}-title`,
+      tabindex: "0",
     });
 
     // head: 카테고리·소스·시각 + 점수 배지 — 메타 클릭 시 자동 필터.
@@ -584,7 +654,11 @@
         }, `${COUNTRY_FLAG[n.sourceCountry] || ""} ${n.source || ""}`),
         el("span", { className: "card__time" }, fmtRelTime(n.publishedAt))
       ),
-      el("div", { className: `card__score-badge card__score-badge--g${grade}` },
+      el("div", {
+          className: `card__score-badge card__score-badge--g${grade}`,
+          "data-grade": String(grade), // Iter 7 — CSS [data-grade="N"] selector 호환
+          "aria-label": `종합 점수 ${fmtScore(score)} / 5.0 (등급 ${grade})`,
+        },
         el("span", { className: "card__score-num" }, fmtScore(score)),
         el("span", { className: "card__score-stars" }, stars(score))
       )
@@ -594,6 +668,7 @@
     const titleLink = el("a", {
       className: "card__title",
       href: n.url, target: "_blank", rel: "noopener",
+      id: `${n.id}-title`,
     }, n.title || "");
     const body = el("div", { className: "card__body" },
       titleLink,
@@ -881,8 +956,13 @@
 
     setText("#community-counter", `${list.length}건 / 전체 ${all.length}`);
     grid.innerHTML = "";
+    grid.setAttribute("aria-busy", "false"); // Iter 3 — ready signal
     if (!list.length) {
-      grid.appendChild(el("div", { className: "empty" }, "조건에 맞는 항목이 없습니다."));
+      grid.appendChild(el("div", { className: "empty" },
+        el("div", { className: "empty__icon" }, "💬"),
+        el("div", { className: "empty__title" }, "이 조건의 토론을 못 찾았어요"),
+        el("div", { className: "empty__text" }, "소스나 카테고리를 다르게 골라 보세요.")
+      ));
       return;
     }
     // DocumentFragment: 1 reflow vs N. perf-001 DRY of news-tab pattern.
@@ -984,8 +1064,13 @@
 
     setText("#oss-counter", `${list.length}건 / 전체 ${all.length}`);
     grid.innerHTML = "";
+    grid.setAttribute("aria-busy", "false"); // Iter 3 — ready signal
     if (!list.length) {
-      grid.appendChild(el("div", { className: "empty" }, "조건에 맞는 저장소가 없습니다."));
+      grid.appendChild(el("div", { className: "empty" },
+        el("div", { className: "empty__icon" }, "📦"),
+        el("div", { className: "empty__title" }, "조건에 맞는 저장소가 없어요"),
+        el("div", { className: "empty__text" }, "타입 필터를 풀거나 검색어를 줄여 보세요.")
+      ));
       return;
     }
     // DocumentFragment: 1 reflow vs N. perf-001 DRY of news-tab pattern.

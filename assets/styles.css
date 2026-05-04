@@ -34,11 +34,15 @@
   --c-buzz: #f59e0b;         /* 🔥 반응도 — orange */
   --c-buzz-soft: #fef3c7;
 
-  /* Score grade */
+  /* Score grade — Refactoring UI: 빨강(g5)→앰버(g4)→틸(g3)→회색(g2)
+     g4를 앰버로 옮겨 g5(빨강)와 명확히 구분 (이전 ea580c=오렌지는 빨강과 혼동) */
   --grade-5: #dc2626;
-  --grade-4: #ea580c;
-  --grade-3: #0891b2;
-  --grade-2: #6b7280;
+  --grade-4: #d97706;
+  --grade-3: #0d9488;
+  --grade-2: #64748b;
+
+  /* archive 카드 배경 토큰 (이전엔 archive.html에서 직접 var(--bg-card) 참조했으나 미정의) */
+  --bg-card: #ffffff;
 
   /* Insight tag colors */
   --tag-opportunity: #a855f7;
@@ -74,8 +78,9 @@
   --border: #2c2a22;
   --border-strong: #3d3a30;
   --text: #f5f4f1;
-  --text-soft: #a8a59d;
-  --text-mute: #6a6760;
+  --text-soft: #c6c3bb; /* a11y P0: 7.4:1 (was a8a59d 5.6:1 — 충분하나 footer.85 opacity 결합 시 미달) */
+  --text-mute: #8e8b84; /* a11y P0: 4.6:1 (was 6a6760 = 3.4:1 — body 텍스트 4.5:1 미달) */
+  --bg-card: #17150f;
 
   --accent: #5eead4;
   --accent-soft: #134e4a;
@@ -1017,4 +1022,327 @@ button { font: inherit; cursor: pointer; border: 0; background: none; color: inh
 @media print {
   .app-header, .tabs-nav, .toolbar, .multi-toolbar, .app-footer { display: none; }
   .card { break-inside: avoid; box-shadow: none; }
+}
+
+/* =====================================================================
+ * 13. UX/GUI Round 2 — 10 expert review findings (91 findings → 18 fixes)
+ *
+ *   Iter 1 — A11y P0 (footer/archive contrast)
+ *   Iter 2 — LukeW P0 (touch targets ≥44px)
+ *   Iter 3 — Hogan P0 (skeleton loaders + tab ready signal)
+ *   Iter 4 — Krug P0 (hero hierarchy — single LCP focus)
+ *   Iter 6 — Norman P1 (toggle ON visual + slider labels)
+ *   Iter 7 — Refactoring UI P1 (grade color rebinding)
+ *   Iter 8 — Tufte P1 (gauge encoding reduction)
+ *   Iter 9 — Nielsen P2 (motion preferences)
+ *   Iter 10 — Victor + polish (instant updates)
+ * ===================================================================== */
+
+/* Iter 9 — prefers-reduced-motion: 모든 transition/animation 제거 (헤더 pulse 포함) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .brand__title::before { animation: none; }
+}
+
+/* Iter 1 — footer 외부 자원 링크 a11y P0
+   원래 .app-footer__links 의 opacity: 0.85 + var(--text-mute) #8b8680 색이
+   #fafaf9 배경 위에서 1.98:1 (WCAG AA 4.5:1 미달).
+   opacity 제거 + var(--text-soft) (#555 light, #c6c3bb dark)로 4.5:1 이상 확보. */
+.app-footer__links {
+  opacity: 1 !important;
+  color: var(--text-soft) !important;
+}
+.app-footer__links a {
+  color: var(--text) !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+}
+.app-footer__links a:hover { color: var(--accent) !important; }
+
+/* Iter 2 — touch targets WCAG 2.5.5 (Lv AAA) + Apple HIG (44pt)
+   .icon-btn 36→44, .card-action / .card__act (네이밍 혼용 모두 cover) 28→44.
+   기존 컴팩트 디자인은 시각적 크기 유지 + invisible padding 으로 hit area 확보. */
+.icon-btn {
+  min-width: 44px; min-height: 44px;
+  width: 44px; height: 44px;
+}
+.card-action,
+.card__act {
+  min-width: 44px; min-height: 44px;
+  width: 44px; height: 44px;
+}
+.modal__close { min-width: 44px; min-height: 44px; width: 44px; height: 44px; }
+.toolbar__search-clear {
+  min-width: 32px; min-height: 32px; /* 인풋 내부 공간 한계로 32px (실측 32 + 8margin = 40) */
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.modal__nav-btn { min-height: 44px; padding: 8px 16px; }
+.modal__copy { min-height: 44px; padding: 8px 16px; }
+.bucket-pill { min-height: 44px; }
+.tab-btn { min-height: 44px; }
+.chip { min-height: 32px; padding: 6px 11px; } /* chip은 dense 의도 — 32px tap 허용 */
+
+/* Iter 7 — .card__act (app.js naming) base styling 추가 + ON state 채움
+   기존 CSS는 .card-action 네이밍만 정의. JS는 .card__act 사용 → 미스타일.
+   Norman P1: ON 상태가 "색만" 변경 → "배경 fill" 로 강한 affordance. */
+.card__act {
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  color: var(--text-mute);
+  background: transparent;
+  border: 1px solid transparent;
+  transition: all 0.12s;
+  font-weight: 500;
+  text-decoration: none;
+}
+.card__act:hover {
+  background: var(--bg-soft);
+  color: var(--text);
+  border-color: var(--border);
+}
+.card__act[data-on="true"] {
+  background: var(--c-buzz-soft);
+  color: var(--c-buzz);
+  border-color: var(--c-buzz);
+}
+.card__act[aria-label*="북마크"][data-on="true"],
+.card__act[title*="나중에"][data-on="true"] {
+  background: var(--c-freshness-soft);
+  color: var(--c-freshness);
+  border-color: var(--c-freshness);
+}
+.card__act[aria-label*="읽음"][data-on="true"],
+.card__act[title*="읽음"][data-on="true"] {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.card__act--link {
+  width: auto !important;
+  padding: 6px 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+/* Iter 3 — skeleton loaders (Hogan: 카드 그리드 LCP 후 추가 채움 = jarring)
+   초기 로딩에서 grid가 비어 있을 때 placeholder 표시. JS는 첫 카드 push 시 제거. */
+.skeleton-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-4);
+}
+.skeleton-card {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+}
+.skeleton-card::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    color-mix(in srgb, var(--text) 6%, transparent) 50%,
+    transparent 100%);
+  animation: skeleton-shimmer 1.4s infinite;
+}
+.skeleton-card-line {
+  height: 12px; border-radius: 4px;
+  background: var(--bg-soft);
+  margin-bottom: 12px;
+}
+.skeleton-card-line--short { width: 40%; }
+.skeleton-card-line--med { width: 70%; }
+.skeleton-card-line--long { width: 95%; }
+.skeleton-card-line--title { height: 18px; width: 85%; margin-top: 8px; }
+@keyframes skeleton-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-card::before { animation: none; opacity: 0.4; }
+}
+
+/* Tab panels: 로딩 중 aria-busy 시각 표시 */
+.tab-content[aria-busy="true"] .skeleton-grid { opacity: 1; }
+.tab-content:not([aria-busy="true"]) .skeleton-grid { display: none; }
+
+/* Iter 4 — hero hierarchy (Krug: 5초 룰 — Hero에 11개 sections 강조 경쟁)
+   conclusion-bar 는 80% 의 시각 무게 → headline-card 에 LCP 포커스 양보.
+   동시에 stats-grid 를 더 quiet, theme/tech strip 도 quiet (지금도 ok) */
+.conclusion-bar {
+  padding: var(--space-3) var(--space-4); /* was --space-4 / --space-5 */
+  margin-bottom: var(--space-3);
+  box-shadow: var(--shadow-sm); /* was shadow-md */
+}
+.conclusion-bar__headline { font-size: 15px; } /* was 17px */
+.conclusion-bar__score-num { font-size: 22px; } /* was 28px — 헤드라인 24px 와 위계 정리 */
+.conclusion-bar__label {
+  background: rgba(255,255,255,0.22);
+  font-size: 10px;
+  padding: 4px 8px;
+}
+
+.headline-card {
+  /* 헤드라인 = LCP 후보 (제일 중요) — 시각 무게 강화 */
+  box-shadow: var(--shadow-lg); /* was shadow-md */
+  padding: var(--space-5) var(--space-6);
+}
+.headline-card::before { width: 5px; } /* was 4px */
+.headline-card__title { font-size: 26px; } /* was 24px */
+
+/* Iter 8 — Tufte: gauge 3중 인코딩 (icon + label + number + bar) → 2채널로
+   icon은 pre-attentive 이미 고유색 + label 텍스트 = 이중 redundant.
+   icon 제거하고 label에 색 + bar 끝에 number → 정보-잉크 비율 개선. */
+.gauge__label {
+  font-size: 10.5px; letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.gauge__num { font-size: 12px; }
+.gauge__bar { height: 5px; } /* was 6px */
+/* gauge icon은 인라인 텍스트 prefix → 색이 라벨 색과 동일하므로 시각적으로 묶임.
+   별도 svg가 아니라 emoji 한 글자라서 제거 비용은 JS 한 줄. CSS에선 단지 size 축소. */
+
+/* score 등급 — discrete jump (4.49 빨강 g4, 4.51 빨강 g5 같은 색) → 더 부드러운 transition
+   현재 g3=틸 → g4=앰버 → g5=빨강 이미 discrete이지만 이는 디자인 의도. 대신 0.0~5.0 바
+   인디케이터를 추가해 boundary 근처에서도 점수 자체가 보이게 한다. */
+.card__score-badge {
+  position: relative;
+}
+.card__score-badge::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: -3px;
+  height: 2px;
+  background: linear-gradient(to right,
+    var(--grade-2) 0%,
+    var(--grade-3) 50%,
+    var(--grade-4) 75%,
+    var(--grade-5) 100%);
+  border-radius: 999px;
+  opacity: 0.5;
+}
+
+/* Iter 6 — slider min/max labels (Norman: 0~5 보이지 않음) */
+.score-slider {
+  position: relative;
+  padding-bottom: 14px; /* min/max 라벨 공간 */
+}
+.score-slider::before {
+  content: "0.0";
+  position: absolute; bottom: 0; left: 56px;
+  font-size: 9px; color: var(--text-mute);
+  font-family: var(--font-mono);
+}
+.score-slider::after {
+  content: "5.0";
+  position: absolute; bottom: 0; left: 178px;
+  font-size: 9px; color: var(--text-mute);
+  font-family: var(--font-mono);
+}
+
+/* Iter 9 — tabs ARIA visual: aria-selected 시각화 + tabpanel focus ring */
+.tab-btn[aria-selected="true"] {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+}
+.tab-btn[aria-selected="true"] .tab-btn__count {
+  background: var(--accent); color: var(--accent-text);
+}
+.tab-content:focus { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+/* Iter 10 — tech-chip 클릭 의도 명확화: 외부 사이트 갈 수 있음 → ↗ 아이콘 always */
+.tech-chip::after {
+  content: " ↗";
+  opacity: 0.6;
+  font-size: 10px;
+  margin-left: 2px;
+}
+
+/* archive grade badges — dark mode contrast 개선 (P0)
+   light mode rgba(...,0.14) 배경 + 진한 색은 문제없지만 dark mode에서
+   배경이 어두워지면서 색 대비가 끊김. dark mode 전용 변형 추가. */
+[data-theme="dark"] .archive-row__score--g5 {
+  background: rgba(248, 113, 113, 0.20); color: #fca5a5;
+}
+[data-theme="dark"] .archive-row__score--g4 {
+  background: rgba(251, 191, 36, 0.20); color: #fcd34d;
+}
+[data-theme="dark"] .archive-row__score--g3 {
+  background: rgba(94, 234, 212, 0.20); color: #5eead4;
+}
+[data-theme="dark"] .archive-row__score--g2 {
+  background: rgba(148, 163, 184, 0.18); color: #cbd5e1;
+}
+
+/* card score badges 도 동일 정책 — text 명도 충분히 확보 */
+.card__score-badge--g5 { background: var(--grade-5); color: #fff; }
+.card__score-badge--g4 { background: var(--grade-4); color: #fff; }
+.card__score-badge--g3 { background: var(--grade-3); color: #fff; }
+.card__score-badge--g2 { background: var(--grade-2); color: #fff; }
+
+/* card--read: opacity 만 낮추던 것을 명시적 시각화 (Norman: 상태 인지) */
+.card--read {
+  opacity: 0.65;
+  border-left: 3px solid var(--accent);
+}
+.card--featured {
+  border-color: var(--c-impact);
+  box-shadow: 0 0 0 3px var(--c-impact-soft);
+}
+
+/* card pulse — 5줄요약 → 카드 점프 시 강조 (motion-safe만) */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes card-pulse {
+    0% { box-shadow: 0 0 0 0 var(--c-impact); }
+    50% { box-shadow: 0 0 0 8px transparent; }
+    100% { box-shadow: 0 0 0 0 transparent; }
+  }
+  .card--pulse { animation: card-pulse 1.8s ease-out 1; }
+}
+
+/* Iter 5 — empty state 따뜻하게 + actionable */
+.empty {
+  background: var(--bg-elev);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-md);
+  padding: var(--space-6) var(--space-5);
+}
+.empty__action {
+  display: inline-block;
+  margin-top: var(--space-3);
+  padding: 8px 16px;
+  background: var(--accent); color: var(--accent-text);
+  border-radius: var(--radius-sm);
+  font-size: 13px; font-weight: 600;
+  text-decoration: none;
+}
+.empty__action:hover { opacity: 0.9; }
+
+/* Iter 5 — Compound Engineering 푸터 메모는 audience 에 비공개 — 해당 span 만 hidden
+   (HTML 자체는 그대로 두되 시각 hidden) */
+.app-footer__inner > [data-internal] { display: none; }
+
+/* aria-busy on grid 동안 — ready signal */
+[aria-busy="true"] { cursor: progress; }
+
+/* Iter 9 — modal: focus trap visual */
+.modal__close:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px;
+}
+
+/* community card 모바일 dense fix */
+@media (max-width: 720px) {
+  .conclusion-bar__headline { font-size: 14px; }
+  .headline-card__title { font-size: 22px; }
+  .score-slider input[type="range"] { width: 100%; min-width: 200px; }
+  .score-slider::after { left: auto; right: 0; }
+  .score-slider::before { left: 0; }
 }

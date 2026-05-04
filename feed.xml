@@ -7,13 +7,78 @@
     <description>어제 24h IT × 4기준 점수 × 10인 분야 전문가 분석</description>
     <language>ko-kr</language>
     <copyright>© Daily News</copyright>
-    <generator>Daily News RSS Generator (Node 22.16.0)</generator>
-    <lastBuildDate>Mon, 04 May 2026 01:07:56 GMT</lastBuildDate>
-    <pubDate>Mon, 04 May 2026 01:07:56 GMT</pubDate>
+    <generator>Daily News RSS Generator (Node 20.19.3)</generator>
+    <lastBuildDate>Mon, 04 May 2026 01:17:04 GMT</lastBuildDate>
+    <pubDate>Mon, 04 May 2026 01:17:04 GMT</pubDate>
+    <item>
+      <title>Don&apos;t fly if you can help it</title>
+      <link>https://michaelbluejay.com/airfare/dontfly.html</link>
+      <description>[4기준 점수] impact=4.0 freshness=5.0 depth=2.5 buzz=1.8
+출처: hackernews (Global)</description>
+      <pubDate>Mon, 04 May 2026 01:17:04 GMT</pubDate>
+      <guid isPermaLink="false">https://daily-news.local/#hn-48003508</guid>
+      <category>ai</category>
+    </item>
+    <item>
+      <title>The Rise of Emotional Surveillance</title>
+      <link>https://www.theatlantic.com/culture/2026/05/worker-surveillance-emotion-ai/687029/</link>
+      <description>[4기준 점수] impact=4.0 freshness=5.0 depth=2.5 buzz=1.8
+출처: hackernews (Global)</description>
+      <pubDate>Mon, 04 May 2026 01:11:48 GMT</pubDate>
+      <guid isPermaLink="false">https://daily-news.local/#hn-48003473</guid>
+      <category>ai</category>
+    </item>
+    <item>
+      <title>아이티센글로벌, 기관투자자 대상 400억원 규모 CB 발행</title>
+      <link>https://www.yna.co.kr/view/AKR20260504047300017</link>
+      <description>(서울=연합뉴스) 권하영 기자 = 아이티센글로벌[124500]은 총 400억원 규모의 전환사채(CB)를 발행한다고 4일 밝혔다.
+[4기준 점수] impact=4.5 freshness=5.0 depth=2.5 buzz=1.5
+출처: yna_it (KR)</description>
+      <pubDate>Mon, 04 May 2026 01:10:09 GMT</pubDate>
+      <guid isPermaLink="false">https://daily-news.local/#yna_it-fheqe9</guid>
+      <category>ai</category>
+    </item>
+    <item>
+      <title>Show HN: ReflowPDF – wrote a layout engine because every PDF library failed</title>
+      <link>https://reflowpdf.com</link>
+      <description>[4기준 점수] impact=4.0 freshness=5.0 depth=2.5 buzz=1.8
+출처: hackernews (Global)</description>
+      <pubDate>Mon, 04 May 2026 01:09:11 GMT</pubDate>
+      <guid isPermaLink="false">https://daily-news.local/#hn-48003454</guid>
+      <category>ai</category>
+    </item>
+    <item>
+      <title>Think pop music is basic? Even classical and jazz are getting less complex</title>
+      <link>https://connectsci.au/news/news-parent/9259/Think-pop-music-is-basic-Even-classical-and-jazz</link>
+      <description>[4기준 점수] impact=4.0 freshness=5.0 depth=2.5 buzz=1.8
+출처: hackernews (Global)</description>
+      <pubDate>Mon, 04 May 2026 01:08:51 GMT</pubDate>
+      <guid isPermaLink="false">https://daily-news.local/#hn-48003448</guid>
+      <category>ai</category>
+    </item>
+    <item>
+      <title>Shoppers falsely identified by facial recognition system</title>
+      <link>https://www.theguardian.com/technology/2026/may/03/guilty-until-proven-innocent-shoppers-falsely-identified-by-facial-recognition-struggle-to-clear-their-name</link>
+      <description>[4기준 점수] impact=4.0 freshness=5.0 depth=2.5 buzz=1.8
+출처: hackernews (Global)</description>
+      <pubDate>Mon, 04 May 2026 01:08:47 GMT</pubDate>
+      <guid isPermaLink="false">https://daily-news.local/#hn-48003447</guid>
+      <category>devtools</category>
+    </item>
+    <item>
+      <title>강원 고성군, 해양관광 복합지구 명칭 &apos;송지호 바다 하늘&apos; 확정</title>
+      <link>https://www.yna.co.kr/view/AKR20260504047200062</link>
+      <description>(강원 고성=연합뉴스) 류호준 기자 = 강원 고성군은 죽왕면 오호리 일원에 조성 중인 광역 해양관광 복합지구의 이름을 &amp;apos;송지호 바다 하늘&amp;apos;로 확...
+[4기준 점수] impact=4.5 freshness=5.0 depth=2.5 buzz=1.5
+출처: yna_it (KR)</description>
+      <pubDate>Mon, 04 May 2026 01:08:13 GMT</pubDate>
+      <guid isPermaLink="false">https://daily-news.local/#yna_it-fygcoa</guid>
+      <category>ai</category>
+    </item>
     <item>
       <title>GameStop Proposes to Acquire eBay at $125.00 per Share</title>
       <link>https://investor.gamestop.com/news-releases/news-details/2026/GameStop-Proposes-to-Acquire-eBay-at-125-00-Per-Share/</link>
-      <description>[4기준 점수] impact=4.3 freshness=5.0 depth=2.5 buzz=1.8
+      <description>[4기준 점수] impact=4.6 freshness=5.0 depth=2.5 buzz=2.0
 출처: hackernews (Global)</description>
       <pubDate>Mon, 04 May 2026 01:07:56 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48003441</guid>
@@ -29,10 +94,30 @@
       <category>ai</category>
     </item>
     <item>
+      <title>한컴인스페이스, &apos;세종 위성 영상&apos; 글로벌 판매</title>
+      <link>https://www.yna.co.kr/view/AKR20260504044000017</link>
+      <description>(서울=연합뉴스) 권하영 기자 = 한컴인스페이스가 자사 세종 시리즈 위성 영상의 상용 판매를 시작하며 글로벌 데이터 서비스 시장 공략에 나선다.
+[4기준 점수] impact=4.5 freshness=4.9 depth=2.5 buzz=1.5
+출처: yna_it (KR)</description>
+      <pubDate>Mon, 04 May 2026 01:05:55 GMT</pubDate>
+      <guid isPermaLink="false">https://daily-news.local/#yna_it-a3dlq7</guid>
+      <category>ai</category>
+    </item>
+    <item>
+      <title>KB금융 &apos;KB스타터스&apos; 45개사 선정…&quot;혁신 스타트업 육성&quot;</title>
+      <link>https://www.yna.co.kr/view/AKR20260504041000002</link>
+      <description>(서울=연합뉴스) 한지훈 기자 = KB금융그룹은 &amp;apos;KB스타터스&amp;apos; 프로그램에 참여할 국내 30개사, 글로벌 15개사 등 총 45개사의 스타트업을 ...
+[4기준 점수] impact=4.5 freshness=4.9 depth=2.5 buzz=1.5
+출처: yna_it (KR)</description>
+      <pubDate>Mon, 04 May 2026 01:04:40 GMT</pubDate>
+      <guid isPermaLink="false">https://daily-news.local/#yna_it-xxt8yw</guid>
+      <category>ai</category>
+    </item>
+    <item>
       <title>[게시판] 매일유업, 어린이날 맞아 &apos;성가정입양원&apos;에 나눔 활동</title>
       <link>https://www.yna.co.kr/view/AKR20260504045500030</link>
       <description>▲ 매일유업[267980] 사내 봉사 동호회는 어린이날을 맞아 국내 입양 전문기관인 &amp;apos;성가정입양원&amp;apos;을 방문해 유아식 전문 브랜드 &amp;apos;맘마밀&amp;apos;을 비...
-[4기준 점수] impact=4.5 freshness=5.0 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.9 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Mon, 04 May 2026 01:01:26 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-r4zzyq</guid>
@@ -42,7 +127,7 @@
       <title>세라젬, &apos;세븐해빗&apos; 건강 패키지 출시…&quot;7개 맞춤형 관리 제안&quot;</title>
       <link>https://www.yna.co.kr/view/AKR20260504039100030</link>
       <description>(서울=연합뉴스) 이상서 기자 = 세라젬은 가정의 달인 5월을 맞아 &amp;apos;세븐해빗(7-Habit)&amp;apos;을 기반으로 한 건강 관리 패키지를 선보인다고 4...
-[4기준 점수] impact=4.5 freshness=5.0 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.9 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Mon, 04 May 2026 01:00:48 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-fwbvr9</guid>
@@ -52,7 +137,7 @@
       <title>제주도, 등유·LPG 사용 취약계층에 바우처 5만원 추가 지원</title>
       <link>https://www.yna.co.kr/view/AKR20260504043000056</link>
       <description>(제주=연합뉴스) 고성식 기자 = 제주도는 도내 등유·액화석유가스(LPG)를 주 난방에너지원으로 쓰는 에너지바우처 수급 세대에 19만7천원을 지...
-[4기준 점수] impact=4.5 freshness=5.0 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.9 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Mon, 04 May 2026 01:00:17 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-4l0oef</guid>
@@ -61,7 +146,7 @@
     <item>
       <title>K-브랜드 노린 짝퉁 확산…작년 지재권 침해 2천800억원 적발</title>
       <link>https://www.yna.co.kr/view/AKR20260504039700002</link>
-      <description>[4기준 점수] impact=4.5 freshness=5.0 depth=2.5 buzz=1.5
+      <description>[4기준 점수] impact=4.5 freshness=4.9 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Mon, 04 May 2026 00:58:33 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-d225gm</guid>
@@ -71,7 +156,7 @@
       <title>한국맥도날드, 정규직 &apos;매니저 트레이니&apos; 공채…17일까지 접수</title>
       <link>https://www.yna.co.kr/view/AKR20260504037500030</link>
       <description>(서울=연합뉴스) 홍국기 기자 = 한국맥도날드는 오는 17일까지 채용 홈페이지를 통해 정규직 &amp;apos;매니저 트레이니(trainee·수습 직원)&amp;apos; 공채...
-[4기준 점수] impact=4.5 freshness=5.0 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.9 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Mon, 04 May 2026 00:57:28 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-ro63cl</guid>
@@ -81,7 +166,7 @@
       <title>삼성바이오 노조 &quot;오늘 최종협상 아냐…사측 의지 확인 자리&quot;</title>
       <link>https://www.yna.co.kr/view/AKR20260504043300017</link>
       <description>(서울=연합뉴스) 신선미 기자 = 삼성바이오로직스[207940] 노동조합은 4일 사측과 만나는 간담회가 &amp;apos;최종 협상&amp;apos; 자리가 아니라고 입장을 밝...
-[4기준 점수] impact=4.5 freshness=5.0 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.9 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Mon, 04 May 2026 00:56:30 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-35vtb9</guid>
@@ -91,7 +176,7 @@
       <title>홍천군, 가정의 달 맞아 한우 최대 50% 할인 판매</title>
       <link>https://www.yna.co.kr/view/AKR20260504043400062</link>
       <description>(홍천=연합뉴스) 류호준 기자 = 강원 홍천군은 5월 가정의 달을 맞아 지역 대표 특산물인 &amp;apos;늘푸름홍천한우&amp;apos; 소비 촉진을 위한 특별 할인 행사를...
-[4기준 점수] impact=4.5 freshness=5.0 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.9 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Mon, 04 May 2026 00:55:34 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-2ou6sw</guid>
@@ -101,7 +186,7 @@
       <title>국내 최대 단일차종 레이싱대회 &apos;현대 N 페스티벌&apos; 개막</title>
       <link>https://www.yna.co.kr/view/AKR20260504043500003</link>
       <description>(서울=연합뉴스) 김보경 기자 = 현대차는 8일 용인 에버랜드 스피드웨이에서 열리는 1라운드 경기를 시작으로 &amp;apos;2026 현대 N 페스티벌&amp;apos; 시즌...
-[4기준 점수] impact=4.5 freshness=5.0 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.9 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Mon, 04 May 2026 00:54:56 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-27skju</guid>
@@ -111,7 +196,7 @@
       <title>쿠팡 알럭스, 17일까지 &apos;뷰티 페스타&apos;…32개 럭셔리 브랜드 참여</title>
       <link>https://www.yna.co.kr/view/AKR20260504033100030</link>
       <description>(서울=연합뉴스) 정수연 기자 = 쿠팡의 럭셔리 뷰티·패션 버티컬 서비스 알럭스(R.LUX)는 할인 행사 &amp;apos;알럭스 뷰티 페스타&amp;apos;를 개최한다고 4...
-[4기준 점수] impact=4.5 freshness=5.0 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.9 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Mon, 04 May 2026 00:54:36 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-wxlj4b</guid>
@@ -121,7 +206,7 @@
       <title>카카오모빌리티 피지컬AI 부문장 &quot;자율주행은 데이터 전쟁&quot;</title>
       <link>https://www.yna.co.kr/view/AKR20260504041200017</link>
       <description>(서울=연합뉴스) 오지은 기자 = 카카오모빌리티는 김진규 부사장 겸 피지컬 AI 부문장이 사내 올핸즈(전사 공유 회의) 미팅을 진행하며 피지컬 ...
-[4기준 점수] impact=4.5 freshness=5.0 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.9 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Mon, 04 May 2026 00:53:26 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-wzq05i</guid>
@@ -130,7 +215,7 @@
     <item>
       <title>PostgreSQL databases are boring on purpose</title>
       <link>https://stormatics.tech/blogs/the-best-postgresql-databases-are-boring-on-purpose</link>
-      <description>[4기준 점수] impact=4.0 freshness=5.0 depth=2.5 buzz=2.0
+      <description>[4기준 점수] impact=4.0 freshness=4.9 depth=2.5 buzz=2.0
 출처: hackernews (Global)</description>
       <pubDate>Mon, 04 May 2026 00:52:53 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48003347</guid>
@@ -139,7 +224,7 @@
     <item>
       <title>Unauthorized macOS port claiming Don Ho as an author?</title>
       <link>https://github.com/notepad-plus-plus/notepad-plus-plus/issues/17982</link>
-      <description>[4기준 점수] impact=4.0 freshness=5.0 depth=2.5 buzz=2.2
+      <description>[4기준 점수] impact=4.0 freshness=4.9 depth=2.5 buzz=2.2
 출처: hackernews (Global)</description>
       <pubDate>Mon, 04 May 2026 00:52:47 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48003346</guid>
@@ -167,7 +252,7 @@
       <title>동원F&amp;B, 13L &apos;동원샘물 메가&apos; 출시…&quot;야외·사무실 편의 강화&quot;</title>
       <link>https://www.yna.co.kr/view/AKR20260504029600030</link>
       <description>(서울=연합뉴스) 홍국기 기자 = 동원F&amp;amp;amp;B는 먹는샘물 업계 최초로 13L 대용량 생수 &amp;apos;동원샘물 메가(MEGA)&amp;apos;를 출시했다고 4일 밝...
-[4기준 점수] impact=4.7 freshness=4.9 depth=2.5 buzz=1.5
+[4기준 점수] impact=5.0 freshness=4.9 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Mon, 04 May 2026 00:49:48 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-sodt4n</guid>
@@ -254,7 +339,7 @@
     <item>
       <title>Tesla is facing up to $14.5B in lawsuits and it&apos;s only getting worse</title>
       <link>https://electrek.co/2026/04/16/tesla-facing-up-to-14-billion-lawsuits-deep-dive/</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.9 depth=2.5 buzz=2.1
+      <description>[4기준 점수] impact=4.0 freshness=4.9 depth=2.5 buzz=2.3
 출처: hackernews (Global)</description>
       <pubDate>Mon, 04 May 2026 00:43:21 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48003262</guid>
@@ -361,7 +446,7 @@
       <title>무신사 뷰티, 14일까지 &apos;뷰티 페스타&apos; 개최…&quot;최대 80% 할인&quot;</title>
       <link>https://www.yna.co.kr/view/AKR20260504025700030</link>
       <description>(서울=연합뉴스) 이상서 기자 = 무신사 뷰티는 오는 14일까지 540여개 브랜드가 참여하는 할인 행사 &amp;apos;무신사 뷰티 페스타&amp;apos;를 진행한다고 4일...
-[4기준 점수] impact=4.5 freshness=4.9 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.8 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Mon, 04 May 2026 00:29:23 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-tk5pda</guid>
@@ -371,7 +456,7 @@
       <title>안랩, 통합 보안 플랫폼으로 중화권 공략 강화</title>
       <link>https://www.yna.co.kr/view/AKR20260504033700017</link>
       <description>(서울=연합뉴스) 권하영 기자 = 안랩[053800]이 엔드포인트 통합 보안 플랫폼으로 중화권 시장 공략을 강화한다.
-[4기준 점수] impact=4.5 freshness=4.9 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.8 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Mon, 04 May 2026 00:29:00 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-u3bsso</guid>
@@ -381,7 +466,7 @@
       <title>부산경제진흥원, 6일 영산대서 관광·마이스 채용박람회</title>
       <link>https://www.yna.co.kr/view/AKR20260504036100051</link>
       <description>(부산=연합뉴스) 민영규 기자 = 부산경제진흥원은 오는 6일 오전 10시부터 영산대학교 해운대 캠퍼스에서 &amp;apos;관광·마이스(MICE, 기업회의·포상...
-[4기준 점수] impact=4.5 freshness=4.9 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.8 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Mon, 04 May 2026 00:28:49 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-b3lblj</guid>
@@ -391,7 +476,7 @@
       <title>SOOP, e스포츠 월드컵 LCK 선발전 운영…전 경기 생중계</title>
       <link>https://www.yna.co.kr/view/AKR20260504033600017</link>
       <description>(서울=연합뉴스) 김주환 기자 = SOOP[067160]은 e스포츠 월드컵(EWC)에 출전할 리그 오브 레전드 챔피언스 코리아(LCK) 팀을 가...
-[4기준 점수] impact=4.5 freshness=4.9 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.8 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Mon, 04 May 2026 00:27:00 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-ukdf6v</guid>
@@ -401,7 +486,7 @@
       <title>노브랜드 버거, 창업 비용 15% 추가 인하…&quot;창업자 부담 낮춰&quot;</title>
       <link>https://www.yna.co.kr/view/AKR20260504025100030</link>
       <description>(서울=연합뉴스) 한주홍 기자 = 신세계푸드의 노브랜드 버거는 예비 창업자 부담을 낮추기 위해 창업 비용을 추가 인하한다고 4일 밝혔다.
-[4기준 점수] impact=4.5 freshness=4.9 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.8 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Mon, 04 May 2026 00:25:57 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-weffqg</guid>
@@ -411,7 +496,7 @@
       <title>토큰스퀘어, BSV협회와 원화 스테이블코인 인프라 출시</title>
       <link>https://zdnet.co.kr/view/?no=20260504092507</link>
       <description>[지디넷코리아]인공지능(AI) 결제 인프라 기업 토큰스퀘어는 스위스에 본부를 둔 BSV협회(BSV Association)와 전략적 협력을 기반으로 원화(KRW) 스테이블코인 인프라 ‘KRWQ’를 국내 시장에 출시한다고 4일 밝혔다.토큰스퀘어와 BSV 협회는 2025년 6월 공식 업무협약(MOU)을 체결한 이후 KRWQ 인프라의 기술 검증, 노드 운영 구조, 상용화 방향 등에 대해 지속적으로 협력해 왔다. BSV 협회는 KRWQ의 개발 및 도입 과정에서 기술 자문, 노드 운영, 글로벌 네트워크 연계
-[4기준 점수] impact=4.3 freshness=4.9 depth=3.0 buzz=1.5
+[4기준 점수] impact=4.3 freshness=4.8 depth=3.0 buzz=1.5
 출처: zdnet_kr (KR)</description>
       <pubDate>Mon, 04 May 2026 00:25:07 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#zdnet_kr-ndclit</guid>
@@ -428,7 +513,7 @@
       <title>[테크스냅] 코바코, 공공기관 고객만족도 최고 등급</title>
       <link>https://www.yna.co.kr/view/AKR20260504032300017</link>
       <description>(서울=연합뉴스) 유현민 기자 = ▲ 한국방송광고진흥공사(코바코)는 &amp;apos;2025년도 공공기관 고객만족도 조사&amp;apos;에서 &amp;apos;매우 우수&amp;apos;를 받아 4년 연속...
-[4기준 점수] impact=4.5 freshness=4.9 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.8 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Mon, 04 May 2026 00:25:04 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-od7hdn</guid>
@@ -438,7 +523,7 @@
       <title>중기중앙회, &apos;노란우산&apos; 신규 가입자 5만원 상당 쿠폰 증정</title>
       <link>https://www.yna.co.kr/view/AKR20260504024000030</link>
       <description>(서울=연합뉴스) 이상서 기자 = 중소기업중앙회는 종합소득세 신고 기간인 5월 한 달간 &amp;apos;노란우산 온라인 가입 프로모션&amp;apos;을 진행한다고 4일 밝혔...
-[4기준 점수] impact=4.5 freshness=4.9 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.8 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Mon, 04 May 2026 00:22:53 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-nh8pmg</guid>
@@ -448,7 +533,7 @@
       <title>사이버 보안 인력 34%만 현직 유지…급여보다 경력 발전이 중요</title>
       <link>https://www.itworld.co.kr/article/4166273/%ec%82%ac%ec%9d%b4%eb%b2%84-%eb%b3%b4%ec%95%88-%ec%9d%b8%eb%a0%a5-34%eb%a7%8c-%ed%98%84%ec%a7%81-%ec%9c%a0%ec%a7%80-%ea%b8%89%ec%97%ac%eb%b3%b4%eb%8b%a4-%ea%b2%bd%eb%a0%a5-%eb%b0%9c%ec%a0%84.html</link>
       <description>직무 만족도가 하락하면서 현 직장에 남기로 결정한 사이버 보안 전문가가 3명 중 1명(34%)에 그쳤다. 최고정보보안책임자(CISO) 인력 유지 전략의 중요성이 그 어느 때보다 커지고 있다. IANS와 아르티코 서치(Artico Search)가 사이버 보안 전문가 500명을 대상으로 실시한 설문 에 따르면, 급여는 여전히 중요하지만 유지의 주요 동인은 아닌 것으로 나타났다. 반면 유연근무 모델은 직무 만족도와 유지 사이에 강한 연관성을 보였다. 특히 주 1~2일만 출근하는 하이브리드 근무 방식은 
-[4기준 점수] impact=4.3 freshness=4.9 depth=3.0 buzz=1.5
+[4기준 점수] impact=4.3 freshness=4.8 depth=3.0 buzz=1.5
 출처: itworld_kr (KR)</description>
       <pubDate>Mon, 04 May 2026 00:21:54 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#itworld_kr-wdiveu</guid>
@@ -459,7 +544,7 @@
       <title>한국타이어, 영국 전기차 전시회 &apos;에브리싱 일렉트릭 UK&apos; 참가</title>
       <link>https://www.yna.co.kr/view/AKR20260504032000003</link>
       <description>(서울=연합뉴스) 김보경 기자 = 한국앤컴퍼니그룹의 타이어 기업 한국타이어앤테크놀로지(한국타이어)는 이달부터 9월까지 영국에서 3차례 개최되는 ...
-[4기준 점수] impact=4.5 freshness=4.9 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.8 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Mon, 04 May 2026 00:21:25 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-my2m63</guid>
@@ -468,7 +553,7 @@
     <item>
       <title>Request for Testers: Personal Planning App</title>
       <link>https://www.threads.com/@alaaalatif/post/DX5VxSbmSgE</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.9 depth=2.5 buzz=1.8
+      <description>[4기준 점수] impact=4.0 freshness=4.8 depth=2.5 buzz=1.8
 출처: hackernews (Global)</description>
       <pubDate>Mon, 04 May 2026 00:21:12 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48003095</guid>
@@ -478,7 +563,7 @@
       <title>11번가, 상반기 최대 &apos;그랜드십일절&apos;…&quot;140여개 브랜드 할인&quot;</title>
       <link>https://www.yna.co.kr/view/AKR20260504023600030</link>
       <description>(서울=연합뉴스) 조민정 기자 = 11번가는 오는 6일부터 16일까지 11일간 상반기 최대 행사인 &amp;apos;그랜드십입절&amp;apos;을 진행한다고 4일 밝혔다.
-[4기준 점수] impact=4.5 freshness=4.9 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.8 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Mon, 04 May 2026 00:21:08 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-bn45rl</guid>
@@ -488,7 +573,7 @@
       <title>[인사] 문화체육관광부</title>
       <link>https://zdnet.co.kr/view/?no=20260504092051</link>
       <description>[지디넷코리아]◇국장급 전보 ▲국립한글박물관장 임성환 ◇국장급 승진 ▲문화미디어산업실 문화산업정책관 문화산업정책관 김경화 ▲문화미디어산업실 저작권정책관 최영진 ◇과장급 전보 ▲문화예술정책실 지역문화정책관 지역문화정책과장 이관표 ▲문화예술정책실 문화정책관 전통문화과장 최재환 ▲문화예술정책실 지역문화정책관 문화기반과장 손미숙 ▲문화미디어산업실 콘텐츠미디어산업관 미디어정책과장 강민아 ▲문화미디어산업실 저작권정책관 저작권정책과장 박현성 ▲문화미디어산업실 저작권정책관실 저작권산업과장 안미정
-[4기준 점수] impact=4.3 freshness=4.9 depth=3.0 buzz=1.5
+[4기준 점수] impact=4.3 freshness=4.8 depth=3.0 buzz=1.5
 출처: zdnet_kr (KR)</description>
       <pubDate>Mon, 04 May 2026 00:20:51 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#zdnet_kr-ndchxh</guid>
@@ -501,7 +586,7 @@
       <title>삼성전기 사업장이 놀이터로…어린이날 맞이 &apos;패밀리 데이&apos;</title>
       <link>https://www.yna.co.kr/view/AKR20260504030900003</link>
       <description>(서울=연합뉴스) 임성호 기자 = 삼성전기는 어린이날을 맞아 국내 3개 사업장(수원·세종·부산)에 임직원 가족을 초청하는 &amp;apos;패밀리 데이&amp;apos; 행사를...
-[4기준 점수] impact=4.5 freshness=4.9 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.8 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Mon, 04 May 2026 00:20:49 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-25bcq8</guid>
@@ -511,7 +596,7 @@
       <title>국가유산청, &apos;제48차 세계유산위원회&apos; 2차 유네스코 사전실사 완료</title>
       <link>https://zdnet.co.kr/view/?no=20260504091903</link>
       <description>[지디넷코리아]국가유산청(청장 허민)은 오는 7월 부산 벡스코에서 열리는 &apos;제48차 유네스코 세계유산위원회&apos;의 성공적인 개최를 위해 제2차 유네스코 사전실사를 마쳤다고 4일 밝혔다.지난달 27일부터 30일까지 진행된 이번 실사에는 유네스코 세계유산센터 관계자를 비롯해 유엔 안전보안국(UNDSS), 경찰, 소방, 대테러센터 등 국내외 관계기관이 대거 참여했다. 이들은 주 회의장인 벡스코와 인근 숙박시설을 직접 방문해 회의장 조성, 수송, 숙박, 보안 등 분야별 준비 상황과 위험 요소를 점검했다.실사
-[4기준 점수] impact=4.3 freshness=4.9 depth=3.0 buzz=1.5
+[4기준 점수] impact=4.3 freshness=4.8 depth=3.0 buzz=1.5
 출처: zdnet_kr (KR)</description>
       <pubDate>Mon, 04 May 2026 00:19:03 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#zdnet_kr-ndc1hy</guid>
@@ -526,7 +611,7 @@
       <title>코스피, 6782.93에 출발…장중 사상 최고치</title>
       <link>https://zdnet.co.kr/view/?no=20260504091756</link>
       <description>[지디넷코리아]코스피 지수가 개장과 동시에 장중 사상 최고치를 기록했다.4일 코스피는 전 거래일 대비 2.79%(184.06포인트) 오른 6782.93으로 장을 시작했다.현재는 6770선을 기록하고 있다.한편, 코스피 최고치는 대형주 상승세가 견인했다.SK하이닉스는 전 거래일 대비 4.51% 오른 134만 4000원, 삼성전자는 2.49% 상승한 22만 6000원, SK스퀘어는 9.27% 오른 91만 9000원에 거래 중이다.
-[4기준 점수] impact=4.3 freshness=4.9 depth=3.0 buzz=1.5
+[4기준 점수] impact=4.3 freshness=4.8 depth=3.0 buzz=1.5
 출처: zdnet_kr (KR)</description>
       <pubDate>Mon, 04 May 2026 00:18:36 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#zdnet_kr-ndc04y</guid>
@@ -543,7 +628,7 @@
       <title>티앤씨재단·아이프칠드런, 순직소방관 자녀 예술교육 지원</title>
       <link>https://www.yna.co.kr/view/AKR20260504029400003</link>
       <description>(서울=연합뉴스) 김민지 기자 = 재단법인 티앤씨재단이 소방관의 날을 맞아 예술나눔 공익재단 아이프칠드런과 순직소방관 자녀 예술교육 지원 사업 ...
-[4기준 점수] impact=4.5 freshness=4.9 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.8 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Mon, 04 May 2026 00:18:32 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-rqak9r</guid>
@@ -553,7 +638,7 @@
       <title>티빙, 프로야구 시청 순방문자수 24% 증가</title>
       <link>https://zdnet.co.kr/view/?no=20260504091701</link>
       <description>[지디넷코리아]OTT 티빙이 올 시즌 프로야구 슈퍼매치 차별화를 통해 경기당 순 방문자 수(UV)는 전년 대비 약 24%, 경기 최다 동시 접속자 수는 약 25% 상승했다고 밝혔다.지난달 14일 삼성라이온즈와 한화이글스 경기는 올 시즌 정규리그 최다 UV 기록을 경신했다.티빙 측은 이를 두고 중계 몰입도를 높이는 기술력과 디지털 콘텐츠 전략의 효과로 분석했다.예컨대 현장의 생동감을 극대화하는 ‘현장음 중계’와 AR 그래픽 기반의 입체적인 중계 CG로 시청 경험을 고도화하고 프리뷰쇼 ‘WAR밍업’의
-[4기준 점수] impact=4.3 freshness=4.9 depth=3.0 buzz=1.5
+[4기준 점수] impact=4.3 freshness=4.8 depth=3.0 buzz=1.5
 출처: zdnet_kr (KR)</description>
       <pubDate>Mon, 04 May 2026 00:17:01 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#zdnet_kr-ndc00i</guid>
@@ -565,7 +650,7 @@
     <item>
       <title>Russian Soldiers Surrendered for Free McDonald&apos;s</title>
       <link>https://www.youtube.com/watch?v=MktJb7dFv9E</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.9 depth=2.5 buzz=2.0
+      <description>[4기준 점수] impact=4.0 freshness=4.8 depth=2.5 buzz=2.0
 출처: hackernews (Global)</description>
       <pubDate>Mon, 04 May 2026 00:16:57 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48003069</guid>
@@ -575,7 +660,7 @@
       <title>이마트24, 최홍만과 &apos;내겐 너무 귀여운 다이닝&apos; 디지털 캠페인</title>
       <link>https://www.yna.co.kr/view/AKR20260504022700030</link>
       <description>(서울=연합뉴스) 정수연 기자 = 편의점 이마트24는 신상품 출시를 기념해 종합격투기 선수 출신의 최홍만과 &amp;apos;내겐 너무 귀여운 다이닝&amp;apos;을 주제로...
-[4기준 점수] impact=4.5 freshness=4.9 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.8 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Mon, 04 May 2026 00:16:15 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-2k8i29</guid>
@@ -584,7 +669,7 @@
     <item>
       <title>Don&apos;t Sue Me Nintendo</title>
       <link>https://latexcrimes.leaflet.pub/3mky5fjz67k2p</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.9 depth=2.5 buzz=1.8
+      <description>[4기준 점수] impact=4.0 freshness=4.8 depth=2.5 buzz=1.8
 출처: hackernews (Global)</description>
       <pubDate>Mon, 04 May 2026 00:14:43 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48003049</guid>
@@ -594,7 +679,7 @@
       <title>HD현대일렉트릭, 독자 개발 친환경 고압차단기로 유럽 공략</title>
       <link>https://zdnet.co.kr/view/?no=20260504091437</link>
       <description>[지디넷코리아]HD현대일렉트릭이 독자 개발한 육불화황(SF₆)-프리 고압차단기 최종 승인시험을 성공적으로 마치며 친환경 고압차단기 시장 공략에 속도를 내고 있다.HD현대일렉트릭은 최근 145kV SF₆-프리 고압차단기의 최종 승인시험을 고객 입회하에 성공적으로 마쳤다고 3일 밝혔다. 해당 제품은 스웨덴 전력회사가 운영하는 변전소에 공급될 예정이다.SF₆-프리 고압차단기는 대표적인 불소계 온실가스인 SF₆를 사용하지 않는 친환경 전력기기다. SF₆는 우수한 절연·차단 성능으로 고압 전력기기에 널리 
-[4기준 점수] impact=4.3 freshness=4.9 depth=3.0 buzz=1.5
+[4기준 점수] impact=4.3 freshness=4.8 depth=3.0 buzz=1.5
 출처: zdnet_kr (KR)</description>
       <pubDate>Mon, 04 May 2026 00:14:37 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#zdnet_kr-ndbxv6</guid>
@@ -946,7 +1031,7 @@
     <item>
       <title>The text mode lie: why modern TUIs are a nightmare for accessibility</title>
       <link>https://xogium.me/the-text-mode-lie-why-modern-tuis-are-a-nightmare-for-accessibility</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.8 depth=2.5 buzz=3.3
+      <description>[4기준 점수] impact=4.0 freshness=4.8 depth=2.5 buzz=3.4
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 23:59:02 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002938</guid>
@@ -1000,7 +1085,7 @@
       <title>TTA, IEEE &apos;제조 피지컬 AI’국제표준화 작업반 의장직 확보</title>
       <link>https://zdnet.co.kr/view/?no=20260504085341</link>
       <description>[지디넷코리아]한국정보통신기술협회(TTA)는 지난 4월30일 개최된 IEEE 신규표준 검토위원회((NesCom) 회의에서 제조 피지컬 AI(P4501) 표준 개발을 위한 작업반을 신설하고, 의장직을 확보했다고 밝혔다.최근 제조 현장에서는 단순 자동화를 넘어 AI가 스스로 상황을 판단하고 공정을 최적화하는 수요가 급증하고 있다. TTA는 이러한 흐름에 발맞춰 지난해 하반기부터 국내 기업들과의 협의를 통해 표준화 범위를 정의하고 IEEE와 긴밀히 소통해 이번 성과를 이끌어냈다.작업반에서는 제조 현장의
-[4기준 점수] impact=4.3 freshness=4.8 depth=3.0 buzz=1.5
+[4기준 점수] impact=4.3 freshness=4.7 depth=3.0 buzz=1.5
 출처: zdnet_kr (KR)</description>
       <pubDate>Sun, 03 May 2026 23:53:41 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#zdnet_kr-ncuohx</guid>
@@ -1014,7 +1099,7 @@
     <item>
       <title>Why I Created phpc.tv</title>
       <link>https://afilina.com/why-phpc-tv</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.8 depth=2.5 buzz=1.8
+      <description>[4기준 점수] impact=4.0 freshness=4.7 depth=2.5 buzz=1.8
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 23:53:05 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002890</guid>
@@ -1024,7 +1109,7 @@
       <title>&quot;자동차 회사 다니는 뚜벅이&quot;…현대차 르르르, 오프라인 행사 개최</title>
       <link>https://zdnet.co.kr/view/?no=20260504085241</link>
       <description>[지디넷코리아]현대자동차가 Z세대 대표 캐릭터 &apos;르르르&apos;를 앞세워 5월 가정의 달을 맞아 대규모 오프라인 행사를 진행한다.현대차는 5월 여의도 한강공원과 용인 에버랜드 스피드웨이에서 다양한 체험형 프로그램을 운영한다고 4일 밝혔다.르르르는 현대차가 2019년 젊은 세대와의 소통을 위해 선보인 SNS 기반 캐릭터다. 2024년 리뉴얼 이후 &apos;차 회사에 다니지만 차가 없는 뚜벅이&apos; 콘셉트로 공감을 얻고 있다.이번 행사는 서울시 공공행사와 연계한 &apos;르르르 X 책읽는 한강공원, 르르르의 시티뚜어&apos;를 중심
-[4기준 점수] impact=4.3 freshness=4.8 depth=3.0 buzz=1.5
+[4기준 점수] impact=4.3 freshness=4.7 depth=3.0 buzz=1.5
 출처: zdnet_kr (KR)</description>
       <pubDate>Sun, 03 May 2026 23:52:41 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#zdnet_kr-ncunr8</guid>
@@ -1037,7 +1122,7 @@
       <title>[사이테크+] &quot;야행성 쏙독새, 달빛 따라 먹이·이동·번식 시기 달라진다&quot;</title>
       <link>https://www.yna.co.kr/view/AKR20260504022100017</link>
       <description>(서울=연합뉴스) 이주영 기자 = 달이 차고 기우는 음력 29일 주기가 야행성 조류인 붉은목쏙독새(Caprimulgus ruficollis)의 ...
-[4기준 점수] impact=4.5 freshness=4.8 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.7 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Sun, 03 May 2026 23:51:08 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-5ei8gy</guid>
@@ -1047,7 +1132,7 @@
       <title>더벤티, &apos;벤티럭&apos; 활용 커피 트럭 케이터링 서비스 출시</title>
       <link>https://www.yna.co.kr/view/AKR20260504019400030</link>
       <description>(서울=연합뉴스) 한주홍 기자 = 커피 프랜차이즈 더벤티는 커피 트럭 케이터링 서비스를 출시한다고 4일 밝혔다.
-[4기준 점수] impact=4.5 freshness=4.8 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.7 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Sun, 03 May 2026 23:50:55 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-13bwpy</guid>
@@ -1057,7 +1142,7 @@
       <title>세븐일레븐, 김희은 셰프와 초록우산서 &apos;희망 도시락&apos; 나눔</title>
       <link>https://www.yna.co.kr/view/AKR20260504018900030</link>
       <description>(서울=연합뉴스) 조민정 기자 = 편의점 세븐일레븐은 4일 미쉐린 1스타 셰프인 김희은 셰프와 함께 초록우산에 도시락과 완구 선물을 전달한다고 ...
-[4기준 점수] impact=4.5 freshness=4.8 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.7 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Sun, 03 May 2026 23:49:18 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-dei2z0</guid>
@@ -1066,7 +1151,7 @@
     <item>
       <title>Can a quantum sensor detect your heartbeat from 60 km away? [video]</title>
       <link>https://www.youtube.com/watch?v=N3zU7sV4bJE</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.8 depth=2.5 buzz=1.8
+      <description>[4기준 점수] impact=4.0 freshness=4.7 depth=2.5 buzz=1.8
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 23:45:50 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002839</guid>
@@ -1076,7 +1161,7 @@
       <title>메리츠증권, 삼성전기 목표가↑…&quot;수요 확대·가격 상승 호재&quot;</title>
       <link>https://www.yna.co.kr/view/AKR20260504023500008</link>
       <description>(서울=연합뉴스) 김유아 기자 = 메리츠증권은 삼성전기에 대해 &amp;quot;인공지능(AI) 업계발 수요 확대와 가격 상승 요인으로 2분기 실적도 서프라이즈...
-[4기준 점수] impact=4.5 freshness=4.8 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.7 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Sun, 03 May 2026 23:45:46 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-b62jb1</guid>
@@ -1085,7 +1170,7 @@
     <item>
       <title>Conclave – make LLMs debate each other before they respond</title>
       <link>https://adndvlp.github.io/conclave/</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.8 depth=2.5 buzz=2.0
+      <description>[4기준 점수] impact=4.0 freshness=4.7 depth=2.5 buzz=2.0
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 23:45:45 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002837</guid>
@@ -1095,7 +1180,7 @@
       <title>친절한 AI 챗봇이 더 많이 틀린다…옥스퍼드 연구</title>
       <link>https://www.itworld.co.kr/article/4166253/%ec%b9%9c%ec%a0%88%ed%95%9c-ai-%ec%b1%97%eb%b4%87%ec%9d%b4-%eb%8d%94-%eb%a7%8e%ec%9d%b4-%ed%8b%80%eb%a6%b0%eb%8b%a4-%ec%98%a5%ec%8a%a4%ed%8d%bc%eb%93%9c-%ec%97%b0%ea%b5%ac.html</link>
       <description>옥스퍼드 인터넷 인스티튜트(Oxford Internet Institute)의 새 연구에 따르면, 더 따뜻하고 친절하며 공감적으로 훈련된 ‘친근한’ AI 챗봇일수록 답변의 질이 낮고 정확도도 떨어지는 것으로 나타났다. 해당 연구는 BBC가 최초로 보도했다. 연구팀은 크기와 아키텍처가 서로 다른 AI 모델 5종이 생성한 40만 건 이상의 응답을 분석했다. 분석 대상은 메타의 라마-8B(Llama-8B)와 라마-70B(Llama-70B), 미스트랄 AI의 미스트랄-스몰(Mistral-Small), 알리
-[4기준 점수] impact=4.3 freshness=4.8 depth=3.0 buzz=1.5
+[4기준 점수] impact=4.3 freshness=4.7 depth=3.0 buzz=1.5
 출처: itworld_kr (KR)</description>
       <pubDate>Sun, 03 May 2026 23:44:18 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#itworld_kr-64ptdw</guid>
@@ -1106,7 +1191,7 @@
       <title>현대위아, 신입사원 채용…모빌리티·로보틱스 사업 강화</title>
       <link>https://www.yna.co.kr/view/AKR20260504022600003</link>
       <description>(서울=연합뉴스) 김윤구 기자 = 현대위아[011210]는 모빌리티 부품과 로보틱스 분야 경쟁력 강화를 위해 신입사원을 채용한다고 4일 밝혔다.
-[4기준 점수] impact=4.5 freshness=4.8 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.7 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Sun, 03 May 2026 23:44:17 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-31a4iy</guid>
@@ -1116,7 +1201,7 @@
       <title>토요타코리아, &apos;올 뉴 RAV4&apos; 사전계약 돌입…4927만원부터</title>
       <link>https://zdnet.co.kr/view/?no=20260504084300</link>
       <description>[지디넷코리아]토요타코리아가 차세대 스포츠유틸리티차(SUV) &apos;올 뉴 RAV4&apos; 사전계약에 돌입했다.토요타코리아는 오는 6월 16일 &apos;올 뉴 RAV4&apos;를 공식 출시하고, 4일부터 전국 토요타 공식 딜러 전시장에서 사전계약을 실시한다고 밝혔다.올 뉴 RAV4 가격은 ▲PHEV GR SPORT 6180만원 ▲PHEV XSE 6160만원 ▲HEV LIMITED 5746만원 ▲HEV XLE 4927만원이다.RAV4는 1994년 글로벌 시장에 처음 등장한 이후 도심과 아웃도어를 아우르는 SUV 시장을 개척
-[4기준 점수] impact=4.3 freshness=4.8 depth=3.0 buzz=1.5
+[4기준 점수] impact=4.3 freshness=4.7 depth=3.0 buzz=1.5
 출처: zdnet_kr (KR)</description>
       <pubDate>Sun, 03 May 2026 23:43:00 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#zdnet_kr-ncu1ex</guid>
@@ -1132,7 +1217,7 @@
     <item>
       <title>ProteinView</title>
       <link>https://github.com/001TMF/ProteinView</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.8 depth=2.5 buzz=1.8
+      <description>[4기준 점수] impact=4.0 freshness=4.7 depth=2.5 buzz=1.8
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 23:42:39 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002814</guid>
@@ -1141,7 +1226,7 @@
     <item>
       <title>How many e&apos;s are in strawberry?</title>
       <link>https://smileplease.mataroa.blog/blog/how-many-e-are-in-strawberry/</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.8 depth=2.5 buzz=2.3
+      <description>[4기준 점수] impact=4.0 freshness=4.7 depth=2.5 buzz=2.3
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 23:39:44 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002795</guid>
@@ -1167,7 +1252,7 @@
     <item>
       <title>Let&apos;s Buy Spirit Air</title>
       <link>https://letsbuyspiritair.com/</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.7 depth=2.5 buzz=3.3
+      <description>[4기준 점수] impact=4.0 freshness=4.7 depth=2.5 buzz=3.4
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 23:36:11 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002777</guid>
@@ -1260,7 +1345,7 @@
     <item>
       <title>GameStop Is Offering to Buy eBay for $56B, CEO Ryan Cohen Says</title>
       <link>https://www.wsj.com/business/deals/gamestop-is-offering-to-buy-ebay-for-56-billion-ceo-ryan-cohen-says-fd330f5a</link>
-      <description>[4기준 점수] impact=4.3 freshness=4.7 depth=2.5 buzz=2.3
+      <description>[4기준 점수] impact=4.6 freshness=4.7 depth=2.5 buzz=2.3
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 23:26:26 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002705</guid>
@@ -1269,7 +1354,7 @@
     <item>
       <title>Show HN: Special Days</title>
       <link>https://special-days.pressbin.com/</link>
-      <description>[4기준 점수] impact=4.1 freshness=4.7 depth=2.5 buzz=2.0
+      <description>[4기준 점수] impact=4.2 freshness=4.7 depth=2.5 buzz=2.0
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 23:25:31 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002696</guid>
@@ -1296,7 +1381,7 @@
     <item>
       <title>Modern Standby is draining your laptop&apos;s battery, and Microsoft won&apos;t fix it</title>
       <link>https://www.xda-developers.com/modern-standby-draining-windows-11-laptop-battery-microsoft-wont-fix-it/</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.7 depth=2.5 buzz=1.8
+      <description>[4기준 점수] impact=4.0 freshness=4.6 depth=2.5 buzz=1.8
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 23:17:01 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002641</guid>
@@ -1306,7 +1391,7 @@
       <title>한투증권, 삼성전자 목표가↑…&quot;영업익 상승세 계속될 것&quot;</title>
       <link>https://www.yna.co.kr/view/AKR20260504018800008</link>
       <description>(서울=연합뉴스) 임은진 기자 = 한국투자증권은 4일 삼성전자[005930]의 영업이익 상승세가 계속될 것이라면서 목표주가를 상향 조정했다.
-[4기준 점수] impact=4.5 freshness=4.7 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.6 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Sun, 03 May 2026 23:16:54 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-dvjpfk</guid>
@@ -1316,7 +1401,7 @@
       <title>금 값 ‘금리 인하 기대’와 ‘물가 공포’ 사이에 갇혔다</title>
       <link>https://zdnet.co.kr/view/?no=20260504075058</link>
       <description>[지디넷코리아]4월 5주차 금 시장의 핵심 변수는 미국 FOMC였다. 시장은 금리 인하 신호를 기대했지만, 연준은 기준금리를 3.50~3.75%로 동결했다. 파월의장의 성명서에서도 연준은 2% 물가 목표와 최대고용이라는 이중 책무를 재확인하면서, 중동 정세가 경제 전망의 불확실성을 높이고 있다고 평가했다. 이는 금리 인하가 임박했다기보다, 물가와 전쟁 리스크가 금리 인하 시점을 뒤로 밀고 있다는 뜻이다. 따라서, 금값은 조정 장세가 지속될 것으로 예상되지만, 전쟁 협상 진행 상황과 신임 FOMC 
-[4기준 점수] impact=4.3 freshness=4.7 depth=3.0 buzz=1.5
+[4기준 점수] impact=4.3 freshness=4.6 depth=3.0 buzz=1.5
 출처: zdnet_kr (KR)</description>
       <pubDate>Sun, 03 May 2026 23:16:22 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#zdnet_kr-ncatpj</guid>
@@ -1330,7 +1415,7 @@
     <item>
       <title>WASM interpreter fits in a QR code</title>
       <link>https://purplesyringa.moe/blog/this-wasm-interpreter-fits-in-a-qr-code/</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.7 depth=2.9 buzz=2.3
+      <description>[4기준 점수] impact=4.0 freshness=4.6 depth=2.9 buzz=2.3
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 23:13:45 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002621</guid>
@@ -1340,7 +1425,7 @@
       <title>경기도, 고양 구제역 방역대 &apos;이동 제한&apos; 해제</title>
       <link>https://www.yna.co.kr/view/AKR20260504018400060</link>
       <description>(의정부=연합뉴스) 우영식 기자 = 경기도는 지난 2월 고양시에서 발생한 구제역과 관련해 방역대 내에 묶여 있던 이동 제한 조치를 해제했다고 4...
-[4기준 점수] impact=4.5 freshness=4.7 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.6 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Sun, 03 May 2026 23:13:40 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-frq6ve</guid>
@@ -1350,7 +1435,7 @@
       <title>Show HN: An new experimental App for speed reading books</title>
       <link>https://vernetit.github.io/s4/</link>
       <description>I built a small experimental speed-reader App that reformats books into a configurable three-step visual layout. Instead of displaying text as normal paragraphs, it splits the text into blocks like this: hello world this is a test line line line The idea is to guide the eye throu
-[4기준 점수] impact=4.0 freshness=4.7 depth=3.0 buzz=1.8
+[4기준 점수] impact=4.0 freshness=4.6 depth=3.0 buzz=1.8
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 23:12:56 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002616</guid>
@@ -1359,7 +1444,7 @@
     <item>
       <title>The &apos;Hidden&apos; Costs of Great Abstractions</title>
       <link>https://jdgr.net/the-hidden-costs-of-great-abstractions</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.7 depth=2.5 buzz=3.1
+      <description>[4기준 점수] impact=4.0 freshness=4.6 depth=2.5 buzz=3.2
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 23:12:02 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002607</guid>
@@ -1368,7 +1453,7 @@
     <item>
       <title>Want to Watch button missing for movie searches</title>
       <link>https://support.google.com/websearch/thread/414738182/want-to-watch-button-missing-for-movie-searches?hl=en</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.7 depth=2.5 buzz=1.8
+      <description>[4기준 점수] impact=4.0 freshness=4.6 depth=2.5 buzz=1.8
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 23:11:08 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002601</guid>
@@ -1378,7 +1463,7 @@
       <title>김치가 일본풍 음식?…&apos;반 고흐 미술관&apos; 메뉴판 표기 논란</title>
       <link>https://www.yna.co.kr/view/AKR20260503046200371</link>
       <description>(서울=연합뉴스) 성도현 기자 = 네덜란드 암스테르담의 &amp;apos;반 고흐 미술관&amp;apos; 내 식당에서 파는 김치 요리가 김치의 기원에 대한 오해를 줄 수 있다...
-[4기준 점수] impact=4.5 freshness=4.7 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.6 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Sun, 03 May 2026 23:10:00 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-rdulux</guid>
@@ -1387,7 +1472,7 @@
     <item>
       <title>Three cruise ship passengers die in suspected hantavirus outbreak</title>
       <link>https://www.reuters.com/business/healthcare-pharmaceuticals/three-passengers-dead-one-case-hantavirus-confirmed-atlantic-cruise-ship-who-2026-05-03/</link>
-      <description>[4기준 점수] impact=4.1 freshness=4.7 depth=2.5 buzz=2.2
+      <description>[4기준 점수] impact=4.2 freshness=4.6 depth=2.5 buzz=2.2
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 23:08:24 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002569</guid>
@@ -1396,7 +1481,7 @@
     <item>
       <title>No Joke. Unification of (GR/Qt)</title>
       <link>https://twitter.com/CTibedo/status/2051071923849723947</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.7 depth=2.5 buzz=2.0
+      <description>[4기준 점수] impact=4.0 freshness=4.6 depth=2.5 buzz=2.0
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 23:07:16 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002557</guid>
@@ -1405,7 +1490,7 @@
     <item>
       <title>H4ckf0r0day/obscura: The headless browser for AI agents and web scraping</title>
       <link>https://github.com/h4ckf0r0day/obscura</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.7 depth=2.5 buzz=2.2
+      <description>[4기준 점수] impact=4.0 freshness=4.6 depth=2.5 buzz=2.2
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 23:03:05 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002523</guid>
@@ -1444,7 +1529,7 @@
     <item>
       <title>Could the X-Bat Stealth Fighter Drone Change the Air Combat Game?</title>
       <link>https://www.twz.com/air/could-the-x-bat-stealth-fighter-drone-change-the-air-combat-game</link>
-      <description>[4기준 점수] impact=4.3 freshness=4.6 depth=2.5 buzz=1.8
+      <description>[4기준 점수] impact=4.6 freshness=4.6 depth=2.5 buzz=1.8
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 22:57:04 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002479</guid>
@@ -1501,7 +1586,7 @@
     <item>
       <title>Agentic Coding Is a Trap</title>
       <link>https://larsfaye.com/articles/agentic-coding-is-a-trap</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.6 depth=2.5 buzz=3.4
+      <description>[4기준 점수] impact=4.0 freshness=4.6 depth=2.5 buzz=3.5
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 22:52:07 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002442</guid>
@@ -1519,7 +1604,7 @@
     <item>
       <title>The PHP License, Simplified</title>
       <link>https://ben.ramsey.dev/blog/2026/05/the-php-license-simplified</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.6 depth=2.5 buzz=2.0
+      <description>[4기준 점수] impact=4.0 freshness=4.5 depth=2.5 buzz=2.0
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 22:37:21 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002332</guid>
@@ -1528,7 +1613,7 @@
     <item>
       <title>Open source intelligence about Palantir</title>
       <link>https://palantirwatch.org</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.6 depth=2.9 buzz=1.8
+      <description>[4기준 점수] impact=4.0 freshness=4.5 depth=2.9 buzz=1.8
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 22:36:19 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002326</guid>
@@ -1537,7 +1622,7 @@
     <item>
       <title>Using the &quot;Sandwich Method&quot; to Teach Mathematics</title>
       <link>https://pikuma.com/blog/sandwich-method-math-education</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.6 depth=2.5 buzz=1.8
+      <description>[4기준 점수] impact=4.0 freshness=4.5 depth=2.5 buzz=1.8
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 22:33:40 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002306</guid>
@@ -1546,7 +1631,7 @@
     <item>
       <title>Kloak keeps secrets out of your application&apos;s memory</title>
       <link>https://getkloak.io/blog/kloak-50000-feet-view/</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.6 depth=2.9 buzz=1.8
+      <description>[4기준 점수] impact=4.0 freshness=4.5 depth=2.9 buzz=1.8
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 22:33:36 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002305</guid>
@@ -1555,7 +1640,7 @@
     <item>
       <title>PyFlue – Python-Native Agent Harness Framework (Python Clone of Flue)</title>
       <link>https://super-agentic.ai/pyflue</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.6 depth=2.5 buzz=2.0
+      <description>[4기준 점수] impact=4.0 freshness=4.5 depth=2.5 buzz=2.0
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 22:31:46 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002290</guid>
@@ -1565,7 +1650,7 @@
       <title>Show HN: Zuma Portable</title>
       <link>https://drive.google.com/drive/folders/1hDRvlY707VrO_UztEtIt1EoPgKBICL8Q?usp=sharing</link>
       <description>I brought Alula&amp;#x27;s decompilation of Zuma Deluxe to macOS and Android. I have no clue how it runs on real android hardware, I&amp;#x27;ve only tested it in the bluestacks emulator. 100% free, no ads. This apk is built for arm64-v8a and armeabi-v7a. GAME FILES NOT INCLUDED
-[4기준 점수] impact=4.3 freshness=4.6 depth=3.0 buzz=1.8
+[4기준 점수] impact=4.6 freshness=4.5 depth=3.0 buzz=1.8
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 22:27:44 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002265</guid>
@@ -1665,7 +1750,7 @@
     <item>
       <title>Introduction to Atom</title>
       <link>https://validator.w3.org/feed/docs/atom.html</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.5 depth=2.5 buzz=2.8
+      <description>[4기준 점수] impact=4.0 freshness=4.5 depth=2.5 buzz=2.9
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 22:08:47 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002089</guid>
@@ -1683,7 +1768,7 @@
     <item>
       <title>Next-Token Predictor Is An AI&apos;s Job, Not Its Species</title>
       <link>https://www.astralcodexten.com/p/next-token-predictor-is-an-ais-job</link>
-      <description>[4기준 점수] impact=4.1 freshness=4.5 depth=2.5 buzz=1.8
+      <description>[4기준 점수] impact=4.2 freshness=4.5 depth=2.5 buzz=1.8
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 22:07:29 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002072</guid>
@@ -1692,7 +1777,7 @@
     <item>
       <title>Seriously, Anthropic? [video]</title>
       <link>https://www.youtube.com/watch?v=J8O9LLpJNrg</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.5 depth=2.5 buzz=2.2
+      <description>[4기준 점수] impact=4.0 freshness=4.4 depth=2.5 buzz=2.2
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 22:02:02 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48002015</guid>
@@ -1702,7 +1787,7 @@
       <title>‘리더십’, 한국 직장인 정신건강 좌우하는 핵심 변수</title>
       <link>https://zdnet.co.kr/view/?no=20260503223034</link>
       <description>[지디넷코리아]한국 직장인의 정신건강과 업무 수행에 가장 큰 영향을 미치는 요인으로 ‘리더십의 질’이 지목됐다.텔러스헬스(TELUS Health)가 발표한 ‘2026 텔러스 정신건강 지수’(2026 TELUS Mental Health Barometer) 조사 결과이다.국내 직장인 1000명을 대상으로 한 이번 조사에 따르면, 리더가 충분한 지원 받을 경우 그 효과는 조직 전반으로 확산되는 반면, 실제로는 많은 리더들이 충분한 준비 없이 지속되는 업무 복잡성과 압박을 감당하고 있는 것으로 나타났다.
-[4기준 점수] impact=4.3 freshness=4.5 depth=3.0 buzz=1.5
+[4기준 점수] impact=4.3 freshness=4.4 depth=3.0 buzz=1.5
 출처: zdnet_kr (KR)</description>
       <pubDate>Sun, 03 May 2026 22:00:02 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#zdnet_kr-9j7ja7</guid>
@@ -1717,7 +1802,7 @@
     <item>
       <title>Sato – AI desktop companion for macOS with multi-provider support</title>
       <link>https://www.sato.host/</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.5 depth=2.5 buzz=2.0
+      <description>[4기준 점수] impact=4.0 freshness=4.4 depth=2.5 buzz=2.0
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 21:58:25 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48001985</guid>
@@ -1726,7 +1811,7 @@
     <item>
       <title>The Long Road To Windows 95 [video]</title>
       <link>https://www.youtube.com/watch?v=u8k66A9n8gE</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.5 depth=2.5 buzz=1.8
+      <description>[4기준 점수] impact=4.0 freshness=4.4 depth=2.5 buzz=1.8
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 21:57:29 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48001978</guid>
@@ -1735,7 +1820,7 @@
     <item>
       <title>Transport access reduces deprivation: When colocation misleads</title>
       <link>https://pnas.scienceconnect.io/error?msg=ewogICJpZCIgOiAiNmU3ZTA0MTEtMWQ1Yi00NDhjLTg0MDgtZGE4NjI4Nzc1NDI2IiwKICAidGl0bGUiIDogIkVycm9yIiwKICAibWVzc2FnZSIgOiAiY29tLm5pbWJ1c2RzLm9hdXRoMi5zZGsuUGFyc2VFeGNlcHRpb246IFRoZSBzY29wZSBtdXN0IGluY2x1ZGUgYW4gb3BlbmlkIHZhbHVlIiwKICAiY29kZSIgOiAiR0VORVJBTF9FUlJPUiIKfQ==&amp;errorCode=500-feb</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.5 depth=2.5 buzz=2.0
+      <description>[4기준 점수] impact=4.0 freshness=4.4 depth=2.5 buzz=2.0
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 21:55:27 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48001961</guid>
@@ -1744,7 +1829,7 @@
     <item>
       <title>March 2026 Top New Cran Packages</title>
       <link>https://rworks.dev/posts/march-2026-top-40-new-cran-packages/</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.5 depth=2.5 buzz=2.0
+      <description>[4기준 점수] impact=4.0 freshness=4.4 depth=2.5 buzz=2.0
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 21:54:47 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48001955</guid>
@@ -1790,7 +1875,7 @@
     <item>
       <title>Scientists Gave Cocaine to Salmon</title>
       <link>https://www.wired.com/story/cocaine-fueled-wild-salmon-swam-twice-as-far-as-sober-ones/</link>
-      <description>[4기준 점수] impact=4.3 freshness=4.4 depth=2.5 buzz=2.3
+      <description>[4기준 점수] impact=4.6 freshness=4.4 depth=2.5 buzz=2.3
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 21:39:05 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48001813</guid>
@@ -1855,7 +1940,7 @@
       <title>LG전자 세탁가전 &apos;복합형&apos;이 대세…소비자 10명 중 6명 선택</title>
       <link>https://www.yna.co.kr/view/AKR20260430194100003</link>
       <description>(서울=연합뉴스) 강태우 기자 = LG전자의 세탁가전 구매 고객 10명 중 6명이 워시타워·워시콤보 같은 복합형 제품을 선택한 것으로 나타났다....
-[4기준 점수] impact=4.5 freshness=4.4 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.3 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Sun, 03 May 2026 21:31:00 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-oj40ox</guid>
@@ -1864,7 +1949,7 @@
     <item>
       <title>Sluggers.fyi: Moneyball and Mario Super Sluggers</title>
       <link>https://www.sluggers.fyi/</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.4 depth=2.5 buzz=2.1
+      <description>[4기준 점수] impact=4.0 freshness=4.3 depth=2.5 buzz=2.1
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 21:29:26 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48001704</guid>
@@ -1873,7 +1958,7 @@
     <item>
       <title>xAI Is Reportedly Using Just 11% of Its 550k Nvidia GPUs</title>
       <link>https://wccftech.com/xai-using-just-11-percent-gpus-while-meta-google-squeeze-out-much-more/</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.4 depth=2.5 buzz=2.7
+      <description>[4기준 점수] impact=4.0 freshness=4.3 depth=2.5 buzz=2.7
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 21:28:57 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48001701</guid>
@@ -1882,7 +1967,7 @@
     <item>
       <title>Show HN: Playground for the Spectre Programming Language</title>
       <link>https://spectrelang.org/playground</link>
-      <description>[4기준 점수] impact=4.1 freshness=4.4 depth=2.5 buzz=2.2
+      <description>[4기준 점수] impact=4.2 freshness=4.3 depth=2.5 buzz=2.2
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 21:28:01 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48001695</guid>
@@ -1891,7 +1976,7 @@
     <item>
       <title>Show HN: Memory Safe Argon2 Implementation in Pure Swift 6</title>
       <link>https://github.com/mimiclone/argon2-swift</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.4 depth=3.3 buzz=2.1
+      <description>[4기준 점수] impact=4.0 freshness=4.3 depth=3.3 buzz=2.1
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 21:17:43 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48001595</guid>
@@ -1900,7 +1985,7 @@
     <item>
       <title>I got tired of messy PTO spreadsheets, so I built a simple tool</title>
       <link>https://myfreecalendar.app/</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.4 depth=2.5 buzz=2.0
+      <description>[4기준 점수] impact=4.0 freshness=4.3 depth=2.5 buzz=2.0
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 21:15:57 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48001581</guid>
@@ -1909,7 +1994,7 @@
     <item>
       <title>Three dead in suspected hantavirus outbreak on Atlantic cruise ship</title>
       <link>https://www.bbc.co.uk/news/live/cjrzp08wx4vt</link>
-      <description>[4기준 점수] impact=4.1 freshness=4.3 depth=2.5 buzz=2.3
+      <description>[4기준 점수] impact=4.2 freshness=4.3 depth=2.5 buzz=2.3
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 21:13:44 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48001561</guid>
@@ -1935,24 +2020,6 @@
       <category>ai</category>
     </item>
     <item>
-      <title>Breathtaking</title>
-      <link>https://aeon.co/essays/do-hold-your-breath-on-the-benefits-of-conscious-breathing</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.3 depth=2.5 buzz=2.0
-출처: hackernews (Global)</description>
-      <pubDate>Sun, 03 May 2026 21:06:24 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#hn-48001493</guid>
-      <category>ai</category>
-    </item>
-    <item>
-      <title>Street Fishing in the Canals of &apos;Little Venice&apos; – Treviso, Italy</title>
-      <link>https://www.nytimes.com/2026/04/21/travel/treviso-italy-canal-fishing-little-venice-local-guide.html</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.3 depth=2.5 buzz=2.0
-출처: hackernews (Global)</description>
-      <pubDate>Sun, 03 May 2026 21:05:06 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#hn-48001476</guid>
-      <category>ai</category>
-    </item>
-    <item>
       <title>삼성바이오 파업 나흘째…오늘 노사 대화 재개</title>
       <link>https://www.yna.co.kr/view/AKR20260503043900017</link>
       <description>(서울=연합뉴스) 신선미 기자 = 삼성바이오로직스[207940]의 전면 파업이 4일 나흘째로 접어든 가운데 이날 노동조합과 회사 측이 만난다.
@@ -1960,15 +2027,6 @@
 출처: yna_it (KR)</description>
       <pubDate>Sun, 03 May 2026 21:05:00 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-2xdvue</guid>
-      <category>ai</category>
-    </item>
-    <item>
-      <title>Reality Is a Shared Hallucination (1997)</title>
-      <link>http://reactor-core.org/reality-hallucination.html</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.3 depth=2.5 buzz=2.1
-출처: hackernews (Global)</description>
-      <pubDate>Sun, 03 May 2026 21:03:33 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#hn-48001452</guid>
       <category>ai</category>
     </item>
     <item>
@@ -2039,24 +2097,6 @@
       <category>ai</category>
     </item>
     <item>
-      <title>Show HN: VidMark – Frame.io-style timestamped comments for Google Drive</title>
-      <link>https://github.com/markksantos/VidMark</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.3 depth=2.5 buzz=2.0
-출처: hackernews (Global)</description>
-      <pubDate>Sun, 03 May 2026 20:59:08 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#hn-48001417</guid>
-      <category>ai</category>
-    </item>
-    <item>
-      <title>Waveoverhangs – Steep overhangs without supports</title>
-      <link>https://waveoverhangs.com/</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.3 depth=2.5 buzz=2.0
-출처: hackernews (Global)</description>
-      <pubDate>Sun, 03 May 2026 20:58:04 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#hn-48001403</guid>
-      <category>ai</category>
-    </item>
-    <item>
       <title>Australian police officers can be tracked via taser and body-cam bluetooth</title>
       <link>https://www.abc.net.au/news/2026-05-04/police-location-tracked-bluetooth-flaw-axon-tasers-bodycams/106610886</link>
       <description>[4기준 점수] impact=4.0 freshness=4.2 depth=2.5 buzz=2.6
@@ -2078,7 +2118,7 @@
       <title>‘This is fine’ creator says AI startup stole his art</title>
       <link>https://techcrunch.com/2026/05/03/this-is-fine-creator-says-ai-startup-stole-his-art/</link>
       <description>The ad comes from Artisan, the AI startup behind billboards urging businesses to &quot;stop hiring humans.&quot;
-[4기준 점수] impact=4.5 freshness=4.2 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=4.1 depth=2.5 buzz=1.5
 출처: techcrunch (US)</description>
       <pubDate>Sun, 03 May 2026 20:16:51 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#techcrunch-2ffxuw</guid>
@@ -2109,7 +2149,7 @@
     <item>
       <title>ASU Using AI Tool to Create Courses from Professors&apos; Work Without Their</title>
       <link>https://azfreenews.com/2026/05/asu-using-ai-tool-to-create-courses-from-professors-work-without-their-knowledge/</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.1 depth=2.5 buzz=2.8
+      <description>[4기준 점수] impact=4.0 freshness=4.0 depth=2.5 buzz=2.8
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 19:33:00 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48000521</guid>
@@ -2118,7 +2158,7 @@
     <item>
       <title>Make your own microforest (2025)</title>
       <link>https://ambrook.com/offrange/environment/a-forest-in-your-pocket</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.1 depth=2.5 buzz=3.3
+      <description>[4기준 점수] impact=4.0 freshness=4.0 depth=2.5 buzz=3.3
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 19:31:35 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48000507</guid>
@@ -2156,7 +2196,7 @@
     <item>
       <title>Minimal Fab Promoting Organization</title>
       <link>https://www.minimalfab.com/en/</link>
-      <description>[4기준 점수] impact=4.3 freshness=4.0 depth=2.5 buzz=2.2
+      <description>[4기준 점수] impact=4.6 freshness=4.0 depth=2.5 buzz=2.2
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 19:07:41 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48000269</guid>
@@ -2165,7 +2205,7 @@
     <item>
       <title>New statue in London, attributed to Banksy, of a suited man, blinded by a flag</title>
       <link>https://www.smithsonianmag.com/smart-news/attributed-to-banksy-a-new-statue-of-a-suited-man-blinded-by-a-flag-and-walking-off-a-ledge-appeared-in-central-london-180988662/</link>
-      <description>[4기준 점수] impact=4.0 freshness=4.0 depth=2.5 buzz=3.9
+      <description>[4기준 점수] impact=4.2 freshness=3.9 depth=2.5 buzz=3.9
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 18:54:28 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48000152</guid>
@@ -2174,7 +2214,7 @@
     <item>
       <title>Why TUIs Are Back</title>
       <link>https://wiki.alcidesfonseca.com/blog/why-tuis-are-back/</link>
-      <description>[4기준 점수] impact=4.0 freshness=3.9 depth=2.5 buzz=3.9
+      <description>[4기준 점수] impact=4.2 freshness=3.9 depth=2.5 buzz=3.9
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 18:42:28 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-48000028</guid>
@@ -2183,7 +2223,7 @@
     <item>
       <title>Brush a Bash/POSIX-compatible shell written in the Rust</title>
       <link>https://github.com/reubeno/brush/releases/tag/brush-shell-v0.4.0</link>
-      <description>[4기준 점수] impact=4.0 freshness=3.9 depth=2.5 buzz=2.2
+      <description>[4기준 점수] impact=4.0 freshness=3.8 depth=2.5 buzz=2.2
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 18:28:59 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47999890</guid>
@@ -2192,7 +2232,7 @@
     <item>
       <title>Talking to Transformers</title>
       <link>https://miraos.org/blog/2026/05/02/talking-to-transformers</link>
-      <description>[4기준 점수] impact=4.0 freshness=3.9 depth=2.5 buzz=2.9
+      <description>[4기준 점수] impact=4.0 freshness=3.8 depth=2.5 buzz=2.9
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 18:17:18 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47999776</guid>
@@ -2201,7 +2241,7 @@
     <item>
       <title>Supercollider</title>
       <link>https://supercollider.github.io/</link>
-      <description>[4기준 점수] impact=4.0 freshness=3.9 depth=2.5 buzz=2.5
+      <description>[4기준 점수] impact=4.0 freshness=3.8 depth=2.5 buzz=2.6
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 18:15:24 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47999760</guid>
@@ -2210,7 +2250,7 @@
     <item>
       <title>How Kepler built verifiable AI for financial services with Claude</title>
       <link>https://claude.com/blog/how-kepler-built-verifiable-ai-for-financial-services-with-claude</link>
-      <description>[4기준 점수] impact=4.0 freshness=3.9 depth=2.5 buzz=3.0
+      <description>[4기준 점수] impact=4.0 freshness=3.8 depth=2.5 buzz=3.0
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 18:14:56 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47999754</guid>
@@ -2228,7 +2268,7 @@
     <item>
       <title>BYOMesh – New LoRa mesh radio offers 100x the bandwidth</title>
       <link>https://partyon.xyz/@nullagent/116499715071759135</link>
-      <description>[4기준 점수] impact=4.0 freshness=3.8 depth=2.9 buzz=3.9
+      <description>[4기준 점수] impact=4.2 freshness=3.8 depth=2.9 buzz=3.9
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 18:03:14 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47999636</guid>
@@ -2252,7 +2292,7 @@
     <item>
       <title>LLMs Are Not a Higher Level of Abstraction</title>
       <link>https://www.lelanthran.com/chap15/content.html</link>
-      <description>[4기준 점수] impact=4.0 freshness=3.8 depth=2.5 buzz=3.1
+      <description>[4기준 점수] impact=4.0 freshness=3.7 depth=2.5 buzz=3.1
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 17:51:58 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47999520</guid>
@@ -2261,7 +2301,7 @@
     <item>
       <title>I recreated the Apple Lisa computer inside an FPGA [video]</title>
       <link>https://www.youtube.com/watch?v=8jNQDcpHc68</link>
-      <description>[4기준 점수] impact=4.3 freshness=3.8 depth=2.5 buzz=3.3
+      <description>[4기준 점수] impact=4.6 freshness=3.7 depth=2.5 buzz=3.3
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 17:45:47 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47999460</guid>
@@ -2280,7 +2320,7 @@
       <title>GameStop is reportedly preparing an offer to buy eBay</title>
       <link>https://www.engadget.com/2163171/gamestop-is-reportedly-preparing-an-offer-to-buy-ebay/</link>
       <description>The Wall Street Journal reported that the offer could come as soon as this month.
-[4기준 점수] impact=4.3 freshness=3.7 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.6 freshness=3.7 depth=2.5 buzz=1.5
 출처: engadget (US)</description>
       <pubDate>Sun, 03 May 2026 17:31:01 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#engadget-oc9v6v</guid>
@@ -2290,7 +2330,7 @@
     <item>
       <title>How far behind is each major Chromium browser?</title>
       <link>https://chromium-drift.pages.dev/</link>
-      <description>[4기준 점수] impact=4.0 freshness=3.7 depth=2.5 buzz=3.7
+      <description>[4기준 점수] impact=4.0 freshness=3.6 depth=2.5 buzz=3.7
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 17:05:58 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47999006</guid>
@@ -2300,7 +2340,7 @@
       <title>Southwest Headquarters Tour</title>
       <link>https://katherinemichel.github.io/blog/travel/southwest-headquarters-tour-2026.html</link>
       <description>After years of flying Southwest, I recently had the opportunity to tour the headquarters in Dallas. I particularly enjoyed seeing the full-motion 737 simulators, Network Operations Center, and TechOps maintenance hangar up close.
-[4기준 점수] impact=4.3 freshness=3.6 depth=3.0 buzz=3.8
+[4기준 점수] impact=4.6 freshness=3.6 depth=3.0 buzz=3.8
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 17:02:13 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47998946</guid>
@@ -2318,7 +2358,7 @@
     <item>
       <title>Metal Gear Solid 2&apos;s source code has been leaked on 4chan</title>
       <link>https://www.thegamer.com/mgs2-hd-edition-source-code-massive-leak/</link>
-      <description>[4기준 점수] impact=4.0 freshness=3.6 depth=2.9 buzz=3.8
+      <description>[4기준 점수] impact=4.2 freshness=3.6 depth=2.9 buzz=3.9
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 16:48:11 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47998790</guid>
@@ -2327,7 +2367,7 @@
     <item>
       <title>Underwater robot tracks sperm whale conversations in real time</title>
       <link>https://www.reuters.com/business/environment/underwater-robot-tracks-sperm-whale-conversations-real-time-2026-05-01/</link>
-      <description>[4기준 점수] impact=4.0 freshness=3.6 depth=2.5 buzz=3.0
+      <description>[4기준 점수] impact=4.0 freshness=3.5 depth=2.5 buzz=3.0
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 16:35:20 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47998664</guid>
@@ -2337,7 +2377,7 @@
       <title>Show HN: Software Engineer to Novelist: Writing a Book Like Coding</title>
       <link>https://frequal.com/forwriters/</link>
       <description>I just published my first book, Means and Motive. ( https:&amp;#x2F;&amp;#x2F;www.amazon.com&amp;#x2F;dp&amp;#x2F;B0GYCZJVGX ) As a software engineer, I approached writing like a software project. I used familiar tools (Emacs and HTML) for the primary writing. I built my own tool (EPublish) to t
-[4기준 점수] impact=4.1 freshness=3.5 depth=3.0 buzz=2.6
+[4기준 점수] impact=4.3 freshness=3.5 depth=3.0 buzz=2.6
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 16:26:32 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47998570</guid>
@@ -2368,7 +2408,7 @@
       <title>TechCrunch Mobility: How do you issue a ticket to a robotaxi?</title>
       <link>https://techcrunch.com/2026/05/03/techcrunch-mobility-how-do-you-issue-a-ticket-to-a-robotaxi/</link>
       <description>Welcome back to TechCrunch Mobility — your central hub for news and insights on the future of transportation.
-[4기준 점수] impact=4.5 freshness=3.5 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=3.4 depth=2.5 buzz=1.5
 출처: techcrunch (US)</description>
       <pubDate>Sun, 03 May 2026 16:05:00 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#techcrunch-3jl07o</guid>
@@ -2384,7 +2424,7 @@
     <item>
       <title>For thirty years I programmed with Phish on, every day</title>
       <link>https://christophermeiklejohn.com/ai/personal/phish/flow/agents/2026/05/03/rift.html</link>
-      <description>[4기준 점수] impact=4.0 freshness=3.5 depth=2.5 buzz=3.8
+      <description>[4기준 점수] impact=4.2 freshness=3.4 depth=2.5 buzz=3.8
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 15:55:59 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47998225</guid>
@@ -2394,7 +2434,7 @@
       <title>Lego is releasing a Sega Genesis set complete with little controllers</title>
       <link>https://www.engadget.com/2163108/lego-is-releasing-a-sega-genesis-set-complete-with-little-controllers/</link>
       <description>It&apos;s not playable, but it&apos;s still pretty cool.
-[4기준 점수] impact=4.3 freshness=3.4 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.6 freshness=3.4 depth=2.5 buzz=1.5
 출처: engadget (US)</description>
       <pubDate>Sun, 03 May 2026 15:41:35 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#engadget-hr30tm</guid>
@@ -2404,7 +2444,7 @@
     <item>
       <title>A desktop made for one</title>
       <link>https://isene.org/2026/05/Audience-of-One.html</link>
-      <description>[4기준 점수] impact=4.0 freshness=3.4 depth=2.5 buzz=3.9
+      <description>[4기준 점수] impact=4.2 freshness=3.4 depth=2.5 buzz=3.9
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 15:32:05 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47997947</guid>
@@ -2414,7 +2454,7 @@
       <title>Reggie Fils-Aimé says Amazon once asked Nintendo to break the law</title>
       <link>https://www.theverge.com/games/922840/reggie-fils-aime-amazon-nintendo-illegal</link>
       <description>Way back in the DS days, Nintendo decided to stop selling to Amazon. During a recent lecture at NYU, former Nintendo of America President Reggie Fils-Aim&amp;#233; said it was because Amazon was seeking preferential treatment that would have hurt its relationship with other retailers
-[4기준 점수] impact=4.4 freshness=3.4 depth=3.0 buzz=1.5
+[4기준 점수] impact=4.4 freshness=3.3 depth=3.0 buzz=1.5
 출처: theverge (US)</description>
       <pubDate>Sun, 03 May 2026 15:24:27 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#theverge-uuwlgh</guid>
@@ -2423,7 +2463,7 @@
     <item>
       <title>AI deleted my most tests, and said &quot;All Tests Pass&quot;</title>
       <link>https://typia.io/blog/ai-deleted-my-tests-and-said-all-tests-pass/</link>
-      <description>[4기준 점수] impact=4.0 freshness=3.4 depth=2.5 buzz=2.6
+      <description>[4기준 점수] impact=4.0 freshness=3.3 depth=2.5 buzz=2.6
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 15:15:02 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47997777</guid>
@@ -2442,7 +2482,7 @@
     <item>
       <title>Security through obscurity is not bad</title>
       <link>https://mobeigi.com/blog/security/security-through-obscurity-is-not-bad/</link>
-      <description>[4기준 점수] impact=4.0 freshness=3.3 depth=2.5 buzz=3.6
+      <description>[4기준 점수] impact=4.0 freshness=3.2 depth=2.5 buzz=3.6
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 14:49:56 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47997486</guid>
@@ -2451,7 +2491,7 @@
     <item>
       <title>Mercedes-Benz commits to bringing back physical buttons</title>
       <link>https://www.drive.com.au/news/mercedes-benz-commits-to-bringing-back-phycial-buttons/</link>
-      <description>[4기준 점수] impact=4.0 freshness=3.3 depth=2.5 buzz=4.3
+      <description>[4기준 점수] impact=4.4 freshness=3.2 depth=2.5 buzz=4.3
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 14:43:27 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47997418</guid>
@@ -2460,7 +2500,7 @@
     <item>
       <title>Utah to hold websites liable for users who mask their location with VPNs</title>
       <link>https://www.tomshardware.com/software/vpn/utah-becomes-first-us-state-to-target-vpn-use-with-age-verification-law</link>
-      <description>[4기준 점수] impact=4.0 freshness=3.2 depth=2.5 buzz=3.8
+      <description>[4기준 점수] impact=4.2 freshness=3.2 depth=2.5 buzz=3.8
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 14:36:14 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47997358</guid>
@@ -2478,7 +2518,7 @@
     <item>
       <title>Porsche will contest Laguna Seca in historic colors of the Apple Computer livery</title>
       <link>https://newsroom.porsche.com/en_US/2026/motorsport/porsche-will-contest-laguna-seca-in-historic-colors-of-the-apple-computer-livery.html</link>
-      <description>[4기준 점수] impact=4.0 freshness=3.2 depth=2.5 buzz=3.5
+      <description>[4기준 점수] impact=4.0 freshness=3.1 depth=2.5 buzz=3.5
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 14:13:23 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47997138</guid>
@@ -2547,7 +2587,7 @@
       <title>How the internet’s favorite squirrel dad made the hottest camera app of 2026</title>
       <link>https://www.theverge.com/tech/921690/dualshot-recorder-iphone-camera-app-derrick-downey-jr</link>
       <description>It&apos;s not hyperbole to call DualShot Recorder an overnight sensation. It took only 12 hours from the time it was released to hit number one on the App Store&apos;s list of top paid apps. It was a surprise success - but what&apos;s even more surprising is the app&apos;s origin story: it all start
-[4기준 점수] impact=4.6 freshness=3.0 depth=3.0 buzz=1.5
+[4기준 점수] impact=4.8 freshness=2.9 depth=3.0 buzz=1.5
 출처: theverge (US)</description>
       <pubDate>Sun, 03 May 2026 13:00:00 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#theverge-l5oqxj</guid>
@@ -2557,7 +2597,7 @@
       <title>This tiny, magnetic e-reader could stop you from doomscrolling</title>
       <link>https://techcrunch.com/2026/05/03/xteink-x3-review-tiny-magnetic-ereader/</link>
       <description>The Xteink X3 is a delightfully tiny, MagSafe-compatible e-ink reader that attaches to the back of your phone like a Pop Socket.
-[4기준 점수] impact=4.5 freshness=3.0 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=2.9 depth=2.5 buzz=1.5
 출처: techcrunch (US)</description>
       <pubDate>Sun, 03 May 2026 13:00:00 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#techcrunch-cj4skx</guid>
@@ -2575,7 +2615,7 @@
       <title>These reusable digital Polaroids are a clever way to cover a fridge in memories</title>
       <link>https://www.theverge.com/tech/917067/vidabay-snap-nfc-e-ink-paper-fridge-magnet-photo-hands-on</link>
       <description>I love when my friends have their fridges covered in Polaroids. It’s often a visual crash course of what’s been going on in their lives chronicling recent adventures, get-togethers, and other fun moments. But I don’t love the idea of schlepping around a clunky instant camera or p
-[4기준 점수] impact=4.4 freshness=3.0 depth=3.0 buzz=1.5
+[4기준 점수] impact=4.4 freshness=2.9 depth=3.0 buzz=1.5
 출처: theverge (US)</description>
       <pubDate>Sun, 03 May 2026 13:00:00 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#theverge-kidkcm</guid>
@@ -2585,7 +2625,7 @@
       <title>아세안+3 재무장관·중앙은행 &quot;중동 긴장 고조…공급망·에너지 안보위해 협력&quot;</title>
       <link>https://zdnet.co.kr/view/?no=20260503211338</link>
       <description>[지디넷코리아](사마르칸트=손희연) 3일(현지시간) 우즈베키스탄 사마르칸트서 열린 &apos;제 26차 한중일 재무장관·중앙은행 총재 회의&apos; 및 &apos;제 29차 아세안(ASEAN)+3 재무장관·중앙은행 총재 회의&apos;에서 중동 지역 긴장 고조로 경제 하방 리스크가 크게 증가한 가운데, 공급망과 에너지 안보를 위해 협력을 강화하자는 참여국 간 인식이 공유됐다.ASEAN+3는 ASEAN 11개국(말레이시아·인도네시아·태국·필리핀·싱가포르·브루나이·베트남·라오스·미얀마·캄보디아·동티모르)과 한국·중국·일본으로 구성된다
-[4기준 점수] impact=4.3 freshness=3.0 depth=3.0 buzz=1.5
+[4기준 점수] impact=4.3 freshness=2.9 depth=3.0 buzz=1.5
 출처: zdnet_kr (KR)</description>
       <pubDate>Sun, 03 May 2026 12:55:02 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#zdnet_kr-9imixz</guid>
@@ -2611,7 +2651,7 @@
       <title>Show HN: I built a RISC-V emulator that runs DOOM</title>
       <link>https://github.com/lalitshankarch/rvcore</link>
       <description>Demo: https:&amp;#x2F;&amp;#x2F;www.youtube.com&amp;#x2F;watch?v=f5uygzEmdLw Hi HN, I built a RISC-V emulator that implements the RV32IM instruction set and a minimal syscall interface to run DOOM. A few weeks ago, I got my first output with a simple hello world assembly program. Since then 
-[4기준 점수] impact=4.1 freshness=2.8 depth=3.0 buzz=3.0
+[4기준 점수] impact=4.3 freshness=2.8 depth=3.0 buzz=3.0
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 11:57:12 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47996055</guid>
@@ -2634,7 +2674,7 @@
       <title>Nuclear receptor 4A1 linked to health effects of coffee: study</title>
       <link>https://sciencex.com/news/2026-04-coffee-doesnt-key-biological-pathway.html</link>
       <description>https:&amp;#x2F;&amp;#x2F;en.wikipedia.org&amp;#x2F;wiki&amp;#x2F;Nuclear_receptor_4A1
-[4기준 점수] impact=4.0 freshness=2.7 depth=2.5 buzz=3.5
+[4기준 점수] impact=4.0 freshness=2.6 depth=2.5 buzz=3.5
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 11:12:29 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47995757</guid>
@@ -2644,7 +2684,7 @@
       <title>15 Best Gifts for Plant Lovers and Gardeners (2026)</title>
       <link>https://www.wired.com/story/the-best-gifts-for-plant-lovers-and-gardeners/</link>
       <description>From smart apps and planters to unique tools, these gifts will turn even a black thumb into a next-level plant parent.
-[4기준 점수] impact=4.6 freshness=2.6 depth=2.5 buzz=1.5
+[4기준 점수] impact=5.0 freshness=2.6 depth=2.5 buzz=1.5
 출처: wired (US)</description>
       <pubDate>Sun, 03 May 2026 11:00:00 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#wired-2cicxe</guid>
@@ -2657,7 +2697,7 @@
       <title>How to Track Your Luggage (2026): AirTag, Pebblebee, CaseSafe</title>
       <link>https://www.wired.com/story/how-to-track-your-luggage/</link>
       <description>A Bluetooth tracker can prevent vacation hell, aka arriving at the beach sans bathing suit. Here are our travel tips for using one.
-[4기준 점수] impact=4.6 freshness=2.6 depth=2.5 buzz=1.5
+[4기준 점수] impact=5.0 freshness=2.6 depth=2.5 buzz=1.5
 출처: wired (US)</description>
       <pubDate>Sun, 03 May 2026 11:00:00 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#wired-uam5i1</guid>
@@ -2690,7 +2730,7 @@
       <title>Best Travel Tote Bags for Every Kind of Excursion (2026): Away, Le Pliage, Topo Designs</title>
       <link>https://www.wired.com/gallery/best-travel-tote/</link>
       <description>These hardworking travel totes handle everything from a work trip to a weekend getaway.
-[4기준 점수] impact=4.4 freshness=2.6 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.4 freshness=2.5 depth=2.5 buzz=1.5
 출처: wired (US)</description>
       <pubDate>Sun, 03 May 2026 10:32:00 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#wired-ncdpuh</guid>
@@ -2714,7 +2754,7 @@
       <title>KitchenAid Artisan Plus Stand Mixer Review: Tiny Additions, Big Difference</title>
       <link>https://www.wired.com/review/kitchenaid-artisan-plus-stand-mixer/</link>
       <description>The kitchen appliance titan changed up its beloved base-model stand mixer for the first time in over 70 years. It was worth the wait.
-[4기준 점수] impact=4.6 freshness=2.4 depth=2.9 buzz=1.5
+[4기준 점수] impact=4.7 freshness=2.4 depth=2.9 buzz=1.5
 출처: wired (US)</description>
       <pubDate>Sun, 03 May 2026 09:33:00 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#wired-ojs1dw</guid>
@@ -2736,7 +2776,7 @@
     <item>
       <title>Investors pile into clean energy as Iran war drives push for energy security</title>
       <link>https://www.ft.com/content/9921f2b5-c910-4cec-a50f-cad453935a1a</link>
-      <description>[4기준 점수] impact=4.0 freshness=2.4 depth=2.5 buzz=3.6
+      <description>[4기준 점수] impact=4.0 freshness=2.3 depth=2.5 buzz=3.6
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 09:26:48 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47995125</guid>
@@ -2746,7 +2786,7 @@
       <title>Show HN: Apple&apos;s SHARP running in the browser via ONNX runtime web</title>
       <link>https://github.com/bring-shrubbery/ml-sharp-web</link>
       <description>Hi HN, author here. SHARP is Apple&amp;#x27;s recent single-image 3D Gaussian splatting model ( https:&amp;#x2F;&amp;#x2F;arxiv.org&amp;#x2F;abs&amp;#x2F;2512.10685 ). Their reference code is PyTorch + a pretty heavy pipeline; I wanted to see if it could run in a browser with no server hop, so I exp
-[4기준 점수] impact=4.3 freshness=2.4 depth=3.8 buzz=3.7
+[4기준 점수] impact=4.6 freshness=2.3 depth=3.8 buzz=3.7
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 09:14:56 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47995037</guid>
@@ -2756,7 +2796,7 @@
       <title>Coway Airmega Mighty2 Review: The Sequel Is Better Than the Original</title>
       <link>https://www.wired.com/review/coway-airmega-mighty2/</link>
       <description>Coway&apos;s most popular air purifier gets an upgrade in looks and purification strength, though I wish it had wheels and an app.
-[4기준 점수] impact=4.6 freshness=2.3 depth=2.9 buzz=1.5
+[4기준 점수] impact=5.0 freshness=2.3 depth=2.9 buzz=1.5
 출처: wired (US)</description>
       <pubDate>Sun, 03 May 2026 09:01:00 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#wired-ft14r2</guid>
@@ -2788,7 +2828,7 @@
       <title>차세대 중형위성 2호, 해외 지상국 교신…발사 성공(종합3보)</title>
       <link>https://www.yna.co.kr/view/AKR20260503037754017</link>
       <description>(서울=연합뉴스) 조승한 기자 = 국토 자원관리, 재난 대응 등을 목표로 하는 지구관측 위성인 차세대 중형위성 2호가 3일 우주로 향했다.
-[4기준 점수] impact=4.5 freshness=2.3 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=2.2 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Sun, 03 May 2026 08:50:12 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-vy2tsu</guid>
@@ -2808,7 +2848,7 @@
       <title>차세대중형위성 2호 발사체서 정상 분리…궤도 투입(종합2보)</title>
       <link>https://www.yna.co.kr/view/AKR20260503037753017</link>
       <description>(서울=연합뉴스) 조승한 기자 = 국토 자원관리, 재난 대응 등을 목표로 하는 지구관측 위성인 차세대 중형위성 2호가 3일 우주로 향했다.
-[4기준 점수] impact=4.5 freshness=2.2 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=2.1 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Sun, 03 May 2026 08:05:13 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-vy26tb</guid>
@@ -2818,7 +2858,7 @@
       <title>[속보] 차세대 중형위성 2호 발사체서 정상 분리…궤도 투입</title>
       <link>https://www.yna.co.kr/view/AKR20260503042000017</link>
       <description>(
-[4기준 점수] impact=4.5 freshness=2.2 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=2.1 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Sun, 03 May 2026 08:02:58 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-g0ezxe</guid>
@@ -2838,7 +2878,7 @@
       <title>AI 에이전트가 회사 DB를 날렸다…누구 잘못일까</title>
       <link>https://byline.network/2026/05/1-1414/</link>
       <description>최근 개발자 커뮤니티에서 화제가 된 ‘포켓OS(PocketOS) 데이터베이스 증발 사건’은 회사 운영 인프라에 에이전트를 성급하게 연결했을 때 어떤 일이 벌어질 수 있는지 보여준다. 창업자 ‘제르 크레인(Jer Crane)’이 X(옛 트위터)에 직접 밝힌 이 사건의 전말과 원인을 짚어봤다.
-[4기준 점수] impact=4.3 freshness=2.1 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.3 freshness=2.0 depth=2.5 buzz=1.5
 출처: byline_kr (KR)</description>
       <pubDate>Sun, 03 May 2026 07:31:49 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#byline_kr-nq5tad</guid>
@@ -2879,7 +2919,7 @@
       <title>차세대 중형위성 2호 탑재 우주발사체 &apos;팰컨9&apos; 발사</title>
       <link>https://www.yna.co.kr/view/AKR20260503037751017</link>
       <description>(서울=연합뉴스) 조승한 기자 = 국토 자원관리, 재난 대응 등을 목표로 하는 지구관측 위성인 차세대 중형위성 2호가 3일 우주로 향했다.
-[4기준 점수] impact=4.5 freshness=2.0 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=1.9 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Sun, 03 May 2026 07:05:32 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-vy0wu9</guid>
@@ -2889,7 +2929,7 @@
       <title>[속보] 차세대 중형위성 2호 탑재 우주발사체 &apos;팰컨9&apos; 발사</title>
       <link>https://www.yna.co.kr/view/AKR20260503037700017</link>
       <description>(
-[4기준 점수] impact=4.5 freshness=2.0 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=1.9 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Sun, 03 May 2026 07:01:42 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-vv9avx</guid>
@@ -2899,7 +2939,7 @@
       <title>AI가 쇼핑해주는 시대 온다…금결원, AI 결제 기술검증 나서</title>
       <link>https://www.yna.co.kr/view/AKR20260503004200002</link>
       <description>(사마르칸트[우즈베키스탄]=연합뉴스) 임지우 기자 = 금융결제원은 실행형 인공지능(AI), 이른바 &amp;apos;AI 에이전트&amp;apos;가 소비자 대신 직접 물건을 ...
-[4기준 점수] impact=4.5 freshness=2.0 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=1.9 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Sun, 03 May 2026 07:00:00 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-tyx0zm</guid>
@@ -2918,7 +2958,7 @@
     <item>
       <title>Specsmaxxing – On overcoming AI psychosis, and why I write specs in YAML</title>
       <link>https://acai.sh/blog/specsmaxxing</link>
-      <description>[4기준 점수] impact=4.1 freshness=1.9 depth=2.5 buzz=3.9
+      <description>[4기준 점수] impact=4.4 freshness=1.9 depth=2.5 buzz=3.9
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 06:33:38 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47994012</guid>
@@ -2928,7 +2968,7 @@
       <title>신세계사이먼, 파주 프리미엄 아울렛서 &apos;비어 페스타&apos; 개최</title>
       <link>https://www.yna.co.kr/view/AKR20260503031000030</link>
       <description>(서울=연합뉴스) 김세린 기자 = 신세계사이먼은 파주 프리미엄 아울렛에서 대규모 야외 축제인 &amp;apos;비어 페스타&amp;apos;를 개최한다고 3일 밝혔다.
-[4기준 점수] impact=4.5 freshness=1.8 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=1.7 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Sun, 03 May 2026 05:54:47 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-bioat1</guid>
@@ -2975,18 +3015,6 @@
       <category>ai</category>
     </item>
     <item>
-      <title>Ulta Promo Codes: Up to 50% Off in May</title>
-      <link>https://www.wired.com/story/ulta-coupon/</link>
-      <description>Shop the latest beauty trends and save big using an Ulta promo code for beauty tech, makeup, and more.
-[4기준 점수] impact=4.4 freshness=1.6 depth=2.9 buzz=1.5
-출처: wired (US)</description>
-      <pubDate>Sun, 03 May 2026 05:00:00 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#wired-hlpitf</guid>
-      <category>ai</category>
-      <category>Gear</category>
-      <category>Gear / Deals</category>
-    </item>
-    <item>
       <title>Top Rover Promo Codes and Referral Deals for May 2026</title>
       <link>https://www.wired.com/story/rover-promo-code/</link>
       <description>Score your Rover promo code for 2026.
@@ -2994,6 +3022,18 @@
 출처: wired (US)</description>
       <pubDate>Sun, 03 May 2026 05:00:00 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#wired-y0tqps</guid>
+      <category>ai</category>
+      <category>Gear</category>
+      <category>Gear / Deals</category>
+    </item>
+    <item>
+      <title>Ulta Promo Codes: Up to 50% Off in May</title>
+      <link>https://www.wired.com/story/ulta-coupon/</link>
+      <description>Shop the latest beauty trends and save big using an Ulta promo code for beauty tech, makeup, and more.
+[4기준 점수] impact=4.4 freshness=1.6 depth=2.9 buzz=1.5
+출처: wired (US)</description>
+      <pubDate>Sun, 03 May 2026 05:00:00 GMT</pubDate>
+      <guid isPermaLink="false">https://daily-news.local/#wired-hlpitf</guid>
       <category>ai</category>
       <category>Gear</category>
       <category>Gear / Deals</category>
@@ -3048,7 +3088,7 @@
     <item>
       <title>Kimi K2.6 just beat Claude, GPT-5.5, and Gemini in a coding challenge</title>
       <link>https://thinkpol.ca/2026/04/30/an-open-weights-chinese-model-just-beat-claude-gpt-5-5-and-gemini-in-a-programming-challenge/</link>
-      <description>[4기준 점수] impact=4.0 freshness=1.5 depth=2.5 buzz=4.0
+      <description>[4기준 점수] impact=4.2 freshness=1.4 depth=2.5 buzz=4.0
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 04:05:28 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47993235</guid>
@@ -3058,7 +3098,7 @@
       <title>SKB, 안전문화 확산 공모전…29일까지 접수</title>
       <link>https://www.yna.co.kr/view/AKR20260503026300017</link>
       <description>(서울=연합뉴스) 유현민 기자 = SK브로드밴드는 시민참여형 안전문화 확산을 위해 서울지방고용노동청, 안전보건공단 서울광역본부와 함께 &amp;apos;대국민 ...
-[4기준 점수] impact=4.5 freshness=1.5 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=1.4 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Sun, 03 May 2026 04:01:35 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-dixxz3</guid>
@@ -3168,7 +3208,7 @@
       <title>충남도 &quot;인공지능으로 모기 감시해 감염병 대응&quot;</title>
       <link>https://www.yna.co.kr/view/AKR20260503023400063</link>
       <description>(홍성=연합뉴스) 박주영 기자 = 충남도 보건환경연구원은 기후변화에 따른 모기 매개 감염병 증가에 선제 대응하기 위해 &amp;apos;인공지능(AI) 기반 실...
-[4기준 점수] impact=4.5 freshness=1.3 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=1.2 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Sun, 03 May 2026 02:52:01 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-dy0vuc</guid>
@@ -3177,7 +3217,7 @@
     <item>
       <title>AI, Intimacy, and the Data You Never Meant to Share</title>
       <link>https://fshot.org/techzone/the-algorithm-knows.php</link>
-      <description>[4기준 점수] impact=4.0 freshness=1.3 depth=2.5 buzz=3.4
+      <description>[4기준 점수] impact=4.0 freshness=1.2 depth=2.5 buzz=3.4
 출처: hackernews (Global)</description>
       <pubDate>Sun, 03 May 2026 02:42:43 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#hn-47992802</guid>
@@ -3226,7 +3266,7 @@
       <title>[게시판] 산업연구원-하나금융연구소, 생산적 금융 활성화 MOU</title>
       <link>https://www.yna.co.kr/view/AKR20260503021200003</link>
       <description>▲ 산업연구원과 하나은행 하나금융연구소가 생산적 금융 활성화를 위한 업무협약(MOU)을 체결했다고 3일 밝혔다. 양 기관은 산업과 금융정책 연계...
-[4기준 점수] impact=4.5 freshness=1.2 depth=2.5 buzz=1.5
+[4기준 점수] impact=4.5 freshness=1.1 depth=2.5 buzz=1.5
 출처: yna_it (KR)</description>
       <pubDate>Sun, 03 May 2026 02:09:19 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#yna_it-gcuxja</guid>
@@ -3293,70 +3333,12 @@
       <category>ai</category>
     </item>
     <item>
-      <title>삼성바이오 파업 사흘째…&apos;임금 인상·경영권 요구&apos; 노사 이견(종합)</title>
-      <link>https://www.yna.co.kr/view/AKR20260503006051017</link>
-      <description>(서울=연합뉴스) 신선미 기자 = 삼성바이오로직스[207940] 전면 파업이 사흘째 이어지고 있다.
-[4기준 점수] impact=4.5 freshness=1.1 depth=2.5 buzz=1.5
-출처: yna_it (KR)</description>
-      <pubDate>Sun, 03 May 2026 01:34:19 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#yna_it-1hg3cm</guid>
-      <category>ai</category>
-    </item>
-    <item>
-      <title>LG유니참, 취약 계층에 위생용품 37만장 기부</title>
-      <link>https://www.yna.co.kr/view/AKR20260503018900030</link>
-      <description>(서울=연합뉴스) 김세린 기자 = LG유니참은 위생용품 나눔 캠페인 &amp;apos;쉐어 패드&amp;apos;를 통해 취약계층 여성과 청소년, 유아를 위한 생리대와 기저귀 ...
-[4기준 점수] impact=4.5 freshness=1.1 depth=2.5 buzz=1.5
-출처: yna_it (KR)</description>
-      <pubDate>Sun, 03 May 2026 01:32:27 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#yna_it-a5i46j</guid>
-      <category>ai</category>
-    </item>
-    <item>
-      <title>청주시, 4일부터 농업인 공익수당 지원 신청접수</title>
-      <link>https://www.yna.co.kr/view/AKR20260503018600064</link>
-      <description>(청주=연합뉴스) 김형우 기자 = 청주시는 4일부터 6월 30일까지 올해 농어업인 공익수당 지원 신청을 받는다고 3일 밝혔다.
-[4기준 점수] impact=4.5 freshness=1.0 depth=2.5 buzz=1.5
-출처: yna_it (KR)</description>
-      <pubDate>Sun, 03 May 2026 01:26:36 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#yna_it-bkmzaf</guid>
-      <category>ai</category>
-    </item>
-    <item>
-      <title>Maryland to ban A.I.-driven price increases in grocery stores</title>
-      <link>https://www.nytimes.com/2026/05/01/business/surveillance-pricing-groceries-maryland.html</link>
-      <description>[4기준 점수] impact=4.0 freshness=1.0 depth=2.5 buzz=3.8
-출처: hackernews (Global)</description>
-      <pubDate>Sun, 03 May 2026 01:24:09 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#hn-47992349</guid>
-      <category>ai</category>
-    </item>
-    <item>
-      <title>현대차그룹, 미국 하이브리드·전기차 어워즈서 7개 부문 석권</title>
-      <link>https://www.yna.co.kr/view/AKR20260503016500003</link>
-      <description>(서울=연합뉴스) 김보경 기자 = 현대차그룹은 미국 매체 US 뉴스 앤드 월드 리포트가 발표한 &amp;apos;2026 최고의 하이브리드·전기차 어워즈&amp;apos;에서 ...
-[4기준 점수] impact=4.5 freshness=1.0 depth=2.5 buzz=1.5
-출처: yna_it (KR)</description>
-      <pubDate>Sun, 03 May 2026 01:23:11 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#yna_it-tmmvp9</guid>
-      <category>ai</category>
-    </item>
-    <item>
-      <title>A network smuggling Starlink tech into Iran to beat internet blackout</title>
-      <link>https://www.bbc.com/news/articles/cvgzk91leweo</link>
-      <description>[4기준 점수] impact=4.0 freshness=1.0 depth=2.5 buzz=3.8
-출처: hackernews (Global)</description>
-      <pubDate>Sun, 03 May 2026 01:22:41 GMT</pubDate>
-      <guid isPermaLink="false">https://daily-news.local/#hn-47992338</guid>
-      <category>ai</category>
-    </item>
-    <item>
       <title>[인사이트] DeepClaude – Claude Code agent loop with DeepSeek V4 Pro, 1…가 만든 의사결정 창</title>
       <link>https://daily-news.local/#i01</link>
       <description>기회 탐지자 파리의 시각: DeepClaude – Claude Code agent loop with DeepSeek V4 Pro, 17x cheaper 외 관련 기사를 종합한 분석.
 핵심 질문: 이 발표가 6개월 안의 의사결정을 어떻게 강제하는가?
 (분야 전문가: 기회 탐지자 · 파리)</description>
-      <pubDate>Mon, 04 May 2026 01:08:59 GMT</pubDate>
+      <pubDate>Mon, 04 May 2026 01:25:25 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#i01</guid>
       <category>insight</category>
       <category>opportunity</category>
@@ -3367,95 +3349,95 @@
       <description>패턴 인식가 메의 시각: Southwest Headquarters Tour 외 관련 기사를 종합한 분석.
 핵심 질문: 이전 인프라 표준화 사이클과 어떤 패턴이 일치하는가?
 (분야 전문가: 패턴 인식가 · 메)</description>
-      <pubDate>Mon, 04 May 2026 01:08:59 GMT</pubDate>
+      <pubDate>Mon, 04 May 2026 01:25:25 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#i02</guid>
       <category>insight</category>
       <category>pattern</category>
     </item>
     <item>
-      <title>[인사이트] The text mode lie: why modern TUIs are a nightmare for acce…의 진짜 비용</title>
+      <title>[인사이트] BYOMesh – New LoRa mesh radio offers 100x the bandwidth의 진짜 비용</title>
       <link>https://daily-news.local/#i03</link>
-      <description>회의주의자 콜의 시각: The text mode lie: why modern TUIs are a nightmare for accessibility 외 관련 기사를 종합한 분석.
+      <description>회의주의자 콜의 시각: BYOMesh – New LoRa mesh radio offers 100x the bandwidth 외 관련 기사를 종합한 분석.
 핵심 질문: 마케팅 수치에서 production-ready로 가는 비용은 누가 부담하는가?
 (분야 전문가: 회의주의자 · 콜)</description>
-      <pubDate>Mon, 04 May 2026 01:08:59 GMT</pubDate>
+      <pubDate>Mon, 04 May 2026 01:25:25 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#i03</guid>
       <category>insight</category>
       <category>caution</category>
     </item>
     <item>
-      <title>[인사이트] BYOMesh – New LoRa mesh radio offers 100x the bandwidth — 시장 카토그래피</title>
+      <title>[인사이트] The text mode lie: why modern TUIs are a nightmare for acce… — 시장 카토그래피</title>
       <link>https://daily-news.local/#i04</link>
-      <description>시장 지도제작자 아틀라스의 시각: BYOMesh – New LoRa mesh radio offers 100x the bandwidth 외 관련 기사를 종합한 분석.
+      <description>시장 지도제작자 아틀라스의 시각: The text mode lie: why modern TUIs are a nightmare for accessibility 외 관련 기사를 종합한 분석.
 핵심 질문: 이 시장이 5년 후 어떤 레이어로 분화될 것인가?
 (분야 전문가: 시장 지도제작자 · 아틀라스)</description>
-      <pubDate>Mon, 04 May 2026 01:08:59 GMT</pubDate>
+      <pubDate>Mon, 04 May 2026 01:25:25 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#i04</guid>
       <category>insight</category>
       <category>bullish</category>
     </item>
     <item>
-      <title>[인사이트] Agentic Coding Is a Trap의 엣지 케이스</title>
+      <title>[인사이트] Metal Gear Solid 2&apos;s source code has been leaked on 4chan의 엣지 케이스</title>
       <link>https://daily-news.local/#i05</link>
-      <description>엣지 케이스 헌터 닉스의 시각: Agentic Coding Is a Trap 외 관련 기사를 종합한 분석.
+      <description>엣지 케이스 헌터 닉스의 시각: Metal Gear Solid 2&apos;s source code has been leaked on 4chan 외 관련 기사를 종합한 분석.
 핵심 질문: 이 시스템이 깨지는 가장 작은 시나리오는?
 (분야 전문가: 엣지 케이스 헌터 · 닉스)</description>
-      <pubDate>Mon, 04 May 2026 01:08:59 GMT</pubDate>
+      <pubDate>Mon, 04 May 2026 01:25:25 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#i05</guid>
       <category>insight</category>
       <category>caution</category>
     </item>
     <item>
-      <title>[인사이트] Let&apos;s Buy Spirit Air 강세 thesis</title>
+      <title>[인사이트] Agentic Coding Is a Trap 강세 thesis</title>
       <link>https://daily-news.local/#i06</link>
-      <description>강세 시나리오 빌더 베가의 시각: Let&apos;s Buy Spirit Air 외 관련 기사를 종합한 분석.
+      <description>강세 시나리오 빌더 베가의 시각: Agentic Coding Is a Trap 외 관련 기사를 종합한 분석.
 핵심 질문: 이 강세 thesis가 깨지는 첫 번째 신호는?
 (분야 전문가: 강세 시나리오 빌더 · 베가)</description>
-      <pubDate>Mon, 04 May 2026 01:08:59 GMT</pubDate>
+      <pubDate>Mon, 04 May 2026 01:25:25 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#i06</guid>
       <category>insight</category>
       <category>bullish</category>
     </item>
     <item>
-      <title>[인사이트] New statue in London, attributed to Banksy, of a suited man… — 역사적 변곡점</title>
+      <title>[인사이트] Let&apos;s Buy Spirit Air — 역사적 변곡점</title>
       <link>https://daily-news.local/#i07</link>
-      <description>역사 비교가 세이지의 시각: New statue in London, attributed to Banksy, of a suited man, blinded by a flag 외 관련 기사를 종합한 분석.
+      <description>역사 비교가 세이지의 시각: Let&apos;s Buy Spirit Air 외 관련 기사를 종합한 분석.
 핵심 질문: 역사적으로 어느 변곡점과 가장 닮았는가?
 (분야 전문가: 역사 비교가 · 세이지)</description>
-      <pubDate>Mon, 04 May 2026 01:08:59 GMT</pubDate>
+      <pubDate>Mon, 04 May 2026 01:25:25 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#i07</guid>
       <category>insight</category>
       <category>pattern</category>
     </item>
     <item>
-      <title>[인사이트] Why TUIs Are Back 커뮤니티 펄스</title>
+      <title>[인사이트] New statue in London, attributed to Banksy, of a suited man… 커뮤니티 펄스</title>
       <link>https://daily-news.local/#i08</link>
-      <description>커뮤니티 펄스 리더 에코의 시각: Why TUIs Are Back 외 관련 기사를 종합한 분석.
+      <description>커뮤니티 펄스 리더 에코의 시각: New statue in London, attributed to Banksy, of a suited man, blinded by a flag 외 관련 기사를 종합한 분석.
 핵심 질문: 지금 커뮤니티 1위가 1~2주 뒤 어떤 결정으로 이어지는가?
 (분야 전문가: 커뮤니티 펄스 리더 · 에코)</description>
-      <pubDate>Mon, 04 May 2026 01:08:59 GMT</pubDate>
+      <pubDate>Mon, 04 May 2026 01:25:25 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#i08</guid>
       <category>insight</category>
       <category>pattern</category>
     </item>
     <item>
-      <title>[인사이트] Metal Gear Solid 2&apos;s source code has been leaked on 4chan — 디자인 직무 재정의</title>
+      <title>[인사이트] Why TUIs Are Back — 디자인 직무 재정의</title>
       <link>https://daily-news.local/#i09</link>
-      <description>디자인 비평가 아이리스의 시각: Metal Gear Solid 2&apos;s source code has been leaked on 4chan 외 관련 기사를 종합한 분석.
+      <description>디자인 비평가 아이리스의 시각: Why TUIs Are Back 외 관련 기사를 종합한 분석.
 핵심 질문: 이 변화가 디자이너 직무를 어떻게 재정의하는가?
 (분야 전문가: 디자인 비평가 · 아이리스)</description>
-      <pubDate>Mon, 04 May 2026 01:08:59 GMT</pubDate>
+      <pubDate>Mon, 04 May 2026 01:25:25 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#i09</guid>
       <category>insight</category>
       <category>opportunity</category>
     </item>
     <item>
-      <title>[인사이트] The &apos;Hidden&apos; Costs of Great Abstractions — 추론 인프라 시간선</title>
+      <title>[인사이트] Mercedes-Benz commits to bringing back physical buttons — 추론 인프라 시간선</title>
       <link>https://daily-news.local/#i10</link>
-      <description>테크스택 전략가 오리온의 시각: The &apos;Hidden&apos; Costs of Great Abstractions 외 관련 기사를 종합한 분석.
+      <description>테크스택 전략가 오리온의 시각: Mercedes-Benz commits to bringing back physical buttons 외 관련 기사를 종합한 분석.
 핵심 질문: 이 발표가 우리 추론·인프라 결정의 시간선을 어떻게 바꾸는가?
 (분야 전문가: 테크스택 전략가 · 오리온)</description>
-      <pubDate>Mon, 04 May 2026 01:08:59 GMT</pubDate>
+      <pubDate>Mon, 04 May 2026 01:25:25 GMT</pubDate>
       <guid isPermaLink="false">https://daily-news.local/#i10</guid>
       <category>insight</category>
       <category>bullish</category>

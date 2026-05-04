@@ -33,7 +33,7 @@
     /* P2 perf: 카드는 화면 밖이면 paint/layout 스킵. 18~200+ 카드에서 LCP 개선. */
     .card { content-visibility: auto; contain-intrinsic-size: 0 380px; }
     .insight-card { content-visibility: auto; contain-intrinsic-size: 0 220px; }
-    /* hero theme + tech strip — styles.css 미오염을 위해 inline. */
+    /* hero theme + tech strip — styles.css 의 --bg-card token 사용. */
     .theme-strip, .tech-strip {
       display: flex; flex-wrap: wrap; gap: 6px;
       padding: 12px 16px; margin-top: 12px;
@@ -163,28 +163,37 @@
       <div class="tech-strip" id="tech-strip" aria-label="오늘 언급된 기술"></div>
     </section>
 
-    <!-- ======================== TABS ======================== -->
-    <nav class="tabs-nav" role="tablist">
-      <button class="tab-btn" role="tab" data-tab="news" data-active="true">
+    <!-- ======================== TABS — Iter 9 ARIA: aria-selected + aria-controls -->
+    <nav class="tabs-nav" role="tablist" aria-label="콘텐츠 카테고리">
+      <button class="tab-btn" role="tab" data-tab="news"
+              data-active="true" aria-selected="true" aria-controls="panel-news"
+              id="tab-news" tabindex="0">
         <span>📰 뉴스</span>
         <span class="tab-btn__count" id="count-news">—</span>
       </button>
-      <button class="tab-btn" role="tab" data-tab="community">
+      <button class="tab-btn" role="tab" data-tab="community"
+              aria-selected="false" aria-controls="panel-community"
+              id="tab-community" tabindex="-1">
         <span>🧑‍🤝‍🧑 커뮤니티</span>
         <span class="tab-btn__count" id="count-community">—</span>
       </button>
-      <button class="tab-btn" role="tab" data-tab="oss">
+      <button class="tab-btn" role="tab" data-tab="oss"
+              aria-selected="false" aria-controls="panel-oss"
+              id="tab-oss" tabindex="-1">
         <span>📦 오픈소스</span>
         <span class="tab-btn__count" id="count-oss">—</span>
       </button>
-      <button class="tab-btn" role="tab" data-tab="insights">
+      <button class="tab-btn" role="tab" data-tab="insights"
+              aria-selected="false" aria-controls="panel-insights"
+              id="tab-insights" tabindex="-1">
         <span>🧠 인사이트</span>
         <span class="tab-btn__count" id="count-insights">—</span>
       </button>
     </nav>
 
-    <!-- ======================== NEWS TAB ======================== -->
-    <section class="tab-content" data-tab="news" role="tabpanel">
+    <!-- ======================== NEWS TAB — Iter 9 ARIA + Iter 3 skeleton -->
+    <section class="tab-content" data-tab="news" role="tabpanel"
+             id="panel-news" aria-labelledby="tab-news" tabindex="0">
       <div class="breadcrumb" id="news-breadcrumb">전체</div>
 
       <div class="toolbar">
@@ -211,11 +220,20 @@
         </div>
       </div>
 
-      <div class="cards-grid" id="news-grid"></div>
+      <div class="cards-grid" id="news-grid" aria-busy="true" aria-live="polite">
+        <!-- Iter 3 — Hogan: skeleton placeholders 6장. JS가 첫 카드 push 시 제거. -->
+        <div class="skeleton-card"><div class="skeleton-card-line skeleton-card-line--short"></div><div class="skeleton-card-line skeleton-card-line--title"></div><div class="skeleton-card-line skeleton-card-line--long"></div><div class="skeleton-card-line skeleton-card-line--med"></div></div>
+        <div class="skeleton-card"><div class="skeleton-card-line skeleton-card-line--short"></div><div class="skeleton-card-line skeleton-card-line--title"></div><div class="skeleton-card-line skeleton-card-line--long"></div><div class="skeleton-card-line skeleton-card-line--med"></div></div>
+        <div class="skeleton-card"><div class="skeleton-card-line skeleton-card-line--short"></div><div class="skeleton-card-line skeleton-card-line--title"></div><div class="skeleton-card-line skeleton-card-line--long"></div><div class="skeleton-card-line skeleton-card-line--med"></div></div>
+        <div class="skeleton-card"><div class="skeleton-card-line skeleton-card-line--short"></div><div class="skeleton-card-line skeleton-card-line--title"></div><div class="skeleton-card-line skeleton-card-line--long"></div><div class="skeleton-card-line skeleton-card-line--med"></div></div>
+        <div class="skeleton-card"><div class="skeleton-card-line skeleton-card-line--short"></div><div class="skeleton-card-line skeleton-card-line--title"></div><div class="skeleton-card-line skeleton-card-line--long"></div><div class="skeleton-card-line skeleton-card-line--med"></div></div>
+        <div class="skeleton-card"><div class="skeleton-card-line skeleton-card-line--short"></div><div class="skeleton-card-line skeleton-card-line--title"></div><div class="skeleton-card-line skeleton-card-line--long"></div><div class="skeleton-card-line skeleton-card-line--med"></div></div>
+      </div>
     </section>
 
-    <!-- ======================== COMMUNITY TAB ======================== -->
-    <section class="tab-content" data-tab="community" role="tabpanel" hidden>
+    <!-- ======================== COMMUNITY TAB — Iter 9 ARIA -->
+    <section class="tab-content" data-tab="community" role="tabpanel"
+             id="panel-community" aria-labelledby="tab-community" tabindex="0" hidden>
       <div class="toolbar">
         <div class="toolbar-row">
           <div class="chip-row" id="community-sources"></div>
@@ -237,11 +255,12 @@
         </div>
       </div>
 
-      <div class="cards-grid cards-grid--community" id="community-grid"></div>
+      <div class="cards-grid cards-grid--community" id="community-grid" aria-busy="true" aria-live="polite"></div>
     </section>
 
-    <!-- ======================== OSS TAB ======================== -->
-    <section class="tab-content" data-tab="oss" role="tabpanel" hidden>
+    <!-- ======================== OSS TAB — Iter 9 ARIA -->
+    <section class="tab-content" data-tab="oss" role="tabpanel"
+             id="panel-oss" aria-labelledby="tab-oss" tabindex="0" hidden>
       <div class="toolbar">
         <div class="toolbar-row">
           <div class="chip-row" id="oss-types"></div>
@@ -256,11 +275,12 @@
         </div>
       </div>
 
-      <div class="cards-grid cards-grid--oss" id="oss-grid"></div>
+      <div class="cards-grid cards-grid--oss" id="oss-grid" aria-busy="true" aria-live="polite"></div>
     </section>
 
-    <!-- ======================== INSIGHTS TAB ======================== -->
-    <section class="tab-content" data-tab="insights" role="tabpanel" hidden>
+    <!-- ======================== INSIGHTS TAB — Iter 9 ARIA -->
+    <section class="tab-content" data-tab="insights" role="tabpanel"
+             id="panel-insights" aria-labelledby="tab-insights" tabindex="0" hidden>
       <div class="insights-toolbar">
         <div class="view-toggle" id="insights-view">
           <button data-view="compact" data-active="true">📋 컴팩트</button>
@@ -268,7 +288,7 @@
         </div>
         <span class="toolbar__counter" id="insights-counter">10명 전문가</span>
       </div>
-      <div class="insights-grid" id="insights-grid" data-mode="compact"></div>
+      <div class="insights-grid" id="insights-grid" data-mode="compact" aria-busy="true" aria-live="polite"></div>
     </section>
 
     <!-- ======================== MULTI-SELECT TOOLBAR ======================== -->
@@ -281,10 +301,10 @@
     </div>
   </main>
 
-  <!-- ======================== FOOTER ======================== -->
+  <!-- ======================== FOOTER — Iter 5 Walter: 따뜻한 톤 + 내부 메모 제거 -->
   <footer class="app-footer">
     <div class="app-footer__inner">
-      <span>Daily News · 매일 아침 KST 06:00 자동 발행</span>
+      <span>매일 아침 6시, 어제 하루를 다시 보는 IT 브리핑.</span>
       <span class="sep">·</span>
       <span id="footer-generated">생성 시각: —</span>
       <span class="sep">·</span>
@@ -293,8 +313,6 @@
       <a href="feed.xml">📡 RSS 2.0</a>
       <span class="sep">·</span>
       <button id="footer-gmail">✉️ Gmail 드래프트</button>
-      <span class="sep">·</span>
-      <span style="margin-left: auto; opacity: 0.6;">Compound Engineering · L3 Meta-loop</span>
     </div>
     <div class="app-footer__inner app-footer__links" style="padding-top: 0;">
       <strong>외부 자원:</strong>

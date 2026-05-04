@@ -2,7 +2,7 @@
 // To rebuild: node scripts/collect.js && node scripts/score.js && node scripts/build-today.js
 window.__DAILY__ = {
   "date": "2026-05-03",
-  "generatedAt": "2026-05-04T01:10:28.735Z",
+  "generatedAt": "2026-05-04T01:25:07.316Z",
   "window": {
     "hours": 24
   },
@@ -12,9 +12,9 @@ window.__DAILY__ = {
     "vs7d": 0
   },
   "counts": {
-    "news": 324,
-    "community": 1142,
-    "oss": 192,
+    "news": 322,
+    "community": 1150,
+    "oss": 191,
     "insights": 10
   },
   "fiveLines": [
@@ -35,8 +35,8 @@ window.__DAILY__ = {
       "anchorId": "hn-48002938"
     },
     {
-      "text": "New statue in London, attributed to Banksy, of a suited man, blinded by a flag",
-      "anchorId": "hn-48000152"
+      "text": "Metal Gear Solid 2's source code has been leaked on 4chan",
+      "anchorId": "hn-47998790"
     }
   ],
   "quote": {
@@ -45,9 +45,9 @@ window.__DAILY__ = {
     "role": "데일리 큐레이션",
     "url": ""
   },
-  "lead": "오늘 324건의 뉴스 중 종합 평균 3.78점. 최고 점수 항목은 \"DeepClaude – Claude Code agent loop with DeepSeek V4 Pro, 17x cheaper\"이며, hackernews 출처. 의사결정자는 이 항목의 영향 시간선을 다음 1~2주 내에 평가해야 한다. (LLM 통합 후 분석이 자동 생성됩니다.)",
+  "lead": "오늘 322건의 뉴스 중 종합 평균 3.78점. 최고 점수 항목은 \"DeepClaude – Claude Code agent loop with DeepSeek V4 Pro, 17x cheaper\"이며, hackernews 출처. 의사결정자는 이 항목의 영향 시간선을 다음 1~2주 내에 평가해야 한다. (LLM 통합 후 분석이 자동 생성됩니다.)",
   "stats": {
-    "newsTotal": 324,
+    "newsTotal": 322,
     "score45plus": 0,
     "categoriesActive": 6,
     "insights": 10,
@@ -57,12 +57,12 @@ window.__DAILY__ = {
   "buckets": {
     "yesterday": {
       "label": "어제",
-      "count": 86,
+      "count": 80,
       "active": true
     },
     "today": {
       "label": "오늘",
-      "count": 238,
+      "count": 242,
       "active": false
     },
     "archival": {
@@ -72,19 +72,19 @@ window.__DAILY__ = {
     },
     "all": {
       "label": "전체",
-      "count": 324,
+      "count": 322,
       "active": false
     }
   },
   "sourceDiversity": [
     {
       "region": "US",
-      "percent": 8,
+      "percent": 7,
       "color": "#3b82f6"
     },
     {
       "region": "KR",
-      "percent": 47,
+      "percent": 48,
       "color": "#ef4444"
     },
     {
@@ -165,6 +165,26 @@ window.__DAILY__ = {
       "headline": false
     },
     {
+      "id": "hn-48003441",
+      "title": "GameStop Proposes to Acquire eBay at $125.00 per Share",
+      "url": "https://investor.gamestop.com/news-releases/news-details/2026/GameStop-Proposes-to-Acquire-eBay-at-125-00-Per-Share/",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-04T01:07:56.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4.6,
+        "freshness": 5,
+        "depth": 2.5,
+        "buzz": 2
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
       "id": "hn-47998946",
       "title": "Southwest Headquarters Tour",
       "url": "https://katherinemichel.github.io/blog/travel/southwest-headquarters-tour-2026.html",
@@ -185,26 +205,6 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "hn-48003441",
-      "title": "GameStop Proposes to Acquire eBay at $125.00 per Share",
-      "url": "https://investor.gamestop.com/news-releases/news-details/2026/GameStop-Proposes-to-Acquire-eBay-at-125-00-Per-Share/",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-04T01:07:56.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4.6,
-        "freshness": 5,
-        "depth": 2.5,
-        "buzz": 1.8
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
       "id": "hn-48002705",
       "title": "GameStop Is Offering to Buy eBay for $56B, CEO Ryan Cohen Says",
       "url": "https://www.wsj.com/business/deals/gamestop-is-offering-to-buy-ebay-for-56-billion-ceo-ryan-cohen-says-fd330f5a",
@@ -219,26 +219,6 @@ window.__DAILY__ = {
         "freshness": 4.7,
         "depth": 2.5,
         "buzz": 2.3
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-47999460",
-      "title": "I recreated the Apple Lisa computer inside an FPGA [video]",
-      "url": "https://www.youtube.com/watch?v=8jNQDcpHc68",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T17:45:47.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4.6,
-        "freshness": 3.8,
-        "depth": 2.5,
-        "buzz": 3.3
       },
       "tags": [],
       "featured": false,
@@ -285,15 +265,15 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "yna_it-r4zzyq",
-      "title": "[게시판] 매일유업, 어린이날 맞아 '성가정입양원'에 나눔 활동",
-      "url": "https://www.yna.co.kr/view/AKR20260504045500030",
+      "id": "yna_it-fheqe9",
+      "title": "아이티센글로벌, 기관투자자 대상 400억원 규모 CB 발행",
+      "url": "https://www.yna.co.kr/view/AKR20260504047300017",
       "source": "yna_it",
       "sourceLabel": "연합뉴스 IT",
-      "publishedAt": "2026-05-04T01:01:26.000Z",
+      "publishedAt": "2026-05-04T01:10:09.000Z",
       "category": "ai",
       "sourceCountry": "KR",
-      "summary": "▲ 매일유업[267980] 사내 봉사 동호회는 어린이날을 맞아 국내 입양 전문기관인 &apos;성가정입양원&apos;을 방문해 유아식 전문 브랜드 &apos;맘마밀&apos;을 비...",
+      "summary": "(서울=연합뉴스) 권하영 기자 = 아이티센글로벌[124500]은 총 400억원 규모의 전환사채(CB)를 발행한다고 4일 밝혔다.",
       "scores": {
         "impact": 4.5,
         "freshness": 5,
@@ -305,175 +285,15 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "yna_it-fwbvr9",
-      "title": "세라젬, '세븐해빗' 건강 패키지 출시…\"7개 맞춤형 관리 제안\"",
-      "url": "https://www.yna.co.kr/view/AKR20260504039100030",
+      "id": "yna_it-fygcoa",
+      "title": "강원 고성군, 해양관광 복합지구 명칭 '송지호 바다 하늘' 확정",
+      "url": "https://www.yna.co.kr/view/AKR20260504047200062",
       "source": "yna_it",
       "sourceLabel": "연합뉴스 IT",
-      "publishedAt": "2026-05-04T01:00:48.000Z",
+      "publishedAt": "2026-05-04T01:08:13.000Z",
       "category": "ai",
       "sourceCountry": "KR",
-      "summary": "(서울=연합뉴스) 이상서 기자 = 세라젬은 가정의 달인 5월을 맞아 &apos;세븐해빗(7-Habit)&apos;을 기반으로 한 건강 관리 패키지를 선보인다고 4...",
-      "scores": {
-        "impact": 4.5,
-        "freshness": 5,
-        "depth": 2.5,
-        "buzz": 1.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "yna_it-4l0oef",
-      "title": "제주도, 등유·LPG 사용 취약계층에 바우처 5만원 추가 지원",
-      "url": "https://www.yna.co.kr/view/AKR20260504043000056",
-      "source": "yna_it",
-      "sourceLabel": "연합뉴스 IT",
-      "publishedAt": "2026-05-04T01:00:17.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "(제주=연합뉴스) 고성식 기자 = 제주도는 도내 등유·액화석유가스(LPG)를 주 난방에너지원으로 쓰는 에너지바우처 수급 세대에 19만7천원을 지...",
-      "scores": {
-        "impact": 4.5,
-        "freshness": 5,
-        "depth": 2.5,
-        "buzz": 1.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "yna_it-d225gm",
-      "title": "K-브랜드 노린 짝퉁 확산…작년 지재권 침해 2천800억원 적발",
-      "url": "https://www.yna.co.kr/view/AKR20260504039700002",
-      "source": "yna_it",
-      "sourceLabel": "연합뉴스 IT",
-      "publishedAt": "2026-05-04T00:58:33.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "",
-      "scores": {
-        "impact": 4.5,
-        "freshness": 5,
-        "depth": 2.5,
-        "buzz": 1.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "yna_it-ro63cl",
-      "title": "한국맥도날드, 정규직 '매니저 트레이니' 공채…17일까지 접수",
-      "url": "https://www.yna.co.kr/view/AKR20260504037500030",
-      "source": "yna_it",
-      "sourceLabel": "연합뉴스 IT",
-      "publishedAt": "2026-05-04T00:57:28.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "(서울=연합뉴스) 홍국기 기자 = 한국맥도날드는 오는 17일까지 채용 홈페이지를 통해 정규직 &apos;매니저 트레이니(trainee·수습 직원)&apos; 공채...",
-      "scores": {
-        "impact": 4.5,
-        "freshness": 5,
-        "depth": 2.5,
-        "buzz": 1.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "yna_it-35vtb9",
-      "title": "삼성바이오 노조 \"오늘 최종협상 아냐…사측 의지 확인 자리\"",
-      "url": "https://www.yna.co.kr/view/AKR20260504043300017",
-      "source": "yna_it",
-      "sourceLabel": "연합뉴스 IT",
-      "publishedAt": "2026-05-04T00:56:30.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "(서울=연합뉴스) 신선미 기자 = 삼성바이오로직스[207940] 노동조합은 4일 사측과 만나는 간담회가 &apos;최종 협상&apos; 자리가 아니라고 입장을 밝...",
-      "scores": {
-        "impact": 4.5,
-        "freshness": 5,
-        "depth": 2.5,
-        "buzz": 1.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "yna_it-2ou6sw",
-      "title": "홍천군, 가정의 달 맞아 한우 최대 50% 할인 판매",
-      "url": "https://www.yna.co.kr/view/AKR20260504043400062",
-      "source": "yna_it",
-      "sourceLabel": "연합뉴스 IT",
-      "publishedAt": "2026-05-04T00:55:34.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "(홍천=연합뉴스) 류호준 기자 = 강원 홍천군은 5월 가정의 달을 맞아 지역 대표 특산물인 &apos;늘푸름홍천한우&apos; 소비 촉진을 위한 특별 할인 행사를...",
-      "scores": {
-        "impact": 4.5,
-        "freshness": 5,
-        "depth": 2.5,
-        "buzz": 1.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "yna_it-27skju",
-      "title": "국내 최대 단일차종 레이싱대회 '현대 N 페스티벌' 개막",
-      "url": "https://www.yna.co.kr/view/AKR20260504043500003",
-      "source": "yna_it",
-      "sourceLabel": "연합뉴스 IT",
-      "publishedAt": "2026-05-04T00:54:56.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "(서울=연합뉴스) 김보경 기자 = 현대차는 8일 용인 에버랜드 스피드웨이에서 열리는 1라운드 경기를 시작으로 &apos;2026 현대 N 페스티벌&apos; 시즌...",
-      "scores": {
-        "impact": 4.5,
-        "freshness": 5,
-        "depth": 2.5,
-        "buzz": 1.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "yna_it-wxlj4b",
-      "title": "쿠팡 알럭스, 17일까지 '뷰티 페스타'…32개 럭셔리 브랜드 참여",
-      "url": "https://www.yna.co.kr/view/AKR20260504033100030",
-      "source": "yna_it",
-      "sourceLabel": "연합뉴스 IT",
-      "publishedAt": "2026-05-04T00:54:36.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "(서울=연합뉴스) 정수연 기자 = 쿠팡의 럭셔리 뷰티·패션 버티컬 서비스 알럭스(R.LUX)는 할인 행사 &apos;알럭스 뷰티 페스타&apos;를 개최한다고 4...",
-      "scores": {
-        "impact": 4.5,
-        "freshness": 5,
-        "depth": 2.5,
-        "buzz": 1.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "yna_it-wzq05i",
-      "title": "카카오모빌리티 피지컬AI 부문장 \"자율주행은 데이터 전쟁\"",
-      "url": "https://www.yna.co.kr/view/AKR20260504041200017",
-      "source": "yna_it",
-      "sourceLabel": "연합뉴스 IT",
-      "publishedAt": "2026-05-04T00:53:26.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "(서울=연합뉴스) 오지은 기자 = 카카오모빌리티는 김진규 부사장 겸 피지컬 AI 부문장이 사내 올핸즈(전사 공유 회의) 미팅을 진행하며 피지컬 ...",
+      "summary": "(강원 고성=연합뉴스) 류호준 기자 = 강원 고성군은 죽왕면 오호리 일원에 조성 중인 광역 해양관광 복합지구의 이름을 &apos;송지호 바다 하늘&apos;로 확...",
       "scores": {
         "impact": 4.5,
         "freshness": 5,
@@ -505,6 +325,46 @@ window.__DAILY__ = {
       "headline": false
     },
     {
+      "id": "hn-48002938",
+      "title": "The text mode lie: why modern TUIs are a nightmare for accessibility",
+      "url": "https://xogium.me/the-text-mode-lie-why-modern-tuis-are-a-nightmare-for-accessibility",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T23:59:02.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 4.8,
+        "depth": 2.5,
+        "buzz": 3.4
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-47999460",
+      "title": "I recreated the Apple Lisa computer inside an FPGA [video]",
+      "url": "https://www.youtube.com/watch?v=8jNQDcpHc68",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T17:45:47.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4.6,
+        "freshness": 3.7,
+        "depth": 2.5,
+        "buzz": 3.3
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
       "id": "hn-48002479",
       "title": "Could the X-Bat Stealth Fighter Drone Change the Air Combat Game?",
       "url": "https://www.twz.com/air/could-the-x-bat-stealth-fighter-drone-change-the-air-combat-game",
@@ -519,6 +379,246 @@ window.__DAILY__ = {
         "freshness": 4.6,
         "depth": 2.5,
         "buzz": 1.8
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "yna_it-a3dlq7",
+      "title": "한컴인스페이스, '세종 위성 영상' 글로벌 판매",
+      "url": "https://www.yna.co.kr/view/AKR20260504044000017",
+      "source": "yna_it",
+      "sourceLabel": "연합뉴스 IT",
+      "publishedAt": "2026-05-04T01:05:55.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "(서울=연합뉴스) 권하영 기자 = 한컴인스페이스가 자사 세종 시리즈 위성 영상의 상용 판매를 시작하며 글로벌 데이터 서비스 시장 공략에 나선다.",
+      "scores": {
+        "impact": 4.5,
+        "freshness": 4.9,
+        "depth": 2.5,
+        "buzz": 1.5
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "yna_it-xxt8yw",
+      "title": "KB금융 'KB스타터스' 45개사 선정…\"혁신 스타트업 육성\"",
+      "url": "https://www.yna.co.kr/view/AKR20260504041000002",
+      "source": "yna_it",
+      "sourceLabel": "연합뉴스 IT",
+      "publishedAt": "2026-05-04T01:04:40.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "(서울=연합뉴스) 한지훈 기자 = KB금융그룹은 &apos;KB스타터스&apos; 프로그램에 참여할 국내 30개사, 글로벌 15개사 등 총 45개사의 스타트업을 ...",
+      "scores": {
+        "impact": 4.5,
+        "freshness": 4.9,
+        "depth": 2.5,
+        "buzz": 1.5
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "yna_it-r4zzyq",
+      "title": "[게시판] 매일유업, 어린이날 맞아 '성가정입양원'에 나눔 활동",
+      "url": "https://www.yna.co.kr/view/AKR20260504045500030",
+      "source": "yna_it",
+      "sourceLabel": "연합뉴스 IT",
+      "publishedAt": "2026-05-04T01:01:26.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "▲ 매일유업[267980] 사내 봉사 동호회는 어린이날을 맞아 국내 입양 전문기관인 &apos;성가정입양원&apos;을 방문해 유아식 전문 브랜드 &apos;맘마밀&apos;을 비...",
+      "scores": {
+        "impact": 4.5,
+        "freshness": 4.9,
+        "depth": 2.5,
+        "buzz": 1.5
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "yna_it-fwbvr9",
+      "title": "세라젬, '세븐해빗' 건강 패키지 출시…\"7개 맞춤형 관리 제안\"",
+      "url": "https://www.yna.co.kr/view/AKR20260504039100030",
+      "source": "yna_it",
+      "sourceLabel": "연합뉴스 IT",
+      "publishedAt": "2026-05-04T01:00:48.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "(서울=연합뉴스) 이상서 기자 = 세라젬은 가정의 달인 5월을 맞아 &apos;세븐해빗(7-Habit)&apos;을 기반으로 한 건강 관리 패키지를 선보인다고 4...",
+      "scores": {
+        "impact": 4.5,
+        "freshness": 4.9,
+        "depth": 2.5,
+        "buzz": 1.5
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "yna_it-4l0oef",
+      "title": "제주도, 등유·LPG 사용 취약계층에 바우처 5만원 추가 지원",
+      "url": "https://www.yna.co.kr/view/AKR20260504043000056",
+      "source": "yna_it",
+      "sourceLabel": "연합뉴스 IT",
+      "publishedAt": "2026-05-04T01:00:17.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "(제주=연합뉴스) 고성식 기자 = 제주도는 도내 등유·액화석유가스(LPG)를 주 난방에너지원으로 쓰는 에너지바우처 수급 세대에 19만7천원을 지...",
+      "scores": {
+        "impact": 4.5,
+        "freshness": 4.9,
+        "depth": 2.5,
+        "buzz": 1.5
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "yna_it-d225gm",
+      "title": "K-브랜드 노린 짝퉁 확산…작년 지재권 침해 2천800억원 적발",
+      "url": "https://www.yna.co.kr/view/AKR20260504039700002",
+      "source": "yna_it",
+      "sourceLabel": "연합뉴스 IT",
+      "publishedAt": "2026-05-04T00:58:33.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "",
+      "scores": {
+        "impact": 4.5,
+        "freshness": 4.9,
+        "depth": 2.5,
+        "buzz": 1.5
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "yna_it-ro63cl",
+      "title": "한국맥도날드, 정규직 '매니저 트레이니' 공채…17일까지 접수",
+      "url": "https://www.yna.co.kr/view/AKR20260504037500030",
+      "source": "yna_it",
+      "sourceLabel": "연합뉴스 IT",
+      "publishedAt": "2026-05-04T00:57:28.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "(서울=연합뉴스) 홍국기 기자 = 한국맥도날드는 오는 17일까지 채용 홈페이지를 통해 정규직 &apos;매니저 트레이니(trainee·수습 직원)&apos; 공채...",
+      "scores": {
+        "impact": 4.5,
+        "freshness": 4.9,
+        "depth": 2.5,
+        "buzz": 1.5
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "yna_it-35vtb9",
+      "title": "삼성바이오 노조 \"오늘 최종협상 아냐…사측 의지 확인 자리\"",
+      "url": "https://www.yna.co.kr/view/AKR20260504043300017",
+      "source": "yna_it",
+      "sourceLabel": "연합뉴스 IT",
+      "publishedAt": "2026-05-04T00:56:30.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "(서울=연합뉴스) 신선미 기자 = 삼성바이오로직스[207940] 노동조합은 4일 사측과 만나는 간담회가 &apos;최종 협상&apos; 자리가 아니라고 입장을 밝...",
+      "scores": {
+        "impact": 4.5,
+        "freshness": 4.9,
+        "depth": 2.5,
+        "buzz": 1.5
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "yna_it-2ou6sw",
+      "title": "홍천군, 가정의 달 맞아 한우 최대 50% 할인 판매",
+      "url": "https://www.yna.co.kr/view/AKR20260504043400062",
+      "source": "yna_it",
+      "sourceLabel": "연합뉴스 IT",
+      "publishedAt": "2026-05-04T00:55:34.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "(홍천=연합뉴스) 류호준 기자 = 강원 홍천군은 5월 가정의 달을 맞아 지역 대표 특산물인 &apos;늘푸름홍천한우&apos; 소비 촉진을 위한 특별 할인 행사를...",
+      "scores": {
+        "impact": 4.5,
+        "freshness": 4.9,
+        "depth": 2.5,
+        "buzz": 1.5
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "yna_it-27skju",
+      "title": "국내 최대 단일차종 레이싱대회 '현대 N 페스티벌' 개막",
+      "url": "https://www.yna.co.kr/view/AKR20260504043500003",
+      "source": "yna_it",
+      "sourceLabel": "연합뉴스 IT",
+      "publishedAt": "2026-05-04T00:54:56.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "(서울=연합뉴스) 김보경 기자 = 현대차는 8일 용인 에버랜드 스피드웨이에서 열리는 1라운드 경기를 시작으로 &apos;2026 현대 N 페스티벌&apos; 시즌...",
+      "scores": {
+        "impact": 4.5,
+        "freshness": 4.9,
+        "depth": 2.5,
+        "buzz": 1.5
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "yna_it-wxlj4b",
+      "title": "쿠팡 알럭스, 17일까지 '뷰티 페스타'…32개 럭셔리 브랜드 참여",
+      "url": "https://www.yna.co.kr/view/AKR20260504033100030",
+      "source": "yna_it",
+      "sourceLabel": "연합뉴스 IT",
+      "publishedAt": "2026-05-04T00:54:36.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "(서울=연합뉴스) 정수연 기자 = 쿠팡의 럭셔리 뷰티·패션 버티컬 서비스 알럭스(R.LUX)는 할인 행사 &apos;알럭스 뷰티 페스타&apos;를 개최한다고 4...",
+      "scores": {
+        "impact": 4.5,
+        "freshness": 4.9,
+        "depth": 2.5,
+        "buzz": 1.5
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "yna_it-wzq05i",
+      "title": "카카오모빌리티 피지컬AI 부문장 \"자율주행은 데이터 전쟁\"",
+      "url": "https://www.yna.co.kr/view/AKR20260504041200017",
+      "source": "yna_it",
+      "sourceLabel": "연합뉴스 IT",
+      "publishedAt": "2026-05-04T00:53:26.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "(서울=연합뉴스) 오지은 기자 = 카카오모빌리티는 김진규 부사장 겸 피지컬 AI 부문장이 사내 올핸즈(전사 공유 회의) 미팅을 진행하며 피지컬 ...",
+      "scores": {
+        "impact": 4.5,
+        "freshness": 4.9,
+        "depth": 2.5,
+        "buzz": 1.5
       },
       "tags": [],
       "featured": false,
@@ -796,7 +896,7 @@ window.__DAILY__ = {
       "summary": "(서울=연합뉴스) 이상서 기자 = 무신사 뷰티는 오는 14일까지 540여개 브랜드가 참여하는 할인 행사 &apos;무신사 뷰티 페스타&apos;를 진행한다고 4일...",
       "scores": {
         "impact": 4.5,
-        "freshness": 4.9,
+        "freshness": 4.8,
         "depth": 2.5,
         "buzz": 1.5
       },
@@ -816,7 +916,7 @@ window.__DAILY__ = {
       "summary": "(서울=연합뉴스) 권하영 기자 = 안랩[053800]이 엔드포인트 통합 보안 플랫폼으로 중화권 시장 공략을 강화한다.",
       "scores": {
         "impact": 4.5,
-        "freshness": 4.9,
+        "freshness": 4.8,
         "depth": 2.5,
         "buzz": 1.5
       },
@@ -836,7 +936,7 @@ window.__DAILY__ = {
       "summary": "(부산=연합뉴스) 민영규 기자 = 부산경제진흥원은 오는 6일 오전 10시부터 영산대학교 해운대 캠퍼스에서 &apos;관광·마이스(MICE, 기업회의·포상...",
       "scores": {
         "impact": 4.5,
-        "freshness": 4.9,
+        "freshness": 4.8,
         "depth": 2.5,
         "buzz": 1.5
       },
@@ -856,7 +956,7 @@ window.__DAILY__ = {
       "summary": "(서울=연합뉴스) 김주환 기자 = SOOP[067160]은 e스포츠 월드컵(EWC)에 출전할 리그 오브 레전드 챔피언스 코리아(LCK) 팀을 가...",
       "scores": {
         "impact": 4.5,
-        "freshness": 4.9,
+        "freshness": 4.8,
         "depth": 2.5,
         "buzz": 1.5
       },
@@ -876,7 +976,7 @@ window.__DAILY__ = {
       "summary": "(서울=연합뉴스) 한주홍 기자 = 신세계푸드의 노브랜드 버거는 예비 창업자 부담을 낮추기 위해 창업 비용을 추가 인하한다고 4일 밝혔다.",
       "scores": {
         "impact": 4.5,
-        "freshness": 4.9,
+        "freshness": 4.8,
         "depth": 2.5,
         "buzz": 1.5
       },
@@ -896,7 +996,7 @@ window.__DAILY__ = {
       "summary": "(서울=연합뉴스) 유현민 기자 = ▲ 한국방송광고진흥공사(코바코)는 &apos;2025년도 공공기관 고객만족도 조사&apos;에서 &apos;매우 우수&apos;를 받아 4년 연속...",
       "scores": {
         "impact": 4.5,
-        "freshness": 4.9,
+        "freshness": 4.8,
         "depth": 2.5,
         "buzz": 1.5
       },
@@ -916,7 +1016,7 @@ window.__DAILY__ = {
       "summary": "(서울=연합뉴스) 이상서 기자 = 중소기업중앙회는 종합소득세 신고 기간인 5월 한 달간 &apos;노란우산 온라인 가입 프로모션&apos;을 진행한다고 4일 밝혔...",
       "scores": {
         "impact": 4.5,
-        "freshness": 4.9,
+        "freshness": 4.8,
         "depth": 2.5,
         "buzz": 1.5
       },
@@ -936,7 +1036,7 @@ window.__DAILY__ = {
       "summary": "(서울=연합뉴스) 김보경 기자 = 한국앤컴퍼니그룹의 타이어 기업 한국타이어앤테크놀로지(한국타이어)는 이달부터 9월까지 영국에서 3차례 개최되는 ...",
       "scores": {
         "impact": 4.5,
-        "freshness": 4.9,
+        "freshness": 4.8,
         "depth": 2.5,
         "buzz": 1.5
       },
@@ -956,7 +1056,7 @@ window.__DAILY__ = {
       "summary": "(서울=연합뉴스) 조민정 기자 = 11번가는 오는 6일부터 16일까지 11일간 상반기 최대 행사인 &apos;그랜드십입절&apos;을 진행한다고 4일 밝혔다.",
       "scores": {
         "impact": 4.5,
-        "freshness": 4.9,
+        "freshness": 4.8,
         "depth": 2.5,
         "buzz": 1.5
       },
@@ -976,7 +1076,7 @@ window.__DAILY__ = {
       "summary": "(서울=연합뉴스) 임성호 기자 = 삼성전기는 어린이날을 맞아 국내 3개 사업장(수원·세종·부산)에 임직원 가족을 초청하는 &apos;패밀리 데이&apos; 행사를...",
       "scores": {
         "impact": 4.5,
-        "freshness": 4.9,
+        "freshness": 4.8,
         "depth": 2.5,
         "buzz": 1.5
       },
@@ -996,7 +1096,7 @@ window.__DAILY__ = {
       "summary": "(서울=연합뉴스) 김민지 기자 = 재단법인 티앤씨재단이 소방관의 날을 맞아 예술나눔 공익재단 아이프칠드런과 순직소방관 자녀 예술교육 지원 사업 ...",
       "scores": {
         "impact": 4.5,
-        "freshness": 4.9,
+        "freshness": 4.8,
         "depth": 2.5,
         "buzz": 1.5
       },
@@ -1016,29 +1116,9 @@ window.__DAILY__ = {
       "summary": "(서울=연합뉴스) 정수연 기자 = 편의점 이마트24는 신상품 출시를 기념해 종합격투기 선수 출신의 최홍만과 &apos;내겐 너무 귀여운 다이닝&apos;을 주제로...",
       "scores": {
         "impact": 4.5,
-        "freshness": 4.9,
-        "depth": 2.5,
-        "buzz": 1.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48002938",
-      "title": "The text mode lie: why modern TUIs are a nightmare for accessibility",
-      "url": "https://xogium.me/the-text-mode-lie-why-modern-tuis-are-a-nightmare-for-accessibility",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T23:59:02.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
         "freshness": 4.8,
         "depth": 2.5,
-        "buzz": 3.3
+        "buzz": 1.5
       },
       "tags": [],
       "featured": false,
@@ -1305,120 +1385,40 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "yna_it-5ei8gy",
-      "title": "[사이테크+] \"야행성 쏙독새, 달빛 따라 먹이·이동·번식 시기 달라진다\"",
-      "url": "https://www.yna.co.kr/view/AKR20260504022100017",
-      "source": "yna_it",
-      "sourceLabel": "연합뉴스 IT",
-      "publishedAt": "2026-05-03T23:51:08.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "(서울=연합뉴스) 이주영 기자 = 달이 차고 기우는 음력 29일 주기가 야행성 조류인 붉은목쏙독새(Caprimulgus ruficollis)의 ...",
-      "scores": {
-        "impact": 4.5,
-        "freshness": 4.8,
-        "depth": 2.5,
-        "buzz": 1.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "yna_it-13bwpy",
-      "title": "더벤티, '벤티럭' 활용 커피 트럭 케이터링 서비스 출시",
-      "url": "https://www.yna.co.kr/view/AKR20260504019400030",
-      "source": "yna_it",
-      "sourceLabel": "연합뉴스 IT",
-      "publishedAt": "2026-05-03T23:50:55.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "(서울=연합뉴스) 한주홍 기자 = 커피 프랜차이즈 더벤티는 커피 트럭 케이터링 서비스를 출시한다고 4일 밝혔다.",
-      "scores": {
-        "impact": 4.5,
-        "freshness": 4.8,
-        "depth": 2.5,
-        "buzz": 1.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "yna_it-dei2z0",
-      "title": "세븐일레븐, 김희은 셰프와 초록우산서 '희망 도시락' 나눔",
-      "url": "https://www.yna.co.kr/view/AKR20260504018900030",
-      "source": "yna_it",
-      "sourceLabel": "연합뉴스 IT",
-      "publishedAt": "2026-05-03T23:49:18.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "(서울=연합뉴스) 조민정 기자 = 편의점 세븐일레븐은 4일 미쉐린 1스타 셰프인 김희은 셰프와 함께 초록우산에 도시락과 완구 선물을 전달한다고 ...",
-      "scores": {
-        "impact": 4.5,
-        "freshness": 4.8,
-        "depth": 2.5,
-        "buzz": 1.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "yna_it-b62jb1",
-      "title": "메리츠증권, 삼성전기 목표가↑…\"수요 확대·가격 상승 호재\"",
-      "url": "https://www.yna.co.kr/view/AKR20260504023500008",
-      "source": "yna_it",
-      "sourceLabel": "연합뉴스 IT",
-      "publishedAt": "2026-05-03T23:45:46.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "(서울=연합뉴스) 김유아 기자 = 메리츠증권은 삼성전기에 대해 &quot;인공지능(AI) 업계발 수요 확대와 가격 상승 요인으로 2분기 실적도 서프라이즈...",
-      "scores": {
-        "impact": 4.5,
-        "freshness": 4.8,
-        "depth": 2.5,
-        "buzz": 1.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "yna_it-31a4iy",
-      "title": "현대위아, 신입사원 채용…모빌리티·로보틱스 사업 강화",
-      "url": "https://www.yna.co.kr/view/AKR20260504022600003",
-      "source": "yna_it",
-      "sourceLabel": "연합뉴스 IT",
-      "publishedAt": "2026-05-03T23:44:17.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "(서울=연합뉴스) 김윤구 기자 = 현대위아[011210]는 모빌리티 부품과 로보틱스 분야 경쟁력 강화를 위해 신입사원을 채용한다고 4일 밝혔다.",
-      "scores": {
-        "impact": 4.5,
-        "freshness": 4.8,
-        "depth": 2.5,
-        "buzz": 1.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48000152",
-      "title": "New statue in London, attributed to Banksy, of a suited man, blinded by a flag",
-      "url": "https://www.smithsonianmag.com/smart-news/attributed-to-banksy-a-new-statue-of-a-suited-man-blinded-by-a-flag-and-walking-off-a-ledge-appeared-in-central-london-180988662/",
+      "id": "hn-48002442",
+      "title": "Agentic Coding Is a Trap",
+      "url": "https://larsfaye.com/articles/agentic-coding-is-a-trap",
       "source": "hackernews",
       "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T18:54:28.000Z",
+      "publishedAt": "2026-05-03T22:52:07.000Z",
       "category": "ai",
       "sourceCountry": "Global",
       "summary": "",
       "scores": {
-        "impact": 4.2,
-        "freshness": 4,
+        "impact": 4,
+        "freshness": 4.6,
         "depth": 2.5,
-        "buzz": 3.9
+        "buzz": 3.5
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-48002777",
+      "title": "Let's Buy Spirit Air",
+      "url": "https://letsbuyspiritair.com/",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T23:36:11.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 4.7,
+        "depth": 2.5,
+        "buzz": 3.4
       },
       "tags": [],
       "featured": false,
@@ -1445,60 +1445,140 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "hn-47997418",
-      "title": "Mercedes-Benz commits to bringing back physical buttons",
-      "url": "https://www.drive.com.au/news/mercedes-benz-commits-to-bringing-back-phycial-buttons/",
+      "id": "hn-48000152",
+      "title": "New statue in London, attributed to Banksy, of a suited man, blinded by a flag",
+      "url": "https://www.smithsonianmag.com/smart-news/attributed-to-banksy-a-new-statue-of-a-suited-man-blinded-by-a-flag-and-walking-off-a-ledge-appeared-in-central-london-180988662/",
       "source": "hackernews",
       "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T14:43:27.000Z",
+      "publishedAt": "2026-05-03T18:54:28.000Z",
       "category": "ai",
       "sourceCountry": "Global",
       "summary": "",
       "scores": {
-        "impact": 4.4,
-        "freshness": 3.3,
+        "impact": 4.2,
+        "freshness": 3.9,
         "depth": 2.5,
-        "buzz": 4.3
+        "buzz": 3.9
       },
       "tags": [],
       "featured": false,
       "headline": false
     },
     {
-      "id": "hn-48002442",
-      "title": "Agentic Coding Is a Trap",
-      "url": "https://larsfaye.com/articles/agentic-coding-is-a-trap",
+      "id": "hn-48000028",
+      "title": "Why TUIs Are Back",
+      "url": "https://wiki.alcidesfonseca.com/blog/why-tuis-are-back/",
       "source": "hackernews",
       "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T22:52:07.000Z",
+      "publishedAt": "2026-05-03T18:42:28.000Z",
       "category": "ai",
       "sourceCountry": "Global",
       "summary": "",
       "scores": {
-        "impact": 4,
-        "freshness": 4.6,
+        "impact": 4.2,
+        "freshness": 3.9,
         "depth": 2.5,
-        "buzz": 3.4
+        "buzz": 3.9
       },
       "tags": [],
       "featured": false,
       "headline": false
     },
     {
-      "id": "hn-48002777",
-      "title": "Let's Buy Spirit Air",
-      "url": "https://letsbuyspiritair.com/",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T23:36:11.000Z",
+      "id": "yna_it-5ei8gy",
+      "title": "[사이테크+] \"야행성 쏙독새, 달빛 따라 먹이·이동·번식 시기 달라진다\"",
+      "url": "https://www.yna.co.kr/view/AKR20260504022100017",
+      "source": "yna_it",
+      "sourceLabel": "연합뉴스 IT",
+      "publishedAt": "2026-05-03T23:51:08.000Z",
       "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
+      "sourceCountry": "KR",
+      "summary": "(서울=연합뉴스) 이주영 기자 = 달이 차고 기우는 음력 29일 주기가 야행성 조류인 붉은목쏙독새(Caprimulgus ruficollis)의 ...",
       "scores": {
-        "impact": 4,
+        "impact": 4.5,
         "freshness": 4.7,
         "depth": 2.5,
-        "buzz": 3.3
+        "buzz": 1.5
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "yna_it-13bwpy",
+      "title": "더벤티, '벤티럭' 활용 커피 트럭 케이터링 서비스 출시",
+      "url": "https://www.yna.co.kr/view/AKR20260504019400030",
+      "source": "yna_it",
+      "sourceLabel": "연합뉴스 IT",
+      "publishedAt": "2026-05-03T23:50:55.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "(서울=연합뉴스) 한주홍 기자 = 커피 프랜차이즈 더벤티는 커피 트럭 케이터링 서비스를 출시한다고 4일 밝혔다.",
+      "scores": {
+        "impact": 4.5,
+        "freshness": 4.7,
+        "depth": 2.5,
+        "buzz": 1.5
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "yna_it-dei2z0",
+      "title": "세븐일레븐, 김희은 셰프와 초록우산서 '희망 도시락' 나눔",
+      "url": "https://www.yna.co.kr/view/AKR20260504018900030",
+      "source": "yna_it",
+      "sourceLabel": "연합뉴스 IT",
+      "publishedAt": "2026-05-03T23:49:18.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "(서울=연합뉴스) 조민정 기자 = 편의점 세븐일레븐은 4일 미쉐린 1스타 셰프인 김희은 셰프와 함께 초록우산에 도시락과 완구 선물을 전달한다고 ...",
+      "scores": {
+        "impact": 4.5,
+        "freshness": 4.7,
+        "depth": 2.5,
+        "buzz": 1.5
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "yna_it-b62jb1",
+      "title": "메리츠증권, 삼성전기 목표가↑…\"수요 확대·가격 상승 호재\"",
+      "url": "https://www.yna.co.kr/view/AKR20260504023500008",
+      "source": "yna_it",
+      "sourceLabel": "연합뉴스 IT",
+      "publishedAt": "2026-05-03T23:45:46.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "(서울=연합뉴스) 김유아 기자 = 메리츠증권은 삼성전기에 대해 &quot;인공지능(AI) 업계발 수요 확대와 가격 상승 요인으로 2분기 실적도 서프라이즈...",
+      "scores": {
+        "impact": 4.5,
+        "freshness": 4.7,
+        "depth": 2.5,
+        "buzz": 1.5
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "yna_it-31a4iy",
+      "title": "현대위아, 신입사원 채용…모빌리티·로보틱스 사업 강화",
+      "url": "https://www.yna.co.kr/view/AKR20260504022600003",
+      "source": "yna_it",
+      "sourceLabel": "연합뉴스 IT",
+      "publishedAt": "2026-05-03T23:44:17.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "(서울=연합뉴스) 김윤구 기자 = 현대위아[011210]는 모빌리티 부품과 로보틱스 분야 경쟁력 강화를 위해 신입사원을 채용한다고 4일 밝혔다.",
+      "scores": {
+        "impact": 4.5,
+        "freshness": 4.7,
+        "depth": 2.5,
+        "buzz": 1.5
       },
       "tags": [],
       "featured": false,
@@ -1525,6 +1605,26 @@ window.__DAILY__ = {
       "headline": false
     },
     {
+      "id": "hn-47997418",
+      "title": "Mercedes-Benz commits to bringing back physical buttons",
+      "url": "https://www.drive.com.au/news/mercedes-benz-commits-to-bringing-back-phycial-buttons/",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T14:43:27.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4.4,
+        "freshness": 3.2,
+        "depth": 2.5,
+        "buzz": 4.3
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
       "id": "yna_it-dvjpfk",
       "title": "한투증권, 삼성전자 목표가↑…\"영업익 상승세 계속될 것\"",
       "url": "https://www.yna.co.kr/view/AKR20260504018800008",
@@ -1536,7 +1636,7 @@ window.__DAILY__ = {
       "summary": "(서울=연합뉴스) 임은진 기자 = 한국투자증권은 4일 삼성전자[005930]의 영업이익 상승세가 계속될 것이라면서 목표주가를 상향 조정했다.",
       "scores": {
         "impact": 4.5,
-        "freshness": 4.7,
+        "freshness": 4.6,
         "depth": 2.5,
         "buzz": 1.5
       },
@@ -1556,7 +1656,7 @@ window.__DAILY__ = {
       "summary": "(의정부=연합뉴스) 우영식 기자 = 경기도는 지난 2월 고양시에서 발생한 구제역과 관련해 방역대 내에 묶여 있던 이동 제한 조치를 해제했다고 4...",
       "scores": {
         "impact": 4.5,
-        "freshness": 4.7,
+        "freshness": 4.6,
         "depth": 2.5,
         "buzz": 1.5
       },
@@ -1576,201 +1676,9 @@ window.__DAILY__ = {
       "summary": "(서울=연합뉴스) 성도현 기자 = 네덜란드 암스테르담의 &apos;반 고흐 미술관&apos; 내 식당에서 파는 김치 요리가 김치의 기원에 대한 오해를 줄 수 있다...",
       "scores": {
         "impact": 4.5,
-        "freshness": 4.7,
+        "freshness": 4.6,
         "depth": 2.5,
         "buzz": 1.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "itworld_kr-wdiveu",
-      "title": "사이버 보안 인력 34%만 현직 유지…급여보다 경력 발전이 중요",
-      "url": "https://www.itworld.co.kr/article/4166273/%ec%82%ac%ec%9d%b4%eb%b2%84-%eb%b3%b4%ec%95%88-%ec%9d%b8%eb%a0%a5-34%eb%a7%8c-%ed%98%84%ec%a7%81-%ec%9c%a0%ec%a7%80-%ea%b8%89%ec%97%ac%eb%b3%b4%eb%8b%a4-%ea%b2%bd%eb%a0%a5-%eb%b0%9c%ec%a0%84.html",
-      "source": "itworld_kr",
-      "sourceLabel": "ITWorld 한국",
-      "publishedAt": "2026-05-04T00:21:54.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "직무 만족도가 하락하면서 현 직장에 남기로 결정한 사이버 보안 전문가가 3명 중 1명(34%)에 그쳤다. 최고정보보안책임자(CISO) 인력 유지 전략의 중요성이 그 어느 때보다 커지고 있다. IANS와 아르티코 서치(Artico Search)가 사이버 보안 전문가 500명을 대상으로 실시한 설문 에 따르면, 급여는 여전히 중요하지만 유지의 주요 동인은 아닌 것으로 나타났다. 반면 유연근무 모델은 직무 만족도와 유지 사이에 강한 연관성을 보였다. 특히 주 1~2일만 출근하는 하이브리드 근무 방식은 ",
-      "scores": {
-        "impact": 4.3,
-        "freshness": 4.9,
-        "depth": 3,
-        "buzz": 1.5
-      },
-      "tags": [
-        "IT Leadership, IT Management, Security"
-      ],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "zdnet_kr-ndclit",
-      "title": "토큰스퀘어, BSV협회와 원화 스테이블코인 인프라 출시",
-      "url": "https://zdnet.co.kr/view/?no=20260504092507",
-      "source": "zdnet_kr",
-      "sourceLabel": "ZDNet Korea",
-      "publishedAt": "2026-05-04T00:25:07.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "[지디넷코리아]인공지능(AI) 결제 인프라 기업 토큰스퀘어는 스위스에 본부를 둔 BSV협회(BSV Association)와 전략적 협력을 기반으로 원화(KRW) 스테이블코인 인프라 ‘KRWQ’를 국내 시장에 출시한다고 4일 밝혔다.토큰스퀘어와 BSV 협회는 2025년 6월 공식 업무협약(MOU)을 체결한 이후 KRWQ 인프라의 기술 검증, 노드 운영 구조, 상용화 방향 등에 대해 지속적으로 협력해 왔다. BSV 협회는 KRWQ의 개발 및 도입 과정에서 기술 자문, 노드 운영, 글로벌 네트워크 연계",
-      "scores": {
-        "impact": 4.3,
-        "freshness": 4.9,
-        "depth": 3,
-        "buzz": 1.5
-      },
-      "tags": [
-        "금융",
-        "토큰스퀘어",
-        "블록체인",
-        "스테이블코인",
-        "원화스테이블코인",
-        "가상자산",
-        "금융"
-      ],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "zdnet_kr-ndchxh",
-      "title": "[인사] 문화체육관광부",
-      "url": "https://zdnet.co.kr/view/?no=20260504092051",
-      "source": "zdnet_kr",
-      "sourceLabel": "ZDNet Korea",
-      "publishedAt": "2026-05-04T00:20:51.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "[지디넷코리아]◇국장급 전보 ▲국립한글박물관장 임성환 ◇국장급 승진 ▲문화미디어산업실 문화산업정책관 문화산업정책관 김경화 ▲문화미디어산업실 저작권정책관 최영진 ◇과장급 전보 ▲문화예술정책실 지역문화정책관 지역문화정책과장 이관표 ▲문화예술정책실 문화정책관 전통문화과장 최재환 ▲문화예술정책실 지역문화정책관 문화기반과장 손미숙 ▲문화미디어산업실 콘텐츠미디어산업관 미디어정책과장 강민아 ▲문화미디어산업실 저작권정책관 저작권정책과장 박현성 ▲문화미디어산업실 저작권정책관실 저작권산업과장 안미정",
-      "scores": {
-        "impact": 4.3,
-        "freshness": 4.9,
-        "depth": 3,
-        "buzz": 1.5
-      },
-      "tags": [
-        "문체부",
-        "문화체육관광부",
-        "인사"
-      ],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "zdnet_kr-ndc1hy",
-      "title": "국가유산청, '제48차 세계유산위원회' 2차 유네스코 사전실사 완료",
-      "url": "https://zdnet.co.kr/view/?no=20260504091903",
-      "source": "zdnet_kr",
-      "sourceLabel": "ZDNet Korea",
-      "publishedAt": "2026-05-04T00:19:03.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "[지디넷코리아]국가유산청(청장 허민)은 오는 7월 부산 벡스코에서 열리는 '제48차 유네스코 세계유산위원회'의 성공적인 개최를 위해 제2차 유네스코 사전실사를 마쳤다고 4일 밝혔다.지난달 27일부터 30일까지 진행된 이번 실사에는 유네스코 세계유산센터 관계자를 비롯해 유엔 안전보안국(UNDSS), 경찰, 소방, 대테러센터 등 국내외 관계기관이 대거 참여했다. 이들은 주 회의장인 벡스코와 인근 숙박시설을 직접 방문해 회의장 조성, 수송, 숙박, 보안 등 분야별 준비 상황과 위험 요소를 점검했다.실사",
-      "scores": {
-        "impact": 4.3,
-        "freshness": 4.9,
-        "depth": 3,
-        "buzz": 1.5
-      },
-      "tags": [
-        "국가유산청",
-        "유네스코",
-        "세계유산위원회",
-        "실사",
-        "생활/문화"
-      ],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "zdnet_kr-ndc04y",
-      "title": "코스피, 6782.93에 출발…장중 사상 최고치",
-      "url": "https://zdnet.co.kr/view/?no=20260504091756",
-      "source": "zdnet_kr",
-      "sourceLabel": "ZDNet Korea",
-      "publishedAt": "2026-05-04T00:18:36.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "[지디넷코리아]코스피 지수가 개장과 동시에 장중 사상 최고치를 기록했다.4일 코스피는 전 거래일 대비 2.79%(184.06포인트) 오른 6782.93으로 장을 시작했다.현재는 6770선을 기록하고 있다.한편, 코스피 최고치는 대형주 상승세가 견인했다.SK하이닉스는 전 거래일 대비 4.51% 오른 134만 4000원, 삼성전자는 2.49% 상승한 22만 6000원, SK스퀘어는 9.27% 오른 91만 9000원에 거래 중이다.",
-      "scores": {
-        "impact": 4.3,
-        "freshness": 4.9,
-        "depth": 3,
-        "buzz": 1.5
-      },
-      "tags": [
-        "금융",
-        "주식",
-        "코스피",
-        "국장",
-        "투자",
-        "증권",
-        "금융"
-      ],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "zdnet_kr-ndc00i",
-      "title": "티빙, 프로야구 시청 순방문자수 24% 증가",
-      "url": "https://zdnet.co.kr/view/?no=20260504091701",
-      "source": "zdnet_kr",
-      "sourceLabel": "ZDNet Korea",
-      "publishedAt": "2026-05-04T00:17:01.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "[지디넷코리아]OTT 티빙이 올 시즌 프로야구 슈퍼매치 차별화를 통해 경기당 순 방문자 수(UV)는 전년 대비 약 24%, 경기 최다 동시 접속자 수는 약 25% 상승했다고 밝혔다.지난달 14일 삼성라이온즈와 한화이글스 경기는 올 시즌 정규리그 최다 UV 기록을 경신했다.티빙 측은 이를 두고 중계 몰입도를 높이는 기술력과 디지털 콘텐츠 전략의 효과로 분석했다.예컨대 현장의 생동감을 극대화하는 ‘현장음 중계’와 AR 그래픽 기반의 입체적인 중계 CG로 시청 경험을 고도화하고 프리뷰쇼 ‘WAR밍업’의",
-      "scores": {
-        "impact": 4.3,
-        "freshness": 4.9,
-        "depth": 3,
-        "buzz": 1.5
-      },
-      "tags": [
-        "티빙",
-        "슈퍼매치",
-        "방송/통신"
-      ],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48000028",
-      "title": "Why TUIs Are Back",
-      "url": "https://wiki.alcidesfonseca.com/blog/why-tuis-are-back/",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T18:42:28.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4.2,
-        "freshness": 3.9,
-        "depth": 2.5,
-        "buzz": 3.9
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48002607",
-      "title": "The 'Hidden' Costs of Great Abstractions",
-      "url": "https://jdgr.net/the-hidden-costs-of-great-abstractions",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T23:12:02.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 4.7,
-        "depth": 2.5,
-        "buzz": 3.1
       },
       "tags": [],
       "featured": false,
@@ -1857,15 +1765,15 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "itworld_kr-64ptdw",
-      "title": "친절한 AI 챗봇이 더 많이 틀린다…옥스퍼드 연구",
-      "url": "https://www.itworld.co.kr/article/4166253/%ec%b9%9c%ec%a0%88%ed%95%9c-ai-%ec%b1%97%eb%b4%87%ec%9d%b4-%eb%8d%94-%eb%a7%8e%ec%9d%b4-%ed%8b%80%eb%a6%b0%eb%8b%a4-%ec%98%a5%ec%8a%a4%ed%8d%bc%eb%93%9c-%ec%97%b0%ea%b5%ac.html",
+      "id": "itworld_kr-wdiveu",
+      "title": "사이버 보안 인력 34%만 현직 유지…급여보다 경력 발전이 중요",
+      "url": "https://www.itworld.co.kr/article/4166273/%ec%82%ac%ec%9d%b4%eb%b2%84-%eb%b3%b4%ec%95%88-%ec%9d%b8%eb%a0%a5-34%eb%a7%8c-%ed%98%84%ec%a7%81-%ec%9c%a0%ec%a7%80-%ea%b8%89%ec%97%ac%eb%b3%b4%eb%8b%a4-%ea%b2%bd%eb%a0%a5-%eb%b0%9c%ec%a0%84.html",
       "source": "itworld_kr",
       "sourceLabel": "ITWorld 한국",
-      "publishedAt": "2026-05-03T23:44:18.000Z",
+      "publishedAt": "2026-05-04T00:21:54.000Z",
       "category": "ai",
       "sourceCountry": "KR",
-      "summary": "옥스퍼드 인터넷 인스티튜트(Oxford Internet Institute)의 새 연구에 따르면, 더 따뜻하고 친절하며 공감적으로 훈련된 ‘친근한’ AI 챗봇일수록 답변의 질이 낮고 정확도도 떨어지는 것으로 나타났다. 해당 연구는 BBC가 최초로 보도했다. 연구팀은 크기와 아키텍처가 서로 다른 AI 모델 5종이 생성한 40만 건 이상의 응답을 분석했다. 분석 대상은 메타의 라마-8B(Llama-8B)와 라마-70B(Llama-70B), 미스트랄 AI의 미스트랄-스몰(Mistral-Small), 알리",
+      "summary": "직무 만족도가 하락하면서 현 직장에 남기로 결정한 사이버 보안 전문가가 3명 중 1명(34%)에 그쳤다. 최고정보보안책임자(CISO) 인력 유지 전략의 중요성이 그 어느 때보다 커지고 있다. IANS와 아르티코 서치(Artico Search)가 사이버 보안 전문가 500명을 대상으로 실시한 설문 에 따르면, 급여는 여전히 중요하지만 유지의 주요 동인은 아닌 것으로 나타났다. 반면 유연근무 모델은 직무 만족도와 유지 사이에 강한 연관성을 보였다. 특히 주 1~2일만 출근하는 하이브리드 근무 방식은 ",
       "scores": {
         "impact": 4.3,
         "freshness": 4.8,
@@ -1873,7 +1781,137 @@ window.__DAILY__ = {
         "buzz": 1.5
       },
       "tags": [
-        "Artificial Intelligence, Generative AI"
+        "IT Leadership, IT Management, Security"
+      ],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "zdnet_kr-ndclit",
+      "title": "토큰스퀘어, BSV협회와 원화 스테이블코인 인프라 출시",
+      "url": "https://zdnet.co.kr/view/?no=20260504092507",
+      "source": "zdnet_kr",
+      "sourceLabel": "ZDNet Korea",
+      "publishedAt": "2026-05-04T00:25:07.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "[지디넷코리아]인공지능(AI) 결제 인프라 기업 토큰스퀘어는 스위스에 본부를 둔 BSV협회(BSV Association)와 전략적 협력을 기반으로 원화(KRW) 스테이블코인 인프라 ‘KRWQ’를 국내 시장에 출시한다고 4일 밝혔다.토큰스퀘어와 BSV 협회는 2025년 6월 공식 업무협약(MOU)을 체결한 이후 KRWQ 인프라의 기술 검증, 노드 운영 구조, 상용화 방향 등에 대해 지속적으로 협력해 왔다. BSV 협회는 KRWQ의 개발 및 도입 과정에서 기술 자문, 노드 운영, 글로벌 네트워크 연계",
+      "scores": {
+        "impact": 4.3,
+        "freshness": 4.8,
+        "depth": 3,
+        "buzz": 1.5
+      },
+      "tags": [
+        "금융",
+        "토큰스퀘어",
+        "블록체인",
+        "스테이블코인",
+        "원화스테이블코인",
+        "가상자산",
+        "금융"
+      ],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "zdnet_kr-ndchxh",
+      "title": "[인사] 문화체육관광부",
+      "url": "https://zdnet.co.kr/view/?no=20260504092051",
+      "source": "zdnet_kr",
+      "sourceLabel": "ZDNet Korea",
+      "publishedAt": "2026-05-04T00:20:51.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "[지디넷코리아]◇국장급 전보 ▲국립한글박물관장 임성환 ◇국장급 승진 ▲문화미디어산업실 문화산업정책관 문화산업정책관 김경화 ▲문화미디어산업실 저작권정책관 최영진 ◇과장급 전보 ▲문화예술정책실 지역문화정책관 지역문화정책과장 이관표 ▲문화예술정책실 문화정책관 전통문화과장 최재환 ▲문화예술정책실 지역문화정책관 문화기반과장 손미숙 ▲문화미디어산업실 콘텐츠미디어산업관 미디어정책과장 강민아 ▲문화미디어산업실 저작권정책관 저작권정책과장 박현성 ▲문화미디어산업실 저작권정책관실 저작권산업과장 안미정",
+      "scores": {
+        "impact": 4.3,
+        "freshness": 4.8,
+        "depth": 3,
+        "buzz": 1.5
+      },
+      "tags": [
+        "문체부",
+        "문화체육관광부",
+        "인사"
+      ],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "zdnet_kr-ndc1hy",
+      "title": "국가유산청, '제48차 세계유산위원회' 2차 유네스코 사전실사 완료",
+      "url": "https://zdnet.co.kr/view/?no=20260504091903",
+      "source": "zdnet_kr",
+      "sourceLabel": "ZDNet Korea",
+      "publishedAt": "2026-05-04T00:19:03.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "[지디넷코리아]국가유산청(청장 허민)은 오는 7월 부산 벡스코에서 열리는 '제48차 유네스코 세계유산위원회'의 성공적인 개최를 위해 제2차 유네스코 사전실사를 마쳤다고 4일 밝혔다.지난달 27일부터 30일까지 진행된 이번 실사에는 유네스코 세계유산센터 관계자를 비롯해 유엔 안전보안국(UNDSS), 경찰, 소방, 대테러센터 등 국내외 관계기관이 대거 참여했다. 이들은 주 회의장인 벡스코와 인근 숙박시설을 직접 방문해 회의장 조성, 수송, 숙박, 보안 등 분야별 준비 상황과 위험 요소를 점검했다.실사",
+      "scores": {
+        "impact": 4.3,
+        "freshness": 4.8,
+        "depth": 3,
+        "buzz": 1.5
+      },
+      "tags": [
+        "국가유산청",
+        "유네스코",
+        "세계유산위원회",
+        "실사",
+        "생활/문화"
+      ],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "zdnet_kr-ndc04y",
+      "title": "코스피, 6782.93에 출발…장중 사상 최고치",
+      "url": "https://zdnet.co.kr/view/?no=20260504091756",
+      "source": "zdnet_kr",
+      "sourceLabel": "ZDNet Korea",
+      "publishedAt": "2026-05-04T00:18:36.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "[지디넷코리아]코스피 지수가 개장과 동시에 장중 사상 최고치를 기록했다.4일 코스피는 전 거래일 대비 2.79%(184.06포인트) 오른 6782.93으로 장을 시작했다.현재는 6770선을 기록하고 있다.한편, 코스피 최고치는 대형주 상승세가 견인했다.SK하이닉스는 전 거래일 대비 4.51% 오른 134만 4000원, 삼성전자는 2.49% 상승한 22만 6000원, SK스퀘어는 9.27% 오른 91만 9000원에 거래 중이다.",
+      "scores": {
+        "impact": 4.3,
+        "freshness": 4.8,
+        "depth": 3,
+        "buzz": 1.5
+      },
+      "tags": [
+        "금융",
+        "주식",
+        "코스피",
+        "국장",
+        "투자",
+        "증권",
+        "금융"
+      ],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "zdnet_kr-ndc00i",
+      "title": "티빙, 프로야구 시청 순방문자수 24% 증가",
+      "url": "https://zdnet.co.kr/view/?no=20260504091701",
+      "source": "zdnet_kr",
+      "sourceLabel": "ZDNet Korea",
+      "publishedAt": "2026-05-04T00:17:01.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "[지디넷코리아]OTT 티빙이 올 시즌 프로야구 슈퍼매치 차별화를 통해 경기당 순 방문자 수(UV)는 전년 대비 약 24%, 경기 최다 동시 접속자 수는 약 25% 상승했다고 밝혔다.지난달 14일 삼성라이온즈와 한화이글스 경기는 올 시즌 정규리그 최다 UV 기록을 경신했다.티빙 측은 이를 두고 중계 몰입도를 높이는 기술력과 디지털 콘텐츠 전략의 효과로 분석했다.예컨대 현장의 생동감을 극대화하는 ‘현장음 중계’와 AR 그래픽 기반의 입체적인 중계 CG로 시청 경험을 고도화하고 프리뷰쇼 ‘WAR밍업’의",
+      "scores": {
+        "impact": 4.3,
+        "freshness": 4.8,
+        "depth": 3,
+        "buzz": 1.5
+      },
+      "tags": [
+        "티빙",
+        "슈퍼매치",
+        "방송/통신"
       ],
       "featured": false,
       "headline": false
@@ -2167,80 +2205,42 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "zdnet_kr-ncuohx",
-      "title": "TTA, IEEE '제조 피지컬 AI’국제표준화 작업반 의장직 확보",
-      "url": "https://zdnet.co.kr/view/?no=20260504085341",
-      "source": "zdnet_kr",
-      "sourceLabel": "ZDNet Korea",
-      "publishedAt": "2026-05-03T23:53:41.000Z",
+      "id": "hn-48002607",
+      "title": "The 'Hidden' Costs of Great Abstractions",
+      "url": "https://jdgr.net/the-hidden-costs-of-great-abstractions",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T23:12:02.000Z",
       "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "[지디넷코리아]한국정보통신기술협회(TTA)는 지난 4월30일 개최된 IEEE 신규표준 검토위원회((NesCom) 회의에서 제조 피지컬 AI(P4501) 표준 개발을 위한 작업반을 신설하고, 의장직을 확보했다고 밝혔다.최근 제조 현장에서는 단순 자동화를 넘어 AI가 스스로 상황을 판단하고 공정을 최적화하는 수요가 급증하고 있다. TTA는 이러한 흐름에 발맞춰 지난해 하반기부터 국내 기업들과의 협의를 통해 표준화 범위를 정의하고 IEEE와 긴밀히 소통해 이번 성과를 이끌어냈다.작업반에서는 제조 현장의",
+      "sourceCountry": "Global",
+      "summary": "",
       "scores": {
-        "impact": 4.3,
-        "freshness": 4.8,
-        "depth": 3,
-        "buzz": 1.5
+        "impact": 4,
+        "freshness": 4.6,
+        "depth": 2.5,
+        "buzz": 3.2
       },
-      "tags": [
-        "한국정보통신기술협회",
-        "TTA",
-        "IEEE",
-        "피지컬AI",
-        "방송/통신"
-      ],
+      "tags": [],
       "featured": false,
       "headline": false
     },
     {
-      "id": "zdnet_kr-ncunr8",
-      "title": "\"자동차 회사 다니는 뚜벅이\"…현대차 르르르, 오프라인 행사 개최",
-      "url": "https://zdnet.co.kr/view/?no=20260504085241",
-      "source": "zdnet_kr",
-      "sourceLabel": "ZDNet Korea",
-      "publishedAt": "2026-05-03T23:52:41.000Z",
+      "id": "hn-47998790",
+      "title": "Metal Gear Solid 2's source code has been leaked on 4chan",
+      "url": "https://www.thegamer.com/mgs2-hd-edition-source-code-massive-leak/",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T16:48:11.000Z",
       "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "[지디넷코리아]현대자동차가 Z세대 대표 캐릭터 '르르르'를 앞세워 5월 가정의 달을 맞아 대규모 오프라인 행사를 진행한다.현대차는 5월 여의도 한강공원과 용인 에버랜드 스피드웨이에서 다양한 체험형 프로그램을 운영한다고 4일 밝혔다.르르르는 현대차가 2019년 젊은 세대와의 소통을 위해 선보인 SNS 기반 캐릭터다. 2024년 리뉴얼 이후 '차 회사에 다니지만 차가 없는 뚜벅이' 콘셉트로 공감을 얻고 있다.이번 행사는 서울시 공공행사와 연계한 '르르르 X 책읽는 한강공원, 르르르의 시티뚜어'를 중심",
+      "sourceCountry": "Global",
+      "summary": "",
       "scores": {
-        "impact": 4.3,
-        "freshness": 4.8,
-        "depth": 3,
-        "buzz": 1.5
+        "impact": 4.2,
+        "freshness": 3.6,
+        "depth": 2.9,
+        "buzz": 3.9
       },
-      "tags": [
-        "현대자동차",
-        "현대차",
-        "카테크"
-      ],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "zdnet_kr-ncu1ex",
-      "title": "토요타코리아, '올 뉴 RAV4' 사전계약 돌입…4927만원부터",
-      "url": "https://zdnet.co.kr/view/?no=20260504084300",
-      "source": "zdnet_kr",
-      "sourceLabel": "ZDNet Korea",
-      "publishedAt": "2026-05-03T23:43:00.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "[지디넷코리아]토요타코리아가 차세대 스포츠유틸리티차(SUV) '올 뉴 RAV4' 사전계약에 돌입했다.토요타코리아는 오는 6월 16일 '올 뉴 RAV4'를 공식 출시하고, 4일부터 전국 토요타 공식 딜러 전시장에서 사전계약을 실시한다고 밝혔다.올 뉴 RAV4 가격은 ▲PHEV GR SPORT 6180만원 ▲PHEV XSE 6160만원 ▲HEV LIMITED 5746만원 ▲HEV XLE 4927만원이다.RAV4는 1994년 글로벌 시장에 처음 등장한 이후 도심과 아웃도어를 아우르는 SUV 시장을 개척",
-      "scores": {
-        "impact": 4.3,
-        "freshness": 4.8,
-        "depth": 3,
-        "buzz": 1.5
-      },
-      "tags": [
-        "한국토요타자동차",
-        "토요타코리아",
-        "토요타",
-        "라브4",
-        "올 뉴 라브4",
-        "올 뉴 RAV4",
-        "카테크"
-      ],
+      "tags": [],
       "featured": false,
       "headline": false
     },
@@ -2281,6 +2281,106 @@ window.__DAILY__ = {
         "buzz": 1.5
       },
       "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "itworld_kr-64ptdw",
+      "title": "친절한 AI 챗봇이 더 많이 틀린다…옥스퍼드 연구",
+      "url": "https://www.itworld.co.kr/article/4166253/%ec%b9%9c%ec%a0%88%ed%95%9c-ai-%ec%b1%97%eb%b4%87%ec%9d%b4-%eb%8d%94-%eb%a7%8e%ec%9d%b4-%ed%8b%80%eb%a6%b0%eb%8b%a4-%ec%98%a5%ec%8a%a4%ed%8d%bc%eb%93%9c-%ec%97%b0%ea%b5%ac.html",
+      "source": "itworld_kr",
+      "sourceLabel": "ITWorld 한국",
+      "publishedAt": "2026-05-03T23:44:18.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "옥스퍼드 인터넷 인스티튜트(Oxford Internet Institute)의 새 연구에 따르면, 더 따뜻하고 친절하며 공감적으로 훈련된 ‘친근한’ AI 챗봇일수록 답변의 질이 낮고 정확도도 떨어지는 것으로 나타났다. 해당 연구는 BBC가 최초로 보도했다. 연구팀은 크기와 아키텍처가 서로 다른 AI 모델 5종이 생성한 40만 건 이상의 응답을 분석했다. 분석 대상은 메타의 라마-8B(Llama-8B)와 라마-70B(Llama-70B), 미스트랄 AI의 미스트랄-스몰(Mistral-Small), 알리",
+      "scores": {
+        "impact": 4.3,
+        "freshness": 4.7,
+        "depth": 3,
+        "buzz": 1.5
+      },
+      "tags": [
+        "Artificial Intelligence, Generative AI"
+      ],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "zdnet_kr-ncuohx",
+      "title": "TTA, IEEE '제조 피지컬 AI’국제표준화 작업반 의장직 확보",
+      "url": "https://zdnet.co.kr/view/?no=20260504085341",
+      "source": "zdnet_kr",
+      "sourceLabel": "ZDNet Korea",
+      "publishedAt": "2026-05-03T23:53:41.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "[지디넷코리아]한국정보통신기술협회(TTA)는 지난 4월30일 개최된 IEEE 신규표준 검토위원회((NesCom) 회의에서 제조 피지컬 AI(P4501) 표준 개발을 위한 작업반을 신설하고, 의장직을 확보했다고 밝혔다.최근 제조 현장에서는 단순 자동화를 넘어 AI가 스스로 상황을 판단하고 공정을 최적화하는 수요가 급증하고 있다. TTA는 이러한 흐름에 발맞춰 지난해 하반기부터 국내 기업들과의 협의를 통해 표준화 범위를 정의하고 IEEE와 긴밀히 소통해 이번 성과를 이끌어냈다.작업반에서는 제조 현장의",
+      "scores": {
+        "impact": 4.3,
+        "freshness": 4.7,
+        "depth": 3,
+        "buzz": 1.5
+      },
+      "tags": [
+        "한국정보통신기술협회",
+        "TTA",
+        "IEEE",
+        "피지컬AI",
+        "방송/통신"
+      ],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "zdnet_kr-ncunr8",
+      "title": "\"자동차 회사 다니는 뚜벅이\"…현대차 르르르, 오프라인 행사 개최",
+      "url": "https://zdnet.co.kr/view/?no=20260504085241",
+      "source": "zdnet_kr",
+      "sourceLabel": "ZDNet Korea",
+      "publishedAt": "2026-05-03T23:52:41.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "[지디넷코리아]현대자동차가 Z세대 대표 캐릭터 '르르르'를 앞세워 5월 가정의 달을 맞아 대규모 오프라인 행사를 진행한다.현대차는 5월 여의도 한강공원과 용인 에버랜드 스피드웨이에서 다양한 체험형 프로그램을 운영한다고 4일 밝혔다.르르르는 현대차가 2019년 젊은 세대와의 소통을 위해 선보인 SNS 기반 캐릭터다. 2024년 리뉴얼 이후 '차 회사에 다니지만 차가 없는 뚜벅이' 콘셉트로 공감을 얻고 있다.이번 행사는 서울시 공공행사와 연계한 '르르르 X 책읽는 한강공원, 르르르의 시티뚜어'를 중심",
+      "scores": {
+        "impact": 4.3,
+        "freshness": 4.7,
+        "depth": 3,
+        "buzz": 1.5
+      },
+      "tags": [
+        "현대자동차",
+        "현대차",
+        "카테크"
+      ],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "zdnet_kr-ncu1ex",
+      "title": "토요타코리아, '올 뉴 RAV4' 사전계약 돌입…4927만원부터",
+      "url": "https://zdnet.co.kr/view/?no=20260504084300",
+      "source": "zdnet_kr",
+      "sourceLabel": "ZDNet Korea",
+      "publishedAt": "2026-05-03T23:43:00.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "[지디넷코리아]토요타코리아가 차세대 스포츠유틸리티차(SUV) '올 뉴 RAV4' 사전계약에 돌입했다.토요타코리아는 오는 6월 16일 '올 뉴 RAV4'를 공식 출시하고, 4일부터 전국 토요타 공식 딜러 전시장에서 사전계약을 실시한다고 밝혔다.올 뉴 RAV4 가격은 ▲PHEV GR SPORT 6180만원 ▲PHEV XSE 6160만원 ▲HEV LIMITED 5746만원 ▲HEV XLE 4927만원이다.RAV4는 1994년 글로벌 시장에 처음 등장한 이후 도심과 아웃도어를 아우르는 SUV 시장을 개척",
+      "scores": {
+        "impact": 4.3,
+        "freshness": 4.7,
+        "depth": 3,
+        "buzz": 1.5
+      },
+      "tags": [
+        "한국토요타자동차",
+        "토요타코리아",
+        "토요타",
+        "라브4",
+        "올 뉴 라브4",
+        "올 뉴 RAV4",
+        "카테크"
+      ],
       "featured": false,
       "headline": false
     },
@@ -2422,72 +2522,6 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "zdnet_kr-ncatpj",
-      "title": "금 값 ‘금리 인하 기대’와 ‘물가 공포’ 사이에 갇혔다",
-      "url": "https://zdnet.co.kr/view/?no=20260504075058",
-      "source": "zdnet_kr",
-      "sourceLabel": "ZDNet Korea",
-      "publishedAt": "2026-05-03T23:16:22.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "[지디넷코리아]4월 5주차 금 시장의 핵심 변수는 미국 FOMC였다. 시장은 금리 인하 신호를 기대했지만, 연준은 기준금리를 3.50~3.75%로 동결했다. 파월의장의 성명서에서도 연준은 2% 물가 목표와 최대고용이라는 이중 책무를 재확인하면서, 중동 정세가 경제 전망의 불확실성을 높이고 있다고 평가했다. 이는 금리 인하가 임박했다기보다, 물가와 전쟁 리스크가 금리 인하 시점을 뒤로 밀고 있다는 뜻이다. 따라서, 금값은 조정 장세가 지속될 것으로 예상되지만, 전쟁 협상 진행 상황과 신임 FOMC ",
-      "scores": {
-        "impact": 4.3,
-        "freshness": 4.7,
-        "depth": 3,
-        "buzz": 1.5
-      },
-      "tags": [
-        "금값",
-        "FOMC",
-        "PCE",
-        "물가",
-        "디지털경제"
-      ],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-47998790",
-      "title": "Metal Gear Solid 2's source code has been leaked on 4chan",
-      "url": "https://www.thegamer.com/mgs2-hd-edition-source-code-massive-leak/",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T16:48:11.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4.2,
-        "freshness": 3.6,
-        "depth": 2.9,
-        "buzz": 3.8
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48002569",
-      "title": "Three cruise ship passengers die in suspected hantavirus outbreak",
-      "url": "https://www.reuters.com/business/healthcare-pharmaceuticals/three-passengers-dead-one-case-hantavirus-confirmed-atlantic-cruise-ship-who-2026-05-03/",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T23:08:24.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4.2,
-        "freshness": 4.7,
-        "depth": 2.5,
-        "buzz": 2.2
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
       "id": "yna_it-sbxx0e",
       "title": "어린이날 선물 '세대차'…부모 닌텐도·조부모 포켓몬카드",
       "url": "https://www.yna.co.kr/view/AKR20260503046000017",
@@ -2528,22 +2562,28 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "yna_it-oj40ox",
-      "title": "LG전자 세탁가전 '복합형'이 대세…소비자 10명 중 6명 선택",
-      "url": "https://www.yna.co.kr/view/AKR20260430194100003",
-      "source": "yna_it",
-      "sourceLabel": "연합뉴스 IT",
-      "publishedAt": "2026-05-03T21:31:00.000Z",
+      "id": "zdnet_kr-ncatpj",
+      "title": "금 값 ‘금리 인하 기대’와 ‘물가 공포’ 사이에 갇혔다",
+      "url": "https://zdnet.co.kr/view/?no=20260504075058",
+      "source": "zdnet_kr",
+      "sourceLabel": "ZDNet Korea",
+      "publishedAt": "2026-05-03T23:16:22.000Z",
       "category": "ai",
       "sourceCountry": "KR",
-      "summary": "(서울=연합뉴스) 강태우 기자 = LG전자의 세탁가전 구매 고객 10명 중 6명이 워시타워·워시콤보 같은 복합형 제품을 선택한 것으로 나타났다....",
+      "summary": "[지디넷코리아]4월 5주차 금 시장의 핵심 변수는 미국 FOMC였다. 시장은 금리 인하 신호를 기대했지만, 연준은 기준금리를 3.50~3.75%로 동결했다. 파월의장의 성명서에서도 연준은 2% 물가 목표와 최대고용이라는 이중 책무를 재확인하면서, 중동 정세가 경제 전망의 불확실성을 높이고 있다고 평가했다. 이는 금리 인하가 임박했다기보다, 물가와 전쟁 리스크가 금리 인하 시점을 뒤로 밀고 있다는 뜻이다. 따라서, 금값은 조정 장세가 지속될 것으로 예상되지만, 전쟁 협상 진행 상황과 신임 FOMC ",
       "scores": {
-        "impact": 4.5,
-        "freshness": 4.4,
-        "depth": 2.5,
+        "impact": 4.3,
+        "freshness": 4.6,
+        "depth": 3,
         "buzz": 1.5
       },
-      "tags": [],
+      "tags": [
+        "금값",
+        "FOMC",
+        "PCE",
+        "물가",
+        "디지털경제"
+      ],
       "featured": false,
       "headline": false
     },
@@ -2568,20 +2608,40 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "hn-48003346",
-      "title": "Unauthorized macOS port claiming Don Ho as an author?",
-      "url": "https://github.com/notepad-plus-plus/notepad-plus-plus/issues/17982",
+      "id": "hn-48002569",
+      "title": "Three cruise ship passengers die in suspected hantavirus outbreak",
+      "url": "https://www.reuters.com/business/healthcare-pharmaceuticals/three-passengers-dead-one-case-hantavirus-confirmed-atlantic-cruise-ship-who-2026-05-03/",
       "source": "hackernews",
       "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-04T00:52:47.000Z",
+      "publishedAt": "2026-05-03T23:08:24.000Z",
       "category": "ai",
       "sourceCountry": "Global",
       "summary": "",
       "scores": {
-        "impact": 4,
-        "freshness": 5,
+        "impact": 4.2,
+        "freshness": 4.6,
         "depth": 2.5,
         "buzz": 2.2
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-48003262",
+      "title": "Tesla is facing up to $14.5B in lawsuits and it's only getting worse",
+      "url": "https://electrek.co/2026/04/16/tesla-facing-up-to-14-billion-lawsuits-deep-dive/",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-04T00:43:21.000Z",
+      "category": "robotics",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 4.9,
+        "depth": 2.5,
+        "buzz": 2.3
       },
       "tags": [],
       "featured": false,
@@ -2622,6 +2682,26 @@ window.__DAILY__ = {
         "freshness": 4.7,
         "depth": 2.5,
         "buzz": 2
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "yna_it-oj40ox",
+      "title": "LG전자 세탁가전 '복합형'이 대세…소비자 10명 중 6명 선택",
+      "url": "https://www.yna.co.kr/view/AKR20260430194100003",
+      "source": "yna_it",
+      "sourceLabel": "연합뉴스 IT",
+      "publishedAt": "2026-05-03T21:31:00.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "(서울=연합뉴스) 강태우 기자 = LG전자의 세탁가전 구매 고객 10명 중 6명이 워시타워·워시콤보 같은 복합형 제품을 선택한 것으로 나타났다....",
+      "scores": {
+        "impact": 4.5,
+        "freshness": 4.3,
+        "depth": 2.5,
+        "buzz": 1.5
       },
       "tags": [],
       "featured": false,
@@ -2768,6 +2848,26 @@ window.__DAILY__ = {
       "headline": false
     },
     {
+      "id": "hn-48002089",
+      "title": "Introduction to Atom",
+      "url": "https://validator.w3.org/feed/docs/atom.html",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T22:08:47.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 4.5,
+        "depth": 2.5,
+        "buzz": 2.9
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
       "id": "hn-47995037",
       "title": "Show HN: Apple's SHARP running in the browser via ONNX runtime web",
       "url": "https://github.com/bring-shrubbery/ml-sharp-web",
@@ -2788,47 +2888,20 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "zdnet_kr-9j7ja7",
-      "title": "‘리더십’, 한국 직장인 정신건강 좌우하는 핵심 변수",
-      "url": "https://zdnet.co.kr/view/?no=20260503223034",
-      "source": "zdnet_kr",
-      "sourceLabel": "ZDNet Korea",
-      "publishedAt": "2026-05-03T22:00:02.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "[지디넷코리아]한국 직장인의 정신건강과 업무 수행에 가장 큰 영향을 미치는 요인으로 ‘리더십의 질’이 지목됐다.텔러스헬스(TELUS Health)가 발표한 ‘2026 텔러스 정신건강 지수’(2026 TELUS Mental Health Barometer) 조사 결과이다.국내 직장인 1000명을 대상으로 한 이번 조사에 따르면, 리더가 충분한 지원 받을 경우 그 효과는 조직 전반으로 확산되는 반면, 실제로는 많은 리더들이 충분한 준비 없이 지속되는 업무 복잡성과 압박을 감당하고 있는 것으로 나타났다.",
-      "scores": {
-        "impact": 4.3,
-        "freshness": 4.5,
-        "depth": 3,
-        "buzz": 1.5
-      },
-      "tags": [
-        "리더십",
-        "직장",
-        "정신건강",
-        "웰빙",
-        "텔러스",
-        "헬스케어"
-      ],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48002621",
-      "title": "WASM interpreter fits in a QR code",
-      "url": "https://purplesyringa.moe/blog/this-wasm-interpreter-fits-in-a-qr-code/",
+      "id": "hn-48003346",
+      "title": "Unauthorized macOS port claiming Don Ho as an author?",
+      "url": "https://github.com/notepad-plus-plus/notepad-plus-plus/issues/17982",
       "source": "hackernews",
       "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T23:13:45.000Z",
+      "publishedAt": "2026-05-04T00:52:47.000Z",
       "category": "ai",
       "sourceCountry": "Global",
       "summary": "",
       "scores": {
         "impact": 4,
-        "freshness": 4.7,
-        "depth": 2.9,
-        "buzz": 2.3
+        "freshness": 4.9,
+        "depth": 2.5,
+        "buzz": 2.2
       },
       "tags": [],
       "featured": false,
@@ -2855,66 +2928,6 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "hn-48002089",
-      "title": "Introduction to Atom",
-      "url": "https://validator.w3.org/feed/docs/atom.html",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T22:08:47.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 4.5,
-        "depth": 2.5,
-        "buzz": 2.8
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-47998225",
-      "title": "For thirty years I programmed with Phish on, every day",
-      "url": "https://christophermeiklejohn.com/ai/personal/phish/flow/agents/2026/05/03/rift.html",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T15:55:59.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4.2,
-        "freshness": 3.5,
-        "depth": 2.5,
-        "buzz": 3.8
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48003347",
-      "title": "PostgreSQL databases are boring on purpose",
-      "url": "https://stormatics.tech/blogs/the-best-postgresql-databases-are-boring-on-purpose",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-04T00:52:53.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 5,
-        "depth": 2.5,
-        "buzz": 2
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
       "id": "hn-48003298",
       "title": "UIGen – Why runtime rendering is better than codegen (low code)",
       "url": "https://uigen-docs.vercel.app/blog/runtime-rendering-vs-code-generation",
@@ -2929,26 +2942,6 @@ window.__DAILY__ = {
         "freshness": 4.9,
         "depth": 2.9,
         "buzz": 1.8
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48003262",
-      "title": "Tesla is facing up to $14.5B in lawsuits and it's only getting worse",
-      "url": "https://electrek.co/2026/04/16/tesla-facing-up-to-14-billion-lawsuits-deep-dive/",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-04T00:43:21.000Z",
-      "category": "robotics",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 4.9,
-        "depth": 2.5,
-        "buzz": 2.1
       },
       "tags": [],
       "featured": false,
@@ -3035,26 +3028,28 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "techcrunch-2ffxuw",
-      "title": "‘This is fine’ creator says AI startup stole his art",
-      "url": "https://techcrunch.com/2026/05/03/this-is-fine-creator-says-ai-startup-stole-his-art/",
-      "source": "techcrunch",
-      "sourceLabel": "TechCrunch",
-      "publishedAt": "2026-05-03T20:16:51.000Z",
+      "id": "zdnet_kr-9j7ja7",
+      "title": "‘리더십’, 한국 직장인 정신건강 좌우하는 핵심 변수",
+      "url": "https://zdnet.co.kr/view/?no=20260503223034",
+      "source": "zdnet_kr",
+      "sourceLabel": "ZDNet Korea",
+      "publishedAt": "2026-05-03T22:00:02.000Z",
       "category": "ai",
-      "sourceCountry": "US",
-      "summary": "The ad comes from Artisan, the AI startup behind billboards urging businesses to \"stop hiring humans.\"",
+      "sourceCountry": "KR",
+      "summary": "[지디넷코리아]한국 직장인의 정신건강과 업무 수행에 가장 큰 영향을 미치는 요인으로 ‘리더십의 질’이 지목됐다.텔러스헬스(TELUS Health)가 발표한 ‘2026 텔러스 정신건강 지수’(2026 TELUS Mental Health Barometer) 조사 결과이다.국내 직장인 1000명을 대상으로 한 이번 조사에 따르면, 리더가 충분한 지원 받을 경우 그 효과는 조직 전반으로 확산되는 반면, 실제로는 많은 리더들이 충분한 준비 없이 지속되는 업무 복잡성과 압박을 감당하고 있는 것으로 나타났다.",
       "scores": {
-        "impact": 4.5,
-        "freshness": 4.2,
-        "depth": 2.5,
+        "impact": 4.3,
+        "freshness": 4.4,
+        "depth": 3,
         "buzz": 1.5
       },
       "tags": [
-        "AI",
-        "Startups",
-        "artisan",
-        "kc green"
+        "리더십",
+        "직장",
+        "정신건강",
+        "웰빙",
+        "텔러스",
+        "헬스케어"
       ],
       "featured": false,
       "headline": false
@@ -3080,40 +3075,20 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "hn-48001695",
-      "title": "Show HN: Playground for the Spectre Programming Language",
-      "url": "https://spectrelang.org/playground",
+      "id": "hn-48002621",
+      "title": "WASM interpreter fits in a QR code",
+      "url": "https://purplesyringa.moe/blog/this-wasm-interpreter-fits-in-a-qr-code/",
       "source": "hackernews",
       "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T21:28:01.000Z",
-      "category": "standards",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4.2,
-        "freshness": 4.4,
-        "depth": 2.5,
-        "buzz": 2.2
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48000507",
-      "title": "Make your own microforest (2025)",
-      "url": "https://ambrook.com/offrange/environment/a-forest-in-your-pocket",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T19:31:35.000Z",
+      "publishedAt": "2026-05-03T23:13:45.000Z",
       "category": "ai",
       "sourceCountry": "Global",
       "summary": "",
       "scores": {
         "impact": 4,
-        "freshness": 4.1,
-        "depth": 2.5,
-        "buzz": 3.3
+        "freshness": 4.6,
+        "depth": 2.9,
+        "buzz": 2.3
       },
       "tags": [],
       "featured": false,
@@ -3140,6 +3115,126 @@ window.__DAILY__ = {
       "headline": false
     },
     {
+      "id": "hn-47998225",
+      "title": "For thirty years I programmed with Phish on, every day",
+      "url": "https://christophermeiklejohn.com/ai/personal/phish/flow/agents/2026/05/03/rift.html",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T15:55:59.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4.2,
+        "freshness": 3.4,
+        "depth": 2.5,
+        "buzz": 3.8
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-48003508",
+      "title": "Don't fly if you can help it",
+      "url": "https://michaelbluejay.com/airfare/dontfly.html",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-04T01:17:04.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 5,
+        "depth": 2.5,
+        "buzz": 1.8
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-48003473",
+      "title": "The Rise of Emotional Surveillance",
+      "url": "https://www.theatlantic.com/culture/2026/05/worker-surveillance-emotion-ai/687029/",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-04T01:11:48.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 5,
+        "depth": 2.5,
+        "buzz": 1.8
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-48003454",
+      "title": "Show HN: ReflowPDF – wrote a layout engine because every PDF library failed",
+      "url": "https://reflowpdf.com",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-04T01:09:11.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 5,
+        "depth": 2.5,
+        "buzz": 1.8
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-48003448",
+      "title": "Think pop music is basic? Even classical and jazz are getting less complex",
+      "url": "https://connectsci.au/news/news-parent/9259/Think-pop-music-is-basic-Even-classical-and-jazz",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-04T01:08:51.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 5,
+        "depth": 2.5,
+        "buzz": 1.8
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-48003447",
+      "title": "Shoppers falsely identified by facial recognition system",
+      "url": "https://www.theguardian.com/technology/2026/may/03/guilty-until-proven-innocent-shoppers-falsely-identified-by-facial-recognition-struggle-to-clear-their-name",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-04T01:08:47.000Z",
+      "category": "devtools",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 5,
+        "depth": 2.5,
+        "buzz": 1.8
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
       "id": "hn-48003439",
       "title": "PicoServer: A glue library embedding web server for .NET, no IIS, no Kestrel",
       "url": "https://www.nuget.org/packages/PicoServer",
@@ -3160,12 +3255,12 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "hn-48003069",
-      "title": "Russian Soldiers Surrendered for Free McDonald's",
-      "url": "https://www.youtube.com/watch?v=MktJb7dFv9E",
+      "id": "hn-48003347",
+      "title": "PostgreSQL databases are boring on purpose",
+      "url": "https://stormatics.tech/blogs/the-best-postgresql-databases-are-boring-on-purpose",
       "source": "hackernews",
       "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-04T00:16:57.000Z",
+      "publishedAt": "2026-05-04T00:52:53.000Z",
       "category": "ai",
       "sourceCountry": "Global",
       "summary": "",
@@ -3200,6 +3295,31 @@ window.__DAILY__ = {
       "headline": false
     },
     {
+      "id": "techcrunch-2ffxuw",
+      "title": "‘This is fine’ creator says AI startup stole his art",
+      "url": "https://techcrunch.com/2026/05/03/this-is-fine-creator-says-ai-startup-stole-his-art/",
+      "source": "techcrunch",
+      "sourceLabel": "TechCrunch",
+      "publishedAt": "2026-05-03T20:16:51.000Z",
+      "category": "ai",
+      "sourceCountry": "US",
+      "summary": "The ad comes from Artisan, the AI startup behind billboards urging businesses to \"stop hiring humans.\"",
+      "scores": {
+        "impact": 4.5,
+        "freshness": 4.1,
+        "depth": 2.5,
+        "buzz": 1.5
+      },
+      "tags": [
+        "AI",
+        "Startups",
+        "artisan",
+        "kc green"
+      ],
+      "featured": false,
+      "headline": false
+    },
+    {
       "id": "zdnet_kr-9j6xs7",
       "title": "에스티젠바이오, ‘비티젠’으로 사명 변경",
       "url": "https://zdnet.co.kr/view/?no=20260503222239",
@@ -3228,6 +3348,26 @@ window.__DAILY__ = {
       "headline": false
     },
     {
+      "id": "hn-48000507",
+      "title": "Make your own microforest (2025)",
+      "url": "https://ambrook.com/offrange/environment/a-forest-in-your-pocket",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T19:31:35.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 4,
+        "depth": 2.5,
+        "buzz": 3.3
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
       "id": "hn-48002240",
       "title": "Simpson's Paradox",
       "url": "https://en.wikipedia.org/wiki/Simpson%27s_paradox",
@@ -3242,26 +3382,6 @@ window.__DAILY__ = {
         "freshness": 4.5,
         "depth": 2.5,
         "buzz": 2.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48001701",
-      "title": "xAI Is Reportedly Using Just 11% of Its 550k Nvidia GPUs",
-      "url": "https://wccftech.com/xai-using-just-11-percent-gpus-while-meta-google-squeeze-out-much-more/",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T21:28:57.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 4.4,
-        "depth": 2.5,
-        "buzz": 2.7
       },
       "tags": [],
       "featured": false,
@@ -3368,20 +3488,20 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "hn-48003095",
-      "title": "Request for Testers: Personal Planning App",
-      "url": "https://www.threads.com/@alaaalatif/post/DX5VxSbmSgE",
+      "id": "hn-48003069",
+      "title": "Russian Soldiers Surrendered for Free McDonald's",
+      "url": "https://www.youtube.com/watch?v=MktJb7dFv9E",
       "source": "hackernews",
       "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-04T00:21:12.000Z",
+      "publishedAt": "2026-05-04T00:16:57.000Z",
       "category": "ai",
       "sourceCountry": "Global",
       "summary": "",
       "scores": {
         "impact": 4,
-        "freshness": 4.9,
+        "freshness": 4.8,
         "depth": 2.5,
-        "buzz": 1.8
+        "buzz": 2
       },
       "tags": [],
       "featured": false,
@@ -3408,86 +3528,6 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "hn-48002837",
-      "title": "Conclave – make LLMs debate each other before they respond",
-      "url": "https://adndvlp.github.io/conclave/",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T23:45:45.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 4.8,
-        "depth": 2.5,
-        "buzz": 2
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-47999006",
-      "title": "How far behind is each major Chromium browser?",
-      "url": "https://chromium-drift.pages.dev/",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T17:05:58.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 3.7,
-        "depth": 2.5,
-        "buzz": 3.7
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48002711",
-      "title": "Vertical agrivoltaics in a temperate climate: Technical and social dimensions",
-      "url": "https://www.sciencedirect.com/science/article/pii/S2772427125001664",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T23:27:07.000Z",
-      "category": "devtools",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 4.7,
-        "depth": 2.5,
-        "buzz": 2.1
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48002616",
-      "title": "Show HN: An new experimental App for speed reading books",
-      "url": "https://vernetit.github.io/s4/",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T23:12:56.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "I built a small experimental speed-reader App that reformats books into a configurable three-step visual layout. Instead of displaying text as normal paragraphs, it splits the text into blocks like this: hello world this is a test line line line The idea is to guide the eye throu",
-      "scores": {
-        "impact": 4,
-        "freshness": 4.7,
-        "depth": 3,
-        "buzz": 1.8
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
       "id": "hn-48002072",
       "title": "Next-Token Predictor Is An AI's Job, Not Its Species",
       "url": "https://www.astralcodexten.com/p/next-token-predictor-is-an-ais-job",
@@ -3508,120 +3548,60 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "hn-48001595",
-      "title": "Show HN: Memory Safe Argon2 Implementation in Pure Swift 6",
-      "url": "https://github.com/mimiclone/argon2-swift",
+      "id": "hn-48001695",
+      "title": "Show HN: Playground for the Spectre Programming Language",
+      "url": "https://spectrelang.org/playground",
       "source": "hackernews",
       "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T21:17:43.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 4.4,
-        "depth": 3.3,
-        "buzz": 2.1
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-47998570",
-      "title": "Show HN: Software Engineer to Novelist: Writing a Book Like Coding",
-      "url": "https://frequal.com/forwriters/",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T16:26:32.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "I just published my first book, Means and Motive. ( https:&#x2F;&#x2F;www.amazon.com&#x2F;dp&#x2F;B0GYCZJVGX ) As a software engineer, I approached writing like a software project. I used familiar tools (Emacs and HTML) for the primary writing. I built my own tool (EPublish) to t",
-      "scores": {
-        "impact": 4.3,
-        "freshness": 3.5,
-        "depth": 3,
-        "buzz": 2.6
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-47997358",
-      "title": "Utah to hold websites liable for users who mask their location with VPNs",
-      "url": "https://www.tomshardware.com/software/vpn/utah-becomes-first-us-state-to-target-vpn-use-with-age-verification-law",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T14:36:14.000Z",
-      "category": "ai",
+      "publishedAt": "2026-05-03T21:28:01.000Z",
+      "category": "standards",
       "sourceCountry": "Global",
       "summary": "",
       "scores": {
         "impact": 4.2,
-        "freshness": 3.2,
+        "freshness": 4.3,
         "depth": 2.5,
-        "buzz": 3.8
+        "buzz": 2.2
       },
       "tags": [],
       "featured": false,
       "headline": false
     },
     {
-      "id": "hn-48003049",
-      "title": "Don't Sue Me Nintendo",
-      "url": "https://latexcrimes.leaflet.pub/3mky5fjz67k2p",
+      "id": "hn-48001701",
+      "title": "xAI Is Reportedly Using Just 11% of Its 550k Nvidia GPUs",
+      "url": "https://wccftech.com/xai-using-just-11-percent-gpus-while-meta-google-squeeze-out-much-more/",
       "source": "hackernews",
       "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-04T00:14:43.000Z",
+      "publishedAt": "2026-05-03T21:28:57.000Z",
       "category": "ai",
       "sourceCountry": "Global",
       "summary": "",
       "scores": {
         "impact": 4,
-        "freshness": 4.8,
+        "freshness": 4.3,
         "depth": 2.5,
-        "buzz": 1.8
+        "buzz": 2.7
       },
       "tags": [],
       "featured": false,
       "headline": false
     },
     {
-      "id": "hn-48003017",
-      "title": "Valletta: A City in History [pdf]",
-      "url": "https://www.um.edu.mt/library/oar/bitstream/123456789/15640/1/Valletta%20-%20A%20city%20in%20history_A5.pdf",
+      "id": "hn-48002711",
+      "title": "Vertical agrivoltaics in a temperate climate: Technical and social dimensions",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2772427125001664",
       "source": "hackernews",
       "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-04T00:09:31.000Z",
-      "category": "ai",
+      "publishedAt": "2026-05-03T23:27:07.000Z",
+      "category": "devtools",
       "sourceCountry": "Global",
       "summary": "",
       "scores": {
         "impact": 4,
-        "freshness": 4.8,
+        "freshness": 4.7,
         "depth": 2.5,
-        "buzz": 1.8
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48003011",
-      "title": "Daily Dots",
-      "url": "https://dailydots.dev/",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-04T00:08:42.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 4.8,
-        "depth": 2.5,
-        "buzz": 1.8
+        "buzz": 2.1
       },
       "tags": [],
       "featured": false,
@@ -3688,72 +3668,12 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "hn-48002890",
-      "title": "Why I Created phpc.tv",
-      "url": "https://afilina.com/why-phpc-tv",
+      "id": "hn-48002837",
+      "title": "Conclave – make LLMs debate each other before they respond",
+      "url": "https://adndvlp.github.io/conclave/",
       "source": "hackernews",
       "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T23:53:05.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 4.8,
-        "depth": 2.5,
-        "buzz": 1.8
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48002839",
-      "title": "Can a quantum sensor detect your heartbeat from 60 km away? [video]",
-      "url": "https://www.youtube.com/watch?v=N3zU7sV4bJE",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T23:45:50.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 4.8,
-        "depth": 2.5,
-        "buzz": 1.8
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48002814",
-      "title": "ProteinView",
-      "url": "https://github.com/001TMF/ProteinView",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T23:42:39.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 4.8,
-        "depth": 2.5,
-        "buzz": 1.8
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48002557",
-      "title": "No Joke. Unification of (GR/Qt)",
-      "url": "https://twitter.com/CTibedo/status/2051071923849723947",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T23:07:16.000Z",
+      "publishedAt": "2026-05-03T23:45:45.000Z",
       "category": "ai",
       "sourceCountry": "Global",
       "summary": "",
@@ -3782,6 +3702,26 @@ window.__DAILY__ = {
         "freshness": 4.6,
         "depth": 2.5,
         "buzz": 2.2
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-48002616",
+      "title": "Show HN: An new experimental App for speed reading books",
+      "url": "https://vernetit.github.io/s4/",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T23:12:56.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "I built a small experimental speed-reader App that reformats books into a configurable three-step visual layout. Instead of displaying text as normal paragraphs, it splits the text into blocks like this: hello world this is a test line line line The idea is to guide the eye throu",
+      "scores": {
+        "impact": 4,
+        "freshness": 4.6,
+        "depth": 3,
+        "buzz": 1.8
       },
       "tags": [],
       "featured": false,
@@ -3828,46 +3768,6 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "hn-48002326",
-      "title": "Open source intelligence about Palantir",
-      "url": "https://palantirwatch.org",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T22:36:19.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 4.6,
-        "depth": 2.9,
-        "buzz": 1.8
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48002305",
-      "title": "Kloak keeps secrets out of your application's memory",
-      "url": "https://getkloak.io/blog/kloak-50000-feet-view/",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T22:33:36.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 4.6,
-        "depth": 2.9,
-        "buzz": 1.8
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
       "id": "hn-48002134",
       "title": "Show HN: Triggering anti-cheats with just a browser tab title",
       "url": "https://github.com/elliott-diy/DontTrustTitles",
@@ -3882,6 +3782,166 @@ window.__DAILY__ = {
         "freshness": 4.5,
         "depth": 2.5,
         "buzz": 2.3
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-48001595",
+      "title": "Show HN: Memory Safe Argon2 Implementation in Pure Swift 6",
+      "url": "https://github.com/mimiclone/argon2-swift",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T21:17:43.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 4.3,
+        "depth": 3.3,
+        "buzz": 2.1
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-47999006",
+      "title": "How far behind is each major Chromium browser?",
+      "url": "https://chromium-drift.pages.dev/",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T17:05:58.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 3.6,
+        "depth": 2.5,
+        "buzz": 3.7
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-47998570",
+      "title": "Show HN: Software Engineer to Novelist: Writing a Book Like Coding",
+      "url": "https://frequal.com/forwriters/",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T16:26:32.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "I just published my first book, Means and Motive. ( https:&#x2F;&#x2F;www.amazon.com&#x2F;dp&#x2F;B0GYCZJVGX ) As a software engineer, I approached writing like a software project. I used familiar tools (Emacs and HTML) for the primary writing. I built my own tool (EPublish) to t",
+      "scores": {
+        "impact": 4.3,
+        "freshness": 3.5,
+        "depth": 3,
+        "buzz": 2.6
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-47997358",
+      "title": "Utah to hold websites liable for users who mask their location with VPNs",
+      "url": "https://www.tomshardware.com/software/vpn/utah-becomes-first-us-state-to-target-vpn-use-with-age-verification-law",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T14:36:14.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4.2,
+        "freshness": 3.2,
+        "depth": 2.5,
+        "buzz": 3.8
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-48003095",
+      "title": "Request for Testers: Personal Planning App",
+      "url": "https://www.threads.com/@alaaalatif/post/DX5VxSbmSgE",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-04T00:21:12.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 4.8,
+        "depth": 2.5,
+        "buzz": 1.8
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-48003049",
+      "title": "Don't Sue Me Nintendo",
+      "url": "https://latexcrimes.leaflet.pub/3mky5fjz67k2p",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-04T00:14:43.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 4.8,
+        "depth": 2.5,
+        "buzz": 1.8
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-48003017",
+      "title": "Valletta: A City in History [pdf]",
+      "url": "https://www.um.edu.mt/library/oar/bitstream/123456789/15640/1/Valletta%20-%20A%20city%20in%20history_A5.pdf",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-04T00:09:31.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 4.8,
+        "depth": 2.5,
+        "buzz": 1.8
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-48003011",
+      "title": "Daily Dots",
+      "url": "https://dailydots.dev/",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-04T00:08:42.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 4.8,
+        "depth": 2.5,
+        "buzz": 1.8
       },
       "tags": [],
       "featured": false,
@@ -3908,26 +3968,6 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "hn-48002015",
-      "title": "Seriously, Anthropic? [video]",
-      "url": "https://www.youtube.com/watch?v=J8O9LLpJNrg",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T22:02:02.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 4.5,
-        "depth": 2.5,
-        "buzz": 2.2
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
       "id": "hn-48000334",
       "title": "People who are blind from birth never develop schizophrenia",
       "url": "https://theconversation.com/people-who-are-blind-from-birth-never-develop-schizophrenia-what-this-tells-us-about-the-psychiatric-condition-281369",
@@ -3942,26 +3982,6 @@ window.__DAILY__ = {
         "freshness": 4,
         "depth": 2.5,
         "buzz": 2.9
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48000521",
-      "title": "ASU Using AI Tool to Create Courses from Professors' Work Without Their",
-      "url": "https://azfreenews.com/2026/05/asu-using-ai-tool-to-create-courses-from-professors-work-without-their-knowledge/",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T19:33:00.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 4.1,
-        "depth": 2.5,
-        "buzz": 2.8
       },
       "tags": [],
       "featured": false,
@@ -3988,6 +4008,66 @@ window.__DAILY__ = {
       "headline": false
     },
     {
+      "id": "hn-48002890",
+      "title": "Why I Created phpc.tv",
+      "url": "https://afilina.com/why-phpc-tv",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T23:53:05.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 4.7,
+        "depth": 2.5,
+        "buzz": 1.8
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-48002839",
+      "title": "Can a quantum sensor detect your heartbeat from 60 km away? [video]",
+      "url": "https://www.youtube.com/watch?v=N3zU7sV4bJE",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T23:45:50.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 4.7,
+        "depth": 2.5,
+        "buzz": 1.8
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-48002814",
+      "title": "ProteinView",
+      "url": "https://github.com/001TMF/ProteinView",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T23:42:39.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 4.7,
+        "depth": 2.5,
+        "buzz": 1.8
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
       "id": "hn-48002663",
       "title": "xAI (Grok) Text-to-Speech and Speech-to-Text Are Now Available in Puter.js",
       "url": "https://developer.puter.com/blog/xai-tts-stt-in-puter-js/",
@@ -4008,72 +4088,12 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "hn-48002641",
-      "title": "Modern Standby is draining your laptop's battery, and Microsoft won't fix it",
-      "url": "https://www.xda-developers.com/modern-standby-draining-windows-11-laptop-battery-microsoft-wont-fix-it/",
+      "id": "hn-48002557",
+      "title": "No Joke. Unification of (GR/Qt)",
+      "url": "https://twitter.com/CTibedo/status/2051071923849723947",
       "source": "hackernews",
       "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T23:17:01.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 4.7,
-        "depth": 2.5,
-        "buzz": 1.8
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48002601",
-      "title": "Want to Watch button missing for movie searches",
-      "url": "https://support.google.com/websearch/thread/414738182/want-to-watch-button-missing-for-movie-searches?hl=en",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T23:11:08.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 4.7,
-        "depth": 2.5,
-        "buzz": 1.8
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48002332",
-      "title": "The PHP License, Simplified",
-      "url": "https://ben.ramsey.dev/blog/2026/05/the-php-license-simplified",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T22:37:21.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 4.6,
-        "depth": 2.5,
-        "buzz": 2
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48002290",
-      "title": "PyFlue – Python-Native Agent Harness Framework (Python Clone of Flue)",
-      "url": "https://super-agentic.ai/pyflue",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T22:31:46.000Z",
+      "publishedAt": "2026-05-03T23:07:16.000Z",
       "category": "ai",
       "sourceCountry": "Global",
       "summary": "",
@@ -4122,6 +4142,46 @@ window.__DAILY__ = {
         "freshness": 3.7,
         "depth": 2.5,
         "buzz": 3.4
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-48002326",
+      "title": "Open source intelligence about Palantir",
+      "url": "https://palantirwatch.org",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T22:36:19.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 4.5,
+        "depth": 2.9,
+        "buzz": 1.8
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-48002305",
+      "title": "Kloak keeps secrets out of your application's memory",
+      "url": "https://getkloak.io/blog/kloak-50000-feet-view/",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T22:33:36.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 4.5,
+        "depth": 2.9,
+        "buzz": 1.8
       },
       "tags": [],
       "featured": false,
@@ -4216,66 +4276,6 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "theverge-l5oqxj",
-      "title": "How the internet’s favorite squirrel dad made the hottest camera app of 2026",
-      "url": "https://www.theverge.com/tech/921690/dualshot-recorder-iphone-camera-app-derrick-downey-jr",
-      "source": "theverge",
-      "sourceLabel": "The Verge",
-      "publishedAt": "2026-05-03T13:00:00.000Z",
-      "category": "ai",
-      "sourceCountry": "US",
-      "summary": "It's not hyperbole to call DualShot Recorder an overnight sensation. It took only 12 hours from the time it was released to hit number one on the App Store's list of top paid apps. It was a surprise success - but what's even more surprising is the app's origin story: it all start",
-      "scores": {
-        "impact": 4.8,
-        "freshness": 3,
-        "depth": 3,
-        "buzz": 1.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-47999520",
-      "title": "LLMs Are Not a Higher Level of Abstraction",
-      "url": "https://www.lelanthran.com/chap15/content.html",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T17:51:58.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 3.8,
-        "depth": 2.5,
-        "buzz": 3.1
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-47999776",
-      "title": "Talking to Transformers",
-      "url": "https://miraos.org/blog/2026/05/02/talking-to-transformers",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T18:17:18.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 3.9,
-        "depth": 2.5,
-        "buzz": 2.9
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
       "id": "hn-48001020",
       "title": "Performance of a large language model on the reasoning tasks of a physician",
       "url": "https://www.science.org/doi/10.1126/science.adz4433",
@@ -4296,6 +4296,26 @@ window.__DAILY__ = {
       "headline": false
     },
     {
+      "id": "hn-48000521",
+      "title": "ASU Using AI Tool to Create Courses from Professors' Work Without Their",
+      "url": "https://azfreenews.com/2026/05/asu-using-ai-tool-to-create-courses-from-professors-work-without-their-knowledge/",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T19:33:00.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 4,
+        "depth": 2.5,
+        "buzz": 2.8
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
       "id": "hn-48000811",
       "title": "Urban Birds Are Rising Earlier Because of Traffic Noise (2013)",
       "url": "https://www.audubon.org/news/urban-birds-are-rising-earlier-because-traffic-noise",
@@ -4310,6 +4330,46 @@ window.__DAILY__ = {
         "freshness": 4.1,
         "depth": 2.5,
         "buzz": 2.6
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-48002641",
+      "title": "Modern Standby is draining your laptop's battery, and Microsoft won't fix it",
+      "url": "https://www.xda-developers.com/modern-standby-draining-windows-11-laptop-battery-microsoft-wont-fix-it/",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T23:17:01.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 4.6,
+        "depth": 2.5,
+        "buzz": 1.8
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-48002601",
+      "title": "Want to Watch button missing for movie searches",
+      "url": "https://support.google.com/websearch/thread/414738182/want-to-watch-button-missing-for-movie-searches?hl=en",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T23:11:08.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 4.6,
+        "depth": 2.5,
+        "buzz": 1.8
       },
       "tags": [],
       "featured": false,
@@ -4376,20 +4436,40 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "hn-48002306",
-      "title": "Using the \"Sandwich Method\" to Teach Mathematics",
-      "url": "https://pikuma.com/blog/sandwich-method-math-education",
+      "id": "hn-48002332",
+      "title": "The PHP License, Simplified",
+      "url": "https://ben.ramsey.dev/blog/2026/05/the-php-license-simplified",
       "source": "hackernews",
       "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T22:33:40.000Z",
+      "publishedAt": "2026-05-03T22:37:21.000Z",
       "category": "ai",
       "sourceCountry": "Global",
       "summary": "",
       "scores": {
         "impact": 4,
-        "freshness": 4.6,
+        "freshness": 4.5,
         "depth": 2.5,
-        "buzz": 1.8
+        "buzz": 2
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-48002290",
+      "title": "PyFlue – Python-Native Agent Harness Framework (Python Clone of Flue)",
+      "url": "https://super-agentic.ai/pyflue",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T22:31:46.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 4.5,
+        "depth": 2.5,
+        "buzz": 2
       },
       "tags": [],
       "featured": false,
@@ -4476,60 +4556,20 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "hn-48001985",
-      "title": "Sato – AI desktop companion for macOS with multi-provider support",
-      "url": "https://www.sato.host/",
+      "id": "hn-48002015",
+      "title": "Seriously, Anthropic? [video]",
+      "url": "https://www.youtube.com/watch?v=J8O9LLpJNrg",
       "source": "hackernews",
       "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T21:58:25.000Z",
+      "publishedAt": "2026-05-03T22:02:02.000Z",
       "category": "ai",
       "sourceCountry": "Global",
       "summary": "",
       "scores": {
         "impact": 4,
-        "freshness": 4.5,
+        "freshness": 4.4,
         "depth": 2.5,
-        "buzz": 2
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48001961",
-      "title": "Transport access reduces deprivation: When colocation misleads",
-      "url": "https://pnas.scienceconnect.io/error?msg=ewogICJpZCIgOiAiNmU3ZTA0MTEtMWQ1Yi00NDhjLTg0MDgtZGE4NjI4Nzc1NDI2IiwKICAidGl0bGUiIDogIkVycm9yIiwKICAibWVzc2FnZSIgOiAiY29tLm5pbWJ1c2RzLm9hdXRoMi5zZGsuUGFyc2VFeGNlcHRpb246IFRoZSBzY29wZSBtdXN0IGluY2x1ZGUgYW4gb3BlbmlkIHZhbHVlIiwKICAiY29kZSIgOiAiR0VORVJBTF9FUlJPUiIKfQ==&errorCode=500-feb",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T21:55:27.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 4.5,
-        "depth": 2.5,
-        "buzz": 2
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48001955",
-      "title": "March 2026 Top New Cran Packages",
-      "url": "https://rworks.dev/posts/march-2026-top-40-new-cran-packages/",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T21:54:47.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 4.5,
-        "depth": 2.5,
-        "buzz": 2
+        "buzz": 2.2
       },
       "tags": [],
       "featured": false,
@@ -4616,20 +4656,20 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "hn-48001704",
-      "title": "Sluggers.fyi: Moneyball and Mario Super Sluggers",
-      "url": "https://www.sluggers.fyi/",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T21:29:26.000Z",
+      "id": "theverge-l5oqxj",
+      "title": "How the internet’s favorite squirrel dad made the hottest camera app of 2026",
+      "url": "https://www.theverge.com/tech/921690/dualshot-recorder-iphone-camera-app-derrick-downey-jr",
+      "source": "theverge",
+      "sourceLabel": "The Verge",
+      "publishedAt": "2026-05-03T13:00:00.000Z",
       "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
+      "sourceCountry": "US",
+      "summary": "It's not hyperbole to call DualShot Recorder an overnight sensation. It took only 12 hours from the time it was released to hit number one on the App Store's list of top paid apps. It was a surprise success - but what's even more surprising is the app's origin story: it all start",
       "scores": {
-        "impact": 4,
-        "freshness": 4.4,
-        "depth": 2.5,
-        "buzz": 2.1
+        "impact": 4.8,
+        "freshness": 2.9,
+        "depth": 3,
+        "buzz": 1.5
       },
       "tags": [],
       "featured": false,
@@ -4676,6 +4716,66 @@ window.__DAILY__ = {
       "headline": false
     },
     {
+      "id": "hn-47999520",
+      "title": "LLMs Are Not a Higher Level of Abstraction",
+      "url": "https://www.lelanthran.com/chap15/content.html",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T17:51:58.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 3.7,
+        "depth": 2.5,
+        "buzz": 3.1
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-47999776",
+      "title": "Talking to Transformers",
+      "url": "https://miraos.org/blog/2026/05/02/talking-to-transformers",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T18:17:18.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 3.8,
+        "depth": 2.5,
+        "buzz": 2.9
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-48002306",
+      "title": "Using the \"Sandwich Method\" to Teach Mathematics",
+      "url": "https://pikuma.com/blog/sandwich-method-math-education",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T22:33:40.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 4.5,
+        "depth": 2.5,
+        "buzz": 1.8
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
       "id": "hn-48002162",
       "title": "HN Signal (Last 24 hours) | Curated top stories from HN in the last 24 hrs",
       "url": "https://www.heydebrief.com/dubkc/hn-best-24",
@@ -4696,20 +4796,60 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "hn-48001978",
-      "title": "The Long Road To Windows 95 [video]",
-      "url": "https://www.youtube.com/watch?v=u8k66A9n8gE",
+      "id": "hn-48001985",
+      "title": "Sato – AI desktop companion for macOS with multi-provider support",
+      "url": "https://www.sato.host/",
       "source": "hackernews",
       "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T21:57:29.000Z",
+      "publishedAt": "2026-05-03T21:58:25.000Z",
       "category": "ai",
       "sourceCountry": "Global",
       "summary": "",
       "scores": {
         "impact": 4,
-        "freshness": 4.5,
+        "freshness": 4.4,
         "depth": 2.5,
-        "buzz": 1.8
+        "buzz": 2
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-48001961",
+      "title": "Transport access reduces deprivation: When colocation misleads",
+      "url": "https://pnas.scienceconnect.io/error?msg=ewogICJpZCIgOiAiNmU3ZTA0MTEtMWQ1Yi00NDhjLTg0MDgtZGE4NjI4Nzc1NDI2IiwKICAidGl0bGUiIDogIkVycm9yIiwKICAibWVzc2FnZSIgOiAiY29tLm5pbWJ1c2RzLm9hdXRoMi5zZGsuUGFyc2VFeGNlcHRpb246IFRoZSBzY29wZSBtdXN0IGluY2x1ZGUgYW4gb3BlbmlkIHZhbHVlIiwKICAiY29kZSIgOiAiR0VORVJBTF9FUlJPUiIKfQ==&errorCode=500-feb",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T21:55:27.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 4.4,
+        "depth": 2.5,
+        "buzz": 2
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-48001955",
+      "title": "March 2026 Top New Cran Packages",
+      "url": "https://rworks.dev/posts/march-2026-top-40-new-cran-packages/",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T21:54:47.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 4.4,
+        "depth": 2.5,
+        "buzz": 2
       },
       "tags": [],
       "featured": false,
@@ -4736,32 +4876,12 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "hn-48001581",
-      "title": "I got tired of messy PTO spreadsheets, so I built a simple tool",
-      "url": "https://myfreecalendar.app/",
+      "id": "hn-48001704",
+      "title": "Sluggers.fyi: Moneyball and Mario Super Sluggers",
+      "url": "https://www.sluggers.fyi/",
       "source": "hackernews",
       "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T21:15:57.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 4.4,
-        "depth": 2.5,
-        "buzz": 2
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48001452",
-      "title": "Reality Is a Shared Hallucination (1997)",
-      "url": "http://reactor-core.org/reality-hallucination.html",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T21:03:33.000Z",
+      "publishedAt": "2026-05-03T21:29:26.000Z",
       "category": "ai",
       "sourceCountry": "Global",
       "summary": "",
@@ -4825,20 +4945,20 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "hn-47997486",
-      "title": "Security through obscurity is not bad",
-      "url": "https://mobeigi.com/blog/security/security-through-obscurity-is-not-bad/",
+      "id": "hn-48001978",
+      "title": "The Long Road To Windows 95 [video]",
+      "url": "https://www.youtube.com/watch?v=u8k66A9n8gE",
       "source": "hackernews",
       "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T14:49:56.000Z",
+      "publishedAt": "2026-05-03T21:57:29.000Z",
       "category": "ai",
       "sourceCountry": "Global",
       "summary": "",
       "scores": {
         "impact": 4,
-        "freshness": 3.3,
+        "freshness": 4.4,
         "depth": 2.5,
-        "buzz": 3.6
+        "buzz": 1.8
       },
       "tags": [],
       "featured": false,
@@ -4905,72 +5025,12 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "hn-48001493",
-      "title": "Breathtaking",
-      "url": "https://aeon.co/essays/do-hold-your-breath-on-the-benefits-of-conscious-breathing",
+      "id": "hn-48001581",
+      "title": "I got tired of messy PTO spreadsheets, so I built a simple tool",
+      "url": "https://myfreecalendar.app/",
       "source": "hackernews",
       "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T21:06:24.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 4.3,
-        "depth": 2.5,
-        "buzz": 2
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48001476",
-      "title": "Street Fishing in the Canals of 'Little Venice' – Treviso, Italy",
-      "url": "https://www.nytimes.com/2026/04/21/travel/treviso-italy-canal-fishing-little-venice-local-guide.html",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T21:05:06.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 4.3,
-        "depth": 2.5,
-        "buzz": 2
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48001417",
-      "title": "Show HN: VidMark – Frame.io-style timestamped comments for Google Drive",
-      "url": "https://github.com/markksantos/VidMark",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T20:59:08.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 4.3,
-        "depth": 2.5,
-        "buzz": 2
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-48001403",
-      "title": "Waveoverhangs – Steep overhangs without supports",
-      "url": "https://waveoverhangs.com/",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T20:58:04.000Z",
+      "publishedAt": "2026-05-03T21:15:57.000Z",
       "category": "ai",
       "sourceCountry": "Global",
       "summary": "",
@@ -5007,34 +5067,6 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "techcrunch-3jl07o",
-      "title": "TechCrunch Mobility: How do you issue a ticket to a robotaxi?",
-      "url": "https://techcrunch.com/2026/05/03/techcrunch-mobility-how-do-you-issue-a-ticket-to-a-robotaxi/",
-      "source": "techcrunch",
-      "sourceLabel": "TechCrunch",
-      "publishedAt": "2026-05-03T16:05:00.000Z",
-      "category": "robotics",
-      "sourceCountry": "US",
-      "summary": "Welcome back to TechCrunch Mobility — your central hub for news and insights on the future of transportation.",
-      "scores": {
-        "impact": 4.5,
-        "freshness": 3.5,
-        "depth": 2.5,
-        "buzz": 1.5
-      },
-      "tags": [
-        "Transportation",
-        "Tesla",
-        "Uber",
-        "Waymo",
-        "Rivian",
-        "robotaxi",
-        "techcrunch mobility"
-      ],
-      "featured": false,
-      "headline": false
-    },
-    {
       "id": "wired-ft14r2",
       "title": "Coway Airmega Mighty2 Review: The Sequel Is Better Than the Original",
       "url": "https://www.wired.com/review/coway-airmega-mighty2/",
@@ -5059,20 +5091,40 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "hn-47998664",
-      "title": "Underwater robot tracks sperm whale conversations in real time",
-      "url": "https://www.reuters.com/business/environment/underwater-robot-tracks-sperm-whale-conversations-real-time-2026-05-01/",
+      "id": "hn-47997486",
+      "title": "Security through obscurity is not bad",
+      "url": "https://mobeigi.com/blog/security/security-through-obscurity-is-not-bad/",
       "source": "hackernews",
       "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T16:35:20.000Z",
-      "category": "robotics",
+      "publishedAt": "2026-05-03T14:49:56.000Z",
+      "category": "ai",
       "sourceCountry": "Global",
       "summary": "",
       "scores": {
         "impact": 4,
-        "freshness": 3.6,
+        "freshness": 3.2,
         "depth": 2.5,
-        "buzz": 3
+        "buzz": 3.6
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-47999760",
+      "title": "Supercollider",
+      "url": "https://supercollider.github.io/",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T18:15:24.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 3.8,
+        "depth": 2.5,
+        "buzz": 2.6
       },
       "tags": [],
       "featured": false,
@@ -5159,6 +5211,54 @@ window.__DAILY__ = {
       "headline": false
     },
     {
+      "id": "techcrunch-3jl07o",
+      "title": "TechCrunch Mobility: How do you issue a ticket to a robotaxi?",
+      "url": "https://techcrunch.com/2026/05/03/techcrunch-mobility-how-do-you-issue-a-ticket-to-a-robotaxi/",
+      "source": "techcrunch",
+      "sourceLabel": "TechCrunch",
+      "publishedAt": "2026-05-03T16:05:00.000Z",
+      "category": "robotics",
+      "sourceCountry": "US",
+      "summary": "Welcome back to TechCrunch Mobility — your central hub for news and insights on the future of transportation.",
+      "scores": {
+        "impact": 4.5,
+        "freshness": 3.4,
+        "depth": 2.5,
+        "buzz": 1.5
+      },
+      "tags": [
+        "Transportation",
+        "Tesla",
+        "Uber",
+        "Waymo",
+        "Rivian",
+        "robotaxi",
+        "techcrunch mobility"
+      ],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-47998664",
+      "title": "Underwater robot tracks sperm whale conversations in real time",
+      "url": "https://www.reuters.com/business/environment/underwater-robot-tracks-sperm-whale-conversations-real-time-2026-05-01/",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T16:35:20.000Z",
+      "category": "robotics",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 3.5,
+        "depth": 2.5,
+        "buzz": 3
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
       "id": "theverge-uuwlgh",
       "title": "Reggie Fils-Aimé says Amazon once asked Nintendo to break the law",
       "url": "https://www.theverge.com/games/922840/reggie-fils-aime-amazon-nintendo-illegal",
@@ -5170,49 +5270,9 @@ window.__DAILY__ = {
       "summary": "Way back in the DS days, Nintendo decided to stop selling to Amazon. During a recent lecture at NYU, former Nintendo of America President Reggie Fils-Aim&#233; said it was because Amazon was seeking preferential treatment that would have hurt its relationship with other retailers",
       "scores": {
         "impact": 4.4,
-        "freshness": 3.4,
+        "freshness": 3.3,
         "depth": 3,
         "buzz": 1.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-47997138",
-      "title": "Porsche will contest Laguna Seca in historic colors of the Apple Computer livery",
-      "url": "https://newsroom.porsche.com/en_US/2026/motorsport/porsche-will-contest-laguna-seca-in-historic-colors-of-the-apple-computer-livery.html",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T14:13:23.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 3.2,
-        "depth": 2.5,
-        "buzz": 3.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-47999760",
-      "title": "Supercollider",
-      "url": "https://supercollider.github.io/",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T18:15:24.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 3.8,
-        "depth": 2.5,
-        "buzz": 2.5
       },
       "tags": [],
       "featured": false,
@@ -5259,20 +5319,20 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "hn-47999890",
-      "title": "Brush a Bash/POSIX-compatible shell written in the Rust",
-      "url": "https://github.com/reubeno/brush/releases/tag/brush-shell-v0.4.0",
+      "id": "hn-47997138",
+      "title": "Porsche will contest Laguna Seca in historic colors of the Apple Computer livery",
+      "url": "https://newsroom.porsche.com/en_US/2026/motorsport/porsche-will-contest-laguna-seca-in-historic-colors-of-the-apple-computer-livery.html",
       "source": "hackernews",
       "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T18:28:59.000Z",
+      "publishedAt": "2026-05-03T14:13:23.000Z",
       "category": "ai",
       "sourceCountry": "Global",
       "summary": "",
       "scores": {
         "impact": 4,
-        "freshness": 3.9,
+        "freshness": 3.1,
         "depth": 2.5,
-        "buzz": 2.2
+        "buzz": 3.5
       },
       "tags": [],
       "featured": false,
@@ -5293,6 +5353,26 @@ window.__DAILY__ = {
         "freshness": 3.2,
         "depth": 2.5,
         "buzz": 3.3
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-47999890",
+      "title": "Brush a Bash/POSIX-compatible shell written in the Rust",
+      "url": "https://github.com/reubeno/brush/releases/tag/brush-shell-v0.4.0",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T18:28:59.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 3.8,
+        "depth": 2.5,
+        "buzz": 2.2
       },
       "tags": [],
       "featured": false,
@@ -5352,55 +5432,6 @@ window.__DAILY__ = {
         "impact": 4.5,
         "freshness": 3.1,
         "depth": 2.5,
-        "buzz": 1.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "techcrunch-cj4skx",
-      "title": "This tiny, magnetic e-reader could stop you from doomscrolling",
-      "url": "https://techcrunch.com/2026/05/03/xteink-x3-review-tiny-magnetic-ereader/",
-      "source": "techcrunch",
-      "sourceLabel": "TechCrunch",
-      "publishedAt": "2026-05-03T13:00:00.000Z",
-      "category": "ai",
-      "sourceCountry": "US",
-      "summary": "The Xteink X3 is a delightfully tiny, MagSafe-compatible e-ink reader that attaches to the back of your phone like a Pop Socket.",
-      "scores": {
-        "impact": 4.5,
-        "freshness": 3,
-        "depth": 2.5,
-        "buzz": 1.5
-      },
-      "tags": [
-        "Hardware",
-        "Gadgets",
-        "ereader",
-        "review",
-        "Reviews",
-        "evergreens",
-        "xteink x3",
-        "xteink"
-      ],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "theverge-kidkcm",
-      "title": "These reusable digital Polaroids are a clever way to cover a fridge in memories",
-      "url": "https://www.theverge.com/tech/917067/vidabay-snap-nfc-e-ink-paper-fridge-magnet-photo-hands-on",
-      "source": "theverge",
-      "sourceLabel": "The Verge",
-      "publishedAt": "2026-05-03T13:00:00.000Z",
-      "category": "devtools",
-      "sourceCountry": "US",
-      "summary": "I love when my friends have their fridges covered in Polaroids. It’s often a visual crash course of what’s been going on in their lives chronicling recent adventures, get-togethers, and other fun moments. But I don’t love the idea of schlepping around a clunky instant camera or p",
-      "scores": {
-        "impact": 4.4,
-        "freshness": 3,
-        "depth": 3,
         "buzz": 1.5
       },
       "tags": [],
@@ -5474,6 +5505,55 @@ window.__DAILY__ = {
       "headline": false
     },
     {
+      "id": "techcrunch-cj4skx",
+      "title": "This tiny, magnetic e-reader could stop you from doomscrolling",
+      "url": "https://techcrunch.com/2026/05/03/xteink-x3-review-tiny-magnetic-ereader/",
+      "source": "techcrunch",
+      "sourceLabel": "TechCrunch",
+      "publishedAt": "2026-05-03T13:00:00.000Z",
+      "category": "ai",
+      "sourceCountry": "US",
+      "summary": "The Xteink X3 is a delightfully tiny, MagSafe-compatible e-ink reader that attaches to the back of your phone like a Pop Socket.",
+      "scores": {
+        "impact": 4.5,
+        "freshness": 2.9,
+        "depth": 2.5,
+        "buzz": 1.5
+      },
+      "tags": [
+        "Hardware",
+        "Gadgets",
+        "ereader",
+        "review",
+        "Reviews",
+        "evergreens",
+        "xteink x3",
+        "xteink"
+      ],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "theverge-kidkcm",
+      "title": "These reusable digital Polaroids are a clever way to cover a fridge in memories",
+      "url": "https://www.theverge.com/tech/917067/vidabay-snap-nfc-e-ink-paper-fridge-magnet-photo-hands-on",
+      "source": "theverge",
+      "sourceLabel": "The Verge",
+      "publishedAt": "2026-05-03T13:00:00.000Z",
+      "category": "devtools",
+      "sourceCountry": "US",
+      "summary": "I love when my friends have their fridges covered in Polaroids. It’s often a visual crash course of what’s been going on in their lives chronicling recent adventures, get-togethers, and other fun moments. But I don’t love the idea of schlepping around a clunky instant camera or p",
+      "scores": {
+        "impact": 4.4,
+        "freshness": 2.9,
+        "depth": 3,
+        "buzz": 1.5
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
       "id": "zdnet_kr-9j8zv0",
       "title": "차세대중형위성 2호, 한국항공우주연구원과도 교신 성공",
       "url": "https://zdnet.co.kr/view/?no=20260503225907",
@@ -5498,26 +5578,6 @@ window.__DAILY__ = {
         "노르웨이",
         "과학"
       ],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-47995757",
-      "title": "Nuclear receptor 4A1 linked to health effects of coffee: study",
-      "url": "https://sciencex.com/news/2026-04-coffee-doesnt-key-biological-pathway.html",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T11:12:29.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Nuclear_receptor_4A1",
-      "scores": {
-        "impact": 4,
-        "freshness": 2.7,
-        "depth": 2.5,
-        "buzz": 3.5
-      },
-      "tags": [],
       "featured": false,
       "headline": false
     },
@@ -5567,6 +5627,26 @@ window.__DAILY__ = {
       "headline": false
     },
     {
+      "id": "hn-47995757",
+      "title": "Nuclear receptor 4A1 linked to health effects of coffee: study",
+      "url": "https://sciencex.com/news/2026-04-coffee-doesnt-key-biological-pathway.html",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T11:12:29.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Nuclear_receptor_4A1",
+      "scores": {
+        "impact": 4,
+        "freshness": 2.6,
+        "depth": 2.5,
+        "buzz": 3.5
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
       "id": "zdnet_kr-9imixz",
       "title": "아세안+3 재무장관·중앙은행 \"중동 긴장 고조…공급망·에너지 안보위해 협력\"",
       "url": "https://zdnet.co.kr/view/?no=20260503211338",
@@ -5578,7 +5658,7 @@ window.__DAILY__ = {
       "summary": "[지디넷코리아](사마르칸트=손희연) 3일(현지시간) 우즈베키스탄 사마르칸트서 열린 '제 26차 한중일 재무장관·중앙은행 총재 회의' 및 '제 29차 아세안(ASEAN)+3 재무장관·중앙은행 총재 회의'에서 중동 지역 긴장 고조로 경제 하방 리스크가 크게 증가한 가운데, 공급망과 에너지 안보를 위해 협력을 강화하자는 참여국 간 인식이 공유됐다.ASEAN+3는 ASEAN 11개국(말레이시아·인도네시아·태국·필리핀·싱가포르·브루나이·베트남·라오스·미얀마·캄보디아·동티모르)과 한국·중국·일본으로 구성된다",
       "scores": {
         "impact": 4.3,
-        "freshness": 3,
+        "freshness": 2.9,
         "depth": 3,
         "buzz": 1.5
       },
@@ -5638,26 +5718,6 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "hn-47995125",
-      "title": "Investors pile into clean energy as Iran war drives push for energy security",
-      "url": "https://www.ft.com/content/9921f2b5-c910-4cec-a50f-cad453935a1a",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T09:26:48.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 2.4,
-        "depth": 2.5,
-        "buzz": 3.6
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
       "id": "yna_it-z2x9y",
       "title": "삼성바이오 노조 \"회사, 공정한 인사 기준 세워야\"",
       "url": "https://www.yna.co.kr/view/AKR20260503051600017",
@@ -5672,6 +5732,26 @@ window.__DAILY__ = {
         "freshness": 2.6,
         "depth": 2.5,
         "buzz": 1.5
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
+      "id": "hn-47995125",
+      "title": "Investors pile into clean energy as Iran war drives push for energy security",
+      "url": "https://www.ft.com/content/9921f2b5-c910-4cec-a50f-cad453935a1a",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T09:26:48.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 2.3,
+        "depth": 2.5,
+        "buzz": 3.6
       },
       "tags": [],
       "featured": false,
@@ -5740,6 +5820,26 @@ window.__DAILY__ = {
       "headline": false
     },
     {
+      "id": "yna_it-tw5f1a",
+      "title": "AI가 쇼핑해주는 시대…금결원장 \"AI 결제플랫폼 연내 기술검증\"(종합)",
+      "url": "https://www.yna.co.kr/view/AKR20260503004251002",
+      "source": "yna_it",
+      "sourceLabel": "연합뉴스 IT",
+      "publishedAt": "2026-05-03T08:58:31.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "(사마르칸트[우즈베키스탄]=연합뉴스) 임지우 기자 = 채병득 금융결제원장은 3일 실행형 인공지능(AI), 이른바 &apos;AI 에이전트&apos;가 소비자 대신...",
+      "scores": {
+        "impact": 4.5,
+        "freshness": 2.3,
+        "depth": 2.5,
+        "buzz": 1.5
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
       "id": "wired-ncdpuh",
       "title": "Best Travel Tote Bags for Every Kind of Excursion (2026): Away, Le Pliage, Topo Designs",
       "url": "https://www.wired.com/gallery/best-travel-tote/",
@@ -5751,7 +5851,7 @@ window.__DAILY__ = {
       "summary": "These hardworking travel totes handle everything from a work trip to a weekend getaway.",
       "scores": {
         "impact": 4.4,
-        "freshness": 2.6,
+        "freshness": 2.5,
         "depth": 2.5,
         "buzz": 1.5
       },
@@ -5776,29 +5876,9 @@ window.__DAILY__ = {
       "summary": "",
       "scores": {
         "impact": 4.2,
-        "freshness": 1.5,
+        "freshness": 1.4,
         "depth": 2.5,
         "buzz": 4
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "yna_it-tw5f1a",
-      "title": "AI가 쇼핑해주는 시대…금결원장 \"AI 결제플랫폼 연내 기술검증\"(종합)",
-      "url": "https://www.yna.co.kr/view/AKR20260503004251002",
-      "source": "yna_it",
-      "sourceLabel": "연합뉴스 IT",
-      "publishedAt": "2026-05-03T08:58:31.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "(사마르칸트[우즈베키스탄]=연합뉴스) 임지우 기자 = 채병득 금융결제원장은 3일 실행형 인공지능(AI), 이른바 &apos;AI 에이전트&apos;가 소비자 대신...",
-      "scores": {
-        "impact": 4.5,
-        "freshness": 2.3,
-        "depth": 2.5,
-        "buzz": 1.5
       },
       "tags": [],
       "featured": false,
@@ -5816,7 +5896,7 @@ window.__DAILY__ = {
       "summary": "(서울=연합뉴스) 조승한 기자 = 국토 자원관리, 재난 대응 등을 목표로 하는 지구관측 위성인 차세대 중형위성 2호가 3일 우주로 향했다.",
       "scores": {
         "impact": 4.5,
-        "freshness": 2.3,
+        "freshness": 2.2,
         "depth": 2.5,
         "buzz": 1.5
       },
@@ -5856,7 +5936,7 @@ window.__DAILY__ = {
       "summary": "(서울=연합뉴스) 조승한 기자 = 국토 자원관리, 재난 대응 등을 목표로 하는 지구관측 위성인 차세대 중형위성 2호가 3일 우주로 향했다.",
       "scores": {
         "impact": 4.5,
-        "freshness": 2.2,
+        "freshness": 2.1,
         "depth": 2.5,
         "buzz": 1.5
       },
@@ -5945,6 +6025,26 @@ window.__DAILY__ = {
       "headline": false
     },
     {
+      "id": "hn-47994951",
+      "title": "Dear Richard Dawkins",
+      "url": "https://dearricharddawkins.com/",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T08:59:27.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 2.3,
+        "depth": 2.5,
+        "buzz": 2.7
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
       "id": "yna_it-vy0wu9",
       "title": "차세대 중형위성 2호 탑재 우주발사체 '팰컨9' 발사",
       "url": "https://www.yna.co.kr/view/AKR20260503037751017",
@@ -5956,7 +6056,7 @@ window.__DAILY__ = {
       "summary": "(서울=연합뉴스) 조승한 기자 = 국토 자원관리, 재난 대응 등을 목표로 하는 지구관측 위성인 차세대 중형위성 2호가 3일 우주로 향했다.",
       "scores": {
         "impact": 4.5,
-        "freshness": 2,
+        "freshness": 1.9,
         "depth": 2.5,
         "buzz": 1.5
       },
@@ -5976,7 +6076,7 @@ window.__DAILY__ = {
       "summary": "(",
       "scores": {
         "impact": 4.5,
-        "freshness": 2,
+        "freshness": 1.9,
         "depth": 2.5,
         "buzz": 1.5
       },
@@ -5996,29 +6096,9 @@ window.__DAILY__ = {
       "summary": "(사마르칸트[우즈베키스탄]=연합뉴스) 임지우 기자 = 금융결제원은 실행형 인공지능(AI), 이른바 &apos;AI 에이전트&apos;가 소비자 대신 직접 물건을 ...",
       "scores": {
         "impact": 4.5,
-        "freshness": 2,
+        "freshness": 1.9,
         "depth": 2.5,
         "buzz": 1.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-47994951",
-      "title": "Dear Richard Dawkins",
-      "url": "https://dearricharddawkins.com/",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T08:59:27.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 2.3,
-        "depth": 2.5,
-        "buzz": 2.7
       },
       "tags": [],
       "featured": false,
@@ -6056,29 +6136,9 @@ window.__DAILY__ = {
       "summary": "(서울=연합뉴스) 김세린 기자 = 신세계사이먼은 파주 프리미엄 아울렛에서 대규모 야외 축제인 &apos;비어 페스타&apos;를 개최한다고 3일 밝혔다.",
       "scores": {
         "impact": 4.5,
-        "freshness": 1.8,
+        "freshness": 1.7,
         "depth": 2.5,
         "buzz": 1.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-47992349",
-      "title": "Maryland to ban A.I.-driven price increases in grocery stores",
-      "url": "https://www.nytimes.com/2026/05/01/business/surveillance-pricing-groceries-maryland.html",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T01:24:09.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4.2,
-        "freshness": 1,
-        "depth": 2.5,
-        "buzz": 3.8
       },
       "tags": [],
       "featured": false,
@@ -6101,38 +6161,6 @@ window.__DAILY__ = {
         "buzz": 1.5
       },
       "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "byline_kr-nq5tad",
-      "title": "AI 에이전트가 회사 DB를 날렸다…누구 잘못일까",
-      "url": "https://byline.network/2026/05/1-1414/",
-      "source": "byline_kr",
-      "sourceLabel": "바이라인네트워크",
-      "publishedAt": "2026-05-03T07:31:49.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "최근 개발자 커뮤니티에서 화제가 된 ‘포켓OS(PocketOS) 데이터베이스 증발 사건’은 회사 운영 인프라에 에이전트를 성급하게 연결했을 때 어떤 일이 벌어질 수 있는지 보여준다. 창업자 ‘제르 크레인(Jer Crane)’이 X(옛 트위터)에 직접 밝힌 이 사건의 전말과 원인을 짚어봤다.",
-      "scores": {
-        "impact": 4.3,
-        "freshness": 2.1,
-        "depth": 2.5,
-        "buzz": 1.5
-      },
-      "tags": [
-        "기사",
-        "엔터프라이즈 IT",
-        "AI에이전트",
-        "DB",
-        "가드레일",
-        "데이터베이스",
-        "에이전틱AI",
-        "오푸스",
-        "인프라",
-        "커서",
-        "클로드"
-      ],
       "featured": false,
       "headline": false
     },
@@ -6217,15 +6245,15 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "wired-hlpitf",
-      "title": "Ulta Promo Codes: Up to 50% Off in May",
-      "url": "https://www.wired.com/story/ulta-coupon/",
+      "id": "wired-y0tqps",
+      "title": "Top Rover Promo Codes and Referral Deals for May 2026",
+      "url": "https://www.wired.com/story/rover-promo-code/",
       "source": "wired",
       "sourceLabel": "Wired",
       "publishedAt": "2026-05-03T05:00:00.000Z",
       "category": "ai",
       "sourceCountry": "US",
-      "summary": "Shop the latest beauty trends and save big using an Ulta promo code for beauty tech, makeup, and more.",
+      "summary": "Score your Rover promo code for 2026.",
       "scores": {
         "impact": 4.4,
         "freshness": 1.6,
@@ -6240,15 +6268,15 @@ window.__DAILY__ = {
       "headline": false
     },
     {
-      "id": "wired-y0tqps",
-      "title": "Top Rover Promo Codes and Referral Deals for May 2026",
-      "url": "https://www.wired.com/story/rover-promo-code/",
+      "id": "wired-hlpitf",
+      "title": "Ulta Promo Codes: Up to 50% Off in May",
+      "url": "https://www.wired.com/story/ulta-coupon/",
       "source": "wired",
       "sourceLabel": "Wired",
       "publishedAt": "2026-05-03T05:00:00.000Z",
       "category": "ai",
       "sourceCountry": "US",
-      "summary": "Score your Rover promo code for 2026.",
+      "summary": "Shop the latest beauty trends and save big using an Ulta promo code for beauty tech, makeup, and more.",
       "scores": {
         "impact": 4.4,
         "freshness": 1.6,
@@ -6331,6 +6359,38 @@ window.__DAILY__ = {
       "headline": false
     },
     {
+      "id": "byline_kr-nq5tad",
+      "title": "AI 에이전트가 회사 DB를 날렸다…누구 잘못일까",
+      "url": "https://byline.network/2026/05/1-1414/",
+      "source": "byline_kr",
+      "sourceLabel": "바이라인네트워크",
+      "publishedAt": "2026-05-03T07:31:49.000Z",
+      "category": "ai",
+      "sourceCountry": "KR",
+      "summary": "최근 개발자 커뮤니티에서 화제가 된 ‘포켓OS(PocketOS) 데이터베이스 증발 사건’은 회사 운영 인프라에 에이전트를 성급하게 연결했을 때 어떤 일이 벌어질 수 있는지 보여준다. 창업자 ‘제르 크레인(Jer Crane)’이 X(옛 트위터)에 직접 밝힌 이 사건의 전말과 원인을 짚어봤다.",
+      "scores": {
+        "impact": 4.3,
+        "freshness": 2,
+        "depth": 2.5,
+        "buzz": 1.5
+      },
+      "tags": [
+        "기사",
+        "엔터프라이즈 IT",
+        "AI에이전트",
+        "DB",
+        "가드레일",
+        "데이터베이스",
+        "에이전틱AI",
+        "오푸스",
+        "인프라",
+        "커서",
+        "클로드"
+      ],
+      "featured": false,
+      "headline": false
+    },
+    {
       "id": "yna_it-dixxz3",
       "title": "SKB, 안전문화 확산 공모전…29일까지 접수",
       "url": "https://www.yna.co.kr/view/AKR20260503026300017",
@@ -6342,7 +6402,7 @@ window.__DAILY__ = {
       "summary": "(서울=연합뉴스) 유현민 기자 = SK브로드밴드는 시민참여형 안전문화 확산을 위해 서울지방고용노동청, 안전보건공단 서울광역본부와 함께 &apos;대국민 ...",
       "scores": {
         "impact": 4.5,
-        "freshness": 1.5,
+        "freshness": 1.4,
         "depth": 2.5,
         "buzz": 1.5
       },
@@ -6370,46 +6430,6 @@ window.__DAILY__ = {
         "Gear",
         "Gear / Deals"
       ],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-47992802",
-      "title": "AI, Intimacy, and the Data You Never Meant to Share",
-      "url": "https://fshot.org/techzone/the-algorithm-knows.php",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T02:42:43.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 1.3,
-        "depth": 2.5,
-        "buzz": 3.4
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "hn-47992338",
-      "title": "A network smuggling Starlink tech into Iran to beat internet blackout",
-      "url": "https://www.bbc.com/news/articles/cvgzk91leweo",
-      "source": "hackernews",
-      "sourceLabel": "Hacker News",
-      "publishedAt": "2026-05-03T01:22:41.000Z",
-      "category": "ai",
-      "sourceCountry": "Global",
-      "summary": "",
-      "scores": {
-        "impact": 4,
-        "freshness": 1,
-        "depth": 2.5,
-        "buzz": 3.8
-      },
-      "tags": [],
       "featured": false,
       "headline": false
     },
@@ -6614,6 +6634,26 @@ window.__DAILY__ = {
       "headline": false
     },
     {
+      "id": "hn-47992802",
+      "title": "AI, Intimacy, and the Data You Never Meant to Share",
+      "url": "https://fshot.org/techzone/the-algorithm-knows.php",
+      "source": "hackernews",
+      "sourceLabel": "Hacker News",
+      "publishedAt": "2026-05-03T02:42:43.000Z",
+      "category": "ai",
+      "sourceCountry": "Global",
+      "summary": "",
+      "scores": {
+        "impact": 4,
+        "freshness": 1.2,
+        "depth": 2.5,
+        "buzz": 3.4
+      },
+      "tags": [],
+      "featured": false,
+      "headline": false
+    },
+    {
       "id": "yna_it-dy0vuc",
       "title": "충남도 \"인공지능으로 모기 감시해 감염병 대응\"",
       "url": "https://www.yna.co.kr/view/AKR20260503023400063",
@@ -6625,7 +6665,7 @@ window.__DAILY__ = {
       "summary": "(홍성=연합뉴스) 박주영 기자 = 충남도 보건환경연구원은 기후변화에 따른 모기 매개 감염병 증가에 선제 대응하기 위해 &apos;인공지능(AI) 기반 실...",
       "scores": {
         "impact": 4.5,
-        "freshness": 1.3,
+        "freshness": 1.2,
         "depth": 2.5,
         "buzz": 1.5
       },
@@ -6705,7 +6745,7 @@ window.__DAILY__ = {
       "summary": "▲ 산업연구원과 하나은행 하나금융연구소가 생산적 금융 활성화를 위한 업무협약(MOU)을 체결했다고 3일 밝혔다. 양 기관은 산업과 금융정책 연계...",
       "scores": {
         "impact": 4.5,
-        "freshness": 1.2,
+        "freshness": 1.1,
         "depth": 2.5,
         "buzz": 1.5
       },
@@ -6832,86 +6872,6 @@ window.__DAILY__ = {
       "tags": [],
       "featured": false,
       "headline": false
-    },
-    {
-      "id": "yna_it-1hg3cm",
-      "title": "삼성바이오 파업 사흘째…'임금 인상·경영권 요구' 노사 이견(종합)",
-      "url": "https://www.yna.co.kr/view/AKR20260503006051017",
-      "source": "yna_it",
-      "sourceLabel": "연합뉴스 IT",
-      "publishedAt": "2026-05-03T01:34:19.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "(서울=연합뉴스) 신선미 기자 = 삼성바이오로직스[207940] 전면 파업이 사흘째 이어지고 있다.",
-      "scores": {
-        "impact": 4.5,
-        "freshness": 1.1,
-        "depth": 2.5,
-        "buzz": 1.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "yna_it-a5i46j",
-      "title": "LG유니참, 취약 계층에 위생용품 37만장 기부",
-      "url": "https://www.yna.co.kr/view/AKR20260503018900030",
-      "source": "yna_it",
-      "sourceLabel": "연합뉴스 IT",
-      "publishedAt": "2026-05-03T01:32:27.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "(서울=연합뉴스) 김세린 기자 = LG유니참은 위생용품 나눔 캠페인 &apos;쉐어 패드&apos;를 통해 취약계층 여성과 청소년, 유아를 위한 생리대와 기저귀 ...",
-      "scores": {
-        "impact": 4.5,
-        "freshness": 1.1,
-        "depth": 2.5,
-        "buzz": 1.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "yna_it-bkmzaf",
-      "title": "청주시, 4일부터 농업인 공익수당 지원 신청접수",
-      "url": "https://www.yna.co.kr/view/AKR20260503018600064",
-      "source": "yna_it",
-      "sourceLabel": "연합뉴스 IT",
-      "publishedAt": "2026-05-03T01:26:36.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "(청주=연합뉴스) 김형우 기자 = 청주시는 4일부터 6월 30일까지 올해 농어업인 공익수당 지원 신청을 받는다고 3일 밝혔다.",
-      "scores": {
-        "impact": 4.5,
-        "freshness": 1,
-        "depth": 2.5,
-        "buzz": 1.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
-    },
-    {
-      "id": "yna_it-tmmvp9",
-      "title": "현대차그룹, 미국 하이브리드·전기차 어워즈서 7개 부문 석권",
-      "url": "https://www.yna.co.kr/view/AKR20260503016500003",
-      "source": "yna_it",
-      "sourceLabel": "연합뉴스 IT",
-      "publishedAt": "2026-05-03T01:23:11.000Z",
-      "category": "ai",
-      "sourceCountry": "KR",
-      "summary": "(서울=연합뉴스) 김보경 기자 = 현대차그룹은 미국 매체 US 뉴스 앤드 월드 리포트가 발표한 &apos;2026 최고의 하이브리드·전기차 어워즈&apos;에서 ...",
-      "scores": {
-        "impact": 4.5,
-        "freshness": 1,
-        "depth": 2.5,
-        "buzz": 1.5
-      },
-      "tags": [],
-      "featured": false,
-      "headline": false
     }
   ],
   "community": [
@@ -6924,7 +6884,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T22:52:44.000Z",
       "sourceColor": "#ff6600",
       "points": 2,
-      "relativeTime": "2시간 전",
+      "relativeTime": "3시간 전",
       "category": "ai",
       "author": "barryjones20"
     },
@@ -6962,8 +6922,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-05-03T07:50:09.000Z",
       "sourceColor": "#ff4500",
-      "points": 570,
-      "relativeTime": "17시간 전",
+      "points": 571,
+      "relativeTime": "18시간 전",
       "category": "ai",
       "author": "Maybe-monad"
     },
@@ -6975,7 +6935,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-05-03T19:05:17.000Z",
       "sourceColor": "#ff4500",
-      "points": 12,
+      "points": 13,
       "relativeTime": "6시간 전",
       "category": "ai",
       "author": "srvhfvakc"
@@ -6988,7 +6948,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-05-03T20:59:17.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 6,
       "relativeTime": "4시간 전",
       "category": "ai",
       "author": "levodelellis"
@@ -7014,7 +6974,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-05-02T20:25:00.000Z",
       "sourceColor": "#ff4500",
-      "points": 222,
+      "points": 221,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "Nuoji"
@@ -7027,8 +6987,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-05-03T06:47:28.000Z",
       "sourceColor": "#ff4500",
-      "points": 29,
-      "relativeTime": "18시간 전",
+      "points": 32,
+      "relativeTime": "19시간 전",
       "category": "ai",
       "author": "rybarix"
     },
@@ -7040,7 +7000,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-05-03T09:09:39.000Z",
       "sourceColor": "#ff4500",
-      "points": 13,
+      "points": 17,
       "relativeTime": "16시간 전",
       "category": "ai",
       "author": "Dear-Economics-315"
@@ -7053,7 +7013,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-05-03T10:13:51.000Z",
       "sourceColor": "#ff4500",
-      "points": 10,
+      "points": 12,
       "relativeTime": "15시간 전",
       "category": "ai",
       "author": "BgA_stan"
@@ -7067,7 +7027,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T17:49:57.000Z",
       "sourceColor": "#ff4500",
       "points": 2,
-      "relativeTime": "7시간 전",
+      "relativeTime": "8시간 전",
       "category": "ai",
       "author": "Distinct-Plankton-20"
     },
@@ -7079,7 +7039,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-05-02T16:35:29.000Z",
       "sourceColor": "#ff4500",
-      "points": 174,
+      "points": 183,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "Kok_Nikol"
@@ -7105,7 +7065,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-05-02T09:42:00.000Z",
       "sourceColor": "#ff4500",
-      "points": 112,
+      "points": 106,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "StatisticianOnly4004"
@@ -7118,7 +7078,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-05-02T10:59:23.000Z",
       "sourceColor": "#ff4500",
-      "points": 28,
+      "points": 27,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Successful_Bowl2564"
@@ -7132,7 +7092,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T07:50:35.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "17시간 전",
+      "relativeTime": "18시간 전",
       "category": "ai",
       "author": "kant2002"
     },
@@ -7144,7 +7104,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-05-01T15:12:52.000Z",
       "sourceColor": "#ff4500",
-      "points": 332,
+      "points": 333,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "iximiuz"
@@ -7157,7 +7117,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-05-01T21:48:36.000Z",
       "sourceColor": "#ff4500",
-      "points": 86,
+      "points": 90,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "SuperV1234"
@@ -7183,8 +7143,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-05-01T13:42:01.000Z",
       "sourceColor": "#ff4500",
-      "points": 50,
-      "relativeTime": "2일 전",
+      "points": 48,
+      "relativeTime": "3일 전",
       "category": "ai",
       "author": "StatisticianOnly4004"
     },
@@ -7196,7 +7156,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-05-01T07:08:15.000Z",
       "sourceColor": "#ff4500",
-      "points": 150,
+      "points": 154,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "Either_Collection349"
@@ -7209,7 +7169,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-30T18:48:35.000Z",
       "sourceColor": "#ff4500",
-      "points": 742,
+      "points": 739,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "Choobeen"
@@ -7235,7 +7195,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-05-01T11:57:57.000Z",
       "sourceColor": "#ff4500",
-      "points": 32,
+      "points": 31,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "self"
@@ -7248,7 +7208,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-30T20:57:37.000Z",
       "sourceColor": "#ff4500",
-      "points": 199,
+      "points": 196,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "Either_Collection349"
@@ -7274,7 +7234,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-05-01T08:10:39.000Z",
       "sourceColor": "#ff4500",
-      "points": 15,
+      "points": 14,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "StatisticianOnly4004"
@@ -7287,7 +7247,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-30T09:55:21.000Z",
       "sourceColor": "#ff4500",
-      "points": 478,
+      "points": 485,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "alexeyr"
@@ -7300,7 +7260,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-30T14:32:35.000Z",
       "sourceColor": "#ff4500",
-      "points": 156,
+      "points": 160,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "someone-very-cool"
@@ -7326,7 +7286,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-30T18:16:44.000Z",
       "sourceColor": "#ff4500",
-      "points": 37,
+      "points": 30,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "NoPercentage6144"
@@ -7352,7 +7312,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-30T05:14:43.000Z",
       "sourceColor": "#ff4500",
-      "points": 109,
+      "points": 111,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "fagnerbrack"
@@ -7365,7 +7325,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-30T09:05:34.000Z",
       "sourceColor": "#ff4500",
-      "points": 42,
+      "points": 41,
       "relativeTime": "4일 전",
       "category": "standards",
       "author": "Mte90"
@@ -7378,7 +7338,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-30T11:55:18.000Z",
       "sourceColor": "#ff4500",
-      "points": 16,
+      "points": 13,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "BlondieCoder"
@@ -7391,7 +7351,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-29T18:03:04.000Z",
       "sourceColor": "#ff4500",
-      "points": 197,
+      "points": 192,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "BrewedDoritos"
@@ -7404,7 +7364,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-29T19:36:23.000Z",
       "sourceColor": "#ff4500",
-      "points": 134,
+      "points": 139,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "fagnerbrack"
@@ -7417,7 +7377,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-29T14:21:04.000Z",
       "sourceColor": "#ff4500",
-      "points": 158,
+      "points": 153,
       "relativeTime": "4일 전",
       "category": "devtools",
       "author": "BattleRemote3157"
@@ -7430,7 +7390,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-29T14:50:09.000Z",
       "sourceColor": "#ff4500",
-      "points": 100,
+      "points": 104,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "teivah"
@@ -7443,7 +7403,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-28T21:04:10.000Z",
       "sourceColor": "#ff4500",
-      "points": 1207,
+      "points": 1211,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "davidcelis"
@@ -7456,7 +7416,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-29T07:12:36.000Z",
       "sourceColor": "#ff4500",
-      "points": 157,
+      "points": 154,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "yusufaytas"
@@ -7469,7 +7429,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-29T14:04:11.000Z",
       "sourceColor": "#ff4500",
-      "points": 42,
+      "points": 41,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "pmz"
@@ -7482,7 +7442,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-30T09:44:19.000Z",
       "sourceColor": "#ff4500",
-      "points": 1,
+      "points": 0,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "krisurbas"
@@ -7495,7 +7455,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-29T19:20:05.000Z",
       "sourceColor": "#ff4500",
-      "points": 9,
+      "points": 6,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "Active-Fuel-49"
@@ -7508,7 +7468,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-29T12:24:52.000Z",
       "sourceColor": "#ff4500",
-      "points": 20,
+      "points": 18,
       "relativeTime": "5일 전",
       "category": "display",
       "author": "Hell_Rok"
@@ -7534,7 +7494,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-28T18:58:54.000Z",
       "sourceColor": "#ff4500",
-      "points": 166,
+      "points": 163,
       "relativeTime": "5일 전",
       "category": "papers",
       "author": "sagitz_"
@@ -7547,7 +7507,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-28T12:30:09.000Z",
       "sourceColor": "#ff4500",
-      "points": 509,
+      "points": 505,
       "relativeTime": "6일 전",
       "category": "ai",
       "author": "Successful_Bowl2564"
@@ -7560,7 +7520,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-29T02:16:56.000Z",
       "sourceColor": "#ff4500",
-      "points": 34,
+      "points": 39,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "overandoutage"
@@ -7586,7 +7546,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-29T12:06:51.000Z",
       "sourceColor": "#ff4500",
-      "points": 2,
+      "points": 4,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "badcryptobitch"
@@ -7612,7 +7572,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-29T07:45:45.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 6,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "fagnerbrack"
@@ -7625,7 +7585,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-28T16:41:06.000Z",
       "sourceColor": "#ff4500",
-      "points": 79,
+      "points": 76,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "fagnerbrack"
@@ -7651,7 +7611,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-28T13:25:43.000Z",
       "sourceColor": "#ff4500",
-      "points": 83,
+      "points": 85,
       "relativeTime": "6일 전",
       "category": "ai",
       "author": "Bonejob"
@@ -7664,7 +7624,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-28T15:23:45.000Z",
       "sourceColor": "#ff4500",
-      "points": 43,
+      "points": 44,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "lasan0432G"
@@ -7677,7 +7637,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-28T14:20:36.000Z",
       "sourceColor": "#ff4500",
-      "points": 31,
+      "points": 29,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "SpecialistLady"
@@ -7690,7 +7650,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-28T09:02:24.000Z",
       "sourceColor": "#ff4500",
-      "points": 81,
+      "points": 76,
       "relativeTime": "6일 전",
       "category": "ai",
       "author": "Dear-Economics-315"
@@ -7703,7 +7663,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-28T22:18:44.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 6,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "fagnerbrack"
@@ -7716,7 +7676,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-28T12:44:05.000Z",
       "sourceColor": "#ff4500",
-      "points": 27,
+      "points": 28,
       "relativeTime": "6일 전",
       "category": "ai",
       "author": "dmalcolm"
@@ -7742,7 +7702,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-28T05:59:01.000Z",
       "sourceColor": "#ff4500",
-      "points": 66,
+      "points": 67,
       "relativeTime": "6일 전",
       "category": "ai",
       "author": "BlondieCoder"
@@ -7794,7 +7754,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-28T06:22:03.000Z",
       "sourceColor": "#ff4500",
-      "points": 10,
+      "points": 13,
       "relativeTime": "6일 전",
       "category": "ai",
       "author": "BlondieCoder"
@@ -7833,7 +7793,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-28T10:57:32.000Z",
       "sourceColor": "#ff4500",
-      "points": 3,
+      "points": 5,
       "relativeTime": "6일 전",
       "category": "standards",
       "author": "axkotti"
@@ -7872,7 +7832,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-27T07:30:07.000Z",
       "sourceColor": "#ff4500",
-      "points": 130,
+      "points": 132,
       "relativeTime": "7일 전",
       "category": "ai",
       "author": "Georgiou1226"
@@ -7885,7 +7845,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-27T15:39:20.000Z",
       "sourceColor": "#ff4500",
-      "points": 8,
+      "points": 9,
       "relativeTime": "6일 전",
       "category": "ai",
       "author": "ludovicianul"
@@ -7898,8 +7858,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-27T13:54:28.000Z",
       "sourceColor": "#ff4500",
-      "points": 12,
-      "relativeTime": "6일 전",
+      "points": 13,
+      "relativeTime": "7일 전",
       "category": "ai",
       "author": "peripateticman2026"
     },
@@ -7950,7 +7910,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-27T11:45:12.000Z",
       "sourceColor": "#ff4500",
-      "points": 7,
+      "points": 6,
       "relativeTime": "7일 전",
       "category": "ai",
       "author": "abhirag"
@@ -7963,7 +7923,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/programming",
       "publishedAt": "2026-04-27T10:19:38.000Z",
       "sourceColor": "#ff4500",
-      "points": 3,
+      "points": 4,
       "relativeTime": "7일 전",
       "category": "ai",
       "author": "DataBaeBee"
@@ -8002,7 +7962,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-05-03T23:31:19.000Z",
       "sourceColor": "#ff4500",
-      "points": 23,
+      "points": 28,
       "relativeTime": "2시간 전",
       "category": "papers",
       "author": "Hope999991"
@@ -8015,8 +7975,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-05-03T22:43:17.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
-      "relativeTime": "2시간 전",
+      "points": 6,
+      "relativeTime": "3시간 전",
       "category": "ai",
       "author": "shootthesound"
     },
@@ -8028,8 +7988,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-05-03T09:48:35.000Z",
       "sourceColor": "#ff4500",
-      "points": 40,
-      "relativeTime": "15시간 전",
+      "points": 42,
+      "relativeTime": "16시간 전",
       "category": "papers",
       "author": "Pure-Ad9079"
     },
@@ -8041,8 +8001,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-05-03T20:42:31.000Z",
       "sourceColor": "#ff4500",
-      "points": 3,
-      "relativeTime": "4시간 전",
+      "points": 4,
+      "relativeTime": "5시간 전",
       "category": "papers",
       "author": "Plane_Stick8394"
     },
@@ -8068,7 +8028,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T15:48:39.000Z",
       "sourceColor": "#ff4500",
       "points": 2,
-      "relativeTime": "9시간 전",
+      "relativeTime": "10시간 전",
       "category": "ai",
       "author": "No_Language165"
     },
@@ -8080,7 +8040,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-05-03T02:18:27.000Z",
       "sourceColor": "#ff4500",
-      "points": 15,
+      "points": 17,
       "relativeTime": "23시간 전",
       "category": "ai",
       "author": "random_sydneysider"
@@ -8094,7 +8054,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T10:42:33.000Z",
       "sourceColor": "#ff4500",
       "points": 3,
-      "relativeTime": "14시간 전",
+      "relativeTime": "15시간 전",
       "category": "papers",
       "author": "KiddWantidd"
     },
@@ -8107,7 +8067,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T19:45:37.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "5시간 전",
+      "relativeTime": "6시간 전",
       "category": "ai",
       "author": "AgeOfEmpires4AOE4"
     },
@@ -8171,7 +8131,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-05-01T18:01:00.000Z",
       "sourceColor": "#ff4500",
-      "points": 98,
+      "points": 99,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "OwnerByDane"
@@ -8197,7 +8157,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-05-02T14:37:53.000Z",
       "sourceColor": "#ff4500",
-      "points": 1,
+      "points": 2,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "Round_Apple2573"
@@ -8210,7 +8170,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-05-01T12:19:53.000Z",
       "sourceColor": "#ff4500",
-      "points": 95,
+      "points": 97,
       "relativeTime": "3일 전",
       "category": "standards",
       "author": "NGK12"
@@ -8223,7 +8183,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-05-01T07:26:11.000Z",
       "sourceColor": "#ff4500",
-      "points": 159,
+      "points": 163,
       "relativeTime": "3일 전",
       "category": "papers",
       "author": "SillyNeuron"
@@ -8236,7 +8196,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-05-01T16:22:06.000Z",
       "sourceColor": "#ff4500",
-      "points": 26,
+      "points": 24,
       "relativeTime": "2일 전",
       "category": "papers",
       "author": "Hope999991"
@@ -8249,7 +8209,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-05-01T22:09:37.000Z",
       "sourceColor": "#ff4500",
-      "points": 3,
+      "points": 2,
       "relativeTime": "2일 전",
       "category": "papers",
       "author": "Opening-Election1179"
@@ -8262,7 +8222,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-05-01T12:48:13.000Z",
       "sourceColor": "#ff4500",
-      "points": 15,
+      "points": 14,
       "relativeTime": "3일 전",
       "category": "devtools",
       "author": "Fit_Schedule5951"
@@ -8288,8 +8248,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-05-01T13:47:16.000Z",
       "sourceColor": "#ff4500",
-      "points": 10,
-      "relativeTime": "2일 전",
+      "points": 9,
+      "relativeTime": "3일 전",
       "category": "ai",
       "author": "No_Stretch_5809"
     },
@@ -8301,7 +8261,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-05-01T00:03:53.000Z",
       "sourceColor": "#ff4500",
-      "points": 67,
+      "points": 70,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "msgs008"
@@ -8314,7 +8274,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-04-30T19:21:06.000Z",
       "sourceColor": "#ff4500",
-      "points": 157,
+      "points": 151,
       "relativeTime": "3일 전",
       "category": "papers",
       "author": "AppropriatePush6262"
@@ -8327,7 +8287,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-04-30T18:35:33.000Z",
       "sourceColor": "#ff4500",
-      "points": 115,
+      "points": 119,
       "relativeTime": "3일 전",
       "category": "papers",
       "author": "AffectionateLife5693"
@@ -8340,7 +8300,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-05-01T04:05:38.000Z",
       "sourceColor": "#ff4500",
-      "points": 17,
+      "points": 16,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "Striking-Warning9533"
@@ -8353,7 +8313,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-04-30T15:00:11.000Z",
       "sourceColor": "#ff4500",
-      "points": 89,
+      "points": 88,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "ISwallow5Gum"
@@ -8379,7 +8339,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-04-30T20:26:56.000Z",
       "sourceColor": "#ff4500",
-      "points": 8,
+      "points": 9,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "NoVibeCoding"
@@ -8405,7 +8365,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-04-30T09:20:41.000Z",
       "sourceColor": "#ff4500",
-      "points": 49,
+      "points": 48,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "PreetamSing"
@@ -8444,7 +8404,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-04-30T19:04:02.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 6,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "Altruistic_Night_327"
@@ -8470,7 +8430,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-04-30T11:04:29.000Z",
       "sourceColor": "#ff4500",
-      "points": 6,
+      "points": 8,
       "relativeTime": "4일 전",
       "category": "papers",
       "author": "XPERT_GAMING"
@@ -8483,7 +8443,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-04-29T21:19:07.000Z",
       "sourceColor": "#ff4500",
-      "points": 101,
+      "points": 98,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "007noob0071"
@@ -8496,7 +8456,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-04-29T14:53:29.000Z",
       "sourceColor": "#ff4500",
-      "points": 233,
+      "points": 235,
       "relativeTime": "4일 전",
       "category": "papers",
       "author": "icannotchangethename"
@@ -8509,7 +8469,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-04-29T18:13:57.000Z",
       "sourceColor": "#ff4500",
-      "points": 15,
+      "points": 13,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "BetterbeBattery"
@@ -8522,7 +8482,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-04-29T14:47:41.000Z",
       "sourceColor": "#ff4500",
-      "points": 30,
+      "points": 29,
       "relativeTime": "4일 전",
       "category": "papers",
       "author": "Few-Annual-157"
@@ -8535,7 +8495,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-04-29T00:46:15.000Z",
       "sourceColor": "#ff4500",
-      "points": 175,
+      "points": 176,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "ZeusZCC"
@@ -8548,7 +8508,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-04-29T14:15:57.000Z",
       "sourceColor": "#ff4500",
-      "points": 11,
+      "points": 10,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "LackSome307"
@@ -8574,7 +8534,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-04-29T01:58:30.000Z",
       "sourceColor": "#ff4500",
-      "points": 27,
+      "points": 25,
       "relativeTime": "5일 전",
       "category": "papers",
       "author": "zackro21"
@@ -8587,7 +8547,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-04-28T19:50:10.000Z",
       "sourceColor": "#ff4500",
-      "points": 33,
+      "points": 32,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "Impossible_Echo4029"
@@ -8613,7 +8573,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-04-28T21:22:09.000Z",
       "sourceColor": "#ff4500",
-      "points": 7,
+      "points": 9,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "404llm"
@@ -8626,7 +8586,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-04-28T15:01:42.000Z",
       "sourceColor": "#ff4500",
-      "points": 14,
+      "points": 15,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "Pure-Ad9079"
@@ -8639,7 +8599,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-04-28T12:31:50.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 4,
       "relativeTime": "6일 전",
       "category": "ai",
       "author": "Leather_Loan5314"
@@ -8678,7 +8638,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-04-27T16:34:37.000Z",
       "sourceColor": "#ff4500",
-      "points": 49,
+      "points": 47,
       "relativeTime": "6일 전",
       "category": "papers",
       "author": "obliviousphoenix2003"
@@ -8691,7 +8651,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-04-27T13:28:18.000Z",
       "sourceColor": "#ff4500",
-      "points": 43,
+      "points": 42,
       "relativeTime": "7일 전",
       "category": "ai",
       "author": "this_aint_taliya"
@@ -8704,7 +8664,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-04-27T11:01:48.000Z",
       "sourceColor": "#ff4500",
-      "points": 33,
+      "points": 29,
       "relativeTime": "7일 전",
       "category": "papers",
       "author": "Agile_Actuary_8246"
@@ -8717,7 +8677,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-04-27T13:06:41.000Z",
       "sourceColor": "#ff4500",
-      "points": 18,
+      "points": 19,
       "relativeTime": "7일 전",
       "category": "ai",
       "author": "Fragrant_Rate_2583"
@@ -8730,7 +8690,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-04-27T05:49:59.000Z",
       "sourceColor": "#ff4500",
-      "points": 43,
+      "points": 44,
       "relativeTime": "7일 전",
       "category": "ai",
       "author": "Shonku_"
@@ -8769,7 +8729,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/MachineLearning",
       "publishedAt": "2026-04-27T04:38:45.000Z",
       "sourceColor": "#ff4500",
-      "points": 22,
+      "points": 20,
       "relativeTime": "7일 전",
       "category": "ai",
       "author": "Massive-Bobcat-5363"
@@ -8821,7 +8781,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T19:12:19.000Z",
       "sourceColor": "#ff4500",
-      "points": 868,
+      "points": 878,
       "relativeTime": "6시간 전",
       "category": "ai",
       "author": "TheQuantumPhysicist"
@@ -8834,7 +8794,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T21:59:45.000Z",
       "sourceColor": "#ff4500",
-      "points": 131,
+      "points": 142,
       "relativeTime": "3시간 전",
       "category": "ai",
       "author": "mindwip"
@@ -8847,7 +8807,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T17:20:05.000Z",
       "sourceColor": "#ff4500",
-      "points": 75,
+      "points": 76,
       "relativeTime": "8시간 전",
       "category": "ai",
       "author": "Sicarius_The_First"
@@ -8860,8 +8820,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T17:46:33.000Z",
       "sourceColor": "#ff4500",
-      "points": 62,
-      "relativeTime": "7시간 전",
+      "points": 63,
+      "relativeTime": "8시간 전",
       "category": "ai",
       "author": "segmond"
     },
@@ -8873,7 +8833,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T03:30:43.000Z",
       "sourceColor": "#ff4500",
-      "points": 867,
+      "points": 875,
       "relativeTime": "22시간 전",
       "category": "papers",
       "author": "Signal_Ad657"
@@ -8887,7 +8847,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T12:55:26.000Z",
       "sourceColor": "#ff4500",
       "points": 94,
-      "relativeTime": "12시간 전",
+      "relativeTime": "13시간 전",
       "category": "ai",
       "author": "ayake_ayake"
     },
@@ -8899,7 +8859,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T22:16:02.000Z",
       "sourceColor": "#ff4500",
-      "points": 12,
+      "points": 15,
       "relativeTime": "3시간 전",
       "category": "ai",
       "author": "abhinand05"
@@ -8912,8 +8872,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T13:45:55.000Z",
       "sourceColor": "#ff4500",
-      "points": 63,
-      "relativeTime": "11시간 전",
+      "points": 64,
+      "relativeTime": "12시간 전",
       "category": "ai",
       "author": "Equivalent_Job_2257"
     },
@@ -8925,23 +8885,10 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T11:00:18.000Z",
       "sourceColor": "#ff4500",
-      "points": 81,
+      "points": 82,
       "relativeTime": "14시간 전",
       "category": "ai",
       "author": "Imaginary_Belt4976"
-    },
-    {
-      "id": "reddit-1t2slmw",
-      "title": "First time GPU buyer. Got a RTX 5000 Pro. Was it a bad decision compared to two 3090s?",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t2slmw/first_time_gpu_buyer_got_a_rtx_5000_pro_was_it_a/",
-      "source": "reddit",
-      "sourceLabel": "r/LocalLLaMA",
-      "publishedAt": "2026-05-03T18:01:00.000Z",
-      "sourceColor": "#ff4500",
-      "points": 19,
-      "relativeTime": "7시간 전",
-      "category": "ai",
-      "author": "Valuable-Run2129"
     },
     {
       "id": "reddit-1t2t1w4",
@@ -8951,7 +8898,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T18:17:28.000Z",
       "sourceColor": "#ff4500",
-      "points": 19,
+      "points": 21,
       "relativeTime": "7시간 전",
       "category": "ai",
       "author": "Effective-Drawer9152"
@@ -8964,10 +8911,23 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T18:49:14.000Z",
       "sourceColor": "#ff4500",
-      "points": 17,
-      "relativeTime": "6시간 전",
+      "points": 18,
+      "relativeTime": "7시간 전",
       "category": "ai",
       "author": "Zc5Gwu"
+    },
+    {
+      "id": "reddit-1t2slmw",
+      "title": "First time GPU buyer. Got a RTX 5000 Pro. Was it a bad decision compared to two 3090s?",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t2slmw/first_time_gpu_buyer_got_a_rtx_5000_pro_was_it_a/",
+      "source": "reddit",
+      "sourceLabel": "r/LocalLLaMA",
+      "publishedAt": "2026-05-03T18:01:00.000Z",
+      "sourceColor": "#ff4500",
+      "points": 20,
+      "relativeTime": "7시간 전",
+      "category": "ai",
+      "author": "Valuable-Run2129"
     },
     {
       "id": "reddit-1t24y4p",
@@ -8977,7 +8937,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-02T23:18:20.000Z",
       "sourceColor": "#ff4500",
-      "points": 563,
+      "points": 564,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "Course_Latter"
@@ -9003,8 +8963,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T01:54:42.000Z",
       "sourceColor": "#ff4500",
-      "points": 194,
-      "relativeTime": "23시간 전",
+      "points": 195,
+      "relativeTime": "1일 전",
       "category": "ai",
       "author": "jawondo"
     },
@@ -9016,8 +8976,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T16:52:39.000Z",
       "sourceColor": "#ff4500",
-      "points": 11,
-      "relativeTime": "8시간 전",
+      "points": 12,
+      "relativeTime": "9시간 전",
       "category": "ai",
       "author": "DeltaSqueezer"
     },
@@ -9029,7 +8989,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T01:35:03.000Z",
       "sourceColor": "#ff4500",
-      "points": 190,
+      "points": 185,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "Homeschooled316"
@@ -9042,7 +9002,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T16:06:28.000Z",
       "sourceColor": "#ff4500",
-      "points": 12,
+      "points": 11,
       "relativeTime": "9시간 전",
       "category": "ai",
       "author": "purellmagents"
@@ -9068,7 +9028,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T13:59:02.000Z",
       "sourceColor": "#ff4500",
-      "points": 16,
+      "points": 15,
       "relativeTime": "11시간 전",
       "category": "ai",
       "author": "jhnam88"
@@ -9081,7 +9041,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T13:17:40.000Z",
       "sourceColor": "#ff4500",
-      "points": 17,
+      "points": 18,
       "relativeTime": "12시간 전",
       "category": "ai",
       "author": "blojayble"
@@ -9094,23 +9054,10 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T13:31:54.000Z",
       "sourceColor": "#ff4500",
-      "points": 15,
+      "points": 17,
       "relativeTime": "12시간 전",
       "category": "ai",
       "author": "deltamoney"
-    },
-    {
-      "id": "reddit-1t32ps4",
-      "title": "Mistral-Medium-3.5-128B-Q3_K_M on 3x3090 (72GB VRAM)",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t32ps4/mistralmedium35128bq3_k_m_on_3x3090_72gb_vram/",
-      "source": "reddit",
-      "sourceLabel": "r/LocalLLaMA",
-      "publishedAt": "2026-05-04T00:46:26.000Z",
-      "sourceColor": "#ff4500",
-      "points": 2,
-      "relativeTime": "23분 전",
-      "category": "ai",
-      "author": "jacek2023"
     },
     {
       "id": "reddit-1t25ohs",
@@ -9120,7 +9067,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-02T23:51:44.000Z",
       "sourceColor": "#ff4500",
-      "points": 185,
+      "points": 181,
       "relativeTime": "1일 전",
       "category": "papers",
       "author": "Snoo_27681"
@@ -9133,7 +9080,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T16:10:52.000Z",
       "sourceColor": "#ff4500",
-      "points": 8,
+      "points": 7,
       "relativeTime": "9시간 전",
       "category": "ai",
       "author": "Choice_Sympathy9652"
@@ -9159,7 +9106,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-02T16:14:50.000Z",
       "sourceColor": "#ff4500",
-      "points": 514,
+      "points": 507,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "Icy_Butterscotch6661"
@@ -9172,7 +9119,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-02T23:09:06.000Z",
       "sourceColor": "#ff4500",
-      "points": 130,
+      "points": 131,
       "relativeTime": "1일 전",
       "category": "devtools",
       "author": "Street-Buyer-2428"
@@ -9186,9 +9133,22 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T11:50:41.000Z",
       "sourceColor": "#ff4500",
       "points": 11,
-      "relativeTime": "13시간 전",
+      "relativeTime": "14시간 전",
       "category": "ai",
       "author": "PromptInjection_"
+    },
+    {
+      "id": "reddit-1t32ps4",
+      "title": "Mistral-Medium-3.5-128B-Q3_K_M on 3x3090 (72GB VRAM)",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t32ps4/mistralmedium35128bq3_k_m_on_3x3090_72gb_vram/",
+      "source": "reddit",
+      "sourceLabel": "r/LocalLLaMA",
+      "publishedAt": "2026-05-04T00:46:26.000Z",
+      "sourceColor": "#ff4500",
+      "points": 2,
+      "relativeTime": "39분 전",
+      "category": "ai",
+      "author": "jacek2023"
     },
     {
       "id": "reddit-1t329tw",
@@ -9199,7 +9159,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-04T00:25:48.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "44분 전",
+      "relativeTime": "59분 전",
       "category": "ai",
       "author": "tony10000"
     },
@@ -9211,7 +9171,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-04T00:05:22.000Z",
       "sourceColor": "#ff4500",
-      "points": 1,
+      "points": 0,
       "relativeTime": "1시간 전",
       "category": "ai",
       "author": "westsunset"
@@ -9225,7 +9185,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T23:47:23.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "1시간 전",
+      "relativeTime": "2시간 전",
       "category": "ai",
       "author": "Euphoric_North_745"
     },
@@ -9276,7 +9236,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T13:38:12.000Z",
       "sourceColor": "#ff4500",
-      "points": 3,
+      "points": 6,
       "relativeTime": "12시간 전",
       "category": "ai",
       "author": "Fine_Nectarine9328"
@@ -9289,7 +9249,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T20:37:48.000Z",
       "sourceColor": "#ff4500",
-      "points": 1,
+      "points": 2,
       "relativeTime": "5시간 전",
       "category": "ai",
       "author": "warpanomaly"
@@ -9302,7 +9262,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T09:05:12.000Z",
       "sourceColor": "#ff4500",
-      "points": 7,
+      "points": 9,
       "relativeTime": "16시간 전",
       "category": "ai",
       "author": "swingbear"
@@ -9328,7 +9288,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T16:26:33.000Z",
       "sourceColor": "#ff4500",
-      "points": 2,
+      "points": 3,
       "relativeTime": "9시간 전",
       "category": "ai",
       "author": "RogueZero123"
@@ -9341,7 +9301,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-02T11:21:25.000Z",
       "sourceColor": "#ff4500",
-      "points": 404,
+      "points": 414,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "ComplexIt"
@@ -9355,7 +9315,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T19:40:44.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "5시간 전",
+      "relativeTime": "6시간 전",
       "category": "ai",
       "author": "JumpingJack79"
     },
@@ -9367,7 +9327,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-02T21:22:08.000Z",
       "sourceColor": "#ff4500",
-      "points": 51,
+      "points": 55,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "Total-Resort-3120"
@@ -9432,7 +9392,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-02T06:35:02.000Z",
       "sourceColor": "#ff4500",
-      "points": 496,
+      "points": 498,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "pmttyji"
@@ -9445,7 +9405,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T03:10:38.000Z",
       "sourceColor": "#ff4500",
-      "points": 10,
+      "points": 11,
       "relativeTime": "22시간 전",
       "category": "ai",
       "author": "External_Mood4719"
@@ -9458,7 +9418,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-02T20:05:02.000Z",
       "sourceColor": "#ff4500",
-      "points": 40,
+      "points": 42,
       "relativeTime": "1일 전",
       "category": "papers",
       "author": "Routine-Thanks-572"
@@ -9471,7 +9431,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-02T15:44:53.000Z",
       "sourceColor": "#ff4500",
-      "points": 89,
+      "points": 87,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "FantasticNature7590"
@@ -9484,7 +9444,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-02T08:12:35.000Z",
       "sourceColor": "#ff4500",
-      "points": 348,
+      "points": 351,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "One_Slip1455"
@@ -9523,7 +9483,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-02T10:52:10.000Z",
       "sourceColor": "#ff4500",
-      "points": 155,
+      "points": 156,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "LH-Tech_AI"
@@ -9536,7 +9496,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T03:55:43.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 6,
       "relativeTime": "21시간 전",
       "category": "standards",
       "author": "dp3471"
@@ -9549,7 +9509,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T09:30:25.000Z",
       "sourceColor": "#ff4500",
-      "points": 1,
+      "points": 3,
       "relativeTime": "16시간 전",
       "category": "ai",
       "author": "Mordimer86"
@@ -9568,6 +9528,19 @@ window.__DAILY__ = {
       "author": "LaughterOnWater"
     },
     {
+      "id": "reddit-1t296c9",
+      "title": "The use Q8 a waste of resources?",
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t296c9/the_use_q8_a_waste_of_resources/",
+      "source": "reddit",
+      "sourceLabel": "r/LocalLLaMA",
+      "publishedAt": "2026-05-03T02:35:19.000Z",
+      "sourceColor": "#ff4500",
+      "points": 6,
+      "relativeTime": "23시간 전",
+      "category": "ai",
+      "author": "Spiderboyz1"
+    },
+    {
       "id": "reddit-1t1t4nw",
       "title": "Kv cache quantization: ignorance, or malice?",
       "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t1t4nw/kv_cache_quantization_ignorance_or_malice/",
@@ -9575,7 +9548,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-02T15:34:22.000Z",
       "sourceColor": "#ff4500",
-      "points": 43,
+      "points": 41,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "wombweed"
@@ -9588,23 +9561,10 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-02T19:21:27.000Z",
       "sourceColor": "#ff4500",
-      "points": 16,
+      "points": 18,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "volious-ka"
-    },
-    {
-      "id": "reddit-1t296c9",
-      "title": "The use Q8 a waste of resources?",
-      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1t296c9/the_use_q8_a_waste_of_resources/",
-      "source": "reddit",
-      "sourceLabel": "r/LocalLLaMA",
-      "publishedAt": "2026-05-03T02:35:19.000Z",
-      "sourceColor": "#ff4500",
-      "points": 4,
-      "relativeTime": "23시간 전",
-      "category": "ai",
-      "author": "Spiderboyz1"
     },
     {
       "id": "reddit-1t30566",
@@ -9615,7 +9575,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T22:51:33.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "2시간 전",
+      "relativeTime": "3시간 전",
       "category": "ai",
       "author": "StartupTim"
     },
@@ -9628,7 +9588,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T10:43:09.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "14시간 전",
+      "relativeTime": "15시간 전",
       "category": "ai",
       "author": "sterby92"
     },
@@ -9654,7 +9614,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T09:47:36.000Z",
       "sourceColor": "#ff4500",
       "points": 1,
-      "relativeTime": "15시간 전",
+      "relativeTime": "16시간 전",
       "category": "ai",
       "author": "CatSweaty4883"
     },
@@ -9666,7 +9626,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-02T07:13:13.000Z",
       "sourceColor": "#ff4500",
-      "points": 130,
+      "points": 129,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Snail_Inference"
@@ -9692,7 +9652,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-02T07:42:18.000Z",
       "sourceColor": "#ff4500",
-      "points": 105,
+      "points": 108,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "spaceman_"
@@ -9705,7 +9665,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-02T15:55:12.000Z",
       "sourceColor": "#ff4500",
-      "points": 17,
+      "points": 16,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "Additional-Ordinary2"
@@ -9719,7 +9679,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T17:50:56.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "7시간 전",
+      "relativeTime": "8시간 전",
       "category": "ai",
       "author": "Raredisarray"
     },
@@ -9731,7 +9691,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-02T22:29:48.000Z",
       "sourceColor": "#ff4500",
-      "points": 4,
+      "points": 5,
       "relativeTime": "1일 전",
       "category": "standards",
       "author": "Vektor-Mem"
@@ -9757,7 +9717,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-02T23:11:54.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 4,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "laziz"
@@ -9809,7 +9769,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-02T07:11:50.000Z",
       "sourceColor": "#ff4500",
-      "points": 68,
+      "points": 69,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Sunija_Dev"
@@ -9822,7 +9782,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-01T23:31:32.000Z",
       "sourceColor": "#ff4500",
-      "points": 253,
+      "points": 250,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Demonicated"
@@ -9835,7 +9795,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-02T10:25:24.000Z",
       "sourceColor": "#ff4500",
-      "points": 34,
+      "points": 36,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Poulpatine"
@@ -9849,7 +9809,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T15:48:55.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "9시간 전",
+      "relativeTime": "10시간 전",
       "category": "ai",
       "author": "Status-Secret-4292"
     },
@@ -9874,7 +9834,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-02T09:31:55.000Z",
       "sourceColor": "#ff4500",
-      "points": 32,
+      "points": 30,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Healthy_Bedroom5837"
@@ -9888,7 +9848,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T12:47:52.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "12시간 전",
+      "relativeTime": "13시간 전",
       "category": "ai",
       "author": "vatta-kai"
     },
@@ -9952,7 +9912,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-03T03:02:36.000Z",
       "sourceColor": "#ff4500",
-      "points": 1,
+      "points": 0,
       "relativeTime": "22시간 전",
       "category": "ai",
       "author": "Perfect-Campaign9551"
@@ -10004,7 +9964,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-02T12:58:05.000Z",
       "sourceColor": "#ff4500",
-      "points": 7,
+      "points": 8,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "ceo_of_banana"
@@ -10017,7 +9977,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-01T14:53:57.000Z",
       "sourceColor": "#ff4500",
-      "points": 441,
+      "points": 443,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "sandropuppo"
@@ -10069,7 +10029,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-02T14:19:06.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 4,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "Septerium"
@@ -10082,7 +10042,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/LocalLLaMA",
       "publishedAt": "2026-05-02T17:02:35.000Z",
       "sourceColor": "#ff4500",
-      "points": 1,
+      "points": 3,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "OttoRenner"
@@ -10095,7 +10055,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-05-03T07:23:37.000Z",
       "sourceColor": "#ff4500",
-      "points": 280,
+      "points": 283,
       "relativeTime": "18시간 전",
       "category": "devtools",
       "author": "Hugh-Jaardvark"
@@ -10108,7 +10068,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-05-03T16:28:34.000Z",
       "sourceColor": "#ff4500",
-      "points": 29,
+      "points": 31,
       "relativeTime": "9시간 전",
       "category": "ai",
       "author": "platypus-3719"
@@ -10121,7 +10081,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-05-03T00:42:02.000Z",
       "sourceColor": "#ff4500",
-      "points": 118,
+      "points": 117,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "jimmytoan"
@@ -10134,7 +10094,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-05-03T13:19:27.000Z",
       "sourceColor": "#ff4500",
-      "points": 4,
+      "points": 1,
       "relativeTime": "12시간 전",
       "category": "design",
       "author": "Lightforce_"
@@ -10199,7 +10159,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-05-02T23:08:36.000Z",
       "sourceColor": "#ff4500",
-      "points": 2,
+      "points": 1,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "Character-Chicken522"
@@ -10225,7 +10185,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-05-02T14:13:10.000Z",
       "sourceColor": "#ff4500",
-      "points": 8,
+      "points": 7,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "Level_Paper6241"
@@ -10238,7 +10198,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-05-01T17:34:56.000Z",
       "sourceColor": "#ff4500",
-      "points": 164,
+      "points": 166,
       "relativeTime": "2일 전",
       "category": "devtools",
       "author": "SheCherryPicks"
@@ -10446,7 +10406,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-04-30T17:47:04.000Z",
       "sourceColor": "#ff4500",
-      "points": 75,
+      "points": 76,
       "relativeTime": "3일 전",
       "category": "papers",
       "author": "scanguy25"
@@ -10472,7 +10432,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-04-30T15:09:06.000Z",
       "sourceColor": "#ff4500",
-      "points": 28,
+      "points": 26,
       "relativeTime": "3일 전",
       "category": "papers",
       "author": "Round-Classic-7746"
@@ -10524,7 +10484,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-04-30T08:47:27.000Z",
       "sourceColor": "#ff4500",
-      "points": 47,
+      "points": 42,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "Nash0o7"
@@ -10602,7 +10562,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-04-29T21:22:07.000Z",
       "sourceColor": "#ff4500",
-      "points": 86,
+      "points": 84,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "Key-War-9363"
@@ -10615,7 +10575,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-04-30T06:17:58.000Z",
       "sourceColor": "#ff4500",
-      "points": 12,
+      "points": 10,
       "relativeTime": "4일 전",
       "category": "devtools",
       "author": "Odd_Organization9489"
@@ -10654,7 +10614,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-04-29T19:25:37.000Z",
       "sourceColor": "#ff4500",
-      "points": 21,
+      "points": 18,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "__SLACKER__"
@@ -10706,7 +10666,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-04-29T20:44:28.000Z",
       "sourceColor": "#ff4500",
-      "points": 7,
+      "points": 6,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "bluepepebase"
@@ -10719,7 +10679,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-04-29T11:26:19.000Z",
       "sourceColor": "#ff4500",
-      "points": 33,
+      "points": 32,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "juansm2001"
@@ -10732,7 +10692,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-04-29T18:00:30.000Z",
       "sourceColor": "#ff4500",
-      "points": 6,
+      "points": 4,
       "relativeTime": "4일 전",
       "category": "standards",
       "author": "ahihidummy"
@@ -10758,7 +10718,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-04-29T05:24:24.000Z",
       "sourceColor": "#ff4500",
-      "points": 41,
+      "points": 43,
       "relativeTime": "5일 전",
       "category": "standards",
       "author": "Treppengeher4321"
@@ -10772,7 +10732,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-04-30T13:42:30.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "3일 전",
+      "relativeTime": "4일 전",
       "category": "robotics",
       "author": "No_Birthday5146"
     },
@@ -10797,7 +10757,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-04-29T00:06:07.000Z",
       "sourceColor": "#ff4500",
-      "points": 53,
+      "points": 51,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "emonk"
@@ -10810,7 +10770,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-04-29T05:13:26.000Z",
       "sourceColor": "#ff4500",
-      "points": 12,
+      "points": 10,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "SinanR321"
@@ -10875,7 +10835,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-04-29T03:32:37.000Z",
       "sourceColor": "#ff4500",
-      "points": 1,
+      "points": 2,
       "relativeTime": "5일 전",
       "category": "devtools",
       "author": "SevenTrack"
@@ -10901,7 +10861,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-04-27T16:16:07.000Z",
       "sourceColor": "#ff4500",
-      "points": 722,
+      "points": 726,
       "relativeTime": "6일 전",
       "category": "devtools",
       "author": "TheHammeredDog"
@@ -10914,7 +10874,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-04-28T14:53:40.000Z",
       "sourceColor": "#ff4500",
-      "points": 6,
+      "points": 7,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "StockSalamander3512"
@@ -10966,7 +10926,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-04-27T12:51:14.000Z",
       "sourceColor": "#ff4500",
-      "points": 226,
+      "points": 227,
       "relativeTime": "7일 전",
       "category": "ai",
       "author": "PelicanPop"
@@ -11005,7 +10965,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-04-27T22:02:37.000Z",
       "sourceColor": "#ff4500",
-      "points": 24,
+      "points": 22,
       "relativeTime": "6일 전",
       "category": "ai",
       "author": "Nearby-Willingness32"
@@ -11044,7 +11004,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-04-27T14:06:08.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 6,
       "relativeTime": "6일 전",
       "category": "ai",
       "author": "udtcp"
@@ -11070,7 +11030,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/devops",
       "publishedAt": "2026-04-27T02:01:04.000Z",
       "sourceColor": "#ff4500",
-      "points": 16,
+      "points": 18,
       "relativeTime": "7일 전",
       "category": "devtools",
       "author": "SheCherryPicks"
@@ -11122,7 +11082,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-05-03T12:00:04.000Z",
       "sourceColor": "#ff4500",
-      "points": 123,
+      "points": 125,
       "relativeTime": "13시간 전",
       "category": "ai",
       "author": "sigmoia"
@@ -11135,7 +11095,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-05-03T12:33:43.000Z",
       "sourceColor": "#ff4500",
-      "points": 91,
+      "points": 94,
       "relativeTime": "13시간 전",
       "category": "ai",
       "author": "Savings-Square572"
@@ -11148,8 +11108,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-05-03T22:54:44.000Z",
       "sourceColor": "#ff4500",
-      "points": 12,
-      "relativeTime": "2시간 전",
+      "points": 11,
+      "relativeTime": "3시간 전",
       "category": "ai",
       "author": "packenbush"
     },
@@ -11200,7 +11160,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-05-02T18:32:31.000Z",
       "sourceColor": "#ff4500",
-      "points": 34,
+      "points": 32,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "Hixon11"
@@ -11226,7 +11186,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-05-02T11:00:01.000Z",
       "sourceColor": "#ff4500",
-      "points": 49,
+      "points": 50,
       "relativeTime": "2일 전",
       "category": "devtools",
       "author": "warphere"
@@ -11239,8 +11199,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-05-02T13:55:14.000Z",
       "sourceColor": "#ff4500",
-      "points": 18,
-      "relativeTime": "1일 전",
+      "points": 17,
+      "relativeTime": "2일 전",
       "category": "ai",
       "author": "Silent-Reference8769"
     },
@@ -11252,7 +11212,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-05-02T20:48:49.000Z",
       "sourceColor": "#ff4500",
-      "points": 1,
+      "points": 2,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "DonJuanFighterTrue"
@@ -11265,7 +11225,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-05-01T22:49:53.000Z",
       "sourceColor": "#ff4500",
-      "points": 16,
+      "points": 15,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "efronl"
@@ -11278,7 +11238,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-05-01T22:14:51.000Z",
       "sourceColor": "#ff4500",
-      "points": 15,
+      "points": 14,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Sundaram_2911"
@@ -11291,7 +11251,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-05-01T01:39:20.000Z",
       "sourceColor": "#ff4500",
-      "points": 210,
+      "points": 208,
       "relativeTime": "3일 전",
       "category": "papers",
       "author": "hugemang4"
@@ -11304,7 +11264,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-05-01T12:15:22.000Z",
       "sourceColor": "#ff4500",
-      "points": 26,
+      "points": 24,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "sambigeara_"
@@ -11317,7 +11277,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-05-01T18:12:17.000Z",
       "sourceColor": "#ff4500",
-      "points": 7,
+      "points": 8,
       "relativeTime": "2일 전",
       "category": "standards",
       "author": "dlevy-msft"
@@ -11330,7 +11290,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-05-01T20:41:03.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 4,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Electrical-Loss8035"
@@ -11356,7 +11316,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-05-01T08:19:23.000Z",
       "sourceColor": "#ff4500",
-      "points": 27,
+      "points": 28,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "jamiefdhurst"
@@ -11369,7 +11329,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-05-01T07:58:06.000Z",
       "sourceColor": "#ff4500",
-      "points": 25,
+      "points": 26,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "andrinoff"
@@ -11382,7 +11342,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-05-01T14:23:00.000Z",
       "sourceColor": "#ff4500",
-      "points": 8,
+      "points": 7,
       "relativeTime": "2일 전",
       "category": "devtools",
       "author": "soub4i"
@@ -11408,7 +11368,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-05-01T06:25:20.000Z",
       "sourceColor": "#ff4500",
-      "points": 11,
+      "points": 12,
       "relativeTime": "3일 전",
       "category": "devtools",
       "author": "vmcrash"
@@ -11421,7 +11381,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-04-30T19:01:41.000Z",
       "sourceColor": "#ff4500",
-      "points": 53,
+      "points": 54,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "pepiks"
@@ -11434,7 +11394,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-05-01T08:54:56.000Z",
       "sourceColor": "#ff4500",
-      "points": 4,
+      "points": 3,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "___oe"
@@ -11447,7 +11407,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-05-01T08:30:53.000Z",
       "sourceColor": "#ff4500",
-      "points": 2,
+      "points": 3,
       "relativeTime": "3일 전",
       "category": "robotics",
       "author": "Elegant-Buffalo1550"
@@ -11460,7 +11420,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-04-30T15:26:17.000Z",
       "sourceColor": "#ff4500",
-      "points": 27,
+      "points": 28,
       "relativeTime": "3일 전",
       "category": "standards",
       "author": "anirudhology"
@@ -11499,7 +11459,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-04-30T12:53:43.000Z",
       "sourceColor": "#ff4500",
-      "points": 34,
+      "points": 36,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "Electronic_Code_1535"
@@ -11538,7 +11498,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-04-30T18:41:13.000Z",
       "sourceColor": "#ff4500",
-      "points": 2,
+      "points": 1,
       "relativeTime": "3일 전",
       "category": "standards",
       "author": "pepiks"
@@ -11551,7 +11511,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-04-30T08:22:11.000Z",
       "sourceColor": "#ff4500",
-      "points": 4,
+      "points": 5,
       "relativeTime": "4일 전",
       "category": "devtools",
       "author": "Immediate_Life7579"
@@ -11564,7 +11524,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-04-29T17:56:56.000Z",
       "sourceColor": "#ff4500",
-      "points": 14,
+      "points": 15,
       "relativeTime": "4일 전",
       "category": "standards",
       "author": "karlpip"
@@ -11616,7 +11576,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-04-29T06:02:29.000Z",
       "sourceColor": "#ff4500",
-      "points": 36,
+      "points": 33,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "AssociationBig3318"
@@ -11629,7 +11589,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-04-29T09:31:34.000Z",
       "sourceColor": "#ff4500",
-      "points": 9,
+      "points": 10,
       "relativeTime": "5일 전",
       "category": "devtools",
       "author": "nakabonne"
@@ -11642,7 +11602,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-04-29T17:55:21.000Z",
       "sourceColor": "#ff4500",
-      "points": 2,
+      "points": 1,
       "relativeTime": "4일 전",
       "category": "devtools",
       "author": "AbbreviationsAny8633"
@@ -11655,7 +11615,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-04-28T19:00:37.000Z",
       "sourceColor": "#ff4500",
-      "points": 72,
+      "points": 74,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "finallyanonymous"
@@ -11668,7 +11628,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-04-29T07:11:16.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 6,
       "relativeTime": "5일 전",
       "category": "devtools",
       "author": "overthinker1126"
@@ -11681,7 +11641,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-04-28T20:27:11.000Z",
       "sourceColor": "#ff4500",
-      "points": 36,
+      "points": 35,
       "relativeTime": "5일 전",
       "category": "robotics",
       "author": "bee-gee-dee"
@@ -11694,7 +11654,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-04-29T00:59:25.000Z",
       "sourceColor": "#ff4500",
-      "points": 6,
+      "points": 8,
       "relativeTime": "5일 전",
       "category": "devtools",
       "author": "no_em_dash"
@@ -11707,7 +11667,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-04-28T20:03:12.000Z",
       "sourceColor": "#ff4500",
-      "points": 9,
+      "points": 10,
       "relativeTime": "5일 전",
       "category": "standards",
       "author": "KangoLemon"
@@ -11733,7 +11693,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-04-28T17:21:37.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 4,
       "relativeTime": "5일 전",
       "category": "devtools",
       "author": "kungsbacka"
@@ -11746,7 +11706,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-04-28T03:15:36.000Z",
       "sourceColor": "#ff4500",
-      "points": 25,
+      "points": 27,
       "relativeTime": "6일 전",
       "category": "ai",
       "author": "canadiancoding"
@@ -11772,7 +11732,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-04-27T19:26:59.000Z",
       "sourceColor": "#ff4500",
-      "points": 44,
+      "points": 48,
       "relativeTime": "6일 전",
       "category": "ai",
       "author": "NikolaySivko"
@@ -11785,7 +11745,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/golang",
       "publishedAt": "2026-04-27T14:30:55.000Z",
       "sourceColor": "#ff4500",
-      "points": 56,
+      "points": 55,
       "relativeTime": "6일 전",
       "category": "standards",
       "author": "Pop_the_glock_1"
@@ -11850,7 +11810,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-03T19:29:50.000Z",
       "sourceColor": "#ff4500",
-      "points": 35,
+      "points": 39,
       "relativeTime": "6시간 전",
       "category": "devtools",
       "author": "Dito04"
@@ -11863,7 +11823,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-03T06:19:15.000Z",
       "sourceColor": "#ff4500",
-      "points": 190,
+      "points": 191,
       "relativeTime": "19시간 전",
       "category": "ai",
       "author": "Helpful_Garbage_7242"
@@ -11876,7 +11836,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-03T14:30:09.000Z",
       "sourceColor": "#ff4500",
-      "points": 33,
+      "points": 35,
       "relativeTime": "11시간 전",
       "category": "ai",
       "author": "kibwen"
@@ -11902,7 +11862,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-03T12:17:20.000Z",
       "sourceColor": "#ff4500",
-      "points": 16,
+      "points": 17,
       "relativeTime": "13시간 전",
       "category": "ai",
       "author": "rustcurious"
@@ -11915,8 +11875,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-03T14:54:34.000Z",
       "sourceColor": "#ff4500",
-      "points": 9,
-      "relativeTime": "10시간 전",
+      "points": 8,
+      "relativeTime": "11시간 전",
       "category": "ai",
       "author": "AAM_Discord"
     },
@@ -11941,7 +11901,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-02T09:20:54.000Z",
       "sourceColor": "#ff4500",
-      "points": 737,
+      "points": 739,
       "relativeTime": "2일 전",
       "category": "standards",
       "author": "thatmagicalcat"
@@ -11954,7 +11914,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-02T13:06:56.000Z",
       "sourceColor": "#ff4500",
-      "points": 361,
+      "points": 358,
       "relativeTime": "2일 전",
       "category": "devtools",
       "author": "Deep-Network1590"
@@ -11967,7 +11927,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-03T00:11:33.000Z",
       "sourceColor": "#ff4500",
-      "points": 42,
+      "points": 38,
       "relativeTime": "1일 전",
       "category": "standards",
       "author": "SeaInformation8764"
@@ -11980,7 +11940,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-03T06:00:58.000Z",
       "sourceColor": "#ff4500",
-      "points": 9,
+      "points": 10,
       "relativeTime": "19시간 전",
       "category": "devtools",
       "author": "Protoqol-Development"
@@ -12019,7 +11979,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-02T13:19:32.000Z",
       "sourceColor": "#ff4500",
-      "points": 81,
+      "points": 83,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "zushah"
@@ -12032,7 +11992,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-02T19:13:41.000Z",
       "sourceColor": "#ff4500",
-      "points": 19,
+      "points": 20,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "Objective-Farmer4183"
@@ -12045,7 +12005,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-02T18:40:03.000Z",
       "sourceColor": "#ff4500",
-      "points": 20,
+      "points": 19,
       "relativeTime": "1일 전",
       "category": "standards",
       "author": "Particular_Ladder289"
@@ -12058,7 +12018,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-02T18:22:39.000Z",
       "sourceColor": "#ff4500",
-      "points": 19,
+      "points": 20,
       "relativeTime": "1일 전",
       "category": "standards",
       "author": "Pizzas_Bear"
@@ -12071,7 +12031,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-02T19:10:22.000Z",
       "sourceColor": "#ff4500",
-      "points": 18,
+      "points": 17,
       "relativeTime": "1일 전",
       "category": "devtools",
       "author": "CarefulBattle2367"
@@ -12090,19 +12050,6 @@ window.__DAILY__ = {
       "author": "Kubaguette"
     },
     {
-      "id": "reddit-1t2xo1b",
-      "title": "Show r/rust: From-scratch Rust LLM runtime now using GPU — 1.46x faster with tier-aware VRAM/RAM loading",
-      "url": "https://www.reddit.com/r/rust/comments/1t2xo1b/show_rrust_fromscratch_rust_llm_runtime_now_using/",
-      "source": "reddit",
-      "sourceLabel": "r/rust",
-      "publishedAt": "2026-05-03T21:10:06.000Z",
-      "sourceColor": "#ff4500",
-      "points": 0,
-      "relativeTime": "4시간 전",
-      "category": "ai",
-      "author": "Gandalfr3k"
-    },
-    {
       "id": "reddit-1t24n06",
       "title": "I rebuilt my clanky Python Telegram bot monitoring my servers with Rust and built a mini distributed system",
       "url": "https://www.reddit.com/r/rust/comments/1t24n06/i_rebuilt_my_clanky_python_telegram_bot/",
@@ -12116,6 +12063,19 @@ window.__DAILY__ = {
       "author": "CharlesWithC7777"
     },
     {
+      "id": "reddit-1t2xo1b",
+      "title": "Show r/rust: From-scratch Rust LLM runtime now using GPU — 1.46x faster with tier-aware VRAM/RAM loading",
+      "url": "https://www.reddit.com/r/rust/comments/1t2xo1b/show_rrust_fromscratch_rust_llm_runtime_now_using/",
+      "source": "reddit",
+      "sourceLabel": "r/rust",
+      "publishedAt": "2026-05-03T21:10:06.000Z",
+      "sourceColor": "#ff4500",
+      "points": 0,
+      "relativeTime": "4시간 전",
+      "category": "ai",
+      "author": "Gandalfr3k"
+    },
+    {
       "id": "reddit-1t1tlz0",
       "title": "Sword - Web Application Framework",
       "url": "https://www.reddit.com/r/rust/comments/1t1tlz0/sword_web_application_framework/",
@@ -12123,7 +12083,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-02T15:53:17.000Z",
       "sourceColor": "#ff4500",
-      "points": 18,
+      "points": 19,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "MrRevillod"
@@ -12149,7 +12109,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-02T11:59:08.000Z",
       "sourceColor": "#ff4500",
-      "points": 17,
+      "points": 16,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Temidaradev"
@@ -12162,7 +12122,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-02T23:33:51.000Z",
       "sourceColor": "#ff4500",
-      "points": 2,
+      "points": 3,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "codecratfer"
@@ -12188,7 +12148,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-03T01:25:51.000Z",
       "sourceColor": "#ff4500",
-      "points": 0,
+      "points": 1,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "regisx001"
@@ -12202,7 +12162,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T16:42:36.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "8시간 전",
+      "relativeTime": "9시간 전",
       "category": "ai",
       "author": "Noahbreaker"
     },
@@ -12215,7 +12175,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T11:53:20.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "13시간 전",
+      "relativeTime": "14시간 전",
       "category": "standards",
       "author": "Ok-Butterscotch7951"
     },
@@ -12227,7 +12187,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-01T15:45:14.000Z",
       "sourceColor": "#ff4500",
-      "points": 481,
+      "points": 475,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "NoBeginning2551"
@@ -12241,7 +12201,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T04:49:46.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "20시간 전",
+      "relativeTime": "21시간 전",
       "category": "ai",
       "author": "wsintra"
     },
@@ -12279,7 +12239,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-01T22:31:48.000Z",
       "sourceColor": "#ff4500",
-      "points": 89,
+      "points": 92,
       "relativeTime": "2일 전",
       "category": "devtools",
       "author": "SuperV1234"
@@ -12292,7 +12252,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-01T17:44:44.000Z",
       "sourceColor": "#ff4500",
-      "points": 206,
+      "points": 202,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "neneodonkor"
@@ -12318,7 +12278,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-02T14:39:10.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 6,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "98f00b2"
@@ -12331,7 +12291,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-02T07:49:52.000Z",
       "sourceColor": "#ff4500",
-      "points": 11,
+      "points": 10,
       "relativeTime": "2일 전",
       "category": "display",
       "author": "murad_ibrahimov"
@@ -12357,7 +12317,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-01T10:54:44.000Z",
       "sourceColor": "#ff4500",
-      "points": 224,
+      "points": 225,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "puttak"
@@ -12371,7 +12331,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T03:42:09.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "21시간 전",
+      "relativeTime": "22시간 전",
       "category": "ai",
       "author": "lutgaru"
     },
@@ -12383,7 +12343,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-01T20:09:35.000Z",
       "sourceColor": "#ff4500",
-      "points": 22,
+      "points": 21,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Ashken"
@@ -12409,7 +12369,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-01T19:38:39.000Z",
       "sourceColor": "#ff4500",
-      "points": 21,
+      "points": 20,
       "relativeTime": "2일 전",
       "category": "standards",
       "author": "Humble-Insurance-768"
@@ -12422,7 +12382,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-01T14:43:21.000Z",
       "sourceColor": "#ff4500",
-      "points": 41,
+      "points": 40,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "octo_anders"
@@ -12461,7 +12421,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-01T10:35:23.000Z",
       "sourceColor": "#ff4500",
-      "points": 50,
+      "points": 44,
       "relativeTime": "3일 전",
       "category": "devtools",
       "author": "InnerPhilosophy4897"
@@ -12487,7 +12447,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-01T17:24:15.000Z",
       "sourceColor": "#ff4500",
-      "points": 11,
+      "points": 10,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "NoahZhyte"
@@ -12500,7 +12460,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-01T04:53:58.000Z",
       "sourceColor": "#ff4500",
-      "points": 65,
+      "points": 62,
       "relativeTime": "3일 전",
       "category": "standards",
       "author": "roynrishingha"
@@ -12513,7 +12473,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-04-30T19:14:35.000Z",
       "sourceColor": "#ff4500",
-      "points": 365,
+      "points": 367,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "cachebags"
@@ -12539,7 +12499,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-01T17:13:30.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 6,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "BotherFantastic9287"
@@ -12552,7 +12512,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-01T09:24:34.000Z",
       "sourceColor": "#ff4500",
-      "points": 16,
+      "points": 18,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "bebwjkjerwqerer"
@@ -12565,7 +12525,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-01T01:33:26.000Z",
       "sourceColor": "#ff4500",
-      "points": 68,
+      "points": 66,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "NuclearMagpie"
@@ -12578,7 +12538,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-05-01T00:24:09.000Z",
       "sourceColor": "#ff4500",
-      "points": 69,
+      "points": 72,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "antoyo"
@@ -12604,7 +12564,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-04-30T19:25:28.000Z",
       "sourceColor": "#ff4500",
-      "points": 122,
+      "points": 123,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "Kobzol"
@@ -12617,7 +12577,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-04-30T18:26:51.000Z",
       "sourceColor": "#ff4500",
-      "points": 87,
+      "points": 84,
       "relativeTime": "3일 전",
       "category": "devtools",
       "author": "billy_levin"
@@ -12643,7 +12603,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-04-30T15:53:58.000Z",
       "sourceColor": "#ff4500",
-      "points": 80,
+      "points": 81,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "NormalAppearance2851"
@@ -12669,7 +12629,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-04-30T21:41:06.000Z",
       "sourceColor": "#ff4500",
-      "points": 22,
+      "points": 21,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "Expensive-Click-123"
@@ -12708,7 +12668,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-04-30T22:07:12.000Z",
       "sourceColor": "#ff4500",
-      "points": 18,
+      "points": 17,
       "relativeTime": "3일 전",
       "category": "robotics",
       "author": "int7bh"
@@ -12786,7 +12746,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-04-29T19:24:00.000Z",
       "sourceColor": "#ff4500",
-      "points": 868,
+      "points": 869,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "zxyzyxz"
@@ -12825,7 +12785,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-04-30T01:17:35.000Z",
       "sourceColor": "#ff4500",
-      "points": 215,
+      "points": 217,
       "relativeTime": "4일 전",
       "category": "devtools",
       "author": "Dense_Gate_5193"
@@ -12838,7 +12798,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-04-30T00:41:59.000Z",
       "sourceColor": "#ff4500",
-      "points": 191,
+      "points": 190,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "emschwartz"
@@ -12864,8 +12824,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-04-30T13:44:28.000Z",
       "sourceColor": "#ff4500",
-      "points": 10,
-      "relativeTime": "3일 전",
+      "points": 9,
+      "relativeTime": "4일 전",
       "category": "design",
       "author": "simleiiiii"
     },
@@ -12877,7 +12837,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-04-30T00:48:50.000Z",
       "sourceColor": "#ff4500",
-      "points": 105,
+      "points": 106,
       "relativeTime": "4일 전",
       "category": "standards",
       "author": "Uli909"
@@ -12890,7 +12850,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-04-30T18:19:32.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 4,
       "relativeTime": "3일 전",
       "category": "devtools",
       "author": "mss-cyclist"
@@ -12955,7 +12915,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-04-30T11:28:13.000Z",
       "sourceColor": "#ff4500",
-      "points": 4,
+      "points": 3,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "long_void"
@@ -12968,7 +12928,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-04-30T10:43:14.000Z",
       "sourceColor": "#ff4500",
-      "points": 4,
+      "points": 5,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "EquivalentIce215"
@@ -12981,7 +12941,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-04-29T20:40:19.000Z",
       "sourceColor": "#ff4500",
-      "points": 53,
+      "points": 52,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "zylosophe"
@@ -13007,7 +12967,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-04-29T20:15:34.000Z",
       "sourceColor": "#ff4500",
-      "points": 38,
+      "points": 40,
       "relativeTime": "4일 전",
       "category": "devtools",
       "author": "shad0_w2"
@@ -13033,7 +12993,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-04-29T22:55:35.000Z",
       "sourceColor": "#ff4500",
-      "points": 17,
+      "points": 16,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "SreeLegend"
@@ -13059,7 +13019,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-04-29T15:57:37.000Z",
       "sourceColor": "#ff4500",
-      "points": 41,
+      "points": 43,
       "relativeTime": "4일 전",
       "category": "robotics",
       "author": "Electronic-Film-5749"
@@ -13085,7 +13045,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/rust",
       "publishedAt": "2026-04-29T13:59:39.000Z",
       "sourceColor": "#ff4500",
-      "points": 34,
+      "points": 28,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "Asuka_Minato"
@@ -13098,7 +13058,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/javascript",
       "publishedAt": "2026-05-02T21:00:57.000Z",
       "sourceColor": "#ff4500",
-      "points": 35,
+      "points": 36,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "htone22"
@@ -13111,7 +13071,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/javascript",
       "publishedAt": "2026-05-03T09:16:38.000Z",
       "sourceColor": "#ff4500",
-      "points": 4,
+      "points": 3,
       "relativeTime": "16시간 전",
       "category": "ai",
       "author": "cond_cond"
@@ -13150,7 +13110,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/javascript",
       "publishedAt": "2026-05-02T14:05:59.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 3,
       "relativeTime": "1일 전",
       "category": "standards",
       "author": "le0pard"
@@ -13163,7 +13123,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/javascript",
       "publishedAt": "2026-05-02T10:17:32.000Z",
       "sourceColor": "#ff4500",
-      "points": 9,
+      "points": 8,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "fabon_f"
@@ -13176,7 +13136,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/javascript",
       "publishedAt": "2026-05-01T23:24:43.000Z",
       "sourceColor": "#ff4500",
-      "points": 24,
+      "points": 25,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "geovannyjs"
@@ -13280,7 +13240,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/javascript",
       "publishedAt": "2026-04-30T20:50:27.000Z",
       "sourceColor": "#ff4500",
-      "points": 38,
+      "points": 39,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "gajus0"
@@ -13306,7 +13266,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/javascript",
       "publishedAt": "2026-04-30T14:53:44.000Z",
       "sourceColor": "#ff4500",
-      "points": 52,
+      "points": 51,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "LostPrune2143"
@@ -13332,7 +13292,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/javascript",
       "publishedAt": "2026-04-30T21:48:13.000Z",
       "sourceColor": "#ff4500",
-      "points": 4,
+      "points": 5,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "simonramstedt"
@@ -13358,7 +13318,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/javascript",
       "publishedAt": "2026-04-30T06:40:04.000Z",
       "sourceColor": "#ff4500",
-      "points": 9,
+      "points": 11,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "jxd-dev"
@@ -13384,7 +13344,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/javascript",
       "publishedAt": "2026-04-29T18:04:09.000Z",
       "sourceColor": "#ff4500",
-      "points": 11,
+      "points": 12,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "-zibx"
@@ -13436,7 +13396,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/javascript",
       "publishedAt": "2026-04-28T05:51:57.000Z",
       "sourceColor": "#ff4500",
-      "points": 36,
+      "points": 38,
       "relativeTime": "6일 전",
       "category": "ai",
       "author": "Success_Street"
@@ -13488,7 +13448,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/javascript",
       "publishedAt": "2026-04-27T21:45:05.000Z",
       "sourceColor": "#ff4500",
-      "points": 18,
+      "points": 16,
       "relativeTime": "6일 전",
       "category": "standards",
       "author": "Practical-Departure3"
@@ -13657,7 +13617,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/typescript",
       "publishedAt": "2026-04-27T13:09:22.000Z",
       "sourceColor": "#ff4500",
-      "points": 15,
+      "points": 14,
       "relativeTime": "7일 전",
       "category": "ai",
       "author": "ilbert_luca"
@@ -13671,9 +13631,22 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T19:50:18.000Z",
       "sourceColor": "#ff4500",
       "points": 12,
-      "relativeTime": "5시간 전",
+      "relativeTime": "6시간 전",
       "category": "standards",
       "author": "Ok-Programmer6763"
+    },
+    {
+      "id": "reddit-1t33eap",
+      "title": "useEffect is not updating React state upon initial load, and trying to find a solution is pulling my hair",
+      "url": "https://www.reddit.com/r/reactjs/comments/1t33eap/useeffect_is_not_updating_react_state_upon/",
+      "source": "reddit",
+      "sourceLabel": "r/reactjs",
+      "publishedAt": "2026-05-04T01:16:54.000Z",
+      "sourceColor": "#ff4500",
+      "points": 1,
+      "relativeTime": "8분 전",
+      "category": "ai",
+      "author": "TheKoopaBrothers"
     },
     {
       "id": "reddit-1t2rc2s",
@@ -13722,7 +13695,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/reactjs",
       "publishedAt": "2026-05-02T22:12:07.000Z",
       "sourceColor": "#ff4500",
-      "points": 21,
+      "points": 19,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "sebastienlorber"
@@ -13749,7 +13722,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T18:49:49.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "6시간 전",
+      "relativeTime": "7시간 전",
       "category": "ai",
       "author": "Therohitmahar"
     },
@@ -13930,7 +13903,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/reactjs",
       "publishedAt": "2026-04-30T10:42:41.000Z",
       "sourceColor": "#ff4500",
-      "points": 275,
+      "points": 276,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "Meow_man1213"
@@ -13956,7 +13929,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/reactjs",
       "publishedAt": "2026-05-01T01:55:38.000Z",
       "sourceColor": "#ff4500",
-      "points": 4,
+      "points": 5,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "Dense_Gate_5193"
@@ -13995,7 +13968,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/reactjs",
       "publishedAt": "2026-04-30T16:59:29.000Z",
       "sourceColor": "#ff4500",
-      "points": 10,
+      "points": 9,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "Good_Language1763"
@@ -14008,7 +13981,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/reactjs",
       "publishedAt": "2026-04-30T10:38:04.000Z",
       "sourceColor": "#ff4500",
-      "points": 24,
+      "points": 25,
       "relativeTime": "4일 전",
       "category": "standards",
       "author": "samwanekeya"
@@ -14034,7 +14007,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/reactjs",
       "publishedAt": "2026-04-30T17:00:39.000Z",
       "sourceColor": "#ff4500",
-      "points": 1,
+      "points": 2,
       "relativeTime": "3일 전",
       "category": "devtools",
       "author": "gajus0"
@@ -14047,7 +14020,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/reactjs",
       "publishedAt": "2026-04-29T17:56:54.000Z",
       "sourceColor": "#ff4500",
-      "points": 132,
+      "points": 127,
       "relativeTime": "4일 전",
       "category": "devtools",
       "author": "skyturnsred"
@@ -14099,7 +14072,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/reactjs",
       "publishedAt": "2026-04-30T04:28:52.000Z",
       "sourceColor": "#ff4500",
-      "points": 8,
+      "points": 9,
       "relativeTime": "4일 전",
       "category": "devtools",
       "author": "Sad_Limit_3857"
@@ -14151,7 +14124,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/reactjs",
       "publishedAt": "2026-04-29T18:02:34.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 4,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "wesomemarinios"
@@ -14164,7 +14137,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/reactjs",
       "publishedAt": "2026-04-29T05:58:03.000Z",
       "sourceColor": "#ff4500",
-      "points": 36,
+      "points": 32,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "whatsinyourmasala2"
@@ -14177,7 +14150,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/reactjs",
       "publishedAt": "2026-04-29T11:34:13.000Z",
       "sourceColor": "#ff4500",
-      "points": 7,
+      "points": 6,
       "relativeTime": "5일 전",
       "category": "devtools",
       "author": "nphivu414"
@@ -14203,7 +14176,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/reactjs",
       "publishedAt": "2026-04-28T22:23:18.000Z",
       "sourceColor": "#ff4500",
-      "points": 66,
+      "points": 64,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "weilding"
@@ -14216,7 +14189,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/reactjs",
       "publishedAt": "2026-04-29T04:59:46.000Z",
       "sourceColor": "#ff4500",
-      "points": 15,
+      "points": 16,
       "relativeTime": "5일 전",
       "category": "standards",
       "author": "Sad_Limit_3857"
@@ -14229,7 +14202,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/reactjs",
       "publishedAt": "2026-04-29T09:06:27.000Z",
       "sourceColor": "#ff4500",
-      "points": 8,
+      "points": 6,
       "relativeTime": "5일 전",
       "category": "robotics",
       "author": "sapereaude4"
@@ -14255,7 +14228,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/reactjs",
       "publishedAt": "2026-04-28T18:27:55.000Z",
       "sourceColor": "#ff4500",
-      "points": 39,
+      "points": 38,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "trolleid"
@@ -14268,7 +14241,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/reactjs",
       "publishedAt": "2026-04-29T02:34:30.000Z",
       "sourceColor": "#ff4500",
-      "points": 4,
+      "points": 2,
       "relativeTime": "5일 전",
       "category": "standards",
       "author": "Exotic-Finish-5400"
@@ -14294,7 +14267,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/reactjs",
       "publishedAt": "2026-04-28T19:20:32.000Z",
       "sourceColor": "#ff4500",
-      "points": 3,
+      "points": 4,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "Dense_Gate_5193"
@@ -14372,7 +14345,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/reactjs",
       "publishedAt": "2026-04-28T08:22:54.000Z",
       "sourceColor": "#ff4500",
-      "points": 3,
+      "points": 4,
       "relativeTime": "6일 전",
       "category": "ai",
       "author": "Excellent_Shift1064"
@@ -14385,7 +14358,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/reactjs",
       "publishedAt": "2026-04-27T23:06:25.000Z",
       "sourceColor": "#ff4500",
-      "points": 17,
+      "points": 14,
       "relativeTime": "6일 전",
       "category": "ai",
       "author": "Sufficient-Owl1826"
@@ -14424,7 +14397,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/reactjs",
       "publishedAt": "2026-04-28T03:59:41.000Z",
       "sourceColor": "#ff4500",
-      "points": 0,
+      "points": 1,
       "relativeTime": "6일 전",
       "category": "ai",
       "author": "domidex"
@@ -14541,7 +14514,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/reactjs",
       "publishedAt": "2026-04-27T02:28:18.000Z",
       "sourceColor": "#ff4500",
-      "points": 13,
+      "points": 12,
       "relativeTime": "7일 전",
       "category": "ai",
       "author": "ConfectionExtra3565"
@@ -14555,7 +14528,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T20:50:19.000Z",
       "sourceColor": "#ff4500",
       "points": 1,
-      "relativeTime": "4시간 전",
+      "relativeTime": "5시간 전",
       "category": "ai",
       "author": "misterrpg"
     },
@@ -14580,7 +14553,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/node",
       "publishedAt": "2026-05-03T00:14:56.000Z",
       "sourceColor": "#ff4500",
-      "points": 10,
+      "points": 9,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "tanin47"
@@ -14606,7 +14579,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/node",
       "publishedAt": "2026-05-01T23:14:28.000Z",
       "sourceColor": "#ff4500",
-      "points": 47,
+      "points": 50,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "ibrambo7"
@@ -14632,7 +14605,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/node",
       "publishedAt": "2026-05-01T23:39:58.000Z",
       "sourceColor": "#ff4500",
-      "points": 4,
+      "points": 7,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Toxic_Klutz"
@@ -14645,7 +14618,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/node",
       "publishedAt": "2026-05-01T11:13:05.000Z",
       "sourceColor": "#ff4500",
-      "points": 44,
+      "points": 45,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "wieltjeszuiger"
@@ -14684,7 +14657,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/node",
       "publishedAt": "2026-05-01T19:23:27.000Z",
       "sourceColor": "#ff4500",
-      "points": 8,
+      "points": 7,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "jhnam88"
@@ -14736,7 +14709,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/node",
       "publishedAt": "2026-05-01T12:16:25.000Z",
       "sourceColor": "#ff4500",
-      "points": 7,
+      "points": 6,
       "relativeTime": "3일 전",
       "category": "ax",
       "author": "Elegant_Shock5162"
@@ -14814,7 +14787,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/node",
       "publishedAt": "2026-04-30T18:55:25.000Z",
       "sourceColor": "#ff4500",
-      "points": 12,
+      "points": 11,
       "relativeTime": "3일 전",
       "category": "standards",
       "author": "jonathancheckwise"
@@ -14827,7 +14800,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/node",
       "publishedAt": "2026-05-01T00:42:58.000Z",
       "sourceColor": "#ff4500",
-      "points": 3,
+      "points": 2,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "BackInternational743"
@@ -14918,7 +14891,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/node",
       "publishedAt": "2026-04-29T19:39:16.000Z",
       "sourceColor": "#ff4500",
-      "points": 28,
+      "points": 30,
       "relativeTime": "4일 전",
       "category": "devtools",
       "author": "Due_Length_2169"
@@ -14957,7 +14930,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/node",
       "publishedAt": "2026-04-29T08:20:41.000Z",
       "sourceColor": "#ff4500",
-      "points": 23,
+      "points": 22,
       "relativeTime": "5일 전",
       "category": "standards",
       "author": "CauldenWasTaken"
@@ -14996,7 +14969,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/node",
       "publishedAt": "2026-04-29T16:13:27.000Z",
       "sourceColor": "#ff4500",
-      "points": 2,
+      "points": 4,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "msmilkshake"
@@ -15100,7 +15073,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/node",
       "publishedAt": "2026-04-27T22:04:14.000Z",
       "sourceColor": "#ff4500",
-      "points": 131,
+      "points": 133,
       "relativeTime": "6일 전",
       "category": "devtools",
       "author": "BankApprehensive7612"
@@ -15139,7 +15112,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/node",
       "publishedAt": "2026-04-28T08:53:05.000Z",
       "sourceColor": "#ff4500",
-      "points": 8,
+      "points": 9,
       "relativeTime": "6일 전",
       "category": "devtools",
       "author": "Due_Length_2169"
@@ -15152,7 +15125,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/node",
       "publishedAt": "2026-04-28T10:19:52.000Z",
       "sourceColor": "#ff4500",
-      "points": 3,
+      "points": 4,
       "relativeTime": "6일 전",
       "category": "devtools",
       "author": "Happy-Chance4175"
@@ -15191,7 +15164,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/node",
       "publishedAt": "2026-04-28T15:31:47.000Z",
       "sourceColor": "#ff4500",
-      "points": 0,
+      "points": 2,
       "relativeTime": "5일 전",
       "category": "devtools",
       "author": "Significant_Net7399"
@@ -15204,7 +15177,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/node",
       "publishedAt": "2026-04-27T14:19:23.000Z",
       "sourceColor": "#ff4500",
-      "points": 43,
+      "points": 45,
       "relativeTime": "6일 전",
       "category": "standards",
       "author": "Nervous-Blacksmith-3"
@@ -15217,7 +15190,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/node",
       "publishedAt": "2026-04-27T17:53:31.000Z",
       "sourceColor": "#ff4500",
-      "points": 7,
+      "points": 6,
       "relativeTime": "6일 전",
       "category": "standards",
       "author": "markustopia"
@@ -15321,7 +15294,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T21:15:18.000Z",
       "sourceColor": "#ff4500",
-      "points": 1088,
+      "points": 1133,
       "relativeTime": "4시간 전",
       "category": "robotics",
       "author": "Dry_Incident6424"
@@ -15334,7 +15307,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T13:16:47.000Z",
       "sourceColor": "#ff4500",
-      "points": 1590,
+      "points": 1611,
       "relativeTime": "12시간 전",
       "category": "ai",
       "author": "KillaRoyalty"
@@ -15347,7 +15320,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T15:29:19.000Z",
       "sourceColor": "#ff4500",
-      "points": 812,
+      "points": 825,
       "relativeTime": "10시간 전",
       "category": "ai",
       "author": "life-v2"
@@ -15360,8 +15333,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T17:46:01.000Z",
       "sourceColor": "#ff4500",
-      "points": 448,
-      "relativeTime": "7시간 전",
+      "points": 459,
+      "relativeTime": "8시간 전",
       "category": "ai",
       "author": "ElMelechorinRedd"
     },
@@ -15373,8 +15346,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T15:46:58.000Z",
       "sourceColor": "#ff4500",
-      "points": 581,
-      "relativeTime": "9시간 전",
+      "points": 578,
+      "relativeTime": "10시간 전",
       "category": "ai",
       "author": "severe_009"
     },
@@ -15386,23 +15359,10 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T19:50:39.000Z",
       "sourceColor": "#ff4500",
-      "points": 229,
-      "relativeTime": "5시간 전",
+      "points": 238,
+      "relativeTime": "6시간 전",
       "category": "ai",
       "author": "VelvetSinclair"
-    },
-    {
-      "id": "reddit-1t2hjoq",
-      "title": "Wikipedia goes for-profit",
-      "url": "https://i.redd.it/69qg4rmsdwyg1.png",
-      "source": "reddit",
-      "sourceLabel": "r/ChatGPT",
-      "publishedAt": "2026-05-03T10:14:04.000Z",
-      "sourceColor": "#ff4500",
-      "points": 962,
-      "relativeTime": "15시간 전",
-      "category": "ai",
-      "author": "qistymisty"
     },
     {
       "id": "reddit-1t2ycyl",
@@ -15412,10 +15372,23 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T21:37:24.000Z",
       "sourceColor": "#ff4500",
-      "points": 111,
+      "points": 122,
       "relativeTime": "4시간 전",
       "category": "ai",
       "author": "Empty_Satisfaction_4"
+    },
+    {
+      "id": "reddit-1t2hjoq",
+      "title": "Wikipedia goes for-profit",
+      "url": "https://i.redd.it/69qg4rmsdwyg1.png",
+      "source": "reddit",
+      "sourceLabel": "r/ChatGPT",
+      "publishedAt": "2026-05-03T10:14:04.000Z",
+      "sourceColor": "#ff4500",
+      "points": 960,
+      "relativeTime": "15시간 전",
+      "category": "ai",
+      "author": "qistymisty"
     },
     {
       "id": "reddit-1t2d7bj",
@@ -15425,7 +15398,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T06:03:56.000Z",
       "sourceColor": "#ff4500",
-      "points": 1464,
+      "points": 1484,
       "relativeTime": "19시간 전",
       "category": "ai",
       "author": "Tigerpoetry"
@@ -15439,7 +15412,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T19:47:14.000Z",
       "sourceColor": "#ff4500",
       "points": 92,
-      "relativeTime": "5시간 전",
+      "relativeTime": "6시간 전",
       "category": "ai",
       "author": "montoria_design"
     },
@@ -15451,7 +15424,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-02T17:50:11.000Z",
       "sourceColor": "#ff4500",
-      "points": 16427,
+      "points": 16471,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "SimilarWhile1517"
@@ -15464,8 +15437,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T13:47:24.000Z",
       "sourceColor": "#ff4500",
-      "points": 204,
-      "relativeTime": "11시간 전",
+      "points": 209,
+      "relativeTime": "12시간 전",
       "category": "ai",
       "author": "Julian853"
     },
@@ -15490,7 +15463,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T19:58:25.000Z",
       "sourceColor": "#ff4500",
-      "points": 39,
+      "points": 42,
       "relativeTime": "5시간 전",
       "category": "ai",
       "author": "shit-gonna-hit"
@@ -15503,7 +15476,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T17:19:49.000Z",
       "sourceColor": "#ff4500",
-      "points": 58,
+      "points": 57,
       "relativeTime": "8시간 전",
       "category": "ai",
       "author": "HoriZon-R"
@@ -15516,7 +15489,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T01:34:20.000Z",
       "sourceColor": "#ff4500",
-      "points": 1017,
+      "points": 1015,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "Cyclonicwind"
@@ -15529,8 +15502,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T22:52:44.000Z",
       "sourceColor": "#ff4500",
-      "points": 15,
-      "relativeTime": "2시간 전",
+      "points": 16,
+      "relativeTime": "3시간 전",
       "category": "ai",
       "author": "ChickenChoochie"
     },
@@ -15542,7 +15515,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T14:37:29.000Z",
       "sourceColor": "#ff4500",
-      "points": 66,
+      "points": 63,
       "relativeTime": "11시간 전",
       "category": "ai",
       "author": "FridayJason1993"
@@ -15555,7 +15528,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T17:26:23.000Z",
       "sourceColor": "#ff4500",
-      "points": 27,
+      "points": 28,
       "relativeTime": "8시간 전",
       "category": "ai",
       "author": "Asleep-Ask-7473"
@@ -15568,10 +15541,23 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T21:55:57.000Z",
       "sourceColor": "#ff4500",
-      "points": 10,
+      "points": 9,
       "relativeTime": "3시간 전",
       "category": "ai",
       "author": "Negative-Nature-5773"
+    },
+    {
+      "id": "reddit-1t32k36",
+      "title": "Did ChatGPT suddenly move Project chats into Recents for anyone else?",
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1t32k36/did_chatgpt_suddenly_move_project_chats_into/",
+      "source": "reddit",
+      "sourceLabel": "r/ChatGPT",
+      "publishedAt": "2026-05-04T00:39:06.000Z",
+      "sourceColor": "#ff4500",
+      "points": 6,
+      "relativeTime": "46분 전",
+      "category": "standards",
+      "author": "Historical_Ride_8234"
     },
     {
       "id": "reddit-1t2vjmj",
@@ -15581,8 +15567,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T19:49:30.000Z",
       "sourceColor": "#ff4500",
-      "points": 11,
-      "relativeTime": "5시간 전",
+      "points": 13,
+      "relativeTime": "6시간 전",
       "category": "ai",
       "author": "ParkingGlittering211"
     },
@@ -15594,7 +15580,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T07:32:42.000Z",
       "sourceColor": "#ff4500",
-      "points": 120,
+      "points": 121,
       "relativeTime": "18시간 전",
       "category": "ai",
       "author": "Tigerpoetry"
@@ -15607,7 +15593,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T10:59:28.000Z",
       "sourceColor": "#ff4500",
-      "points": 63,
+      "points": 61,
       "relativeTime": "14시간 전",
       "category": "ai",
       "author": "NotBradPitt9"
@@ -15621,22 +15607,9 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T03:47:21.000Z",
       "sourceColor": "#ff4500",
       "points": 205,
-      "relativeTime": "21시간 전",
+      "relativeTime": "22시간 전",
       "category": "ai",
       "author": "MosskeepForest"
-    },
-    {
-      "id": "reddit-1t32k36",
-      "title": "Did ChatGPT suddenly move Project chats into Recents for anyone else?",
-      "url": "https://www.reddit.com/r/ChatGPT/comments/1t32k36/did_chatgpt_suddenly_move_project_chats_into/",
-      "source": "reddit",
-      "sourceLabel": "r/ChatGPT",
-      "publishedAt": "2026-05-04T00:39:06.000Z",
-      "sourceColor": "#ff4500",
-      "points": 4,
-      "relativeTime": "31분 전",
-      "category": "standards",
-      "author": "Historical_Ride_8234"
     },
     {
       "id": "reddit-1t2e2eo",
@@ -15647,22 +15620,9 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T06:52:22.000Z",
       "sourceColor": "#ff4500",
       "points": 104,
-      "relativeTime": "18시간 전",
+      "relativeTime": "19시간 전",
       "category": "ai",
       "author": "Mikecm2020"
-    },
-    {
-      "id": "reddit-1t2zwxv",
-      "title": "The Porky Empire",
-      "url": "https://i.redd.it/kekbnz4730zg1.png",
-      "source": "reddit",
-      "sourceLabel": "r/ChatGPT",
-      "publishedAt": "2026-05-03T22:41:50.000Z",
-      "sourceColor": "#ff4500",
-      "points": 5,
-      "relativeTime": "2시간 전",
-      "category": "ai",
-      "author": "ParkingGlittering211"
     },
     {
       "id": "reddit-1t2zbdf",
@@ -15672,10 +15632,23 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T22:16:46.000Z",
       "sourceColor": "#ff4500",
-      "points": 4,
+      "points": 5,
       "relativeTime": "3시간 전",
       "category": "ai",
       "author": "SuperbCat1573"
+    },
+    {
+      "id": "reddit-1t2zwxv",
+      "title": "The Porky Empire",
+      "url": "https://i.redd.it/kekbnz4730zg1.png",
+      "source": "reddit",
+      "sourceLabel": "r/ChatGPT",
+      "publishedAt": "2026-05-03T22:41:50.000Z",
+      "sourceColor": "#ff4500",
+      "points": 6,
+      "relativeTime": "3시간 전",
+      "category": "ai",
+      "author": "ParkingGlittering211"
     },
     {
       "id": "reddit-1t30oes",
@@ -15685,7 +15658,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T23:14:45.000Z",
       "sourceColor": "#ff4500",
-      "points": 3,
+      "points": 4,
       "relativeTime": "2시간 전",
       "category": "ai",
       "author": "something221"
@@ -15698,10 +15671,23 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T19:58:25.000Z",
       "sourceColor": "#ff4500",
-      "points": 7,
+      "points": 8,
       "relativeTime": "5시간 전",
       "category": "ai",
       "author": "Emojinapp"
+    },
+    {
+      "id": "reddit-1t2pns1",
+      "title": "Ancient maps as Google maps",
+      "url": "https://www.reddit.com/gallery/1t2pns1",
+      "source": "reddit",
+      "sourceLabel": "r/ChatGPT",
+      "publishedAt": "2026-05-03T16:11:47.000Z",
+      "sourceColor": "#ff4500",
+      "points": 13,
+      "relativeTime": "9시간 전",
+      "category": "devtools",
+      "author": "Nexen4"
     },
     {
       "id": "reddit-1t2ru1m",
@@ -15711,7 +15697,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T17:32:40.000Z",
       "sourceColor": "#ff4500",
-      "points": 10,
+      "points": 11,
       "relativeTime": "8시간 전",
       "category": "ai",
       "author": "Simao55555"
@@ -15724,7 +15710,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-02T10:44:52.000Z",
       "sourceColor": "#ff4500",
-      "points": 2923,
+      "points": 2916,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "TheOriginalBeardman"
@@ -15743,19 +15729,6 @@ window.__DAILY__ = {
       "author": "Traditional-Button22"
     },
     {
-      "id": "reddit-1t2pns1",
-      "title": "Ancient maps as Google maps",
-      "url": "https://www.reddit.com/gallery/1t2pns1",
-      "source": "reddit",
-      "sourceLabel": "r/ChatGPT",
-      "publishedAt": "2026-05-03T16:11:47.000Z",
-      "sourceColor": "#ff4500",
-      "points": 10,
-      "relativeTime": "9시간 전",
-      "category": "devtools",
-      "author": "Nexen4"
-    },
-    {
       "id": "reddit-1t2g13r",
       "title": "Github if it was Frutiger Aero themed",
       "url": "https://i.redd.it/at4webuvxvyg1.png",
@@ -15763,62 +15736,10 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T08:45:09.000Z",
       "sourceColor": "#ff4500",
-      "points": 48,
-      "relativeTime": "16시간 전",
+      "points": 49,
+      "relativeTime": "17시간 전",
       "category": "ai",
       "author": "CesarOverlorde"
-    },
-    {
-      "id": "reddit-1t2shuj",
-      "title": "Imagining a windows 2000 browser interface using available technology by [culture] in the [year ### BC/AD]",
-      "url": "https://www.reddit.com/gallery/1t2shuj",
-      "source": "reddit",
-      "sourceLabel": "r/ChatGPT",
-      "publishedAt": "2026-05-03T17:57:19.000Z",
-      "sourceColor": "#ff4500",
-      "points": 9,
-      "relativeTime": "7시간 전",
-      "category": "ai",
-      "author": "WantMyBuffet"
-    },
-    {
-      "id": "reddit-1t22rri",
-      "title": "NYT Opinion | Silicon Valley Is Bracing for a Permanent Underclass",
-      "url": "https://www.nytimes.com/2026/04/30/opinion/ai-labor-work-force-silicon-valley.html?unlocked_article_code=1.fVA.-UPr.VzMjZgrWrg79&amp;smid=url-share",
-      "source": "reddit",
-      "sourceLabel": "r/ChatGPT",
-      "publishedAt": "2026-05-02T21:45:15.000Z",
-      "sourceColor": "#ff4500",
-      "points": 291,
-      "relativeTime": "1일 전",
-      "category": "ai",
-      "author": "qartas"
-    },
-    {
-      "id": "reddit-1t2bhl6",
-      "title": "Asked ChatGPT for “middle school textbook doodles” and it generated the kid who gets banned from every field trip",
-      "url": "https://i.redd.it/f84b0cwjouyg1.jpeg",
-      "source": "reddit",
-      "sourceLabel": "r/ChatGPT",
-      "publishedAt": "2026-05-03T04:30:50.000Z",
-      "sourceColor": "#ff4500",
-      "points": 83,
-      "relativeTime": "21시간 전",
-      "category": "robotics",
-      "author": "bricks0fbollywood"
-    },
-    {
-      "id": "reddit-1t2lbo8",
-      "title": "Perfect smile",
-      "url": "https://i.redd.it/lkqe4bc6bxyg1.png",
-      "source": "reddit",
-      "sourceLabel": "r/ChatGPT",
-      "publishedAt": "2026-05-03T13:21:12.000Z",
-      "sourceColor": "#ff4500",
-      "points": 16,
-      "relativeTime": "12시간 전",
-      "category": "ai",
-      "author": "sv_ro"
     },
     {
       "id": "reddit-1t2lbjl",
@@ -15834,6 +15755,58 @@ window.__DAILY__ = {
       "author": "ValuableKind2925"
     },
     {
+      "id": "reddit-1t2bhl6",
+      "title": "Asked ChatGPT for “middle school textbook doodles” and it generated the kid who gets banned from every field trip",
+      "url": "https://i.redd.it/f84b0cwjouyg1.jpeg",
+      "source": "reddit",
+      "sourceLabel": "r/ChatGPT",
+      "publishedAt": "2026-05-03T04:30:50.000Z",
+      "sourceColor": "#ff4500",
+      "points": 87,
+      "relativeTime": "21시간 전",
+      "category": "robotics",
+      "author": "bricks0fbollywood"
+    },
+    {
+      "id": "reddit-1t2shuj",
+      "title": "Imagining a windows 2000 browser interface using available technology by [culture] in the [year ### BC/AD]",
+      "url": "https://www.reddit.com/gallery/1t2shuj",
+      "source": "reddit",
+      "sourceLabel": "r/ChatGPT",
+      "publishedAt": "2026-05-03T17:57:19.000Z",
+      "sourceColor": "#ff4500",
+      "points": 6,
+      "relativeTime": "7시간 전",
+      "category": "ai",
+      "author": "WantMyBuffet"
+    },
+    {
+      "id": "reddit-1t22rri",
+      "title": "NYT Opinion | Silicon Valley Is Bracing for a Permanent Underclass",
+      "url": "https://www.nytimes.com/2026/04/30/opinion/ai-labor-work-force-silicon-valley.html?unlocked_article_code=1.fVA.-UPr.VzMjZgrWrg79&amp;smid=url-share",
+      "source": "reddit",
+      "sourceLabel": "r/ChatGPT",
+      "publishedAt": "2026-05-02T21:45:15.000Z",
+      "sourceColor": "#ff4500",
+      "points": 290,
+      "relativeTime": "1일 전",
+      "category": "ai",
+      "author": "qartas"
+    },
+    {
+      "id": "reddit-1t2lbo8",
+      "title": "Perfect smile",
+      "url": "https://i.redd.it/lkqe4bc6bxyg1.png",
+      "source": "reddit",
+      "sourceLabel": "r/ChatGPT",
+      "publishedAt": "2026-05-03T13:21:12.000Z",
+      "sourceColor": "#ff4500",
+      "points": 17,
+      "relativeTime": "12시간 전",
+      "category": "ai",
+      "author": "sv_ro"
+    },
+    {
       "id": "reddit-1t2wpe0",
       "title": "Chat copying to projects instead of moving?",
       "url": "https://www.reddit.com/r/ChatGPT/comments/1t2wpe0/chat_copying_to_projects_instead_of_moving/",
@@ -15841,7 +15814,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T20:33:13.000Z",
       "sourceColor": "#ff4500",
-      "points": 4,
+      "points": 3,
       "relativeTime": "5시간 전",
       "category": "ai",
       "author": "jedels88"
@@ -15867,7 +15840,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T15:55:56.000Z",
       "sourceColor": "#ff4500",
-      "points": 9,
+      "points": 8,
       "relativeTime": "9시간 전",
       "category": "ai",
       "author": "Ok_Dirt_6047"
@@ -15894,7 +15867,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T17:46:14.000Z",
       "sourceColor": "#ff4500",
       "points": 6,
-      "relativeTime": "7시간 전",
+      "relativeTime": "8시간 전",
       "category": "ai",
       "author": "rhiever"
     },
@@ -15906,7 +15879,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T03:59:26.000Z",
       "sourceColor": "#ff4500",
-      "points": 74,
+      "points": 72,
       "relativeTime": "21시간 전",
       "category": "robotics",
       "author": "TheEqualsE"
@@ -15971,7 +15944,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-02T10:10:49.000Z",
       "sourceColor": "#ff4500",
-      "points": 1591,
+      "points": 1590,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "bricks0fbollywood"
@@ -15984,10 +15957,23 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T18:18:50.000Z",
       "sourceColor": "#ff4500",
-      "points": 4,
+      "points": 3,
       "relativeTime": "7시간 전",
       "category": "ai",
       "author": "Pale_Blackberry_4025"
+    },
+    {
+      "id": "reddit-1t33ji1",
+      "title": "ChatGPT refuses to be wrong now 🤣🤣",
+      "url": "https://i.redd.it/j2873enzv0zg1.jpeg",
+      "source": "reddit",
+      "sourceLabel": "r/ChatGPT",
+      "publishedAt": "2026-05-04T01:23:10.000Z",
+      "sourceColor": "#ff4500",
+      "points": 1,
+      "relativeTime": "2분 전",
+      "category": "ai",
+      "author": "tekkenmusic"
     },
     {
       "id": "reddit-1t2gjwy",
@@ -15997,10 +15983,23 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T09:15:45.000Z",
       "sourceColor": "#ff4500",
-      "points": 19,
+      "points": 20,
       "relativeTime": "16시간 전",
       "category": "ai",
       "author": "TomatoOk7464"
+    },
+    {
+      "id": "reddit-1t2y1ou",
+      "title": "How the Pyramids were made (as generated by GPT)",
+      "url": "https://www.reddit.com/r/ChatGPT/comments/1t2y1ou/how_the_pyramids_were_made_as_generated_by_gpt/",
+      "source": "reddit",
+      "sourceLabel": "r/ChatGPT",
+      "publishedAt": "2026-05-03T21:24:57.000Z",
+      "sourceColor": "#ff4500",
+      "points": 2,
+      "relativeTime": "4시간 전",
+      "category": "ai",
+      "author": "Clue-Mindless"
     },
     {
       "id": "reddit-1t2xwgo",
@@ -16016,19 +16015,6 @@ window.__DAILY__ = {
       "author": "Madkleiner"
     },
     {
-      "id": "reddit-1t333o8",
-      "title": "Meme Olympics 🏆",
-      "url": "https://i.redd.it/cc8vss1ur0zg1.png",
-      "source": "reddit",
-      "sourceLabel": "r/ChatGPT",
-      "publishedAt": "2026-05-04T01:03:28.000Z",
-      "sourceColor": "#ff4500",
-      "points": 1,
-      "relativeTime": "6분 전",
-      "category": "ai",
-      "author": "Responsible-Ship-436"
-    },
-    {
       "id": "reddit-1t2rr6u",
       "title": "Dutch Angle Cinematic Portraits",
       "url": "https://www.reddit.com/gallery/1t2rr6u",
@@ -16036,7 +16022,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T17:29:51.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 3,
       "relativeTime": "8시간 전",
       "category": "ai",
       "author": "NoteToPixel"
@@ -16049,7 +16035,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T16:17:05.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 6,
       "relativeTime": "9시간 전",
       "category": "ai",
       "author": "InsideSignal9921"
@@ -16063,7 +16049,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-04T00:49:28.000Z",
       "sourceColor": "#ff4500",
       "points": 1,
-      "relativeTime": "20분 전",
+      "relativeTime": "36분 전",
       "category": "ai",
       "author": "jwgbham"
     },
@@ -16076,7 +16062,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-04T00:44:32.000Z",
       "sourceColor": "#ff4500",
       "points": 1,
-      "relativeTime": "25분 전",
+      "relativeTime": "41분 전",
       "category": "ai",
       "author": "auronplayesimbecil"
     },
@@ -16102,7 +16088,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-04T00:40:34.000Z",
       "sourceColor": "#ff4500",
       "points": 1,
-      "relativeTime": "29분 전",
+      "relativeTime": "44분 전",
       "category": "ai",
       "author": "BL0odbath_anD_BEYond"
     },
@@ -16133,19 +16119,6 @@ window.__DAILY__ = {
       "author": "Scharobaba"
     },
     {
-      "id": "reddit-1t2dmg7",
-      "title": "Im done...no for real, give me a win for once.... i cant",
-      "url": "https://i.redd.it/ly9glhjc9vyg1.jpeg",
-      "source": "reddit",
-      "sourceLabel": "r/ChatGPT",
-      "publishedAt": "2026-05-03T06:27:22.000Z",
-      "sourceColor": "#ff4500",
-      "points": 25,
-      "relativeTime": "19시간 전",
-      "category": "ai",
-      "author": "woodybone"
-    },
-    {
       "id": "reddit-1t2cbr2",
       "title": "I asked ChatGPT to create an obvious scam brochure to evade taxes.",
       "url": "https://i.redd.it/58vff76lwuyg1.jpeg",
@@ -16159,6 +16132,19 @@ window.__DAILY__ = {
       "author": "Budgetsuit"
     },
     {
+      "id": "reddit-1t2dmg7",
+      "title": "Im done...no for real, give me a win for once.... i cant",
+      "url": "https://i.redd.it/ly9glhjc9vyg1.jpeg",
+      "source": "reddit",
+      "sourceLabel": "r/ChatGPT",
+      "publishedAt": "2026-05-03T06:27:22.000Z",
+      "sourceColor": "#ff4500",
+      "points": 24,
+      "relativeTime": "19시간 전",
+      "category": "ai",
+      "author": "woodybone"
+    },
+    {
       "id": "reddit-1t2vcf3",
       "title": "In AI chat, what should stay text — and what should be UI?",
       "url": "https://www.reddit.com/r/ChatGPT/comments/1t2vcf3/in_ai_chat_what_should_stay_text_and_what_should/",
@@ -16167,7 +16153,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T19:41:56.000Z",
       "sourceColor": "#ff4500",
       "points": 2,
-      "relativeTime": "5시간 전",
+      "relativeTime": "6시간 전",
       "category": "ai",
       "author": "Ill_Direction149"
     },
@@ -16192,7 +16178,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T00:03:49.000Z",
       "sourceColor": "#ff4500",
-      "points": 71,
+      "points": 73,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "Darri3D"
@@ -16205,7 +16191,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T02:23:25.000Z",
       "sourceColor": "#ff4500",
-      "points": 44,
+      "points": 48,
       "relativeTime": "23시간 전",
       "category": "ai",
       "author": "severe_009"
@@ -16218,7 +16204,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T11:06:33.000Z",
       "sourceColor": "#ff4500",
-      "points": 9,
+      "points": 8,
       "relativeTime": "14시간 전",
       "category": "standards",
       "author": "outtathere_"
@@ -16245,7 +16231,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T22:54:09.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "2시간 전",
+      "relativeTime": "3시간 전",
       "category": "ai",
       "author": "Historical-Assist-27"
     },
@@ -16297,7 +16283,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T21:50:34.000Z",
       "sourceColor": "#ff4500",
       "points": 1,
-      "relativeTime": "3시간 전",
+      "relativeTime": "4시간 전",
       "category": "standards",
       "author": "SpellcraftQuill"
     },
@@ -16309,7 +16295,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T17:56:36.000Z",
       "sourceColor": "#ff4500",
-      "points": 2,
+      "points": 0,
       "relativeTime": "7시간 전",
       "category": "ai",
       "author": "ValkyriesBard"
@@ -16322,8 +16308,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T12:52:24.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
-      "relativeTime": "12시간 전",
+      "points": 6,
+      "relativeTime": "13시간 전",
       "category": "ai",
       "author": "snorken123"
     },
@@ -16352,19 +16338,6 @@ window.__DAILY__ = {
       "relativeTime": "10시간 전",
       "category": "ai",
       "author": "Algoartist"
-    },
-    {
-      "id": "reddit-1t2y1ou",
-      "title": "How the Pyramids were made (as generated by GPT)",
-      "url": "https://www.reddit.com/r/ChatGPT/comments/1t2y1ou/how_the_pyramids_were_made_as_generated_by_gpt/",
-      "source": "reddit",
-      "sourceLabel": "r/ChatGPT",
-      "publishedAt": "2026-05-03T21:24:57.000Z",
-      "sourceColor": "#ff4500",
-      "points": 1,
-      "relativeTime": "4시간 전",
-      "category": "ai",
-      "author": "Clue-Mindless"
     },
     {
       "id": "reddit-1t2rz0h",
@@ -16426,7 +16399,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-02T11:30:52.000Z",
       "sourceColor": "#ff4500",
-      "points": 452,
+      "points": 454,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "illuon1111"
@@ -16465,7 +16438,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T14:32:10.000Z",
       "sourceColor": "#ff4500",
-      "points": 3,
+      "points": 2,
       "relativeTime": "11시간 전",
       "category": "ai",
       "author": "lodui"
@@ -16504,7 +16477,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ChatGPT",
       "publishedAt": "2026-05-03T20:12:23.000Z",
       "sourceColor": "#ff4500",
-      "points": 1,
+      "points": 0,
       "relativeTime": "5시간 전",
       "category": "ai",
       "author": "mediamuesli"
@@ -16544,7 +16517,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T19:55:00.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "5시간 전",
+      "relativeTime": "6시간 전",
       "category": "ai",
       "author": "TurbulentFerret6382"
     },
@@ -16569,7 +16542,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-03T20:15:45.000Z",
       "sourceColor": "#ff4500",
-      "points": 321,
+      "points": 320,
       "relativeTime": "5시간 전",
       "category": "ai",
       "author": "Houd_Ammari"
@@ -16582,8 +16555,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-03T09:50:53.000Z",
       "sourceColor": "#ff4500",
-      "points": 676,
-      "relativeTime": "15시간 전",
+      "points": 681,
+      "relativeTime": "16시간 전",
       "category": "ai",
       "author": "Impossible_Rice8103"
     },
@@ -16595,7 +16568,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-03T20:33:36.000Z",
       "sourceColor": "#ff4500",
-      "points": 85,
+      "points": 89,
       "relativeTime": "5시간 전",
       "category": "ai",
       "author": "Rose_Almy"
@@ -16608,7 +16581,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-03T07:39:42.000Z",
       "sourceColor": "#ff4500",
-      "points": 383,
+      "points": 391,
       "relativeTime": "18시간 전",
       "category": "ai",
       "author": "Then-Shoe8373"
@@ -16622,7 +16595,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T23:50:17.000Z",
       "sourceColor": "#ff4500",
       "points": 16,
-      "relativeTime": "1시간 전",
+      "relativeTime": "2시간 전",
       "category": "ai",
       "author": "py-net"
     },
@@ -16635,7 +16608,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T17:51:10.000Z",
       "sourceColor": "#ff4500",
       "points": 31,
-      "relativeTime": "7시간 전",
+      "relativeTime": "8시간 전",
       "category": "ai",
       "author": "ksprdk"
     },
@@ -16647,7 +16620,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-03T16:14:34.000Z",
       "sourceColor": "#ff4500",
-      "points": 26,
+      "points": 25,
       "relativeTime": "9시간 전",
       "category": "ai",
       "author": "cern0"
@@ -16660,7 +16633,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-03T12:58:39.000Z",
       "sourceColor": "#ff4500",
-      "points": 20,
+      "points": 17,
       "relativeTime": "12시간 전",
       "category": "ai",
       "author": "Rose_Almy"
@@ -16673,7 +16646,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-02T21:00:38.000Z",
       "sourceColor": "#ff4500",
-      "points": 299,
+      "points": 302,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "py-net"
@@ -16700,7 +16673,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T22:49:10.000Z",
       "sourceColor": "#ff4500",
       "points": 2,
-      "relativeTime": "2시간 전",
+      "relativeTime": "3시간 전",
       "category": "ai",
       "author": "mccoypauley"
     },
@@ -16712,7 +16685,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-02T15:16:46.000Z",
       "sourceColor": "#ff4500",
-      "points": 654,
+      "points": 649,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "Single-Jack8"
@@ -16725,7 +16698,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-03T16:38:22.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 6,
       "relativeTime": "9시간 전",
       "category": "ai",
       "author": "Original-Guidance444"
@@ -16738,7 +16711,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-02T14:19:18.000Z",
       "sourceColor": "#ff4500",
-      "points": 597,
+      "points": 596,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "py-net"
@@ -16752,7 +16725,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T18:50:41.000Z",
       "sourceColor": "#ff4500",
       "points": 3,
-      "relativeTime": "6시간 전",
+      "relativeTime": "7시간 전",
       "category": "devtools",
       "author": "Responsible-Set-8072"
     },
@@ -16764,7 +16737,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-03T20:08:51.000Z",
       "sourceColor": "#ff4500",
-      "points": 3,
+      "points": 2,
       "relativeTime": "5시간 전",
       "category": "ai",
       "author": "flamingpuddles"
@@ -16777,7 +16750,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-02T21:54:00.000Z",
       "sourceColor": "#ff4500",
-      "points": 115,
+      "points": 112,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "Outside-Iron-8242"
@@ -16790,7 +16763,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-03T15:20:19.000Z",
       "sourceColor": "#ff4500",
-      "points": 4,
+      "points": 3,
       "relativeTime": "10시간 전",
       "category": "papers",
       "author": "fanriel_kerrigan"
@@ -16817,7 +16790,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T15:49:32.000Z",
       "sourceColor": "#ff4500",
       "points": 2,
-      "relativeTime": "9시간 전",
+      "relativeTime": "10시간 전",
       "category": "ai",
       "author": "Spirited_Cost3721"
     },
@@ -16842,7 +16815,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-03T18:24:29.000Z",
       "sourceColor": "#ff4500",
-      "points": 0,
+      "points": 1,
       "relativeTime": "7시간 전",
       "category": "ai",
       "author": "DrHumorous"
@@ -16855,7 +16828,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-02T05:34:21.000Z",
       "sourceColor": "#ff4500",
-      "points": 742,
+      "points": 746,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "EchoOfOppenheimer"
@@ -16868,7 +16841,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-03T10:26:54.000Z",
       "sourceColor": "#ff4500",
-      "points": 4,
+      "points": 3,
       "relativeTime": "15시간 전",
       "category": "ai",
       "author": "IndividualAir3353"
@@ -16881,7 +16854,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-02T16:20:17.000Z",
       "sourceColor": "#ff4500",
-      "points": 83,
+      "points": 78,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "katymae123"
@@ -16920,7 +16893,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-02T19:16:08.000Z",
       "sourceColor": "#ff4500",
-      "points": 35,
+      "points": 38,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "Novel_Negotiation224"
@@ -16947,7 +16920,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T14:54:14.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "10시간 전",
+      "relativeTime": "11시간 전",
       "category": "ai",
       "author": "OneSatisfaction7739"
     },
@@ -17011,7 +16984,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-03T04:56:00.000Z",
       "sourceColor": "#ff4500",
-      "points": 4,
+      "points": 3,
       "relativeTime": "20시간 전",
       "category": "ai",
       "author": "breck"
@@ -17038,7 +17011,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T21:53:53.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "3시간 전",
+      "relativeTime": "4시간 전",
       "category": "ai",
       "author": "Grounds4TheSubstain"
     },
@@ -17076,7 +17049,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-02T08:24:56.000Z",
       "sourceColor": "#ff4500",
-      "points": 43,
+      "points": 40,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Electronic-Space-736"
@@ -17103,7 +17076,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T13:45:19.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "11시간 전",
+      "relativeTime": "12시간 전",
       "category": "ai",
       "author": "kiwibonga"
     },
@@ -17115,10 +17088,23 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-02T16:38:26.000Z",
       "sourceColor": "#ff4500",
-      "points": 7,
+      "points": 8,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "trolleid"
+    },
+    {
+      "id": "reddit-1t2g1jp",
+      "title": "AI is moving from chatbots to real workflows. Here is what I think technical learners should focus on.",
+      "url": "https://www.reddit.com/r/OpenAI/comments/1t2g1jp/ai_is_moving_from_chatbots_to_real_workflows_here/",
+      "source": "reddit",
+      "sourceLabel": "r/OpenAI",
+      "publishedAt": "2026-05-03T08:45:51.000Z",
+      "sourceColor": "#ff4500",
+      "points": 0,
+      "relativeTime": "17시간 전",
+      "category": "ai",
+      "author": "DearAnt812"
     },
     {
       "id": "reddit-1t28nwa",
@@ -17147,19 +17133,6 @@ window.__DAILY__ = {
       "author": "RoughImpossible8258"
     },
     {
-      "id": "reddit-1t2g1jp",
-      "title": "AI is moving from chatbots to real workflows. Here is what I think technical learners should focus on.",
-      "url": "https://www.reddit.com/r/OpenAI/comments/1t2g1jp/ai_is_moving_from_chatbots_to_real_workflows_here/",
-      "source": "reddit",
-      "sourceLabel": "r/OpenAI",
-      "publishedAt": "2026-05-03T08:45:51.000Z",
-      "sourceColor": "#ff4500",
-      "points": 0,
-      "relativeTime": "16시간 전",
-      "category": "ai",
-      "author": "DearAnt812"
-    },
-    {
       "id": "reddit-1t0t6wl",
       "title": "At the trial, Elon wouldn't shut up about AI killing us all, so the judge banned the topic of extinction",
       "url": "https://i.redd.it/qqpbiuio0jyg1.png",
@@ -17167,7 +17140,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-01T13:17:30.000Z",
       "sourceColor": "#ff4500",
-      "points": 720,
+      "points": 725,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "Confident_Salt_8108"
@@ -17180,7 +17153,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-01T02:33:37.000Z",
       "sourceColor": "#ff4500",
-      "points": 5013,
+      "points": 5021,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "MrAmazing111"
@@ -17193,7 +17166,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-02T13:07:59.000Z",
       "sourceColor": "#ff4500",
-      "points": 9,
+      "points": 7,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Bright_Warning_8406"
@@ -17219,7 +17192,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-02T17:31:34.000Z",
       "sourceColor": "#ff4500",
-      "points": 1,
+      "points": 3,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "Trick_Highway9022"
@@ -17259,7 +17232,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T03:51:50.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "21시간 전",
+      "relativeTime": "22시간 전",
       "category": "ai",
       "author": "Quirky_Hedgehog_9291"
     },
@@ -17271,7 +17244,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-02T19:04:24.000Z",
       "sourceColor": "#ff4500",
-      "points": 0,
+      "points": 1,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "fanriel_kerrigan"
@@ -17323,7 +17296,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-01T16:18:42.000Z",
       "sourceColor": "#ff4500",
-      "points": 101,
+      "points": 99,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Single-Jack8"
@@ -17336,7 +17309,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-01T11:24:45.000Z",
       "sourceColor": "#ff4500",
-      "points": 197,
+      "points": 193,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "imfrom_mars_"
@@ -17349,7 +17322,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-01T23:03:24.000Z",
       "sourceColor": "#ff4500",
-      "points": 21,
+      "points": 20,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "TaeyeonUchiha"
@@ -17375,7 +17348,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-01T17:36:14.000Z",
       "sourceColor": "#ff4500",
-      "points": 41,
+      "points": 44,
       "relativeTime": "2일 전",
       "category": "standards",
       "author": "rhiever"
@@ -17388,7 +17361,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-01T23:47:51.000Z",
       "sourceColor": "#ff4500",
-      "points": 13,
+      "points": 11,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "felipebsr"
@@ -17414,7 +17387,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-02T05:39:29.000Z",
       "sourceColor": "#ff4500",
-      "points": 2,
+      "points": 5,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "aspectop"
@@ -17427,7 +17400,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-01T09:38:49.000Z",
       "sourceColor": "#ff4500",
-      "points": 159,
+      "points": 155,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "EchoOfOppenheimer"
@@ -17479,7 +17452,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-01T10:11:40.000Z",
       "sourceColor": "#ff4500",
-      "points": 112,
+      "points": 110,
       "relativeTime": "3일 전",
       "category": "devtools",
       "author": "infohoundloselose"
@@ -17492,7 +17465,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-01T11:53:02.000Z",
       "sourceColor": "#ff4500",
-      "points": 80,
+      "points": 76,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "EchoOfOppenheimer"
@@ -17518,7 +17491,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-01T16:18:55.000Z",
       "sourceColor": "#ff4500",
-      "points": 25,
+      "points": 28,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "EchoOfOppenheimer"
@@ -17544,7 +17517,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-02T06:41:27.000Z",
       "sourceColor": "#ff4500",
-      "points": 2,
+      "points": 3,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "ThereWas"
@@ -17570,7 +17543,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-01T21:21:10.000Z",
       "sourceColor": "#ff4500",
-      "points": 6,
+      "points": 7,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Deepak__Deepu"
@@ -17583,7 +17556,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-01T01:27:17.000Z",
       "sourceColor": "#ff4500",
-      "points": 234,
+      "points": 230,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "Tough_Ice5919"
@@ -17622,7 +17595,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-01T15:10:39.000Z",
       "sourceColor": "#ff4500",
-      "points": 12,
+      "points": 14,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "_Algrm_"
@@ -17635,10 +17608,23 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-01T20:52:09.000Z",
       "sourceColor": "#ff4500",
-      "points": 4,
+      "points": 3,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Ayfri"
+    },
+    {
+      "id": "reddit-1t155fj",
+      "title": "How does codex €20 plan compare to claude/antigravity plans usage wise?",
+      "url": "https://www.reddit.com/r/OpenAI/comments/1t155fj/how_does_codex_20_plan_compare_to/",
+      "source": "reddit",
+      "sourceLabel": "r/OpenAI",
+      "publishedAt": "2026-05-01T20:35:17.000Z",
+      "sourceColor": "#ff4500",
+      "points": 4,
+      "relativeTime": "2일 전",
+      "category": "ai",
+      "author": "FinalLightNL"
     },
     {
       "id": "reddit-1t0xo0j",
@@ -17648,7 +17634,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-01T16:04:52.000Z",
       "sourceColor": "#ff4500",
-      "points": 7,
+      "points": 5,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "ThereWas"
@@ -17661,23 +17647,10 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-01T05:30:55.000Z",
       "sourceColor": "#ff4500",
-      "points": 47,
+      "points": 48,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "Tall-Distance4036"
-    },
-    {
-      "id": "reddit-1t155fj",
-      "title": "How does codex €20 plan compare to claude/antigravity plans usage wise?",
-      "url": "https://www.reddit.com/r/OpenAI/comments/1t155fj/how_does_codex_20_plan_compare_to/",
-      "source": "reddit",
-      "sourceLabel": "r/OpenAI",
-      "publishedAt": "2026-05-01T20:35:17.000Z",
-      "sourceColor": "#ff4500",
-      "points": 3,
-      "relativeTime": "2일 전",
-      "category": "ai",
-      "author": "FinalLightNL"
     },
     {
       "id": "reddit-1t0pxks",
@@ -17687,7 +17660,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-01T10:49:15.000Z",
       "sourceColor": "#ff4500",
-      "points": 18,
+      "points": 17,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "Confident_Salt_8108"
@@ -17700,7 +17673,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-01T15:50:35.000Z",
       "sourceColor": "#ff4500",
-      "points": 8,
+      "points": 9,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Shoddy-Department630"
@@ -17713,7 +17686,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-04-30T07:24:47.000Z",
       "sourceColor": "#ff4500",
-      "points": 2668,
+      "points": 2673,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "imfrom_mars_"
@@ -17726,7 +17699,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-01T07:41:52.000Z",
       "sourceColor": "#ff4500",
-      "points": 28,
+      "points": 29,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "EchoOfOppenheimer"
@@ -17739,7 +17712,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-01T23:23:20.000Z",
       "sourceColor": "#ff4500",
-      "points": 0,
+      "points": 2,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Miserable_View_4400"
@@ -17791,7 +17764,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/OpenAI",
       "publishedAt": "2026-05-01T12:52:39.000Z",
       "sourceColor": "#ff4500",
-      "points": 2,
+      "points": 6,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "gvij"
@@ -17830,7 +17803,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-03T14:04:49.000Z",
       "sourceColor": "#ff4500",
-      "points": 118,
+      "points": 115,
       "relativeTime": "11시간 전",
       "category": "ai",
       "author": "Chasmchas"
@@ -17843,7 +17816,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-03T21:09:32.000Z",
       "sourceColor": "#ff4500",
-      "points": 19,
+      "points": 18,
       "relativeTime": "4시간 전",
       "category": "ai",
       "author": "MaJoR_-_007"
@@ -17856,8 +17829,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-03T14:43:43.000Z",
       "sourceColor": "#ff4500",
-      "points": 46,
-      "relativeTime": "10시간 전",
+      "points": 44,
+      "relativeTime": "11시간 전",
       "category": "ai",
       "author": "shikizen"
     },
@@ -17869,7 +17842,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-03T15:26:21.000Z",
       "sourceColor": "#ff4500",
-      "points": 14,
+      "points": 15,
       "relativeTime": "10시간 전",
       "category": "ai",
       "author": "shikizen"
@@ -17882,8 +17855,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-03T08:46:04.000Z",
       "sourceColor": "#ff4500",
-      "points": 32,
-      "relativeTime": "16시간 전",
+      "points": 29,
+      "relativeTime": "17시간 전",
       "category": "ai",
       "author": "NoFilterGPT"
     },
@@ -17895,7 +17868,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-03T15:31:55.000Z",
       "sourceColor": "#ff4500",
-      "points": 7,
+      "points": 6,
       "relativeTime": "10시간 전",
       "category": "ai",
       "author": "shikizen"
@@ -17908,8 +17881,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-03T17:45:33.000Z",
       "sourceColor": "#ff4500",
-      "points": 3,
-      "relativeTime": "7시간 전",
+      "points": 5,
+      "relativeTime": "8시간 전",
       "category": "ai",
       "author": "geekycode"
     },
@@ -17921,8 +17894,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-02T13:41:27.000Z",
       "sourceColor": "#ff4500",
-      "points": 544,
-      "relativeTime": "1일 전",
+      "points": 548,
+      "relativeTime": "2일 전",
       "category": "ai",
       "author": "KillerQ97"
     },
@@ -17934,7 +17907,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-03T15:01:03.000Z",
       "sourceColor": "#ff4500",
-      "points": 6,
+      "points": 3,
       "relativeTime": "10시간 전",
       "category": "ai",
       "author": "shikizen"
@@ -17961,7 +17934,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T18:40:33.000Z",
       "sourceColor": "#ff4500",
       "points": 2,
-      "relativeTime": "6시간 전",
+      "relativeTime": "7시간 전",
       "category": "ai",
       "author": "Best-Satisfaction676"
     },
@@ -17973,7 +17946,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-03T11:07:15.000Z",
       "sourceColor": "#ff4500",
-      "points": 6,
+      "points": 5,
       "relativeTime": "14시간 전",
       "category": "ai",
       "author": "jannemansonh"
@@ -18026,7 +17999,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T18:51:40.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "6시간 전",
+      "relativeTime": "7시간 전",
       "category": "ai",
       "author": "ciokan"
     },
@@ -18038,8 +18011,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-03T08:51:28.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
-      "relativeTime": "16시간 전",
+      "points": 7,
+      "relativeTime": "17시간 전",
       "category": "ai",
       "author": "addllyAI"
     },
@@ -18077,7 +18050,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-02T17:40:56.000Z",
       "sourceColor": "#ff4500",
-      "points": 52,
+      "points": 58,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "Few-Reveal6853"
@@ -18090,7 +18063,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-03T05:35:29.000Z",
       "sourceColor": "#ff4500",
-      "points": 6,
+      "points": 7,
       "relativeTime": "20시간 전",
       "category": "ai",
       "author": "NoYoung7229"
@@ -18117,7 +18090,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T18:43:33.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "6시간 전",
+      "relativeTime": "7시간 전",
       "category": "ai",
       "author": "benl5442"
     },
@@ -18143,7 +18116,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T08:45:46.000Z",
       "sourceColor": "#ff4500",
       "points": 2,
-      "relativeTime": "16시간 전",
+      "relativeTime": "17시간 전",
       "category": "ai",
       "author": "strategizeyourcareer"
     },
@@ -18156,22 +18129,9 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T21:54:52.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "3시간 전",
+      "relativeTime": "4시간 전",
       "category": "ai",
       "author": "ElaineVivienne"
-    },
-    {
-      "id": "reddit-1t29m84",
-      "title": "Evolvable AI (EAI) Explained: Why the Real Risk Doesn't Need AGI",
-      "url": "https://www.revolutioninai.com/2026/05/evolvable-ai-eai-explained-risk.html",
-      "source": "reddit",
-      "sourceLabel": "r/ArtificialInteligence",
-      "publishedAt": "2026-05-03T02:56:24.000Z",
-      "sourceColor": "#ff4500",
-      "points": 6,
-      "relativeTime": "22시간 전",
-      "category": "ai",
-      "author": "vinodpandey7"
     },
     {
       "id": "reddit-1t2f3il",
@@ -18182,7 +18142,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T07:50:13.000Z",
       "sourceColor": "#ff4500",
       "points": 2,
-      "relativeTime": "17시간 전",
+      "relativeTime": "18시간 전",
       "category": "ai",
       "author": "OrdinaryDry3358"
     },
@@ -18198,6 +18158,19 @@ window.__DAILY__ = {
       "relativeTime": "14시간 전",
       "category": "ai",
       "author": "aspectop"
+    },
+    {
+      "id": "reddit-1t29m84",
+      "title": "Evolvable AI (EAI) Explained: Why the Real Risk Doesn't Need AGI",
+      "url": "https://www.revolutioninai.com/2026/05/evolvable-ai-eai-explained-risk.html",
+      "source": "reddit",
+      "sourceLabel": "r/ArtificialInteligence",
+      "publishedAt": "2026-05-03T02:56:24.000Z",
+      "sourceColor": "#ff4500",
+      "points": 4,
+      "relativeTime": "22시간 전",
+      "category": "ai",
+      "author": "vinodpandey7"
     },
     {
       "id": "reddit-1t2mh9q",
@@ -18246,7 +18219,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-02T01:15:53.000Z",
       "sourceColor": "#ff4500",
-      "points": 211,
+      "points": 209,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "DavidtheLawyer"
@@ -18272,7 +18245,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-02T03:16:44.000Z",
       "sourceColor": "#ff4500",
-      "points": 102,
+      "points": 103,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Professional-Rest138"
@@ -18285,23 +18258,10 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-02T10:31:34.000Z",
       "sourceColor": "#ff4500",
-      "points": 26,
+      "points": 24,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "talkingatoms"
-    },
-    {
-      "id": "reddit-1t2dpzo",
-      "title": "My question to AI itself:",
-      "url": "https://www.reddit.com/r/ArtificialInteligence/comments/1t2dpzo/my_question_to_ai_itself/",
-      "source": "reddit",
-      "sourceLabel": "r/ArtificialInteligence",
-      "publishedAt": "2026-05-03T06:32:53.000Z",
-      "sourceColor": "#ff4500",
-      "points": 0,
-      "relativeTime": "19시간 전",
-      "category": "ai",
-      "author": "ARIESTHERAMO13"
     },
     {
       "id": "reddit-1t27wgv",
@@ -18315,6 +18275,19 @@ window.__DAILY__ = {
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "South-Cow-1030"
+    },
+    {
+      "id": "reddit-1t2dpzo",
+      "title": "My question to AI itself:",
+      "url": "https://www.reddit.com/r/ArtificialInteligence/comments/1t2dpzo/my_question_to_ai_itself/",
+      "source": "reddit",
+      "sourceLabel": "r/ArtificialInteligence",
+      "publishedAt": "2026-05-03T06:32:53.000Z",
+      "sourceColor": "#ff4500",
+      "points": 0,
+      "relativeTime": "19시간 전",
+      "category": "ai",
+      "author": "ARIESTHERAMO13"
     },
     {
       "id": "reddit-1t1zqjy",
@@ -18364,7 +18337,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T06:42:43.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "18시간 전",
+      "relativeTime": "19시간 전",
       "category": "ai",
       "author": "tehohhh"
     },
@@ -18376,7 +18349,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-02T17:46:19.000Z",
       "sourceColor": "#ff4500",
-      "points": 4,
+      "points": 1,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "Kellshy"
@@ -18441,7 +18414,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-01T16:53:51.000Z",
       "sourceColor": "#ff4500",
-      "points": 144,
+      "points": 143,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "timemagazine"
@@ -18480,7 +18453,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-02T17:10:26.000Z",
       "sourceColor": "#ff4500",
-      "points": 2,
+      "points": 1,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "Cute-Call7124"
@@ -18493,7 +18466,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-01T14:43:59.000Z",
       "sourceColor": "#ff4500",
-      "points": 119,
+      "points": 121,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Wickey312"
@@ -18506,7 +18479,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-01T17:54:12.000Z",
       "sourceColor": "#ff4500",
-      "points": 63,
+      "points": 61,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "unserious-dude"
@@ -18558,7 +18531,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-01T19:46:28.000Z",
       "sourceColor": "#ff4500",
-      "points": 22,
+      "points": 24,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "kaggleqrdl"
@@ -18584,7 +18557,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-01T14:54:14.000Z",
       "sourceColor": "#ff4500",
-      "points": 55,
+      "points": 57,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "bitscaler"
@@ -18610,7 +18583,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-01T13:25:37.000Z",
       "sourceColor": "#ff4500",
-      "points": 51,
+      "points": 54,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "andix3"
@@ -18662,7 +18635,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-01T11:32:15.000Z",
       "sourceColor": "#ff4500",
-      "points": 40,
+      "points": 42,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "shikizen"
@@ -18740,7 +18713,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-01T19:25:40.000Z",
       "sourceColor": "#ff4500",
-      "points": 6,
+      "points": 8,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "tommetzgerz756"
@@ -18753,7 +18726,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-01T08:43:00.000Z",
       "sourceColor": "#ff4500",
-      "points": 36,
+      "points": 38,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "coinfanking"
@@ -18766,7 +18739,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-01T14:05:41.000Z",
       "sourceColor": "#ff4500",
-      "points": 14,
+      "points": 12,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Bloodybeanz"
@@ -18805,7 +18778,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-01T16:13:43.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 6,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "athreyaaaa"
@@ -18818,7 +18791,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-01T18:44:37.000Z",
       "sourceColor": "#ff4500",
-      "points": 4,
+      "points": 3,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "might_help"
@@ -18831,7 +18804,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-01T16:52:47.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 6,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "TryWhistlin"
@@ -18857,7 +18830,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-01T14:03:42.000Z",
       "sourceColor": "#ff4500",
-      "points": 7,
+      "points": 6,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "AmorFati01"
@@ -18922,7 +18895,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-04-30T20:14:50.000Z",
       "sourceColor": "#ff4500",
-      "points": 110,
+      "points": 115,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "kaggleqrdl"
@@ -18948,7 +18921,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ArtificialInteligence",
       "publishedAt": "2026-05-01T13:24:04.000Z",
       "sourceColor": "#ff4500",
-      "points": 2,
+      "points": 5,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "fortune"
@@ -19039,7 +19012,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-03T19:24:38.000Z",
       "sourceColor": "#ff4500",
-      "points": 548,
+      "points": 562,
       "relativeTime": "6시간 전",
       "category": "ai",
       "author": "Ambitious-Garbage-73"
@@ -19052,7 +19025,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-03T23:19:11.000Z",
       "sourceColor": "#ff4500",
-      "points": 20,
+      "points": 19,
       "relativeTime": "2시간 전",
       "category": "ai",
       "author": "Intelligent_Ebb_9332"
@@ -19065,7 +19038,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-03T08:09:23.000Z",
       "sourceColor": "#ff4500",
-      "points": 287,
+      "points": 285,
       "relativeTime": "17시간 전",
       "category": "ai",
       "author": "Massive_Instance_452"
@@ -19084,19 +19057,6 @@ window.__DAILY__ = {
       "author": "Sufficient-Year4640"
     },
     {
-      "id": "reddit-1t21tnl",
-      "title": "How many of you are still programming manually?",
-      "url": "https://www.reddit.com/r/cscareerquestions/comments/1t21tnl/how_many_of_you_are_still_programming_manually/",
-      "source": "reddit",
-      "sourceLabel": "r/cscareerquestions",
-      "publishedAt": "2026-05-02T21:06:44.000Z",
-      "sourceColor": "#ff4500",
-      "points": 610,
-      "relativeTime": "1일 전",
-      "category": "ai",
-      "author": "Imparat0r"
-    },
-    {
       "id": "reddit-1t31czs",
       "title": "If I want to work as a SWE at a banking/insurance company, how much do I need to know about banking/insurance?",
       "url": "https://www.reddit.com/r/cscareerquestions/comments/1t31czs/if_i_want_to_work_as_a_swe_at_a_bankinginsurance/",
@@ -19104,10 +19064,23 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-03T23:45:17.000Z",
       "sourceColor": "#ff4500",
-      "points": 4,
-      "relativeTime": "1시간 전",
+      "points": 5,
+      "relativeTime": "2시간 전",
       "category": "ai",
       "author": "Ok_Photograph8884"
+    },
+    {
+      "id": "reddit-1t21tnl",
+      "title": "How many of you are still programming manually?",
+      "url": "https://www.reddit.com/r/cscareerquestions/comments/1t21tnl/how_many_of_you_are_still_programming_manually/",
+      "source": "reddit",
+      "sourceLabel": "r/cscareerquestions",
+      "publishedAt": "2026-05-02T21:06:44.000Z",
+      "sourceColor": "#ff4500",
+      "points": 619,
+      "relativeTime": "1일 전",
+      "category": "ai",
+      "author": "Imparat0r"
     },
     {
       "id": "reddit-1t2ogmm",
@@ -19117,7 +19090,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-03T15:26:11.000Z",
       "sourceColor": "#ff4500",
-      "points": 17,
+      "points": 20,
       "relativeTime": "10시간 전",
       "category": "ai",
       "author": "GothButterCat"
@@ -19130,23 +19103,10 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-03T15:23:02.000Z",
       "sourceColor": "#ff4500",
-      "points": 17,
+      "points": 19,
       "relativeTime": "10시간 전",
       "category": "robotics",
       "author": "beskesky"
-    },
-    {
-      "id": "reddit-1t2yiq0",
-      "title": "When are the waves of hiring?",
-      "url": "https://www.reddit.com/r/cscareerquestions/comments/1t2yiq0/when_are_the_waves_of_hiring/",
-      "source": "reddit",
-      "sourceLabel": "r/cscareerquestions",
-      "publishedAt": "2026-05-03T21:43:52.000Z",
-      "sourceColor": "#ff4500",
-      "points": 4,
-      "relativeTime": "3시간 전",
-      "category": "ai",
-      "author": "tintolek"
     },
     {
       "id": "reddit-1t319h5",
@@ -19156,10 +19116,23 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-03T23:40:46.000Z",
       "sourceColor": "#ff4500",
-      "points": 2,
-      "relativeTime": "1시간 전",
+      "points": 3,
+      "relativeTime": "2시간 전",
       "category": "devtools",
       "author": "SnooAvocados6337"
+    },
+    {
+      "id": "reddit-1t2yiq0",
+      "title": "When are the waves of hiring?",
+      "url": "https://www.reddit.com/r/cscareerquestions/comments/1t2yiq0/when_are_the_waves_of_hiring/",
+      "source": "reddit",
+      "sourceLabel": "r/cscareerquestions",
+      "publishedAt": "2026-05-03T21:43:52.000Z",
+      "sourceColor": "#ff4500",
+      "points": 2,
+      "relativeTime": "4시간 전",
+      "category": "ai",
+      "author": "tintolek"
     },
     {
       "id": "reddit-1t24jf9",
@@ -19169,7 +19142,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-02T23:00:30.000Z",
       "sourceColor": "#ff4500",
-      "points": 154,
+      "points": 157,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "justanothersideacc"
@@ -19182,8 +19155,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-03T07:42:57.000Z",
       "sourceColor": "#ff4500",
-      "points": 24,
-      "relativeTime": "17시간 전",
+      "points": 26,
+      "relativeTime": "18시간 전",
       "category": "ai",
       "author": "Athen65"
     },
@@ -19196,7 +19169,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T22:42:37.000Z",
       "sourceColor": "#ff4500",
       "points": 1,
-      "relativeTime": "2시간 전",
+      "relativeTime": "3시간 전",
       "category": "ai",
       "author": "Birdwithabowtie"
     },
@@ -19208,7 +19181,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-02T12:38:16.000Z",
       "sourceColor": "#ff4500",
-      "points": 479,
+      "points": 481,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Crafty_Rush3636"
@@ -19221,7 +19194,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-03T13:20:25.000Z",
       "sourceColor": "#ff4500",
-      "points": 6,
+      "points": 4,
       "relativeTime": "12시간 전",
       "category": "ai",
       "author": "Soxomer"
@@ -19234,7 +19207,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-03T18:08:01.000Z",
       "sourceColor": "#ff4500",
-      "points": 1,
+      "points": 2,
       "relativeTime": "7시간 전",
       "category": "devtools",
       "author": "AdministrationMoney1"
@@ -19247,7 +19220,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-03T12:00:38.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 6,
       "relativeTime": "13시간 전",
       "category": "standards",
       "author": "Amatheos"
@@ -19260,7 +19233,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-03T09:32:36.000Z",
       "sourceColor": "#ff4500",
-      "points": 7,
+      "points": 8,
       "relativeTime": "16시간 전",
       "category": "ai",
       "author": "Plus-Background-8218"
@@ -19274,7 +19247,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T16:48:21.000Z",
       "sourceColor": "#ff4500",
       "points": 2,
-      "relativeTime": "8시간 전",
+      "relativeTime": "9시간 전",
       "category": "standards",
       "author": "oisigracias"
     },
@@ -19286,23 +19259,10 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-03T03:29:03.000Z",
       "sourceColor": "#ff4500",
-      "points": 14,
+      "points": 12,
       "relativeTime": "22시간 전",
       "category": "ai",
       "author": "SupremeChef30"
-    },
-    {
-      "id": "reddit-1t3269r",
-      "title": "What would the CS job market be like if we lived in a socialist society?",
-      "url": "https://www.reddit.com/r/cscareerquestions/comments/1t3269r/what_would_the_cs_job_market_be_like_if_we_lived/",
-      "source": "reddit",
-      "sourceLabel": "r/cscareerquestions",
-      "publishedAt": "2026-05-04T00:21:30.000Z",
-      "sourceColor": "#ff4500",
-      "points": 0,
-      "relativeTime": "48분 전",
-      "category": "ai",
-      "author": "RedStorm1917"
     },
     {
       "id": "reddit-1t2p8s7",
@@ -19316,6 +19276,19 @@ window.__DAILY__ = {
       "relativeTime": "9시간 전",
       "category": "ai",
       "author": "existential-axe23"
+    },
+    {
+      "id": "reddit-1t3269r",
+      "title": "What would the CS job market be like if we lived in a socialist society?",
+      "url": "https://www.reddit.com/r/cscareerquestions/comments/1t3269r/what_would_the_cs_job_market_be_like_if_we_lived/",
+      "source": "reddit",
+      "sourceLabel": "r/cscareerquestions",
+      "publishedAt": "2026-05-04T00:21:30.000Z",
+      "sourceColor": "#ff4500",
+      "points": 0,
+      "relativeTime": "1시간 전",
+      "category": "ai",
+      "author": "RedStorm1917"
     },
     {
       "id": "reddit-1t2j298",
@@ -19352,7 +19325,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T12:47:45.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "12시간 전",
+      "relativeTime": "13시간 전",
       "category": "ai",
       "author": "PolishPotato69"
     },
@@ -19364,8 +19337,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-03T12:42:11.000Z",
       "sourceColor": "#ff4500",
-      "points": 1,
-      "relativeTime": "12시간 전",
+      "points": 0,
+      "relativeTime": "13시간 전",
       "category": "ai",
       "author": "csh46042"
     },
@@ -19377,7 +19350,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-02T17:57:30.000Z",
       "sourceColor": "#ff4500",
-      "points": 19,
+      "points": 16,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "derpyderp2048"
@@ -19390,7 +19363,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-02T06:49:34.000Z",
       "sourceColor": "#ff4500",
-      "points": 133,
+      "points": 136,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Recent-Analysis-6880"
@@ -19403,7 +19376,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-02T14:07:34.000Z",
       "sourceColor": "#ff4500",
-      "points": 33,
+      "points": 30,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "dialsoapbox"
@@ -19416,7 +19389,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-02T19:42:31.000Z",
       "sourceColor": "#ff4500",
-      "points": 10,
+      "points": 11,
       "relativeTime": "1일 전",
       "category": "devtools",
       "author": "tobe-uni"
@@ -19429,7 +19402,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-01T19:59:04.000Z",
       "sourceColor": "#ff4500",
-      "points": 850,
+      "points": 839,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "No_Reply5329"
@@ -19469,7 +19442,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T14:51:43.000Z",
       "sourceColor": "#ff4500",
       "points": 0,
-      "relativeTime": "10시간 전",
+      "relativeTime": "11시간 전",
       "category": "ai",
       "author": "Abhinav1862009"
     },
@@ -19507,7 +19480,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-02T00:29:19.000Z",
       "sourceColor": "#ff4500",
-      "points": 162,
+      "points": 165,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Wild-Yogurtcloset921"
@@ -19520,7 +19493,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-02T01:14:35.000Z",
       "sourceColor": "#ff4500",
-      "points": 91,
+      "points": 93,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "javnae"
@@ -19533,7 +19506,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-02T17:58:16.000Z",
       "sourceColor": "#ff4500",
-      "points": 3,
+      "points": 5,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "wyomingia"
@@ -19546,7 +19519,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-02T21:38:28.000Z",
       "sourceColor": "#ff4500",
-      "points": 1,
+      "points": 2,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "Jazzlike_Middle2757"
@@ -19572,7 +19545,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-02T19:04:51.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 2,
       "relativeTime": "1일 전",
       "category": "devtools",
       "author": "CarefulBattle2367"
@@ -19598,7 +19571,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-01T21:59:41.000Z",
       "sourceColor": "#ff4500",
-      "points": 131,
+      "points": 134,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "patternOverview"
@@ -19611,7 +19584,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-02T15:14:18.000Z",
       "sourceColor": "#ff4500",
-      "points": 3,
+      "points": 5,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "Top_Medicine_732"
@@ -19624,7 +19597,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-01T17:50:14.000Z",
       "sourceColor": "#ff4500",
-      "points": 176,
+      "points": 180,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Dreadsin"
@@ -19663,7 +19636,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-01T22:19:01.000Z",
       "sourceColor": "#ff4500",
-      "points": 61,
+      "points": 55,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "WoodpeckerPatient723"
@@ -19676,7 +19649,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-02T19:58:11.000Z",
       "sourceColor": "#ff4500",
-      "points": 3,
+      "points": 1,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "anulcyst"
@@ -19702,7 +19675,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-02T15:25:51.000Z",
       "sourceColor": "#ff4500",
-      "points": 2,
+      "points": 1,
       "relativeTime": "1일 전",
       "category": "papers",
       "author": "No-Implement9967"
@@ -19728,7 +19701,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-02T18:24:52.000Z",
       "sourceColor": "#ff4500",
-      "points": 1,
+      "points": 0,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "realprime1"
@@ -19741,7 +19714,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-01T08:53:07.000Z",
       "sourceColor": "#ff4500",
-      "points": 466,
+      "points": 471,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "Attractive-Bunny"
@@ -19819,7 +19792,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-01T04:54:17.000Z",
       "sourceColor": "#ff4500",
-      "points": 483,
+      "points": 482,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "SnooFloofs3704"
@@ -19832,7 +19805,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-02T02:41:30.000Z",
       "sourceColor": "#ff4500",
-      "points": 7,
+      "points": 6,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "InfamousJack9"
@@ -19845,7 +19818,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-01T02:10:48.000Z",
       "sourceColor": "#ff4500",
-      "points": 576,
+      "points": 574,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "Based-God-"
@@ -19871,7 +19844,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-01T18:20:45.000Z",
       "sourceColor": "#ff4500",
-      "points": 28,
+      "points": 27,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Assorted_Nugget"
@@ -19884,7 +19857,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-02T03:55:09.000Z",
       "sourceColor": "#ff4500",
-      "points": 3,
+      "points": 2,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "rajincse"
@@ -19923,7 +19896,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-02T03:58:53.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 3,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "iiHumbleBumbleBee"
@@ -19936,7 +19909,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-01T14:07:02.000Z",
       "sourceColor": "#ff4500",
-      "points": 35,
+      "points": 36,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "tronybot"
@@ -19975,7 +19948,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-01T09:48:42.000Z",
       "sourceColor": "#ff4500",
-      "points": 60,
+      "points": 58,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "DeathnTaxes66"
@@ -20001,7 +19974,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-04-30T20:24:35.000Z",
       "sourceColor": "#ff4500",
-      "points": 503,
+      "points": 502,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "SiouxsieAsylum"
@@ -20105,7 +20078,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-04-30T12:15:05.000Z",
       "sourceColor": "#ff4500",
-      "points": 1120,
+      "points": 1129,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "peex"
@@ -20118,7 +20091,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-04-30T19:19:19.000Z",
       "sourceColor": "#ff4500",
-      "points": 294,
+      "points": 298,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "Tree8282"
@@ -20131,7 +20104,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-01T18:30:14.000Z",
       "sourceColor": "#ff4500",
-      "points": 5,
+      "points": 3,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Academic-Competition"
@@ -20157,7 +20130,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-01T13:57:42.000Z",
       "sourceColor": "#ff4500",
-      "points": 8,
+      "points": 7,
       "relativeTime": "2일 전",
       "category": "papers",
       "author": "idk-anything"
@@ -20170,7 +20143,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-01T15:21:02.000Z",
       "sourceColor": "#ff4500",
-      "points": 8,
+      "points": 6,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "MarathonMarathon"
@@ -20274,7 +20247,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-05-01T03:25:17.000Z",
       "sourceColor": "#ff4500",
-      "points": 17,
+      "points": 18,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "Kullen1446"
@@ -20300,7 +20273,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/cscareerquestions",
       "publishedAt": "2026-04-30T18:26:01.000Z",
       "sourceColor": "#ff4500",
-      "points": 83,
+      "points": 87,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "the-dasdardly-puppet"
@@ -20313,8 +20286,8 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-05-03T19:46:02.000Z",
       "sourceColor": "#ff4500",
-      "points": 601,
-      "relativeTime": "5시간 전",
+      "points": 620,
+      "relativeTime": "6시간 전",
       "category": "ai",
       "author": "SadSongsMakeMeGlad"
     },
@@ -20326,7 +20299,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-05-03T18:29:03.000Z",
       "sourceColor": "#ff4500",
-      "points": 34,
+      "points": 35,
       "relativeTime": "7시간 전",
       "category": "ai",
       "author": "kevin074"
@@ -20352,7 +20325,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-05-03T00:09:59.000Z",
       "sourceColor": "#ff4500",
-      "points": 178,
+      "points": 177,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "michaelcosmos"
@@ -20378,7 +20351,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-05-02T17:59:49.000Z",
       "sourceColor": "#ff4500",
-      "points": 197,
+      "points": 200,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "TopSwagCode"
@@ -20391,7 +20364,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-05-02T18:00:06.000Z",
       "sourceColor": "#ff4500",
-      "points": 176,
+      "points": 180,
       "relativeTime": "1일 전",
       "category": "devtools",
       "author": "BowlerPretend4090"
@@ -20404,7 +20377,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-05-02T19:21:58.000Z",
       "sourceColor": "#ff4500",
-      "points": 93,
+      "points": 92,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "dondraper36"
@@ -20430,7 +20403,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-05-02T15:04:51.000Z",
       "sourceColor": "#ff4500",
-      "points": 38,
+      "points": 33,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "theov666"
@@ -20443,7 +20416,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-05-02T08:04:01.000Z",
       "sourceColor": "#ff4500",
-      "points": 121,
+      "points": 115,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "ToeMother8579"
@@ -20482,7 +20455,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-05-01T22:52:13.000Z",
       "sourceColor": "#ff4500",
-      "points": 72,
+      "points": 77,
       "relativeTime": "2일 전",
       "category": "robotics",
       "author": "BanhShark"
@@ -20495,7 +20468,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-05-01T16:14:02.000Z",
       "sourceColor": "#ff4500",
-      "points": 156,
+      "points": 152,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "theasianpianist"
@@ -20508,7 +20481,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-05-02T19:33:38.000Z",
       "sourceColor": "#ff4500",
-      "points": 0,
+      "points": 3,
       "relativeTime": "1일 전",
       "category": "ai",
       "author": "Lost-Albatross5241"
@@ -20547,7 +20520,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-05-01T00:36:03.000Z",
       "sourceColor": "#ff4500",
-      "points": 964,
+      "points": 967,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "eatmeat"
@@ -20560,7 +20533,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-05-01T12:40:48.000Z",
       "sourceColor": "#ff4500",
-      "points": 74,
+      "points": 79,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "chat_not_gpt"
@@ -20573,7 +20546,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-05-01T18:08:53.000Z",
       "sourceColor": "#ff4500",
-      "points": 18,
+      "points": 19,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "IRedditAllBefore94"
@@ -20586,7 +20559,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-05-01T05:04:24.000Z",
       "sourceColor": "#ff4500",
-      "points": 166,
+      "points": 170,
       "relativeTime": "3일 전",
       "category": "ai",
       "author": "xamott"
@@ -20625,7 +20598,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-05-01T23:10:22.000Z",
       "sourceColor": "#ff4500",
-      "points": 4,
+      "points": 3,
       "relativeTime": "2일 전",
       "category": "ai",
       "author": "Nosa2k"
@@ -20651,7 +20624,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-05-01T00:32:37.000Z",
       "sourceColor": "#ff4500",
-      "points": 60,
+      "points": 59,
       "relativeTime": "3일 전",
       "category": "standards",
       "author": "Big-Discussion9699"
@@ -20690,7 +20663,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-30T05:31:46.000Z",
       "sourceColor": "#ff4500",
-      "points": 580,
+      "points": 578,
       "relativeTime": "4일 전",
       "category": "standards",
       "author": "9ubj"
@@ -20703,7 +20676,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-30T10:13:05.000Z",
       "sourceColor": "#ff4500",
-      "points": 105,
+      "points": 106,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "Majestic-Taro-6903"
@@ -20729,7 +20702,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-30T12:30:17.000Z",
       "sourceColor": "#ff4500",
-      "points": 42,
+      "points": 44,
       "relativeTime": "4일 전",
       "category": "robotics",
       "author": "Tr0jAn14"
@@ -20755,7 +20728,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-30T04:18:49.000Z",
       "sourceColor": "#ff4500",
-      "points": 120,
+      "points": 119,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "CantTouchTheseNuts"
@@ -20768,7 +20741,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-29T21:01:34.000Z",
       "sourceColor": "#ff4500",
-      "points": 377,
+      "points": 376,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "chaitanyathengdi"
@@ -20794,7 +20767,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-30T02:49:31.000Z",
       "sourceColor": "#ff4500",
-      "points": 86,
+      "points": 85,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "BearyTechie"
@@ -20807,7 +20780,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-29T19:42:05.000Z",
       "sourceColor": "#ff4500",
-      "points": 303,
+      "points": 297,
       "relativeTime": "4일 전",
       "category": "ai",
       "author": "theop04"
@@ -20820,7 +20793,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-30T12:40:24.000Z",
       "sourceColor": "#ff4500",
-      "points": 11,
+      "points": 12,
       "relativeTime": "4일 전",
       "category": "papers",
       "author": "gobluedev"
@@ -20833,7 +20806,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-29T21:45:12.000Z",
       "sourceColor": "#ff4500",
-      "points": 64,
+      "points": 63,
       "relativeTime": "4일 전",
       "category": "standards",
       "author": "heart-give"
@@ -20846,7 +20819,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-29T06:31:54.000Z",
       "sourceColor": "#ff4500",
-      "points": 1011,
+      "points": 1017,
       "relativeTime": "5일 전",
       "category": "devtools",
       "author": "Beneficial_Pay_6317"
@@ -20872,7 +20845,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-29T17:11:42.000Z",
       "sourceColor": "#ff4500",
-      "points": 22,
+      "points": 20,
       "relativeTime": "4일 전",
       "category": "standards",
       "author": "martiangirlie"
@@ -20885,7 +20858,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-29T04:00:14.000Z",
       "sourceColor": "#ff4500",
-      "points": 120,
+      "points": 124,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "greasyjon1"
@@ -20898,7 +20871,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-29T12:04:02.000Z",
       "sourceColor": "#ff4500",
-      "points": 23,
+      "points": 25,
       "relativeTime": "5일 전",
       "category": "robotics",
       "author": "MinimumArmadillo2394"
@@ -20911,7 +20884,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-29T04:32:26.000Z",
       "sourceColor": "#ff4500",
-      "points": 100,
+      "points": 99,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "that-pipe-dream"
@@ -20937,7 +20910,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-28T20:07:33.000Z",
       "sourceColor": "#ff4500",
-      "points": 259,
+      "points": 261,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "SixFigs_BigDigs"
@@ -20950,7 +20923,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-29T13:07:59.000Z",
       "sourceColor": "#ff4500",
-      "points": 6,
+      "points": 8,
       "relativeTime": "5일 전",
       "category": "standards",
       "author": "OverclockingUnicorn"
@@ -20963,7 +20936,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-28T11:44:14.000Z",
       "sourceColor": "#ff4500",
-      "points": 216,
+      "points": 214,
       "relativeTime": "6일 전",
       "category": "robotics",
       "author": "lIIllIIlllIIllIIl"
@@ -20976,7 +20949,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-28T17:44:41.000Z",
       "sourceColor": "#ff4500",
-      "points": 59,
+      "points": 64,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "melesigenes"
@@ -20989,7 +20962,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-28T15:00:20.000Z",
       "sourceColor": "#ff4500",
-      "points": 51,
+      "points": 47,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "johnypita"
@@ -21002,7 +20975,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-28T15:11:54.000Z",
       "sourceColor": "#ff4500",
-      "points": 36,
+      "points": 35,
       "relativeTime": "5일 전",
       "category": "ai",
       "author": "rebornfenix"
@@ -21028,7 +21001,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-28T17:46:31.000Z",
       "sourceColor": "#ff4500",
-      "points": 12,
+      "points": 10,
       "relativeTime": "5일 전",
       "category": "standards",
       "author": "Suspicious-Rich-2681"
@@ -21054,7 +21027,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-28T19:50:55.000Z",
       "sourceColor": "#ff4500",
-      "points": 2,
+      "points": 4,
       "relativeTime": "5일 전",
       "category": "standards",
       "author": "jedenjuch"
@@ -21067,7 +21040,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-28T06:20:56.000Z",
       "sourceColor": "#ff4500",
-      "points": 28,
+      "points": 26,
       "relativeTime": "6일 전",
       "category": "standards",
       "author": "Herrowgayboi"
@@ -21093,7 +21066,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-27T13:06:19.000Z",
       "sourceColor": "#ff4500",
-      "points": 355,
+      "points": 358,
       "relativeTime": "7일 전",
       "category": "ai",
       "author": "PressureHumble3604"
@@ -21106,7 +21079,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-27T20:30:19.000Z",
       "sourceColor": "#ff4500",
-      "points": 88,
+      "points": 93,
       "relativeTime": "6일 전",
       "category": "ai",
       "author": "Late_Champion529"
@@ -21119,7 +21092,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-28T06:14:37.000Z",
       "sourceColor": "#ff4500",
-      "points": 12,
+      "points": 13,
       "relativeTime": "6일 전",
       "category": "ai",
       "author": "ZealousidealPlate750"
@@ -21145,7 +21118,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-27T20:39:28.000Z",
       "sourceColor": "#ff4500",
-      "points": 34,
+      "points": 33,
       "relativeTime": "6일 전",
       "category": "ai",
       "author": "on_the_mark_data"
@@ -21158,7 +21131,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-27T21:14:13.000Z",
       "sourceColor": "#ff4500",
-      "points": 9,
+      "points": 7,
       "relativeTime": "6일 전",
       "category": "ai",
       "author": "mkg11"
@@ -21171,7 +21144,7 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-27T02:39:30.000Z",
       "sourceColor": "#ff4500",
-      "points": 141,
+      "points": 140,
       "relativeTime": "7일 전",
       "category": "ai",
       "author": "modeezy23"
@@ -21184,10 +21157,101 @@ window.__DAILY__ = {
       "sourceLabel": "r/ExperiencedDevs",
       "publishedAt": "2026-04-27T22:01:30.000Z",
       "sourceColor": "#ff4500",
-      "points": 3,
+      "points": 4,
       "relativeTime": "6일 전",
       "category": "ai",
       "author": "HiroProtagonist66"
+    },
+    {
+      "id": "geeknews-aybdht",
+      "title": "GPT-5.5 vs GPT-5.4 vs Opus 4.7 - 실제 코딩 작업 56개 벤치마크 비교",
+      "url": "https://news.hada.io/topic?id=29140",
+      "source": "geeknews",
+      "sourceLabel": "GeekNews",
+      "publishedAt": "2026-05-04T00:59:02.000Z",
+      "sourceColor": "#22c55e",
+      "points": 0,
+      "relativeTime": "26분 전",
+      "category": "ai",
+      "author": "<name>neo</name>\n    <uri>https://news.hada.io/user/neo</uri>"
+    },
+    {
+      "id": "geeknews-aybdh7",
+      "title": "Barman - PostgreSQL용 백업 및 복구 관리자",
+      "url": "https://news.hada.io/topic?id=29139",
+      "source": "geeknews",
+      "sourceLabel": "GeekNews",
+      "publishedAt": "2026-05-04T00:56:02.000Z",
+      "sourceColor": "#22c55e",
+      "points": 0,
+      "relativeTime": "29분 전",
+      "category": "ai",
+      "author": "<name>xguru</name>\n    <uri>https://news.hada.io/user/xguru</uri>"
+    },
+    {
+      "id": "geeknews-aybdh6",
+      "title": "Kimi K2.6가 코딩 챌린지에서 Claude, GPT-5.5, Gemini를 이김",
+      "url": "https://news.hada.io/topic?id=29138",
+      "source": "geeknews",
+      "sourceLabel": "GeekNews",
+      "publishedAt": "2026-05-04T00:50:00.000Z",
+      "sourceColor": "#22c55e",
+      "points": 0,
+      "relativeTime": "35분 전",
+      "category": "ai",
+      "author": "<name>neo</name>\n    <uri>https://news.hada.io/user/neo</uri>"
+    },
+    {
+      "id": "geeknews-aybdh5",
+      "title": "수백만 줄의 Haskell: Mercury의 프로덕션 엔지니어링",
+      "url": "https://news.hada.io/topic?id=29137",
+      "source": "geeknews",
+      "sourceLabel": "GeekNews",
+      "publishedAt": "2026-05-04T00:47:00.000Z",
+      "sourceColor": "#22c55e",
+      "points": 0,
+      "relativeTime": "38분 전",
+      "category": "ai",
+      "author": "<name>neo</name>\n    <uri>https://news.hada.io/user/neo</uri>"
+    },
+    {
+      "id": "geeknews-aybdh4",
+      "title": "Mercedes-Benz, 물리 버튼을 되돌리겠다고 약속함",
+      "url": "https://news.hada.io/topic?id=29136",
+      "source": "geeknews",
+      "sourceLabel": "GeekNews",
+      "publishedAt": "2026-05-04T00:44:00.000Z",
+      "sourceColor": "#22c55e",
+      "points": 0,
+      "relativeTime": "41분 전",
+      "category": "ai",
+      "author": "<name>neo</name>\n    <uri>https://news.hada.io/user/neo</uri>"
+    },
+    {
+      "id": "geeknews-aybdh3",
+      "title": "TUI가 다시 돌아온 이유",
+      "url": "https://news.hada.io/topic?id=29135",
+      "source": "geeknews",
+      "sourceLabel": "GeekNews",
+      "publishedAt": "2026-05-04T00:06:39.000Z",
+      "sourceColor": "#22c55e",
+      "points": 0,
+      "relativeTime": "1시간 전",
+      "category": "ai",
+      "author": "<name>xguru</name>\n    <uri>https://news.hada.io/user/xguru</uri>"
+    },
+    {
+      "id": "geeknews-aybdh2",
+      "title": "텍스트 모드의 거짓말: 현대 TUI가 접근성에 악몽인 이유",
+      "url": "https://news.hada.io/topic?id=29134",
+      "source": "geeknews",
+      "sourceLabel": "GeekNews",
+      "publishedAt": "2026-05-04T00:01:42.000Z",
+      "sourceColor": "#22c55e",
+      "points": 0,
+      "relativeTime": "1시간 전",
+      "category": "devtools",
+      "author": "<name>neo</name>\n    <uri>https://news.hada.io/user/neo</uri>"
     },
     {
       "id": "geeknews-aybdh1",
@@ -21250,7 +21314,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T14:40:39.000Z",
       "sourceColor": "#22c55e",
       "points": 0,
-      "relativeTime": "10시간 전",
+      "relativeTime": "11시간 전",
       "category": "ai",
       "author": "<name>autobe</name>\n    <uri>https://news.hada.io/user/autobe</uri>"
     },
@@ -21419,7 +21483,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T06:45:28.000Z",
       "sourceColor": "#22c55e",
       "points": 0,
-      "relativeTime": "18시간 전",
+      "relativeTime": "19시간 전",
       "category": "ai",
       "author": "<name>hongminhee</name>\n    <uri>https://news.hada.io/user/hongminhee</uri>"
     },
@@ -21445,7 +21509,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T01:43:44.000Z",
       "sourceColor": "#22c55e",
       "points": 0,
-      "relativeTime": "23시간 전",
+      "relativeTime": "1일 전",
       "category": "ai",
       "author": "<name>xguru</name>\n    <uri>https://news.hada.io/user/xguru</uri>"
     },
@@ -21471,7 +21535,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T12:43:53.000Z",
       "sourceColor": "#ac1f1f",
       "points": 0,
-      "relativeTime": "12시간 전",
+      "relativeTime": "13시간 전",
       "category": "ai",
       "author": "kokada.dev by kokada"
     },
@@ -21484,7 +21548,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T15:48:56.000Z",
       "sourceColor": "#ac1f1f",
       "points": 0,
-      "relativeTime": "9시간 전",
+      "relativeTime": "10시간 전",
       "category": "ai",
       "author": "emirb.github.io via jryans"
     },
@@ -21528,6 +21592,19 @@ window.__DAILY__ = {
       "author": "raw.githubusercontent.com via matklad"
     },
     {
+      "id": "lobsters-3dwyrc",
+      "title": "Blue Ridge Ruby 2026",
+      "url": "https://microblog.thomascannon.me/2026/05/03/blue-ridge-ruby.html",
+      "source": "lobsters",
+      "sourceLabel": "Lobsters",
+      "publishedAt": "2026-05-03T23:12:36.000Z",
+      "sourceColor": "#ac1f1f",
+      "points": 0,
+      "relativeTime": "2시간 전",
+      "category": "ai",
+      "author": "microblog.thomascannon.me by tcannonfodder"
+    },
+    {
       "id": "lobsters-nti6fp",
       "title": "git-async web demo - A git browser in the browser",
       "url": "https://git-async.donk.systems/",
@@ -21549,22 +21626,9 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T06:52:34.000Z",
       "sourceColor": "#ac1f1f",
       "points": 0,
-      "relativeTime": "18시간 전",
+      "relativeTime": "19시간 전",
       "category": "ai",
       "author": "oldvcr.blogspot.com by classichasclass"
-    },
-    {
-      "id": "lobsters-3dwyrc",
-      "title": "Blue Ridge Ruby 2026",
-      "url": "https://microblog.thomascannon.me/2026/05/03/blue-ridge-ruby.html",
-      "source": "lobsters",
-      "sourceLabel": "Lobsters",
-      "publishedAt": "2026-05-03T23:12:36.000Z",
-      "sourceColor": "#ac1f1f",
-      "points": 0,
-      "relativeTime": "2시간 전",
-      "category": "ai",
-      "author": "microblog.thomascannon.me by tcannonfodder"
     },
     {
       "id": "lobsters-2rpgss",
@@ -21575,9 +21639,22 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-03T16:47:03.000Z",
       "sourceColor": "#ac1f1f",
       "points": 0,
-      "relativeTime": "8시간 전",
+      "relativeTime": "9시간 전",
       "category": "devtools",
       "author": "noahclements.com via AviKav"
+    },
+    {
+      "id": "lobsters-2avb8d",
+      "title": "dithering with css",
+      "url": "https://ikesau.co/blog/dithering-with-css/",
+      "source": "lobsters",
+      "sourceLabel": "Lobsters",
+      "publishedAt": "2026-05-03T23:03:32.000Z",
+      "sourceColor": "#ac1f1f",
+      "points": 0,
+      "relativeTime": "2시간 전",
+      "category": "ai",
+      "author": "ikesau.co via Aks"
     },
     {
       "id": "lobsters-3xqhet",
@@ -21593,17 +21670,82 @@ window.__DAILY__ = {
       "author": "ladybird.org via sanxiyn"
     },
     {
-      "id": "lobsters-2xr80t",
-      "title": "C8s: A Confidential Kubernetes Architecture",
-      "url": "https://arxiv.org/abs/2604.26974",
-      "source": "lobsters",
-      "sourceLabel": "Lobsters",
-      "publishedAt": "2026-05-03T15:21:24.000Z",
-      "sourceColor": "#ac1f1f",
+      "id": "devto-7dx1a5",
+      "title": "The New OAuth Problem Is Agent Delegation",
+      "url": "https://dev.to/maninderpreet_singh/the-new-oauth-problem-is-agent-delegation-44hc",
+      "source": "devto",
+      "sourceLabel": "DEV.to",
+      "publishedAt": "2026-05-04T01:09:08.000Z",
+      "sourceColor": "#0a0a0a",
       "points": 0,
-      "relativeTime": "10시간 전",
+      "relativeTime": "16분 전",
       "category": "ai",
-      "author": "arxiv.org via badcryptobitch"
+      "author": "Maninderpreet Singh"
+    },
+    {
+      "id": "devto-u6hyqg",
+      "title": "Behavioral Annotations: Why readonly and destructive guide LLM Planning",
+      "url": "https://dev.to/tercelyi/behavioral-annotations-why-readonly-and-destructive-guide-llm-planning-37nk",
+      "source": "devto",
+      "sourceLabel": "DEV.to",
+      "publishedAt": "2026-05-04T01:07:46.000Z",
+      "sourceColor": "#0a0a0a",
+      "points": 0,
+      "relativeTime": "17분 전",
+      "category": "ai",
+      "author": "tercel"
+    },
+    {
+      "id": "devto-s41ytm",
+      "title": "Design First, Code Later: Mastering Spec-Driven Development in Rust",
+      "url": "https://dev.to/eduardo_ginofloresnavar/design-first-code-later-mastering-spec-driven-development-in-rust-hea",
+      "source": "devto",
+      "sourceLabel": "DEV.to",
+      "publishedAt": "2026-05-04T00:58:32.000Z",
+      "sourceColor": "#0a0a0a",
+      "points": 0,
+      "relativeTime": "27분 전",
+      "category": "standards",
+      "author": "EDUARDO GINO FLORES NAVARRO"
+    },
+    {
+      "id": "devto-lx8bqd",
+      "title": "Cx Dev Log — 2026-04-30",
+      "url": "https://dev.to/commenterthe9/cx-dev-log-2026-04-30-6kp",
+      "source": "devto",
+      "sourceLabel": "DEV.to",
+      "publishedAt": "2026-05-04T00:51:36.000Z",
+      "sourceColor": "#0a0a0a",
+      "points": 0,
+      "relativeTime": "33분 전",
+      "category": "ai",
+      "author": "COMMENTERTHE9"
+    },
+    {
+      "id": "devto-ybogsv",
+      "title": "I Built My Own Entropy Coder Because Deflate Doesn't Know What GN Knows",
+      "url": "https://dev.to/atomsrkuul/i-built-my-own-entropy-coder-because-deflate-doesnt-know-what-gn-knows-2mk9",
+      "source": "devto",
+      "sourceLabel": "DEV.to",
+      "publishedAt": "2026-05-04T00:47:51.000Z",
+      "sourceColor": "#0a0a0a",
+      "points": 0,
+      "relativeTime": "37분 전",
+      "category": "ai",
+      "author": "Buffer Overflow"
+    },
+    {
+      "id": "devto-d564ic",
+      "title": "Stop Using AI Only to Build—Start Using It to Break Your Systems",
+      "url": "https://dev.to/swapneswar_sundarray/stop-using-ai-only-to-build-start-using-it-to-break-your-systems-23gd",
+      "source": "devto",
+      "sourceLabel": "DEV.to",
+      "publishedAt": "2026-05-04T00:45:05.000Z",
+      "sourceColor": "#0a0a0a",
+      "points": 0,
+      "relativeTime": "40분 전",
+      "category": "ai",
+      "author": "Swapneswar Sundar Ray"
     },
     {
       "id": "devto-d113jh",
@@ -21614,7 +21756,7 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-04T00:43:26.000Z",
       "sourceColor": "#0a0a0a",
       "points": 0,
-      "relativeTime": "26분 전",
+      "relativeTime": "42분 전",
       "category": "ai",
       "author": "jose muñoz"
     },
@@ -21627,9 +21769,48 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-04T00:42:46.000Z",
       "sourceColor": "#0a0a0a",
       "points": 0,
-      "relativeTime": "27분 전",
+      "relativeTime": "42분 전",
       "category": "ai",
       "author": "Volker Schukai"
+    },
+    {
+      "id": "devto-3zdxev",
+      "title": "5 React Performance Mistakes That Are Slowing Your App Down",
+      "url": "https://dev.to/khris_breezy/5-react-performance-mistakes-that-are-slowing-your-app-down-4b2n",
+      "source": "devto",
+      "sourceLabel": "DEV.to",
+      "publishedAt": "2026-05-04T00:42:14.000Z",
+      "sourceColor": "#0a0a0a",
+      "points": 0,
+      "relativeTime": "43분 전",
+      "category": "display",
+      "author": "Oyinlola Abolarin"
+    },
+    {
+      "id": "devto-m31tso",
+      "title": "The Ultimate AI Shortcut That Wasn't",
+      "url": "https://dev.to/al-chris/the-ultimate-ai-shortcut-that-wasnt-35hn",
+      "source": "devto",
+      "sourceLabel": "DEV.to",
+      "publishedAt": "2026-05-04T00:31:42.000Z",
+      "sourceColor": "#0a0a0a",
+      "points": 0,
+      "relativeTime": "53분 전",
+      "category": "ai",
+      "author": "Chris"
+    },
+    {
+      "id": "devto-d2r0pf",
+      "title": "React Memory Leaks: Closures and Object Graphs",
+      "url": "https://dev.to/helloashish99/react-memory-leaks-closures-and-object-graphs-li5",
+      "source": "devto",
+      "sourceLabel": "DEV.to",
+      "publishedAt": "2026-05-04T00:30:00.000Z",
+      "sourceColor": "#0a0a0a",
+      "points": 0,
+      "relativeTime": "55분 전",
+      "category": "standards",
+      "author": "Ashish Kumar"
     },
     {
       "id": "devto-wxx7mi",
@@ -21640,126 +21821,9 @@ window.__DAILY__ = {
       "publishedAt": "2026-05-04T00:29:54.000Z",
       "sourceColor": "#0a0a0a",
       "points": 0,
-      "relativeTime": "40분 전",
+      "relativeTime": "55분 전",
       "category": "ai",
       "author": "yunbow"
-    },
-    {
-      "id": "devto-wuzc8r",
-      "title": "Stop Sending Medical Data to the Cloud: Build a 100% Private Health AI with WebLLM and Transformers.js",
-      "url": "https://dev.to/beck_moulton/stop-sending-medical-data-to-the-cloud-build-a-100-private-health-ai-with-webllm-and-1eaj",
-      "source": "devto",
-      "sourceLabel": "DEV.to",
-      "publishedAt": "2026-05-04T00:20:00.000Z",
-      "sourceColor": "#0a0a0a",
-      "points": 0,
-      "relativeTime": "50분 전",
-      "category": "ai",
-      "author": "Beck_Moulton"
-    },
-    {
-      "id": "devto-5bxpm6",
-      "title": "Six lessons from designing Claude Code skills",
-      "url": "https://dev.to/agentstackteam/six-lessons-from-designing-claude-code-skills-1df3",
-      "source": "devto",
-      "sourceLabel": "DEV.to",
-      "publishedAt": "2026-05-04T00:17:36.000Z",
-      "sourceColor": "#0a0a0a",
-      "points": 0,
-      "relativeTime": "52분 전",
-      "category": "ai",
-      "author": "AgentStack"
-    },
-    {
-      "id": "devto-c9q0o",
-      "title": "WordPress Performance Optimization — A Developer's Guide by Riad Hasan",
-      "url": "https://dev.to/riadhasan11/wordpress-performance-optimization-a-developers-guide-by-riad-hasan-g5a",
-      "source": "devto",
-      "sourceLabel": "DEV.to",
-      "publishedAt": "2026-05-04T00:03:02.000Z",
-      "sourceColor": "#0a0a0a",
-      "points": 0,
-      "relativeTime": "1시간 전",
-      "category": "display",
-      "author": "Riad Hasan"
-    },
-    {
-      "id": "devto-vqn76e",
-      "title": "Performance Tips for Firefox New Tab Extensions: Sub-100ms Load Times",
-      "url": "https://dev.to/weatherclockdash/performance-tips-for-firefox-new-tab-extensions-sub-100ms-load-times-4mhi",
-      "source": "devto",
-      "sourceLabel": "DEV.to",
-      "publishedAt": "2026-05-04T00:02:45.000Z",
-      "sourceColor": "#0a0a0a",
-      "points": 0,
-      "relativeTime": "1시간 전",
-      "category": "ai",
-      "author": "Weather Clock Dash"
-    },
-    {
-      "id": "devto-qm4xf1",
-      "title": "Showdown: esbuild 0.21 vs. SWC 1.5 vs. Babel 8 for Transpiling TypeScript 5.6 Code",
-      "url": "https://dev.to/johalputt/showdown-esbuild-021-vs-swc-15-vs-babel-8-for-transpiling-typescript-56-code-ooi",
-      "source": "devto",
-      "sourceLabel": "DEV.to",
-      "publishedAt": "2026-05-04T00:02:04.000Z",
-      "sourceColor": "#0a0a0a",
-      "points": 0,
-      "relativeTime": "1시간 전",
-      "category": "standards",
-      "author": "ANKUSH CHOUDHARY JOHAL"
-    },
-    {
-      "id": "devto-4oheps",
-      "title": "Manifest V3 Migration Pitfalls — Lessons from 17 Chrome Extensions",
-      "url": "https://dev.to/_350df62777eb55e1/manifest-v3-migration-pitfalls-lessons-from-17-chrome-extensions-2j3h",
-      "source": "devto",
-      "sourceLabel": "DEV.to",
-      "publishedAt": "2026-05-04T00:00:00.000Z",
-      "sourceColor": "#0a0a0a",
-      "points": 0,
-      "relativeTime": "1시간 전",
-      "category": "devtools",
-      "author": "SHOTA"
-    },
-    {
-      "id": "devto-suxluo",
-      "title": "Keyboard Shortcuts in Firefox Extensions: A Complete Guide",
-      "url": "https://dev.to/weatherclockdash/keyboard-shortcuts-in-firefox-extensions-a-complete-guide-2n8o",
-      "source": "devto",
-      "sourceLabel": "DEV.to",
-      "publishedAt": "2026-05-03T23:59:56.000Z",
-      "sourceColor": "#0a0a0a",
-      "points": 0,
-      "relativeTime": "1시간 전",
-      "category": "display",
-      "author": "Weather Clock Dash"
-    },
-    {
-      "id": "devto-zb7be5",
-      "title": "Search Bar in a Firefox New Tab Extension: Which Engine, How to Handle",
-      "url": "https://dev.to/weatherclockdash/search-bar-in-a-firefox-new-tab-extension-which-engine-how-to-handle-3dl6",
-      "source": "devto",
-      "sourceLabel": "DEV.to",
-      "publishedAt": "2026-05-03T23:57:17.000Z",
-      "sourceColor": "#0a0a0a",
-      "points": 0,
-      "relativeTime": "1시간 전",
-      "category": "ai",
-      "author": "Weather Clock Dash"
-    },
-    {
-      "id": "devto-6axzu9",
-      "title": "How I Built a Free Online Time Toolkit with Next.js 16 (PWA, i18n, Web Audio)",
-      "url": "https://dev.to/tani_88ebba4f4650dac71286/how-i-built-a-free-online-time-toolkit-with-nextjs-16-pwa-i18n-web-audio-2la7",
-      "source": "devto",
-      "sourceLabel": "DEV.to",
-      "publishedAt": "2026-05-03T23:55:45.000Z",
-      "sourceColor": "#0a0a0a",
-      "points": 0,
-      "relativeTime": "1시간 전",
-      "category": "devtools",
-      "author": "tani"
     }
   ],
   "oss": [
@@ -21775,8 +21839,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "WeritoP/FL-STUDIO-PATCHER",
       "description": "Fl Stduio patch for lifetime works",
-      "stars": 95,
-      "starsThisWeek": 95,
+      "stars": 450,
+      "starsThisWeek": 450,
       "language": null,
       "license": null,
       "isKorean": false,
@@ -21795,8 +21859,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "openclaw/openclaw",
       "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
-      "stars": 367930,
-      "starsThisWeek": 367930,
+      "stars": 367932,
+      "starsThisWeek": 367932,
       "language": "TypeScript",
       "license": "MIT",
       "isKorean": false,
@@ -21815,8 +21879,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "n8n-io/n8n",
       "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
-      "stars": 186593,
-      "starsThisWeek": 186593,
+      "stars": 186594,
+      "starsThisWeek": 186594,
       "language": "TypeScript",
       "license": "NOASSERTION",
       "isKorean": false,
@@ -21875,8 +21939,8 @@ window.__DAILY__ = {
       "typeIcon": "🤖",
       "name": "anomalyco/opencode",
       "description": "The open source coding agent.",
-      "stars": 154089,
-      "starsThisWeek": 154089,
+      "stars": 154091,
+      "starsThisWeek": 154091,
       "language": "TypeScript",
       "license": "MIT",
       "isKorean": false,
@@ -21915,8 +21979,8 @@ window.__DAILY__ = {
       "typeIcon": "🤖",
       "name": "NousResearch/hermes-agent",
       "description": "The agent that grows with you",
-      "stars": 131213,
-      "starsThisWeek": 131213,
+      "stars": 131232,
+      "starsThisWeek": 131232,
       "language": "Python",
       "license": "MIT",
       "isKorean": false,
@@ -21955,8 +22019,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "iptv-org/iptv",
       "description": "Collection of publicly available IPTV channels from all over the world",
-      "stars": 115874,
-      "starsThisWeek": 115874,
+      "stars": 115877,
+      "starsThisWeek": 115877,
       "language": "TypeScript",
       "license": "Unlicense",
       "isKorean": false,
@@ -21995,8 +22059,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "jaywcjlove/awesome-mac",
       "description": " This project is dedicated to collecting high-quality macOS software and organizing them systematically by different categories for easy search and use.",
-      "stars": 103266,
-      "starsThisWeek": 103266,
+      "stars": 103267,
+      "starsThisWeek": 103267,
       "language": "Swift",
       "license": "CC0-1.0",
       "isKorean": false,
@@ -22015,8 +22079,8 @@ window.__DAILY__ = {
       "typeIcon": "🤖",
       "name": "google-gemini/gemini-cli",
       "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
-      "stars": 103064,
-      "starsThisWeek": 103064,
+      "stars": 103065,
+      "starsThisWeek": 103065,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "isKorean": false,
@@ -22055,8 +22119,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "immich-app/immich",
       "description": "High performance self-hosted photo and video management solution.",
-      "stars": 99609,
-      "starsThisWeek": 99609,
+      "stars": 99610,
+      "starsThisWeek": 99610,
       "language": "TypeScript",
       "license": "AGPL-3.0",
       "isKorean": false,
@@ -22095,8 +22159,8 @@ window.__DAILY__ = {
       "typeIcon": "⚡",
       "name": "oven-sh/bun",
       "description": "Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one",
-      "stars": 89532,
-      "starsThisWeek": 89532,
+      "stars": 89533,
+      "starsThisWeek": 89533,
       "language": "Zig",
       "license": "NOASSERTION",
       "isKorean": false,
@@ -22135,8 +22199,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "zed-industries/zed",
       "description": "Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.",
-      "stars": 81527,
-      "starsThisWeek": 81527,
+      "stars": 81528,
+      "starsThisWeek": 81528,
       "language": "Rust",
       "license": "NOASSERTION",
       "isKorean": false,
@@ -22155,8 +22219,8 @@ window.__DAILY__ = {
       "typeIcon": "🤖",
       "name": "openai/codex",
       "description": "Lightweight coding agent that runs in your terminal",
-      "stars": 79786,
-      "starsThisWeek": 79786,
+      "stars": 79789,
+      "starsThisWeek": 79789,
       "language": "Rust",
       "license": "Apache-2.0",
       "isKorean": false,
@@ -22255,8 +22319,8 @@ window.__DAILY__ = {
       "typeIcon": "🤖",
       "name": "thedotmack/claude-mem",
       "description": "A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.",
-      "stars": 71557,
-      "starsThisWeek": 71557,
+      "stars": 71561,
+      "starsThisWeek": 71561,
       "language": "TypeScript",
       "license": "NOASSERTION",
       "isKorean": false,
@@ -22275,8 +22339,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "bytedance/deer-flow",
       "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
-      "stars": 64614,
-      "starsThisWeek": 64614,
+      "stars": 64616,
+      "starsThisWeek": 64616,
       "language": "Python",
       "license": "MIT",
       "isKorean": false,
@@ -22315,8 +22379,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "warpdotdev/warp",
       "description": "Warp is an agentic development environment, born out of the terminal.",
-      "stars": 53562,
-      "starsThisWeek": 53562,
+      "stars": 53573,
+      "starsThisWeek": 53573,
       "language": "Rust",
       "license": "AGPL-3.0",
       "isKorean": false,
@@ -22335,8 +22399,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "bevyengine/bevy",
       "description": "A refreshingly simple data-driven game engine built in Rust",
-      "stars": 45879,
-      "starsThisWeek": 45879,
+      "stars": 45880,
+      "starsThisWeek": 45880,
       "language": "Rust",
       "license": "Apache-2.0",
       "isKorean": false,
@@ -22375,10 +22439,70 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "SimplifyJobs/Summer2026-Internships",
       "description": "Collection of Summer 2026 tech internships!",
-      "stars": 44412,
-      "starsThisWeek": 44412,
+      "stars": 44414,
+      "starsThisWeek": 44414,
       "language": "Python",
       "license": null,
+      "isKorean": false,
+      "isTrending": true,
+      "contributors": null
+    },
+    {
+      "id": "gh-819554665",
+      "title": "exo-explore/exo",
+      "url": "https://github.com/exo-explore/exo",
+      "source": "github_trending",
+      "sourceLabel": "GitHub Trending",
+      "publishedAt": "2024-06-24T18:36:22Z",
+      "type": "tool",
+      "typeLabel": "Tool",
+      "typeIcon": "🔧",
+      "name": "exo-explore/exo",
+      "description": "Run frontier AI locally.",
+      "stars": 44325,
+      "starsThisWeek": 44325,
+      "language": "Python",
+      "license": "Apache-2.0",
+      "isKorean": false,
+      "isTrending": true,
+      "contributors": null
+    },
+    {
+      "id": "gh-846698999",
+      "title": "aaif-goose/goose",
+      "url": "https://github.com/aaif-goose/goose",
+      "source": "github_trending",
+      "sourceLabel": "GitHub Trending",
+      "publishedAt": "2024-08-23T19:03:36Z",
+      "type": "agent",
+      "typeLabel": "Agent",
+      "typeIcon": "🤖",
+      "name": "aaif-goose/goose",
+      "description": "an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM",
+      "stars": 43725,
+      "starsThisWeek": 43725,
+      "language": "Rust",
+      "license": "Apache-2.0",
+      "isKorean": false,
+      "isTrending": true,
+      "contributors": null
+    },
+    {
+      "id": "gh-291438522",
+      "title": "siyuan-note/siyuan",
+      "url": "https://github.com/siyuan-note/siyuan",
+      "source": "github_trending",
+      "sourceLabel": "GitHub Trending",
+      "publishedAt": "2020-08-30T09:21:35Z",
+      "type": "tool",
+      "typeLabel": "Tool",
+      "typeIcon": "🔧",
+      "name": "siyuan-note/siyuan",
+      "description": "A privacy-first, self-hosted, fully open source personal knowledge management software, written in typescript and golang.",
+      "stars": 43534,
+      "starsThisWeek": 43534,
+      "language": "TypeScript",
+      "license": "AGPL-3.0",
       "isKorean": false,
       "isTrending": true,
       "contributors": null
@@ -22464,6 +22588,26 @@ window.__DAILY__ = {
       "contributors": null
     },
     {
+      "id": "gh-458648791",
+      "title": "paperless-ngx/paperless-ngx",
+      "url": "https://github.com/paperless-ngx/paperless-ngx",
+      "source": "github_trending",
+      "sourceLabel": "GitHub Trending",
+      "publishedAt": "2022-02-12T21:56:52Z",
+      "type": "tool",
+      "typeLabel": "Tool",
+      "typeIcon": "🔧",
+      "name": "paperless-ngx/paperless-ngx",
+      "description": "A community-supported supercharged document management system: scan, index and archive all your documents",
+      "stars": 40204,
+      "starsThisWeek": 40204,
+      "language": "Python",
+      "license": "GPL-3.0",
+      "isKorean": false,
+      "isTrending": true,
+      "contributors": null
+    },
+    {
       "id": "gh-1903522",
       "title": "php/php-src",
       "url": "https://github.com/php/php-src",
@@ -22495,8 +22639,8 @@ window.__DAILY__ = {
       "typeIcon": "🤖",
       "name": "ruvnet/ruflo",
       "description": "🌊 The leading agent orchestration platform for Claude. Deploy intelligent multi-agent swarms, coordinate autonomous workflows, and build conversational AI systems. Features    enterprise-grade architecture, self-learning swarm intelligence, RAG integration, and native Claude Code / Codex Integration",
-      "stars": 39016,
-      "starsThisWeek": 39016,
+      "stars": 39032,
+      "starsThisWeek": 39032,
       "language": "TypeScript",
       "license": "MIT",
       "isKorean": false,
@@ -22524,6 +22668,46 @@ window.__DAILY__ = {
       "contributors": null
     },
     {
+      "id": "gh-571613891",
+      "title": "roboflow/supervision",
+      "url": "https://github.com/roboflow/supervision",
+      "source": "github_trending",
+      "sourceLabel": "GitHub Trending",
+      "publishedAt": "2022-11-28T14:08:44Z",
+      "type": "tool",
+      "typeLabel": "Tool",
+      "typeIcon": "🔧",
+      "name": "roboflow/supervision",
+      "description": "We write your reusable computer vision tools. 💜",
+      "stars": 38301,
+      "starsThisWeek": 38301,
+      "language": "Python",
+      "license": "MIT",
+      "isKorean": false,
+      "isTrending": true,
+      "contributors": null
+    },
+    {
+      "id": "gh-75821432",
+      "title": "llvm/llvm-project",
+      "url": "https://github.com/llvm/llvm-project",
+      "source": "github_trending",
+      "sourceLabel": "GitHub Trending",
+      "publishedAt": "2016-12-07T09:39:33Z",
+      "type": "tool",
+      "typeLabel": "Tool",
+      "typeIcon": "🔧",
+      "name": "llvm/llvm-project",
+      "description": "The LLVM Project is a collection of modular and reusable compiler and toolchain technologies.",
+      "stars": 38162,
+      "starsThisWeek": 38162,
+      "language": "LLVM",
+      "license": "NOASSERTION",
+      "isKorean": false,
+      "isTrending": true,
+      "contributors": null
+    },
+    {
       "id": "gh-3390243",
       "title": "servo/servo",
       "url": "https://github.com/servo/servo",
@@ -22539,6 +22723,26 @@ window.__DAILY__ = {
       "starsThisWeek": 36627,
       "language": "Rust",
       "license": "MPL-2.0",
+      "isKorean": false,
+      "isTrending": true,
+      "contributors": null
+    },
+    {
+      "id": "gh-37448451",
+      "title": "mattermost/mattermost",
+      "url": "https://github.com/mattermost/mattermost",
+      "source": "github_trending",
+      "sourceLabel": "GitHub Trending",
+      "publishedAt": "2015-06-15T06:50:02Z",
+      "type": "tool",
+      "typeLabel": "Tool",
+      "typeIcon": "🔧",
+      "name": "mattermost/mattermost",
+      "description": "Mattermost is an open source platform for secure collaboration across the entire software development lifecycle..",
+      "stars": 36511,
+      "starsThisWeek": 36511,
+      "language": "TypeScript",
+      "license": "NOASSERTION",
       "isKorean": false,
       "isTrending": true,
       "contributors": null
@@ -22615,8 +22819,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "siddharthvaddem/openscreen",
       "description": "Create stunning demos for free. Open-source, no subscriptions, no watermarks, and free for commercial use. An alternative to Screen Studio. ",
-      "stars": 34549,
-      "starsThisWeek": 34549,
+      "stars": 34557,
+      "starsThisWeek": 34557,
       "language": "TypeScript",
       "license": "MIT",
       "isKorean": false,
@@ -22715,8 +22919,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "github/awesome-copilot",
       "description": "Community-contributed instructions, agents, skills, and configurations to help you make the most of GitHub Copilot.",
-      "stars": 32029,
-      "starsThisWeek": 32029,
+      "stars": 32030,
+      "starsThisWeek": 32030,
       "language": "Python",
       "license": "MIT",
       "isKorean": false,
@@ -22755,8 +22959,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "lightpanda-io/browser",
       "description": "Lightpanda: the headless browser designed for AI and automation",
-      "stars": 29964,
-      "starsThisWeek": 29964,
+      "stars": 29965,
+      "starsThisWeek": 29965,
       "language": "Zig",
       "license": "AGPL-3.0",
       "isKorean": false,
@@ -22844,6 +23048,26 @@ window.__DAILY__ = {
       "contributors": null
     },
     {
+      "id": "gh-1357796",
+      "title": "emscripten-core/emscripten",
+      "url": "https://github.com/emscripten-core/emscripten",
+      "source": "github_trending",
+      "sourceLabel": "GitHub Trending",
+      "publishedAt": "2011-02-12T05:23:30Z",
+      "type": "tool",
+      "typeLabel": "Tool",
+      "typeIcon": "🔧",
+      "name": "emscripten-core/emscripten",
+      "description": "Emscripten: An LLVM-to-WebAssembly Compiler",
+      "stars": 27340,
+      "starsThisWeek": 27340,
+      "language": "C++",
+      "license": "NOASSERTION",
+      "isKorean": false,
+      "isTrending": true,
+      "contributors": null
+    },
+    {
       "id": "gh-1148052330",
       "title": "Yeachan-Heo/oh-my-codex",
       "url": "https://github.com/Yeachan-Heo/oh-my-codex",
@@ -22855,10 +23079,30 @@ window.__DAILY__ = {
       "typeIcon": "🤖",
       "name": "Yeachan-Heo/oh-my-codex",
       "description": "OmX - Oh My codeX: Your codex is not alone. Add hooks, agent teams, HUDs, and so much more.",
-      "stars": 27332,
-      "starsThisWeek": 27332,
+      "stars": 27333,
+      "starsThisWeek": 27333,
       "language": "TypeScript",
       "license": null,
+      "isKorean": false,
+      "isTrending": true,
+      "contributors": null
+    },
+    {
+      "id": "gh-722597620",
+      "title": "rustfs/rustfs",
+      "url": "https://github.com/rustfs/rustfs",
+      "source": "github_trending",
+      "sourceLabel": "GitHub Trending",
+      "publishedAt": "2023-11-23T13:45:10Z",
+      "type": "tool",
+      "typeLabel": "Tool",
+      "typeIcon": "🔧",
+      "name": "rustfs/rustfs",
+      "description": "🚀2.3x faster than MinIO for 4KB object payloads. RustFS is an open-source, S3-compatible high-performance object storage system supporting migration and coexistence with other S3-compatible platforms such as MinIO and Ceph.",
+      "stars": 27006,
+      "starsThisWeek": 27006,
+      "language": "Rust",
+      "license": "Apache-2.0",
       "isKorean": false,
       "isTrending": true,
       "contributors": null
@@ -22975,8 +23219,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "usestrix/strix",
       "description": "Open-source AI hackers to find and fix your app’s vulnerabilities.",
-      "stars": 24799,
-      "starsThisWeek": 24799,
+      "stars": 24798,
+      "starsThisWeek": 24798,
       "language": "Python",
       "license": "Apache-2.0",
       "isKorean": false,
@@ -23018,6 +23262,26 @@ window.__DAILY__ = {
       "stars": 24038,
       "starsThisWeek": 24038,
       "language": "Python",
+      "license": "NOASSERTION",
+      "isKorean": false,
+      "isTrending": true,
+      "contributors": null
+    },
+    {
+      "id": "gh-987670088",
+      "title": "charmbracelet/crush",
+      "url": "https://github.com/charmbracelet/crush",
+      "source": "github_trending",
+      "sourceLabel": "GitHub Trending",
+      "publishedAt": "2025-05-21T12:14:57Z",
+      "type": "tool",
+      "typeLabel": "Tool",
+      "typeIcon": "🔧",
+      "name": "charmbracelet/crush",
+      "description": "Glamourous agentic coding for all 💘",
+      "stars": 23810,
+      "starsThisWeek": 23810,
+      "language": "Go",
       "license": "NOASSERTION",
       "isKorean": false,
       "isTrending": true,
@@ -23115,10 +23379,50 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "brave/brave-browser",
       "description": "Brave browser for Android, iOS, Linux, macOS, Windows.",
-      "stars": 22422,
-      "starsThisWeek": 22422,
+      "stars": 22423,
+      "starsThisWeek": 22423,
       "language": null,
       "license": "MPL-2.0",
+      "isKorean": false,
+      "isTrending": true,
+      "contributors": null
+    },
+    {
+      "id": "gh-175405157",
+      "title": "JanDeDobbeleer/oh-my-posh",
+      "url": "https://github.com/JanDeDobbeleer/oh-my-posh",
+      "source": "github_trending",
+      "sourceLabel": "GitHub Trending",
+      "publishedAt": "2019-03-13T11:13:31Z",
+      "type": "tool",
+      "typeLabel": "Tool",
+      "typeIcon": "🔧",
+      "name": "JanDeDobbeleer/oh-my-posh",
+      "description": "The most customisable and low-latency cross platform/shell prompt renderer",
+      "stars": 22422,
+      "starsThisWeek": 22422,
+      "language": "Go",
+      "license": "MIT",
+      "isKorean": false,
+      "isTrending": true,
+      "contributors": null
+    },
+    {
+      "id": "gh-13753636",
+      "title": "jhipster/generator-jhipster",
+      "url": "https://github.com/jhipster/generator-jhipster",
+      "source": "github_trending",
+      "sourceLabel": "GitHub Trending",
+      "publishedAt": "2013-10-21T20:07:22Z",
+      "type": "tool",
+      "typeLabel": "Tool",
+      "typeIcon": "🔧",
+      "name": "jhipster/generator-jhipster",
+      "description": "JHipster is a development platform to quickly generate, develop, & deploy modern web applications & microservice architectures.",
+      "stars": 22406,
+      "starsThisWeek": 22406,
+      "language": "TypeScript",
+      "license": "Apache-2.0",
       "isKorean": false,
       "isTrending": true,
       "contributors": null
@@ -23138,6 +23442,26 @@ window.__DAILY__ = {
       "stars": 22382,
       "starsThisWeek": 22382,
       "language": "TypeScript",
+      "license": "MIT",
+      "isKorean": false,
+      "isTrending": true,
+      "contributors": null
+    },
+    {
+      "id": "gh-1027384981",
+      "title": "langchain-ai/deepagents",
+      "url": "https://github.com/langchain-ai/deepagents",
+      "source": "github_trending",
+      "sourceLabel": "GitHub Trending",
+      "publishedAt": "2025-07-27T23:07:53Z",
+      "type": "agent",
+      "typeLabel": "Agent",
+      "typeIcon": "🤖",
+      "name": "langchain-ai/deepagents",
+      "description": "Python & TypeScript agent harness built with LangChain and LangGraph. Equipped with a planning tool, a filesystem backend, and the ability to spawn subagents - well-equipped to handle complex agentic tasks.",
+      "stars": 22203,
+      "starsThisWeek": 22203,
+      "language": "Python",
       "license": "MIT",
       "isKorean": false,
       "isTrending": true,
@@ -23195,8 +23519,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "navidrome/navidrome",
       "description": "🎧 Your Personal Streaming Service ",
-      "stars": 20876,
-      "starsThisWeek": 20876,
+      "stars": 20878,
+      "starsThisWeek": 20878,
       "language": "Go",
       "license": "GPL-3.0",
       "isKorean": false,
@@ -23215,9 +23539,29 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "nexu-io/open-design",
       "description": "🎨 Local-first, open-source alternative to Anthropic's Claude Design. ⚡ 19 Skills · ✨ 71 brand-grade Design Systems 🖼 Generate web · desktop · mobile prototypes · slides · images · videos · HyperFrames 📦 Sandboxed preview · HTML/PDF/PPTX/MP4 export 🤖 Runs on Claude Code / Codex / Cursor / Gemini / OpenCode / Qwen / Copilot / Hermes / Kimi CLI.",
-      "stars": 19479,
-      "starsThisWeek": 19479,
+      "stars": 19526,
+      "starsThisWeek": 19526,
       "language": "TypeScript",
+      "license": "Apache-2.0",
+      "isKorean": false,
+      "isTrending": true,
+      "contributors": null
+    },
+    {
+      "id": "gh-638951438",
+      "title": "comet-ml/opik",
+      "url": "https://github.com/comet-ml/opik",
+      "source": "github_trending",
+      "sourceLabel": "GitHub Trending",
+      "publishedAt": "2023-05-10T12:57:13Z",
+      "type": "model",
+      "typeLabel": "Model",
+      "typeIcon": "🧠",
+      "name": "comet-ml/opik",
+      "description": "Debug, evaluate, and monitor your LLM applications, RAG systems, and agentic workflows with comprehensive tracing, automated evaluations, and production-ready dashboards.",
+      "stars": 19181,
+      "starsThisWeek": 19181,
+      "language": "Python",
       "license": "Apache-2.0",
       "isKorean": false,
       "isTrending": true,
@@ -23395,8 +23739,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "manaflow-ai/cmux",
       "description": "Ghostty-based macOS terminal with vertical tabs and notifications for AI coding agents",
-      "stars": 16099,
-      "starsThisWeek": 16099,
+      "stars": 16101,
+      "starsThisWeek": 16101,
       "language": "Swift",
       "license": "NOASSERTION",
       "isKorean": false,
@@ -23424,361 +23768,81 @@ window.__DAILY__ = {
       "contributors": null
     },
     {
-      "id": "gh-29011477",
-      "title": "konvajs/konva",
-      "url": "https://github.com/konvajs/konva",
+      "id": "gh-3606738",
+      "title": "CesiumGS/cesium",
+      "url": "https://github.com/CesiumGS/cesium",
       "source": "github_trending",
       "sourceLabel": "GitHub Trending",
-      "publishedAt": "2015-01-09T10:14:35Z",
-      "type": "framework",
-      "typeLabel": "Framework",
-      "typeIcon": "🏗",
-      "name": "konvajs/konva",
-      "description": "Konva.js is an HTML5 Canvas JavaScript framework that extends the 2d context by enabling canvas interactivity for desktop and mobile applications.",
-      "stars": 14384,
-      "starsThisWeek": 14384,
-      "language": "TypeScript",
-      "license": "NOASSERTION",
-      "isKorean": false,
-      "isTrending": true,
-      "contributors": null
-    },
-    {
-      "id": "gh-16331291",
-      "title": "davisking/dlib",
-      "url": "https://github.com/davisking/dlib",
-      "source": "github_trending",
-      "sourceLabel": "GitHub Trending",
-      "publishedAt": "2014-01-29T00:45:33Z",
-      "type": "tool",
-      "typeLabel": "Tool",
-      "typeIcon": "🔧",
-      "name": "davisking/dlib",
-      "description": "A toolkit for making real world machine learning and data analysis applications in C++",
-      "stars": 14373,
-      "starsThisWeek": 14373,
-      "language": "C++",
-      "license": "BSL-1.0",
-      "isKorean": false,
-      "isTrending": true,
-      "contributors": null
-    },
-    {
-      "id": "gh-1177402105",
-      "title": "heygen-com/hyperframes",
-      "url": "https://github.com/heygen-com/hyperframes",
-      "source": "github_trending",
-      "sourceLabel": "GitHub Trending",
-      "publishedAt": "2026-03-10T01:51:06Z",
-      "type": "tool",
-      "typeLabel": "Tool",
-      "typeIcon": "🔧",
-      "name": "heygen-com/hyperframes",
-      "description": "Write HTML. Render video. Built for agents.",
-      "stars": 14115,
-      "starsThisWeek": 14115,
-      "language": "TypeScript",
-      "license": "Apache-2.0",
-      "isKorean": false,
-      "isTrending": true,
-      "contributors": null
-    },
-    {
-      "id": "gh-30444489",
-      "title": "jbranchaud/til",
-      "url": "https://github.com/jbranchaud/til",
-      "source": "github_trending",
-      "sourceLabel": "GitHub Trending",
-      "publishedAt": "2015-02-07T04:03:24Z",
-      "type": "tool",
-      "typeLabel": "Tool",
-      "typeIcon": "🔧",
-      "name": "jbranchaud/til",
-      "description": ":memo: Today I Learned",
-      "stars": 14089,
-      "starsThisWeek": 14089,
-      "language": "Vim Script",
-      "license": "MIT",
-      "isKorean": false,
-      "isTrending": true,
-      "contributors": null
-    },
-    {
-      "id": "gh-391740664",
-      "title": "open-metadata/OpenMetadata",
-      "url": "https://github.com/open-metadata/OpenMetadata",
-      "source": "github_trending",
-      "sourceLabel": "GitHub Trending",
-      "publishedAt": "2021-08-01T21:17:17Z",
-      "type": "tool",
-      "typeLabel": "Tool",
-      "typeIcon": "🔧",
-      "name": "open-metadata/OpenMetadata",
-      "description": "OpenMetadata is a unified metadata platform for data discovery, data observability, and data governance powered by a central metadata repository, in-depth column level lineage, and seamless team collaboration.",
-      "stars": 13784,
-      "starsThisWeek": 13784,
-      "language": "TypeScript",
-      "license": "Apache-2.0",
-      "isKorean": false,
-      "isTrending": true,
-      "contributors": null
-    },
-    {
-      "id": "gh-2465723",
-      "title": "Sonarr/Sonarr",
-      "url": "https://github.com/Sonarr/Sonarr",
-      "source": "github_trending",
-      "sourceLabel": "GitHub Trending",
-      "publishedAt": "2011-09-27T05:57:16Z",
-      "type": "tool",
-      "typeLabel": "Tool",
-      "typeIcon": "🔧",
-      "name": "Sonarr/Sonarr",
-      "description": "Smart PVR for newsgroup and bittorrent users.",
-      "stars": 13754,
-      "starsThisWeek": 13754,
-      "language": "C#",
-      "license": "GPL-3.0",
-      "isKorean": false,
-      "isTrending": true,
-      "contributors": null
-    },
-    {
-      "id": "gh-77323220",
-      "title": "Radarr/Radarr",
-      "url": "https://github.com/Radarr/Radarr",
-      "source": "github_trending",
-      "sourceLabel": "GitHub Trending",
-      "publishedAt": "2016-12-25T11:38:26Z",
-      "type": "tool",
-      "typeLabel": "Tool",
-      "typeIcon": "🔧",
-      "name": "Radarr/Radarr",
-      "description": "Movie organizer/manager for usenet and torrent users.",
-      "stars": 13564,
-      "starsThisWeek": 13564,
-      "language": "C#",
-      "license": "GPL-3.0",
-      "isKorean": false,
-      "isTrending": true,
-      "contributors": null
-    },
-    {
-      "id": "gh-1202057891",
-      "title": "garrytan/gbrain",
-      "url": "https://github.com/garrytan/gbrain",
-      "source": "github_trending",
-      "sourceLabel": "GitHub Trending",
-      "publishedAt": "2026-04-05T14:40:56Z",
-      "type": "agent",
-      "typeLabel": "Agent",
-      "typeIcon": "🤖",
-      "name": "garrytan/gbrain",
-      "description": "Garry's Opinionated OpenClaw/Hermes Agent Brain",
-      "stars": 12956,
-      "starsThisWeek": 12956,
-      "language": "TypeScript",
-      "license": "MIT",
-      "isKorean": false,
-      "isTrending": true,
-      "contributors": null
-    },
-    {
-      "id": "gh-776121034",
-      "title": "BasedHardware/omi",
-      "url": "https://github.com/BasedHardware/omi",
-      "source": "github_trending",
-      "sourceLabel": "GitHub Trending",
-      "publishedAt": "2024-03-22T18:12:25Z",
-      "type": "tool",
-      "typeLabel": "Tool",
-      "typeIcon": "🔧",
-      "name": "BasedHardware/omi",
-      "description": "AI that sees your screen, listens to your conversations and tells you what to do",
-      "stars": 12382,
-      "starsThisWeek": 12382,
-      "language": "Dart",
-      "license": "MIT",
-      "isKorean": false,
-      "isTrending": true,
-      "contributors": null
-    },
-    {
-      "id": "gh-835510315",
-      "title": "mozilla-firefox/firefox",
-      "url": "https://github.com/mozilla-firefox/firefox",
-      "source": "github_trending",
-      "sourceLabel": "GitHub Trending",
-      "publishedAt": "2024-07-30T01:51:51Z",
-      "type": "tool",
-      "typeLabel": "Tool",
-      "typeIcon": "🔧",
-      "name": "mozilla-firefox/firefox",
-      "description": "The official repository of Mozilla's Firefox web browser.",
-      "stars": 11992,
-      "starsThisWeek": 11992,
-      "language": "JavaScript",
-      "license": "NOASSERTION",
-      "isKorean": false,
-      "isTrending": true,
-      "contributors": null
-    },
-    {
-      "id": "gh-436609718",
-      "title": "libre-tube/LibreTube",
-      "url": "https://github.com/libre-tube/LibreTube",
-      "source": "github_trending",
-      "sourceLabel": "GitHub Trending",
-      "publishedAt": "2021-12-09T12:31:36Z",
-      "type": "tool",
-      "typeLabel": "Tool",
-      "typeIcon": "🔧",
-      "name": "libre-tube/LibreTube",
-      "description": "An alternative frontend for YouTube, for Android.",
-      "stars": 11820,
-      "starsThisWeek": 11820,
-      "language": "Kotlin",
-      "license": "GPL-3.0",
-      "isKorean": false,
-      "isTrending": true,
-      "contributors": null
-    },
-    {
-      "id": "gh-84183882",
-      "title": "google/sentencepiece",
-      "url": "https://github.com/google/sentencepiece",
-      "source": "github_trending",
-      "sourceLabel": "GitHub Trending",
-      "publishedAt": "2017-03-07T10:03:48Z",
-      "type": "tool",
-      "typeLabel": "Tool",
-      "typeIcon": "🔧",
-      "name": "google/sentencepiece",
-      "description": "Unsupervised text tokenizer for Neural Network-based text generation.",
-      "stars": 11800,
-      "starsThisWeek": 11800,
-      "language": "C++",
-      "license": "Apache-2.0",
-      "isKorean": false,
-      "isTrending": true,
-      "contributors": null
-    },
-    {
-      "id": "gh-123345344",
-      "title": "keplergl/kepler.gl",
-      "url": "https://github.com/keplergl/kepler.gl",
-      "source": "github_trending",
-      "sourceLabel": "GitHub Trending",
-      "publishedAt": "2018-02-28T21:36:16Z",
-      "type": "tool",
-      "typeLabel": "Tool",
-      "typeIcon": "🔧",
-      "name": "keplergl/kepler.gl",
-      "description": "Kepler.gl is a powerful open source geospatial analysis tool for large-scale data sets.",
-      "stars": 11792,
-      "starsThisWeek": 11792,
-      "language": "TypeScript",
-      "license": "MIT",
-      "isKorean": false,
-      "isTrending": true,
-      "contributors": null
-    },
-    {
-      "id": "gh-1102293054",
-      "title": "YouMind-OpenLab/awesome-nano-banana-pro-prompts",
-      "url": "https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts",
-      "source": "github_trending",
-      "sourceLabel": "GitHub Trending",
-      "publishedAt": "2025-11-23T07:17:48Z",
+      "publishedAt": "2012-03-02T22:27:14Z",
       "type": "library",
       "typeLabel": "Library",
       "typeIcon": "📚",
-      "name": "YouMind-OpenLab/awesome-nano-banana-pro-prompts",
-      "description": "🍌 World's largest Nano Banana Pro prompt library — 10,000+ curated prompts with preview images, 16 languages. Google Gemini AI image generation. Free & open source.",
-      "stars": 11770,
-      "starsThisWeek": 11770,
-      "language": "TypeScript",
-      "license": "NOASSERTION",
-      "isKorean": false,
-      "isTrending": true,
-      "contributors": null
-    },
-    {
-      "id": "gh-315035371",
-      "title": "amnezia-vpn/amnezia-client",
-      "url": "https://github.com/amnezia-vpn/amnezia-client",
-      "source": "github_trending",
-      "sourceLabel": "GitHub Trending",
-      "publishedAt": "2020-11-22T12:44:43Z",
-      "type": "tool",
-      "typeLabel": "Tool",
-      "typeIcon": "🔧",
-      "name": "amnezia-vpn/amnezia-client",
-      "description": "Amnezia VPN Client (Desktop+Mobile)",
-      "stars": 11711,
-      "starsThisWeek": 11711,
-      "language": "C++",
-      "license": "GPL-3.0",
-      "isKorean": false,
-      "isTrending": true,
-      "contributors": null
-    },
-    {
-      "id": "gh-2352744",
-      "title": "apereo/cas",
-      "url": "https://github.com/apereo/cas",
-      "source": "github_trending",
-      "sourceLabel": "GitHub Trending",
-      "publishedAt": "2011-09-09T01:36:42Z",
-      "type": "tool",
-      "typeLabel": "Tool",
-      "typeIcon": "🔧",
-      "name": "apereo/cas",
-      "description": "Apereo CAS - Identity & Single Sign On for all earthlings and beyond.",
-      "stars": 11323,
-      "starsThisWeek": 11323,
-      "language": "Java",
+      "name": "CesiumGS/cesium",
+      "description": "An open-source JavaScript library for world-class 3D globes and maps :earth_americas:",
+      "stars": 15227,
+      "starsThisWeek": 15227,
+      "language": "JavaScript",
       "license": "Apache-2.0",
       "isKorean": false,
       "isTrending": true,
       "contributors": null
     },
     {
-      "id": "gh-166304026",
-      "title": "BishopFox/sliver",
-      "url": "https://github.com/BishopFox/sliver",
+      "id": "gh-11577304",
+      "title": "dolphin-emu/dolphin",
+      "url": "https://github.com/dolphin-emu/dolphin",
       "source": "github_trending",
       "sourceLabel": "GitHub Trending",
-      "publishedAt": "2019-01-17T22:07:38Z",
-      "type": "framework",
-      "typeLabel": "Framework",
-      "typeIcon": "🏗",
-      "name": "BishopFox/sliver",
-      "description": "Adversary Emulation Framework",
-      "stars": 11115,
-      "starsThisWeek": 11115,
-      "language": "Go",
+      "publishedAt": "2013-07-22T09:07:57Z",
+      "type": "tool",
+      "typeLabel": "Tool",
+      "typeIcon": "🔧",
+      "name": "dolphin-emu/dolphin",
+      "description": "Dolphin is a GameCube / Wii emulator, allowing you to play games for these two platforms on PC with improvements.",
+      "stars": 14971,
+      "starsThisWeek": 14971,
+      "language": "C++",
+      "license": "NOASSERTION",
+      "isKorean": false,
+      "isTrending": true,
+      "contributors": null
+    },
+    {
+      "id": "gh-15379620",
+      "title": "PCSX2/pcsx2",
+      "url": "https://github.com/PCSX2/pcsx2",
+      "source": "github_trending",
+      "sourceLabel": "GitHub Trending",
+      "publishedAt": "2013-12-22T17:56:48Z",
+      "type": "tool",
+      "typeLabel": "Tool",
+      "typeIcon": "🔧",
+      "name": "PCSX2/pcsx2",
+      "description": "PCSX2 - The Playstation 2 Emulator",
+      "stars": 14786,
+      "starsThisWeek": 14786,
+      "language": "C++",
       "license": "GPL-3.0",
       "isKorean": false,
       "isTrending": true,
       "contributors": null
     },
     {
-      "id": "gh-128479644",
-      "title": "esphome/esphome",
-      "url": "https://github.com/esphome/esphome",
+      "id": "gh-50824485",
+      "title": "winsiderss/systeminformer",
+      "url": "https://github.com/winsiderss/systeminformer",
       "source": "github_trending",
       "sourceLabel": "GitHub Trending",
-      "publishedAt": "2018-04-06T23:23:25Z",
+      "publishedAt": "2016-02-01T08:10:21Z",
       "type": "tool",
       "typeLabel": "Tool",
       "typeIcon": "🔧",
-      "name": "esphome/esphome",
-      "description": "ESPHome is a system to control your ESP32, ESP8266, BK72xx, RP2040 by simple yet powerful configuration files and control them remotely through Home Automation systems.",
-      "stars": 11013,
-      "starsThisWeek": 11013,
-      "language": "C++",
-      "license": "NOASSERTION",
+      "name": "winsiderss/systeminformer",
+      "description": "A free, powerful, multi-purpose tool that helps you monitor system resources, debug software and detect malware. Brought to you by Winsider Seminars & Solutions, Inc. @ http://www.windows-internals.com",
+      "stars": 14391,
+      "starsThisWeek": 14391,
+      "language": "C",
+      "license": "MIT",
       "isKorean": false,
       "isTrending": true,
       "contributors": null
@@ -23815,8 +23879,8 @@ window.__DAILY__ = {
       "typeIcon": "🤖",
       "name": "affaan-m/everything-claude-code",
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
-      "stars": 172681,
-      "starsThisWeek": 172681,
+      "stars": 172691,
+      "starsThisWeek": 172691,
       "language": "JavaScript",
       "license": "MIT",
       "isKorean": false,
@@ -23835,8 +23899,8 @@ window.__DAILY__ = {
       "typeIcon": "🧠",
       "name": "ollama/ollama",
       "description": "Get up and running with Kimi-K2.5, GLM-5, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
-      "stars": 170628,
-      "starsThisWeek": 170628,
+      "stars": 170629,
+      "starsThisWeek": 170629,
       "language": "Go",
       "license": "MIT",
       "isKorean": false,
@@ -23855,8 +23919,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "f/prompts.chat",
       "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
-      "stars": 161461,
-      "starsThisWeek": 161461,
+      "stars": 161462,
+      "starsThisWeek": 161462,
       "language": "HTML",
       "license": "NOASSERTION",
       "isKorean": false,
@@ -23915,8 +23979,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "open-webui/open-webui",
       "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
-      "stars": 135378,
-      "starsThisWeek": 135378,
+      "stars": 135381,
+      "starsThisWeek": 135381,
       "language": "Python",
       "license": "NOASSERTION",
       "isKorean": false,
@@ -23935,8 +23999,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "firecrawl/firecrawl",
       "description": "🔥 The API to search, scrape, and interact with the web for AI",
-      "stars": 114709,
-      "starsThisWeek": 114709,
+      "stars": 114712,
+      "starsThisWeek": 114712,
       "language": "TypeScript",
       "license": "AGPL-3.0",
       "isKorean": false,
@@ -23955,8 +24019,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "browser-use/browser-use",
       "description": "🌐 Make websites accessible for AI agents. Automate tasks online with ease.",
-      "stars": 91909,
-      "starsThisWeek": 91909,
+      "stars": 91912,
+      "starsThisWeek": 91912,
       "language": "Python",
       "license": "MIT",
       "isKorean": false,
@@ -23975,8 +24039,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "OpenHands/OpenHands",
       "description": "🙌 OpenHands: AI-Driven Development",
-      "stars": 72567,
-      "starsThisWeek": 72567,
+      "stars": 72568,
+      "starsThisWeek": 72568,
       "language": "Python",
       "license": "NOASSERTION",
       "isKorean": false,
@@ -23995,8 +24059,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "hiyouga/LlamaFactory",
       "description": "Unified Efficient Fine-Tuning of 100+ LLMs & VLMs (ACL 2024)",
-      "stars": 70872,
-      "starsThisWeek": 70872,
+      "stars": 70871,
+      "starsThisWeek": 70871,
       "language": "Python",
       "license": "Apache-2.0",
       "isKorean": false,
@@ -24015,8 +24079,8 @@ window.__DAILY__ = {
       "typeIcon": "🏗",
       "name": "TauricResearch/TradingAgents",
       "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
-      "stars": 65300,
-      "starsThisWeek": 65300,
+      "stars": 65327,
+      "starsThisWeek": 65327,
       "language": "Python",
       "license": "Apache-2.0",
       "isKorean": false,
@@ -24035,8 +24099,8 @@ window.__DAILY__ = {
       "typeIcon": "🧠",
       "name": "unslothai/unsloth",
       "description": "Web UI for training and running open models like Gemma 4, Qwen3.6, DeepSeek, gpt-oss locally.",
-      "stars": 63525,
-      "starsThisWeek": 63525,
+      "stars": 63526,
+      "starsThisWeek": 63526,
       "language": "Python",
       "license": "Apache-2.0",
       "isKorean": false,
@@ -24075,8 +24139,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "sansan0/TrendRadar",
       "description": "⭐AI-driven public opinion & trend monitor with multi-platform aggregation, RSS, and smart alerts.🎯 告别信息过载，你的 AI 舆情监控助手与热点筛选工具！聚合多平台热点 +  RSS 订阅，支持关键词精准筛选。AI 智能筛选新闻 + AI 翻译 +  AI 分析简报直推手机，也支持接入 MCP 架构，赋能 AI 自然语言对话分析、情感洞察与趋势预测等。支持 Docker ，数据本地/云端自持。集成微信/飞书/钉钉/Telegram/邮件/ntfy/bark/slack 等渠道智能推送。",
-      "stars": 56305,
-      "starsThisWeek": 56305,
+      "stars": 56314,
+      "starsThisWeek": 56314,
       "language": "Python",
       "license": "GPL-3.0",
       "isKorean": false,
@@ -24135,8 +24199,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "JuliusBrussee/caveman",
       "description": "🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman",
-      "stars": 53069,
-      "starsThisWeek": 53069,
+      "stars": 53073,
+      "starsThisWeek": 53073,
       "language": "Python",
       "license": "MIT",
       "isKorean": false,
@@ -24155,8 +24219,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "MemPalace/mempalace",
       "description": "The best-benchmarked open-source AI memory system. And it's free.",
-      "stars": 50967,
-      "starsThisWeek": 50967,
+      "stars": 50969,
+      "starsThisWeek": 50969,
       "language": "Python",
       "license": "MIT",
       "isKorean": false,
@@ -24175,8 +24239,8 @@ window.__DAILY__ = {
       "typeIcon": "🤖",
       "name": "run-llama/llama_index",
       "description": "LlamaIndex is the leading document agent and OCR platform",
-      "stars": 49114,
-      "starsThisWeek": 49114,
+      "stars": 49115,
+      "starsThisWeek": 49115,
       "language": "Python",
       "license": "MIT",
       "isKorean": false,
@@ -24215,8 +24279,8 @@ window.__DAILY__ = {
       "typeIcon": "🧠",
       "name": "mudler/LocalAI",
       "description": "LocalAI is the open-source AI engine. Run any model - LLMs, vision, voice, image, video - on any hardware. No GPU required.",
-      "stars": 46032,
-      "starsThisWeek": 46032,
+      "stars": 46033,
+      "starsThisWeek": 46033,
       "language": "Go",
       "license": "MIT",
       "isKorean": false,
@@ -24355,8 +24419,8 @@ window.__DAILY__ = {
       "typeIcon": "🤖",
       "name": "HKUDS/nanobot",
       "description": "\"🐈 nanobot: The Ultra-Lightweight Personal AI Agent\"",
-      "stars": 41575,
-      "starsThisWeek": 41575,
+      "stars": 41576,
+      "starsThisWeek": 41576,
       "language": "Python",
       "license": "MIT",
       "isKorean": false,
@@ -24375,8 +24439,8 @@ window.__DAILY__ = {
       "typeIcon": "🧠",
       "name": "rtk-ai/rtk",
       "description": "CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies",
-      "stars": 40685,
-      "starsThisWeek": 40685,
+      "stars": 40697,
+      "starsThisWeek": 40697,
       "language": "Rust",
       "license": "Apache-2.0",
       "isKorean": false,
@@ -24435,8 +24499,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "HKUDS/LightRAG",
       "description": "[EMNLP2025] \"LightRAG: Simple and Fast Retrieval-Augmented Generation\"",
-      "stars": 34703,
-      "starsThisWeek": 34703,
+      "stars": 34704,
+      "starsThisWeek": 34704,
       "language": "Python",
       "license": "MIT",
       "isKorean": false,
@@ -24455,8 +24519,8 @@ window.__DAILY__ = {
       "typeIcon": "🧠",
       "name": "ZhuLinsen/daily_stock_analysis",
       "description": "LLM驱动的 A/H/美股智能分析器：多数据源行情 + 实时新闻 + LLM决策仪表盘 + 多渠道推送，零成本定时运行，纯白嫖. LLM-powered stock analysis system for A/H/US markets.",
-      "stars": 33859,
-      "starsThisWeek": 33859,
+      "stars": 33861,
+      "starsThisWeek": 33861,
       "language": "Python",
       "license": "MIT",
       "isKorean": false,
@@ -24515,8 +24579,8 @@ window.__DAILY__ = {
       "typeIcon": "🤖",
       "name": "AstrBotDevs/AstrBot",
       "description": "AI Agent Assistant that integrates lots of IM platforms, LLMs, plugins and AI feature, and can be your openclaw alternative. ✨",
-      "stars": 31240,
-      "starsThisWeek": 31240,
+      "stars": 31241,
+      "starsThisWeek": 31241,
       "language": "Python",
       "license": "AGPL-3.0",
       "isKorean": false,
@@ -24615,8 +24679,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "linshenkx/prompt-optimizer",
       "description": "An AI prompt optimizer for writing better prompts and getting better AI results.",
-      "stars": 27931,
-      "starsThisWeek": 27931,
+      "stars": 27933,
+      "starsThisWeek": 27933,
       "language": "TypeScript",
       "license": "NOASSERTION",
       "isKorean": false,
@@ -24835,8 +24899,8 @@ window.__DAILY__ = {
       "typeIcon": "🔧",
       "name": "iOfficeAI/AionUi",
       "description": "Free, local, open-source 24/7 Cowork app and OpenClaw for Gemini CLI, Claude Code, Codex, OpenCode, Qwen Code, Goose CLI, Auggie, and more | 🌟 Star if you like it!",
-      "stars": 23581,
-      "starsThisWeek": 23581,
+      "stars": 23584,
+      "starsThisWeek": 23584,
       "language": "TypeScript",
       "license": "Apache-2.0",
       "isKorean": false,
@@ -25057,26 +25121,6 @@ window.__DAILY__ = {
       "description": "An open-source, code-first Python toolkit for building, evaluating, and deploying sophisticated AI agents with flexibility and control.",
       "stars": 19410,
       "starsThisWeek": 19410,
-      "language": "Python",
-      "license": "Apache-2.0",
-      "isKorean": false,
-      "isTrending": true,
-      "contributors": null
-    },
-    {
-      "id": "gh-638951438",
-      "title": "comet-ml/opik",
-      "url": "https://github.com/comet-ml/opik",
-      "source": "github_trending",
-      "sourceLabel": "GitHub Trending",
-      "publishedAt": "2023-05-10T12:57:13Z",
-      "type": "model",
-      "typeLabel": "Model",
-      "typeIcon": "🧠",
-      "name": "comet-ml/opik",
-      "description": "Debug, evaluate, and monitor your LLM applications, RAG systems, and agentic workflows with comprehensive tracing, automated evaluations, and production-ready dashboards.",
-      "stars": 19180,
-      "starsThisWeek": 19180,
       "language": "Python",
       "license": "Apache-2.0",
       "isKorean": false,
@@ -25475,8 +25519,8 @@ window.__DAILY__ = {
       "typeIcon": "🤖",
       "name": "casdoor/casdoor",
       "description": "An open-source Agent-first Identity and Access Management (IAM) /LLM MCP & agent gateway and auth server with web UI supporting OpenClaw, MCP, OAuth, OIDC, SAML, CAS, LDAP, SCIM, WebAuthn, TOTP, MFA, Face ID, Google Workspace, Azure AD",
-      "stars": 13540,
-      "starsThisWeek": 13540,
+      "stars": 13541,
+      "starsThisWeek": 13541,
       "language": "Go",
       "license": "Apache-2.0",
       "isKorean": false,
@@ -25535,8 +25579,8 @@ window.__DAILY__ = {
       "typeIcon": "🤖",
       "name": "liyupi/ai-guide",
       "description": "程序员鱼皮的 AI 资源大全 + Vibe Coding 零基础教程，分享 OpenClaw 保姆级教程、大模型玩法（DeepSeek / GPT / Gemini / Claude）、最新 AI 资讯、Prompt 提示词大全、AI 知识百科（Agent Skills / RAG / MCP / A2A）、AI 编程教程（Harness Engineering）、AI 工具用法（Cursor / Claude Code / TRAE / Codex / Copilot）、AI 开发框架教程（Spring AI / LangChain）、AI 产品变现指南，帮你快速掌握 AI 技术，走在时代前沿。本项目为开源文档，已升级为鱼皮 AI 导航网站",
-      "stars": 12982,
-      "starsThisWeek": 12982,
+      "stars": 12983,
+      "starsThisWeek": 12983,
       "language": "JavaScript",
       "license": null,
       "isKorean": false,
@@ -25697,10 +25741,10 @@ window.__DAILY__ = {
       "id": "i05",
       "expertId": "nyx",
       "tag": "caution",
-      "title": "New statue in London, attributed to Banksy, of a suited man…의 엣지 케이스",
-      "excerpt": "엣지 케이스 헌터 닉스의 시각: New statue in London, attributed to Banksy, of a suited man, blinded by a flag 외 관련 기사를 종합한 분석.",
+      "title": "Metal Gear Solid 2's source code has been leaked on 4chan의 엣지 케이스",
+      "excerpt": "엣지 케이스 헌터 닉스의 시각: Metal Gear Solid 2's source code has been leaked on 4chan 외 관련 기사를 종합한 분석.",
       "keyQuestion": "이 시스템이 깨지는 가장 작은 시나리오는?",
-      "analysis": "## 엣지 케이스 헌터의 관점\n\n전 Anthropic Red Team 리드. 시스템이 깨지는 시나리오를 만들어내는 것이 본업. 보안·권한·재시도·동시성·prompt injection — 모든 결합 시나리오에서 실패 모드를 찾는다.\n\n## 오늘의 핵심\n\n- 헤드라인: New statue in London, attributed to Banksy, of a suited man, blinded by a flag\n- 영향 점수: 4.2\n- 출처: hackernews\n\n## 권고\n\n이 발표가 향후 6개월 결정에 미치는 영향을 검토하세요. (LLM 통합 후 분석이 자동 생성됩니다.)",
+      "analysis": "## 엣지 케이스 헌터의 관점\n\n전 Anthropic Red Team 리드. 시스템이 깨지는 시나리오를 만들어내는 것이 본업. 보안·권한·재시도·동시성·prompt injection — 모든 결합 시나리오에서 실패 모드를 찾는다.\n\n## 오늘의 핵심\n\n- 헤드라인: Metal Gear Solid 2's source code has been leaked on 4chan\n- 영향 점수: 4.2\n- 출처: hackernews\n\n## 권고\n\n이 발표가 향후 6개월 결정에 미치는 영향을 검토하세요. (LLM 통합 후 분석이 자동 생성됩니다.)",
       "relatedNewsIds": [
         "hn-48002136",
         "hn-47998946",
@@ -25719,10 +25763,10 @@ window.__DAILY__ = {
       "id": "i06",
       "expertId": "vega",
       "tag": "bullish",
-      "title": "Mercedes-Benz commits to bringing back physical buttons 강세 thesis",
-      "excerpt": "강세 시나리오 빌더 베가의 시각: Mercedes-Benz commits to bringing back physical buttons 외 관련 기사를 종합한 분석.",
+      "title": "Agentic Coding Is a Trap 강세 thesis",
+      "excerpt": "강세 시나리오 빌더 베가의 시각: Agentic Coding Is a Trap 외 관련 기사를 종합한 분석.",
       "keyQuestion": "이 강세 thesis가 깨지는 첫 번째 신호는?",
-      "analysis": "## 강세 시나리오 빌더의 관점\n\n전 Morgan Stanley 테크 섹터 애널리스트. 강세 thesis를 만들 때 반드시 5가지 가정·3가지 위험·2가지 검증 지표를 명시한다. 성공률이 30% 넘는 thesis를 빠르게 골라낸다.\n\n## 오늘의 핵심\n\n- 헤드라인: Mercedes-Benz commits to bringing back physical buttons\n- 영향 점수: 4.4\n- 출처: hackernews\n\n## 권고\n\n이 발표가 향후 6개월 결정에 미치는 영향을 검토하세요. (LLM 통합 후 분석이 자동 생성됩니다.)",
+      "analysis": "## 강세 시나리오 빌더의 관점\n\n전 Morgan Stanley 테크 섹터 애널리스트. 강세 thesis를 만들 때 반드시 5가지 가정·3가지 위험·2가지 검증 지표를 명시한다. 성공률이 30% 넘는 thesis를 빠르게 골라낸다.\n\n## 오늘의 핵심\n\n- 헤드라인: Agentic Coding Is a Trap\n- 영향 점수: 4\n- 출처: hackernews\n\n## 권고\n\n이 발표가 향후 6개월 결정에 미치는 영향을 검토하세요. (LLM 통합 후 분석이 자동 생성됩니다.)",
       "relatedNewsIds": [
         "hn-48002136",
         "hn-47998946",
@@ -25741,10 +25785,10 @@ window.__DAILY__ = {
       "id": "i07",
       "expertId": "sage",
       "tag": "pattern",
-      "title": "Agentic Coding Is a Trap — 역사적 변곡점",
-      "excerpt": "역사 비교가 세이지의 시각: Agentic Coding Is a Trap 외 관련 기사를 종합한 분석.",
+      "title": "Let's Buy Spirit Air — 역사적 변곡점",
+      "excerpt": "역사 비교가 세이지의 시각: Let's Buy Spirit Air 외 관련 기사를 종합한 분석.",
       "keyQuestion": "역사적으로 어느 변곡점과 가장 닮았는가?",
-      "analysis": "## 역사 비교가의 관점\n\nMIT Tech History 박사. 1965 IBM, 1995 Netscape, 2007 iPhone, 2022 ChatGPT — 변곡점에서의 시장 행동 패턴을 정량화. 'X는 Y의 IBM 모먼트'라는 비유를 검증할 수 있다.\n\n## 오늘의 핵심\n\n- 헤드라인: Agentic Coding Is a Trap\n- 영향 점수: 4\n- 출처: hackernews\n\n## 권고\n\n이 발표가 향후 6개월 결정에 미치는 영향을 검토하세요. (LLM 통합 후 분석이 자동 생성됩니다.)",
+      "analysis": "## 역사 비교가의 관점\n\nMIT Tech History 박사. 1965 IBM, 1995 Netscape, 2007 iPhone, 2022 ChatGPT — 변곡점에서의 시장 행동 패턴을 정량화. 'X는 Y의 IBM 모먼트'라는 비유를 검증할 수 있다.\n\n## 오늘의 핵심\n\n- 헤드라인: Let's Buy Spirit Air\n- 영향 점수: 4\n- 출처: hackernews\n\n## 권고\n\n이 발표가 향후 6개월 결정에 미치는 영향을 검토하세요. (LLM 통합 후 분석이 자동 생성됩니다.)",
       "relatedNewsIds": [
         "hn-48002136",
         "hn-47998946",
@@ -25763,10 +25807,10 @@ window.__DAILY__ = {
       "id": "i08",
       "expertId": "echo",
       "tag": "pattern",
-      "title": "Let's Buy Spirit Air 커뮤니티 펄스",
-      "excerpt": "커뮤니티 펄스 리더 에코의 시각: Let's Buy Spirit Air 외 관련 기사를 종합한 분석.",
+      "title": "New statue in London, attributed to Banksy, of a suited man… 커뮤니티 펄스",
+      "excerpt": "커뮤니티 펄스 리더 에코의 시각: New statue in London, attributed to Banksy, of a suited man, blinded by a flag 외 관련 기사를 종합한 분석.",
       "keyQuestion": "지금 커뮤니티 1위가 1~2주 뒤 어떤 결정으로 이어지는가?",
-      "analysis": "## 커뮤니티 펄스 리더의 관점\n\n전 Reddit data science 리드. 커뮤니티 시그널이 의사결정 회의실에 들어오는 시간선을 정량화했다. HN·Reddit·OKKY·Threads 시그널이 1~2주 뒤 회사 결정으로 변환되는 패턴 데이터를 보유.\n\n## 오늘의 핵심\n\n- 헤드라인: Let's Buy Spirit Air\n- 영향 점수: 4\n- 출처: hackernews\n\n## 권고\n\n이 발표가 향후 6개월 결정에 미치는 영향을 검토하세요. (LLM 통합 후 분석이 자동 생성됩니다.)",
+      "analysis": "## 커뮤니티 펄스 리더의 관점\n\n전 Reddit data science 리드. 커뮤니티 시그널이 의사결정 회의실에 들어오는 시간선을 정량화했다. HN·Reddit·OKKY·Threads 시그널이 1~2주 뒤 회사 결정으로 변환되는 패턴 데이터를 보유.\n\n## 오늘의 핵심\n\n- 헤드라인: New statue in London, attributed to Banksy, of a suited man, blinded by a flag\n- 영향 점수: 4.2\n- 출처: hackernews\n\n## 권고\n\n이 발표가 향후 6개월 결정에 미치는 영향을 검토하세요. (LLM 통합 후 분석이 자동 생성됩니다.)",
       "relatedNewsIds": [
         "hn-48002136",
         "hn-47998946",
@@ -25807,10 +25851,10 @@ window.__DAILY__ = {
       "id": "i10",
       "expertId": "orion",
       "tag": "bullish",
-      "title": "Metal Gear Solid 2's source code has been leaked on 4chan — 추론 인프라 시간선",
-      "excerpt": "테크스택 전략가 오리온의 시각: Metal Gear Solid 2's source code has been leaked on 4chan 외 관련 기사를 종합한 분석.",
+      "title": "Mercedes-Benz commits to bringing back physical buttons — 추론 인프라 시간선",
+      "excerpt": "테크스택 전략가 오리온의 시각: Mercedes-Benz commits to bringing back physical buttons 외 관련 기사를 종합한 분석.",
       "keyQuestion": "이 발표가 우리 추론·인프라 결정의 시간선을 어떻게 바꾸는가?",
-      "analysis": "## 테크스택 전략가의 관점\n\n전 Netflix Cloud Infra VP. 12년 동안 인프라 스택 결정을 12회 이상 했다. 자체 인프라 vs 클라우드 vs 매니지드의 ROI 시간선을 정량화하는 것이 본업.\n\n## 오늘의 핵심\n\n- 헤드라인: Metal Gear Solid 2's source code has been leaked on 4chan\n- 영향 점수: 4.2\n- 출처: hackernews\n\n## 권고\n\n이 발표가 향후 6개월 결정에 미치는 영향을 검토하세요. (LLM 통합 후 분석이 자동 생성됩니다.)",
+      "analysis": "## 테크스택 전략가의 관점\n\n전 Netflix Cloud Infra VP. 12년 동안 인프라 스택 결정을 12회 이상 했다. 자체 인프라 vs 클라우드 vs 매니지드의 ROI 시간선을 정량화하는 것이 본업.\n\n## 오늘의 핵심\n\n- 헤드라인: Mercedes-Benz commits to bringing back physical buttons\n- 영향 점수: 4.4\n- 출처: hackernews\n\n## 권고\n\n이 발표가 향후 6개월 결정에 미치는 영향을 검토하세요. (LLM 통합 후 분석이 자동 생성됩니다.)",
       "relatedNewsIds": [
         "hn-48002136",
         "hn-47998946",

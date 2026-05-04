@@ -142,12 +142,11 @@
 
   <footer class="app-footer">
     <div class="app-footer__inner">
-      <span>Daily News · 매일 아침 KST 06:00 자동 발행</span>
+      <span>매일 아침 6시, 어제 하루를 다시 보는 IT 브리핑.</span>
       <span class="sep">·</span>
       <a href="index.html">🏠 오늘</a>
       <span class="sep">·</span>
       <a href="feed.xml">📡 RSS 2.0</a>
-      <span style="margin-left: auto; opacity: 0.6;">Compound Engineering · L3 Meta-loop</span>
     </div>
   </footer>
 
@@ -176,7 +175,7 @@
       const arr = window.__ARCHIVE__ || [];
       const list = document.getElementById("archive-list");
       const sub  = document.getElementById("archive-sub");
-      if (sub) sub.textContent = `총 ${arr.length}회 발행 · 일자별 헤드라인 · 통계 · 종합 점수`;
+      if (sub) sub.textContent = `지금까지 ${arr.length}일치를 모았습니다. 날짜를 눌러 그날의 헤드라인과 점수를 확인해 보세요.`;
       if (!list) return;
 
       arr.forEach((entry, idx) => {
@@ -201,8 +200,8 @@
         if (!isToday) {
           const chip = document.createElement("span");
           chip.className = "archive-row__chip";
-          chip.textContent = "메타데이터만 — 본문은 RSS feed.xml 의 과거 분 archive로";
-          chip.title = "이 일자의 전체 dashboard는 미발행. counts·점수·헤드라인은 archive.js 에 보존됨.";
+          chip.textContent = "요약만 — RSS에서 보기";
+          chip.title = "이 날의 대시보드는 보관 중이며, 전체 본문은 RSS feed에서 확인할 수 있습니다.";
           title.appendChild(chip);
         }
 
