@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026 부동산정책 국민 대토론회 — 분석 & 무주택자 대응 인사이트</title>
+<meta name="description" content="2026년 7월 23일 이재명 대통령 주재 부동산정책 국민 대토론회 전체 스크립트 기반 분석 리포트와 무주택자 대응 인사이트 보고서">
+<style>
+  :root{
+    --bg:#f7f8fa; --panel:#ffffff; --ink:#1a1c22; --muted:#5b6070; --line:#e6e8ee;
+    --c-impact:#e5484d;   /* 위험·규제·리스크 */
+    --c-buzz:#f5a524;     /* 세제·주의 */
+    --c-freshness:#3b82f6;/* 금융·정보 */
+    --c-depth:#8b5cf6;    /* 공급·구조 */
+    --accent:#16a34a;     /* 실행·기회·무주택자 */
+    --accent-soft:#e8f6ee;
+    --shadow:0 1px 3px rgba(20,22,34,.06),0 8px 24px rgba(20,22,34,.05);
+    --radius:16px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#0e1014; --panel:#171a21; --ink:#eceef3; --muted:#9aa0ad; --line:#262a33;
+      --accent-soft:#12291c; --shadow:0 1px 3px rgba(0,0,0,.4),0 8px 30px rgba(0,0,0,.35); }
+  }
+  :root[data-theme="dark"]{ --bg:#0e1014; --panel:#171a21; --ink:#eceef3; --muted:#9aa0ad; --line:#262a33; --accent-soft:#12291c; }
+  :root[data-theme="light"]{ --bg:#f7f8fa; --panel:#ffffff; --ink:#1a1c22; --muted:#5b6070; --line:#e6e8ee; --accent-soft:#e8f6ee; }
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,-apple-system,"Noto Sans KR",sans-serif;
+    line-height:1.7;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px 96px}
+  a{color:var(--c-freshness);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* HERO */
+  header.hero{padding:56px 20px 40px;text-align:center;
+    background:radial-gradient(1200px 400px at 50% -60%, rgba(139,92,246,.18), transparent 60%);}
+  .kicker{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--accent);
+    background:var(--accent-soft);padding:6px 14px;border-radius:999px;margin-bottom:16px}
+  h1{font-size:clamp(26px,5vw,40px);line-height:1.25;margin:.2em 0 .3em;letter-spacing:-.02em}
+  .sub{color:var(--muted);font-size:16px;max-width:640px;margin:0 auto}
+  .meta-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:22px}
+  .chip{font-size:13px;color:var(--muted);background:var(--panel);border:1px solid var(--line);
+    padding:6px 12px;border-radius:999px;box-shadow:var(--shadow)}
+
+  /* NAV */
+  nav.toc{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%, transparent);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-bottom:36px}
+  nav.toc ul{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;list-style:none;margin:0;padding:12px 8px;
+    max-width:920px;margin:0 auto}
+  nav.toc a{font-size:13.5px;font-weight:600;color:var(--muted);padding:7px 13px;border-radius:999px}
+  nav.toc a:hover{background:var(--panel);color:var(--ink);text-decoration:none}
+
+  section{scroll-margin-top:64px;margin-bottom:52px}
+  h2{font-size:23px;letter-spacing:-.01em;margin:0 0 6px;display:flex;align-items:center;gap:10px}
+  h2 .no{font-size:13px;font-weight:800;color:#fff;background:var(--ink);width:26px;height:26px;
+    display:grid;place-items:center;border-radius:8px;flex:none}
+  .lead{color:var(--muted);margin:0 0 22px;font-size:15.5px}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 24px;box-shadow:var(--shadow);margin-bottom:16px}
+  .card h3{margin:0 0 10px;font-size:17px;display:flex;align-items:center;gap:9px}
+  .card p{margin:0 0 10px}
+  .card p:last-child{margin-bottom:0}
+
+  .tag{font-size:11.5px;font-weight:800;padding:3px 9px;border-radius:6px;color:#fff;flex:none;letter-spacing:.02em}
+  .t-impact{background:var(--c-impact)} .t-buzz{background:var(--c-buzz)}
+  .t-fresh{background:var(--c-freshness)} .t-depth{background:var(--c-depth)} .t-accent{background:var(--accent)}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:640px){.grid2{grid-template-columns:1fr}}
+
+  table{width:100%;border-collapse:collapse;font-size:14.5px;margin:4px 0}
+  .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:12.5px;color:var(--muted);font-weight:700;background:color-mix(in srgb,var(--panel) 60%,var(--bg))}
+  td strong{color:var(--ink)}
+
+  blockquote{margin:0 0 14px;padding:14px 18px;border-left:4px solid var(--c-depth);
+    background:color-mix(in srgb,var(--c-depth) 8%, var(--panel));border-radius:0 10px 10px 0;font-size:15px}
+  blockquote cite{display:block;margin-top:8px;font-size:12.5px;color:var(--muted);font-style:normal}
+
+  .callout{border-radius:var(--radius);padding:20px 22px;margin:16px 0;border:1px solid var(--line)}
+  .callout.warn{background:color-mix(in srgb,var(--c-impact) 8%,var(--panel));border-color:color-mix(in srgb,var(--c-impact) 30%,var(--line))}
+  .callout.info{background:color-mix(in srgb,var(--c-freshness) 8%,var(--panel));border-color:color-mix(in srgb,var(--c-freshness) 30%,var(--line))}
+  .callout.go{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 35%,var(--line))}
+  .callout h3{margin:0 0 8px;font-size:16px}
+
+  /* action checklist */
+  ol.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+  ol.steps>li{position:relative;padding:16px 18px 16px 60px;background:var(--panel);border:1px solid var(--line);
+    border-radius:14px;margin-bottom:12px;box-shadow:var(--shadow)}
+  ol.steps>li::before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:16px;
+    width:30px;height:30px;background:var(--accent);color:#fff;font-weight:800;border-radius:9px;display:grid;place-items:center}
+  ol.steps>li b{display:block;font-size:16px;margin-bottom:4px}
+  ol.steps>li .why{font-size:13.5px;color:var(--muted)}
+
+  ul.clean{padding-left:20px;margin:8px 0}
+  ul.clean li{margin-bottom:7px}
+
+  .scorebar{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .scorebar .label{width:96px;font-size:13.5px;color:var(--muted);flex:none}
+  .scorebar .track{flex:1;height:9px;background:var(--line);border-radius:999px;overflow:hidden}
+  .scorebar .fill{height:100%;border-radius:999px}
+  .scorebar .val{width:56px;text-align:right;font-size:12.5px;font-weight:700;color:var(--muted);flex:none}
+
+  .disc{font-size:13px;color:var(--muted);background:var(--panel);border:1px dashed var(--line);
+    border-radius:12px;padding:16px 18px;margin-top:8px}
+  footer{border-top:1px solid var(--line);padding:28px 20px;text-align:center;color:var(--muted);font-size:13px}
+  .src-list{font-size:13.5px;columns:1}
+  .src-list li{margin-bottom:6px}
+  .pill-legend{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:16px;font-size:12px;color:var(--muted)}
+  .pill-legend span{display:inline-flex;align-items:center;gap:6px}
+  .dot{width:10px;height:10px;border-radius:3px;display:inline-block}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">🏛️ 부동산정책 국민 대토론회 · 심층 분석</div>
+  <h1>집값의 방향, 그리고<br>무주택자인 나의 대응 전략</h1>
+  <p class="sub">2026년 7월 23일 이재명 대통령 주재 「부동산정책 국민 대토론회」 전체 스크립트를 기반으로 한 분석 리포트 &amp; 무주택자 실행 인사이트</p>
+  <div class="meta-row">
+    <span class="chip">📅 2026.07.23 (수) 10:00–11:40</span>
+    <span class="chip">📍 여의도 KBS 별관</span>
+    <span class="chip">👥 참석 140명</span>
+    <span class="chip">📺 KBS 생중계</span>
+  </div>
+  <div class="pill-legend">
+    <span><i class="dot" style="background:var(--c-depth)"></i>공급</span>
+    <span><i class="dot" style="background:var(--c-freshness)"></i>금융·대출</span>
+    <span><i class="dot" style="background:var(--c-buzz)"></i>세제</span>
+    <span><i class="dot" style="background:var(--c-impact)"></i>리스크</span>
+    <span><i class="dot" style="background:var(--accent)"></i>무주택자 기회</span>
+  </div>
+</header>
+
+<nav class="toc">
+  <ul>
+    <li><a href="#summary">핵심 요약</a></li>
+    <li><a href="#script">전체 스크립트</a></li>
+    <li><a href="#analysis">분석 리포트</a></li>
+    <li><a href="#insight">무주택자 대응</a></li>
+    <li><a href="#action">실행 체크리스트</a></li>
+    <li><a href="#sources">출처</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+
+<!-- ================= SUMMARY ================= -->
+<section id="summary">
+  <h2><span class="no">0</span>3분 핵심 요약</h2>
+  <p class="lead">토론회가 던진 신호를 한 문장으로: <strong>"집값을 억지로 끌어내리진 않는다. 대신 '보유는 비싸게, 실거주·거래는 숨통을' 틔워 시장을 정상화한다."</strong></p>
+  <div class="grid2">
+    <div class="card">
+      <h3><span class="tag t-buzz">세제</span> 보유세 ↑ · 거래세 완화</h3>
+      <p>보유세는 선진국 수준(현행의 약 3배 여력)으로 정상화하되, <strong>1주택 실거주·서민·지방은 감면</strong>, <strong>초고가·다주택·투기는 중과</strong>. 양도세 강화는 유예해 매물 퇴로 확보.</p>
+    </div>
+    <div class="card">
+      <h3><span class="tag t-fresh">금융</span> 실수요 대출 완화</h3>
+      <p>실거주 중심 정책이라면 현행 고강도 LTV·DSR로는 한계. <strong>무주택 실수요자 대출 문턱 완화</strong>가 유력 카드.</p>
+    </div>
+    <div class="card">
+      <h3><span class="tag t-depth">공급</span> 파이프라인 복원</h3>
+      <p>'주택공급 파이프라인 붕괴'가 근본 원인. <strong>3기 신도시 속도·비아파트·도심 중소형·정비사업 규제완화</strong>로 병목 해소.</p>
+    </div>
+    <div class="card">
+      <h3><span class="tag t-accent">무주택자</span> 결론 먼저</h3>
+      <p>급락 기대는 금물(정부가 명시적으로 부정). <strong>대출 완화 창구 + 청약 가점 + 다주택 급매</strong> 세 갈래로 '실거주 매수' 여건이 개선되는 국면. 준비된 사람에게 기회.</p>
+    </div>
+  </div>
+  <div class="callout info">
+    <h3>⏱️ 다음 분기점</h3>
+    <p style="margin:0">토론회 결과를 반영한 <strong>세제·금융 대책이 이르면 7월 말, 늦어도 8월 초 발표</strong> 전망. 아래 실행 체크리스트를 지금 준비해 두면 발표 직후 곧바로 움직일 수 있습니다.</p>
+  </div>
+</section>
+
+<!-- ================= SCRIPT ================= -->
+<section id="script">
+  <h2><span class="no">1</span>전체 진행 스크립트</h2>
+  <p class="lead">진행 순서대로 재구성한 토론회 스크립트입니다. 직접 인용은 <em>따옴표+출처</em>로 표기했습니다.</p>
+
+  <div class="disc">
+    ⚠️ <strong>작성 방식 고지</strong> — 이 스크립트는 KBS 원본 풀영상의 축어(逐語) 자막이 아니라, <strong>다수 언론사의 생중계·전문 보도를 교차 검증해 재구성</strong>한 것입니다. 원본 다시보기는 <a href="#sources">출처 섹션</a>의 영상 링크에서 확인하세요. 전문 텍스트 버전은 저장소의 <code>reports/2026-07-23-부동산대토론회-스크립트.md</code> 파일에 있습니다.
+  </div>
+
+  <div class="card">
+    <h3>진행 순서</h3>
+    <p style="margin:0">① 대통령 모두발언 → ② 이형일 재정경제부 1차관 사전 의견수렴 결과 발표 → ③ 전문가 발제(진미윤 공급 · 김영도 금융 · 강성훈 세제) → ④ 자유토론 → ⑤ 대통령 마무리발언</p>
+  </div>
+
+  <div class="card">
+    <h3>🎙️ 모두발언 — 이재명 대통령</h3>
+    <blockquote>"과거에는 부동산이 돈을 버는 투자·투기 수단으로 여겨졌지만, 이제는 투자 수단이라기보다 쾌적한 보금자리라는 측면이 많이 강조되고 있다."<cite>— 뉴스핌·이투데이 보도</cite></blockquote>
+    <blockquote>"공직자의 최대 덕목은 책임을 지는 것이다. 다수결에 의해 결정하지는 않겠다. 합리성이 있다면 다수 의견을 따르겠지만, 마지막에는 책임을 지고 결정하는 것이 선출직 공직자의 역할이다."<cite>— 뉴스핌·오마이뉴스 보도</cite></blockquote>
+    <blockquote>"공급을 늘리면 해결되는데, 문제는 '어디에·어떻게'가 마땅치 않다. 예전엔 그린벨트를 풀어 신도시를 만들며 해결했지만, 이제는 서울에서 택지 개발할 곳을 찾기 어렵다."<cite>— 부산일보·뉴스핌 보도</cite></blockquote>
+    <blockquote>"수요가 특정 지역에 집중돼 가격이 계속 올라 일본이 한때 어려움을 겪었다. '잃어버린 30년·20년' 얘기도 나왔다."<cite>— 헤럴드경제·시사저널 보도</cite></blockquote>
+  </div>
+
+  <div class="card">
+    <h3>📊 사전 의견수렴 결과 (이형일 재정경제부 1차관)</h3>
+    <p>7월 22일 오후 5시 기준 국민 정책 제안 <strong>4,800건+</strong> 접수.</p>
+    <div class="scroll"><table>
+      <tr><th>분야</th><th>건수</th><th>대표 여론</th></tr>
+      <tr><td><strong>주택금융(대출)</strong></td><td>2,103건</td><td>대출규제 완화 요구(약 44%)</td></tr>
+      <tr><td><strong>주택공급·규제</strong></td><td>1,484건</td><td>3기 신도시·비아파트·정비사업 규제완화</td></tr>
+      <tr><td><strong>부동산 세제</strong></td><td>1,226건</td><td>보유세↑·거래세↓ 투트랙 최다</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <h3>🏗️ 전문가 발제</h3>
+    <p><span class="tag t-depth">공급</span> <strong>진미윤(명지대)</strong> — 집값 불안의 근본 원인은 '주택공급 파이프라인 붕괴'. 전세사기 이후 비아파트 임대시장 신뢰 훼손 → 청년·서민 '주거 사다리' 위축. PF·공사비·고금리로 지연된 사업 정상화 + 도심 중소형·임대용 비아파트 공급 확대.</p>
+    <p><span class="tag t-fresh">금융</span> <strong>김영도(금융연구원)</strong> — 실거주 중심 정책이면 현행 고강도 대출규제로는 실수요 내집마련에 한계. 실수요자 대출규제의 합리적 조정 필요.</p>
+    <p><span class="tag t-buzz">세제</span> <strong>강성훈(한양대)</strong> — 보유세·거래세를 둘러싼 전문가 의견 팽팽('강화' vs '완화'). 실거주·비거주, 1주택·다주택 차등 과세가 쟁점.</p>
+  </div>
+
+  <div class="card">
+    <h3>💬 자유토론 주요 쟁점</h3>
+    <ul class="clean">
+      <li>"보유세를 강화하려면 <strong>양도세는 낮춰 달라</strong>" — 매물 퇴로 요구 반복</li>
+      <li>"실거주 혜택(장기보유특별공제 등)도 손봐야" — 세제 강경론</li>
+      <li>실수요·청년·무주택자 <strong>대출규제 완화</strong> 요구</li>
+      <li>"3기 신도시 등 <strong>공급에 속도</strong>를" — 공감대, 단 '초고가' 기준엔 이견</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>🎙️ 마무리발언 — 이재명 대통령</h3>
+    <blockquote>"우리나라 보유세를 통상적인 선진국 수준으로 맞추려면 3배는 올려야 한다." (단, 1주택 기준 기본 세부담 → 실거주·서민·지방 감면, 초고가·다주택·투기 단계적 중과)<cite>— 파이낸셜뉴스·이데일리 보도</cite></blockquote>
+    <blockquote>"'똘똘한 한 채'가 (오히려) 투기를 만든 측면이 있다."<cite>— 파이낸셜뉴스 보도</cite></blockquote>
+    <blockquote>"정책 목표가 억지로 가격을 낮추자는 건 아니다. 비정상적 수요·공급으로 가격이 잘못 형성되는 걸 막자, 정상화하자는 것이다. 정당한 시장 가격은 존중해야 한다."<cite>— 파이낸셜뉴스·이투데이·한국일보 보도</cite></blockquote>
+  </div>
+</section>
+
+<!-- ================= ANALYSIS ================= -->
+<section id="analysis">
+  <h2><span class="no">2</span>분석 리포트</h2>
+  <p class="lead">토론회의 표면 발언 아래에 깔린 정책 방향과 시장 함의를 뜯어봅니다.</p>
+
+  <div class="card">
+    <h3>① 프레임의 전환 — '가격 통제'가 아니라 '시장 정상화'</h3>
+    <p>가장 중요한 메시지는 <strong>"억지로 가격을 낮추지 않는다"</strong>는 대통령의 명시적 선언입니다. 이는 두 가지를 동시에 의미합니다.</p>
+    <ul class="clean">
+      <li><strong>급락 시나리오 부정</strong> — 정부가 인위적 가격 하락을 목표로 하지 않는다고 못박음. "집값 폭락을 기다리는" 전략은 정부 스탠스와 배치됩니다.</li>
+      <li><strong>변동성 축소 지향</strong> — 목표는 '정상화'. 즉 비정상적 급등을 억제하되, 정당한 시장가격은 존중. 결과적으로 <strong>완만한 안정 + 지역·상품별 차별화(옥석 가리기)</strong> 장세를 유도합니다.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>② 세제 — '보유세 정상화 + 거래세 숨통'의 정교한 설계</h3>
+    <p>대통령이 언급한 <strong>"선진국 대비 3배"</strong>는 목표 배율이 아니라 <em>정상화의 방향성</em>을 상징하는 표현입니다. 실제 설계는 '일률 인상'이 아니라 <strong>1주택 실거주 기준을 축으로 한 차등 과세</strong>입니다.</p>
+    <div class="scroll"><table>
+      <tr><th>구분</th><th>방향</th><th>대상</th></tr>
+      <tr><td>보유세</td><td style="color:var(--c-impact);font-weight:700">강화 ↑</td><td>초고가·다주택·투기용 (종부세 공정시장가액비율 조정)</td></tr>
+      <tr><td>보유세</td><td style="color:var(--accent);font-weight:700">감면 ↓</td><td>1주택 실거주·서민용·지방 주택</td></tr>
+      <tr><td>양도세(거래세)</td><td style="color:var(--accent);font-weight:700">완화/유예</td><td>매물 퇴로 확보 (강화 유예)</td></tr>
+      <tr><td>장기보유특별공제</td><td style="color:var(--c-impact);font-weight:700">축소</td><td>비거주 1주택 점진적 폐지 유력</td></tr>
+    </table></div>
+    <p style="margin-top:12px">핵심 함의: <strong>'똘똘한 한 채' 전략의 종말 신호.</strong> 실거주 아닌 고가 1주택 보유의 세제 이점(장특공제 등)이 줄어들면, 그동안 서울 초고가로 쏠렸던 수요가 분산될 수 있습니다.</p>
+  </div>
+
+  <div class="card">
+    <h3>③ 금융 — 규제의 '방향 전환'이 아니라 '정밀 타격'</h3>
+    <p>대출규제 완화는 '전면 완화'가 아니라 <strong>실수요(무주택·실거주)와 투기수요를 갈라 실수요에만 숨통을 트는</strong> 방식이 될 가능성이 큽니다. 무주택 실수요자에게는 명백한 순풍이지만, 완화 폭·소득요건·대상 주택가격 상한이 관건입니다.</p>
+  </div>
+
+  <div class="card">
+    <h3>④ 공급 — 단기 특효약은 없다 (대통령도 인정)</h3>
+    <p>"서울에 택지가 없다"는 대통령의 발언은 <strong>단기 대량 공급이 어렵다는 현실 인정</strong>입니다. 해법은 (a) 3기 신도시 <em>속도</em>, (b) 비아파트·도심 중소형 <em>재활성화</em>, (c) 정비사업 규제·PF·이주비 <em>병목 해소</em>로 이동. 즉 <strong>공급 효과는 시차를 두고 나타나며</strong>, 그 사이 수요 관리(세제·금융)가 먼저 작동합니다.</p>
+  </div>
+
+  <div class="card">
+    <h3>⑤ 정치적 신호 — "책임지고, 저항을 감수한다"</h3>
+    <p>"다수결로 결정하지 않겠다", "갈등·저항·비난을 감수하겠다"는 발언은 <strong>강한 개혁 드라이브의 예고</strong>입니다. 보유세 강화 같은 조세 저항이 큰 카드를 밀어붙일 정치적 의지를 시사합니다. 무주택자 입장에선 <strong>정책이 '실거주·무주택 우대' 방향으로 실제 집행될 확률이 높다</strong>는 뜻입니다.</p>
+  </div>
+
+  <div class="callout warn">
+    <h3>⚖️ 시장 컨센서스 vs 리스크</h3>
+    <p><strong>기회 요인:</strong> 실수요 대출 완화·다주택 매물 출회·청약 공급 확대 → 무주택 실수요 매수 환경 개선.<br>
+    <strong>리스크 요인:</strong> ① 대출 완화가 되레 수요를 자극해 단기 가격 상승 → 무주택자 매수 부담 증가 가능. ② 세제 강화가 '거래세 완화'와 엇박자 나면 매물 잠김. ③ 공급 효과 지연으로 전월세 불안 지속.</p>
+  </div>
+</section>
+
+<!-- ================= INSIGHT (무주택자) ================= -->
+<section id="insight">
+  <h2><span class="no">3</span>무주택자 대응 인사이트</h2>
+  <p class="lead">"그래서 집 없는 나는 어떻게 움직여야 하나?" — 토론회 신호를 개인 의사결정으로 번역합니다.</p>
+
+  <div class="callout go">
+    <h3>🧭 큰 그림 3원칙</h3>
+    <p><strong>1. 급락을 기다리지 마라.</strong> 정부가 공식적으로 '가격 인하가 목표가 아니다'라고 했습니다. '언젠가 반토막' 시나리오에 배팅하는 건 정책 방향과 반대입니다.<br>
+    <strong>2. '실거주·무주택 우대' 창구가 열린다.</strong> 대출·세제·청약 모두 실수요에 유리해지는 방향. 준비된 무주택자가 최대 수혜자.<br>
+    <strong>3. 발표(7월 말~8월 초) 전에 '실탄과 자격'을 갖춰라.</strong> 정책은 발표 즉시 반영됩니다. 그때 서류·자금·청약통장이 준비돼 있어야 움직일 수 있습니다.</p>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3><span class="tag t-fresh">대출</span> 규제 완화를 '내 한도'로 환산</h3>
+      <ul class="clean">
+        <li>현재 내 <strong>DSR 여력·소득 대비 대출 한도</strong>를 미리 계산해 두기</li>
+        <li>디딤돌·보금자리론 등 <strong>정책모기지</strong> 자격/한도/금리 요건 점검</li>
+        <li>완화 발표 시 <strong>대상 주택가격 상한·소득요건</strong> 확인 후 즉시 활용</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><span class="tag t-accent">청약</span> 가점과 일정 관리</h3>
+      <ul class="clean">
+        <li>무주택 기간·청약통장 납입 <strong>가점 관리</strong>(무주택 유지가 곧 자산)</li>
+        <li><strong>특별공급</strong>(생애최초·신혼·청년) 자격 해당 여부 점검</li>
+        <li><strong>3기 신도시</strong> 사전청약·본청약 일정 추적</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><span class="tag t-impact">전월세</span> 보증금은 방어가 최우선</h3>
+      <ul class="clean">
+        <li><strong>전세보증금 반환보증</strong>(HUG/HF/SGI) 가입 필수 확인</li>
+        <li>비아파트 계약 시 <strong>근저당·선순위·전세가율(시세 대비 70~80% 이하)</strong> 점검 — 전세사기 후유증으로 비아파트 신뢰 저하 국면</li>
+        <li>월세 전환 시 <strong>전월세전환율</strong> 비교</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3><span class="tag t-buzz">세제</span> '실거주 프리미엄'을 활용</h3>
+      <ul class="clean">
+        <li>정책 방향상 <strong>실거주 1주택 보유세는 감면</strong> → 실거주 목적 매수가 세제상 유리</li>
+        <li><strong>생애최초 취득세 감면</strong> 등 무주택 대상 혜택 챙기기</li>
+        <li>초고가·투기 중과 → <strong>실거주 적정가 주택</strong>에 초점</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🎯 나에게 맞는 시나리오 고르기</h3>
+    <div class="scroll"><table>
+      <tr><th>내 상황</th><th>권장 스탠스</th><th>핵심 행동</th></tr>
+      <tr><td><strong>당장 자금 여력 있음<br>(실거주 매수 임박)</strong></td><td style="color:var(--accent);font-weight:700">준비된 실행</td><td>대출 완화 발표 즉시 활용. 보유세 강화로 나오는 <strong>다주택 급매·조정 매물</strong> 중 실거주 적정가 단지 선별</td></tr>
+      <tr><td><strong>2~3년 내 매수 목표</strong></td><td style="color:var(--c-freshness);font-weight:700">축적 + 관망</td><td>청약 가점·자금 축적. 공급(3기 신도시) 일정과 세제개편 후 매물 흐름 모니터링</td></tr>
+      <tr><td><strong>당분간 임차 유지</strong></td><td style="color:var(--c-buzz);font-weight:700">방어 우선</td><td>보증금 안전(보증가입·전세가율)에 집중. 무주택 기간·청약통장 유지로 미래 옵션 확보</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <h3>📈 무주택자 관점 기회·리스크 점수</h3>
+    <div class="scorebar"><span class="label">대출 접근성</span><div class="track"><div class="fill" style="width:75%;background:var(--accent)"></div></div><span class="val">개선 ↑</span></div>
+    <div class="scorebar"><span class="label">매물 증가</span><div class="track"><div class="fill" style="width:60%;background:var(--accent)"></div></div><span class="val">중립+</span></div>
+    <div class="scorebar"><span class="label">가격 급락</span><div class="track"><div class="fill" style="width:20%;background:var(--c-impact)"></div></div><span class="val">낮음</span></div>
+    <div class="scorebar"><span class="label">전월세 안정</span><div class="track"><div class="fill" style="width:40%;background:var(--c-buzz)"></div></div><span class="val">불확실</span></div>
+    <div class="scorebar"><span class="label">청약 기회</span><div class="track"><div class="fill" style="width:65%;background:var(--accent)"></div></div><span class="val">개선 ↑</span></div>
+    <p style="font-size:13px;color:var(--muted);margin:10px 0 0">※ 토론회 정책 신호에 대한 정성적 해석. 실제 수치는 발표될 대책의 세부 요건에 좌우됩니다.</p>
+  </div>
+</section>
+
+<!-- ================= ACTION ================= -->
+<section id="action">
+  <h2><span class="no">4</span>지금 당장 할 일 — 30일 실행 체크리스트</h2>
+  <p class="lead">발표(7월 말~8월 초) 전에 끝내두면 좋은 순서대로.</p>
+  <ol class="steps">
+    <li><b>내 대출 한도·DSR 여력 계산하기</b><span class="why">소득·기존부채 기준으로 지금 받을 수 있는 최대 한도를 은행 앱/계산기로 파악. 완화 발표 시 '얼마 더'인지 즉시 비교 가능.</span></li>
+    <li><b>정책모기지·특별공급 자격 셀프 점검</b><span class="why">디딤돌·보금자리론, 생애최초·신혼·청년 특공 요건(소득·자산·무주택기간) 해당 여부를 표로 정리.</span></li>
+    <li><b>청약통장 상태·가점 점검</b><span class="why">납입횟수·무주택기간·부양가족 가점 확인. 무주택 유지 자체가 청약 경쟁력.</span></li>
+    <li><b>관심 지역 2~3곳 '적정가 밴드' 정하기</b><span class="why">초고가·투기 중과 대상은 피하고, 실거주 적정가 단지의 시세·전세가율·매물 추이를 주간 단위로 기록.</span></li>
+    <li><b>(임차 중이면) 보증금 안전장치 재점검</b><span class="why">전세보증 가입 여부, 등기부 근저당·선순위, 전세가율 확인. 갱신·이사 계획이라면 지금.</span></li>
+    <li><b>7월 말~8월 초 세제·금융 대책 발표 알림 설정</b><span class="why">발표 당일 '대상 주택가격 상한·소득요건·시행시기'를 확인하고 위 1~4를 근거로 즉시 판단.</span></li>
+  </ol>
+
+  <div class="disc">
+    ℹ️ 본 인사이트는 공개 보도 기반의 <strong>정보·분석 자료</strong>이며, 특정 금융상품 가입이나 매수·매도를 권유하는 투자자문이 아닙니다. 대출·세제·청약 요건은 <strong>정부 공식 발표문과 금융기관 상담</strong>으로 최종 확인하시기 바랍니다. 개인의 소득·자산·가족 상황에 따라 유불리가 달라집니다.
+  </div>
+</section>
+
+<!-- ================= SOURCES ================= -->
+<section id="sources">
+  <h2><span class="no">5</span>영상 · 출처 링크</h2>
+  <div class="card">
+    <h3>🎬 영상 / 아카이브</h3>
+    <ul class="src-list clean">
+      <li>KBS 부동산정책 국민 대토론회 관련 라이브(금융위 채널) — <a href="https://www.youtube.com/watch?v=y3q4oASoW8E">youtube.com/watch?v=y3q4oASoW8E</a></li>
+      <li>7·23 부동산 대토론회 총정리(세제·공급·전월세 쟁점) — <a href="https://www.youtube.com/watch?v=sH4LJK_phdM">youtube.com/watch?v=sH4LJK_phdM</a></li>
+      <li>다음 이슈 「7.23 부동산 국민 대토론회」 기사 아카이브 — <a href="https://issue.daum.net/focus/0723policy">issue.daum.net/focus/0723policy</a></li>
+      <li>KBS 공식 채널 「다시보기」에서 <code>KBS 부동산 대토론회</code> 검색 시 원본 풀영상 확인 가능</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>📰 발언 전문 · 종합 보도</h3>
+    <ul class="src-list clean">
+      <li>[전문] 李대통령 부동산 토론회 주재 — <a href="https://www.newspim.com/news/view/20260723000621">뉴스핌</a></li>
+      <li>실거주·지역 보유세 감면, 초고가·다주택 가중…'똘똘한 한 채' — <a href="https://www.fnnews.com/news/202607231355022960">파이낸셜뉴스</a></li>
+      <li>"억지로 가격 낮추자는 것 아냐…정상화하자" — <a href="https://www.fnnews.com/news/202607231141221015">파이낸셜뉴스</a></li>
+      <li>"공급 늘리자" 한목소리, 보유·거래세는 팽팽 — <a href="https://www.etoday.co.kr/news/view/2606584">이투데이</a></li>
+      <li>"日 잃어버린 30년, 우리도 전철 우려" — <a href="https://biz.heraldcorp.com/article/10817700">헤럴드경제</a></li>
+      <li>국민제안 4800건…"보유세 높이되 거래세 낮춰야" — <a href="https://www.fnnews.com/news/202607230600482991">파이낸셜뉴스</a></li>
+      <li>"공급 파이프라인 복원해야"(진미윤 발제) — <a href="https://www.etoday.co.kr/news/view/2606617">이투데이</a></li>
+      <li>"실거주 혜택도 손봐야"…세제 강경론 — <a href="https://www.newspim.com/news/view/20260723000625">뉴스핌</a></li>
+      <li>국민 44% 대출 완화 외쳤다 — <a href="https://www.hankyung.com/article/2026072292406">한국경제</a></li>
+      <li>보유세 강화·양도세 완화 투트랙 — <a href="https://www.kmib.co.kr/article/view.asp?arcid=1784540387">국민일보</a></li>
+    </ul>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <p>📄 <strong>부동산정책 국민 대토론회 분석 &amp; 무주택자 대응 인사이트</strong> · 작성일 2026-07-23</p>
+  <p>본 문서는 공개 보도를 교차 검증해 재구성한 정보·분석 자료입니다. 정책 세부는 정부 공식 발표로 확인하세요.</p>
+</footer>
+
+<script>
+  // 부드러운 앵커 스크롤
+  document.querySelectorAll('nav.toc a').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var el=document.querySelector(this.getAttribute('href'));
+      if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}
+    });
+  });
+</script>
+</body>
+</html>
