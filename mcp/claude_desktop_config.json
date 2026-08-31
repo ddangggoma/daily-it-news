@@ -28,10 +28,7 @@
     },
     "playwright": {
       "command": "cmd",
-      "args": ["/c", "npx", "-y", "@playwright/mcp@latest"],
-      "env": {
-        "PLAYWRIGHT_BROWSERS_PATH": "0"
-      }
+      "args": ["/c", "npx", "-y", "@playwright/mcp@latest"]
     },
     "github": {
       "command": "cmd",
@@ -42,9 +39,8 @@
         "mcp-remote",
         "https://api.githubcopilot.com/mcp/",
         "--header",
-        "Authorization: Bearer ghp_여기에_토큰"
+        "Authorization: Bearer ghp_여기에_실제_토큰"
       ]
     }
-  },
-  "globalShortcut": ""
+  }
 }
