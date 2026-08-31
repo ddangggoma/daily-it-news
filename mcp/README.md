@@ -1,7 +1,7 @@
 # MCP 설정 기본틀 — Windows 10/11 · 프로젝트 폴더 기준
 
-Claude, Codex, Gemini CLI 세 도구의 MCP 설정 파일을 **프로젝트 폴더에 두는 경우**로 작성한 템플릿입니다.
-세 파일 모두 동일한 서버 5종(filesystem / memory / sequential-thinking / playwright / github)을 등록합니다.
+Claude Code / Claude Desktop / Codex / Gemini CLI 네 도구의 MCP 설정 파일을 **프로젝트 폴더에 두는 경우**로 작성한 템플릿입니다.
+네 파일 모두 동일한 서버 5종(filesystem / memory / sequential-thinking / playwright / github)을 등록합니다.
 
 ## 📁 파일 위치 한눈에 보기
 
@@ -9,7 +9,7 @@ Claude, Codex, Gemini CLI 세 도구의 MCP 설정 파일을 **프로젝트 폴�
 |---|---|---|---|
 | Claude Code (CLI/IDE) | `.mcp.json` | `<프로젝트>\.mcp.json` | ✅ 네이티브 지원 |
 | Claude Desktop (앱) | `mcp/claude_desktop_config.json` | `%APPDATA%\Claude\claude_desktop_config.json` | ❌ 전역만 (복사 필요) |
-| Codex | `.codex/config.toml` | `<프로젝트>\.codex\config.toml` | ⚠️ `CODEX_HOME` 지정 시 |
+| Codex | `.codex/config.toml` | `<프로젝트>\.codex\config.toml` | ✅ 네이티브 지원 (신뢰된 프로젝트 한정) |
 | Gemini CLI | `.gemini/settings.json` | `<프로젝트>\.gemini\settings.json` | ✅ 네이티브 지원 |
 
 > 🔴 **중요 — Claude Desktop은 프로젝트별 MCP 설정을 지원하지 않습니다.**
@@ -49,21 +49,36 @@ Copy-Item .\mcp\claude_desktop_config.json "$env:APPDATA\Claude\claude_desktop_c
 - 로그: `%APPDATA%\Claude\logs\mcp-server-<이름>.log`
 
 ### 3. Codex — `.codex/config.toml`
-Codex는 `CODEX_HOME`이 가리키는 폴더의 `config.toml`을 읽습니다(기본 `%USERPROFILE%\.codex`).
-프로젝트 폴더 설정을 쓰려면 실행 전에 `CODEX_HOME`을 넘겨줍니다.
+Codex는 **프로젝트 로컬 설정 레이어를 정식 지원**합니다. 별도 환경변수 없이 프로젝트 루트에 두면 됩니다.
+현재 작업 폴더(cwd)에서 프로젝트 루트까지 상위 폴더를 훑으며 각 폴더의 `.codex\config.toml`을 병합합니다(깊은 폴더가 우선).
 
 ```powershell
-# PowerShell — 이 세션에서만
-$env:CODEX_HOME = "$PWD\.codex"
+cd C:\Users\<사용자명>\WorkSpace\Daily-News
 codex
-```
-```cmd
-:: CMD
-set CODEX_HOME=%CD%\.codex && codex
+# 첫 실행 시 "Do you trust this folder?" → 승인
 ```
 
-- `experimental_use_rmcp_client = true` 는 **원격(HTTP) MCP 서버를 쓸 때만** 필요합니다.
-- 토큰은 값이 아니라 **환경변수 이름**을 `bearer_token_env_var`로 지정합니다.
+**적용 우선순위** (숫자가 클수록 우선):
+
+```
+packaged defaults(-10) < MDM(0) < system(10) < enterprise(15)
+  < user  %USERPROFILE%\.codex\config.toml   (20 / 프로필 지정 시 21)
+  < ★ project  <프로젝트>\.codex\config.toml  (25)
+  < 세션 플래그 --config                        (30)
+```
+
+- 🔴 **신뢰된 프로젝트에서만 로드됩니다.** 첫 실행 시 신뢰 프롬프트를 승인하면 **사용자 설정**에 아래가 기록됩니다. 신뢰하지 않으면 이 파일은 에러 없이 조용히 무시됩니다.
+
+  ```toml
+  # %USERPROFILE%\.codex\config.toml
+  [projects."C:\\Users\\<사용자명>\\WorkSpace\\Daily-News"]
+  trust_level = "trusted"
+  ```
+
+  `trust_level`은 반드시 **사용자 설정**에 있어야 합니다. 프로젝트 파일에 적어 스스로를 신뢰하게 만들 수는 없습니다.
+- 🟠 **프로젝트 레이어에서 무시되는 키가 있습니다** — `model_provider`, `model_providers`, `profile`, `profiles`, `notify`, `openai_base_url`, `chatgpt_base_url`, `otel`, `responses_api_metadata`. 써두면 무시되고 시작 시 경고가 뜹니다. `mcp_servers`는 denylist에 없어 정상 동작합니다.
+- 🟡 `CODEX_HOME`은 **사용자 설정 위치**(기본 `%USERPROFILE%\.codex`)를 바꾸는 변수입니다. 프로젝트 설정을 읽히게 하는 용도가 아니므로 건드릴 필요 없습니다.
+- 원격 서버는 `url` + `bearer_token_env_var`로 지정합니다(토큰 값이 아니라 **환경변수 이름**). Streamable HTTP는 기본 지원이라 별도 실험 플래그가 필요 없습니다.
 - 서버를 잠시 끄려면 해당 블록에 `enabled = false`.
 
 ### 4. Gemini CLI — `.gemini/settings.json`
@@ -93,7 +108,7 @@ gemini
 | 🔒 토큰 관리 | PAT를 파일에 직접 쓰지 말고 환경변수로: `setx GITHUB_PERSONAL_ACCESS_TOKEN "ghp_..."` (새 터미널부터 적용). Claude Desktop만 예외적으로 직접 입력이 필요합니다. |
 
 ## 🔒 커밋 전 확인
-`.mcp.json`, `.gemini/settings.json`, `.codex/config.toml`에 **실제 토큰이 들어가지 않았는지** 확인하세요.
+`.mcp.json`, `.codex/config.toml`, `.gemini/settings.json`에 **실제 토큰이 들어가지 않았는지** 확인하세요.
 로컬에서만 값을 채워 쓰려면 `.gitignore`에 추가하는 것을 권장합니다.
 
 ## 📦 등록된 서버 5종

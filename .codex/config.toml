@@ -2,16 +2,28 @@
 # Codex — MCP 설정 기본틀 (Windows 10/11, 프로젝트 폴더 배치)
 # 위치: <프로젝트>\.codex\config.toml
 #
-# Codex는 CODEX_HOME 환경변수가 가리키는 폴더의 config.toml을 읽습니다.
-# 기본값은 %USERPROFILE%\.codex 이므로, 이 프로젝트 전용으로 쓰려면
-# Codex 실행 전에 CODEX_HOME을 이 폴더로 지정하세요.
+# Codex는 프로젝트 로컬 설정 레이어를 정식 지원합니다.
+# cwd에서 프로젝트 루트까지 상위 폴더를 훑으며 각 폴더의
+# .codex\config.toml 을 읽어 병합합니다. (깊은 폴더가 우선)
 #
-#   PowerShell : $env:CODEX_HOME = "$PWD\.codex"; codex
-#   CMD        : set CODEX_HOME=%CD%\.codex && codex
+# 적용 우선순위 (숫자가 클수록 우선):
+#   packaged defaults(-10) < MDM(0) < system(10) < enterprise(15)
+#   < user %USERPROFILE%\.codex\config.toml (20/21)
+#   < ★ project <프로젝트>\.codex\config.toml (25)
+#   < 세션 플래그 --config (30)
+#
+# 🔴 전제조건 — 프로젝트가 "신뢰됨"이어야 이 파일이 로드됩니다.
+#   Codex를 이 폴더에서 처음 실행하면 "Do you trust this folder?"
+#   프롬프트가 뜨고, 승인하면 사용자 설정에 아래가 기록됩니다:
+#
+#     # %USERPROFILE%\.codex\config.toml
+#     [projects."C:\\Users\\<사용자명>\\WorkSpace\\Daily-News"]
+#     trust_level = "trusted"
+#
+#   신뢰하지 않으면 이 파일은 통째로 무시됩니다(에러 없이 조용히).
+#   trust_level은 반드시 "사용자 설정"에 적어야 하며, 이 파일에
+#   적어도 스스로를 신뢰하게 만들 수 없습니다.
 # ─────────────────────────────────────────────────────────────
-
-# 원격(Streamable HTTP) MCP 서버를 쓰려면 반드시 true (stdio 전용이면 불필요)
-experimental_use_rmcp_client = true
 
 # ── stdio 서버 ────────────────────────────────────────────────
 # Windows에서는 npx가 .cmd 셸 스크립트라 "cmd /c" 래핑이 필요합니다.
@@ -36,14 +48,19 @@ command = "cmd"
 args = ["/c", "npx", "-y", "@playwright/mcp@latest"]
 startup_timeout_sec = 60
 
-# ── 원격(HTTP) 서버 ──────────────────────────────────────────
-# 토큰은 파일에 직접 적지 말고 환경변수 이름만 지정합니다.
+# ── 원격(Streamable HTTP) 서버 ───────────────────────────────
+# 토큰은 파일에 직접 적지 말고 환경변수 "이름"만 지정합니다.
 #   setx GITHUB_PERSONAL_ACCESS_TOKEN "ghp_..."
 
 [mcp_servers.github]
 url = "https://api.githubcopilot.com/mcp/"
 bearer_token_env_var = "GITHUB_PERSONAL_ACCESS_TOKEN"
 
-# 특정 서버를 잠시 끄고 싶을 때
-# [mcp_servers.playwright]
+# ── 참고: 프로젝트 레이어에서 무시되는 키 ─────────────────────
+# 보안상 아래 키는 프로젝트 설정에 써도 무시되고 경고가 뜹니다.
+#   model_provider / model_providers / profile / profiles / notify
+#   openai_base_url / chatgpt_base_url / otel / responses_api_metadata
+# mcp_servers는 denylist에 없으므로 프로젝트 설정에서 정상 동작합니다.
+
+# 특정 서버를 잠시 끄려면 해당 블록에 추가
 # enabled = false
