@@ -1,0 +1,49 @@
+# ─────────────────────────────────────────────────────────────
+# Codex — MCP 설정 기본틀 (Windows 10/11, 프로젝트 폴더 배치)
+# 위치: <프로젝트>\.codex\config.toml
+#
+# Codex는 CODEX_HOME 환경변수가 가리키는 폴더의 config.toml을 읽습니다.
+# 기본값은 %USERPROFILE%\.codex 이므로, 이 프로젝트 전용으로 쓰려면
+# Codex 실행 전에 CODEX_HOME을 이 폴더로 지정하세요.
+#
+#   PowerShell : $env:CODEX_HOME = "$PWD\.codex"; codex
+#   CMD        : set CODEX_HOME=%CD%\.codex && codex
+# ─────────────────────────────────────────────────────────────
+
+# 원격(Streamable HTTP) MCP 서버를 쓰려면 반드시 true (stdio 전용이면 불필요)
+experimental_use_rmcp_client = true
+
+# ── stdio 서버 ────────────────────────────────────────────────
+# Windows에서는 npx가 .cmd 셸 스크립트라 "cmd /c" 래핑이 필요합니다.
+
+[mcp_servers.filesystem]
+command = "cmd"
+args = ["/c", "npx", "-y", "@modelcontextprotocol/server-filesystem", "."]
+startup_timeout_sec = 30
+tool_timeout_sec = 120
+
+[mcp_servers.memory]
+command = "cmd"
+args = ["/c", "npx", "-y", "@modelcontextprotocol/server-memory"]
+env = { MEMORY_FILE_PATH = ".claude\\memory\\mcp-memory.json" }
+
+[mcp_servers.sequential-thinking]
+command = "cmd"
+args = ["/c", "npx", "-y", "@modelcontextprotocol/server-sequential-thinking"]
+
+[mcp_servers.playwright]
+command = "cmd"
+args = ["/c", "npx", "-y", "@playwright/mcp@latest"]
+startup_timeout_sec = 60
+
+# ── 원격(HTTP) 서버 ──────────────────────────────────────────
+# 토큰은 파일에 직접 적지 말고 환경변수 이름만 지정합니다.
+#   setx GITHUB_PERSONAL_ACCESS_TOKEN "ghp_..."
+
+[mcp_servers.github]
+url = "https://api.githubcopilot.com/mcp/"
+bearer_token_env_var = "GITHUB_PERSONAL_ACCESS_TOKEN"
+
+# 특정 서버를 잠시 끄고 싶을 때
+# [mcp_servers.playwright]
+# enabled = false

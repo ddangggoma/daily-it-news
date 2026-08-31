@@ -1,0 +1,50 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:\\Users\\<사용자명>\\WorkSpace\\Daily-News"
+      ]
+    },
+    "memory": {
+      "command": "cmd",
+      "args": ["/c", "npx", "-y", "@modelcontextprotocol/server-memory"],
+      "env": {
+        "MEMORY_FILE_PATH": "C:\\Users\\<사용자명>\\WorkSpace\\Daily-News\\.claude\\memory\\mcp-memory.json"
+      }
+    },
+    "sequential-thinking": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    },
+    "playwright": {
+      "command": "cmd",
+      "args": ["/c", "npx", "-y", "@playwright/mcp@latest"],
+      "env": {
+        "PLAYWRIGHT_BROWSERS_PATH": "0"
+      }
+    },
+    "github": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "mcp-remote",
+        "https://api.githubcopilot.com/mcp/",
+        "--header",
+        "Authorization: Bearer ghp_여기에_토큰"
+      ]
+    }
+  },
+  "globalShortcut": ""
+}

@@ -1,0 +1,44 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "cmd",
+      "args": ["/c", "npx", "-y", "@modelcontextprotocol/server-filesystem", "."],
+      "cwd": ".",
+      "timeout": 30000,
+      "trust": false
+    },
+    "memory": {
+      "command": "cmd",
+      "args": ["/c", "npx", "-y", "@modelcontextprotocol/server-memory"],
+      "env": {
+        "MEMORY_FILE_PATH": ".claude/memory/mcp-memory.json"
+      },
+      "timeout": 30000,
+      "trust": false
+    },
+    "sequential-thinking": {
+      "command": "cmd",
+      "args": ["/c", "npx", "-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "timeout": 30000,
+      "trust": false
+    },
+    "playwright": {
+      "command": "cmd",
+      "args": ["/c", "npx", "-y", "@playwright/mcp@latest"],
+      "timeout": 120000,
+      "trust": false,
+      "excludeTools": []
+    },
+    "github": {
+      "httpUrl": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer $GITHUB_PERSONAL_ACCESS_TOKEN"
+      },
+      "timeout": 60000,
+      "trust": false
+    }
+  },
+  "context": {
+    "fileName": ["GEMINI.md", "CLAUDE.md"]
+  }
+}
