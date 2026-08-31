@@ -2,32 +2,53 @@
   "mcpServers": {
     "filesystem": {
       "command": "cmd",
-      "args": ["/c", "npx", "-y", "@modelcontextprotocol/server-filesystem", "."],
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "."
+      ],
       "cwd": ".",
-      "timeout": 30000,
+      "timeout": 120000,
       "trust": false,
       "description": "프로젝트 폴더 읽기/쓰기"
     },
     "memory": {
       "command": "cmd",
-      "args": ["/c", "npx", "-y", "@modelcontextprotocol/server-memory"],
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ],
       "env": {
         "MEMORY_FILE_PATH": ".claude/memory/mcp-memory.json"
       },
-      "timeout": 30000,
+      "timeout": 120000,
       "trust": false,
       "description": "지식 그래프 기반 장기 메모리"
     },
     "sequential-thinking": {
       "command": "cmd",
-      "args": ["/c", "npx", "-y", "@modelcontextprotocol/server-sequential-thinking"],
-      "timeout": 30000,
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "timeout": 120000,
       "trust": false,
       "description": "단계적 추론 보조"
     },
     "playwright": {
       "command": "cmd",
-      "args": ["/c", "npx", "-y", "@playwright/mcp@latest"],
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@playwright/mcp@latest"
+      ],
       "timeout": 120000,
       "trust": false,
       "description": "브라우저 자동화 · 스크린샷",
@@ -45,6 +66,9 @@
     }
   },
   "context": {
-    "fileName": ["GEMINI.md", "CLAUDE.md"]
+    "fileName": [
+      "GEMINI.md",
+      "CLAUDE.md"
+    ]
   }
 }

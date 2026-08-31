@@ -1,66 +1,71 @@
 # ─────────────────────────────────────────────────────────────
-# Codex — MCP 설정 기본틀 (Windows 10/11, 프로젝트 폴더 배치)
-# 위치: <프로젝트>\.codex\config.toml
+# Codex — MCP 설정 (Windows 10/11 · 프로젝트 폴더)
+# 위치: .codex/config.toml   (프로젝트 루트 기준 상대 경로)
 #
-# Codex는 프로젝트 로컬 설정 레이어를 정식 지원합니다.
-# cwd에서 프로젝트 루트까지 상위 폴더를 훑으며 각 폴더의
-# .codex\config.toml 을 읽어 병합합니다. (깊은 폴더가 우선)
+# Codex는 프로젝트 로컬 설정 레이어를 정식 지원합니다. CODEX_HOME 같은
+# 환경변수 없이, cwd에서 프로젝트 루트까지 상위 폴더를 훑으며 각 폴더의
+# .codex\config.toml 을 병합합니다(깊은 폴더가 우선).
+# CLI · IDE 확장 · 데스크탑 앱이 같은 백엔드를 쓰므로 셋 다 동일 적용.
 #
-# 적용 우선순위 (숫자가 클수록 우선):
-#   packaged defaults(-10) < MDM(0) < system(10) < enterprise(15)
-#   < user %USERPROFILE%\.codex\config.toml (20/21)
-#   < ★ project <프로젝트>\.codex\config.toml (25)
-#   < 세션 플래그 --config (30)
+# 우선순위: packaged(-10) < MDM(0) < system(10) < enterprise(15)
+#          < user %USERPROFILE%\.codex\config.toml (20/21)
+#          < ★ project .codex\config.toml (25) < --config 플래그(30)
 #
-# 🔴 전제조건 — 프로젝트가 "신뢰됨"이어야 이 파일이 로드됩니다.
-#   Codex를 이 폴더에서 처음 실행하면 "Do you trust this folder?"
-#   프롬프트가 뜨고, 승인하면 사용자 설정에 아래가 기록됩니다:
+# 🔴 전제조건 — 프로젝트가 "신뢰됨"이어야 로드됩니다.
+#   이 폴더에서 Codex를 처음 실행하면 "Do you trust this folder?"가 뜨고,
+#   승인하면 사용자 설정에 아래가 기록됩니다:
 #
 #     # %USERPROFILE%\.codex\config.toml
 #     [projects."C:\\Users\\<사용자명>\\WorkSpace\\Daily-News"]
 #     trust_level = "trusted"
 #
-#   신뢰하지 않으면 이 파일은 통째로 무시됩니다(에러 없이 조용히).
-#   trust_level은 반드시 "사용자 설정"에 적어야 하며, 이 파일에
-#   적어도 스스로를 신뢰하게 만들 수 없습니다.
+#   신뢰 전에는 이 파일이 통째로 무시됩니다(CLI는 조용히, 앱은 경고 표시).
+#   trust_level은 반드시 "사용자 설정"에 있어야 하며, 이 파일에 적어
+#   스스로를 신뢰하게 만들 수는 없습니다.
+#   ↑ 컨테이너 테스트로 실증: 신뢰 전 "No MCP servers configured yet",
+#     신뢰 후 5종 전부 enabled.
 # ─────────────────────────────────────────────────────────────
 
 # ── stdio 서버 ────────────────────────────────────────────────
-# Windows에서는 npx가 .cmd 셸 스크립트라 "cmd /c" 래핑이 필요합니다.
+# Windows에서 npx는 .cmd 셸 스크립트라 "cmd /c" 래핑이 필요합니다.
+# startup_timeout_sec 120: npx 최초 실행 시 패키지 다운로드가 30초를
+# 넘겨 연결에 실패하는 것을 테스트로 확인 → 넉넉하게 설정.
 
 [mcp_servers.filesystem]
 command = "cmd"
 args = ["/c", "npx", "-y", "@modelcontextprotocol/server-filesystem", "."]
-startup_timeout_sec = 30
+startup_timeout_sec = 120
 tool_timeout_sec = 120
 
 [mcp_servers.memory]
 command = "cmd"
 args = ["/c", "npx", "-y", "@modelcontextprotocol/server-memory"]
 env = { MEMORY_FILE_PATH = ".claude\\memory\\mcp-memory.json" }
+startup_timeout_sec = 120
 
 [mcp_servers.sequential-thinking]
 command = "cmd"
 args = ["/c", "npx", "-y", "@modelcontextprotocol/server-sequential-thinking"]
+startup_timeout_sec = 120
 
 [mcp_servers.playwright]
 command = "cmd"
 args = ["/c", "npx", "-y", "@playwright/mcp@latest"]
-startup_timeout_sec = 60
+startup_timeout_sec = 120
 
 # ── 원격(Streamable HTTP) 서버 ───────────────────────────────
-# 토큰은 파일에 직접 적지 말고 환경변수 "이름"만 지정합니다.
+# 토큰은 값이 아니라 환경변수 "이름"을 지정합니다.
 #   setx GITHUB_PERSONAL_ACCESS_TOKEN "ghp_..."
 
 [mcp_servers.github]
 url = "https://api.githubcopilot.com/mcp/"
 bearer_token_env_var = "GITHUB_PERSONAL_ACCESS_TOKEN"
 
-# ── 참고: 프로젝트 레이어에서 무시되는 키 ─────────────────────
+# ── 프로젝트 레이어에서 무시되는 키 ───────────────────────────
 # 보안상 아래 키는 프로젝트 설정에 써도 무시되고 경고가 뜹니다.
 #   model_provider / model_providers / profile / profiles / notify
 #   openai_base_url / chatgpt_base_url / otel / responses_api_metadata
-# mcp_servers는 denylist에 없으므로 프로젝트 설정에서 정상 동작합니다.
+#   apps_mcp_product_sku / experimental_realtime_*
+# mcp_servers는 denylist에 없으므로 정상 동작합니다.
 
-# 특정 서버를 잠시 끄려면 해당 블록에 추가
-# enabled = false
+# 특정 서버를 잠시 끄려면 해당 블록에 추가:  enabled = false
